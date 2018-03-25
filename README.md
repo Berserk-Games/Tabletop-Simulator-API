@@ -1,1 +1,1 @@
-# TTS-Scripting-Doc
+# Tabletop-Simulator-Scripting-Documentation
