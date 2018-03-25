@@ -30,11 +30,11 @@ Function Name | Description | Return | &nbsp;
 broadcastToAll([<span class="tag str"></span>](typeandclass) message, [<span class="tag col"></span>](typeandclass#color) message_tint) | Print an on-screen message to all Players, as well as their in-game chat. | [<span class="ret boo"></span>](typeandclass) | [<span class="i"></span>](#broadcasttoall)
 broadcastToColor([<span class="tag str"></span>](typeandclass) message, [<span class="tag str"></span>](typeandclass) player_color, [<span class="tag col"></span>](typeandclass#color) message_tint) | Print an on-screen message to a specified Player, as well as their in-game chat. | [<span class="ret boo"></span>](typeandclass) | [<span class="i"></span>](#broadcasttocolor)
 log([<span class="tag var"></span>](typeandclass) element, [<span class="tag str"></span>](typeandclass) tag, [<span class="tag str"></span>](typeandclass) label) | Print information to the log tab. (Shortcut: ~) | [<span class="ret boo"></span>](typeandclass) | [<span class="i"></span>](#log)
-logStyle([<span class="tag str"></span>](typeandclass) tag, [<span class="tag col"></span>](typeandclass#color) tint, [<span class="tag str"></span>](typeandclass) prefix, [<span class="tag str"></span>](typeandclass) prefix, [<span class="tag str"></span>](typeandclass) postfix) | Set style options for the specified tag type for the log. | [<span class="ret boo"></span>](typeandclass) | [<span class="i"></span>](#logstyle)
+logStyle([<span class="tag str"></span>](typeandclass) tag, [<span class="tag col"></span>](typeandclass#color) tint, [<span class="tag str"></span>](typeandclass) prefix, [<span class="tag str"></span>](typeandclass) postfix) | Set style options for the specified tag type for the log. | [<span class="ret boo"></span>](typeandclass) | [<span class="i"></span>](#logstyle)
 print([<span class="tag str"></span>](typeandclass) message) | Prints a string into chat that only the host is able to see. Used for debugging scripts. | [<span class="ret nil"></span>](typeandclass) | [<span class="i"></span>](#print)
 printToAll([<span class="tag str"></span>](typeandclass) message, [<span class="tag col"></span>](typeandclass#color) message_tint) | Print a message into the chat of all connected players. | [<span class="ret boo"></span>](typeandclass) | [<span class="i"></span>](#printtoall)
 printToColor([<span class="tag str"></span>](typeandclass) message, [<span class="tag str"></span>](typeandclass) player_color, [<span class="tag col"></span>](typeandclass#color) message_tint) | Print a message to a specific [Player Color](player-color). | [<span class="ret boo"></span>](typeandclass) | [<span class="i"></span>](#printtocolor)
-sendExternalMessage([<span class="tag tab"></span>](typeandclass) data) | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](typeandclass) | [<span class="i"></span>](#sendexternalmessage)
+sendExternalMessage([<span class="tag tab"></span>](typeandclass) data) | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](typeandclass) | 
 
 
 ###Notebook Functions
@@ -229,7 +229,6 @@ printToAll("Blue message", stringColorToRGB("Blue"))
 ---
 
 
-
 ###Message Function Details
 
 ####broadcastToAll(...)
@@ -249,6 +248,111 @@ broadcastToAll(msg, rgb)
 ---
 
 
+####broadcastToColor(...)
+
+[<span class="ret boo"></span>](typeandclass)&nbsp; Print an on-screen message to a specified Player and their in-game chat.
+
+!!!info "broadcastToColor(message, [player_color](player), message_tint)"
+	* [<span class="tag str"></span>](typeandclass) **message**: Message to display on-screen.
+	* [<span class="tag str"></span>](typeandclass) **player_color**: [Player Color](player-color) to receive the message.
+	* [<span class="tag col"></span>](typeandclass#color) **message_tint**: RGB color tint for the text.
+
+``` Lua
+msg = "Hello White."
+color = "White"
+rgb = {r=1, g=0, b=0}
+broadcastToColor(msg, color, rgb)
+```
+
+---
+
+
+####log(...)
+
+[<span class="ret boo"></span>](typeandclass)&nbsp; Print information to the log. The log is a separate chat window which is visible to all players in the instance.
+
+If a table is used for "element", the log will automatically display the key/value contents of it.
+
+!!!info "log(element, tag, label)"
+	* [<span class="tag var"></span>](typeandclass) **element**: The information you want placed into the log.
+	* [<span class="tag str"></span>](typeandclass) **tag**: Name that is usable to categorize log entries. (See: [logStyle](logstyle))
+		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
+	* [<span class="tag str"></span>](typeandclass) **label**: Text to be placed before the Var element is printed to the log.
+		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
+
+``` Lua
+log(getAllObjects(), "table", "All Objects:")
+```
+
+---
+
+
+####logStyle(...)
+
+[<span class="ret boo"></span>](typeandclass)&nbsp; Set style options for the specified tag type for the log. This can also be set in the system console with the "log_style_tag" command.
+
+!!!info "logStyle(tag, tint, prefix, postfix)"
+	* [<span class="tag str"></span>](typeandclass) **tag**: A String of the log's tag.
+	* [<span class="tag col"></span>](typeandclass#color) **tint**: RGB value to tint the log entry's text.
+		* {>>String color will also work. Example: "Red"<<}
+	* [<span class="tag str"></span>](typeandclass) **prefix**: Text to place before this type of log entry.
+		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
+	* [<span class="tag str"></span>](typeandclass) **postfix**: Text to place after this type of log entry.
+		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
+
+``` Lua
+function onLoad()
+	logStyle("players", {0.5,0.5,0.5}, "", "End List")
+	log(getSeatedPlayers(), "players")
+end
+```
+
+---
+
+
+####print(...)
+
+[<span class="ret nil"></span>](typeandclass)&nbsp; Print a string into chat that only the host is able to see. Used for debugging scripts.
+
+!!!info "print(message)"
+	* [<span class="tag tab"></span>](typeandclass) **message**: Text to print into the chat log.
+
+
+---
+
+
+####printToAll(...)
+
+[<span class="ret boo"></span>](typeandclass)&nbsp; Print a message into the in-game chat of all connected players.
+
+!!!info "printToAll(message, message_tint)"
+	* [<span class="tag tab"></span>](typeandclass) **message**: Message to place into players' in-game chats.
+	* [<span class="tag col"></span>](typeandclass#color) **message_tint**: RGB values for the text's color tint.
+
+``` Lua
+printToAll("Hello World!", {r=1,g=0,b=0})
+```
+
+---
+
+
+####printToColor(...)
+
+[<span class="ret boo"></span>](typeandclass)&nbsp; Print a message to the in-game chat of a specific player.
+
+!!!info "printToColor(message, [player_color](player-color), message_tint)"
+	* [<span class="tag str"></span>](typeandclass) **message**: Message to place into the player's in-game chat.
+	* [<span class="tag str"></span>](typeandclass) **player_color**: [Player Color](player-color) of the player that will receive the message.
+	* [<span class="tag col"></span>](typeandclass#color) **message_tint**: RGB values for the text's color tint.
+
+``` Lua
+printToColor("Hello Red.", "Red", {r=1,g=0,b=0})
+```
+
+---
+
+
+###Notebook Function Details
 
 
 
@@ -258,16 +362,18 @@ broadcastToAll(msg, rgb)
 
 
 
-###addNotebookTab(...)
 
-Returns Int of the index of the newly added notebook tab. If it failed to create a new tab, a -1 is returned instead. Indexes for notebook tabs begin at 0.
 
-!!!info "addNotebookTab(Table parameters)"
-	* **Table parameters**: A Table containing spawning parameters.
-		* **parameters.title**: A String with the title for the new tab.
-		* **parameters.body**: A String with text to place into the body of the new tab.
+####addNotebookTab(...)
+
+[<span class="ret int"></span>](typeandclass)&nbsp; Add a new notebook tab. If it failed to create a new tab, a -1 is returned instead. Indexes for notebook tabs begin at 0.
+
+!!!info "addNotebookTab(parameters)"
+	* [<span class="tag tab"></span>](typeandclass) **parameters**: A Table containing spawning parameters.
+		* [<span class="tag str"></span>](typeandclass) **parameters.title**: Title for the new tab.
+		* [<span class="tag str"></span>](typeandclass) **parameters.body**: Text to place into the body of the new tab.
 			* {>>Optional, defaults to an empty string<<}
-		* **parameters.color**: A String with the [Player color](player) for the new tab's color.
+		* [<span class="tag str"></span>](typeandclass) **parameters.color**: [Player Color](player) for the new tab's color.
 			* {>>Optional, defaults to "Grey"<<}
 
 ``` Lua
@@ -282,39 +388,18 @@ addNotebookTab(parameters)
 ---
 
 
+####editNotebookTab(...)
 
+[<span class="ret boo"></span>](typeandclass)&nbsp; Edit an existing Tab in the notebook. Indexes for notebook tabs begin at 0.
 
-###broadcastToColor(...)
-
-Returns Bool with result of printing an on-screen message to a specified Player.
-
-!!!info "broadcastToColor(String message, String [player_color](player), Table [color](color))"
-	* **String message**: A String of the message to display on-screen.
-	* **String player_color**: A String of the color of the Player who will receive the message.
-	* **Table color**: A Table containing the RGB color for the text.
-
-``` Lua
-msg = "Hello White."
-color = "White"
-rgb = {r=1, g=0, b=0}
-broadcastToColor(msg, color, rgb)
-```
-
----
-
-
-###editNotebookTab(...)
-
-Returns Bool with the result of editing an existing Tab in the notebook. Indexes for notebook tabs begin at 0.
-
-!!!info "editNotebookTab(Table parameters)"
-	* **Table parameters**: A Table containing instructions for the notebook edit.
-		* **parameters.index**: An Int of the index number for the tab.
-		* **parameters.title**: A String of the title for the tab.
+!!!info "editNotebookTab(parameters)"
+	* [<span class="tag tab"></span>](typeandclass) **parameters**: A Table containing instructions for the notebook edit.
+		* [<span class="tag int"></span>](typeandclass) **parameters.index**: Index number for the tab.
+		* [<span class="tag str"></span>](typeandclass) **parameters.title**: Title for the tab.
 			* {>>Optional, defaults to the current title of the tab begin edited.<<}
-		* **parameters.body**: A String of the body for the tab.
+		* [<span class="tag str"></span>](typeandclass) **parameters.body**: Text for the body for the tab.
 			* {>>Optional, defaults to the current body of the tab begin edited.<<}
-		* **parameters.color**: A String of the Player color for who the tab belongs to.
+		* [<span class="tag str"></span>](typeandclass) **parameters.color**: [Player Color](player-color) for who the tab belongs to.
 			* {>>Optional, defaults to the current color of the tab begin edited.<<}
 
 ``` Lua
@@ -330,9 +415,9 @@ editNotebookTab(params)
 ---
 
 
-###getNotebookTabs()
+####getNotebookTabs()
 
-Returns Table of all tabs in the notebook. Indexes for notebook tabs begin at 0.
+[<span class="ret tab"></span>](typeandclass)&nbsp; Returns a Table containing data on all tabs in the notebook. Indexes for notebook tabs begin at 0.
 
 ``` Lua
 --Example Usage
@@ -350,122 +435,15 @@ tabInfo = getNotebookTabs()
 ---
 
 
+####removeNotebookTab(...)
 
+[<span class="ret boo"></span>](typeandclass)&nbsp; Remove a notebook tab. Notebook tab indexes begin at 0.
 
-
-
-
-
-
-
-
-
-
-###log(...)
-
-Returns Bool with result of printing information to the log. The log is a separate chat window which is visible to all players in the instance. It also automatically prints all data in a table if you input it as the Var.
-
-!!!info "log(Var element, String tag, String label)"
-	* **Var element**: The information you want placed into the log.
-	* **String tag**: A String of text usable to group log messages by type. (See: [logStyle](logstyle))
-		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
-	* **String label**: A String of text to be placed before the Var element is printed to the log.
-		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
-
-``` Lua
-log(getAllObjects(), "table", "All Objects:")
-```
-
----
-
-
-###logStyle(...)
-
-Returns bool with result of setting style options for the specified tag type for the log. This can also be set in the system console with the "log_style_tag" command.
-
-!!!info "logStyle(String tag, Table color, String prefix, String prefix, String postfix)"
-	* **String tag_name**: A String of the log's tag.
-	* **Table Color**: A Table of the RGB value of the text color.
-		* {>>String color will also work. Example: "Red"<<}
-	* **String prefix**: A String of text to place before the log entry of this tag type.
-		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
-	* **String postfix**: A String of text to place after the log entry of this tag type.
-		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
-
-``` Lua
-function onLoad()
-	logStyle("players", {0.5,0.5,0.5}, "", "End List")
-	log(getSeatedPlayers(), "players")
-end
-```
-
----
-
-
-
-
-
-###print(...)
-
-Prints a string into chat that only the host is able to see. Used for debugging scripts.
-
-!!!info "print(String message)"
-	* **String message**: The String to be printed to chat.
-
-``` Lua
-function onLoad() print("Loading Complete") end
-```
-
----
-
-
-###printToAll(...)
-
-Returns Bool with the result of printing a message into the chat of all connected players.
-
-!!!info "printToAll(String message, Table [color](#color))"
-	* **String message**: A String of the message to place into players chats.
-	* **Table color**: A Table containing r/g/b values for the text's color.
-
-``` Lua
-printToAll("Hello World!", {r=1,g=0,b=0})
-```
-
----
-
-
-###printToColor(...)
-
-Returns Bool with the result of printing a message to a specific Player.
-
-!!!info "printToColor(String message, String [player_color](color), Table [color](color))"
-	* **String message**: A String of the message to place into the player's chat.
-	* **Straing player_color**: A String of the Player's color that will receive the message.
-	* **Table color**: A Table containing r/g/b values for the text's color.
-
-``` Lua
-printToColor("Hello Red.", "Red", {r=1,g=0,b=0})
-```
-
----
-
-
-###removeNotebookTab(...)
-
-Returns Bool with the result of removing a notebook tab. Notebook tab indexes begin at 0.
-
-!!!info "removeNotebookTab(Int index)"
-	* **Int index**: The Int of the index for the tab to remove.
+!!!info "removeNotebookTab(index)"
+	* [<span class="tag int"></span>](typeandclass) **index**: Index for the tab to remove.
 
 ``` Lua
 removeNotebookTab(0)
 ```
-
----
-
-
-###sendExternalMessage(...)
-
-Returns Bool with the result of sending the table to your external script editor, most likely Atom. This is for custom editor functionality.
 
 ---

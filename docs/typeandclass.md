@@ -4,16 +4,18 @@
 
 Type refers to the type of information. You do not need to declare the type in Lua, but in this API you will see them indicated. This is only so you know what kind of information is required in a given variable/parameter. This API utilizes the following types.
 
-Type | Description | Example
---- | --- | ---
-nil | No value. | `#!lua nil`
-int | Non-decimal value. | `#!lua 5`
-float | Non-exact decimal value. | `#!lua 2.032`
-bool | `true` or `false` value. | `#!lua true`
-string | A series of characters. | `#!lua "Hello."`
-table | A container with keys and values. | `#!lua {["key"]="value", true, 5}`
-obj | An in-game physical Object. Can refer to Global. | `#!lua Global or self`
-var | Can possibly be some or any other type described above. | 
+Tag | Type | Description | Example
+-- | -- | -- | --
+[<span class="tag nil"></span>](typeandclass) | nil | No value. | `#!lua nil`
+[<span class="tag int"></span>](typeandclass) | int | Non-decimal value. | `#!lua 5`
+[<span class="tag flo"></span>](typeandclass) | float | Non-exact decimal value. | `#!lua 2.032`
+[<span class="tag boo"></span>](typeandclass) | bool | `true` or `false` value. | `#!lua true`
+[<span class="tag str"></span>](typeandclass) | string | A series of characters. | `#!lua "Hello."`
+[<span class="tag tab"></span>](typeandclass) | table | A container with keys and values. | `#!lua {["key"]="value", true, 5}`
+[<span class="tag obj"></span>](typeandclass) | object | An in-game physical Object. Can refer to Global. | `#!lua Global or self`
+[<span class="tag pla"></span>](typeandclass) | player | An in-game Player. | `#!lua Player["White"]`
+[<span class="tag var"></span>](typeandclass) | variable | Can possibly be some or any other type described above. | 
+
 
 For more information what types are, you can refer to the relevant [Lua documentation](https://www.lua.org/manual/5.1/manual.html#2.2).
 
