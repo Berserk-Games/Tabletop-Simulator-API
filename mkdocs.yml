@@ -1,0 +1,61 @@
+site_name: Tabletop Simulator Scripting Documentation
+theme:
+  name: 'material'
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  logo: 'img/TSIcon.png'
+  favicon: 'img/Icon-Dice.png'
+  custom_dir: 'theme'
+extra_css:
+  - css/theme.css
+  - css/table.css
+  - css/type_icons.css
+  - css/i_icons.css
+  - css/player_color_table.css
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - toc:
+      permalink: true
+pages:
+  - Getting Started:
+    - Introduction: index.md
+    - Overview: overview.md
+    - Atom: atom.md
+    - External Editor AP: externaleditorapi.md
+  - Lua API:
+    - Introduction: luaapi.md
+    - Type and Class: typeandclass.md
+    - Event: event.md
+    - Base: base.md
+    - Object: object.md
+    - AssetBundle: assetbundle.md
+    - Clock: clock.md
+    - Counter: counter.md
+    - JSON: json.md
+    - Lighting: lighting.md
+    - Physics: physics.md
+    - Player: player.md
+    - Player Color: player-color.md
+    - RPGFigurine: rpgfigurine.md
+    - Spawnable Objects: spawnableobjects.md
+    - TextTool: texttool.md
+    - Timer: timer.md
+    - Web Request: webrequest.md

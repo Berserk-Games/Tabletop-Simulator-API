@@ -1,0 +1,70 @@
+/*Table Striping*/
+.md-typeset__table table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/*Table padding*/
+.md-typeset table:not([class]) td {
+    padding: 4px 6px;
+    vertical-align: middle;
+}
+.md-typeset table:not([class]) th {
+    min-width: 0px;
+    padding: 14px 6px;
+}
+
+/*Prevent break of function name in table*/
+.md-typeset table th:first-child {
+    white-space: nowrap;
+}
+
+/*Prevent break of function name in table*/
+.md-typeset table td:first-child {
+    font-family: 'Inconsolata', 'Monaco', 'Consolas', 'Courier New', 'Courier';
+}
+
+
+/*Nowrap on first row of tables
+html body div.md-container table tr td:first-child {
+    white-space: nowrap;
+}*/
+
+
+
+/*Striped tables
+html body div.md-container table tr:nth-child(even) {background-color: #f2f2f2;}*/
+
+/*Limit 3'rd column width
+html body div.md-container table td:nth-child(3) {
+	min-width: 5px;
+	padding-right: 8px !important;
+	padding-left: 8px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	vertical-align: middle;
+}*/
+
+/*Changes padding for header, 3'rd column
+html body div.md-container table th:nth-child(3) {
+	min-width: 5px;
+	padding-right: 8px !important;
+	padding-left: 8px !important;
+	padding-bottom: 0px !important;
+	text-align: left;
+}*/
+
+/*Reduce padding in table body
+html body div.md-container table td {
+    padding-top: 8px !important ;
+	padding-bottom: 8px !important;
+}*/
+
+/*Forces all standard tables to be 100% width (OFF)
+.md-typeset .md-typeset__table {
+    display: block;
+}*/
+
+/*Changing interio cell spacings, !important required to override before/after
+table td {
+    padding: 4px 8px !important;
+}*/

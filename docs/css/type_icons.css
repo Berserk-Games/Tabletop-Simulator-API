@@ -1,0 +1,167 @@
+/*General Icon Formatting, used by all tag type icons*/
+.tag {
+    font-family: 'Inconsolata', 'Monaco', 'Consolas', 'Courier New', 'Courier';
+    /*background-color:rgba(1, 0, 0, 0.2);*/
+    font-weight: normal;
+    text-align: center;
+    font-size: 1rem;
+    display: inline-block;
+    /*border-radius: 6px;
+    padding: 1px 4px;
+    box-shadow: 2px 2px #696969;
+    bottom: 1px;*/
+    padding: 2px 4px;
+    border-radius:5px;
+    position: relative;
+    margin: 0px 1px;
+    
+    word-break: normal;
+
+    width: 50px;
+    line-height: 1;
+}
+.tag:hover {
+    opacity: 0.75;
+}
+
+/*General Return Formatting, used by all return type icons*/
+.ret {
+    font-family: 'Inconsolata', 'Monaco', 'Consolas', 'Courier New', 'Courier';
+    /*background-color:rgba(1, 0, 0, 0.2);*/
+    font-style: italic;
+    text-align: center;
+    font-size: 1rem;
+    /*padding: 1px 4px;
+    box-shadow: 2px 2px #696969;
+    border-radius: 6px;*/
+    border-radius:5px;
+    padding: 2px 4px;
+    display: inline-block;
+
+    
+    position: relative;
+    bottom: 1px;
+    left: 1px;
+    vertical-align:middle;
+
+
+    float: left;
+    width: 50px;
+    /*Squeezes lines together vertically*/
+    line-height: 1;
+    
+    word-break: keep-all;
+}
+.ret:hover {
+    opacity: 0.75;
+}
+.ret:before {
+    content: "return\A";
+}
+
+
+
+
+/*String*/
+.str {
+    color: #000000;
+    /*background-color: #98c379;*/
+    background-color: #ACC39B;
+}
+.str:after {
+    content: "string";
+}
+
+/*Table*/
+.tab {
+    color: #000000;
+    /*background-color: #D3D3D3;*/
+    background-color: rgba(1, 0, 0, 0.2);
+}
+.tab:after {
+    content: "table";  
+}
+
+/*Intiger*/
+.int {
+    color: #000000;
+    /*background-color: #e74c3c;*/
+    background-color: #D48E87;
+}
+.int:after {
+    content: "int";
+}
+
+/*Float*/
+.flo {
+    color: #000000;
+    /*background-color: #e74c3c;*/
+    background-color: #D48E87;
+}
+.flo:after {
+    content: "float";
+}
+
+/*Nil*/
+.nil {
+    color: #ffffff;
+    background-color: rgba(1, 0, 0, 0.6);;
+    /*background-color: inherit;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;*/
+}
+.nil:after {
+    content: "nil";
+}
+
+/*Bool*/
+.boo {
+    color: #000000;
+    /*background-color: #BA8BA1;*/
+    background-color: #BE9FAD;
+}
+.boo:after {
+    content: "bool";
+}
+
+/*Object*/
+.obj {
+    color: #000000;
+    background-color: #b1bfe0;
+    /*color: #ffffff;
+    background-color: #37474f;*/
+}
+.obj:after {
+    content: "obj";
+}
+
+/*Var*/
+.var {
+    color: #000000;
+    /*background-color: #e74c3c;*/
+    background-color: #E0E270;
+}
+.var:after {
+    content: "var";
+}
+
+/*Vector*/
+.vec {
+    color: #000000;
+    /*background-color: #e74c3c;*/
+    background-color: #f4d29a;
+}
+.vec:after {
+    content: "vector";
+}
+
+/*Color*/
+.col {
+    color: #000000;
+    /*background-color: #e74c3c;*/
+    background-color: #e2bae0
+}
+.col:after {
+    content: "color";
+}

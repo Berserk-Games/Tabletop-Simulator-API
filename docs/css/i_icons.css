@@ -1,0 +1,12 @@
+
+
+/*" style="line-height:150%;">info_outline</i>*/
+
+.i:after {
+    font-family: "Material Icons";
+    content: "\E88F";
+    font-size: 22px;
+    
+    position: relative;
+    right: 2px;
+}
