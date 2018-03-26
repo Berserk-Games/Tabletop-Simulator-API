@@ -18,7 +18,7 @@ promoted | If the current player is promoted. | [<span class="tag boo"></span>](
 seated | If a player is currently seated at this color. Read only. | [<span class="tag boo"></span>](intro#types)
 steam_id | The Steam ID of the player. This is unique to each player's Steam account. Read only. | [<span class="tag str"></span>](intro#types)
 steam_name | The Steam name of the player. Read only. | [<span class="tag str"></span>](intro#types)
-Team | The team of the player.<br>Options: `"None", "Clubs", "Diamonds", "Hearts", "Spades", "Jokers"`. | [<span class="tag str"></span>](intro#types)
+team | The team of the player.<br>Options: `"None", "Clubs", "Diamonds", "Hearts", "Spades", "Jokers"`. | [<span class="tag str"></span>](intro#types)
 
 ---
 
