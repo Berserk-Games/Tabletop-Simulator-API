@@ -306,6 +306,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../learninglua/" title="Learning Lua" class="md-nav__link">
+      Learning Lua
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -401,6 +413,34 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object" title="Object" class="md-nav__link">
+    Object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#player" title="Player" class="md-nav__link">
+    Player
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-script" title="Global Script" class="md-nav__link">
+    Global Script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-script" title="Object Script" class="md-nav__link">
+    Object Script
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#guid" title="GUID" class="md-nav__link">
@@ -832,6 +872,34 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#object" title="Object" class="md-nav__link">
+    Object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#player" title="Player" class="md-nav__link">
+    Player
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-script" title="Global Script" class="md-nav__link">
+    Global Script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-script" title="Object Script" class="md-nav__link">
+    Object Script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#guid" title="GUID" class="md-nav__link">
     GUID
   </a>
@@ -1024,6 +1092,14 @@
 <p>Just click the link in the pencil icon in the top-right of an article, or visit the GitHub page for more information by clicking GitHub Source in the far upper right.</p>
 <hr />
 <h2 id="tts-terms">TTS Terms<a class="headerlink" href="#tts-terms" title="Permanent link">&para;</a></h2>
+<h3 id="object">Object<a class="headerlink" href="#object" title="Permanent link">&para;</a></h3>
+<p>On in-game physical Object that currently exists in the scene. If an Object is placed inside of a bag/deck/etc, it stops existing and is no longer in the scene until it is pulled back out.</p>
+<h3 id="player">Player<a class="headerlink" href="#player" title="Permanent link">&para;</a></h3>
+<p>A person in the game. Each Player is assigned a color, with spectators being "Grey". If you are attempting to identify a Player, you would use the color of the seat they are in to do so.</p>
+<h3 id="global-script">Global Script<a class="headerlink" href="#global-script" title="Permanent link">&para;</a></h3>
+<p>The Global script, which is a script that is not attached to any particular Object. It is always present during a game.</p>
+<h3 id="object-script">Object Script<a class="headerlink" href="#object-script" title="Permanent link">&para;</a></h3>
+<p>A script that is attached to an in-game Objecet, and is saved as part of it. This is similar to any other property like its scale or tint. Some functions ask for an Object reference in order to attempt to run a function on it. In these cases, Global (exactly as written here) is also a valid Object reference.</p>
 <h3 id="guid">GUID<a class="headerlink" href="#guid" title="Permanent link">&para;</a></h3>
 <p>In Tabletop Simulator, a GUID is a unique 6-character <a href="../intro#types">string</a> which can be used to identify in-game <a href="../object">Objects</a>. GUIDs are automatically assigned when objects exist within the scene.</p>
 <p>If an object is duplicated, it will sometimes have the same GUID for 1 frame before the engine assigns a new GUID to the newer Object. Objects in containers (bags/decks/etc) do not automatically get new GUIDs assigned to them in this way. Only once their contents are moved out into the scene.</p>
@@ -1079,7 +1155,7 @@
 <tr>
 <td><a href="../intro#types"><span class="tag obj"></span></a></td>
 <td>object</td>
-<td>An in-game physical Object. Can refer to Global.</td>
+<td>An in-game physical Object. Sometimes Global.</td>
 <td><code class="codehilite"><span class="n">Global</span> <span class="ow">or</span> <span class="n">self</span></code></td>
 </tr>
 <tr>
@@ -1091,12 +1167,15 @@
 <tr>
 <td><a href="../intro#types"><span class="tag var"></span></a></td>
 <td>variable</td>
-<td>Can possibly be some or any other type described above.</td>
+<td>A combination of other types.</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p>For more information what types are, you can refer to the relevant <a href="https://www.lua.org/manual/5.1/manual.html#2.2">Lua documentation</a>.</p>
+<p>You will also see tags for Color and Vector. See below for more info.</p>
+<blockquote>
+<p>For more information on a type, you can read below or refer to the relevant <a href="https://www.lua.org/manual/5.1/manual.html#2.2">Lua documentation</a>.</p>
+</blockquote>
 <hr />
 <h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h3>
 <p>Defining class requires further knowledge on object-oriented programming to really understand. However for the purposes of Tabletop Simulator Lua scripting, you can think of a class as a standard or collection that handles categories of objects.</p>
@@ -1123,9 +1202,9 @@
 <p>For more information on what a class is, you can refer to the relevant <a href="https://www.lua.org/pil/16.1.html">Lua Documentation</a>.</p>
 <hr />
 <h3 id="special-standards">Special Standards<a class="headerlink" href="#special-standards" title="Permanent link">&para;</a></h3>
-<p>There are two Table types that are used often in Tabletop Simulator. They represent Vectors and Colors, and have special formatting rules to be understood by the many functions that utilize them.</p>
+<p>There are two types of Table that are used often in Tabletop Simulator. They represent Vectors and Colors, and their contents must be formatted a certain way to be utilized correctly.</p>
 <h4 id="color">Color<a class="headerlink" href="#color" title="Permanent link">&para;</a></h4>
-<p>Color is a type of Table that is used to define a color.</p>
+<p>Color is a type of Table that is used to define RGB values for tinting.</p>
 <h5 id="keys">Keys<a class="headerlink" href="#keys" title="Permanent link">&para;</a></h5>
 <p>The Table will contain the keys <code class="codehilite">r</code>, <code class="codehilite">g</code>, <code class="codehilite">b</code>, <code class="codehilite">a</code> and/or <code class="codehilite">1</code>, <code class="codehilite">2</code>, <code class="codehilite">3</code>, <code class="codehilite">4</code>. The letter and numeric keys are duplicates of each other, and each represents a color or transparency.</p>
 <table>
@@ -1161,12 +1240,8 @@
 </table>
 <p>As an example, an Object with a white color tint would return this table:
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">g</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="mi">2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="mi">3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div></p>
 <p>Notice it does not contain the <code class="codehilite">a</code> or <code class="codehilite">4</code> keys. This is because currently only scripted buttons and scripted inputs utilize the alpha channel (transparency).</p>
@@ -1214,12 +1289,8 @@
 </table>
 <p>As an example, An Object at coordinate X=5, Y=2, Z=-1 would return this table:
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-    <span class="mi">1</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
-    <span class="mi">2</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="mi">3</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="mi">1</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div></p>
 <h5 id="mixed-keys_1">Mixed Keys<a class="headerlink" href="#mixed-keys_1" title="Permanent link">&para;</a></h5>
