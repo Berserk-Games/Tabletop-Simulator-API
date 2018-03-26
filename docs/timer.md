@@ -9,8 +9,8 @@ Timer is a statis global class which provides methods for executing other functi
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-create([<span class="tag tab"></span>](intro#types) parameters) | Creates a Timer. It will auto-delete once its repetitions have been completed. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#create)
-destroy([<span class="tag str"></span>](intro#types) identifier) | Destroys a Timer. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#destroy)
+create([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Creates a Timer. It will auto-delete once its repetitions have been completed. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#create)
+destroy([<span class="tag str"></span>](intro#types)&nbsp;identifier) | Destroys a Timer. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#destroy)
 
 ---
 
@@ -19,7 +19,7 @@ destroy([<span class="tag str"></span>](intro#types) identifier) | Destroys a Ti
 
 ###create(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Creates a Timer. It will auto-delete once its repetitions have been completed.
+[<span class="ret boo"></span>](intro#types)&nbsp;Creates a Timer. It will auto-delete once its repetitions have been completed.
 
 !!!info "create(parameters)"
     * [<span class="tag_tab"></span>](intro#types) **parameters**: A Table containing the information used to start the Timer.
@@ -61,7 +61,7 @@ end
 
 ###destroy(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Destroys a Timer. A timer, if it completes its number of repetitions, will automatically destroy itself.
+[<span class="ret boo"></span>](intro#types)&nbsp;Destroys a Timer. A timer, if it completes its number of repetitions, will automatically destroy itself.
 
 !!!info "destroy(identifier)"
     * [<span class="tag str"></span>](intro#types) **identifier**: The unique identifier for the timer you want to destroy.

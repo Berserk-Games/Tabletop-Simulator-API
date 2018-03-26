@@ -62,8 +62,8 @@ These functions handle the physical attributes of an Object: Position, Rotation,
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-addForce([<span class="tag vec"></span>](intro#vector) vector, [<span class="tag int"></span>](intro#types) force_type) | Adds force to an object in a directional Vector. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#addforce)
-addTorque([<span class="tag vec"></span>](intro#vector) vector, [<span class="tag int"></span>](intro#types) force_type) | Adds torque to an object in a rotational Vector. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#addtorque)
+addForce([<span class="tag vec"></span>](intro#vector)&nbsp;vector, [<span class="tag int"></span>](intro#types)&nbsp;force_type) | Adds force to an object in a directional Vector. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#addforce)
+addTorque([<span class="tag vec"></span>](intro#vector)&nbsp;vector, [<span class="tag int"></span>](intro#types)&nbsp;force_type) | Adds torque to an object in a rotational Vector. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#addtorque)
 getAngularVelocity() | Returns a Vector of the current angular velocity. | [<span class="ret vec"></span>](intro#vector)
 getBounds() | Returns a Vector describing the size of an object in Global terms. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#getbounds)
 getBoundsNormalized() | Returns a Vector describing the size of an object in Global terms, as if it was rotated to {0,0,0}. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#getboundsnormalized)
@@ -73,20 +73,20 @@ getScale() | Returns a Vector of the current scale. | [<span class="ret vec"></s
 getTransformForward() | Returns a Vector of the forward direction of this object. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#gettransformforward)
 getTransformRight() | Returns a Vector of the right direction of this object. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#gettransformright)
 getTransformUp() | Returns a Vector of the up direction of this object. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#gettransformup)
-getVelocity() | Returns a Vector of the current velocity. | [<span class="ret vec"></span>](intro#vector) | 
-isSmoothMoving() | Indicates if an object is traveling as part of a Smooth move. Smooth moving is performed by setPositionSmooth and setRotationSmooth. | [<span class="ret boo"></span>](intro#types) | 
-positionToLocal([<span class="tag vec"></span>](intro#vector) vector) | Returns a Vector after converting a world Vector to a local Vector. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#positiontolocal)
-positionToWorld([<span class="tag vec"></span>](intro#vector) vector) | Returns a Vector after converting a local Vector to a world Vector. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#positiontoworld)
-rotate([<span class="tag vec"></span>](intro#vector) vector) | Rotates Object smoothly in the direction of the given Vector. | [<span class="ret boo"></span>](intro#types) | 
-scale([<span class="tag vec"></span>](intro#vector) vector or [<span class="tag flo"></span>](intro#types)) | Scales Object by a multiple. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#scale)
-setAngularVelocity([<span class="tag vec"></span>](intro#vector) vector) | Sets a Vector as the current angular velocity. | [<span class="ret boo"></span>](intro#types) | 
-setPosition([<span class="tag vec"></span>](intro#vector) vector) | Instantly moves an Object to the given Vector. | [<span class="ret boo"></span>](intro#types) | 
-setPositionSmooth([<span class="tag vec"></span>](intro#vector) vector, [<span class="tag boo"></span>](intro#types) collide, [<span class="tag boo"></span>](intro#types) fast) | Moves the Object smoothly to the given Vector. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setpositionsmooth)
-setRotation([<span class="tag vec"></span>](intro#vector) vector) | Instantly rotates an Object to the given Vector. | [<span class="ret boo"></span>](intro#types) | 
-setRotationSmooth([<span class="tag vec"></span>](intro#vector) vector, [<span class="tag boo"></span>](intro#types) collide, [<span class="tag boo"></span>](intro#types) fast) | Rotates the Object smoothly to the given Vector. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setrotationsmooth)
-setScale([<span class="tag vec"></span>](intro#vector) vector) | Sets a Vector as the current scale. | [<span class="ret boo"></span>](intro#types) | 
-setVelocity([<span class="tag vec"></span>](intro#vector) vector) | Sets a Vector as the current velocity. | [<span class="ret boo"></span>](intro#types) | 
-translate([<span class="tag vec"></span>](intro#vector) vector) | Smoothly moves Object by the given Vector offset. | [<span class="ret boo"></span>](intro#types) | 
+getVelocity() | Returns a Vector of the current velocity. | [<span class="ret vec"></span>](intro#vector) |
+isSmoothMoving() | Indicates if an object is traveling as part of a Smooth move. Smooth moving is performed by setPositionSmooth and setRotationSmooth. | [<span class="ret boo"></span>](intro#types) |
+positionToLocal([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Returns a Vector after converting a world Vector to a local Vector. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#positiontolocal)
+positionToWorld([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Returns a Vector after converting a local Vector to a world Vector. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#positiontoworld)
+rotate([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Rotates Object smoothly in the direction of the given Vector. | [<span class="ret boo"></span>](intro#types) |
+scale([<span class="tag vec"></span>](intro#vector)&nbsp;vector or [<span class="tag flo"></span>](intro#types)) | Scales Object by a multiple. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#scale)
+setAngularVelocity([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Sets a Vector as the current angular velocity. | [<span class="ret boo"></span>](intro#types) |
+setPosition([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Instantly moves an Object to the given Vector. | [<span class="ret boo"></span>](intro#types) |
+setPositionSmooth([<span class="tag vec"></span>](intro#vector)&nbsp;vector, [<span class="tag boo"></span>](intro#types)&nbsp;collide, [<span class="tag boo"></span>](intro#types)&nbsp;fast) | Moves the Object smoothly to the given Vector. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setpositionsmooth)
+setRotation([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Instantly rotates an Object to the given Vector. | [<span class="ret boo"></span>](intro#types) |
+setRotationSmooth([<span class="tag vec"></span>](intro#vector)&nbsp;vector, [<span class="tag boo"></span>](intro#types)&nbsp;collide, [<span class="tag boo"></span>](intro#types)&nbsp;fast) | Rotates the Object smoothly to the given Vector. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setrotationsmooth)
+setScale([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Sets a Vector as the current scale. | [<span class="ret boo"></span>](intro#types) |
+setVelocity([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Sets a Vector as the current velocity. | [<span class="ret boo"></span>](intro#types) |
+translate([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Smoothly moves Object by the given Vector offset. | [<span class="ret boo"></span>](intro#types) |
 
 
 
@@ -95,16 +95,16 @@ These functions allow for the creation/editing/removal of functional buttons and
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-clearButtons() | Removes all scripted buttons. | [<span class="ret boo"></span>](intro#types) | 
-clearInputs() | Removes all scripted inputs. | [<span class="ret boo"></span>](intro#types) | 
-createButton([<span class="tag tab"></span>](intro#types) parameters) | Creates a scripted button attached to the Object. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#createbutton)
-createInput([<span class="tag tab"></span>](intro#types) parameters) | Creates a scripted input attached to the Object. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#createinput)
-editButton([<span class="tag tab"></span>](intro#types) parameters) | Modify an existing button. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#editbutton)
-editInput([<span class="tag tab"></span>](intro#types) parameters) | Modify an existing input. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#editinput)
+clearButtons() | Removes all scripted buttons. | [<span class="ret boo"></span>](intro#types) |
+clearInputs() | Removes all scripted inputs. | [<span class="ret boo"></span>](intro#types) |
+createButton([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Creates a scripted button attached to the Object. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#createbutton)
+createInput([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Creates a scripted input attached to the Object. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#createinput)
+editButton([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Modify an existing button. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#editbutton)
+editInput([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Modify an existing input. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#editinput)
 getButtons() | Returns a Table of all buttons on this Object. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getbuttons)
 getInputs() | Returns a Table of all inputs on this Object. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getinputs)
-removeButton([<span class="tag int"></span>](intro#types) index) | Removes a specific button. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#removebutton)
-removeInput([<span class="tag int"></span>](intro#types) index) | Removes a specific button. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#removeinput)
+removeButton([<span class="tag int"></span>](intro#types)&nbsp;index) | Removes a specific button. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#removebutton)
+removeInput([<span class="tag int"></span>](intro#types)&nbsp;index) | Removes a specific button. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#removeinput)
 
 
 
@@ -113,13 +113,13 @@ These functions obtain information from an object.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-getColorTint() | Returns Color tint. | [<span class="ret col"></span>](intro#color) | 
+getColorTint() | Returns Color tint. | [<span class="ret col"></span>](intro#color) |
 getCustomObject() | Returns a Table with the Custom Object information of a Custom Object. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getcustomobject)
-getLock() | Returns bool representing if the Object is locked. | [<span class="ret boo"></span>](intro#types) | 
+getLock() | Returns bool representing if the Object is locked. | [<span class="ret boo"></span>](intro#types) |
 getObjects() | Returns a Table of Objects in the script zone/bag/deck. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getobjects)
-getQuantity() | Returns an Int of how many objects are in the stack. Returns -1 if the Object is not a stack. | [<span class="ret int"></span>](intro#types) | 
+getQuantity() | Returns an Int of how many objects are in the stack. Returns -1 if the Object is not a stack. | [<span class="ret int"></span>](intro#types) |
 getRotationValues() | Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getrotationvalues)
-getStateId() | Returns the current [state](http://berserk-games.com/knowledgebase/creating-states/) ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1. | [<span class="ret int"></span>](intro#types) | 
+getStateId() | Returns the current [state](http://berserk-games.com/knowledgebase/creating-states/) ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1. | [<span class="ret int"></span>](intro#types) |
 getStates() | Returns a Table of information on the [states](http://berserk-games.com/knowledgebase/creating-states/) of an Object. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getstates)
 getValue() | Returns an Int as the value. What the value represents depends on what type of Object this function is used on. | [<span class="ret int"></span>](intro#types) | [<span class="i"></span>](#getvalue)
 
@@ -130,12 +130,12 @@ These functions apply action to an object. They take some property in order to w
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-setColorTint([<span class="tag col"></span>](intro#color) Color) | Sets the Color tint. | [<span class="ret boo"></span>](intro#types) | 
-setCustomObject([<span class="tag tab"></span>](intro#types) parameters) | Sets a custom Object's properties. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setcustomobject)
-setLock([<span class="tag boo"></span>](intro#types) lock) | Sets if an object is locked in place. | [<span class="ret boo"></span>](intro#types) | 
-setRotationValues([<span class="tag tab"></span>](intro#types) rotation_values) | Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setrotationvalues)
-setState([<span class="tag int"></span>](intro#types) state_id) | Sets [state](http://berserk-games.com/knowledgebase/creating-states/) of an Object. State ids (indexes) start at 1. | [<span class="ret obj"></span>](intro#types) | 
-setValue([<span class="tag var"></span>](intro#types) value) | Sets an Int as the value. What the value represents depends on what type of Object it is. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setvalue)
+setColorTint([<span class="tag col"></span>](intro#color)&nbsp;Color) | Sets the Color tint. | [<span class="ret boo"></span>](intro#types) |
+setCustomObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Sets a custom Object's properties. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setcustomobject)
+setLock([<span class="tag boo"></span>](intro#types)&nbsp;lock) | Sets if an object is locked in place. | [<span class="ret boo"></span>](intro#types) |
+setRotationValues([<span class="tag tab"></span>](intro#types)&nbsp;rotation_values) | Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setrotationvalues)
+setState([<span class="tag int"></span>](intro#types)&nbsp;state_id) | Sets [state](http://berserk-games.com/knowledgebase/creating-states/) of an Object. State ids (indexes) start at 1. | [<span class="ret obj"></span>](intro#types) |
+setValue([<span class="tag var"></span>](intro#types)&nbsp;value) | Sets an Int as the value. What the value represents depends on what type of Object it is. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setvalue)
 
 
 
@@ -144,22 +144,22 @@ These functions perform general actions on objects and do not require any input 
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-call([<span class="tag str"></span>](intro#types) func_name, [<span class="tag tab"></span>](intro#types) func_params) | Used to call a Lua function on this Object. | [<span class="ret var"></span>](intro#types) | [<span class="i"></span>](#call)
-flip() | Flip Object over. | [<span class="ret boo"></span>](intro#types) | 
-clone([<span class="tag tab"></span>](intro#types) parameters) | Copy/Paste this Object, returning a reference to the new Object. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#clone)
-cut() | Cuts (splits in half) a deck or stack Object. | [<span class="ret boo"></span>](intro#types) | 
-deal([<span class="tag int"></span>](intro#types) number, [<span class="tag str"></span>](intro#types) player_color, [<span class="tag int"></span>](intro#types) index) | Deals Objects. Will deal from decks/bags/stacks/individual items. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#deal)
-dealToColorWithOffset([<span class="tag vec"></span>](intro#vector) offset, [<span class="tag boo"></span>](intro#types) flip, [<span class="tag str"></span>](intro#types) player_color) | Deals from a deck to a position relative to the hand zone. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#dealtocolorwithoffset)
-destruct() | Destroys Object. Allows for `self.destruct()`. | [<span class="ret boo"></span>](intro#types) | 
-highlightOn([<span class="tag col"></span>](intro#color) color, [<span class="tag flo"></span>](intro#types) duration) | Creates a highlight around an Object. | [<span class="ret boo"></span>](intro#types) | 
-highlightOff([<span class="tag col"></span>](intro#color) color) | Removes a highlight from around an Object. | [<span class="ret boo"></span>](intro#types) |
-putObject([<span class="tag obj"></span>](intro#types) put_object) | Places an object into a container (chip stacks/bags/decks). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#putobject)
-randomize() | Shuffles deck/bag, rolls dice/coin, lifts other objects into the air. Same as pressing `R` by default. | [<span class="ret boo"></span>](intro#types) | 
+call([<span class="tag str"></span>](intro#types)&nbsp;func_name, [<span class="tag tab"></span>](intro#types)&nbsp;func_params) | Used to call a Lua function on this Object. | [<span class="ret var"></span>](intro#types) | [<span class="i"></span>](#call)
+flip() | Flip Object over. | [<span class="ret boo"></span>](intro#types) |
+clone([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Copy/Paste this Object, returning a reference to the new Object. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#clone)
+cut() | Cuts (splits in half) a deck or stack Object. | [<span class="ret boo"></span>](intro#types) |
+deal([<span class="tag int"></span>](intro#types)&nbsp;number, [<span class="tag str"></span>](intro#types)&nbsp;player_color, [<span class="tag int"></span>](intro#types)&nbsp;index) | Deals Objects. Will deal from decks/bags/stacks/individual items. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#deal)
+dealToColorWithOffset([<span class="tag vec"></span>](intro#vector)&nbsp;offset, [<span class="tag boo"></span>](intro#types)&nbsp;flip, [<span class="tag str"></span>](intro#types)&nbsp;player_color) | Deals from a deck to a position relative to the hand zone. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#dealtocolorwithoffset)
+destruct() | Destroys Object. Allows for `self.destruct()`. | [<span class="ret boo"></span>](intro#types) |
+highlightOn([<span class="tag col"></span>](intro#color)&nbsp;color, [<span class="tag flo"></span>](intro#types)&nbsp;duration) | Creates a highlight around an Object. | [<span class="ret boo"></span>](intro#types) |
+highlightOff([<span class="tag col"></span>](intro#color)&nbsp;color) | Removes a highlight from around an Object. | [<span class="ret boo"></span>](intro#types) |
+putObject([<span class="tag obj"></span>](intro#types)&nbsp;put_object) | Places an object into a container (chip stacks/bags/decks). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#putobject)
+randomize() | Shuffles deck/bag, rolls dice/coin, lifts other objects into the air. Same as pressing `R` by default. | [<span class="ret boo"></span>](intro#types) |
 reload() | Returns Object reference of itself after it respawns itself. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#reload)
-roll() | Rolls dice/coins. | [<span class="ret boo"></span>](intro#types) | 
+roll() | Rolls dice/coins. | [<span class="ret boo"></span>](intro#types) |
 shuffle() | Shuffles/shakes up contents of a deck or bag. | [<span class="ret boo"></span>](intro#types) |
-shuffleStates() | Returns an Object reference to a new [state](http://berserk-games.com/knowledgebase/creating-states/) after randomly selecting and changing to one. | [<span class="ret obj"></span>](intro#types) | 
-takeObject([<span class="tag tab"></span>](intro#types) parameters) | Returns an Object reference of Object taken from a container (bag/deck/chip stack) and placed into the world. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#takeobject)
+shuffleStates() | Returns an Object reference to a new [state](http://berserk-games.com/knowledgebase/creating-states/) after randomly selecting and changing to one. | [<span class="ret obj"></span>](intro#types) |
+takeObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Returns an Object reference of Object taken from a container (bag/deck/chip stack) and placed into the world. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#takeobject)
 
 ---
 
@@ -176,7 +176,7 @@ takeObject([<span class="tag tab"></span>](intro#types) parameters) | Returns an
 
 ####addForce(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Adds force to an object in a directional Vector.
+[<span class="ret boo"></span>](intro#types)&nbsp;Adds force to an object in a directional Vector.
 
 !!!info "addForce(vector, force_type)"
 	* [<span class="tag tab"></span>](intro#types) **Vector**: A Vector of the direction and magnitude of force.
@@ -192,7 +192,7 @@ takeObject([<span class="tag tab"></span>](intro#types) parameters) | Returns an
 
 ####addTorque(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Adds torque to an object in a rotational Vector.
+[<span class="ret boo"></span>](intro#types)&nbsp;Adds torque to an object in a rotational Vector.
 
 !!!info "addTorque(vector, force_type)"
 	* [<span class="tag tab"></span>](intro#types) **Vector**: A Vector of the direction and magnitude of rotational force.
@@ -209,7 +209,7 @@ takeObject([<span class="tag tab"></span>](intro#types) parameters) | Returns an
 
 ####getBounds()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Table of Vector information describing the size of an object in Global terms. [Bounds](https://docs.unity3d.com/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table of Vector information describing the size of an object in Global terms. [Bounds](https://docs.unity3d.com/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
 
 !!!info "Return Table"
 	* [<span class="tag tab"></span>](intro#types) **center**: The Vector of the center of the bounding box.
@@ -230,7 +230,7 @@ takeObject([<span class="tag tab"></span>](intro#types) parameters) | Returns an
 
 ####getBoundsNormalized()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Table of Vector information describing the size of an object in Global terms, as if it was rotated to {0,0,0}. [Bounds](https://docs.unity3d.com/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table of Vector information describing the size of an object in Global terms, as if it was rotated to {0,0,0}. [Bounds](https://docs.unity3d.com/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
 
 !!!info "Return Table"
 	* [<span class="tag tab"></span>](intro#types) **center**: The Vector of the center of the bounding box.
@@ -251,14 +251,14 @@ takeObject([<span class="tag tab"></span>](intro#types) parameters) | Returns an
 
 ####getScale()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Vector of the current scale. Scale is not an absolute measurement, it is a multiple of the Object's default model size. So {x=2, y=2, z=2} would be a model twice its default size, not 2 units large.
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Vector of the current scale. Scale is not an absolute measurement, it is a multiple of the Object's default model size. So {x=2, y=2, z=2} would be a model twice its default size, not 2 units large.
 
 ---
 
 
 ####getTransformForward()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Vector of the forward direction of this Object. The direction is relative to how the object is facing.
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Vector of the forward direction of this Object. The direction is relative to how the object is facing.
 
 ``` Lua
 --Example of moving forward 5 units
@@ -280,7 +280,7 @@ end
 
 ####getTransformRight()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Vector of the forward direction of this object. The direction is relative to how the object is facing.
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Vector of the forward direction of this object. The direction is relative to how the object is facing.
 
 ``` Lua
 --Example of moving right 5 units
@@ -302,7 +302,7 @@ end
 
 ####getTransformUp()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Vector of the up direction of this Object. The direction is relative to how the object is facing.
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Vector of the up direction of this Object. The direction is relative to how the object is facing.
 
 ``` Lua
 --Example of moving up 5 units
@@ -324,7 +324,7 @@ end
 
 ####positionToLocal(...)
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Vector after converting a world vector to a local Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Vector after converting a world vector to a local Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
 
 !!!tip "Object Scale"
 	This function takes the Object's scale into account, as the Object is the key relative point.
@@ -334,7 +334,7 @@ end
 
 ####positionToWorld(...)
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Vector after converting a local Vector to a world Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Vector after converting a local Vector to a world Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
 
 !!!tip "Object Scale"
 	This function takes the Object's scale into account, as the Object is the key relative point.
@@ -344,7 +344,7 @@ end
 
 ####rotate(Vector)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Rotates Object smoothly in the direction of the given Vector. This does not set the Object to face a specific rotation, it rotates the Object around by the number of degrees given for x/y/z.
+[<span class="ret boo"></span>](intro#types)&nbsp;Rotates Object smoothly in the direction of the given Vector. This does not set the Object to face a specific rotation, it rotates the Object around by the number of degrees given for x/y/z.
 
 ``` Lua
 --Rotates object 90 degrees around its Y axis
@@ -356,7 +356,7 @@ self.rotate({x=0, y=90, z=0})
 
 ####scale(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Scales Object by a multiple. This does not set the Object to a specific scale, it scales the Object by the given multiple.
+[<span class="ret boo"></span>](intro#types)&nbsp;Scales Object by a multiple. This does not set the Object to a specific scale, it scales the Object by the given multiple.
 
 !!!info "scale(scale)"
 	* [<span class="tag vec"></span>](intro#vector) **scale**: Multiplier for scale.
@@ -376,19 +376,19 @@ self.scale(2)
 
 ####setPositionSmooth(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Moves the Object smoothly to the given Vector.
+[<span class="ret boo"></span>](intro#types)&nbsp;Moves the Object smoothly to the given Vector.
 
 !!!info "setPositionSmooth(vector, collide, fast)"
 	* [<span class="tag tab"></span>](intro#types) **Vector**: A positional Vector.
 	* [<span class="tag boo"></span>](intro#types) **collide**: If the Object will collide with other Objects while moving.
 	* [<span class="tag boo"></span>](intro#types) **fast**: If the Object is moved quickly.
-	
+
 ---
 
 
 ####setRotationSmooth(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Rotates the Object smoothly to the given Vector.
+[<span class="ret boo"></span>](intro#types)&nbsp;Rotates the Object smoothly to the given Vector.
 
 !!!info "setRotationSmooth(vector, collide, fast)"
 	* [<span class="tag tab"></span>](intro#types) **Vector**: A rotational Vector.
@@ -402,7 +402,7 @@ self.scale(2)
 
 ####createButton(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Creates a scripted button attached to the Object. Scripted buttons are buttons that can be clicked while in-game that trigger a function in a script.
+[<span class="ret boo"></span>](intro#types)&nbsp;Creates a scripted button attached to the Object. Scripted buttons are buttons that can be clicked while in-game that trigger a function in a script.
 
 ???tip "Button Tips"
 	* Buttons can not be clicked from their back side.
@@ -438,10 +438,10 @@ self.scale(2)
 			* {>>Optional, defaults to {r=0, g=0, b=0}.<<}
 		* [<span class="tag str"></span>](intro#types) **parameters.tooltip**: Popup of text, similar to how an Object's name is displayed on mouseover.
 			* {>>Optional, defaults to an empty string.<<}
-			
+
 !!!info "click_function(obj, player_clicker_color)"
 	The click function which is activated by clicking this button has its own parameters it is passed automatically.
-	
+
 	* [<span class="tag obj"></span>](intro#types) **obj**: The Object the button is attached to.
 	* [<span class="tag str"></span>](intro#types) **player_clicker_color**: [Player Color](player-color) of the player that pressed the button.
 
@@ -477,7 +477,7 @@ end
 
 ####createInput(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Creates a scripted input attached to the Object. Scripted inputs are boxes you can click inside of in-game to input/edit text. Every letter typed triggers the function. The bool that is returned as part of the input_function allows you to determine when a player has finished editing the input.
+[<span class="ret boo"></span>](intro#types)&nbsp;Creates a scripted input attached to the Object. Scripted inputs are boxes you can click inside of in-game to input/edit text. Every letter typed triggers the function. The bool that is returned as part of the input_function allows you to determine when a player has finished editing the input.
 
 ???tip "Input Tips"
 	* Inputs can not be clicked from their back side.
@@ -538,12 +538,12 @@ end
 
 !!!info "input_function(obj, player_clicker_color, input_value, selected)"
 	*The click function which is activated by clicking this button has its own parameters it is passed automatically.*
-	
+
 	* [<span class="tag obj"></span>](intro#types) **obj**: The Object the input is attached to.
 	* [<span class="tag str"></span>](intro#types) **player_clicker_color**: [Player Color](player-color) of the player that has selected/edited the input.
 	* [<span class="tag str"></span>](intro#types) **input_value**: Text currently in the input.
 	* [<span class="tag boo"></span>](intro#types) **selected**: If the value box is still being edited or not.
-	
+
 ``` Lua
 function onLoad()
 	self.createInput({
@@ -565,14 +565,14 @@ function input_func(obj, color, input, stillEditing)
 		print("Finished editing.")
 	end
 end
-```	
+```
 
 ---
 
 
 ####editButton(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Modify an existing button. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited button's element to remain. Indexes start at 0. The first button on any given Object has an index of 0, the next button on it has an index of 1, etc. Each Object has its own indexes.
+[<span class="ret boo"></span>](intro#types)&nbsp;Modify an existing button. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited button's element to remain. Indexes start at 0. The first button on any given Object has an index of 0, the next button on it has an index of 1, etc. Each Object has its own indexes.
 
 !!!info "editButton(parameters)"
 	* [<span class="tag tab"></span>](intro#types) **parameters**: A Table containing the information used to spawn the button.
@@ -599,7 +599,7 @@ self.editButton({index=0, label="New Label"})
 
 ####editInput(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Modify an existing input. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited input's element to remain. Indexes start at 0. The first input on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.
+[<span class="ret boo"></span>](intro#types)&nbsp;Modify an existing input. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited input's element to remain. Indexes start at 0. The first input on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.
 
 !!!info "editInput(parameters)"
 	*All fields besides `index` are optional. If not used, the element will default to the element's current setting.*
@@ -616,7 +616,7 @@ self.editButton({index=0, label="New Label"})
 		* [<span class="tag flo"></span>](intro#types) **parameters.height**: How tall the input will be, relative to the Object.
 		* [<span class="tag flo"></span>](intro#types) **parameters.font_size**: Size the label/value font will be, relative to the Object.
 		* [<span class="tag col"></span>](intro#color) **parameters.color**: A Color for the input's background.
-		* [<span class="tag col"></span>](intro#color) **parameters.font_color**: A Color for the value text.
+		* [<span class="tag col"></span>](intro#color)&nbsp;**parameters.font_color**: A Color for the value text.
 		* [<span class="tag str"></span>](intro#types) **parameters.tooltip**: A popup of text, similar to how an Object's name is displayed on mouseover.
 		* [<span class="tag int"></span>](intro#types) **parameters.alignment**: How text is aligned in the input box.
 			* **1**: Automatic
@@ -636,7 +636,7 @@ self.editButton({index=0, label="New Label"})
 			* **1**: None
 			* **2**: Select Next Input
 			* **3**: Indent
-			
+
 ``` Lua
 self.editInput({index=0, value="New Value"})
 ```
@@ -646,7 +646,7 @@ self.editInput({index=0, value="New Value"})
 
 ####getButtons()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Table of all buttons on this Object. The Table contains parameters tables with the same keys as seen in the [createButton](#createbutton) section, except each Table of parameters also contains an __index__ entry. This is used to identify each button, used by [editButton](#editbutton) and [removeButton](#removebutton).
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table of all buttons on this Object. The Table contains parameters tables with the same keys as seen in the [createButton](#createbutton) section, except each Table of parameters also contains an __index__ entry. This is used to identify each button, used by [editButton](#editbutton) and [removeButton](#removebutton).
 
 Indexes start at 0.
 
@@ -655,7 +655,7 @@ Indexes start at 0.
 
 ####getInputs()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Table of all inputs on this Object. The Table contains parameters tables with the same keys as seen in the [createInput](#createinput) section, except each Table of parameters also contains an __index__ entry. This is used to identify each input, used by [editInput](#editinput) and [removeInput](#removeinput).
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table of all inputs on this Object. The Table contains parameters tables with the same keys as seen in the [createInput](#createinput) section, except each Table of parameters also contains an __index__ entry. This is used to identify each input, used by [editInput](#editinput) and [removeInput](#removeinput).
 
 Indexes start at 0.
 
@@ -664,7 +664,7 @@ Indexes start at 0.
 
 ####removeButton(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Removes a specific button. Indexes start at 0. The first button on any given Object has an index of 0, the next button on it has an index of 1, etc. Each Object has its own indexes.
+[<span class="ret boo"></span>](intro#types)&nbsp;Removes a specific button. Indexes start at 0. The first button on any given Object has an index of 0, the next button on it has an index of 1, etc. Each Object has its own indexes.
 
 Removing an index instantly causes all other higher indexes to shift down 1.
 
@@ -676,7 +676,7 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 
 ####removeInput(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Removes a specific input. Indexes start at 0. The first button on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.
+[<span class="ret boo"></span>](intro#types)&nbsp;Removes a specific input. Indexes start at 0. The first button on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.
 
 Removing an index instantly causes all other higher indexes to shift down 1.
 
@@ -691,7 +691,7 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 
 ####getCustomObject()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Table with the Custom Object information of a Custom Object. See the [Spawnable Objects](spawnableobject) page for the kind of information returned.
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table with the Custom Object information of a Custom Object. See the [Spawnable Objects](spawnableobject) page for the kind of information returned.
 
 ``` Lua
 --Example returned Table for a custom token
@@ -708,14 +708,14 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 
 ####getObjects()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Table of objects in the script zone/bag/deck. What it returns varies depending on the type of Object it is used on.
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table of objects in the script zone/bag/deck. What it returns varies depending on the type of Object it is used on.
 
 If an Object is inside of a container, it does not exist in-game. As a result, you only get data on each Object, not an Object reference.
 
 !!!info "Return Table by Object Type"
 	!!!info "Scripting Zone"
 		Returns a Table of Object references to every object in the scripting zone.
-		
+
 		``` Lua
 		{
 			object_1,
@@ -725,30 +725,30 @@ If an Object is inside of a container, it does not exist in-game. As a result, y
 
 	!!!info "Bag"
 		Returns a Table of sub-Tables, each sub-Table containing data on 1 bagged item. Indexes start at 0.
-		
+
 		* [<span class="tag str"></span>](intro#types) **name**: Name of the Object.
 		* [<span class="tag str"></span>](intro#types) **guid**: GUID of the Object.
 		* [<span class="tag int"></span>](intro#types) **index**: Index of the Object, represents the Object's place in the bag.
-		
+
 		``` Lua
 		{
 			{
 				name  = "Object Name",
 				guid  = "AAA111",
-				index = 0,	
+				index = 0,
 			},
 		}
 		```
 
 	!!!info "Deck"
 		Returns a Table of sub-Tables, each sub-Table containing data on 1 card. Indexes start at 0.
-		
+
 		* [<span class="tag str"></span>](intro#types) **nickname**: Name of the card.
 		* [<span class="tag str"></span>](intro#types) **description**: Description of the card.
 		* [<span class="tag str"></span>](intro#types) **guid**: GUID of the card.
 		* [<span class="tag int"></span>](intro#types) **index**: Index of the card, represents the card's order in the deck.
 		* [<span class="tag str"></span>](intro#types) **lua_script**: Any Lua scripting saved on the card.
-		
+
 		``` Lua
 		{
 			{
@@ -762,21 +762,21 @@ If an Object is inside of a container, it does not exist in-game. As a result, y
 		```
 
 This function is often used with [takeObject(...)](#takeobject) to remove objects from containers.
-	
+
 ---
 
 
 ####getRotationValues()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice) based on which side is pointed "up". It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice) based on which side is pointed "up". It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.
 
 You can manually assign rotation values to objects using the Rotation Value Gizmo tool (in the left side Gizmo menu) or using [setRotationValues(...)](setrotationvalues).
 
 !!!info "Return Table"
 	The returned Table contains sub-Tables, each sub-Table containing these 2 key/value pairs.
-	
+
 	* [<span class="tag var"></span>](intro#types) **value**: What value is associated with a given rotation. Often a String or Int.
-	* [<span class="tag vec"></span>](intro#vector) **rotation**: Rotation of the Object that best represents the given value pointing up.
+	* [<span class="tag vec"></span>](intro#vector)&nbsp;**rotation**: Rotation of the Object that best represents the given value pointing up.
 
 ``` Lua
 --Example returned Table for a coin
@@ -791,13 +791,13 @@ You can manually assign rotation values to objects using the Rotation Value Gizm
 
 ####getStates()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Table of information on the [states](http://berserk-games.com/knowledgebase/creating-states/) of an Object. Stated Objects have ids (indexes) starting with 1.
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table of information on the [states](http://berserk-games.com/knowledgebase/creating-states/) of an Object. Stated Objects have ids (indexes) starting with 1.
 
 !!!info "Return Table"
-	* [<span class="tag str"></span>](intro#types) **name**: Name of the Object.
-	* [<span class="tag str"></span>](intro#types) **guid**: GUID of the Object.
-	* [<span class="tag int"></span>](intro#types) **id**: ID (index) of the state.
-	
+	* [<span class="tag str"></span>](intro#types)&nbsp;**name**: Name of the Object.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**guid**: GUID of the Object.
+	* [<span class="tag int"></span>](intro#types)&nbsp;**id**: ID (index) of the state.
+
 ``` Lua
 --Example returned Table
 {
@@ -819,7 +819,7 @@ You can manually assign rotation values to objects using the Rotation Value Gizm
 
 ####getValue()
 
-[<span class="ret int"></span>](intro#types)&nbsp; Gets a value. What the value represents depends on what type of Object this function is used on.
+[<span class="ret int"></span>](intro#types)&nbsp;Gets a value. What the value represents depends on what type of Object this function is used on.
 
 Object | Value
 -- | --
@@ -837,11 +837,11 @@ Tablet | Returns String of the current URL.
 
 ####setCustomObject(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Sets a custom Object's properties. It can be used after [spawnObject](base#spawnobject) or on an already existing custom Object. If used on an already existing custom Object, you must use [reload](#reload) on the object after setCustomObject for the changes to be displayed.
+[<span class="ret boo"></span>](intro#types)&nbsp;Sets a custom Object's properties. It can be used after [spawnObject](base#spawnobject) or on an already existing custom Object. If used on an already existing custom Object, you must use [reload](#reload) on the object after setCustomObject for the changes to be displayed.
 
 !!!info "setCustomObject(parameters)"
 	The Table of parameters varies, depending on which type of custom Object it is. See the [Spawnable Object](spawnableobject) page for the parameters needed.
-	
+
 ``` Lua
 --Example of a custom token
 params = {
@@ -858,12 +858,12 @@ obj.setCustomObject(params)
 
 ####setRotationValues(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.
+[<span class="ret boo"></span>](intro#types)&nbsp;Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.
 
 !!!info "setRotationValues(rotation_values)"
-	* [<span class="tag tab"></span>](intro#types) **rotation_values**: A Table containing Tables with the following values. 1 sub-Table per "face".
-		* [<span class="tag var"></span>](intro#types) **rotation_values.value**: What value is associated with a given rotation. Often a String or Int.
-		* [<span class="tag vec"></span>](intro#vector) **rotation_values.rotation**: The rotation Vector of the Object that best represents the given value pointing up.
+	* [<span class="tag tab"></span>](intro#types)&nbsp;**rotation_values**: A Table containing Tables with the following values. 1 sub-Table per "face".
+		* [<span class="tag var"></span>](intro#types)&nbsp;**rotation_values.value**: What value is associated with a given rotation. Often a String or Int.
+		* [<span class="tag vec"></span>](intro#vector)&nbsp;**rotation_values.rotation**: The rotation Vector of the Object that best represents the given value pointing up.
 
 ``` Lua
 --Example setting of rotation values for a coin
@@ -879,7 +879,7 @@ self.setRotationValues(rotation_values)
 
 ####setValue(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Sets a value on an Object. What the value represents depends on what type of Object it is.
+[<span class="ret boo"></span>](intro#types)&nbsp;Sets a value on an Object. What the value represents depends on what type of Object it is.
 
 Object | Value
 -- | --
@@ -896,7 +896,7 @@ Tablet | Set String for the current URL.
 
 ####call(...)
 
-[<span class="ret var"></span>](intro#types)&nbsp; Used to call a Lua function on this Object. This is used to remotely call functions in other scripts, either in Global or Object scripts. `Global` is the "Object" to use to call a function in the Global script.
+[<span class="ret var"></span>](intro#types)&nbsp;Used to call a Lua function on this Object. This is used to remotely call functions in other scripts, either in Global or Object scripts. `Global` is the "Object" to use to call a function in the Global script.
 
 *Var is only returned if the function called has a `return`. Otherwise return is `nil`. See example.*
 
@@ -927,7 +927,7 @@ end
 
 ####clone(...)
 
-[<span class="ret obj"></span>](intro#types)&nbsp; Copy/Paste this Object.
+[<span class="ret obj"></span>](intro#types)&nbsp;Copy/Paste this Object.
 
 !!!info "clone(parameters)"
 	* [<span class="tag tab"></span>](intro#types) **parameters**: A Table with information used when pasting.
@@ -941,7 +941,7 @@ end
 
 ####deal(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Deals Objects to hand zones. Will deal from decks/bags/stacks as well as individual items. If dealing an individual item to a hand zone, it is a good idea to make sure that its [Member Variable](#member-variables) for `use_hands` is `true`.
+[<span class="ret boo"></span>](intro#types)&nbsp;Deals Objects to hand zones. Will deal from decks/bags/stacks as well as individual items. If dealing an individual item to a hand zone, it is a good idea to make sure that its [Member Variable](#member-variables) for `use_hands` is `true`.
 
 !!!info "deal(number, player_color, index)"
 	* [<span class="tag int"></span>](intro#types) **number**: How many to deal.
@@ -955,7 +955,7 @@ end
 
 ####dealToColorWithOffset(...)
 
-[<span class="ret obj"></span>](intro#types)&nbsp; Deals from a deck to a position relative to the hand zone.
+[<span class="ret obj"></span>](intro#types)&nbsp;Deals from a deck to a position relative to the hand zone.
 
 !!!info "dealToColorWithOffset(offset, flip, player_color)"
 	* [<span class="tag vec"></span>](intro#vector) **offset**: The x/y/z offset to deal to around the given hand zone.
@@ -971,7 +971,7 @@ self.dealToColorWithOffset({ 2,0,5}, true, "White")
 
 ####putObject(...)
 
-[<span class="ret obj"></span>](intro#types)&nbsp; Places an object into a container (chip stacks/bags/decks).
+[<span class="ret obj"></span>](intro#types)&nbsp;Places an object into a container (chip stacks/bags/decks).
 
 !!!info "putObject(put_object)"
 	* [<span class="tag obj"></span>](intro#types) **put_object**: An Object to place into the container.
@@ -987,7 +987,7 @@ self.putObject(obj)
 
 ####reload()
 
-[<span class="ret obj"></span>](intro#types)&nbsp; Returns Object reference of itself after it respawns itself. This function causes the Object to be deleted and respawned instantly to refresh it, so its old Object reference will no longer be valid.
+[<span class="ret obj"></span>](intro#types)&nbsp;Returns Object reference of itself after it respawns itself. This function causes the Object to be deleted and respawned instantly to refresh it, so its old Object reference will no longer be valid.
 
 Most often this is used after using [setCustomObject(...)](#setcustomobject) to modify a custom object.
 
@@ -996,11 +996,11 @@ Most often this is used after using [setCustomObject(...)](#setcustomobject) to 
 
 ####takeObject(...)
 
-[<span class="ret obj"></span>](intro#types)&nbsp; Takes an object from a container (bag/deck/chip stack) and places it in the world.
+[<span class="ret obj"></span>](intro#types)&nbsp;Takes an object from a container (bag/deck/chip stack) and places it in the world.
 
 !!!tip
 	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. It is also possible to add a delay using a [coroutine](#startluacoroutine).
-	
+
 !!!info "takeObject(parameters)"
 	* [<span class="tag tab"></span>](intro#types) **parameters**: A Table of parameters used to determine how takeObject will act.
 		* [<span class="tag vec"></span>](intro#vector) **parameters.position**: A Vector of the position to place Object.
@@ -1016,7 +1016,7 @@ Most often this is used after using [setCustomObject(...)](#setcustomobject) to 
 			* {>>Optional,  no default. Only use index or guid, never both.<<}
 		* [<span class="tag boo"></span>](intro#types) **parameters.top**: If an object is taken from the top (vs bottom).
 			* {>>Optional, defaults to true.<<}
-		* [<span class="tag boo"></span>](intro#types) **parameters.smooth**: If the taken Object moves smoothly or instantly. 
+		* [<span class="tag boo"></span>](intro#types) **parameters.smooth**: If the taken Object moves smoothly or instantly.
 			* {>>Optional, defaults to true.<<}
 		* [<span class="tag str"></span>](intro#types) **parameters.callback**: Function name you want activated once the Object is initiated.
 			* {>>Optional, no default.<<}
@@ -1042,19 +1042,10 @@ function take_callback(object_spawned, params)
     object_spawned.setName(params.name)
 end
 ```
-	
+
 
 ???tip "Tip for using GUID to pull Object"
 	When getting the GUIDs of objects in a container, it is possible items can have the same GUID while in a container. This is because only once two items try to exist at the same time is one of them given a new GUID, and Objects in a container do not currently exist. Removing all Objects from the container at once will force all of them to be given unique GUIDs.
 
 ???tip "Tip for using index to pull Object"
 	When you take an Object from the container, all higher indexes are reduced by 1 instantly. If you pull more than once Object at once by their index, you must account for this index changing.
-
-
-
-
-
-
-
-
-	

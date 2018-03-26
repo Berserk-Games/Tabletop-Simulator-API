@@ -28,29 +28,29 @@ team | The team of the player.<br>Options: `"None", "Clubs", "Diamonds", "Hearts
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-attachCameraToObject([<span class="tag tab"></span>](intro#types) parameters) | Makes a Player's camera follow an Object. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#attachcameratoobject)
-broadcast([<span class="tag str"></span>](intro#types) message, [<span class="tag str"></span>](intro#types) Color) | Print message on Player's screen and their game chat log. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#broadcast)
-changeColor([<span class="tag str"></span>](intro#types) player_color) | Changes player to this [Player Color](player-color). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#changecolor)
+attachCameraToObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Makes a Player's camera follow an Object. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#attachcameratoobject)
+broadcast([<span class="tag str"></span>](intro#types)&nbsp;message, [<span class="tag str"></span>](intro#types)&nbsp;Color) | Print message on Player's screen and their game chat log. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#broadcast)
+changeColor([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Changes player to this [Player Color](player-color). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#changecolor)
 getHandCount() | Returns the number of [hand zones](http://berserk-games.com/knowledgebase/hands/) owned by this color. | [<span class="ret int"></span>](intro#types)
-getHandObjects([<span class="tag int"></span>](intro#types) hand_index) | Returns a Table of Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#gethandobjects)
-getHandTransform([<span class="tag int"></span>](intro#types) hand_index) | Returns a Table of data on this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#gethandtransform)
+getHandObjects([<span class="tag int"></span>](intro#types)&nbsp;hand_index) | Returns a Table of Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#gethandobjects)
+getHandTransform([<span class="tag int"></span>](intro#types)&nbsp;hand_index) | Returns a Table of data on this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#gethandtransform)
 getHoldingObjects() | Returns Table of Objects a Player is holding in their hand. | [<span class="ret tab"></span>](intro#types)
 getHoverObject() | Object that the Player's pointer is hovering over. | [<span class="ret obj"></span>](intro#types)
 getPointerPosition() | Returns the Vector of the Player's pointer coordinates. | [<span class="ret vec"></span>](intro#vector)
 getSelectedObjects() | Returns Table of Objects that the Player has selected with an area selection. | [<span class="ret tab"></span>](intro#types)
 kick() | Kicks Player out of the room. | [<span class="ret boo"></span>](intro#types)
-lookAt([<span class="tag tab"></span>](intro#types) parameters) | Moves a Player's camera, forcing 3'rd person camera mode. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#lookat)
+lookAt([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Moves a Player's camera, forcing 3'rd person camera mode. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#lookat)
 mute() | Mutes or unmutes Player, preventing/allowing voice chat. | [<span class="ret boo"></span>](intro#types)
-print([<span class="tag str"></span>](intro#types) message, [<span class="tag col"></span>](intro#color) message_color) | Prints a message into the Player's game chat. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#print)
+print([<span class="tag str"></span>](intro#types)&nbsp;message, [<span class="tag col"></span>](intro#color)&nbsp;message_color) | Prints a message into the Player's game chat. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#print)
 promote() | Promotes/demotes a Player. Promoted players have access to most host privileges. | [<span class="ret boo"></span>](intro#types) |
-setHandTransform([<span class="tag tab"></span>](intro#types) parameters, [<span class="tag int"></span>](intro#types) hand_index) | Sets transform elements of a hand zone. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#sethandtransform)
+setHandTransform([<span class="tag tab"></span>](intro#types)&nbsp;parameters, [<span class="tag int"></span>](intro#types)&nbsp;hand_index) | Sets transform elements of a hand zone. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#sethandtransform)
 
 
 
 ###Direct Class Functions
 These functions return direct references to Players, not a Player Color. See details section for usage.
 
-Function Name | Description | Return | &nbsp; 
+Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
 getPlayers() | Returns Table of all Players in the instance. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getplayers)
 getSpectators() | Returns Table of all Players in spectator (Grey). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getspectators)
@@ -64,7 +64,7 @@ getSpectators() | Returns Table of all Players in spectator (Grey). | [<span cla
 
 ####attachCameraToObject(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Makes a Player's camera follow an Object.
+[<span class="ret boo"></span>](intro#types)&nbsp;Makes a Player's camera follow an Object.
 
 !!!info "attachCameraToObject(parameters)"
     * [<span class="tag tab"></span>](intro#types) **parameters**: A Table with parameters which guide the function.
@@ -81,7 +81,7 @@ self.attachCameraToObject({object=self})
 
 ####broadcast(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Print message on Player's screen and their game chat log.
+[<span class="ret boo"></span>](intro#types)&nbsp;Print message on Player's screen and their game chat log.
 
 !!!info "broadcast(message, message_color)"
     * [<span class="tag str"></span>](intro#types) **message**: The message to be displayed.
@@ -93,7 +93,7 @@ self.attachCameraToObject({object=self})
 
 ####changeColor(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Changes player to this [Player Color](player-color) (seat).
+[<span class="ret boo"></span>](intro#types)&nbsp;Changes player to this [Player Color](player-color) (seat).
 
 !!!info "changeColor(player_color)"
     * [<span class="tag str"></span>](intro#types) **player_color**: The [Player Color](player-color) seat to move the Player to.
@@ -107,7 +107,7 @@ Player["White"].changeColor("Red")
 
 ####getHandObjects(...)
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Table of Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/).
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table of Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/).
 
 !!!info "getHandObjects(hand_index)"
     * [<span class="tag int"></span>](intro#types) **hand_index**: An index, representing which hand zone to return Objects for.
@@ -121,7 +121,7 @@ Player["White"].changeColor("Red")
 
 ####getHandTransform(...)
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Table of data on this [hand zone](http://berserk-games.com/knowledgebase/hands/).
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table of data on this [hand zone](http://berserk-games.com/knowledgebase/hands/).
 
 !!!info "getHandTransform(hand_index)"
     * [<span class="tag int"></span>](intro#types) **hand_index**: An index, representing which hand zone to return data on.
@@ -144,7 +144,7 @@ Player["White"].changeColor("Red")
 
 ####lookAt(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Moves a Player's camera, forcing 3'rd person camera mode.
+[<span class="ret boo"></span>](intro#types)&nbsp;Moves a Player's camera, forcing 3'rd person camera mode.
 
 !!!info "lookAt(parameters)"
     * [<span class="tag tab"></span>](intro#types) **parameters**: A Table of controlling parameters to point the player camera.
@@ -171,7 +171,7 @@ Player["White"].lookAt({
 
 ####print(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Prints a message into the Player's game chat.
+[<span class="ret boo"></span>](intro#types)&nbsp;Prints a message into the Player's game chat.
 
 !!!info "print(message, message_color)"
     * [<span class="tag str"></span>](intro#types) **message**: The text to be displayed.
@@ -183,7 +183,7 @@ Player["White"].lookAt({
 
 ####setHandTransform(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Sets transform elements of a [hand zone](http://berserk-games.com/knowledgebase/hands/).
+[<span class="ret boo"></span>](intro#types)&nbsp;Sets transform elements of a [hand zone](http://berserk-games.com/knowledgebase/hands/).
 
 !!!info "setHandTransform(parameters, hand_index)"
     * [<span class="tag tab"></span>](intro#types) **parameters**: The Table the data to transform the hand zone with.
@@ -216,7 +216,7 @@ Player["White"].setHandTransform(params, 2)
 
 ####getPlayers()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns Table of all Players in the instance.
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns Table of all Players in the instance.
 
 ``` Lua
 --Blindfolding all players
@@ -231,7 +231,7 @@ end
 
 ####getSpectators()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns Table of all Players in spectator (Grey).
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns Table of all Players in spectator (Grey).
 
 ``` Lua
 --Printing steam name of all players to host chat

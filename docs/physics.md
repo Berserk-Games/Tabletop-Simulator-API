@@ -8,9 +8,9 @@ For more information on physics casts in Unity, [refer to the Unity documentatio
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-cast([<span class="tag tab"></span>](intro#types) parameters) | Returns Table containing information on hit Objects. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#cast)
+cast([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Returns Table containing information on hit Objects. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#cast)
 getGravity() | Returns directional Vector of the direction gravity is pulling. | [<span class="ret vec"></span>](intro#vector) | 
-setGravity([<span class="tag vec"></span>](intro#vector) direction) | Sets the direction gravity gravity pulls. | [<span class="ret boo"></span>](intro#types) 
+setGravity([<span class="tag vec"></span>](intro#vector)&nbsp;direction) | Sets the direction gravity gravity pulls. | [<span class="ret boo"></span>](intro#types) 
 
 
 
@@ -24,7 +24,7 @@ setGravity([<span class="tag vec"></span>](intro#vector) direction) | Sets the d
 
 ###cast(...)
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns Table containing information on hit Objects. There are three kinds of casts:
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns Table containing information on hit Objects. There are three kinds of casts:
 
 Type | Description
 --- | ---

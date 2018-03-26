@@ -24,10 +24,10 @@ getAmbientEquatorColor() | Returns Color Table of the gradient equator. Not used
 getAmbientGroundColor() | Returns Color Table of the gradient ground. Not used if `ambient_type = 1`. | [<span class="ret col"></span>](intro#color)
 getAmbientSkyColor() | Returns Color Table of the gradient sky. Not used if `ambient_type = 1`. | [<span class="ret col"></span>](intro#color)
 getLightColor() | Returns Color Table of the directional light, which shines straight down on the table. | [<span class="ret col"></span>](intro#color)
-setAmbientEquatorColor([<span class="tag col"></span>](intro#color) tint) | Sets the color of the gradient equator. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](intro#types)
-setAmbientGroundColor([<span class="tag col"></span>](intro#color) tint) | Sets the color of the gradient ground. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](intro#types)
-setAmbientSkyColor([<span class="tag col"></span>](intro#color) tint) | Sets the color of the gradient sky. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](intro#types)
-setLightColor([<span class="tag col"></span>](intro#color) tint) | Sets the color of the directional light, which shines straight down on the table. | [<span class="ret boo"></span>](intro#types)
+setAmbientEquatorColor([<span class="tag col"></span>](intro#color)&nbsp;tint) | Sets the color of the gradient equator. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](intro#types)
+setAmbientGroundColor([<span class="tag col"></span>](intro#color)&nbsp;tint) | Sets the color of the gradient ground. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](intro#types)
+setAmbientSkyColor([<span class="tag col"></span>](intro#color)&nbsp;tint) | Sets the color of the gradient sky. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](intro#types)
+setLightColor([<span class="tag col"></span>](intro#color)&nbsp;tint) | Sets the color of the directional light, which shines straight down on the table. | [<span class="ret boo"></span>](intro#types)
 
 
 ---

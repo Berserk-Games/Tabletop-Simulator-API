@@ -13,6 +13,7 @@
     word-break: normal;
 
     width: 50px;
+    min_width: 50px;
     line-height: 1;
 }
 .tag:hover {
@@ -73,7 +74,7 @@
     content: "table";
 }
 
-/*Intiger*/
+/*Integer*/
 .int {
     color: #000000;
     background-color: #D48E87;

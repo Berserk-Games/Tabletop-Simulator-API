@@ -9,32 +9,32 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 clearPixelPaint() | Remove pixel paint from the instance. | [<span class="ret boo"></span>](intro#types) | 
 clearVectorPaint() | Remove vector paint from the instance. | [<span class="ret boo"></span>](intro#types) | 
-copy([<span class="tag tab"></span>](intro#types) object_list) | Copy a list of Objects to the clipboard. Works with [paste(...)](#paste). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#copy)
-destroyObject([<span class="tag obj"></span>](intro#types) obj) | Destory an Object. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#destroyobject)
+copy([<span class="tag tab"></span>](intro#types)&nbsp;object_list) | Copy a list of Objects to the clipboard. Works with [paste(...)](#paste). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#copy)
+destroyObject([<span class="tag obj"></span>](intro#types)&nbsp;obj) | Destory an Object. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#destroyobject)
 flipTable() | Flip the table. | [<span class="ret boo"></span>](intro#types) | 
 getAllObjects() | Returns Table of all spawned [Objects](object) in the game. | [<span class="ret tab"></span>](intro#types) | 
 getNotes() | Returns the contents of the on-screen notes section. | [<span class="ret str"></span>](intro#types) | 
-getObjectFromGUID([<span class="tag str"></span>](intro#types) guid) | Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#getobjectfromguid)
+getObjectFromGUID([<span class="tag str"></span>](intro#types)&nbsp;guid) | Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#getobjectfromguid)
 getSeatedPlayers() | Returns Table of the [Player Colors](player-color) strings of seated players. | [<span class="ret tab"></span>](intro#types) | 
-paste([<span class="tag tab"></span>](intro#types) parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#paste)
-setNotes([<span class="tag str"></span>](intro#types) notes) | Replace the text in the notes window with the string. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setnotes)
-spawnObject([<span class="tag tab"></span>](intro#types) parameters) | Spawns an Object. View the [Spawnable Object](spawnableobjects) page for Objects that can be spawned. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#spawnobject)
-startLuaCoroutine([<span class="tag obj"></span>](intro#types) function_owner, [<span class="tag str"></span>](intro#types) function_name) | Start a coroutine. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#startluacoroutine)
-stringColorToRGB([<span class="tag str"></span>](intro#types) player_color) | Converts a [Player Color](player-color) string into a Color Table for tinting. | [<span class="ret col"></span>](intro#color) | [<span class="i"></span>](#stringcolortorgb)
+paste([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#paste)
+setNotes([<span class="tag str"></span>](intro#types)&nbsp;notes) | Replace the text in the notes window with the string. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setnotes)
+spawnObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Spawns an Object. View the [Spawnable Object](spawnableobjects) page for Objects that can be spawned. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#spawnobject)
+startLuaCoroutine([<span class="tag obj"></span>](intro#types)&nbsp;function_owner, [<span class="tag str"></span>](intro#types)&nbsp;function_name) | Start a coroutine. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#startluacoroutine)
+stringColorToRGB([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Converts a [Player Color](player-color) string into a Color Table for tinting. | [<span class="ret col"></span>](intro#color) | [<span class="i"></span>](#stringcolortorgb)
 
 ###Message Functions
 Functions which handle sending and displaying data.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-broadcastToAll([<span class="tag str"></span>](intro#types) message, [<span class="tag col"></span>](intro#color) message_tint) | Print an on-screen message to all Players, as well as their in-game chat. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#broadcasttoall)
-broadcastToColor([<span class="tag str"></span>](intro#types) message, [<span class="tag str"></span>](intro#types) player_color, [<span class="tag col"></span>](intro#color) message_tint) | Print an on-screen message to a specified Player, as well as their in-game chat. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#broadcasttocolor)
-log([<span class="tag var"></span>](intro#types) element, [<span class="tag str"></span>](intro#types) tag, [<span class="tag str"></span>](intro#types) label) | Print information to the log tab. (Shortcut: ~) | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#log)
-logStyle([<span class="tag str"></span>](intro#types) tag, [<span class="tag col"></span>](intro#color) tint, [<span class="tag str"></span>](intro#types) prefix, [<span class="tag str"></span>](intro#types) postfix) | Set style options for the specified tag type for the log. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#logstyle)
-print([<span class="tag str"></span>](intro#types) message) | Prints a string into chat that only the host is able to see. Used for debugging scripts. | [<span class="ret nil"></span>](intro#types) | [<span class="i"></span>](#print)
-printToAll([<span class="tag str"></span>](intro#types) message, [<span class="tag col"></span>](intro#color) message_tint) | Print a message into the chat of all connected players. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#printtoall)
-printToColor([<span class="tag str"></span>](intro#types) message, [<span class="tag str"></span>](intro#types) player_color, [<span class="tag col"></span>](intro#color) message_tint) | Print a message to a specific [Player Color](player-color). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#printtocolor)
-sendExternalMessage([<span class="tag tab"></span>](intro#types) data) | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](intro#types) | 
+broadcastToAll([<span class="tag str"></span>](intro#types)&nbsp;message, [<span class="tag col"></span>](intro#color)&nbsp;message_tint) | Print an on-screen message to all Players, as well as their in-game chat. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#broadcasttoall)
+broadcastToColor([<span class="tag str"></span>](intro#types)&nbsp;message, [<span class="tag str"></span>](intro#types)&nbsp;player_color, [<span class="tag col"></span>](intro#color)&nbsp;message_tint) | Print an on-screen message to a specified Player, as well as their in-game chat. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#broadcasttocolor)
+log([<span class="tag var"></span>](intro#types)&nbsp;element, [<span class="tag str"></span>](intro#types)&nbsp;tag, [<span class="tag str"></span>](intro#types)&nbsp;label) | Print information to the log tab. (Shortcut: ~) | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#log)
+logStyle([<span class="tag str"></span>](intro#types)&nbsp;tag, [<span class="tag col"></span>](intro#color)&nbsp;tint, [<span class="tag str"></span>](intro#types)&nbsp;prefix, [<span class="tag str"></span>](intro#types)&nbsp;postfix) | Set style options for the specified tag type for the log. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#logstyle)
+print([<span class="tag str"></span>](intro#types)&nbsp;message) | Prints a string into chat that only the host is able to see. Used for debugging scripts. | [<span class="ret nil"></span>](intro#types) | [<span class="i"></span>](#print)
+printToAll([<span class="tag str"></span>](intro#types)&nbsp;message, [<span class="tag col"></span>](intro#color)&nbsp;message_tint) | Print a message into the chat of all connected players. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#printtoall)
+printToColor([<span class="tag str"></span>](intro#types)&nbsp;message, [<span class="tag str"></span>](intro#types)&nbsp;player_color, [<span class="tag col"></span>](intro#color)&nbsp;message_tint) | Print a message to a specific [Player Color](player-color). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#printtocolor)
+sendExternalMessage([<span class="tag tab"></span>](intro#types)&nbsp;data) | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](intro#types) | 
 
 
 ###Notebook Functions
@@ -42,10 +42,10 @@ Functions that interact with the in-game notebook tabs.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-addNotebookTab([<span class="tag tab"></span>](intro#types) parameters) | Adds a notebook tab, returning its index. | [<span class="ret int"></span>](intro#types) | [<span class="i"></span>](#addnotebooktab)
-editNotebookTab([<span class="tag tab"></span>](intro#types) parameters) | Edit an existing Tab in the notebook. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#editnotebooktab)
+addNotebookTab([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Adds a notebook tab, returning its index. | [<span class="ret int"></span>](intro#types) | [<span class="i"></span>](#addnotebooktab)
+editNotebookTab([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Edit an existing Tab in the notebook. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#editnotebooktab)
 getNotebookTabs() | Returns Table containing data on all tabs in the notebook. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getnotebooktabs)
-removeNotebookTab([<span class="tag int"></span>](intro#types) index) | Remove a notebook tab. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#removenotebooktab)
+removeNotebookTab([<span class="tag int"></span>](intro#types)&nbsp;index) | Remove a notebook tab. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#removenotebooktab)
 
 
 
@@ -57,7 +57,7 @@ removeNotebookTab([<span class="tag int"></span>](intro#types) index) | Remove a
 
 ####copy(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Copying a list of Objects the clipboard. Works with [paste(...)](#paste).
+[<span class="ret boo"></span>](intro#types)&nbsp;Copying a list of Objects the clipboard. Works with [paste(...)](#paste).
 
 !!!info "copy(object_list)"
 	* [<span class="tag tab"></span>](intro#types) **object_list**: A Table of in-game objects to be copied.
@@ -76,7 +76,7 @@ copy(object_list)
 
 ####destroyObject(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Destroy an Object.
+[<span class="ret boo"></span>](intro#types)&nbsp;Destroy an Object.
 
 !!!info "destroyObject(obj)"
 	* [<span class="tag obj"></span>](intro#types) **obj**: The Object you wish to delete from the instance.
@@ -86,7 +86,7 @@ copy(object_list)
 
 ####getObjectFromGUID(...)
 
-[<span class="ret obj"></span>](intro#types)&nbsp; Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist.
+[<span class="ret obj"></span>](intro#types)&nbsp;Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist.
 
 !!!info "getObjectFromGUID(guid)"
 	* [<span class="tag str"></span>](intro#types) **guid**: GUID of the Object to get a reference of.
@@ -99,7 +99,7 @@ copy(object_list)
 
 ####paste(...)
 
-[<span class="ret obj"></span>](intro#types)&nbsp; Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy).
+[<span class="ret obj"></span>](intro#types)&nbsp;Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy).
 
 !!!info "paste(parameters)"
 	* [<span class="tag tab"></span>](intro#types) **parameters**: A Table containing instructions of where to spawn the Objects.
@@ -113,7 +113,7 @@ copy(object_list)
 
 ####setNotes(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Replace the text in the notes window with the string. The notes is an area which displays text in the lower-left corner of the screen.
+[<span class="ret boo"></span>](intro#types)&nbsp;Replace the text in the notes window with the string. The notes is an area which displays text in the lower-left corner of the screen.
 
 !!!info "setNotes(notes)"
 	* [<span class="tag str"></span>](intro#types) **notes**: What to place into the notes area.
@@ -127,7 +127,7 @@ setNotes("This appears in the notes section")
 
 ####spawnObject(...)
 
-[<span class="ret obj"></span>](intro#types)&nbsp; Spawn an Object. View the [Spawnable Object](spawnableobject) page for Objects that can be spawned.
+[<span class="ret obj"></span>](intro#types)&nbsp;Spawn an Object. View the [Spawnable Object](spawnableobject) page for Objects that can be spawned.
 
 If you are spawning a **custom Object**, you should call [setCustomObject](object#setcustomobject) immediately after spawnObject to set its custom properties.
 
@@ -183,7 +183,7 @@ end
 
 ####startLuaCoroutine(...)
 
-[<span class="ret obj"></span>](intro#types)&nbsp; Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the next frame of the game using `coroutine.yield(0)`.
+[<span class="ret obj"></span>](intro#types)&nbsp;Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the next frame of the game using `coroutine.yield(0)`.
 
 !!!Attention
 	You MUST return a 1 at the end of any coroutine or it will throw an error.
@@ -217,7 +217,7 @@ end
 
 ####stringColorToRGB(...)
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Converts a [Player Color](player-color) string into a Color Table for tinting.
+[<span class="ret tab"></span>](intro#types)&nbsp;Converts a [Player Color](player-color) string into a Color Table for tinting.
 
 !!!info "stringColorToRGB(player_color)"
 	* [<span class="tag str"></span>](intro#types) **player_color** A String of a [Player Color](player-color).
@@ -233,7 +233,7 @@ printToAll("Blue message", stringColorToRGB("Blue"))
 
 ####broadcastToAll(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Print an on-screen message to all Players.
+[<span class="ret boo"></span>](intro#types)&nbsp;Print an on-screen message to all Players.
 
 !!!info "broadcastToAll(message, message_tint)"
 	* [<span class="tag str"></span>](intro#types) **message**: Message to display on-screen.
@@ -250,7 +250,7 @@ broadcastToAll(msg, rgb)
 
 ####broadcastToColor(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Print an on-screen message to a specified Player and their in-game chat.
+[<span class="ret boo"></span>](intro#types)&nbsp;Print an on-screen message to a specified Player and their in-game chat.
 
 !!!info "broadcastToColor(message, [player_color](player), message_tint)"
 	* [<span class="tag str"></span>](intro#types) **message**: Message to display on-screen.
@@ -269,7 +269,7 @@ broadcastToColor(msg, color, rgb)
 
 ####log(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Print information to the log. The log is a separate chat window which is visible to all players in the instance.
+[<span class="ret boo"></span>](intro#types)&nbsp;Print information to the log. The log is a separate chat window which is visible to all players in the instance.
 
 If a table is used for "element", the log will automatically display the key/value contents of it.
 
@@ -289,7 +289,7 @@ log(getAllObjects(), "table", "All Objects:")
 
 ####logStyle(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Set style options for the specified tag type for the log. This can also be set in the system console with the "log_style_tag" command.
+[<span class="ret boo"></span>](intro#types)&nbsp;Set style options for the specified tag type for the log. This can also be set in the system console with the "log_style_tag" command.
 
 !!!info "logStyle(tag, tint, prefix, postfix)"
 	* [<span class="tag str"></span>](intro#types) **tag**: A String of the log's tag.
@@ -312,7 +312,7 @@ end
 
 ####print(...)
 
-[<span class="ret nil"></span>](intro#types)&nbsp; Print a string into chat that only the host is able to see. Used for debugging scripts.
+[<span class="ret nil"></span>](intro#types)&nbsp;Print a string into chat that only the host is able to see. Used for debugging scripts.
 
 !!!info "print(message)"
 	* [<span class="tag tab"></span>](intro#types) **message**: Text to print into the chat log.
@@ -323,7 +323,7 @@ end
 
 ####printToAll(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Print a message into the in-game chat of all connected players.
+[<span class="ret boo"></span>](intro#types)&nbsp;Print a message into the in-game chat of all connected players.
 
 !!!info "printToAll(message, message_tint)"
 	* [<span class="tag tab"></span>](intro#types) **message**: Message to place into players' in-game chats.
@@ -338,7 +338,7 @@ printToAll("Hello World!", {r=1,g=0,b=0})
 
 ####printToColor(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Print a message to the in-game chat of a specific player.
+[<span class="ret boo"></span>](intro#types)&nbsp;Print a message to the in-game chat of a specific player.
 
 !!!info "printToColor(message, [player_color](player-color), message_tint)"
 	* [<span class="tag str"></span>](intro#types) **message**: Message to place into the player's in-game chat.
@@ -366,7 +366,7 @@ printToColor("Hello Red.", "Red", {r=1,g=0,b=0})
 
 ####addNotebookTab(...)
 
-[<span class="ret int"></span>](intro#types)&nbsp; Add a new notebook tab. If it failed to create a new tab, a -1 is returned instead. Indexes for notebook tabs begin at 0.
+[<span class="ret int"></span>](intro#types)&nbsp;Add a new notebook tab. If it failed to create a new tab, a -1 is returned instead. Indexes for notebook tabs begin at 0.
 
 !!!info "addNotebookTab(parameters)"
 	* [<span class="tag tab"></span>](intro#types) **parameters**: A Table containing spawning parameters.
@@ -390,7 +390,7 @@ addNotebookTab(parameters)
 
 ####editNotebookTab(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Edit an existing Tab in the notebook. Indexes for notebook tabs begin at 0.
+[<span class="ret boo"></span>](intro#types)&nbsp;Edit an existing Tab in the notebook. Indexes for notebook tabs begin at 0.
 
 !!!info "editNotebookTab(parameters)"
 	* [<span class="tag tab"></span>](intro#types) **parameters**: A Table containing instructions for the notebook edit.
@@ -417,7 +417,7 @@ editNotebookTab(params)
 
 ####getNotebookTabs()
 
-[<span class="ret tab"></span>](intro#types)&nbsp; Returns a Table containing data on all tabs in the notebook. Indexes for notebook tabs begin at 0.
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table containing data on all tabs in the notebook. Indexes for notebook tabs begin at 0.
 
 ``` Lua
 --Example Usage
@@ -437,7 +437,7 @@ tabInfo = getNotebookTabs()
 
 ####removeNotebookTab(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp; Remove a notebook tab. Notebook tab indexes begin at 0.
+[<span class="ret boo"></span>](intro#types)&nbsp;Remove a notebook tab. Notebook tab indexes begin at 0.
 
 !!!info "removeNotebookTab(index)"
 	* [<span class="tag int"></span>](intro#types) **index**: Index for the tab to remove.

@@ -22,11 +22,11 @@ url | The targeted URL. | [<span class="tag str"></span>](intro#types)
 ##Function Summary
 All functions return a WebRequest.
 
-Function Name | Description | &nbsp; 
+Function Name | Description | &nbsp;
 -- | -- | --:
-get([<span class="tag str"></span>](intro#types) url, [<span class="tag obj"></span>](intro#types) callback_owner, [<span class="tag str"></span>](intro#types) callback) | Get data from the current URL. | [<span class="i"></span>](#get)
-post([<span class="tag str"></span>](intro#types) url,  [<span class="tag tab"></span>](intro#types) form, [<span class="tag obj"></span>](intro#types) callback_owner, [<span class="tag str"></span>](intro#types) callback) | Post the form to the URL. | [<span class="i"></span>](#post)
-put([<span class="tag str"></span>](intro#types) url,  [<span class="tag str"></span>](intro#types) data, [<span class="tag obj"></span>](intro#types) callback_owner, [<span class="tag str"></span>](intro#types) callback) | Post the data to the URL. | [<span class="i"></span>](#put)
+get([<span class="tag str"></span>](intro#types)&nbsp;url, [<span class="tag obj"></span>](intro#types)&nbsp;callback_owner, [<span class="tag str"></span>](intro#types)&nbsp;callback) | Get data from the current URL. | [<span class="i"></span>](#get)
+post([<span class="tag str"></span>](intro#types)&nbsp;url,  [<span class="tag tab"></span>](intro#types)&nbsp;form, [<span class="tag obj"></span>](intro#types)&nbsp;callback_owner, [<span class="tag str"></span>](intro#types)&nbsp;callback) | Post the form to the URL. | [<span class="i"></span>](#post)
+put([<span class="tag str"></span>](intro#types)&nbsp;url,  [<span class="tag str"></span>](intro#types)&nbsp;data, [<span class="tag obj"></span>](intro#types)&nbsp;callback_owner, [<span class="tag str"></span>](intro#types)&nbsp;callback) | Post the data to the URL. | [<span class="i"></span>](#put)
 
 ---
 

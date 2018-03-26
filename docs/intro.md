@@ -32,7 +32,7 @@ The Global script, which is a script that is not attached to any particular Obje
 A script that is attached to an in-game Objecet, and is saved as part of it. This is similar to any other property like its scale or tint. Some functions ask for an Object reference in order to attempt to run a function on it. In these cases, Global (exactly as written here) is also a valid Object reference.
 
 ###GUID
-In Tabletop Simulator, a GUID is a unique 6-character [string](intro#types) which can be used to identify in-game [Objects](object). GUIDs are automatically assigned when objects exist within the scene.
+In Tabletop Simulator, a GUID is a unique 6-character [string](intro#types)&nbsp;which can be used to identify in-game [Objects](object). GUIDs are automatically assigned when objects exist within the scene.
 
 If an object is duplicated, it will sometimes have the same GUID for 1 frame before the engine assigns a new GUID to the newer Object. Objects in containers (bags/decks/etc) do not automatically get new GUIDs assigned to them in this way. Only once their contents are moved out into the scene.
 
@@ -48,15 +48,15 @@ Type refers to the type of information. You do not need to declare the type in L
 
 Tag | Type | Description | Example
 -- | -- | -- | --
-[<span class="tag nil"></span>](intro#types) | nil | No value. | `#!lua nil`
-[<span class="tag int"></span>](intro#types) | int | Non-decimal value. | `#!lua 5`
-[<span class="tag flo"></span>](intro#types) | float | Non-exact decimal value. | `#!lua 2.032`
-[<span class="tag boo"></span>](intro#types) | bool | `true` or `false` value. | `#!lua true`
-[<span class="tag str"></span>](intro#types) | string | A series of characters. | `#!lua "Hello."`
-[<span class="tag tab"></span>](intro#types) | table | A container with keys and values. | `#!lua {["key"]="value", true, 5}`
-[<span class="tag obj"></span>](intro#types) | object | An in-game physical Object. Sometimes Global. | `#!lua Global or self`
-[<span class="tag pla"></span>](intro#types) | player | An in-game Player. | `#!lua Player["White"]`
-[<span class="tag var"></span>](intro#types) | variable | A combination of other types. | 
+[<span class="tag nil"></span>](intro#types)&nbsp;| nil | No value. | `#!lua nil`
+[<span class="tag int"></span>](intro#types)&nbsp;| int | Non-decimal value. | `#!lua 5`
+[<span class="tag flo"></span>](intro#types)&nbsp;| float | Non-exact decimal value. | `#!lua 2.032`
+[<span class="tag boo"></span>](intro#types)&nbsp;| bool | `true` or `false` value. | `#!lua true`
+[<span class="tag str"></span>](intro#types)&nbsp;| string | A series of characters. | `#!lua "Hello."`
+[<span class="tag tab"></span>](intro#types)&nbsp;| table | A container with keys and values. | `#!lua {["key"]="value", true, 5}`
+[<span class="tag obj"></span>](intro#types)&nbsp;| object | An in-game physical Object. Sometimes Global. | `#!lua Global or self`
+[<span class="tag pla"></span>](intro#types)&nbsp;| player | An in-game Player. | `#!lua Player["White"]`
+[<span class="tag var"></span>](intro#types)&nbsp;| variable | A combination of other types. | 
 
 You will also see tags for Color and Vector. See below for more info.
 
