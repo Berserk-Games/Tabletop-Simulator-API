@@ -115,7 +115,7 @@
     background-color: #b1bfe0;
 }
 .obj:after {
-    content: "obj";
+    content: "object";
 }
 
 /*Var*/

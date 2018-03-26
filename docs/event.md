@@ -10,8 +10,6 @@ These are functions which are triggered by an event taking place in-game. They w
 Function Name | Description | &nbsp;
 -- | -- | -- 
 onChat([<span class="tag str"></span>](intro#types) message, [<span class="tag pla"></span>](intro#types) sender) | Called when a chat message is sent in game chat. | [<span class="i"></span>](#onchat)
-onConnect([<span class="tag pla"></span>](intro#types) person) | Called when a [Player](player) connects to a game. | [<span class="i"></span>](#onconnect)
-onDisconnect([<span class="tag pla"></span>](intro#types) person) | Called when a [Player](player) disconnects from a game. | [<span class="i"></span>](#ondisconnect)
 onExternalMessage([<span class="tag tab"></span>](intro#types) data) | Called when an external script editor (like [Atom](atom)) sends a message back to the game. Used for custom editor functionality. | [<span class="i"></span>](#onexternalmessage)
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [<span class="i"></span>](#onfixedupdate)
 onLoad([<span class="tag str"></span>](intro#types) save_state) | Called when a game save is finished loading every Object. It is where most setup code will go. | [<span class="i"></span>](#onload)
@@ -26,6 +24,8 @@ onObjectRandomize([<span class="tag obj"></span>](intro#types) randomize_object,
 onObjectSpawn([<span class="tag obj"></span>](intro#types) spawn_object) | Called when any Object is spawned/created. | [<span class="i"></span>](#onobjectspawn)
 onObjectTriggerEffect([<span class="tag obj"></span>](intro#types) trigger_object, [<span class="tag int"></span>](intro#types) index) | Called whenever the trigger effect of an [AssetBundle](assetbundle) is activated. | [<span class="i"></span>](#onobjecttriggereffect)
 onPlayerChangeColor([<span class="tag str"></span>](intro#types) player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [<span class="i"></span>](#onplayerchangecolor)
+onPlayerConnect([<span class="tag pla"></span>](intro#types) person) | Called when a [Player](player) connects to a game. | [<span class="i"></span>](#onconnect)
+onPlayerDisconnect([<span class="tag pla"></span>](intro#types) person) | Called when a [Player](player) disconnects from a game. | [<span class="i"></span>](#ondisconnect)
 onPlayerTurnEnd([<span class="tag str"></span>](intro#types) player_color_end, [<span class="tag str"></span>](intro#types) player_color_next) | Called at the end of a player's turn when using the in-game turn system. | [<span class="i"></span>](#onplayerturnend)
 onPlayerTurnStart([<span class="tag str"></span>](intro#types) player_color_start, [<span class="tag str"></span>](intro#types) player_color_prev) | Called at the start of a player's turn when using the in-game turn system. | [<span class="i"></span>](#onplayerturnstart)
 onSave() | Called whenever your game is saved. | [<span class="i"></span>](#onsave)
@@ -83,26 +83,6 @@ function onChat(message, player)
 	print(player.color)
 end
 ```
-
----
-
-
-###onConnect(...)
-
-Called when a [Player](player) connects to a game.
-
-!!!info "onConnect(person)""
-	* [<span class="tag pla"></span>](intro#types) **person**: Player reference to who connected.
-
----
-
-
-###onDisconnect(...)
-
-Called when a [Player](player) disconnects from a game.
-
-!!!info "onDisconnect(person)""
-	* [<span class="tag pla"></span>](intro#types) **person**: Player reference to who disconnected.
 
 ---
 
@@ -356,6 +336,26 @@ function onPlayerChangeColor(color)
 	print(color)
 end
 ```
+
+---
+
+
+###onPlayerConnect(...)
+
+Called when a [Player](player) connects to a game.
+
+!!!info "onPlayerConnect(person)""
+	* [<span class="tag pla"></span>](intro#types) **person**: Player reference to who connected.
+
+---
+
+
+###onPlayerDisconnect(...)
+
+Called when a [Player](player) disconnects from a game.
+
+!!!info "onPlayerDisconnect(person)""
+	* [<span class="tag pla"></span>](intro#types) **person**: Player reference to who disconnected.
 
 ---
 
