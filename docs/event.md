@@ -105,7 +105,7 @@ end
 
 ###onFixedUpdate()
 
-Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [<span class="i"></span>](#onfixedupdate)
+Called **every physics tick** (90 times a second). This is a frame independent onUpdate().
 
 !!!warning
 	This is a very expensive function and can easily slow/crash your game if misused. Use with caution.

@@ -35,7 +35,7 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   - toc:
-      permalink: true
+      permalink: "\u0020"
       
 repo_name: 'GitHub Source'
 repo_url: 'https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation'

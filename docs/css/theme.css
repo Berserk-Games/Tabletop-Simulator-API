@@ -1,8 +1,17 @@
+/*Changing icon for permalinks*/
+.headerlink:after {
+    font-family: "Material Icons";
+    content: "\E157";
+}
+.headerlink {
+    font-family: "Helvetica Neue,Helvetica,Arial,sans-serif";
+}
+
+
 /*Disable top bar shdow fade-in*/
 .md-header {
     transition: initial !important;
 }
-
 
 /*Increase width/height of icon on top bar*/
 .md-header-nav__button.md-logo * {
@@ -70,7 +79,7 @@
 
 /*Coloring of permalink icon*/
 [data-md-color-accent=indigo] .md-nav__link:focus, [data-md-color-accent=indigo] .md-nav__link:hover, [data-md-color-accent=indigo] .md-typeset .footnote li:hover .footnote-backref:hover, [data-md-color-accent=indigo] .md-typeset .footnote li:target .footnote-backref, [data-md-color-accent=indigo] .md-typeset .md-clipboard:active:before, [data-md-color-accent=indigo] .md-typeset .md-clipboard:hover:before, [data-md-color-accent=indigo] .md-typeset [id] .headerlink:focus, [data-md-color-accent=indigo] .md-typeset [id]:hover .headerlink:hover, [data-md-color-accent=indigo] .md-typeset [id]:target .headerlink {
-    color: #bb0c0d;
+    color: #8b090a;
 }
 
 /*Make edit button red, !important required*/
