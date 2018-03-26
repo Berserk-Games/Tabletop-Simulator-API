@@ -1,3 +1,9 @@
+/*Disable top bar shdow fade-in*/
+.md-header {
+    transition: initial !important;
+}
+
+
 /*Increase width/height of icon on top bar*/
 .md-header-nav__button.md-logo * {
     width: 42px;
