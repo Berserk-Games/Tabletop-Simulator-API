@@ -39,7 +39,8 @@ Get data from the current URL.
 
 !!!info "get(url, callback_owner, callback)"
     * [<span class="tag str"></span>](intro#types) **url**: The url to pull data from.
-    * [<span class="tag obj"></span>](intro#types) **callback_owner**: The Object that the callback function will be called on. Global is also valid.
+    * [<span class="tag obj"></span>](intro#types) **callback_owner**: The Object that the callback function will be called on.
+        * {>>Global, self or any Object reference are all valid targets.<<}
     * [<span class="tag str"></span>](intro#types) **callback**: The name of the function to be called.
 
 ``` Lua
@@ -64,7 +65,8 @@ Post the form to the URL.
 !!!info "post(url, form, callback_owner, callback)"
     * [<span class="tag str"></span>](intro#types) **url**: The url to pull post to.
     * [<span class="tag tab"></span>](intro#types) **form**: The form of data to post.    
-    * [<span class="tag obj"></span>](intro#types) **callback_owner**: The Object that the callback function will be called on. Global is also valid.
+    * [<span class="tag obj"></span>](intro#types) **callback_owner**: The Object that the callback function will be called on.
+        * {>>Global, self or any Object reference are all valid targets.<<}
     * [<span class="tag str"></span>](intro#types) **callback**: The name of the function to be called.
 
 ---
@@ -77,5 +79,6 @@ Post the form to the URL.
 !!!info "put(url, data, callback_owner, callback)"
     * [<span class="tag str"></span>](intro#types) **url**: The url to pull post to.
     * [<span class="tag str"></span>](intro#types) **data**: The data string to post.    
-    * [<span class="tag obj"></span>](intro#types) **callback_owner**: The Object that the callback function will be called on. Global is also valid.
+    * [<span class="tag obj"></span>](intro#types) **callback_owner**: The Object that the callback function will be called on.
+        * {>>Global, self or any Object reference are all valid targets.<<}
     * [<span class="tag str"></span>](intro#types) **callback**: The name of the function to be called.

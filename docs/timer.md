@@ -1,6 +1,8 @@
-Timer is a statis global class which provides methods for executing other functions after a delay and/or repeatedly. Each Timer is tracked by a unique "identifier" string. You call these functions like this: `Timer.destroy(...)`.
+Timer is a statis global class which provides methods for executing other functions after a delay and/or repeatedly. Each Timer is tracked by a unique "identifier" string. 
 
-!!!Warning
+> Example Usage: `Timer.destroy(...)`
+
+!!!warning "Important Tip"
     The "identifiers" are shared between Global and all Object scripts, so each Timer must have a unique name.
 
 ##Function Summary

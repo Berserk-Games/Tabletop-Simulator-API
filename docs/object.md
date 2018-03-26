@@ -585,7 +585,7 @@ end
 		* [<span class="tag vec"></span>](intro#vector) **parameters.scale**: Scale of the button, relative to the Object's scale.
 		* [<span class="tag flo"></span>](intro#types) **parameters.width**: How wide the button will be, relative to the Object.
 		* [<span class="tag flo"></span>](intro#types) **parameters.height**: How tall the button will be, relative to the Object.
-		* [<span class="tag clo"></span>](intro#types) **parameters.font_size**: Size the label font will be, relative to the Object.
+		* [<span class="tag flo"></span>](intro#types) **parameters.font_size**: Size the label font will be, relative to the Object.
 		* [<span class="tag col"></span>](intro#color) **parameters.color**: A Color for the clickable button.
 		* [<span class="tag col"></span>](intro#color) **parameters.font_color**: A Color for the label text.
 		* [<span class="tag str"></span>](intro#types) **parameters.tooltip**: Text of a popup of text, similar to how an Object's name is displayed on mouseover.

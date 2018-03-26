@@ -19,6 +19,18 @@ Just click the link in the pencil icon in the top-right of an article, or visit 
 
 ##TTS Terms
 
+###Object
+On in-game physical Object that currently exists in the scene. If an Object is placed inside of a bag/deck/etc, it stops existing and is no longer in the scene until it is pulled back out.
+
+###Player
+A person in the game. Each Player is assigned a color, with spectators being "Grey". If you are attempting to identify a Player, you would use the color of the seat they are in to do so.
+
+###Global Script
+The Global script, which is a script that is not attached to any particular Object. It is always present during a game.
+
+###Object Script
+A script that is attached to an in-game Objecet, and is saved as part of it. This is similar to any other property like its scale or tint. Some functions ask for an Object reference in order to attempt to run a function on it. In these cases, Global (exactly as written here) is also a valid Object reference.
+
 ###GUID
 In Tabletop Simulator, a GUID is a unique 6-character [string](intro#types) which can be used to identify in-game [Objects](object). GUIDs are automatically assigned when objects exist within the scene.
 
@@ -42,12 +54,13 @@ Tag | Type | Description | Example
 [<span class="tag boo"></span>](intro#types) | bool | `true` or `false` value. | `#!lua true`
 [<span class="tag str"></span>](intro#types) | string | A series of characters. | `#!lua "Hello."`
 [<span class="tag tab"></span>](intro#types) | table | A container with keys and values. | `#!lua {["key"]="value", true, 5}`
-[<span class="tag obj"></span>](intro#types) | object | An in-game physical Object. Can refer to Global. | `#!lua Global or self`
+[<span class="tag obj"></span>](intro#types) | object | An in-game physical Object. Sometimes Global. | `#!lua Global or self`
 [<span class="tag pla"></span>](intro#types) | player | An in-game Player. | `#!lua Player["White"]`
-[<span class="tag var"></span>](intro#types) | variable | Can possibly be some or any other type described above. | 
+[<span class="tag var"></span>](intro#types) | variable | A combination of other types. | 
 
+You will also see tags for Color and Vector. See below for more info.
 
-For more information what types are, you can refer to the relevant [Lua documentation](https://www.lua.org/manual/5.1/manual.html#2.2).
+> For more information on a type, you can read below or refer to the relevant [Lua documentation](https://www.lua.org/manual/5.1/manual.html#2.2).
 
 
 ---
@@ -82,11 +95,11 @@ For more information on what a class is, you can refer to the relevant [Lua Docu
 
 ###Special Standards
 
-There are two Table types that are used often in Tabletop Simulator. They represent Vectors and Colors, and have special formatting rules to be understood by the many functions that utilize them.
+There are two types of Table that are used often in Tabletop Simulator. They represent Vectors and Colors, and their contents must be formatted a certain way to be utilized correctly.
 
 
 ####Color
-Color is a type of Table that is used to define a color.
+Color is a type of Table that is used to define RGB values for tinting.
 
 #####Keys
 
@@ -102,12 +115,8 @@ alpha | a | 4
 As an example, an Object with a white color tint would return this table:
 ``` Lua
 {
-    r = 1,
-    g = 1,
-    b = 1,
-    1 = 1,
-    2 = 1,
-    3 = 1,
+    r=1, g=1, b=1,
+    1=1, 2=1, 3=1,
 }
 ```
 
@@ -153,12 +162,8 @@ The Table will contain the keys `x`, `y`, `z` and/or `1`, `2`, `3`. The letter a
 As an example, An Object at coordinate X=5, Y=2, Z=-1 would return this table:
 ``` Lua
 {
-    x = 5,
-    y = 2,
-    z = -1,
-    1 = 5,
-    2 = 2,
-    3 = -1,
+    x=5, y=2, z=-1,
+    1=5, 2=2, 3=-1,
 }
 ```
 

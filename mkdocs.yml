@@ -46,6 +46,7 @@ pages:
     - Overview: overview.md
     - Atom: atom.md
     - External Editor AP: externaleditorapi.md
+    - Learning Lua: learninglua.md
   - Lua API:
     - Introduction: intro.md
     - Event: event.md
