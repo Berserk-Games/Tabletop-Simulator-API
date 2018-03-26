@@ -65,5 +65,4 @@ pages:
     - TextTool: texttool.md
     - Timer: timer.md
     - Web Request: webrequest.md
-  - Changelog:
-    - History: changelog.md
+    - Changelog: changelog.md
