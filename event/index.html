@@ -427,20 +427,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#onconnect" title="onConnect(...)" class="md-nav__link">
-    onConnect(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ondisconnect" title="onDisconnect(...)" class="md-nav__link">
-    onDisconnect(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#onexternalmessage" title="onExternalMessage(...)" class="md-nav__link">
     onExternalMessage(...)
   </a>
@@ -534,6 +520,20 @@
           <li class="md-nav__item">
   <a href="#onplayerchangecolor" title="onPlayerChangeColor(...)" class="md-nav__link">
     onPlayerChangeColor(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onplayerconnect" title="onPlayerConnect(...)" class="md-nav__link">
+    onPlayerConnect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onplayerdisconnect" title="onPlayerDisconnect(...)" class="md-nav__link">
+    onPlayerDisconnect(...)
   </a>
   
 </li>
@@ -836,6 +836,42 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Changelog
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Changelog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../changelog/" title="History" class="md-nav__link">
+      History
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -892,20 +928,6 @@
           <li class="md-nav__item">
   <a href="#onchat" title="onChat(...)" class="md-nav__link">
     onChat(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onconnect" title="onConnect(...)" class="md-nav__link">
-    onConnect(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ondisconnect" title="onDisconnect(...)" class="md-nav__link">
-    onDisconnect(...)
   </a>
   
 </li>
@@ -1004,6 +1026,20 @@
           <li class="md-nav__item">
   <a href="#onplayerchangecolor" title="onPlayerChangeColor(...)" class="md-nav__link">
     onPlayerChangeColor(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onplayerconnect" title="onPlayerConnect(...)" class="md-nav__link">
+    onPlayerConnect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onplayerdisconnect" title="onPlayerDisconnect(...)" class="md-nav__link">
+    onPlayerDisconnect(...)
   </a>
   
 </li>
@@ -1151,16 +1187,6 @@
 <td><a href="#onchat"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>onConnect(<a href="../intro#types"><span class="tag pla"></span></a> person)</td>
-<td>Called when a <a href="../player">Player</a> connects to a game.</td>
-<td><a href="#onconnect"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td>onDisconnect(<a href="../intro#types"><span class="tag pla"></span></a> person)</td>
-<td>Called when a <a href="../player">Player</a> disconnects from a game.</td>
-<td><a href="#ondisconnect"><span class="i"></span></a></td>
-</tr>
-<tr>
 <td>onExternalMessage(<a href="../intro#types"><span class="tag tab"></span></a> data)</td>
 <td>Called when an external script editor (like <a href="../atom">Atom</a>) sends a message back to the game. Used for custom editor functionality.</td>
 <td><a href="#onexternalmessage"><span class="i"></span></a></td>
@@ -1229,6 +1255,16 @@
 <td>onPlayerChangeColor(<a href="../intro#types"><span class="tag str"></span></a> player_color)</td>
 <td>Called when a player changes color or selects it for the first time. It also returns <code class="codehilite">&quot;Grey&quot;</code> if they disconnect.</td>
 <td><a href="#onplayerchangecolor"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onPlayerConnect(<a href="../intro#types"><span class="tag pla"></span></a> person)</td>
+<td>Called when a <a href="../player">Player</a> connects to a game.</td>
+<td><a href="#onconnect"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onPlayerDisconnect(<a href="../intro#types"><span class="tag pla"></span></a> person)</td>
+<td>Called when a <a href="../player">Player</a> disconnects from a game.</td>
+<td><a href="#ondisconnect"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>onPlayerTurnEnd(<a href="../intro#types"><span class="tag str"></span></a> player_color_end, <a href="../intro#types"><span class="tag str"></span></a> player_color_next)</td>
@@ -1322,24 +1358,6 @@
 <span class="kr">end</span>
 </pre></div>
 
-<hr />
-<h3 id="onconnect">onConnect(...)<a class="headerlink" href="#onconnect" title="Permanent link">&para;</a></h3>
-<p>Called when a <a href="../player">Player</a> connects to a game.</p>
-<div class="admonition info">
-<p class="admonition-title">onConnect(person)"</p>
-<ul>
-<li><a href="../intro#types"><span class="tag pla"></span></a> <strong>person</strong>: Player reference to who connected.</li>
-</ul>
-</div>
-<hr />
-<h3 id="ondisconnect">onDisconnect(...)<a class="headerlink" href="#ondisconnect" title="Permanent link">&para;</a></h3>
-<p>Called when a <a href="../player">Player</a> disconnects from a game.</p>
-<div class="admonition info">
-<p class="admonition-title">onDisconnect(person)"</p>
-<ul>
-<li><a href="../intro#types"><span class="tag pla"></span></a> <strong>person</strong>: Player reference to who disconnected.</li>
-</ul>
-</div>
 <hr />
 <h3 id="onexternalmessage">onExternalMessage(...)<a class="headerlink" href="#onexternalmessage" title="Permanent link">&para;</a></h3>
 <p>This function is called when an external script editor (like <a href="../atom">Atom</a>) sends a message back to the game. Used for custom editor functionality.</p>
@@ -1564,6 +1582,24 @@
 <span class="kr">end</span>
 </pre></div>
 
+<hr />
+<h3 id="onplayerconnect">onPlayerConnect(...)<a class="headerlink" href="#onplayerconnect" title="Permanent link">&para;</a></h3>
+<p>Called when a <a href="../player">Player</a> connects to a game.</p>
+<div class="admonition info">
+<p class="admonition-title">onPlayerConnect(person)"</p>
+<ul>
+<li><a href="../intro#types"><span class="tag pla"></span></a> <strong>person</strong>: Player reference to who connected.</li>
+</ul>
+</div>
+<hr />
+<h3 id="onplayerdisconnect">onPlayerDisconnect(...)<a class="headerlink" href="#onplayerdisconnect" title="Permanent link">&para;</a></h3>
+<p>Called when a <a href="../player">Player</a> disconnects from a game.</p>
+<div class="admonition info">
+<p class="admonition-title">onPlayerDisconnect(person)"</p>
+<ul>
+<li><a href="../intro#types"><span class="tag pla"></span></a> <strong>person</strong>: Player reference to who disconnected.</li>
+</ul>
+</div>
 <hr />
 <h3 id="onplayerturnend">onPlayerTurnEnd(...)<a class="headerlink" href="#onplayerturnend" title="Permanent link">&para;</a></h3>
 <p>Called at the end of a player's turn when using the in-game turn system.</p>
