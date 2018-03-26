@@ -7,12 +7,14 @@ theme:
   logo: 'img/TSIcon.png'
   favicon: 'img/Icon-Dice.png'
   custom_dir: 'theme'
+  
 extra_css:
   - css/theme.css
   - css/table.css
   - css/type_icons.css
   - css/i_icons.css
   - css/player_color_table.css
+  
 markdown_extensions:
   - admonition
   - codehilite
@@ -34,6 +36,10 @@ markdown_extensions:
   - pymdownx.tilde
   - toc:
       permalink: true
+      
+repo_name: 'GitHub Source'
+repo_url: 'https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation'
+    
 pages:
   - Getting Started:
     - Introduction: index.md
@@ -41,8 +47,7 @@ pages:
     - Atom: atom.md
     - External Editor AP: externaleditorapi.md
   - Lua API:
-    - Introduction: luaapi.md
-    - Type and Class: typeandclass.md
+    - Introduction: intro.md
     - Event: event.md
     - Base: base.md
     - Object: object.md

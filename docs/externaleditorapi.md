@@ -32,7 +32,6 @@ TTS sends back a JSON message with an ID of 0 and an array of the Lua Scripts.
             "guid": "a0b2d5",
             "script": "..."
         },
-        ...
     ]
 }
 ```
@@ -54,7 +53,6 @@ Atom sends a JSON message with an ID of 1 and an array of the Lua Scripts.
             "guid": "a0b2d5",
             "script": "..."
         },
-        ...
     ]
 }
 ```
@@ -101,7 +99,6 @@ When loading a new game in TTS, TTS will automatically send all the Lua Scripts 
             "guid": "a0b2d5",
             "script": "..."
         },
-        ...
     ]
 }
 ```

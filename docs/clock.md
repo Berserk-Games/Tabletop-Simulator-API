@@ -13,7 +13,7 @@ Like [Object member variables](object#member-variables), Clocks have their own m
 
 Variable | Description | Type
 -- | -- | :--
-paused | If the clock timer is paused. | [<span class="tag boo"></span>](typeandclass)
+paused | If the clock timer is paused. | [<span class="tag boo"></span>](intro#types)
 
 ---
 
@@ -23,11 +23,11 @@ paused | If the clock timer is paused. | [<span class="tag boo"></span>](typeand
 
 Function Name | Description | Return | &nbsp; 
 -- | -- | -- | --:
-getValue() | Current time in stopwatch or timer mode. Clock mode returns 0. This function acts the same as [Object's getValue()](object#getvalue). | [<span class="ret int"></span>](typeandclass)
-pauseStart() | Pauses/resumes a Clock in stopwatch or timer mode. | [<span class="ret boo"></span>](typeandclass)
-setValue(Int seconds) | Switches clock to timer and sets countdown time. This function acts the same as [Object's setValue()](object#setvalue). | [<span class="ret boo"></span>](typeandclass) | [<span class="i"></span>](#setvalue)
-showCurrentTime() | Switches clock to display current time. It will clear any stopwatch or timer. | [<span class="ret boo"></span>](typeandclass)
-startStopwatch() | Switches clock to stopwatch, setting time to 0. It will reset time if already in stopwatch mode. | [<span class="ret boo"></span>](typeandclass)
+getValue() | Current time in stopwatch or timer mode. Clock mode returns 0. This function acts the same as [Object's getValue()](object#getvalue). | [<span class="ret int"></span>](intro#types)
+pauseStart() | Pauses/resumes a Clock in stopwatch or timer mode. | [<span class="ret boo"></span>](intro#types)
+setValue(Int seconds) | Switches clock to timer and sets countdown time. This function acts the same as [Object's setValue()](object#setvalue). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setvalue)
+showCurrentTime() | Switches clock to display current time. It will clear any stopwatch or timer. | [<span class="ret boo"></span>](intro#types)
+startStopwatch() | Switches clock to stopwatch, setting time to 0. It will reset time if already in stopwatch mode. | [<span class="ret boo"></span>](intro#types)
 
 ---
 
@@ -35,11 +35,11 @@ startStopwatch() | Switches clock to stopwatch, setting time to 0. It will reset
 
 ###setValue(...)
 
-[<span class="ret boo"></span>](typeandclass)&nbsp; Set the timer to display a number of seconds. This function acts the same as [Object's setValue()](object#setvalue). If the Clock is not in timer mode, it will be switched. If it is in timer mode, it will be paused and the remaining time will be changed. This will not start the countdown on its own.
+[<span class="ret boo"></span>](intro#types)&nbsp; Set the timer to display a number of seconds. This function acts the same as [Object's setValue()](object#setvalue). If the Clock is not in timer mode, it will be switched. If it is in timer mode, it will be paused and the remaining time will be changed. This will not start the countdown on its own.
 
 
-!!!info "setValue(Int seconds)"
-    * [<span class="tag int"></span>](typeandclass)&nbsp; **seconds**: How many seconds will be counted down.
+!!!info "setValue(seconds)"
+    * [<span class="tag int"></span>](intro#types) **seconds**: How many seconds will be counted down.
     
 ``` Lua
 self.Clock.setValue(30)

@@ -10,15 +10,13 @@ A WebRequest is returned as part of a function, and these member variables are h
 
 Variable | Description | Type
 -- | -- | :--
-download_progress | Download percentage, represented as a value from 0-1. | [<span class="tag flo"></span>](typeandclass)
-error | Error text. | [<span class="tag str"></span>](typeandclass)
-is_error | If there is an error with the WebRequest. | [<span class="tag boo"></span>](typeandclass)
-is_done | If the WebRequest has finished. | [<span class="tag boo"></span>](typeandclass)
-text | Returned data. | [<span class="tag flo"></span>](typeandclass)
-upload_progress | Upload percentage, represented as a value from 0-1. | [<span class="tag flo"></span>](typeandclass)
-url | The targeted URL. | [<span class="tag str"></span>](typeandclass)
-
----
+download_progress | Download percentage, represented as a value from 0-1. | [<span class="tag flo"></span>](intro#types)
+error | Error text. | [<span class="tag str"></span>](intro#types)
+is_error | If there is an error with the WebRequest. | [<span class="tag boo"></span>](intro#types)
+is_done | If the WebRequest has finished. | [<span class="tag boo"></span>](intro#types)
+text | Returned data. | [<span class="tag flo"></span>](intro#types)
+upload_progress | Upload percentage, represented as a value from 0-1. | [<span class="tag flo"></span>](intro#types)
+url | The targeted URL. | [<span class="tag str"></span>](intro#types)
 
 
 ##Function Summary
@@ -26,9 +24,9 @@ All functions return a WebRequest.
 
 Function Name | Description | &nbsp; 
 -- | -- | --:
-get([<span class="tag str"></span>](typeandclass) url, [<span class="tag obj"></span>](typeandclass) callback_owner, [<span class="tag str"></span>](typeandclass) callback) | Get data from the current URL. | [<span class="i"></span>](#get)
-post([<span class="tag str"></span>](typeandclass) url,  [<span class="tag tab"></span>](typeandclass) form, [<span class="tag obj"></span>](typeandclass) callback_owner, [<span class="tag str"></span>](typeandclass) callback) | Post the form to the URL. | [<span class="i"></span>](#post)
-put([<span class="tag str"></span>](typeandclass) url,  [<span class="tag str"></span>](typeandclass) data, [<span class="tag obj"></span>](typeandclass) callback_owner, [<span class="tag str"></span>](typeandclass) callback) | Post the data to the URL. | [<span class="i"></span>](#put)
+get([<span class="tag str"></span>](intro#types) url, [<span class="tag obj"></span>](intro#types) callback_owner, [<span class="tag str"></span>](intro#types) callback) | Get data from the current URL. | [<span class="i"></span>](#get)
+post([<span class="tag str"></span>](intro#types) url,  [<span class="tag tab"></span>](intro#types) form, [<span class="tag obj"></span>](intro#types) callback_owner, [<span class="tag str"></span>](intro#types) callback) | Post the form to the URL. | [<span class="i"></span>](#post)
+put([<span class="tag str"></span>](intro#types) url,  [<span class="tag str"></span>](intro#types) data, [<span class="tag obj"></span>](intro#types) callback_owner, [<span class="tag str"></span>](intro#types) callback) | Post the data to the URL. | [<span class="i"></span>](#put)
 
 ---
 
@@ -39,10 +37,10 @@ put([<span class="tag str"></span>](typeandclass) url,  [<span class="tag str"><
 
 Get data from the current URL.
 
-!!!info "get([<span class="tag str"></span>](typeandclass) url, [<span class="tag obj"></span>](typeandclass) callback_owner, [<span class="tag str"></span>](typeandclass) callback)"
-    * [<span class="tag str"></span>](typeandclass) **url**: The url to pull data from.
-    * [<span class="tag obj"></span>](typeandclass) **callback_owner**: The Object that the callback function will be called on. Global is also valid.
-    * [<span class="tag str"></span>](typeandclass) **callback**: The name of the function to be called.
+!!!info "get(url, callback_owner, callback)"
+    * [<span class="tag str"></span>](intro#types) **url**: The url to pull data from.
+    * [<span class="tag obj"></span>](intro#types) **callback_owner**: The Object that the callback function will be called on. Global is also valid.
+    * [<span class="tag str"></span>](intro#types) **callback**: The name of the function to be called.
 
 ``` Lua
 function onLoad()
@@ -63,11 +61,11 @@ end
 
 Post the form to the URL.
 
-!!!info "post([<span class="tag str"></span>](typeandclass) url,  [<span class="tag tab"></span>](typeandclass) form, [<span class="tag obj"></span>](typeandclass) callback_owner, [<span class="tag str"></span>](typeandclass) callback)"
-    * [<span class="tag str"></span>](typeandclass) **url**: The url to pull post to.
-    * [<span class="tag tab"></span>](typeandclass) **form**: The form of data to post.    
-    * [<span class="tag obj"></span>](typeandclass) **callback_owner**: The Object that the callback function will be called on. Global is also valid.
-    * [<span class="tag str"></span>](typeandclass) **callback**: The name of the function to be called.
+!!!info "post(url, form, callback_owner, callback)"
+    * [<span class="tag str"></span>](intro#types) **url**: The url to pull post to.
+    * [<span class="tag tab"></span>](intro#types) **form**: The form of data to post.    
+    * [<span class="tag obj"></span>](intro#types) **callback_owner**: The Object that the callback function will be called on. Global is also valid.
+    * [<span class="tag str"></span>](intro#types) **callback**: The name of the function to be called.
 
 ---
 
@@ -76,8 +74,8 @@ Post the form to the URL.
 
 Post the form to the URL.
 
-!!!info "put([<span class="tag str"></span>](typeandclass) url,  [<span class="tag str"></span>](typeandclass) data, [<span class="tag obj"></span>](typeandclass) callback_owner, [<span class="tag str"></span>](typeandclass) callback)"
-    * [<span class="tag str"></span>](typeandclass) **url**: The url to pull post to.
-    * [<span class="tag str"></span>](typeandclass) **data**: The data string to post.    
-    * [<span class="tag obj"></span>](typeandclass) **callback_owner**: The Object that the callback function will be called on. Global is also valid.
-    * [<span class="tag str"></span>](typeandclass) **callback**: The name of the function to be called.
+!!!info "put(url, data, callback_owner, callback)"
+    * [<span class="tag str"></span>](intro#types) **url**: The url to pull post to.
+    * [<span class="tag str"></span>](intro#types) **data**: The data string to post.    
+    * [<span class="tag obj"></span>](intro#types) **callback_owner**: The Object that the callback function will be called on. Global is also valid.
+    * [<span class="tag str"></span>](intro#types) **callback**: The name of the function to be called.
