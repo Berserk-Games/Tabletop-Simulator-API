@@ -10,8 +10,8 @@ These are functions which are triggered by an event taking place in-game. They w
 Function Name | Description | &nbsp;
 -- | -- | -- 
 onChat([<span class="tag str"></span>](intro#types) message, [<span class="tag pla"></span>](intro#types) sender) | Called when a chat message is sent in game chat. | [<span class="i"></span>](#onchat)
-onConnect(Player) | Called when a [Player](player) connects to a game.
-onDisconnect(Player) | Called when a [Player](player) disconnects from a game.
+onConnect([<span class="tag pla"></span>](intro#types) person) | Called when a [Player](player) connects to a game. | [<span class="i"></span>](#onconnect)
+onDisconnect([<span class="tag pla"></span>](intro#types) person) | Called when a [Player](player) disconnects from a game. | [<span class="i"></span>](#ondisconnect)
 onExternalMessage([<span class="tag tab"></span>](intro#types) data) | Called when an external script editor (like [Atom](atom)) sends a message back to the game. Used for custom editor functionality. | [<span class="i"></span>](#onexternalmessage)
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [<span class="i"></span>](#onfixedupdate)
 onLoad([<span class="tag str"></span>](intro#types) save_state) | Called when a game save is finished loading every Object. It is where most setup code will go. | [<span class="i"></span>](#onload)
@@ -75,7 +75,7 @@ This function is called when a message is sent through the in-game chat. It does
 
 !!!info "onChat(message, sender)"
 	* [<span class="tag str"></span>](intro#types) **message**: Chat message which triggered the function.
-	* [<span class="tag str"></span>](intro#types) **sender**: Player which sent the chat message.
+	* [<span class="tag pla"></span>](intro#types) **sender**: Player which sent the chat message.
 
 ``` Lua
 function onChat(message, player)
@@ -83,6 +83,26 @@ function onChat(message, player)
 	print(player.color)
 end
 ```
+
+---
+
+
+###onConnect(...)
+
+Called when a [Player](player) connects to a game.
+
+!!!info "onConnect(person)""
+	* [<span class="tag pla"></span>](intro#types) **person**: Player reference to who connected.
+
+---
+
+
+###onDisconnect(...)
+
+Called when a [Player](player) disconnects from a game.
+
+!!!info "onDisconnect(person)""
+	* [<span class="tag pla"></span>](intro#types) **person**: Player reference to who disconnected.
 
 ---
 
