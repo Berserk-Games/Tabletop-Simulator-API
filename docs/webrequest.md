@@ -51,7 +51,7 @@ end
 
 function webRequestCallback(webReturn)
     print("Web Request Returned")
-    print("webReturn.is_done")
+    print(webReturn.is_done)
 end
 ```
 
