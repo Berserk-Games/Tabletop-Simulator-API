@@ -415,6 +415,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onconnect" title="onConnect(...)" class="md-nav__link">
+    onConnect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ondisconnect" title="onDisconnect(...)" class="md-nav__link">
+    onDisconnect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onexternalmessage" title="onExternalMessage(...)" class="md-nav__link">
     onExternalMessage(...)
   </a>
@@ -871,6 +885,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onconnect" title="onConnect(...)" class="md-nav__link">
+    onConnect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ondisconnect" title="onDisconnect(...)" class="md-nav__link">
+    onDisconnect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onexternalmessage" title="onExternalMessage(...)" class="md-nav__link">
     onExternalMessage(...)
   </a>
@@ -1111,14 +1139,14 @@
 <td><a href="#onchat"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>onConnect(Player)</td>
+<td>onConnect(<a href="../intro#types"><span class="tag pla"></span></a> person)</td>
 <td>Called when a <a href="../player">Player</a> connects to a game.</td>
-<td></td>
+<td><a href="#onconnect"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>onDisconnect(Player)</td>
+<td>onDisconnect(<a href="../intro#types"><span class="tag pla"></span></a> person)</td>
 <td>Called when a <a href="../player">Player</a> disconnects from a game.</td>
-<td></td>
+<td><a href="#ondisconnect"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>onExternalMessage(<a href="../intro#types"><span class="tag tab"></span></a> data)</td>
@@ -1273,7 +1301,7 @@
 <p class="admonition-title">onChat(message, sender)</p>
 <ul>
 <li><a href="../intro#types"><span class="tag str"></span></a> <strong>message</strong>: Chat message which triggered the function.</li>
-<li><a href="../intro#types"><span class="tag str"></span></a> <strong>sender</strong>: Player which sent the chat message.</li>
+<li><a href="../intro#types"><span class="tag pla"></span></a> <strong>sender</strong>: Player which sent the chat message.</li>
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onChat</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">player</span><span class="p">)</span>
@@ -1282,6 +1310,24 @@
 <span class="kr">end</span>
 </pre></div>
 
+<hr />
+<h3 id="onconnect">onConnect(...)<a class="headerlink" href="#onconnect" title="Permanent link">&para;</a></h3>
+<p>Called when a <a href="../player">Player</a> connects to a game.</p>
+<div class="admonition info">
+<p class="admonition-title">onConnect(person)"</p>
+<ul>
+<li><a href="../intro#types"><span class="tag pla"></span></a> <strong>person</strong>: Player reference to who connected.</li>
+</ul>
+</div>
+<hr />
+<h3 id="ondisconnect">onDisconnect(...)<a class="headerlink" href="#ondisconnect" title="Permanent link">&para;</a></h3>
+<p>Called when a <a href="../player">Player</a> disconnects from a game.</p>
+<div class="admonition info">
+<p class="admonition-title">onDisconnect(person)"</p>
+<ul>
+<li><a href="../intro#types"><span class="tag pla"></span></a> <strong>person</strong>: Player reference to who disconnected.</li>
+</ul>
+</div>
 <hr />
 <h3 id="onexternalmessage">onExternalMessage(...)<a class="headerlink" href="#onexternalmessage" title="Permanent link">&para;</a></h3>
 <p>This function is called when an external script editor (like <a href="../atom">Atom</a>) sends a message back to the game. Used for custom editor functionality.</p>
