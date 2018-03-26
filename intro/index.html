@@ -1094,29 +1094,29 @@
                   <h1>Introduction</h1>
                 
                 <p>In this section, you will find details on all events/classes/functions specific to Tabletop Simulator's Lua scripting. For more general information on how the scripting language of Lua works and what it does on its own, you can review the <a href="https://www.lua.org/docs.html">Official Lua Documentation</a>. </p>
-<h2 id="using-tts-documentation">Using TTS Documentation<a class="headerlink" href="#using-tts-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="left-column">Left Column<a class="headerlink" href="#left-column" title="Permanent link">&para;</a></h3>
+<h2 id="using-tts-documentation">Using TTS Documentation<a class="headerlink" href="#using-tts-documentation" title="Permanent link"> </a></h2>
+<h3 id="left-column">Left Column<a class="headerlink" href="#left-column" title="Permanent link"> </a></h3>
 <p>This is the top-level list of classes and other information needed when scripting with Lua in Tabletop Simulator. Event, Base and Object are the three pages you will use the most, with the rest referring to niche information you can access as you go. It is a good idea to familiarize yourself with the contents of those three pages in order to have a good high-level understanding of off what scripting is capable of doing.</p>
-<h3 id="right-column">Right Column<a class="headerlink" href="#right-column" title="Permanent link">&para;</a></h3>
+<h3 id="right-column">Right Column<a class="headerlink" href="#right-column" title="Permanent link"> </a></h3>
 <p>The Table of Contents will lay out the contents of the page you are on. It always starts with high-level summary information first and, if needed, detailed information towards the bottom. The <span class="i"></span> next to a summary element will take you directly down to the relevant detailed explanation below.</p>
-<h2 id="growing-tts-documentation">Growing TTS Documentation<a class="headerlink" href="#growing-tts-documentation" title="Permanent link">&para;</a></h2>
+<h2 id="growing-tts-documentation">Growing TTS Documentation<a class="headerlink" href="#growing-tts-documentation" title="Permanent link"> </a></h2>
 <p>This documentation is written via Markdown language and some custom CSS. The relevant files you can modify, as well as some detailed editing instructions, are listed on GitHub. You can make a pull request to made modifications/improvements that can be incorporated into this documentation.</p>
 <p>Just click the link in the pencil icon in the top-right of an article, or visit the GitHub page for more information by clicking GitHub Source in the far upper right.</p>
 <hr />
-<h2 id="tts-terms">TTS Terms<a class="headerlink" href="#tts-terms" title="Permanent link">&para;</a></h2>
-<h3 id="object">Object<a class="headerlink" href="#object" title="Permanent link">&para;</a></h3>
+<h2 id="tts-terms">TTS Terms<a class="headerlink" href="#tts-terms" title="Permanent link"> </a></h2>
+<h3 id="object">Object<a class="headerlink" href="#object" title="Permanent link"> </a></h3>
 <p>On in-game physical Object that currently exists in the scene. If an Object is placed inside of a bag/deck/etc, it stops existing and is no longer in the scene until it is pulled back out.</p>
-<h3 id="player">Player<a class="headerlink" href="#player" title="Permanent link">&para;</a></h3>
+<h3 id="player">Player<a class="headerlink" href="#player" title="Permanent link"> </a></h3>
 <p>A person in the game. Each Player is assigned a color, with spectators being "Grey". If you are attempting to identify a Player, you would use the color of the seat they are in to do so.</p>
-<h3 id="global-script">Global Script<a class="headerlink" href="#global-script" title="Permanent link">&para;</a></h3>
+<h3 id="global-script">Global Script<a class="headerlink" href="#global-script" title="Permanent link"> </a></h3>
 <p>The Global script, which is a script that is not attached to any particular Object. It is always present during a game.</p>
-<h3 id="object-script">Object Script<a class="headerlink" href="#object-script" title="Permanent link">&para;</a></h3>
+<h3 id="object-script">Object Script<a class="headerlink" href="#object-script" title="Permanent link"> </a></h3>
 <p>A script that is attached to an in-game Objecet, and is saved as part of it. This is similar to any other property like its scale or tint. Some functions ask for an Object reference in order to attempt to run a function on it. In these cases, Global (exactly as written here) is also a valid Object reference.</p>
-<h3 id="guid">GUID<a class="headerlink" href="#guid" title="Permanent link">&para;</a></h3>
+<h3 id="guid">GUID<a class="headerlink" href="#guid" title="Permanent link"> </a></h3>
 <p>In Tabletop Simulator, a GUID is a unique 6-character <a href="../intro#types">string</a> which can be used to identify in-game <a href="../object">Objects</a>. GUIDs are automatically assigned when objects exist within the scene.</p>
 <p>If an object is duplicated, it will sometimes have the same GUID for 1 frame before the engine assigns a new GUID to the newer Object. Objects in containers (bags/decks/etc) do not automatically get new GUIDs assigned to them in this way. Only once their contents are moved out into the scene.</p>
 <details class="warning"><summary>Custom Deck Card GUIDs</summary><p>When you first create a custom deck, all cards within the deck share the same GUID. If you need to reference individual GUIDs of cards, then the way to solve this is to lay out all cards from the deck at the same time to allow new GUIDs to be assigned by the game. <a href="http://steamcommunity.com/sharedfiles/filedetails/?id=1180142950">This tool</a> can be used to simplify the process.</p></details><hr />
-<h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
+<h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link"> </a></h3>
 <p>Type refers to the type of information. You do not need to declare the type in Lua, but in this API you will see them indicated. This is only so you know what kind of information is required in a given variable/parameter. This API utilizes the following types.</p>
 <table>
 <thead>
@@ -1189,9 +1189,9 @@
 <p>For more information on a type, you can read below or refer to the relevant <a href="https://www.lua.org/manual/5.1/manual.html#2.2">Lua documentation</a>.</p>
 </blockquote>
 <hr />
-<h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h3>
+<h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link"> </a></h3>
 <p>Defining class requires further knowledge on object-oriented programming to really understand. However for the purposes of Tabletop Simulator Lua scripting, you can think of a class as a standard or collection that handles categories of objects.</p>
-<h4 id="object-classes">Object Classes<a class="headerlink" href="#object-classes" title="Permanent link">&para;</a></h4>
+<h4 id="object-classes">Object Classes<a class="headerlink" href="#object-classes" title="Permanent link"> </a></h4>
 <p>Associated with in-game Objects.</p>
 <ul>
 <li><a href="../clock">Clock</a></li>
@@ -1201,7 +1201,7 @@
 <li><a href="../rpgfigurine">RPGFigurine</a></li>
 <li><a href="../texttool">TextTool</a></li>
 </ul>
-<h4 id="static-classes">Static Classes<a class="headerlink" href="#static-classes" title="Permanent link">&para;</a></h4>
+<h4 id="static-classes">Static Classes<a class="headerlink" href="#static-classes" title="Permanent link"> </a></h4>
 <p>Associated with in-game properties and systems.</p>
 <ul>
 <li><a href="../json">JSON</a></li>
@@ -1213,11 +1213,11 @@
 </ul>
 <p>For more information on what a class is, you can refer to the relevant <a href="https://www.lua.org/pil/16.1.html">Lua Documentation</a>.</p>
 <hr />
-<h3 id="special-standards">Special Standards<a class="headerlink" href="#special-standards" title="Permanent link">&para;</a></h3>
+<h3 id="special-standards">Special Standards<a class="headerlink" href="#special-standards" title="Permanent link"> </a></h3>
 <p>There are two types of Table that are used often in Tabletop Simulator. They represent Vectors and Colors, and their contents must be formatted a certain way to be utilized correctly.</p>
-<h4 id="color">Color<a class="headerlink" href="#color" title="Permanent link">&para;</a></h4>
+<h4 id="color">Color<a class="headerlink" href="#color" title="Permanent link"> </a></h4>
 <p>Color is a type of Table that is used to define RGB values for tinting.</p>
-<h5 id="keys">Keys<a class="headerlink" href="#keys" title="Permanent link">&para;</a></h5>
+<h5 id="keys">Keys<a class="headerlink" href="#keys" title="Permanent link"> </a></h5>
 <p>The Table will contain the keys <code class="codehilite">r</code>, <code class="codehilite">g</code>, <code class="codehilite">b</code>, <code class="codehilite">a</code> and/or <code class="codehilite">1</code>, <code class="codehilite">2</code>, <code class="codehilite">3</code>, <code class="codehilite">4</code>. The letter and numeric keys are duplicates of each other, and each represents a color or transparency.</p>
 <table>
 <thead>
@@ -1257,7 +1257,7 @@
 <span class="p">}</span>
 </pre></div></p>
 <p>Notice it does not contain the <code class="codehilite">a</code> or <code class="codehilite">4</code> keys. This is because currently only scripted buttons and scripted inputs utilize the alpha channel (transparency).</p>
-<h5 id="mixed-keys">Mixed Keys<a class="headerlink" href="#mixed-keys" title="Permanent link">&para;</a></h5>
+<h5 id="mixed-keys">Mixed Keys<a class="headerlink" href="#mixed-keys" title="Permanent link"> </a></h5>
 <p>Only one type of key, number or letter, is required. If both a are present in a Table, the numeric key is ignored and only the <strong>letter key</strong> is used.</p>
 <div class="codehilite"><pre><span></span><span class="c1">--Valid Table for red</span>
 <span class="p">{</span><span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">}</span>
@@ -1267,15 +1267,15 @@
 <span class="p">{</span><span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
 </pre></div>
 
-<h5 id="value">Value<a class="headerlink" href="#value" title="Permanent link">&para;</a></h5>
+<h5 id="value">Value<a class="headerlink" href="#value" title="Permanent link"> </a></h5>
 <p>Values are between 0 and 1 for each key. If you are using RGB color that is in 0-255, you can use simple math to convert to the proper value.
 <div class="codehilite"><pre><span></span><span class="c1">--To display a color that is r=50, b=83, g=199</span>
 <span class="n">self</span><span class="p">.</span><span class="n">setColorTint</span><span class="p">({</span><span class="mi">50</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="mi">83</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="mi">199</span><span class="o">/</span><span class="mi">255</span><span class="p">})</span>
 </pre></div></p>
 <hr />
-<h4 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link">&para;</a></h4>
+<h4 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link"> </a></h4>
 <p>Vector is a type of Table that is used to define a position, rotation or direction. </p>
-<h5 id="keys_1">Keys<a class="headerlink" href="#keys_1" title="Permanent link">&para;</a></h5>
+<h5 id="keys_1">Keys<a class="headerlink" href="#keys_1" title="Permanent link"> </a></h5>
 <p>The Table will contain the keys <code class="codehilite">x</code>, <code class="codehilite">y</code>, <code class="codehilite">z</code> and/or <code class="codehilite">1</code>, <code class="codehilite">2</code>, <code class="codehilite">3</code>. The letter and numeric keys are duplicates of each other.</p>
 <table>
 <thead>
@@ -1305,7 +1305,7 @@
     <span class="mi">1</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div></p>
-<h5 id="mixed-keys_1">Mixed Keys<a class="headerlink" href="#mixed-keys_1" title="Permanent link">&para;</a></h5>
+<h5 id="mixed-keys_1">Mixed Keys<a class="headerlink" href="#mixed-keys_1" title="Permanent link"> </a></h5>
 <p>Only one type of key, number or letter, is required. If both a are present in a Table, the numeric key is ignored and only the <strong>letter key</strong> is used.</p>
 <div class="codehilite"><pre><span></span><span class="c1">--Valid Table for 1 to the right</span>
 <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">}</span>
@@ -1315,7 +1315,7 @@
 <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
 </pre></div>
 
-<h5 id="value-range">Value Range<a class="headerlink" href="#value-range" title="Permanent link">&para;</a></h5>
+<h5 id="value-range">Value Range<a class="headerlink" href="#value-range" title="Permanent link"> </a></h5>
 <p>The range of values depend on the type of Vector you are using.</p>
 <table>
 <thead>
@@ -1343,8 +1343,8 @@
 </tr>
 </tbody>
 </table>
-<h5 id="type-details">Type Details<a class="headerlink" href="#type-details" title="Permanent link">&para;</a></h5>
-<h6 id="position">Position<a class="headerlink" href="#position" title="Permanent link">&para;</a></h6>
+<h5 id="type-details">Type Details<a class="headerlink" href="#type-details" title="Permanent link"> </a></h5>
+<h6 id="position">Position<a class="headerlink" href="#position" title="Permanent link"> </a></h6>
 <p>X is right/left, Y is up/down, Z is forward/back. A positional Vector can be either world or local. Most of Tabletop Simulator's functions use world positional Vectors.</p>
 <table>
 <thead>
@@ -1364,9 +1364,9 @@
 </tr>
 </tbody>
 </table>
-<details class="tip"><summary>Conversion Between World/Local</summary><p><a href="../object#positiontoworld">positionToWorld(...)</a> and <a href="../object#positiontolocal">positionToLocal(...)</a> can be used to convert between the two types.</p></details><h6 id="rotation">Rotation<a class="headerlink" href="#rotation" title="Permanent link">&para;</a></h6>
+<details class="tip"><summary>Conversion Between World/Local</summary><p><a href="../object#positiontoworld">positionToWorld(...)</a> and <a href="../object#positiontolocal">positionToLocal(...)</a> can be used to convert between the two types.</p></details><h6 id="rotation">Rotation<a class="headerlink" href="#rotation" title="Permanent link"> </a></h6>
 <p>X is pitch (nodding your head), Y is yaw (shaking you head), Z is roll (tilting your head).</p>
-<h6 id="direction">Direction<a class="headerlink" href="#direction" title="Permanent link">&para;</a></h6>
+<h6 id="direction">Direction<a class="headerlink" href="#direction" title="Permanent link"> </a></h6>
 <p>X is right/left, Y is up/down, Z is forward/back.</p>
                 
                   

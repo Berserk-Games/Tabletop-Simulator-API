@@ -768,11 +768,11 @@
                   <h1>External Editor AP</h1>
                 
                 <p>This page describes how our <a href="../atom">Official Atom Plugin</a> API works so that you can write your own plugin for your text editor of choice if Atom does not suit your needs. The plugin communicates with Tabletop Simulator via two localhost TCP connections - one for each system acting as a server and the other as a client and vice versa. All communication messages are JSON.</p>
-<h2 id="tabletop-simulator-as-the-server">Tabletop Simulator as the Server<a class="headerlink" href="#tabletop-simulator-as-the-server" title="Permanent link">&para;</a></h2>
+<h2 id="tabletop-simulator-as-the-server">Tabletop Simulator as the Server<a class="headerlink" href="#tabletop-simulator-as-the-server" title="Permanent link"> </a></h2>
 <div class="admonition note">
 <p>TTS listens for incoming localhost TCP connections on port 39999.</p>
 </div>
-<h3 id="get-lua-scripts">Get Lua Scripts<a class="headerlink" href="#get-lua-scripts" title="Permanent link">&para;</a></h3>
+<h3 id="get-lua-scripts">Get Lua Scripts<a class="headerlink" href="#get-lua-scripts" title="Permanent link"> </a></h3>
 <p>Atom sends a JSON message with an ID of 0.</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">0</span>
@@ -797,7 +797,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<h3 id="save-play">Save &amp; Play<a class="headerlink" href="#save-play" title="Permanent link">&para;</a></h3>
+<h3 id="save-play">Save &amp; Play<a class="headerlink" href="#save-play" title="Permanent link"> </a></h3>
 <p>Atom sends a JSON message with an ID of 1 and an array of the Lua Scripts.</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -814,11 +814,11 @@
 <span class="p">}</span>
 </pre></div>
 
-<h2 id="atom-as-the-server">Atom as the Server<a class="headerlink" href="#atom-as-the-server" title="Permanent link">&para;</a></h2>
+<h2 id="atom-as-the-server">Atom as the Server<a class="headerlink" href="#atom-as-the-server" title="Permanent link"> </a></h2>
 <div class="admonition note">
 <p>Atom listens for incoming localhost TCP connections on port 39998.</p>
 </div>
-<h3 id="pushing-new-object">Pushing New Object<a class="headerlink" href="#pushing-new-object" title="Permanent link">&para;</a></h3>
+<h3 id="pushing-new-object">Pushing New Object<a class="headerlink" href="#pushing-new-object" title="Permanent link"> </a></h3>
 <p>When clicking on "Lua Editor" in the right click contextual menu in-game for an Object that doesn't have a Lua Script yet, it will try to open a new tab in Atom for this Object before falling back to the in-game editor if Atom is not running. TTS sends a JSON message with an ID of 0 and the new Object.</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -832,7 +832,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<h3 id="loading-a-new-game">Loading a New Game<a class="headerlink" href="#loading-a-new-game" title="Permanent link">&para;</a></h3>
+<h3 id="loading-a-new-game">Loading a New Game<a class="headerlink" href="#loading-a-new-game" title="Permanent link"> </a></h3>
 <p>When loading a new game in TTS, TTS will automatically send all the Lua Scripts from the new game to Atom. TTS sends a JSON message with an ID of 1 and an array of the Lua Scripts.</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -851,7 +851,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<h3 id="printdebug-messages">Print/Debug Messages<a class="headerlink" href="#printdebug-messages" title="Permanent link">&para;</a></h3>
+<h3 id="printdebug-messages">Print/Debug Messages<a class="headerlink" href="#printdebug-messages" title="Permanent link"> </a></h3>
 <p>TTS sends all print() messages to Atom to be displayed in Atom's console (ctrl + alt + i). TTS sends a JSON message with an ID of 2 and the message.</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -859,7 +859,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<h3 id="error-messages">Error Messages<a class="headerlink" href="#error-messages" title="Permanent link">&para;</a></h3>
+<h3 id="error-messages">Error Messages<a class="headerlink" href="#error-messages" title="Permanent link"> </a></h3>
 <p>TTS sends all Lua error messages to Atom to be displayed in Atom's console <em>(ctrl + alt + i)</em>. TTS sends a JSON message with an ID of 3 and the error message.</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
