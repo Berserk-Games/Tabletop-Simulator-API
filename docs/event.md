@@ -8,29 +8,29 @@ Many contain parameters which can be used to utilize additional information rela
 These are functions which are triggered by an event taking place in-game. They work when within the script of an Object or the Global script.
 
 Function Name | Description | &nbsp;
--- | -- | -- 
-onChat([<span class="tag str"></span>](intro#types) message, [<span class="tag pla"></span>](intro#types) sender) | Called when a chat message is sent in game chat. | [<span class="i"></span>](#onchat)
-onExternalMessage([<span class="tag tab"></span>](intro#types) data) | Called when an external script editor (like [Atom](atom)) sends a message back to the game. Used for custom editor functionality. | [<span class="i"></span>](#onexternalmessage)
+-- | -- | --
+onChat([<span class="tag str"></span>](intro#types)&nbsp;message, [<span class="tag pla"></span>](intro#types)&nbsp;sender) | Called when a chat message is sent in game chat. | [<span class="i"></span>](#onchat)
+onExternalMessage([<span class="tag tab"></span>](intro#types)&nbsp;data) | Called when an external script editor (like [Atom](atom)) sends a message back to the game. Used for custom editor functionality. | [<span class="i"></span>](#onexternalmessage)
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [<span class="i"></span>](#onfixedupdate)
-onLoad([<span class="tag str"></span>](intro#types) save_state) | Called when a game save is finished loading every Object. It is where most setup code will go. | [<span class="i"></span>](#onload)
-onObjectDestroy([<span class="tag obj"></span>](intro#types) dying_object) | Called whenever any object is destroyed. | [<span class="i"></span>](#onobjectdestroy)
-onObjectDrop([<span class="tag str"></span>](intro#types) player_color, [<span class="tag obj"></span>](intro#types) dropped_object) | Called whenever any object is dropped by a player. | [<span class="i"></span>](#onobjectdrop)
-onObjectEnterScriptingZone([<span class="tag obj"></span>](intro#types) zone, [<span class="tag obj"></span>](intro#types) enter_object) | Called when any object enters any scripting zone. | [<span class="i"></span>](#onobjectenterscriptingzone)
-onObjectLeaveScriptingZone([<span class="tag obj"></span>](intro#types) zone, [<span class="tag obj"></span>](intro#types) enter_object) | Called when any object leaves any scripting zone. | [<span class="i"></span>](#onobjectleavescriptingzone)
-onObjectLeaveContainer([<span class="tag obj"></span>](intro#types) container, [<span class="tag obj"></span>](intro#types) leave_object) | Called when any object leaves any container. | [<span class="i"></span>](#onobjectleavecontainer)
-onObjectLoopingEffect([<span class="tag obj"></span>](intro#types) loop_object, [<span class="tag int"></span>](intro#types) index) | Called whenever the looping effect of an [AssetBundle](assetbundle) is activated. | [<span class="i"></span>](#onobjectloopingeffect)
-onObjectPickUp([<span class="tag str"></span>](intro#types) player_color, [<span class="tag obj"></span>](intro#types) picked_up_object) | Called whenever a Player picks up an Object. | [<span class="i"></span>](#onobjectpickup)
-onObjectRandomize([<span class="tag obj"></span>](intro#types) randomize_object, [<span class="tag str"></span>](intro#types) player_color) | Called when an Object is randomized. Like when shuffling a deck or shaking dice. | [<span class="i"></span>](#onobjectrandomize)
-onObjectSpawn([<span class="tag obj"></span>](intro#types) spawn_object) | Called when any Object is spawned/created. | [<span class="i"></span>](#onobjectspawn)
-onObjectTriggerEffect([<span class="tag obj"></span>](intro#types) trigger_object, [<span class="tag int"></span>](intro#types) index) | Called whenever the trigger effect of an [AssetBundle](assetbundle) is activated. | [<span class="i"></span>](#onobjecttriggereffect)
-onPlayerChangeColor([<span class="tag str"></span>](intro#types) player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [<span class="i"></span>](#onplayerchangecolor)
-onPlayerConnect([<span class="tag pla"></span>](intro#types) person) | Called when a [Player](player) connects to a game. | [<span class="i"></span>](#onconnect)
-onPlayerDisconnect([<span class="tag pla"></span>](intro#types) person) | Called when a [Player](player) disconnects from a game. | [<span class="i"></span>](#ondisconnect)
-onPlayerTurnEnd([<span class="tag str"></span>](intro#types) player_color_end, [<span class="tag str"></span>](intro#types) player_color_next) | Called at the end of a player's turn when using the in-game turn system. | [<span class="i"></span>](#onplayerturnend)
-onPlayerTurnStart([<span class="tag str"></span>](intro#types) player_color_start, [<span class="tag str"></span>](intro#types) player_color_prev) | Called at the start of a player's turn when using the in-game turn system. | [<span class="i"></span>](#onplayerturnstart)
+onLoad([<span class="tag str"></span>](intro#types)&nbsp;save_state) | Called when a game save is finished loading every Object. It is where most setup code will go. | [<span class="i"></span>](#onload)
+onObjectDestroy([<span class="tag obj"></span>](intro#types)&nbsp;dying_object) | Called whenever any object is destroyed. | [<span class="i"></span>](#onobjectdestroy)
+onObjectDrop([<span class="tag str"></span>](intro#types)&nbsp;player_color, [<span class="tag obj"></span>](intro#types)&nbsp;dropped_object) | Called whenever any object is dropped by a player. | [<span class="i"></span>](#onobjectdrop)
+onObjectEnterScriptingZone([<span class="tag obj"></span>](intro#types)&nbsp;zone, [<span class="tag obj"></span>](intro#types)&nbsp;enter_object) | Called when any object enters any scripting zone. | [<span class="i"></span>](#onobjectenterscriptingzone)
+onObjectLeaveScriptingZone([<span class="tag obj"></span>](intro#types)&nbsp;zone, [<span class="tag obj"></span>](intro#types)&nbsp;enter_object) | Called when any object leaves any scripting zone. | [<span class="i"></span>](#onobjectleavescriptingzone)
+onObjectLeaveContainer([<span class="tag obj"></span>](intro#types)&nbsp;container, [<span class="tag obj"></span>](intro#types)&nbsp;leave_object) | Called when any object leaves any container. | [<span class="i"></span>](#onobjectleavecontainer)
+onObjectLoopingEffect([<span class="tag obj"></span>](intro#types)&nbsp;loop_object, [<span class="tag int"></span>](intro#types)&nbsp;index) | Called whenever the looping effect of an [AssetBundle](assetbundle) is activated. | [<span class="i"></span>](#onobjectloopingeffect)
+onObjectPickUp([<span class="tag str"></span>](intro#types)&nbsp;player_color, [<span class="tag obj"></span>](intro#types)&nbsp;picked_up_object) | Called whenever a Player picks up an Object. | [<span class="i"></span>](#onobjectpickup)
+onObjectRandomize([<span class="tag obj"></span>](intro#types)&nbsp;randomize_object, [<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when an Object is randomized. Like when shuffling a deck or shaking dice. | [<span class="i"></span>](#onobjectrandomize)
+onObjectSpawn([<span class="tag obj"></span>](intro#types)&nbsp;spawn_object) | Called when any Object is spawned/created. | [<span class="i"></span>](#onobjectspawn)
+onObjectTriggerEffect([<span class="tag obj"></span>](intro#types)&nbsp;trigger_object, [<span class="tag int"></span>](intro#types)&nbsp;index) | Called whenever the trigger effect of an [AssetBundle](assetbundle) is activated. | [<span class="i"></span>](#onobjecttriggereffect)
+onPlayerChangeColor([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [<span class="i"></span>](#onplayerchangecolor)
+onPlayerConnect([<span class="tag pla"></span>](intro#types)&nbsp;person) | Called when a [Player](player) connects to a game. | [<span class="i"></span>](#onconnect)
+onPlayerDisconnect([<span class="tag pla"></span>](intro#types)&nbsp;person) | Called when a [Player](player) disconnects from a game. | [<span class="i"></span>](#ondisconnect)
+onPlayerTurnEnd([<span class="tag str"></span>](intro#types)&nbsp;player_color_end, [<span class="tag str"></span>](intro#types)&nbsp;player_color_next) | Called at the end of a player's turn when using the in-game turn system. | [<span class="i"></span>](#onplayerturnend)
+onPlayerTurnStart([<span class="tag str"></span>](intro#types)&nbsp;player_color_start, [<span class="tag str"></span>](intro#types)&nbsp;player_color_prev) | Called at the start of a player's turn when using the in-game turn system. | [<span class="i"></span>](#onplayerturnstart)
 onSave() | Called whenever your game is saved. | [<span class="i"></span>](#onsave)
-onScriptingButtonDown([<span class="tag int"></span>](intro#types) index, [<span class="tag str"></span>](intro#types) player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttondown)
-onScriptingButtonUp([<span class="tag int"></span>](intro#types) index, [<span class="tag str"></span>](intro#types) player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttonup)
+onScriptingButtonDown([<span class="tag int"></span>](intro#types)&nbsp;index, [<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttondown)
+onScriptingButtonUp([<span class="tag int"></span>](intro#types)&nbsp;index, [<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttonup)
 onUpdate() | Called **every frame**. | [<span class="i"></span>](#onupdate)
 
 
@@ -46,13 +46,13 @@ onUpdate() | Called **every frame**. | [<span class="i"></span>](#onupdate)
 These are functions which are triggered by an event taking place in-game. They only work within scripts that are on Objects, never in Global.
 
 Function Name | Description | &nbsp;
--- | -- | -- 
-onCollisionEnter([<span class="tag tab"></span>](intro#types) collision_info) | Called when an Object starts colliding with the Object the function is on. | [<span class="i"></span>](#oncollisionenter)
-onCollisionExit([<span class="tag tab"></span>](intro#types) collision_info) | Called when an Object stops colliding with the Object the function is on. | [<span class="i"></span>](#oncollisionexit)
-onCollisionStay([<span class="tag tab"></span>](intro#types) collision_info) | Called **every frame** that an Object is colliding with the Object this function is on. | [<span class="i"></span>](#oncollisionstay)
+-- | -- | --
+onCollisionEnter([<span class="tag tab"></span>](intro#types)&nbsp;collision_info) | Called when an Object starts colliding with the Object the function is on. | [<span class="i"></span>](#oncollisionenter)
+onCollisionExit([<span class="tag tab"></span>](intro#types)&nbsp;collision_info) | Called when an Object stops colliding with the Object the function is on. | [<span class="i"></span>](#oncollisionexit)
+onCollisionStay([<span class="tag tab"></span>](intro#types)&nbsp;collision_info) | Called **every frame** that an Object is colliding with the Object this function is on. | [<span class="i"></span>](#oncollisionstay)
 onDestroy() | Called when an Object it is on is destroyed. | [<span class="i"></span>](#ondestroy)
-onDrop([<span class="tag str"></span>](intro#types) player_color) | Called when a player releases an Object after picking it up. | [<span class="i"></span>](#ondrop)
-onPickUp([<span class="tag str"></span>](intro#types) player_color) | Called when a player picks up an Object. | [<span class="i"></span>](#onpickup)
+onDrop([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a player releases an Object after picking it up. | [<span class="i"></span>](#ondrop)
+onPickUp([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a player picks up an Object. | [<span class="i"></span>](#onpickup)
 
 
 
@@ -74,8 +74,8 @@ onPickUp([<span class="tag str"></span>](intro#types) player_color) | Called whe
 This function is called when a message is sent through the in-game chat. It does not trigger when global chat messages are sent. Using `#!lua return false` inside of this function prevents the chat message which triggered it to be suppressed.
 
 !!!info "onChat(message, sender)"
-	* [<span class="tag str"></span>](intro#types) **message**: Chat message which triggered the function.
-	* [<span class="tag pla"></span>](intro#types) **sender**: Player which sent the chat message.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**message**: Chat message which triggered the function.
+	* [<span class="tag pla"></span>](intro#types)&nbsp;**sender**: Player which sent the chat message.
 
 ``` Lua
 function onChat(message, player)
@@ -92,7 +92,7 @@ end
 This function is called when an external script editor (like [Atom](atom)) sends a message back to the game. Used for custom editor functionality.
 
 !!!info "onExternalMessage(data)"
-	* [<span class="tag tab"></span>](intro#types) **data**: The data returned by the external editor into the game.
+	* [<span class="tag tab"></span>](intro#types)&nbsp;**data**: The data returned by the external editor into the game.
 
 ``` Lua
 function onExternalMessage(data)
@@ -122,7 +122,7 @@ end
 This function is called when a game save is finished loading every Object. This is where most setup code will go. The fast-forward and rewind feature will also cause this function to activate. If this function is in an Object's script and that Object is spawned, like by removing it from a container, it too will trigger onLoad().
 
 !!!info "onLoad(save_state)"
-	* [<span class="tag str"></span>](intro#types) **save_state**: The encoded string containing any save_state (saved) data.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**save_state**: The encoded string containing any save_state (saved) data.
 		* {>>If there is no data saved, this returns an empty String.<<}
 
 ``` Lua
@@ -160,7 +160,7 @@ end
 Called whenever any object is destroyed. The dying Object has 1 frame left to live. This event fires immediately before the dying Object’s `onDestroy()` but their lifetime is the same final frame.
 
 !!!info "onObjectDestroy(dying_object)"
-	* [<span class="tag obj"></span>](intro#types) **dying_object**: The object that was destroyed.
+	* [<span class="tag obj"></span>](intro#types)&nbsp;**dying_object**: The object that was destroyed.
 
 ``` Lua
 function onObjectDestroy(destroyedObj)
@@ -176,8 +176,8 @@ end
 Called whenever any object is dropped by a player.
 
 !!!info "onObjectDrop(player_color, dropped_object)"
-	* [<span class="tag str"></span>](intro#types) **player_color**: [Player Color](player-color) of the Player who dropped the Object.
-	* [<span class="tag obj"></span>](intro#types) **dropped_object**: The Object in game which was dropped.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color**: [Player Color](player-color) of the Player who dropped the Object.
+	* [<span class="tag obj"></span>](intro#types)&nbsp;**dropped_object**: The Object in game which was dropped.
 
 ``` Lua
 function onObjectDrop(colorName, obj)
@@ -193,8 +193,8 @@ end
 Called when any object enters any scripting zone.
 
 !!!info "onObjectEnterScriptingZone(zone, enter_object)"
-	* [<span class="tag obj"></span>](intro#types) **zone**: The Object of the scripting zone.
-	* [<span class="tag obj"></span>](intro#types) **enter_object**: The Object triggering the function.
+	* [<span class="tag obj"></span>](intro#types)&nbsp;**zone**: The Object of the scripting zone.
+	* [<span class="tag obj"></span>](intro#types)&nbsp;**enter_object**: The Object triggering the function.
 
 ``` Lua
 function onObjectEnterScriptingZone(zone, obj)
@@ -210,8 +210,8 @@ end
 Called when any object leaves any scripting zone.
 
 !!!info "onObjectLeaveScriptingZone(zone, enter_object)"
-	* [<span class="tag obj"></span>](intro#types) **zone**: The Object of the scripting zone.
-	* [<span class="tag obj"></span>](intro#types) **enter_object**: The Object triggering the function.
+	* [<span class="tag obj"></span>](intro#types)&nbsp;**zone**: The Object of the scripting zone.
+	* [<span class="tag obj"></span>](intro#types)&nbsp;**enter_object**: The Object triggering the function.
 
 ``` Lua
 function onObjectLeaveScriptingZone(zone, obj)
@@ -227,8 +227,8 @@ end
 Called when any object leaves any container.
 
 !!!info "onObjectLeaveContainer(container, leave_object)"
-	* [<span class="tag obj"></span>](intro#types) **container**: Container the object left.
-	* [<span class="tag obj"></span>](intro#types) **leave_object**: Object that left the container.
+	* [<span class="tag obj"></span>](intro#types)&nbsp;**container**: Container the object left.
+	* [<span class="tag obj"></span>](intro#types)&nbsp;**leave_object**: Object that left the container.
 
 ``` Lua
 function onObjectLeaveContainer(bag, obj)
@@ -245,8 +245,8 @@ end
 Called whenever the looping effect of an [AssetBundle](assetbundle) is activated.
 
 !!!info "onObjectLoopingEffect(loop_object, index)"
-	* [<span class="tag obj"></span>](intro#types) **loop_object**: AssetBundle which had its loop activated.
-	* [<span class="tag int"></span>](intro#types) **index**: Index number for the loop activated.
+	* [<span class="tag obj"></span>](intro#types)&nbsp;**loop_object**: AssetBundle which had its loop activated.
+	* [<span class="tag int"></span>](intro#types)&nbsp;**index**: Index number for the loop activated.
 
 ``` Lua
 function onObjectLoopingEffect(obj, index)
@@ -262,8 +262,8 @@ end
 Called whenever a Player picks up an Object.
 
 !!!info "onObjectPickUp(player_color, picked_up_object)"
-	* [<span class="tag str"></span>](intro#types) **player_color**: [Player Color](player-color) of the Player who picked up the object.
-	* [<span class="tag obj"></span>](intro#types) **picked_up_object**: The Object in game which was picked up.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color**: [Player Color](player-color) of the Player who picked up the object.
+	* [<span class="tag obj"></span>](intro#types)&nbsp;**picked_up_object**: The Object in game which was picked up.
 
 ``` Lua
 function onObjectPickUp(colorName, obj)
@@ -279,8 +279,8 @@ end
 Called when an Object is randomized. Like when shuffling a deck or shaking dice.
 
 !!!info "onObjectRandomize(randomize_object, player_color)"
-	* [<span class="tag obj"></span>](intro#types) **spawn_object**: The Object which triggered this function.
-	* [<span class="tag str"></span>](intro#types) **player_color**: [Player Color](player-color) of the player who triggered the function.
+	* [<span class="tag obj"></span>](intro#types)&nbsp;**spawn_object**: The Object which triggered this function.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color**: [Player Color](player-color) of the player who triggered the function.
 
 ``` Lua
 function onObjectRandomize(obj, color)
@@ -296,7 +296,7 @@ end
 Called when any Object is spawned/created.
 
 !!!info "onObjectSpawn(spawn_object)"
-	* [<span class="tag obj"></span>](intro#types) **spawn_object**: The Object which triggered this function.
+	* [<span class="tag obj"></span>](intro#types)&nbsp;**spawn_object**: The Object which triggered this function.
 
 ``` Lua
 function onObjectSpawn(obj)
@@ -312,8 +312,8 @@ end
 Called whenever the trigger effect of an [AssetBundle](assetbundle) is activated.
 
 !!!info "onObjectTriggerEffect(loop_object, index)"
-	* [<span class="tag obj"></span>](intro#types) **loop_object**: AssetBundle which had its trigger activated.
-	* [<span class="tag int"></span>](intro#types) **index**: Index number for the trigger activated.
+	* [<span class="tag obj"></span>](intro#types)&nbsp;**loop_object**: AssetBundle which had its trigger activated.
+	* [<span class="tag int"></span>](intro#types)&nbsp;**index**: Index number for the trigger activated.
 
 ``` Lua
 function onObjectTriggerEffect(obj, index)
@@ -329,7 +329,7 @@ end
 Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect.
 
 !!!info "onPlayerChangeColor(player_color)"
-	* [<span class="tag str"></span>](intro#types) **player_color**: [Player Color](player-color) of the player who triggered the function.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color**: [Player Color](player-color) of the player who triggered the function.
 
 ``` Lua
 function onPlayerChangeColor(color)
@@ -345,7 +345,7 @@ end
 Called when a [Player](player) connects to a game.
 
 !!!info "onPlayerConnect(person)""
-	* [<span class="tag pla"></span>](intro#types) **person**: Player reference to who connected.
+	* [<span class="tag pla"></span>](intro#types)&nbsp;**person**: Player reference to who connected.
 
 ---
 
@@ -355,7 +355,7 @@ Called when a [Player](player) connects to a game.
 Called when a [Player](player) disconnects from a game.
 
 !!!info "onPlayerDisconnect(person)""
-	* [<span class="tag pla"></span>](intro#types) **person**: Player reference to who disconnected.
+	* [<span class="tag pla"></span>](intro#types)&nbsp;**person**: Player reference to who disconnected.
 
 ---
 
@@ -365,8 +365,8 @@ Called when a [Player](player) disconnects from a game.
 Called at the end of a player's turn when using the in-game turn system.
 
 !!!info "onPlayerTurnEnd(player_color_end, player_color_next)"
-	* [<span class="tag str"></span>](intro#types) **player_color_end**: [Player Color](player-color) of the player who's turn ended.
-	* [<span class="tag str"></span>](intro#types) **player_color_next**: [Player Color](player-color) of the player who's turn is next.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color_end**: [Player Color](player-color) of the player who's turn ended.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color_next**: [Player Color](player-color) of the player who's turn is next.
 
 ``` Lua
 function onPlayerTurnEnd(color_end, color_next)
@@ -383,8 +383,8 @@ end
 Called at the end of a player's turn when using the in-game turn system.
 
 !!!info "onPlayerTurnStart(player_color_start, player_color_prev)"
-	* [<span class="tag str"></span>](intro#types) **player_color_start**: [Player Color](player-color) of the player who's turn is starting.
-	* [<span class="tag str"></span>](intro#types) **player_color_prev**: [Player Color](player-color) of the player who's turn just ended.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color_start**: [Player Color](player-color) of the player who's turn is starting.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color_prev**: [Player Color](player-color) of the player who's turn just ended.
 
 ``` Lua
 function onPlayerTurnStart(color_start, color_prev)
@@ -425,8 +425,8 @@ Check the [`onLoad()`](#onload) section for how to load the information you reco
 Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10.
 
 !!!info "onScriptingButtonDown(index, player_color)"
-	* [<span class="tag int"></span>](intro#types) **index**: Index number, representing which key was pressed.
-	* [<span class="tag str"></span>](intro#types) **player_color**: [Player Color](player-color) of the player who triggered the function.
+	* [<span class="tag int"></span>](intro#types)&nbsp;**index**: Index number, representing which key was pressed.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color**: [Player Color](player-color) of the player who triggered the function.
 
 ``` Lua
 function onScriptingButtonDown(index, color)
@@ -441,8 +441,8 @@ end
 Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10.
 
 !!!info "onScriptingButtonUp(index, player_color)"
-	* [<span class="tag int"></span>](intro#types) **index**: Index number, representing which key was released.
-	* [<span class="tag str"></span>](intro#types) **player_color**: [Player Color](player-color) of the player who triggered the function.
+	* [<span class="tag int"></span>](intro#types)&nbsp;**index**: Index number, representing which key was released.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color**: [Player Color](player-color) of the player who triggered the function.
 
 ``` Lua
 function onScriptingButtonUp(index, color)
@@ -481,9 +481,9 @@ end
 This function is called when an Object starts colliding with the Object the function is on. Does not work in Global.
 
 !!!info "onCollisionEnter(collision_info)"
-	* [<span class="tag tab"></span>](intro#types) **collision_info**: A Table containing data on colliding object.
-		* [<span class="tag obj"></span>](intro#types) **collision_info.*collision_object***: Object coming into contact with `self`.
-		* [<span class="tag tab"></span>](intro#types) **collision_info.*contact_points***: Sub-table full of the Vectors where contact took place.
+	* [<span class="tag tab"></span>](intro#types)&nbsp;**collision_info**: A Table containing data on colliding object.
+		* [<span class="tag obj"></span>](intro#types)&nbsp;**collision_info.*collision_object***: Object coming into contact with `self`.
+		* [<span class="tag tab"></span>](intro#types)&nbsp;**collision_info.*contact_points***: Sub-table full of the Vectors where contact took place.
 		* [<span class="tag vec"></span>](intro#vector) **collision_info.*relative_velocity***: Direction and magnitude at the time of collision.
 
 ``` Lua
@@ -511,9 +511,9 @@ end
 This function is called when an Object stops colliding with the Object the function is on. Does not work in Global.
 
 !!!info "onCollisionExit(collision_info)"
-	* [<span class="tag tab"></span>](intro#types) **collision_info**: A Table containing data on colliding object.
-		* [<span class="tag obj"></span>](intro#types) **collision_info.*collision_object***: Object leaving contact with `self`.
-		* [<span class="tag tab"></span>](intro#types) **collision_info.*contact_points***: Sub-table full of the Vectors where contact last broke off.
+	* [<span class="tag tab"></span>](intro#types)&nbsp;**collision_info**: A Table containing data on colliding object.
+		* [<span class="tag obj"></span>](intro#types)&nbsp;**collision_info.*collision_object***: Object leaving contact with `self`.
+		* [<span class="tag tab"></span>](intro#types)&nbsp;**collision_info.*contact_points***: Sub-table full of the Vectors where contact last broke off.
 		* [<span class="tag vec"></span>](intro#vector) **collision_info.*relative_velocity***: Direction and magnitude of the departing Object.
 
 ``` Lua
@@ -544,9 +544,9 @@ This function is called **every frame** that an Object is colliding with the Obj
 	This is a very expensive function and can easily slow/crash your game if misused. Use with caution.
 
 !!!info "onCollisionExit(collision_info)"
-	* [<span class="tag tab"></span>](intro#types) **collision_info**: A Table containing data on colliding object.
-		* [<span class="tag obj"></span>](intro#types) **collision_info.*collision_object***: Object coming into contact with `self`.
-		* [<span class="tag tab"></span>](intro#types) **collision_info.*contact_points***: Sub-table full of the Vectors where contact is taking place.
+	* [<span class="tag tab"></span>](intro#types)&nbsp;**collision_info**: A Table containing data on colliding object.
+		* [<span class="tag obj"></span>](intro#types)&nbsp;**collision_info.*collision_object***: Object coming into contact with `self`.
+		* [<span class="tag tab"></span>](intro#types)&nbsp;**collision_info.*contact_points***: Sub-table full of the Vectors where contact is taking place.
 		* [<span class="tag vec"></span>](intro#vector) **collision_info.*relative_velocity***: Direction and magnitude of the Object, currently.
 
 ``` Lua
@@ -586,7 +586,7 @@ end
 This function is called when this [Object](object) is dropped. Does not work in Global.
 
 !!!info "onDrop(player_color)"
-	* [<span class="tag str"></span>](intro#types) **player_color**: [Player Color](player-color) of the Player.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color**: [Player Color](player-color) of the Player.
 
 ``` Lua
 function onDrop(color)
@@ -602,7 +602,7 @@ end
 Called when a player picks up an Object.
 
 !!!info "onPickUp(player_color)"
-	* [<span class="tag str"></span>](intro#types) **player_color**: [Player Color](player-color) of the Player.
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color**: [Player Color](player-color) of the Player.
 
 ``` Lua
 function onPickUp(color)
