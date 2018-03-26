@@ -93,7 +93,7 @@ Color is a type of Table that is used to define a color.
 The Table will contain the keys `r`, `g`, `b`, `a` and/or `1`, `2`, `3`, `4`. The letter and numeric keys are duplicates of each other, and each represents a color or transparency.
 
 Color | Letter Key | Number Key
---- | --- | ---
+:--: | :--: | :--:
 red | r | 1
 green | g | 2
 blue | b | 3
@@ -144,7 +144,7 @@ Vector is a type of Table that is used to define a position, rotation or directi
 The Table will contain the keys `x`, `y`, `z` and/or `1`, `2`, `3`. The letter and numeric keys are duplicates of each other.
 
  Letter Key | Number Key
- --- | ---
+ :--: | :--:
  x | 1
  y | 2
  z | 3
