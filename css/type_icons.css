@@ -4,12 +4,12 @@
     font-weight: normal;
     text-align: center;
     font-size: 1rem;
-    display: inline-block;
+    display: inline;
     padding: 2px 4px;
     border-radius:5px;
     position: relative;
     margin: 0px 1px;
-    
+
     word-break: normal;
 
     width: 50px;
@@ -32,17 +32,17 @@
     border-radius:5px;
     padding: 2px 4px;
     display: inline-block;
-    
+
     position: relative;
     bottom: 1px;
     left: 1px;
     vertical-align:middle;
-    
+
     float: left;
     width: 50px;
     /*Squeezes lines together vertically*/
     line-height: 1;
-    
+
     word-break: keep-all;
 }
 .ret:hover {
@@ -70,7 +70,7 @@
     background-color: rgba(1, 0, 0, 0.2);
 }
 .tab:after {
-    content: "table";  
+    content: "table";
 }
 
 /*Intiger*/
