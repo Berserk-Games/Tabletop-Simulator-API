@@ -1618,13 +1618,13 @@
 </thead>
 <tbody>
 <tr>
-<td>addForce(<a href="../intro#vector"><span class="tag vec"></span></a> vector, <a href="../intro#types"><span class="tag int"></span></a>&nbsp;force_type)</td>
+<td>addForce(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;vector, <a href="../intro#types"><span class="tag int"></span></a>&nbsp;force_type)</td>
 <td>Adds force to an object in a directional Vector.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#addforce"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>addTorque(<a href="../intro#vector"><span class="tag vec"></span></a> vector, <a href="../intro#types"><span class="tag int"></span></a>&nbsp;force_type)</td>
+<td>addTorque(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;vector, <a href="../intro#types"><span class="tag int"></span></a>&nbsp;force_type)</td>
 <td>Adds torque to an object in a rotational Vector.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#addtorque"><span class="i"></span></a></td>
@@ -1696,73 +1696,73 @@
 <td></td>
 </tr>
 <tr>
-<td>positionToLocal(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>positionToLocal(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
 <td>Returns a Vector after converting a world Vector to a local Vector.</td>
 <td><a href="../intro#vector"><span class="ret vec"></span></a></td>
 <td><a href="#positiontolocal"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>positionToWorld(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>positionToWorld(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
 <td>Returns a Vector after converting a local Vector to a world Vector.</td>
 <td><a href="../intro#vector"><span class="ret vec"></span></a></td>
 <td><a href="#positiontoworld"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>rotate(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>rotate(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
 <td>Rotates Object smoothly in the direction of the given Vector.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>scale(<a href="../intro#vector"><span class="tag vec"></span></a> vector or <a href="../intro#types"><span class="tag flo"></span></a>)</td>
+<td>scale(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;vector or <a href="../intro#types"><span class="tag flo"></span></a>)</td>
 <td>Scales Object by a multiple.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#scale"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>setAngularVelocity(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>setAngularVelocity(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
 <td>Sets a Vector as the current angular velocity.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>setPosition(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>setPosition(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
 <td>Instantly moves an Object to the given Vector.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>setPositionSmooth(<a href="../intro#vector"><span class="tag vec"></span></a> vector, <a href="../intro#types"><span class="tag boo"></span></a>&nbsp;collide, <a href="../intro#types"><span class="tag boo"></span></a>&nbsp;fast)</td>
+<td>setPositionSmooth(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;vector, <a href="../intro#types"><span class="tag boo"></span></a>&nbsp;collide, <a href="../intro#types"><span class="tag boo"></span></a>&nbsp;fast)</td>
 <td>Moves the Object smoothly to the given Vector.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#setpositionsmooth"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>setRotation(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>setRotation(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
 <td>Instantly rotates an Object to the given Vector.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>setRotationSmooth(<a href="../intro#vector"><span class="tag vec"></span></a> vector, <a href="../intro#types"><span class="tag boo"></span></a>&nbsp;collide, <a href="../intro#types"><span class="tag boo"></span></a>&nbsp;fast)</td>
+<td>setRotationSmooth(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;vector, <a href="../intro#types"><span class="tag boo"></span></a>&nbsp;collide, <a href="../intro#types"><span class="tag boo"></span></a>&nbsp;fast)</td>
 <td>Rotates the Object smoothly to the given Vector.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#setrotationsmooth"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>setScale(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>setScale(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
 <td>Sets a Vector as the current scale.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>setVelocity(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>setVelocity(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
 <td>Sets a Vector as the current velocity.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>translate(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>translate(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
 <td>Smoothly moves Object by the given Vector offset.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td></td>
@@ -1924,7 +1924,7 @@
 </thead>
 <tbody>
 <tr>
-<td>setColorTint(<a href="../intro#color"><span class="tag col"></span></a> Color)</td>
+<td>setColorTint(<a href="../intro#color"><span class="tag col"></span></a>&nbsp;Color)</td>
 <td>Sets the Color tint.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td></td>
@@ -2004,7 +2004,7 @@
 <td><a href="#deal"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>dealToColorWithOffset(<a href="../intro#vector"><span class="tag vec"></span></a> offset, <a href="../intro#types"><span class="tag boo"></span></a>&nbsp;flip, <a href="../intro#types"><span class="tag str"></span></a>&nbsp;player_color)</td>
+<td>dealToColorWithOffset(<a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;offset, <a href="../intro#types"><span class="tag boo"></span></a>&nbsp;flip, <a href="../intro#types"><span class="tag str"></span></a>&nbsp;player_color)</td>
 <td>Deals from a deck to a position relative to the hand zone.</td>
 <td><a href="../intro#types"><span class="ret obj"></span></a></td>
 <td><a href="#dealtocolorwithoffset"><span class="i"></span></a></td>
@@ -2016,13 +2016,13 @@
 <td></td>
 </tr>
 <tr>
-<td>highlightOn(<a href="../intro#color"><span class="tag col"></span></a> color, <a href="../intro#types"><span class="tag flo"></span></a>&nbsp;duration)</td>
+<td>highlightOn(<a href="../intro#color"><span class="tag col"></span></a>&nbsp;color, <a href="../intro#types"><span class="tag flo"></span></a>&nbsp;duration)</td>
 <td>Creates a highlight around an Object.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>highlightOff(<a href="../intro#color"><span class="tag col"></span></a> color)</td>
+<td>highlightOff(<a href="../intro#color"><span class="tag col"></span></a>&nbsp;color)</td>
 <td>Removes a highlight from around an Object.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td></td>
@@ -2524,7 +2524,7 @@
 <li><a href="../intro#types"><span class="tag flo"></span></a> <strong>parameters.height</strong>: How tall the input will be, relative to the Object.</li>
 <li><a href="../intro#types"><span class="tag flo"></span></a> <strong>parameters.font_size</strong>: Size the label/value font will be, relative to the Object.</li>
 <li><a href="../intro#color"><span class="tag col"></span></a> <strong>parameters.color</strong>: A Color for the input's background.</li>
-<li><a href="../intro#color"><span class="tag col"></span></a> <strong>parameters.font_color</strong>: A Color for the value text.</li>
+<li><a href="../intro#color"><span class="tag col"></span></a>&nbsp;<strong>parameters.font_color</strong>: A Color for the value text.</li>
 <li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.tooltip</strong>: A popup of text, similar to how an Object's name is displayed on mouseover.</li>
 <li><a href="../intro#types"><span class="tag int"></span></a> <strong>parameters.alignment</strong>: How text is aligned in the input box.<ul>
 <li><strong>1</strong>: Automatic</li>
@@ -2665,7 +2665,7 @@
 <p>The returned Table contains sub-Tables, each sub-Table containing these 2 key/value pairs.</p>
 <ul>
 <li><a href="../intro#types"><span class="tag var"></span></a> <strong>value</strong>: What value is associated with a given rotation. Often a String or Int.</li>
-<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>rotation</strong>: Rotation of the Object that best represents the given value pointing up.</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;<strong>rotation</strong>: Rotation of the Object that best represents the given value pointing up.</li>
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="c1">--Example returned Table for a coin</span>
@@ -2764,7 +2764,7 @@
 <ul>
 <li><a href="../intro#types"><span class="tag tab"></span></a>&nbsp;<strong>rotation_values</strong>: A Table containing Tables with the following values. 1 sub-Table per "face".<ul>
 <li><a href="../intro#types"><span class="tag var"></span></a>&nbsp;<strong>rotation_values.value</strong>: What value is associated with a given rotation. Often a String or Int.</li>
-<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>rotation_values.rotation</strong>: The rotation Vector of the Object that best represents the given value pointing up.</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a>&nbsp;<strong>rotation_values.rotation</strong>: The rotation Vector of the Object that best represents the given value pointing up.</li>
 </ul>
 </li>
 </ul>
