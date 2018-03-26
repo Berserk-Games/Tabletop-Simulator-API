@@ -1358,7 +1358,7 @@
         {
             "location": "/changelog/",
             "text": "This is an ongoing list of scripting changes that have been implemented.\n\n\nv1.0.1 - 3/26/18\n\u00b6\n\n\n\n\n\n\nItem blah blah blah here's a link \nto the article\n.\n\n\nItem\n\n\nItem\n\n\nItem\n\n\n\n\n\n\nv1.0.0 - 3/16/18\n\u00b6\n\n\n\n\n\n\nItem\n\n\nItem\n\n\nItem\n\n\n\n\n\n\nOR\n\n\nv1.0.1 - 3/26/18\n\u00b6\n\n\n\n\n\n\nItem blah blah blah here's a link \nto the article\n.\n\n\nItem\n\n\nItem\n\n\nItem\n\n\n\n\n\n\nv1.0.0 - 3/16/18\n\u00b6\n\n\n\n\n\n\nItem\n\n\nItem\n\n\nItem",
-            "title": "History"
+            "title": "Changelog"
         },
         {
             "location": "/changelog/#v101-32618",
