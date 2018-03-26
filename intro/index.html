@@ -1113,7 +1113,7 @@
 <h3 id="object-script">Object Script<a class="headerlink" href="#object-script" title="Permanent link"> </a></h3>
 <p>A script that is attached to an in-game Objecet, and is saved as part of it. This is similar to any other property like its scale or tint. Some functions ask for an Object reference in order to attempt to run a function on it. In these cases, Global (exactly as written here) is also a valid Object reference.</p>
 <h3 id="guid">GUID<a class="headerlink" href="#guid" title="Permanent link"> </a></h3>
-<p>In Tabletop Simulator, a GUID is a unique 6-character <a href="../intro#types">string</a> which can be used to identify in-game <a href="../object">Objects</a>. GUIDs are automatically assigned when objects exist within the scene.</p>
+<p>In Tabletop Simulator, a GUID is a unique 6-character <a href="../intro#types">string</a>&nbsp;which can be used to identify in-game <a href="../object">Objects</a>. GUIDs are automatically assigned when objects exist within the scene.</p>
 <p>If an object is duplicated, it will sometimes have the same GUID for 1 frame before the engine assigns a new GUID to the newer Object. Objects in containers (bags/decks/etc) do not automatically get new GUIDs assigned to them in this way. Only once their contents are moved out into the scene.</p>
 <details class="warning"><summary>Custom Deck Card GUIDs</summary><p>When you first create a custom deck, all cards within the deck share the same GUID. If you need to reference individual GUIDs of cards, then the way to solve this is to lay out all cards from the deck at the same time to allow new GUIDs to be assigned by the game. <a href="http://steamcommunity.com/sharedfiles/filedetails/?id=1180142950">This tool</a> can be used to simplify the process.</p></details><hr />
 <h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link"> </a></h3>
@@ -1129,55 +1129,55 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../intro#types"><span class="tag nil"></span></a></td>
+<td><a href="../intro#types"><span class="tag nil"></span></a>&nbsp;</td>
 <td>nil</td>
 <td>No value.</td>
 <td><code class="codehilite"><span class="kc">nil</span></code></td>
 </tr>
 <tr>
-<td><a href="../intro#types"><span class="tag int"></span></a></td>
+<td><a href="../intro#types"><span class="tag int"></span></a>&nbsp;</td>
 <td>int</td>
 <td>Non-decimal value.</td>
 <td><code class="codehilite"><span class="mi">5</span></code></td>
 </tr>
 <tr>
-<td><a href="../intro#types"><span class="tag flo"></span></a></td>
+<td><a href="../intro#types"><span class="tag flo"></span></a>&nbsp;</td>
 <td>float</td>
 <td>Non-exact decimal value.</td>
 <td><code class="codehilite"><span class="mf">2.032</span></code></td>
 </tr>
 <tr>
-<td><a href="../intro#types"><span class="tag boo"></span></a></td>
+<td><a href="../intro#types"><span class="tag boo"></span></a>&nbsp;</td>
 <td>bool</td>
 <td><code class="codehilite">true</code> or <code class="codehilite">false</code> value.</td>
 <td><code class="codehilite"><span class="kc">true</span></code></td>
 </tr>
 <tr>
-<td><a href="../intro#types"><span class="tag str"></span></a></td>
+<td><a href="../intro#types"><span class="tag str"></span></a>&nbsp;</td>
 <td>string</td>
 <td>A series of characters.</td>
 <td><code class="codehilite"><span class="s2">&quot;Hello.&quot;</span></code></td>
 </tr>
 <tr>
-<td><a href="../intro#types"><span class="tag tab"></span></a></td>
+<td><a href="../intro#types"><span class="tag tab"></span></a>&nbsp;</td>
 <td>table</td>
 <td>A container with keys and values.</td>
 <td><code class="codehilite"><span class="p">{[</span><span class="s2">&quot;key&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span></code></td>
 </tr>
 <tr>
-<td><a href="../intro#types"><span class="tag obj"></span></a></td>
+<td><a href="../intro#types"><span class="tag obj"></span></a>&nbsp;</td>
 <td>object</td>
 <td>An in-game physical Object. Sometimes Global.</td>
 <td><code class="codehilite"><span class="n">Global</span> <span class="ow">or</span> <span class="n">self</span></code></td>
 </tr>
 <tr>
-<td><a href="../intro#types"><span class="tag pla"></span></a></td>
+<td><a href="../intro#types"><span class="tag pla"></span></a>&nbsp;</td>
 <td>player</td>
 <td>An in-game Player.</td>
 <td><code class="codehilite"><span class="n">Player</span><span class="p">[</span><span class="s2">&quot;White&quot;</span><span class="p">]</span></code></td>
 </tr>
 <tr>
-<td><a href="../intro#types"><span class="tag var"></span></a></td>
+<td><a href="../intro#types"><span class="tag var"></span></a>&nbsp;</td>
 <td>variable</td>
 <td>A combination of other types.</td>
 <td></td>

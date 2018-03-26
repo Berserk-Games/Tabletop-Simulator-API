@@ -1096,13 +1096,13 @@
 <td></td>
 </tr>
 <tr>
-<td>copy(<a href="../intro#types"><span class="tag tab"></span></a> object_list)</td>
+<td>copy(<a href="../intro#types"><span class="tag tab"></span></a>&nbsp;object_list)</td>
 <td>Copy a list of Objects to the clipboard. Works with <a href="#paste">paste(...)</a>.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#copy"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>destroyObject(<a href="../intro#types"><span class="tag obj"></span></a> obj)</td>
+<td>destroyObject(<a href="../intro#types"><span class="tag obj"></span></a>&nbsp;obj)</td>
 <td>Destory an Object.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#destroyobject"><span class="i"></span></a></td>
@@ -1126,7 +1126,7 @@
 <td></td>
 </tr>
 <tr>
-<td>getObjectFromGUID(<a href="../intro#types"><span class="tag str"></span></a> guid)</td>
+<td>getObjectFromGUID(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;guid)</td>
 <td>Returns Object by its GUID. Will return <code class="codehilite">nil</code> if this GUID doesn't currently exist.</td>
 <td><a href="../intro#types"><span class="ret obj"></span></a></td>
 <td><a href="#getobjectfromguid"><span class="i"></span></a></td>
@@ -1138,31 +1138,31 @@
 <td></td>
 </tr>
 <tr>
-<td>paste(<a href="../intro#types"><span class="tag tab"></span></a> parameters)</td>
+<td>paste(<a href="../intro#types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
 <td>Pastes Objects in-game that were copied to the in-game clipboard. Works with <a href="#copy">copy(...)</a>.</td>
 <td><a href="../intro#types"><span class="ret tab"></span></a></td>
 <td><a href="#paste"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>setNotes(<a href="../intro#types"><span class="tag str"></span></a> notes)</td>
+<td>setNotes(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;notes)</td>
 <td>Replace the text in the notes window with the string.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#setnotes"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>spawnObject(<a href="../intro#types"><span class="tag tab"></span></a> parameters)</td>
+<td>spawnObject(<a href="../intro#types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
 <td>Spawns an Object. View the <a href="../spawnableobjects">Spawnable Object</a> page for Objects that can be spawned.</td>
 <td><a href="../intro#types"><span class="ret obj"></span></a></td>
 <td><a href="#spawnobject"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>startLuaCoroutine(<a href="../intro#types"><span class="tag obj"></span></a> function_owner, <a href="../intro#types"><span class="tag str"></span></a> function_name)</td>
+<td>startLuaCoroutine(<a href="../intro#types"><span class="tag obj"></span></a>&nbsp;function_owner, <a href="../intro#types"><span class="tag str"></span></a>&nbsp;function_name)</td>
 <td>Start a coroutine.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#startluacoroutine"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>stringColorToRGB(<a href="../intro#types"><span class="tag str"></span></a> player_color)</td>
+<td>stringColorToRGB(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;player_color)</td>
 <td>Converts a <a href="../player-color">Player Color</a> string into a Color Table for tinting.</td>
 <td><a href="../intro#color"><span class="ret col"></span></a></td>
 <td><a href="#stringcolortorgb"><span class="i"></span></a></td>
@@ -1182,49 +1182,49 @@
 </thead>
 <tbody>
 <tr>
-<td>broadcastToAll(<a href="../intro#types"><span class="tag str"></span></a> message, <a href="../intro#color"><span class="tag col"></span></a> message_tint)</td>
+<td>broadcastToAll(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;message, <a href="../intro#color"><span class="tag col"></span></a> message_tint)</td>
 <td>Print an on-screen message to all Players, as well as their in-game chat.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#broadcasttoall"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>broadcastToColor(<a href="../intro#types"><span class="tag str"></span></a> message, <a href="../intro#types"><span class="tag str"></span></a> player_color, <a href="../intro#color"><span class="tag col"></span></a> message_tint)</td>
+<td>broadcastToColor(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;message, <a href="../intro#types"><span class="tag str"></span></a>&nbsp;player_color, <a href="../intro#color"><span class="tag col"></span></a> message_tint)</td>
 <td>Print an on-screen message to a specified Player, as well as their in-game chat.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#broadcasttocolor"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>log(<a href="../intro#types"><span class="tag var"></span></a> element, <a href="../intro#types"><span class="tag str"></span></a> tag, <a href="../intro#types"><span class="tag str"></span></a> label)</td>
+<td>log(<a href="../intro#types"><span class="tag var"></span></a>&nbsp;element, <a href="../intro#types"><span class="tag str"></span></a>&nbsp;tag, <a href="../intro#types"><span class="tag str"></span></a>&nbsp;label)</td>
 <td>Print information to the log tab. (Shortcut: ~)</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#log"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>logStyle(<a href="../intro#types"><span class="tag str"></span></a> tag, <a href="../intro#color"><span class="tag col"></span></a> tint, <a href="../intro#types"><span class="tag str"></span></a> prefix, <a href="../intro#types"><span class="tag str"></span></a> postfix)</td>
+<td>logStyle(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;tag, <a href="../intro#color"><span class="tag col"></span></a> tint, <a href="../intro#types"><span class="tag str"></span></a>&nbsp;prefix, <a href="../intro#types"><span class="tag str"></span></a>&nbsp;postfix)</td>
 <td>Set style options for the specified tag type for the log.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#logstyle"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>print(<a href="../intro#types"><span class="tag str"></span></a> message)</td>
+<td>print(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;message)</td>
 <td>Prints a string into chat that only the host is able to see. Used for debugging scripts.</td>
 <td><a href="../intro#types"><span class="ret nil"></span></a></td>
 <td><a href="#print"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>printToAll(<a href="../intro#types"><span class="tag str"></span></a> message, <a href="../intro#color"><span class="tag col"></span></a> message_tint)</td>
+<td>printToAll(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;message, <a href="../intro#color"><span class="tag col"></span></a> message_tint)</td>
 <td>Print a message into the chat of all connected players.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#printtoall"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>printToColor(<a href="../intro#types"><span class="tag str"></span></a> message, <a href="../intro#types"><span class="tag str"></span></a> player_color, <a href="../intro#color"><span class="tag col"></span></a> message_tint)</td>
+<td>printToColor(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;message, <a href="../intro#types"><span class="tag str"></span></a>&nbsp;player_color, <a href="../intro#color"><span class="tag col"></span></a> message_tint)</td>
 <td>Print a message to a specific <a href="../player-color">Player Color</a>.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#printtocolor"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>sendExternalMessage(<a href="../intro#types"><span class="tag tab"></span></a> data)</td>
+<td>sendExternalMessage(<a href="../intro#types"><span class="tag tab"></span></a>&nbsp;data)</td>
 <td>Send a table to your external script editor, most likely Atom. This is for custom editor functionality.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td></td>
@@ -1244,13 +1244,13 @@
 </thead>
 <tbody>
 <tr>
-<td>addNotebookTab(<a href="../intro#types"><span class="tag tab"></span></a> parameters)</td>
+<td>addNotebookTab(<a href="../intro#types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
 <td>Adds a notebook tab, returning its index.</td>
 <td><a href="../intro#types"><span class="ret int"></span></a></td>
 <td><a href="#addnotebooktab"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>editNotebookTab(<a href="../intro#types"><span class="tag tab"></span></a> parameters)</td>
+<td>editNotebookTab(<a href="../intro#types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
 <td>Edit an existing Tab in the notebook.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#editnotebooktab"><span class="i"></span></a></td>
@@ -1262,7 +1262,7 @@
 <td><a href="#getnotebooktabs"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>removeNotebookTab(<a href="../intro#types"><span class="tag int"></span></a> index)</td>
+<td>removeNotebookTab(<a href="../intro#types"><span class="tag int"></span></a>&nbsp;index)</td>
 <td>Remove a notebook tab.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#removenotebooktab"><span class="i"></span></a></td>
