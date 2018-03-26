@@ -1,0 +1,1461 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/Icon-Dice.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.6.2">
+    
+    
+      
+        <title>Introduction - Tabletop Simulator Scripting Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.9b572555.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../css/theme.css">
+    
+      <link rel="stylesheet" href="../css/table.css">
+    
+      <link rel="stylesheet" href="../css/type_icons.css">
+    
+      <link rel="stylesheet" href="../css/i_icons.css">
+    
+      <link rel="stylesheet" href="../css/player_color_table.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#test" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Tabletop Simulator Scripting Documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../img/TSIcon.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Tabletop Simulator Scripting Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                Introduction
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub Source
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <img src="../img/TSIcon.png" width="24" height="24">
+      
+    </span>
+    Tabletop Simulator Scripting Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub Source
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../atom/" title="Atom" class="md-nav__link">
+      Atom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../externaleditorapi/" title="External Editor AP" class="md-nav__link">
+      External Editor AP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Lua API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Lua API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Introduction
+      </label>
+    
+    <a href="./" title="Introduction" class="md-nav__link md-nav__link--active">
+      Introduction
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#test" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test_1" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test_2" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test_3" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test_4" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-tts-documentation" title="Using TTS Documentation" class="md-nav__link">
+    Using TTS Documentation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#left-column" title="Left Column" class="md-nav__link">
+    Left Column
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#right-column" title="Right Column" class="md-nav__link">
+    Right Column
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#growing-tts-documentation" title="Growing TTS Documentation" class="md-nav__link">
+    Growing TTS Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tts-terms" title="TTS Terms" class="md-nav__link">
+    TTS Terms
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#guid" title="GUID" class="md-nav__link">
+    GUID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types" title="Types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes" title="Classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object-classes" title="Object Classes" class="md-nav__link">
+    Object Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-classes" title="Static Classes" class="md-nav__link">
+    Static Classes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-standards" title="Special Standards" class="md-nav__link">
+    Special Standards
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color" title="Color" class="md-nav__link">
+    Color
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keys" title="Keys" class="md-nav__link">
+    Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-keys" title="Mixed Keys" class="md-nav__link">
+    Mixed Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value" title="Value" class="md-nav__link">
+    Value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector" title="Vector" class="md-nav__link">
+    Vector
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keys_1" title="Keys" class="md-nav__link">
+    Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-keys_1" title="Mixed Keys" class="md-nav__link">
+    Mixed Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-range" title="Value Range" class="md-nav__link">
+    Value Range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-details" title="Type Details" class="md-nav__link">
+    Type Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#position" title="Position" class="md-nav__link">
+    Position
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation" title="Rotation" class="md-nav__link">
+    Rotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direction" title="Direction" class="md-nav__link">
+    Direction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../event/" title="Event" class="md-nav__link">
+      Event
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../base/" title="Base" class="md-nav__link">
+      Base
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../object/" title="Object" class="md-nav__link">
+      Object
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assetbundle/" title="AssetBundle" class="md-nav__link">
+      AssetBundle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clock/" title="Clock" class="md-nav__link">
+      Clock
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../counter/" title="Counter" class="md-nav__link">
+      Counter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../json/" title="JSON" class="md-nav__link">
+      JSON
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lighting/" title="Lighting" class="md-nav__link">
+      Lighting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../physics/" title="Physics" class="md-nav__link">
+      Physics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../player/" title="Player" class="md-nav__link">
+      Player
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../player-color/" title="Player Color" class="md-nav__link">
+      Player Color
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rpgfigurine/" title="RPGFigurine" class="md-nav__link">
+      RPGFigurine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../spawnableobjects/" title="Spawnable Objects" class="md-nav__link">
+      Spawnable Objects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../texttool/" title="TextTool" class="md-nav__link">
+      TextTool
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../timer/" title="Timer" class="md-nav__link">
+      Timer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../webrequest/" title="Web Request" class="md-nav__link">
+      Web Request
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#test" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test_1" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test_2" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test_3" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test_4" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-tts-documentation" title="Using TTS Documentation" class="md-nav__link">
+    Using TTS Documentation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#left-column" title="Left Column" class="md-nav__link">
+    Left Column
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#right-column" title="Right Column" class="md-nav__link">
+    Right Column
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#growing-tts-documentation" title="Growing TTS Documentation" class="md-nav__link">
+    Growing TTS Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tts-terms" title="TTS Terms" class="md-nav__link">
+    TTS Terms
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#guid" title="GUID" class="md-nav__link">
+    GUID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types" title="Types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes" title="Classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object-classes" title="Object Classes" class="md-nav__link">
+    Object Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-classes" title="Static Classes" class="md-nav__link">
+    Static Classes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-standards" title="Special Standards" class="md-nav__link">
+    Special Standards
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color" title="Color" class="md-nav__link">
+    Color
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keys" title="Keys" class="md-nav__link">
+    Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-keys" title="Mixed Keys" class="md-nav__link">
+    Mixed Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value" title="Value" class="md-nav__link">
+    Value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector" title="Vector" class="md-nav__link">
+    Vector
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keys_1" title="Keys" class="md-nav__link">
+    Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-keys_1" title="Mixed Keys" class="md-nav__link">
+    Mixed Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-range" title="Value Range" class="md-nav__link">
+    Value Range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-details" title="Type Details" class="md-nav__link">
+    Type Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#position" title="Position" class="md-nav__link">
+    Position
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation" title="Rotation" class="md-nav__link">
+    Rotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direction" title="Direction" class="md-nav__link">
+    Direction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation/edit/master/docs/intro.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Introduction</h1>
+                
+                <h2 id="test">Test<a class="headerlink" href="#test" title="Permanent link">&para;</a></h2>
+<h3 id="test_1">Test<a class="headerlink" href="#test_1" title="Permanent link">&para;</a></h3>
+<h4 id="test_2">Test<a class="headerlink" href="#test_2" title="Permanent link">&para;</a></h4>
+<h5 id="test_3">Test<a class="headerlink" href="#test_3" title="Permanent link">&para;</a></h5>
+<h6 id="test_4">Test<a class="headerlink" href="#test_4" title="Permanent link">&para;</a></h6>
+<p>In this section, you will find details on all events/classes/functions specific to Tabletop Simulator's Lua scripting. For more general information on how the scripting language of Lua works and what it does on its own, you can review the <a href="https://www.lua.org/docs.html">Official Lua Documentation</a>. </p>
+<h2 id="using-tts-documentation">Using TTS Documentation<a class="headerlink" href="#using-tts-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="left-column">Left Column<a class="headerlink" href="#left-column" title="Permanent link">&para;</a></h3>
+<p>This is the top-level list of classes and other information needed when scripting with Lua in Tabletop Simulator. Event, Base and Object are the three pages you will use the most, with the rest referring to niche information you can access as you go. It is a good idea to familiarize yourself with the contents of those three pages in order to have a good high-level understanding of off what scripting is capable of doing.</p>
+<h3 id="right-column">Right Column<a class="headerlink" href="#right-column" title="Permanent link">&para;</a></h3>
+<p>The Table of Contents will lay out the contents of the page you are on. It always starts with high-level summary information first and, if needed, detailed information towards the bottom. The <span class="i"></span> next to a summary element will take you directly down to the relevant detailed explanation below.</p>
+<h2 id="growing-tts-documentation">Growing TTS Documentation<a class="headerlink" href="#growing-tts-documentation" title="Permanent link">&para;</a></h2>
+<p>This documentation is written via Markdown language and some custom CSS. The relevant files you can modify, as well as some detailed editing instructions, are listed on GitHub. You can make a pull request to made modifications/improvements that can be incorporated into this documentation.</p>
+<p>Just click the link in the pencil icon in the top-right of an article, or visit the GitHub page for more information by clicking GitHub Source in the far upper right.</p>
+<hr />
+<h2 id="tts-terms">TTS Terms<a class="headerlink" href="#tts-terms" title="Permanent link">&para;</a></h2>
+<h3 id="guid">GUID<a class="headerlink" href="#guid" title="Permanent link">&para;</a></h3>
+<p>In Tabletop Simulator, a GUID is a unique 6-character <a href="../intro#types">string</a> which can be used to identify in-game <a href="../object">Objects</a>. GUIDs are automatically assigned when objects exist within the scene.</p>
+<p>If an object is duplicated, it will sometimes have the same GUID for 1 frame before the engine assigns a new GUID to the newer Object. Objects in containers (bags/decks/etc) do not automatically get new GUIDs assigned to them in this way. Only once their contents are moved out into the scene.</p>
+<details class="warning"><summary>Custom Deck Card GUIDs</summary><p>When you first create a custom deck, all cards within the deck share the same GUID. If you need to reference individual GUIDs of cards, then the way to solve this is to lay out all cards from the deck at the same time to allow new GUIDs to be assigned by the game. <a href="http://steamcommunity.com/sharedfiles/filedetails/?id=1180142950">This tool</a> can be used to simplify the process.</p></details><hr />
+<h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
+<p>Type refers to the type of information. You do not need to declare the type in Lua, but in this API you will see them indicated. This is only so you know what kind of information is required in a given variable/parameter. This API utilizes the following types.</p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../intro#types"><span class="tag nil"></span></a></td>
+<td>nil</td>
+<td>No value.</td>
+<td><code class="codehilite"><span class="kc">nil</span></code></td>
+</tr>
+<tr>
+<td><a href="../intro#types"><span class="tag int"></span></a></td>
+<td>int</td>
+<td>Non-decimal value.</td>
+<td><code class="codehilite"><span class="mi">5</span></code></td>
+</tr>
+<tr>
+<td><a href="../intro#types"><span class="tag flo"></span></a></td>
+<td>float</td>
+<td>Non-exact decimal value.</td>
+<td><code class="codehilite"><span class="mf">2.032</span></code></td>
+</tr>
+<tr>
+<td><a href="../intro#types"><span class="tag boo"></span></a></td>
+<td>bool</td>
+<td><code class="codehilite">true</code> or <code class="codehilite">false</code> value.</td>
+<td><code class="codehilite"><span class="kc">true</span></code></td>
+</tr>
+<tr>
+<td><a href="../intro#types"><span class="tag str"></span></a></td>
+<td>string</td>
+<td>A series of characters.</td>
+<td><code class="codehilite"><span class="s2">&quot;Hello.&quot;</span></code></td>
+</tr>
+<tr>
+<td><a href="../intro#types"><span class="tag tab"></span></a></td>
+<td>table</td>
+<td>A container with keys and values.</td>
+<td><code class="codehilite"><span class="p">{[</span><span class="s2">&quot;key&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span></code></td>
+</tr>
+<tr>
+<td><a href="../intro#types"><span class="tag obj"></span></a></td>
+<td>object</td>
+<td>An in-game physical Object. Can refer to Global.</td>
+<td><code class="codehilite"><span class="n">Global</span> <span class="ow">or</span> <span class="n">self</span></code></td>
+</tr>
+<tr>
+<td><a href="../intro#types"><span class="tag pla"></span></a></td>
+<td>player</td>
+<td>An in-game Player.</td>
+<td><code class="codehilite"><span class="n">Player</span><span class="p">[</span><span class="s2">&quot;White&quot;</span><span class="p">]</span></code></td>
+</tr>
+<tr>
+<td><a href="../intro#types"><span class="tag var"></span></a></td>
+<td>variable</td>
+<td>Can possibly be some or any other type described above.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>For more information what types are, you can refer to the relevant <a href="https://www.lua.org/manual/5.1/manual.html#2.2">Lua documentation</a>.</p>
+<hr />
+<h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h3>
+<p>Defining class requires further knowledge on object-oriented programming to really understand. However for the purposes of Tabletop Simulator Lua scripting, you can think of a class as a standard or collection that handles categories of objects.</p>
+<h4 id="object-classes">Object Classes<a class="headerlink" href="#object-classes" title="Permanent link">&para;</a></h4>
+<p>Associated with in-game Objects.</p>
+<ul>
+<li><a href="../clock">Clock</a></li>
+<li><a href="../counter">Counter</a></li>
+<li><a href="../object">Object</a></li>
+<li><a href="../assetbundle">AssetBundle</a></li>
+<li><a href="../rpgfigurine">RPGFigurine</a></li>
+<li><a href="../texttool">TextTool</a></li>
+</ul>
+<h4 id="static-classes">Static Classes<a class="headerlink" href="#static-classes" title="Permanent link">&para;</a></h4>
+<p>Associated with in-game properties and systems.</p>
+<ul>
+<li><a href="../json">JSON</a></li>
+<li><a href="../player">Player</a></li>
+<li><a href="../timer">Timer</a></li>
+<li><a href="../webrequest">WebRequest</a></li>
+<li><a href="../physics">Physics</a></li>
+<li><a href="../lighting">Lighting</a></li>
+</ul>
+<p>For more information on what a class is, you can refer to the relevant <a href="https://www.lua.org/pil/16.1.html">Lua Documentation</a>.</p>
+<hr />
+<h3 id="special-standards">Special Standards<a class="headerlink" href="#special-standards" title="Permanent link">&para;</a></h3>
+<p>There are two Table types that are used often in Tabletop Simulator. They represent Vectors and Colors, and have special formatting rules to be understood by the many functions that utilize them.</p>
+<h4 id="color">Color<a class="headerlink" href="#color" title="Permanent link">&para;</a></h4>
+<p>Color is a type of Table that is used to define a color.</p>
+<h5 id="keys">Keys<a class="headerlink" href="#keys" title="Permanent link">&para;</a></h5>
+<p>The Table will contain the keys <code class="codehilite">r</code>, <code class="codehilite">g</code>, <code class="codehilite">b</code>, <code class="codehilite">a</code> and/or <code class="codehilite">1</code>, <code class="codehilite">2</code>, <code class="codehilite">3</code>, <code class="codehilite">4</code>. The letter and numeric keys are duplicates of each other, and each represents a color or transparency.</p>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>Letter Key</th>
+<th>Number Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>red</td>
+<td>r</td>
+<td>1</td>
+</tr>
+<tr>
+<td>green</td>
+<td>g</td>
+<td>2</td>
+</tr>
+<tr>
+<td>blue</td>
+<td>b</td>
+<td>3</td>
+</tr>
+<tr>
+<td>alpha</td>
+<td>a</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>As an example, an Object with a white color tint would return this table:
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="mi">2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="mi">3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div></p>
+<p>Notice it does not contain the <code class="codehilite">a</code> or <code class="codehilite">4</code> keys. This is because currently only scripted buttons and scripted inputs utilize the alpha channel (transparency).</p>
+<h5 id="mixed-keys">Mixed Keys<a class="headerlink" href="#mixed-keys" title="Permanent link">&para;</a></h5>
+<p>Only one type of key, number or letter, is required. If both a are present in a Table, the numeric key is ignored and only the <strong>letter key</strong> is used.</p>
+<div class="codehilite"><pre><span></span><span class="c1">--Valid Table for red</span>
+<span class="p">{</span><span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">}</span>
+<span class="c1">--Valid Table for blue</span>
+<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
+<span class="c1">--This Table would be red.</span>
+<span class="p">{</span><span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
+</pre></div>
+
+<h5 id="value">Value<a class="headerlink" href="#value" title="Permanent link">&para;</a></h5>
+<p>Values are between 0 and 1 for each key. If you are using RGB color that is in 0-255, you can use simple math to convert to the proper value.
+<div class="codehilite"><pre><span></span><span class="c1">--To display a color that is r=50, b=83, g=199</span>
+<span class="n">self</span><span class="p">.</span><span class="n">setColorTint</span><span class="p">({</span><span class="mi">50</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="mi">83</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="mi">199</span><span class="o">/</span><span class="mi">255</span><span class="p">})</span>
+</pre></div></p>
+<hr />
+<h4 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link">&para;</a></h4>
+<p>Vector is a type of Table that is used to define a position, rotation or direction. </p>
+<h5 id="keys_1">Keys<a class="headerlink" href="#keys_1" title="Permanent link">&para;</a></h5>
+<p>The Table will contain the keys <code class="codehilite">x</code>, <code class="codehilite">y</code>, <code class="codehilite">z</code> and/or <code class="codehilite">1</code>, <code class="codehilite">2</code>, <code class="codehilite">3</code>. The letter and numeric keys are duplicates of each other.</p>
+<table>
+<thead>
+<tr>
+<th>Letter Key</th>
+<th>Number Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td>1</td>
+</tr>
+<tr>
+<td>y</td>
+<td>2</td>
+</tr>
+<tr>
+<td>z</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>As an example, An Object at coordinate X=5, Y=2, Z=-1 would return this table:
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="mi">1</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="mi">2</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="mi">3</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div></p>
+<h5 id="mixed-keys_1">Mixed Keys<a class="headerlink" href="#mixed-keys_1" title="Permanent link">&para;</a></h5>
+<p>Only one type of key, number or letter, is required. If both a are present in a Table, the numeric key is ignored and only the <strong>letter key</strong> is used.</p>
+<div class="codehilite"><pre><span></span><span class="c1">--Valid Table for 1 to the right</span>
+<span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">}</span>
+<span class="c1">--Valid Table for 1 unit forward</span>
+<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
+<span class="c1">--This Table would be for 1 unit to the right.</span>
+<span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
+</pre></div>
+
+<h5 id="value-range">Value Range<a class="headerlink" href="#value-range" title="Permanent link">&para;</a></h5>
+<p>The range of values depend on the type of Vector you are using.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Position</td>
+<td>A point in space.</td>
+<td>Any number within the bounds of the world.</td>
+</tr>
+<tr>
+<td>Rotation</td>
+<td>Angle, in degrees.</td>
+<td>-180 to 180.</td>
+</tr>
+<tr>
+<td>Direction</td>
+<td>Vector direction.</td>
+<td>-1 to 1.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="type-details">Type Details<a class="headerlink" href="#type-details" title="Permanent link">&para;</a></h5>
+<h6 id="position">Position<a class="headerlink" href="#position" title="Permanent link">&para;</a></h6>
+<p>X is right/left, Y is up/down, Z is forward/back. A positional Vector can be either world or local. Most of Tabletop Simulator's functions use world positional Vectors.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>World</td>
+<td>The center of the instance is <code class="codehilite">{x=0, y=0, z=0}</code>. That is usually near the tabletop's center.</td>
+</tr>
+<tr>
+<td>Local</td>
+<td>The center of the Object's model is <code class="codehilite">{x=0, y=0, z=0}</code>. The center of an Object is determined by the model's creator.</td>
+</tr>
+</tbody>
+</table>
+<details class="tip"><summary>Conversion Between World/Local</summary><p><a href="../object#positiontoworld">positionToWorld(...)</a> and <a href="../object#positiontolocal">positionToLocal(...)</a> can be used to convert between the two types.</p></details><h6 id="rotation">Rotation<a class="headerlink" href="#rotation" title="Permanent link">&para;</a></h6>
+<p>X is pitch (nodding your head), Y is yaw (shaking you head), Z is roll (tilting your head).</p>
+<h6 id="direction">Direction<a class="headerlink" href="#direction" title="Permanent link">&para;</a></h6>
+<p>X is right/left, Y is up/down, Z is forward/back.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!--This is empty because it is killing the default footer-->
+<!--Do not remove.-->
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.abd7b172.js"></script>
+      
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

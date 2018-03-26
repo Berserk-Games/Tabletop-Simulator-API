@@ -1,0 +1,32 @@
+/*General table formatting of markdown-created tables*/
+
+/*Table Striping*/
+.md-typeset__table table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/*Table padding*/
+.md-typeset table:not([class]) td {
+    padding: 4px 6px;
+    vertical-align: middle;
+}
+.md-typeset table:not([class]) th {
+    min-width: 0px;
+    padding: 14px 6px;
+}
+
+/*Prevent break of function name in table*/
+.md-typeset table th:first-child {
+    white-space: nowrap;
+}
+
+/*Prevent break of function name in table*/
+.md-typeset table td:first-child {
+    font-family: 'Inconsolata', 'Monaco', 'Consolas', 'Courier New', 'Courier';
+}
+
+
+/*Nowrap on first row of tables
+html body div.md-container table tr td:first-child {
+    white-space: nowrap;
+}*/

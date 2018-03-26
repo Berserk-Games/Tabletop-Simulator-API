@@ -1,0 +1,1322 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/Icon-Dice.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.6.2">
+    
+    
+      
+        <title>Spawnable Objects - Tabletop Simulator Scripting Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.9b572555.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../css/theme.css">
+    
+      <link rel="stylesheet" href="../css/table.css">
+    
+      <link rel="stylesheet" href="../css/type_icons.css">
+    
+      <link rel="stylesheet" href="../css/i_icons.css">
+    
+      <link rel="stylesheet" href="../css/player_color_table.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#built-in-game-objects" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Tabletop Simulator Scripting Documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../img/TSIcon.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Tabletop Simulator Scripting Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                Spawnable Objects
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub Source
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <img src="../img/TSIcon.png" width="24" height="24">
+      
+    </span>
+    Tabletop Simulator Scripting Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub Source
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../atom/" title="Atom" class="md-nav__link">
+      Atom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../externaleditorapi/" title="External Editor AP" class="md-nav__link">
+      External Editor AP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Lua API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Lua API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../event/" title="Event" class="md-nav__link">
+      Event
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../base/" title="Base" class="md-nav__link">
+      Base
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../object/" title="Object" class="md-nav__link">
+      Object
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assetbundle/" title="AssetBundle" class="md-nav__link">
+      AssetBundle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clock/" title="Clock" class="md-nav__link">
+      Clock
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../counter/" title="Counter" class="md-nav__link">
+      Counter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../json/" title="JSON" class="md-nav__link">
+      JSON
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lighting/" title="Lighting" class="md-nav__link">
+      Lighting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../physics/" title="Physics" class="md-nav__link">
+      Physics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../player/" title="Player" class="md-nav__link">
+      Player
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../player-color/" title="Player Color" class="md-nav__link">
+      Player Color
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rpgfigurine/" title="RPGFigurine" class="md-nav__link">
+      RPGFigurine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Spawnable Objects
+      </label>
+    
+    <a href="./" title="Spawnable Objects" class="md-nav__link md-nav__link--active">
+      Spawnable Objects
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-game-objects" title="Built-in Game Objects" class="md-nav__link">
+    Built-in Game Objects
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boards" title="Boards" class="md-nav__link">
+    Boards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#containers" title="Containers" class="md-nav__link">
+    Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#figurines" title="Figurines" class="md-nav__link">
+    Figurines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-pieces" title="Game Pieces" class="md-nav__link">
+    Game Pieces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpg-figurines" title="RPG Figurines" class="md-nav__link">
+    RPG Figurines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tilesets" title="Tilesets" class="md-nav__link">
+    Tilesets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" title="Tools" class="md-nav__link">
+    Tools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triggers" title="Triggers" class="md-nav__link">
+    Triggers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other" title="Other" class="md-nav__link">
+    Other
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-game-objects" title="Custom Game Objects" class="md-nav__link">
+    Custom Game Objects
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-assetbundle" title="Custom AssetBundle" class="md-nav__link">
+    Custom AssetBundle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-board" title="Custom Board" class="md-nav__link">
+    Custom Board
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-dice" title="Custom Dice" class="md-nav__link">
+    Custom Dice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-figurine" title="Custom Figurine" class="md-nav__link">
+    Custom Figurine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-model" title="Custom Model" class="md-nav__link">
+    Custom Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-tile" title="Custom Tile" class="md-nav__link">
+    Custom Tile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-token" title="Custom Token" class="md-nav__link">
+    Custom Token
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../texttool/" title="TextTool" class="md-nav__link">
+      TextTool
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../timer/" title="Timer" class="md-nav__link">
+      Timer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../webrequest/" title="Web Request" class="md-nav__link">
+      Web Request
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-game-objects" title="Built-in Game Objects" class="md-nav__link">
+    Built-in Game Objects
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boards" title="Boards" class="md-nav__link">
+    Boards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#containers" title="Containers" class="md-nav__link">
+    Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#figurines" title="Figurines" class="md-nav__link">
+    Figurines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-pieces" title="Game Pieces" class="md-nav__link">
+    Game Pieces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpg-figurines" title="RPG Figurines" class="md-nav__link">
+    RPG Figurines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tilesets" title="Tilesets" class="md-nav__link">
+    Tilesets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" title="Tools" class="md-nav__link">
+    Tools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triggers" title="Triggers" class="md-nav__link">
+    Triggers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other" title="Other" class="md-nav__link">
+    Other
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-game-objects" title="Custom Game Objects" class="md-nav__link">
+    Custom Game Objects
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-assetbundle" title="Custom AssetBundle" class="md-nav__link">
+    Custom AssetBundle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-board" title="Custom Board" class="md-nav__link">
+    Custom Board
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-dice" title="Custom Dice" class="md-nav__link">
+    Custom Dice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-figurine" title="Custom Figurine" class="md-nav__link">
+    Custom Figurine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-model" title="Custom Model" class="md-nav__link">
+    Custom Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-tile" title="Custom Tile" class="md-nav__link">
+    Custom Tile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-token" title="Custom Token" class="md-nav__link">
+    Custom Token
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation/edit/master/docs/spawnableobjects.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Spawnable Objects</h1>
+                
+                <p>Objects can be spawned by any script using the <a href="../base#spawnobject">spawnObject()</a> function. These are the <code class="codehilite">type</code> Strings used to designate the type of Object to spawn. </p>
+<h2 id="built-in-game-objects">Built-in Game Objects<a class="headerlink" href="#built-in-game-objects" title="Permanent link">&para;</a></h2>
+<h3 id="boards">Boards<a class="headerlink" href="#boards" title="Permanent link">&para;</a></h3>
+<ul>
+<li>backgammon_board</li>
+<li>CardBot_Board</li>
+<li>Checker_Board</li>
+<li>Chess_Board</li>
+<li>Chinese_Checkers_Board</li>
+<li>Go_Board</li>
+<li>Pachisi_Board</li>
+<li>reversi_board</li>
+</ul>
+<h3 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bag</li>
+<li>Bowl</li>
+<li>Cup</li>
+<li>go_game_bowl_black</li>
+<li>go_game_bowl_white</li>
+<li>Infinite_Bag</li>
+</ul>
+<h3 id="figurines">Figurines<a class="headerlink" href="#figurines" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Figurine_Card_Bot</li>
+<li>Figurine_Kimi_Kat</li>
+<li>Figurine_Knil</li>
+<li>Figurine_Mara</li>
+<li>Figurine_Sir_Loin</li>
+<li>Figurine_Zeke</li>
+<li>Figurine_Zomblor</li>
+</ul>
+<h3 id="game-pieces">Game Pieces<a class="headerlink" href="#game-pieces" title="Permanent link">&para;</a></h3>
+<ul>
+<li>backgammon_piece_brown</li>
+<li>backgammon_piece_white</li>
+<li>BlockRectangle</li>
+<li>BlockSquare</li>
+<li>BlockTriangle</li>
+<li>Card</li>
+<li>Checker_black</li>
+<li>Checker_red</li>
+<li>Checker_white</li>
+<li>Chess_Bishop</li>
+<li>Chess_King</li>
+<li>Chess_Knight</li>
+<li>Chess_Pawn</li>
+<li>Chess_Queen</li>
+<li>Chess_Rook</li>
+<li>Chinese_Checkers_Piece</li>
+<li>Chip_10</li>
+<li>Chip_50</li>
+<li>Chip_100</li>
+<li>Chip_500</li>
+<li>Chip_1000</li>
+<li>Deck</li>
+<li>Die_4</li>
+<li>Die_6</li>
+<li>Die_6_Rounded</li>
+<li>Die_8</li>
+<li>Die_10</li>
+<li>Die_12</li>
+<li>Die_20</li>
+<li>Die_Piecepack</li>
+<li>Domino</li>
+<li>go_game_piece_black</li>
+<li>go_game_piece_white</li>
+<li>Mahjong_Coin</li>
+<li>Mahjong_Stick</li>
+<li>Mahjong_Tile</li>
+<li>Metal Ball</li>
+<li>PiecePack_Arms</li>
+<li>PiecePack_Crowns</li>
+<li>PiecePack_Moons</li>
+<li>PiecePack_Suns</li>
+<li>PlayerPawn</li>
+<li>Quarter</li>
+<li>reversi_chip</li>
+</ul>
+<h3 id="rpg-figurines">RPG Figurines<a class="headerlink" href="#rpg-figurines" title="Permanent link">&para;</a></h3>
+<ul>
+<li>rpg_BARGHEST</li>
+<li>rpg_BASILISK</li>
+<li>rpg_BEAR</li>
+<li>rpg_BLACK_DRAGON</li>
+<li>rpg_CENTAUR</li>
+<li>rpg_CERBERUS</li>
+<li>rpg_CHIMERA</li>
+<li>rpg_CRASC</li>
+<li>rpg_CYCLOP</li>
+<li>rpg_DARKNESS_WARLORD</li>
+<li>rpg_DRAGONIDE</li>
+<li>rpg_EVIL_WATCHER</li>
+<li>rpg_GHOUL</li>
+<li>rpg_GIANT_VIPER</li>
+<li>rpg_GOBLIN</li>
+<li>rpg_GOLEM</li>
+<li>rpg_GRIFFON</li>
+<li>rpg_HYDRA</li>
+<li>rpg_KNIGHT</li>
+<li>rpg_KOBOLD</li>
+<li>rpg_LIZARD_WARRIOR</li>
+<li>rpg_MAGE</li>
+<li>rpg_MANTICORA</li>
+<li>rpg_MUMMY</li>
+<li>rpg_OGRE</li>
+<li>rpg_ORC</li>
+<li>rpg_RANGER</li>
+<li>rpg_RAT</li>
+<li>rpg_SKELETON_KNIGHT</li>
+<li>rpg_TEMPLATE</li>
+<li>rpg_THIEF</li>
+<li>rpg_TREE_ENT</li>
+<li>rpg_TROLL</li>
+<li>rpg_VAMPIRE</li>
+<li>rpg_WARRIOR</li>
+<li>rpg_WEREWOLF</li>
+<li>rpg_WYVERN</li>
+</ul>
+<h3 id="tilesets">Tilesets<a class="headerlink" href="#tilesets" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Tileset_Barrel</li>
+<li>Tileset_Chair</li>
+<li>Tileset_Chest</li>
+<li>Tileset_Corner</li>
+<li>Tileset_Floor</li>
+<li>Tileset_Rock</li>
+<li>Tileset_Table</li>
+<li>Tileset_Tree</li>
+<li>Tileset_Wall</li>
+</ul>
+<h3 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Calculator</li>
+<li>Counter</li>
+<li>Digital_Clock</li>
+<li>Notecard</li>
+<li>Tablet</li>
+</ul>
+<h3 id="triggers">Triggers<a class="headerlink" href="#triggers" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ScriptingTrigger<ul>
+<li>A Scripting Zone, a zone used for scripting</li>
+</ul>
+</li>
+<li>FogOfWarTrigger<ul>
+<li>A <a href="http://berserk-games.com/knowledgebase/hidden-zones-2/">Hidden Zone</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h3>
+<ul>
+<li>3DText<ul>
+<li>The text that the <a href="http://berserk-games.com/knowledgebase/1958/">Text Tool</a> spawns.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="custom-game-objects">Custom Game Objects<a class="headerlink" href="#custom-game-objects" title="Permanent link">&para;</a></h2>
+<p>You can also spawn <a href="http://berserk-games.com/knowledgebase_category/custom-content/">custom Objects</a> and then provide the custom content for them after spawning them by calling <a href="../object#setcustomobject">setCustomObject()</a>. <em>(See setCustomObject for usage)</em></p>
+<p>You can also use setCustomObject along with <a href="../object#reload">reload()</a> to modify an existing custom Object.</p>
+<h3 id="custom-assetbundle">Custom AssetBundle<a class="headerlink" href="#custom-assetbundle" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Custom_Assetbundle</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Custom Parameters</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>assetbundle</strong>: The path/url for the AssetBundle. </li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>assetbundle_secondary</strong>: The path/url for the secondary AssetBundle property. <ul>
+<li><span class="critic comment">Optional, is not used by default.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>type</strong>: An Int representing the Object's type.<ul>
+<li><span class="critic comment">Optional, defaults to 0.</span><ul>
+<li><strong>0</strong>: Generic</li>
+<li><strong>1</strong>: Figurine</li>
+<li><strong>2</strong>: Dice</li>
+<li><strong>3</strong>: Coin</li>
+<li><strong>4</strong>: Board</li>
+<li><strong>5</strong>: Chip</li>
+<li><strong>6</strong>: Bag</li>
+<li><strong>7</strong>: Infinite bag</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>material</strong>: An Int representing the Object's material.<ul>
+<li><span class="critic comment">Optional, defaults to 0.</span><ul>
+<li><strong>0</strong>: Plastic</li>
+<li><strong>1</strong>: Wood</li>
+<li><strong>2</strong>: Metal</li>
+<li><strong>3</strong>: Cardboard</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="custom-board">Custom Board<a class="headerlink" href="#custom-board" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Custom_Board</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Custom Parameters</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>image</strong>: The path/url for the board.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="custom-dice">Custom Dice<a class="headerlink" href="#custom-dice" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Custom_Dice</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Custom Parameters</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>image</strong>: The path/url for the <a href="http://berserk-games.com/knowledgebase/custom-dice/">custom die</a>.</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>type</strong>: The type of die, which determines its number of sides.<ul>
+<li><span class="critic comment">Optional, defaults to 1.</span><ul>
+<li><strong>0</strong>: 4-sided</li>
+<li><strong>1</strong>: 6-sided</li>
+<li><strong>2</strong>: 8-sided</li>
+<li><strong>3</strong>: 10-sided</li>
+<li><strong>4</strong>: 12-sided</li>
+<li><strong>5</strong>: 20-sided</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="custom-figurine">Custom Figurine<a class="headerlink" href="#custom-figurine" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Figurine_Custom</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Custom Parameters</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>image</strong>: The path/url for the <a href="http://berserk-games.com/knowledgebase/custom-figurines/">custom figurine</a>.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>image_secondary</strong>: The path/url for the custom figurine's back.<ul>
+<li><span class="critic comment">Optional, defaults to &quot;image&quot;.</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="custom-model">Custom Model<a class="headerlink" href="#custom-model" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Custom_Model</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Custom Parameters</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>mesh</strong>: The path/url for the .obj mesh used on the <a href="http://berserk-games.com/knowledgebase/custom-models/">custom model</a>.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>diffuse</strong>: The path/url for the diffuse image.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>normal</strong>: The path/url for the normals image.<ul>
+<li><span class="critic comment">Optional, is not used by default.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>collider</strong>: The path/url for the collider mesh.<ul>
+<li><span class="critic comment">Optional, defaults to a generic box collider.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>convex</strong>: If the object model is convex.<ul>
+<li><span class="critic comment">Optional, defaults to false.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>type</strong>: An Int representing the Object's type.<ul>
+<li><span class="critic comment">Optional, defaults to 0.</span><ul>
+<li><strong>0</strong>: Generic</li>
+<li><strong>1</strong>: Figurine</li>
+<li><strong>2</strong>: Dice</li>
+<li><strong>3</strong>: Coin</li>
+<li><strong>4</strong>: Board</li>
+<li><strong>5</strong>: Chip</li>
+<li><strong>6</strong>: Bag</li>
+<li><strong>7</strong>: Infinite bag</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>material</strong>: An Int representing the Object's material.<ul>
+<li><span class="critic comment">Optional, defaults to 0.</span><ul>
+<li><strong>0</strong>: Plastic</li>
+<li><strong>1</strong>: Wood</li>
+<li><strong>2</strong>: Metal</li>
+<li><strong>3</strong>: Cardboard</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>specular_intensity</strong>: The specular intensity.<ul>
+<li><span class="critic comment">Optional, defaults to 0.1.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>specular_color</strong>: The specular <a href="../intro#color">Color</a>.<ul>
+<li><span class="critic comment">Optional, defaults to {r=1, g=1, b=1}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>specular_sharpness</strong>: The specular sharpness.<ul>
+<li><span class="critic comment">Optional, defaults to 3.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>freshnel_strength</strong>: The freshnel strength.<ul>
+<li><span class="critic comment">Optional, defaults to 0.1.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>cast_shadows</strong>: If the Object casts shadows.<ul>
+<li><span class="critic comment">Optional, defaults to true.</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="custom-tile">Custom Tile<a class="headerlink" href="#custom-tile" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Custom_Tile</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Custom Parameters</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>image</strong>: The path/url for the <a href="http://berserk-games.com/knowledgebase/custom-tiles/">custom tile</a> image.</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>type</strong>: Determines the shape of the tile.<ul>
+<li><span class="critic comment">Optional, defaults to 0.</span><ul>
+<li><strong>0</strong>: Square/Rectangle</li>
+<li><strong>1</strong>: Hex</li>
+<li><strong>2</strong>: Circle</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>image_button</strong>: The path/url for the bottom-side image.<ul>
+<li><span class="critic comment">Optional, uses the top image by default.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>thickness</strong>: How thick the tile is.<ul>
+<li><span class="critic comment">Optional, defaults to 0.5.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>stackable</strong>: If these tiles stack together into a pile.<ul>
+<li><span class="critic comment">Optional, defaults to false.</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="custom-token">Custom Token<a class="headerlink" href="#custom-token" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Custom_Token</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Custom Parameters</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>image</strong>: The path/url for the <a href="http://berserk-games.com/knowledgebase/custom-tokens/">custom token</a> image.</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>thickness</strong>: How thick the tile is.<ul>
+<li><span class="critic comment">Optional, defaults to 0.2.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>mege_distance</strong>: How accurate the edges are to the image.<ul>
+<li><span class="critic comment">Optional, defaults to 15.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>stackable</strong>: If these tiles stack together into a pile.<ul>
+<li><span class="critic comment">Optional, defaults to false.</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!--This is empty because it is killing the default footer-->
+<!--Do not remove.-->
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.abd7b172.js"></script>
+      
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

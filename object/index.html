@@ -1,0 +1,3011 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/Icon-Dice.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.6.2">
+    
+    
+      
+        <title>Object - Tabletop Simulator Scripting Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.9b572555.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../css/theme.css">
+    
+      <link rel="stylesheet" href="../css/table.css">
+    
+      <link rel="stylesheet" href="../css/type_icons.css">
+    
+      <link rel="stylesheet" href="../css/i_icons.css">
+    
+      <link rel="stylesheet" href="../css/player_color_table.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#member-variable-summary" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Tabletop Simulator Scripting Documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../img/TSIcon.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Tabletop Simulator Scripting Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                Object
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub Source
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <img src="../img/TSIcon.png" width="24" height="24">
+      
+    </span>
+    Tabletop Simulator Scripting Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub Source
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../atom/" title="Atom" class="md-nav__link">
+      Atom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../externaleditorapi/" title="External Editor AP" class="md-nav__link">
+      External Editor AP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Lua API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Lua API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../event/" title="Event" class="md-nav__link">
+      Event
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../base/" title="Base" class="md-nav__link">
+      Base
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Object
+      </label>
+    
+    <a href="./" title="Object" class="md-nav__link md-nav__link--active">
+      Object
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#member-variable-summary" title="Member Variable Summary" class="md-nav__link">
+    Member Variable Summary
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#member-variables" title="Member Variables" class="md-nav__link">
+    Member Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-summary" title="Function Summary" class="md-nav__link">
+    Function Summary
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transform-functions" title="Transform Functions" class="md-nav__link">
+    Transform Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui-functions" title="UI Functions" class="md-nav__link">
+    UI Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-functions" title="Get Functions" class="md-nav__link">
+    Get Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-functions" title="Set Functions" class="md-nav__link">
+    Set Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-function" title="Action Function" class="md-nav__link">
+    Action Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-details" title="Function Details" class="md-nav__link">
+    Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transform-function-details" title="Transform Function Details" class="md-nav__link">
+    Transform Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addforce" title="addForce(...)" class="md-nav__link">
+    addForce(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addtorque" title="addTorque(...)" class="md-nav__link">
+    addTorque(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbounds" title="getBounds()" class="md-nav__link">
+    getBounds()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getboundsnormalized" title="getBoundsNormalized()" class="md-nav__link">
+    getBoundsNormalized()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getscale" title="getScale()" class="md-nav__link">
+    getScale()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettransformforward" title="getTransformForward()" class="md-nav__link">
+    getTransformForward()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettransformright" title="getTransformRight()" class="md-nav__link">
+    getTransformRight()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettransformup" title="getTransformUp()" class="md-nav__link">
+    getTransformUp()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positiontolocal" title="positionToLocal(...)" class="md-nav__link">
+    positionToLocal(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positiontoworld" title="positionToWorld(...)" class="md-nav__link">
+    positionToWorld(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotatevector" title="rotate(Vector)" class="md-nav__link">
+    rotate(Vector)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale" title="scale(...)" class="md-nav__link">
+    scale(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpositionsmooth" title="setPositionSmooth(...)" class="md-nav__link">
+    setPositionSmooth(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrotationsmooth" title="setRotationSmooth(...)" class="md-nav__link">
+    setRotationSmooth(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui-function-details" title="UI Function Details" class="md-nav__link">
+    UI Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createbutton" title="createButton(...)" class="md-nav__link">
+    createButton(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createinput" title="createInput(...)" class="md-nav__link">
+    createInput(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editbutton" title="editButton(...)" class="md-nav__link">
+    editButton(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editinput" title="editInput(...)" class="md-nav__link">
+    editInput(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttons" title="getButtons()" class="md-nav__link">
+    getButtons()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputs" title="getInputs()" class="md-nav__link">
+    getInputs()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removebutton" title="removeButton(...)" class="md-nav__link">
+    removeButton(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removeinput" title="removeInput(...)" class="md-nav__link">
+    removeInput(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-function-details" title="Get Function Details" class="md-nav__link">
+    Get Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getcustomobject" title="getCustomObject()" class="md-nav__link">
+    getCustomObject()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getobjects" title="getObjects()" class="md-nav__link">
+    getObjects()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrotationvalues" title="getRotationValues()" class="md-nav__link">
+    getRotationValues()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstates" title="getStates()" class="md-nav__link">
+    getStates()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvalue" title="getValue()" class="md-nav__link">
+    getValue()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-function-details" title="Set Function Details" class="md-nav__link">
+    Set Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setcustomobject" title="setCustomObject(...)" class="md-nav__link">
+    setCustomObject(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrotationvalues" title="setRotationValues(...)" class="md-nav__link">
+    setRotationValues(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvalue" title="setValue(...)" class="md-nav__link">
+    setValue(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-function-details" title="Action Function Details" class="md-nav__link">
+    Action Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#call" title="call(...)" class="md-nav__link">
+    call(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone" title="clone(...)" class="md-nav__link">
+    clone(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deal" title="deal(...)" class="md-nav__link">
+    deal(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dealtocolorwithoffset" title="dealToColorWithOffset(...)" class="md-nav__link">
+    dealToColorWithOffset(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#putobject" title="putObject(...)" class="md-nav__link">
+    putObject(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reload" title="reload()" class="md-nav__link">
+    reload()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#takeobject" title="takeObject(...)" class="md-nav__link">
+    takeObject(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assetbundle/" title="AssetBundle" class="md-nav__link">
+      AssetBundle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clock/" title="Clock" class="md-nav__link">
+      Clock
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../counter/" title="Counter" class="md-nav__link">
+      Counter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../json/" title="JSON" class="md-nav__link">
+      JSON
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lighting/" title="Lighting" class="md-nav__link">
+      Lighting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../physics/" title="Physics" class="md-nav__link">
+      Physics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../player/" title="Player" class="md-nav__link">
+      Player
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../player-color/" title="Player Color" class="md-nav__link">
+      Player Color
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rpgfigurine/" title="RPGFigurine" class="md-nav__link">
+      RPGFigurine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../spawnableobjects/" title="Spawnable Objects" class="md-nav__link">
+      Spawnable Objects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../texttool/" title="TextTool" class="md-nav__link">
+      TextTool
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../timer/" title="Timer" class="md-nav__link">
+      Timer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../webrequest/" title="Web Request" class="md-nav__link">
+      Web Request
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#member-variable-summary" title="Member Variable Summary" class="md-nav__link">
+    Member Variable Summary
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#member-variables" title="Member Variables" class="md-nav__link">
+    Member Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-summary" title="Function Summary" class="md-nav__link">
+    Function Summary
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transform-functions" title="Transform Functions" class="md-nav__link">
+    Transform Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui-functions" title="UI Functions" class="md-nav__link">
+    UI Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-functions" title="Get Functions" class="md-nav__link">
+    Get Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-functions" title="Set Functions" class="md-nav__link">
+    Set Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-function" title="Action Function" class="md-nav__link">
+    Action Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-details" title="Function Details" class="md-nav__link">
+    Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transform-function-details" title="Transform Function Details" class="md-nav__link">
+    Transform Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addforce" title="addForce(...)" class="md-nav__link">
+    addForce(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addtorque" title="addTorque(...)" class="md-nav__link">
+    addTorque(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbounds" title="getBounds()" class="md-nav__link">
+    getBounds()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getboundsnormalized" title="getBoundsNormalized()" class="md-nav__link">
+    getBoundsNormalized()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getscale" title="getScale()" class="md-nav__link">
+    getScale()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettransformforward" title="getTransformForward()" class="md-nav__link">
+    getTransformForward()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettransformright" title="getTransformRight()" class="md-nav__link">
+    getTransformRight()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettransformup" title="getTransformUp()" class="md-nav__link">
+    getTransformUp()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positiontolocal" title="positionToLocal(...)" class="md-nav__link">
+    positionToLocal(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positiontoworld" title="positionToWorld(...)" class="md-nav__link">
+    positionToWorld(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotatevector" title="rotate(Vector)" class="md-nav__link">
+    rotate(Vector)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale" title="scale(...)" class="md-nav__link">
+    scale(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpositionsmooth" title="setPositionSmooth(...)" class="md-nav__link">
+    setPositionSmooth(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrotationsmooth" title="setRotationSmooth(...)" class="md-nav__link">
+    setRotationSmooth(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui-function-details" title="UI Function Details" class="md-nav__link">
+    UI Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createbutton" title="createButton(...)" class="md-nav__link">
+    createButton(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createinput" title="createInput(...)" class="md-nav__link">
+    createInput(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editbutton" title="editButton(...)" class="md-nav__link">
+    editButton(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editinput" title="editInput(...)" class="md-nav__link">
+    editInput(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttons" title="getButtons()" class="md-nav__link">
+    getButtons()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputs" title="getInputs()" class="md-nav__link">
+    getInputs()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removebutton" title="removeButton(...)" class="md-nav__link">
+    removeButton(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removeinput" title="removeInput(...)" class="md-nav__link">
+    removeInput(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-function-details" title="Get Function Details" class="md-nav__link">
+    Get Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getcustomobject" title="getCustomObject()" class="md-nav__link">
+    getCustomObject()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getobjects" title="getObjects()" class="md-nav__link">
+    getObjects()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrotationvalues" title="getRotationValues()" class="md-nav__link">
+    getRotationValues()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstates" title="getStates()" class="md-nav__link">
+    getStates()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvalue" title="getValue()" class="md-nav__link">
+    getValue()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-function-details" title="Set Function Details" class="md-nav__link">
+    Set Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setcustomobject" title="setCustomObject(...)" class="md-nav__link">
+    setCustomObject(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrotationvalues" title="setRotationValues(...)" class="md-nav__link">
+    setRotationValues(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvalue" title="setValue(...)" class="md-nav__link">
+    setValue(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-function-details" title="Action Function Details" class="md-nav__link">
+    Action Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#call" title="call(...)" class="md-nav__link">
+    call(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone" title="clone(...)" class="md-nav__link">
+    clone(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deal" title="deal(...)" class="md-nav__link">
+    deal(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dealtocolorwithoffset" title="dealToColorWithOffset(...)" class="md-nav__link">
+    dealToColorWithOffset(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#putobject" title="putObject(...)" class="md-nav__link">
+    putObject(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reload" title="reload()" class="md-nav__link">
+    reload()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#takeobject" title="takeObject(...)" class="md-nav__link">
+    takeObject(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation/edit/master/docs/object.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Object</h1>
+                
+                <p>The Object class represents any entity within tabletop simulator. Once you have a reference to an object in youre script you can call functions on it directly. Example: <code class="codehilite">obj.getPosition(...)</code>. You can get a reference to an object multiple ways;</p>
+<ul>
+<li>Using the <code class="codehilite">self</code> property if your script is on an Object and referring to that Object.</li>
+<li>Using <a href="../base#getobjectfromguid"><code class="codehilite">getObjectFromGUID(...)</code></a> with the object's GUID (found by right clicking it with the pointer).</li>
+<li>Getting it as a return from another function, like with <a href="../base#spawnobject"><code class="codehilite">spawnObject(...)</code></a>.</li>
+</ul>
+<h2 id="member-variable-summary">Member Variable Summary<a class="headerlink" href="#member-variable-summary" title="Permanent link">&para;</a></h2>
+<h3 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link">&para;</a></h3>
+<p>These are variables that objects share. They allow for direct access to an Object's property information without a helping function. Some are read-only.</p>
+<p>Read Example = <code class="codehilite">isResting = self.resting</code> Write Example = <code class="codehilite">self.resting = true</code></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>angular_drag</td>
+<td>Angular drag. <a href="https://docs.unity3d.com/Manual/class-Rigidbody.html">Unity rigidbody property</a>.</td>
+<td align="left"><a href="../intro#types"><span class="tag flo"></span></a></td>
+</tr>
+<tr>
+<td>auto_raise</td>
+<td>If an object should be lifted above other objects to avoid collision when held by a player.</td>
+<td align="left"><a href="../intro#types"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td>bounciness</td>
+<td>Bounciness, value of 0-1. <a href="https://docs.unity3d.com/Manual/class-PhysicMaterial.html">Unity physics material</a>.</td>
+<td align="left"><a href="../intro#types"><span class="tag flo"></span></a></td>
+</tr>
+<tr>
+<td>drag</td>
+<td>Drag. <a href="https://docs.unity3d.com/Manual/class-Rigidbody.html">Unity rigidbody property</a>.</td>
+<td align="left"><a href="../intro#types"><span class="tag flo"></span></a></td>
+</tr>
+<tr>
+<td>dynamic_friction</td>
+<td>Dynamic friction, value of 0-1. <a href="https://docs.unity3d.com/Manual/class-PhysicMaterial.html">Unity physics material</a>.</td>
+<td align="left"><a href="../intro#types"><span class="tag flo"></span></a></td>
+</tr>
+<tr>
+<td>grid_projection</td>
+<td>If grid lines can appear on the Object if visible grids are turned on.</td>
+<td align="left"><a href="../intro#types"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td>guid</td>
+<td>The 6 character unique Object identifier within Tabletop Simulator.</td>
+<td align="left"><a href="../intro#types"><span class="tag str"></span></a></td>
+</tr>
+<tr>
+<td>held_by_color</td>
+<td>The Color of the Player that is holding the object.</td>
+<td align="left"><a href="../intro#types"><span class="tag str"></span></a></td>
+</tr>
+<tr>
+<td>interactable</td>
+<td>If an object can be interacted with by Players. Other object will still be able to interact with it.</td>
+<td align="left"><a href="../intro#types"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td>mass</td>
+<td>Mass. <a href="https://docs.unity3d.com/Manual/class-Rigidbody.html">Unity rigidbody property</a>.</td>
+<td align="left"><a href="../intro#types"><span class="tag flo"></span></a></td>
+</tr>
+<tr>
+<td>name</td>
+<td>The Object's name. Read only, use <code class="codehilite">setName(&quot;&quot;)</code> to write to it.</td>
+<td align="left"><a href="../intro#types"><span class="tag str"></span></a></td>
+</tr>
+<tr>
+<td>resting</td>
+<td>If an Object is at rest. <a href="https://docs.unity3d.com/412/Documentation/Components/RigidbodySleeping.html">Unity rigidbody property</a>.</td>
+<td align="left"><a href="../intro#types"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td>script_code</td>
+<td>The Lua Script on the Object.</td>
+<td align="left"><a href="../intro#types"><span class="tag str"></span></a></td>
+</tr>
+<tr>
+<td>script_state</td>
+<td>The saved data on the object. See <a href="../event#onsave">onSave()</a>.</td>
+<td align="left"><a href="../intro#types"><span class="tag str"></span></a></td>
+</tr>
+<tr>
+<td>static_friction</td>
+<td>Static friction, value of 0-1. <a href="https://docs.unity3d.com/Manual/class-PhysicMaterial.html">Unity physics material</a>.</td>
+<td align="left"><a href="../intro#types"><span class="tag flo"></span></a></td>
+</tr>
+<tr>
+<td>sticky</td>
+<td>If other Objects on top of this one are also picked up when this Object is.</td>
+<td align="left"><a href="../intro#types"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td>tag</td>
+<td>This object's type. Read only.</td>
+<td align="left"><a href="../intro#types"><span class="tag str"></span></a></td>
+</tr>
+<tr>
+<td>tooltip</td>
+<td>If the tooltip opens when a pointer hovers over the object. Tooltips display name and description.</td>
+<td align="left"><a href="../intro#types"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td>use_gravity</td>
+<td>If gravity affects this object.</td>
+<td align="left"><a href="../intro#types"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td>use_grid</td>
+<td>If snapping to grid is enabled or not.</td>
+<td align="left"><a href="../intro#types"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td>use_hands</td>
+<td>If this object can be held in a hand zone.</td>
+<td align="left"><a href="../intro#types"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td>use_snap_points</td>
+<td>If snap points are used or ignored.</td>
+<td align="left"><a href="../intro#types"><span class="tag boo"></span></a></td>
+</tr>
+</tbody>
+</table>
+<p>These member variables are classes of their own, and have their own member variables. Each one is for a special type of Object.</p>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AssetBundle</td>
+<td>An <a href="../assetbundle">AssetBundle</a>, which is a type of custom object made in Unity.</td>
+</tr>
+<tr>
+<td>Clock</td>
+<td>A <a href="../clock">Clock</a>, which is the in-game digital clock.</td>
+</tr>
+<tr>
+<td>Counter</td>
+<td>A <a href="../counter">Counter</a>, which is the in-game digital counter.</td>
+</tr>
+<tr>
+<td>RPGFigurine</td>
+<td>An <a href="../rpgfigurine">RPGFigurine</a>, which is an in-game animated figurine.</td>
+</tr>
+<tr>
+<td>TextTool</td>
+<td>A <a href="../texttool">TextTool</a>, which is an in-game text display system.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link">&para;</a></h2>
+<h3 id="transform-functions">Transform Functions<a class="headerlink" href="#transform-functions" title="Permanent link">&para;</a></h3>
+<p>These functions handle the physical attributes of an Object: Position, Rotation, Scale, Bounds, Velocity. In other words, moving objects around as well as getting information on how they are moving.</p>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Description</th>
+<th>Return</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addForce(<a href="../intro#vector"><span class="tag vec"></span></a> vector, <a href="../intro#types"><span class="tag int"></span></a> force_type)</td>
+<td>Adds force to an object in a directional Vector.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#addforce"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>addTorque(<a href="../intro#vector"><span class="tag vec"></span></a> vector, <a href="../intro#types"><span class="tag int"></span></a> force_type)</td>
+<td>Adds torque to an object in a rotational Vector.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#addtorque"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getAngularVelocity()</td>
+<td>Returns a Vector of the current angular velocity.</td>
+<td><a href="../intro#vector"><span class="ret vec"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>getBounds()</td>
+<td>Returns a Vector describing the size of an object in Global terms.</td>
+<td><a href="../intro#vector"><span class="ret vec"></span></a></td>
+<td><a href="#getbounds"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getBoundsNormalized()</td>
+<td>Returns a Vector describing the size of an object in Global terms, as if it was rotated to {0,0,0}.</td>
+<td><a href="../intro#vector"><span class="ret vec"></span></a></td>
+<td><a href="#getboundsnormalized"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getPosition()</td>
+<td>Returns a Vector of the current world position.</td>
+<td><a href="../intro#vector"><span class="ret vec"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>getRotation()</td>
+<td>Returns a Vector of the current rotation.</td>
+<td><a href="../intro#vector"><span class="ret vec"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>getScale()</td>
+<td>Returns a Vector of the current scale.</td>
+<td><a href="../intro#vector"><span class="ret vec"></span></a></td>
+<td><a href="#getscale"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getTransformForward()</td>
+<td>Returns a Vector of the forward direction of this object.</td>
+<td><a href="../intro#vector"><span class="ret vec"></span></a></td>
+<td><a href="#gettransformforward"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getTransformRight()</td>
+<td>Returns a Vector of the right direction of this object.</td>
+<td><a href="../intro#vector"><span class="ret vec"></span></a></td>
+<td><a href="#gettransformright"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getTransformUp()</td>
+<td>Returns a Vector of the up direction of this object.</td>
+<td><a href="../intro#vector"><span class="ret vec"></span></a></td>
+<td><a href="#gettransformup"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getVelocity()</td>
+<td>Returns a Vector of the current velocity.</td>
+<td><a href="../intro#vector"><span class="ret vec"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>isSmoothMoving()</td>
+<td>Indicates if an object is traveling as part of a Smooth move. Smooth moving is performed by setPositionSmooth and setRotationSmooth.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>positionToLocal(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>Returns a Vector after converting a world Vector to a local Vector.</td>
+<td><a href="../intro#vector"><span class="ret vec"></span></a></td>
+<td><a href="#positiontolocal"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>positionToWorld(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>Returns a Vector after converting a local Vector to a world Vector.</td>
+<td><a href="../intro#vector"><span class="ret vec"></span></a></td>
+<td><a href="#positiontoworld"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>rotate(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>Rotates Object smoothly in the direction of the given Vector.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>scale(<a href="../intro#vector"><span class="tag vec"></span></a> vector or <a href="../intro#types"><span class="tag flo"></span></a>)</td>
+<td>Scales Object by a multiple.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#scale"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>setAngularVelocity(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>Sets a Vector as the current angular velocity.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>setPosition(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>Instantly moves an Object to the given Vector.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>setPositionSmooth(<a href="../intro#vector"><span class="tag vec"></span></a> vector, <a href="../intro#types"><span class="tag boo"></span></a> collide, <a href="../intro#types"><span class="tag boo"></span></a> fast)</td>
+<td>Moves the Object smoothly to the given Vector.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#setpositionsmooth"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>setRotation(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>Instantly rotates an Object to the given Vector.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>setRotationSmooth(<a href="../intro#vector"><span class="tag vec"></span></a> vector, <a href="../intro#types"><span class="tag boo"></span></a> collide, <a href="../intro#types"><span class="tag boo"></span></a> fast)</td>
+<td>Rotates the Object smoothly to the given Vector.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#setrotationsmooth"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>setScale(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>Sets a Vector as the current scale.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>setVelocity(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>Sets a Vector as the current velocity.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>translate(<a href="../intro#vector"><span class="tag vec"></span></a> vector)</td>
+<td>Smoothly moves Object by the given Vector offset.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ui-functions">UI Functions<a class="headerlink" href="#ui-functions" title="Permanent link">&para;</a></h3>
+<p>These functions allow for the creation/editing/removal of functional buttons and text inputs which themselves trigger code within your scripts.</p>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Description</th>
+<th>Return</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clearButtons()</td>
+<td>Removes all scripted buttons.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>clearInputs()</td>
+<td>Removes all scripted inputs.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>createButton(<a href="../intro#types"><span class="tag tab"></span></a> parameters)</td>
+<td>Creates a scripted button attached to the Object.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#createbutton"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>createInput(<a href="../intro#types"><span class="tag tab"></span></a> parameters)</td>
+<td>Creates a scripted input attached to the Object.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#createinput"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>editButton(<a href="../intro#types"><span class="tag tab"></span></a> parameters)</td>
+<td>Modify an existing button.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#editbutton"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>editInput(<a href="../intro#types"><span class="tag tab"></span></a> parameters)</td>
+<td>Modify an existing input.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#editinput"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getButtons()</td>
+<td>Returns a Table of all buttons on this Object.</td>
+<td><a href="../intro#types"><span class="ret tab"></span></a></td>
+<td><a href="#getbuttons"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getInputs()</td>
+<td>Returns a Table of all inputs on this Object.</td>
+<td><a href="../intro#types"><span class="ret tab"></span></a></td>
+<td><a href="#getinputs"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>removeButton(<a href="../intro#types"><span class="tag int"></span></a> index)</td>
+<td>Removes a specific button.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#removebutton"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>removeInput(<a href="../intro#types"><span class="tag int"></span></a> index)</td>
+<td>Removes a specific button.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#removeinput"><span class="i"></span></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-functions">Get Functions<a class="headerlink" href="#get-functions" title="Permanent link">&para;</a></h3>
+<p>These functions obtain information from an object.</p>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Description</th>
+<th>Return</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getColorTint()</td>
+<td>Returns Color tint.</td>
+<td><a href="../intro#color"><span class="ret col"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>getCustomObject()</td>
+<td>Returns a Table with the Custom Object information of a Custom Object.</td>
+<td><a href="../intro#types"><span class="ret tab"></span></a></td>
+<td><a href="#getcustomobject"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getLock()</td>
+<td>Returns bool representing if the Object is locked.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>getObjects()</td>
+<td>Returns a Table of Objects in the script zone/bag/deck.</td>
+<td><a href="../intro#types"><span class="ret tab"></span></a></td>
+<td><a href="#getobjects"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getQuantity()</td>
+<td>Returns an Int of how many objects are in the stack. Returns -1 if the Object is not a stack.</td>
+<td><a href="../intro#types"><span class="ret int"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>getRotationValues()</td>
+<td>Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice).</td>
+<td><a href="../intro#types"><span class="ret tab"></span></a></td>
+<td><a href="#getrotationvalues"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getStateId()</td>
+<td>Returns the current <a href="http://berserk-games.com/knowledgebase/creating-states/">state</a> ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1.</td>
+<td><a href="../intro#types"><span class="ret int"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>getStates()</td>
+<td>Returns a Table of information on the <a href="http://berserk-games.com/knowledgebase/creating-states/">states</a> of an Object.</td>
+<td><a href="../intro#types"><span class="ret tab"></span></a></td>
+<td><a href="#getstates"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getValue()</td>
+<td>Returns an Int as the value. What the value represents depends on what type of Object this function is used on.</td>
+<td><a href="../intro#types"><span class="ret int"></span></a></td>
+<td><a href="#getvalue"><span class="i"></span></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="set-functions">Set Functions<a class="headerlink" href="#set-functions" title="Permanent link">&para;</a></h3>
+<p>These functions apply action to an object. They take some property in order to work.</p>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Description</th>
+<th>Return</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setColorTint(<a href="../intro#color"><span class="tag col"></span></a> Color)</td>
+<td>Sets the Color tint.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>setCustomObject(<a href="../intro#types"><span class="tag tab"></span></a> parameters)</td>
+<td>Sets a custom Object's properties.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#setcustomobject"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>setLock(<a href="../intro#types"><span class="tag boo"></span></a> lock)</td>
+<td>Sets if an object is locked in place.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>setRotationValues(<a href="../intro#types"><span class="tag tab"></span></a> rotation_values)</td>
+<td>Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice).</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#setrotationvalues"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>setState(<a href="../intro#types"><span class="tag int"></span></a> state_id)</td>
+<td>Sets <a href="http://berserk-games.com/knowledgebase/creating-states/">state</a> of an Object. State ids (indexes) start at 1.</td>
+<td><a href="../intro#types"><span class="ret obj"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>setValue(<a href="../intro#types"><span class="tag var"></span></a> value)</td>
+<td>Sets an Int as the value. What the value represents depends on what type of Object it is.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#setvalue"><span class="i"></span></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="action-function">Action Function<a class="headerlink" href="#action-function" title="Permanent link">&para;</a></h3>
+<p>These functions perform general actions on objects and do not require any input parameters.</p>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Description</th>
+<th>Return</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>call(<a href="../intro#types"><span class="tag str"></span></a> func_name, <a href="../intro#types"><span class="tag tab"></span></a> func_params)</td>
+<td>Used to call a Lua function on this Object.</td>
+<td><a href="../intro#types"><span class="ret var"></span></a></td>
+<td><a href="#call"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>flip()</td>
+<td>Flip Object over.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>clone(<a href="../intro#types"><span class="tag tab"></span></a> parameters)</td>
+<td>Copy/Paste this Object, returning a reference to the new Object.</td>
+<td><a href="../intro#types"><span class="ret obj"></span></a></td>
+<td><a href="#clone"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>cut()</td>
+<td>Cuts (splits in half) a deck or stack Object.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>deal(<a href="../intro#types"><span class="tag int"></span></a> number, <a href="../intro#types"><span class="tag str"></span></a> player_color, <a href="../intro#types"><span class="tag int"></span></a> index)</td>
+<td>Deals Objects. Will deal from decks/bags/stacks/individual items.</td>
+<td><a href="../intro#types"><span class="ret obj"></span></a></td>
+<td><a href="#deal"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>dealToColorWithOffset(<a href="../intro#vector"><span class="tag vec"></span></a> offset, <a href="../intro#types"><span class="tag boo"></span></a> flip, <a href="../intro#types"><span class="tag str"></span></a> player_color)</td>
+<td>Deals from a deck to a position relative to the hand zone.</td>
+<td><a href="../intro#types"><span class="ret obj"></span></a></td>
+<td><a href="#dealtocolorwithoffset"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>destruct()</td>
+<td>Destroys Object. Allows for <code class="codehilite">self.destruct()</code>.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>highlightOn(<a href="../intro#color"><span class="tag col"></span></a> color, <a href="../intro#types"><span class="tag flo"></span></a> duration)</td>
+<td>Creates a highlight around an Object.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>highlightOff(<a href="../intro#color"><span class="tag col"></span></a> color)</td>
+<td>Removes a highlight from around an Object.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>putObject(<a href="../intro#types"><span class="tag obj"></span></a> put_object)</td>
+<td>Places an object into a container (chip stacks/bags/decks).</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#putobject"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>randomize()</td>
+<td>Shuffles deck/bag, rolls dice/coin, lifts other objects into the air. Same as pressing <code class="codehilite">R</code> by default.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>reload()</td>
+<td>Returns Object reference of itself after it respawns itself.</td>
+<td><a href="../intro#types"><span class="ret obj"></span></a></td>
+<td><a href="#reload"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>roll()</td>
+<td>Rolls dice/coins.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>shuffle()</td>
+<td>Shuffles/shakes up contents of a deck or bag.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>shuffleStates()</td>
+<td>Returns an Object reference to a new <a href="http://berserk-games.com/knowledgebase/creating-states/">state</a> after randomly selecting and changing to one.</td>
+<td><a href="../intro#types"><span class="ret obj"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>takeObject(<a href="../intro#types"><span class="tag tab"></span></a> parameters)</td>
+<td>Returns an Object reference of Object taken from a container (bag/deck/chip stack) and placed into the world.</td>
+<td><a href="../intro#types"><span class="ret obj"></span></a></td>
+<td><a href="#takeobject"><span class="i"></span></a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link">&para;</a></h2>
+<h3 id="transform-function-details">Transform Function Details<a class="headerlink" href="#transform-function-details" title="Permanent link">&para;</a></h3>
+<h4 id="addforce">addForce(...)<a class="headerlink" href="#addforce" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Adds force to an object in a directional Vector.</p>
+<div class="admonition info">
+<p class="admonition-title">addForce(vector, force_type)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>Vector</strong>: A Vector of the direction and magnitude of force.</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>force_type</strong>: An Int representing the force type to apply. Options below.<ul>
+<li><span class="critic comment">Optional, defaults to 3.</span></li>
+<li><strong>1</strong>: Continuous force, uses mass. <em>(Force)</em></li>
+<li><strong>2</strong>: Continuous acceleration, ignores mass. <em>(Acceleration)</em></li>
+<li><strong>3</strong>: Instant force impulse, uses mass. <em>(Impulse)</em></li>
+<li><strong>4</strong>: Instant velocity change, ignores mass. <em>(Velocity Change)</em></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h4 id="addtorque">addTorque(...)<a class="headerlink" href="#addtorque" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Adds torque to an object in a rotational Vector.</p>
+<div class="admonition info">
+<p class="admonition-title">addTorque(vector, force_type)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>Vector</strong>: A Vector of the direction and magnitude of rotational force.</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>Force Type</strong>: An Int representing the force type to apply. Options below.<ul>
+<li><span class="critic comment">Optional, defaults to 3.</span></li>
+<li><strong>1</strong>: Continuous force, uses mass. <em>(Force)</em></li>
+<li><strong>2</strong>: Continuous acceleration, ignores mass. <em>(Acceleration)</em></li>
+<li><strong>3</strong>: Instant force impulse, uses mass. <em>(Impulse)</em></li>
+<li><strong>4</strong>: Instant velocity change, ignores mass. <em>(Velocity Change)</em></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h4 id="getbounds">getBounds()<a class="headerlink" href="#getbounds" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp; Returns a Table of Vector information describing the size of an object in Global terms. <a href="https://docs.unity3d.com/ScriptReference/Bounds.html">Bounds</a> are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.</p>
+<div class="admonition info">
+<p class="admonition-title">Return Table</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>center</strong>: The Vector of the center of the bounding box.</li>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>size</strong>: The Vector of the size of the bounding box.</li>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>offset</strong>: The Vector of the offset of the center of the bounding box from the middle of the Object model.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="c1">--Example returned Table</span>
+<span class="p">{</span>
+    <span class="n">center</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">5</span><span class="p">},</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">},</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<hr />
+<h4 id="getboundsnormalized">getBoundsNormalized()<a class="headerlink" href="#getboundsnormalized" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp; Returns a Table of Vector information describing the size of an object in Global terms, as if it was rotated to {0,0,0}. <a href="https://docs.unity3d.com/ScriptReference/Bounds.html">Bounds</a> are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.</p>
+<div class="admonition info">
+<p class="admonition-title">Return Table</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>center</strong>: The Vector of the center of the bounding box.</li>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>size</strong>: The Vector of the size of the bounding box.</li>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>offset</strong>: The Vector of the offset of the center of the bounding box from the middle of the Object model.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="c1">--Example returned Table</span>
+<span class="p">{</span>
+    <span class="n">center</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">5</span><span class="p">},</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">},</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<hr />
+<h4 id="getscale">getScale()<a class="headerlink" href="#getscale" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp; Returns a Vector of the current scale. Scale is not an absolute measurement, it is a multiple of the Object's default model size. So {x=2, y=2, z=2} would be a model twice its default size, not 2 units large.</p>
+<hr />
+<h4 id="gettransformforward">getTransformForward()<a class="headerlink" href="#gettransformforward" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp; Returns a Vector of the forward direction of this Object. The direction is relative to how the object is facing.</p>
+<div class="codehilite"><pre><span></span><span class="c1">--Example of moving forward 5 units</span>
+<span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">pos_target</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getTransformForward</span><span class="p">()</span>
+    <span class="n">pos_current</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getPosition</span><span class="p">()</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">pos_current</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">pos_target</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">distance</span><span class="p">,</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">pos_current</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">pos_target</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">distance</span><span class="p">,</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">pos_current</span><span class="p">.</span><span class="n">z</span> <span class="o">+</span> <span class="n">pos_target</span><span class="p">.</span><span class="n">z</span> <span class="o">*</span> <span class="n">distance</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">setPositionSmooth</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h4 id="gettransformright">getTransformRight()<a class="headerlink" href="#gettransformright" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp; Returns a Vector of the forward direction of this object. The direction is relative to how the object is facing.</p>
+<div class="codehilite"><pre><span></span><span class="c1">--Example of moving right 5 units</span>
+<span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">pos_target</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getTransformRight</span><span class="p">()</span>
+    <span class="n">pos_current</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getPosition</span><span class="p">()</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">pos_current</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">pos_target</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">distance</span><span class="p">,</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">pos_current</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">pos_target</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">distance</span><span class="p">,</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">pos_current</span><span class="p">.</span><span class="n">z</span> <span class="o">+</span> <span class="n">pos_target</span><span class="p">.</span><span class="n">z</span> <span class="o">*</span> <span class="n">distance</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">setPositionSmooth</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h4 id="gettransformup">getTransformUp()<a class="headerlink" href="#gettransformup" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp; Returns a Vector of the up direction of this Object. The direction is relative to how the object is facing.</p>
+<div class="codehilite"><pre><span></span><span class="c1">--Example of moving up 5 units</span>
+<span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">pos_target</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getTransformUp</span><span class="p">()</span>
+    <span class="n">pos_current</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getPosition</span><span class="p">()</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">pos_current</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">pos_target</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">distance</span><span class="p">,</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">pos_current</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">pos_target</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">distance</span><span class="p">,</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">pos_current</span><span class="p">.</span><span class="n">z</span> <span class="o">+</span> <span class="n">pos_target</span><span class="p">.</span><span class="n">z</span> <span class="o">*</span> <span class="n">distance</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">setPositionSmooth</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h4 id="positiontolocal">positionToLocal(...)<a class="headerlink" href="#positiontolocal" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp; Returns a Vector after converting a world vector to a local Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.</p>
+<div class="admonition tip">
+<p class="admonition-title">Object Scale</p>
+<p>This function takes the Object's scale into account, as the Object is the key relative point.</p>
+</div>
+<hr />
+<h4 id="positiontoworld">positionToWorld(...)<a class="headerlink" href="#positiontoworld" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp; Returns a Vector after converting a local Vector to a world Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.</p>
+<div class="admonition tip">
+<p class="admonition-title">Object Scale</p>
+<p>This function takes the Object's scale into account, as the Object is the key relative point.</p>
+</div>
+<hr />
+<h4 id="rotatevector">rotate(Vector)<a class="headerlink" href="#rotatevector" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Rotates Object smoothly in the direction of the given Vector. This does not set the Object to face a specific rotation, it rotates the Object around by the number of degrees given for x/y/z.</p>
+<div class="codehilite"><pre><span></span><span class="c1">--Rotates object 90 degrees around its Y axis</span>
+<span class="n">self</span><span class="p">.</span><span class="n">rotate</span><span class="p">({</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">})</span>
+</pre></div>
+
+<hr />
+<h4 id="scale">scale(...)<a class="headerlink" href="#scale" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Scales Object by a multiple. This does not set the Object to a specific scale, it scales the Object by the given multiple.</p>
+<div class="admonition info">
+<p class="admonition-title">scale(scale)</p>
+<ul>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>scale</strong>: Multiplier for scale.<ul>
+<li><span class="critic comment">{x=1, y=1, z=1} would not change the scale.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">scale(scale)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>scale</strong>: Multiplier for scale which is applied to the X/Y/Z.<ul>
+<li><span class="critic comment">1 would not change the scale.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="c1">--Both examples work to scale an object to be twice its current scale</span>
+<span class="n">self</span><span class="p">.</span><span class="n">scale</span><span class="p">({</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">})</span>
+<span class="n">self</span><span class="p">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+<hr />
+<h4 id="setpositionsmooth">setPositionSmooth(...)<a class="headerlink" href="#setpositionsmooth" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Moves the Object smoothly to the given Vector.</p>
+<div class="admonition info">
+<p class="admonition-title">setPositionSmooth(vector, collide, fast)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>Vector</strong>: A positional Vector.</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>collide</strong>: If the Object will collide with other Objects while moving.</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>fast</strong>: If the Object is moved quickly.</li>
+</ul>
+</div>
+<hr />
+<h4 id="setrotationsmooth">setRotationSmooth(...)<a class="headerlink" href="#setrotationsmooth" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Rotates the Object smoothly to the given Vector.</p>
+<div class="admonition info">
+<p class="admonition-title">setRotationSmooth(vector, collide, fast)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>Vector</strong>: A rotational Vector.</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>collide</strong>: If the Object will collide with other Objects while rotating.</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>fast</strong>: If the Object is rotated quickly.</li>
+</ul>
+</div>
+<hr />
+<h3 id="ui-function-details">UI Function Details<a class="headerlink" href="#ui-function-details" title="Permanent link">&para;</a></h3>
+<h4 id="createbutton">createButton(...)<a class="headerlink" href="#createbutton" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Creates a scripted button attached to the Object. Scripted buttons are buttons that can be clicked while in-game that trigger a function in a script.</p>
+<details class="tip"><summary>Button Tips</summary><ul><li>Buttons can not be clicked from their back side.</li><li>Buttons can not be clicked if there is another object between the pointer and the button. This does not include the Object the button is attached to.</li><li>Buttons are placed relative to the Object they are attached to.</li><li>The maximum font size is capped at 1000.</li><li>The minimum width/height is 60. Any lower number (besides 0) will appear to be 60. This prevents visual glitches involving the corner rounding.</li><li>A button width/height of 0 will cause the button not to be drawn, but its label will be. This can be a way to attach text to an Object.</li><li>You cannot assign an index to a button. It is given one automatically.</li></ul></details><div class="admonition info">
+<p class="admonition-title">createButton(parameters)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table containing the information used to spawn the button.<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.click_function</strong>: A String of the function's name that will be run when button is clicked.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.function_owner</strong>: The Object which contains the click_function function.<ul>
+<li><span class="critic comment">Optional, Defaults to Global.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.label</strong>: Text that appears on the button.<ul>
+<li><span class="critic comment">Optional, defaults to an empty string.</span></li>
+</ul>
+</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Where the button appears, relative to the Object's center.<ul>
+<li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: How the button is rotated, relative to the Object's rotation.<ul>
+<li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the button, relative to the Object's scale.<ul>
+<li><span class="critic comment">Optional, defaults to {x=1, y=1, z=1}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>parameters.width</strong>: How wide the button will be, relative to the Object.<ul>
+<li><span class="critic comment">Optional, defaults to 100.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>parameters.height</strong>: How tall the button will be, relative to the Object.<ul>
+<li><span class="critic comment">Optional, defaults to 100.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>parameters.font_size</strong>: Size the label font will be, relative to the Object.<ul>
+<li><span class="critic comment">Optional, defaults to 100.</span></li>
+</ul>
+</li>
+<li><a href="../intro#color"><span class="tag col"></span></a> <strong>parameters.color</strong>: A Color for the clickable button.<ul>
+<li><span class="critic comment">Optional, defaults to {r=1, g=1, b=1}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#color"><span class="tag col"></span></a> <strong>parameters.font_color</strong>: A Color for the label text.<ul>
+<li><span class="critic comment">Optional, defaults to {r=0, g=0, b=0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.tooltip</strong>: Popup of text, similar to how an Object's name is displayed on mouseover.<ul>
+<li><span class="critic comment">Optional, defaults to an empty string.</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">click_function(obj, player_clicker_color)</p>
+<p>The click function which is activated by clicking this button has its own parameters it is passed automatically.</p>
+<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>obj</strong>: The Object the button is attached to.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_clicker_color</strong>: <a href="../player-color">Player Color</a> of the player that pressed the button.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">click_function</span> <span class="o">=</span> <span class="s2">&quot;click_func&quot;</span><span class="p">,</span>
+        <span class="n">function_owner</span> <span class="o">=</span> <span class="n">self</span><span class="p">,</span>
+        <span class="n">label</span>          <span class="o">=</span> <span class="s2">&quot;Test&quot;</span><span class="p">,</span>
+        <span class="n">position</span>       <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+        <span class="n">rotation</span>       <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+        <span class="n">width</span>          <span class="o">=</span> <span class="mi">800</span><span class="p">,</span>
+        <span class="n">height</span>         <span class="o">=</span> <span class="mi">400</span><span class="p">,</span>
+        <span class="n">font_size</span>      <span class="o">=</span> <span class="mi">340</span><span class="p">,</span>
+        <span class="n">color</span>          <span class="o">=</span> <span class="p">{</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">},</span>
+        <span class="n">font_color</span>     <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="n">tooltip</span>        <span class="o">=</span> <span class="s2">&quot;This text appears on mouseover.&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">createButton</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nf">click_func</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<p>Button scale currently distorts button height and width if the button is rotated at anything besides <code class="codehilite">{0,0,0}</code>.</p>
+</div>
+<hr />
+<h4 id="createinput">createInput(...)<a class="headerlink" href="#createinput" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Creates a scripted input attached to the Object. Scripted inputs are boxes you can click inside of in-game to input/edit text. Every letter typed triggers the function. The bool that is returned as part of the input_function allows you to determine when a player has finished editing the input.</p>
+<details class="tip"><summary>Input Tips</summary><ul><li>Inputs can not be clicked from their back side.</li><li>Inputs can not be clicked if there is another object between the pointer and the inputs. This does not include the Object the input is attached to.</li><li>Inputs are placed relative to the Object they are attached to.</li><li>The maximum font size is capped at 1000.</li><li>The minimum width/height is 60. Any lower number (besides 0) will appear to be 60. This prevents visual glitches involving the corner rounding.</li><li>Font that does not fit in the input window's width/height does NOT display. To know how much height you need for each line, the formula is <code class="codehilite">(font_size * # of lines) + 23</code>. In other words, multiply how many lines of text you want to display by your font_size and add 23. That is your height value.</li><li>You cannot assign an index to an input. It is given one automatically.</li></ul></details><div class="admonition info">
+<p class="admonition-title">createInput(parameters)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table containing the information used to spawn the input.<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.input_function</strong>: A String of the function's name that will be run when a key is used or when it is deselected.</li>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>parameters.function_owner</strong>: The Object which contains the input_function function.<ul>
+<li><span class="critic comment">Optional, Defaults to Global.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.label</strong>: Text that appears as greyed out text when there is no value in the input.<ul>
+<li><span class="critic comment">Optional, defaults to an empty string.</span></li>
+</ul>
+</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Where the input appears, relative to the Object's center.<ul>
+<li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: How the input is rotated, relative to the Object's rotation.<ul>
+<li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the input, relative to the Object's scale.<ul>
+<li><span class="critic comment">Optional, defaults to {x=1, y=1, z=1}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>parameters.width</strong>: How wide the input will be, relative to the Object.<ul>
+<li><span class="critic comment">Optional, defaults to 100.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>parameters.height</strong>: How tall the input will be, relative to the Object.<ul>
+<li><span class="critic comment">Optional, defaults to 100.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>parameters.font_size</strong>: Size the label/value font will be, relative to the Object.<ul>
+<li><span class="critic comment">Optional, defaults to 100.</span></li>
+</ul>
+</li>
+<li><a href="../intro#color"><span class="tag col"></span></a> <strong>parameters.color</strong>: A Color for the input's background.<ul>
+<li><span class="critic comment">Optional, defaults to {r=1, g=1, b=1}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#color"><span class="tag col"></span></a> <strong>parameters.font_color</strong>: A Color for the value text.<ul>
+<li><span class="critic comment">Optional, defaults to {r=0, g=0, b=0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.tooltip</strong>: A popup of text, similar to how an Object's name is displayed on mouseover.<ul>
+<li><span class="critic comment">Optional, defaults to an empty string.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>parameters.alignment</strong>: How text is aligned in the input box.<ul>
+<li><span class="critic comment">Optional, defaults to 1.</span></li>
+<li><strong>1</strong>: Automatic</li>
+<li><strong>2</strong>: Left</li>
+<li><strong>3</strong>: Center</li>
+<li><strong>4</strong>: Right</li>
+<li><strong>5</strong>: Justified</li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.value</strong>: Text entered into the input.<ul>
+<li><span class="critic comment">Optional, defaults to an empty string.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>parameters.validation</strong>: What characters can be input into the input value field.<ul>
+<li><span class="critic comment">Optional, defaults to 1.</span></li>
+<li><strong>1</strong>: None</li>
+<li><strong>2</strong>: Integer</li>
+<li><strong>3</strong>: Float</li>
+<li><strong>4</strong>: Alphanumeric</li>
+<li><strong>5</strong>: Username</li>
+<li><strong>6</strong>: Name</li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>parameters.tab</strong>: How the pressing of "tab" is handled when inputting.<ul>
+<li><span class="critic comment">Optional, defaults to 1.</span></li>
+<li><strong>1</strong>: None</li>
+<li><strong>2</strong>: Select Next Input</li>
+<li><strong>3</strong>: Indent</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">input_function(obj, player_clicker_color, input_value, selected)</p>
+<p><em>The click function which is activated by clicking this button has its own parameters it is passed automatically.</em></p>
+<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>obj</strong>: The Object the input is attached to.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_clicker_color</strong>: <a href="../player-color">Player Color</a> of the player that has selected/edited the input.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>input_value</strong>: Text currently in the input.</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>selected</strong>: If the value box is still being edited or not.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">createInput</span><span class="p">({</span>
+        <span class="n">input_function</span> <span class="o">=</span> <span class="s2">&quot;input_func&quot;</span><span class="p">,</span>
+        <span class="n">function_owner</span> <span class="o">=</span> <span class="n">self</span><span class="p">,</span>
+        <span class="n">label</span>          <span class="o">=</span> <span class="s2">&quot;Gold&quot;</span><span class="p">,</span>
+        <span class="n">alignment</span>      <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="n">position</span>       <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">width</span>          <span class="o">=</span> <span class="mi">800</span><span class="p">,</span>
+        <span class="n">height</span>         <span class="o">=</span> <span class="mi">300</span><span class="p">,</span>
+        <span class="n">font_size</span>      <span class="o">=</span> <span class="mi">323</span><span class="p">,</span>
+        <span class="n">validation</span>     <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nf">input_func</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">input</span><span class="p">,</span> <span class="n">stillEditing</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">input</span><span class="p">)</span>
+    <span class="kr">if</span> <span class="ow">not</span> <span class="n">stillEditing</span> <span class="kr">then</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished editing.&quot;</span><span class="p">)</span>
+    <span class="kr">end</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h4 id="editbutton">editButton(...)<a class="headerlink" href="#editbutton" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Modify an existing button. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited button's element to remain. Indexes start at 0. The first button on any given Object has an index of 0, the next button on it has an index of 1, etc. Each Object has its own indexes.</p>
+<div class="admonition info">
+<p class="admonition-title">editButton(parameters)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table containing the information used to spawn the button.<ul>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>parameters.index</strong>: Index of the button you want to edit.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.click_function</strong>: Function's name that will be run when button is clicked.</li>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>parameters.function_owner</strong>: The Object which contains the click_function function.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.label</strong>: Text that appears on the button.</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Where the button appears, relative to the Object's center.</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: How the button is rotated, relative to the Object's rotation.</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the button, relative to the Object's scale.</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>parameters.width</strong>: How wide the button will be, relative to the Object.</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>parameters.height</strong>: How tall the button will be, relative to the Object.</li>
+<li><a href="../intro#types"><span class="tag clo"></span></a> <strong>parameters.font_size</strong>: Size the label font will be, relative to the Object.</li>
+<li><a href="../intro#color"><span class="tag col"></span></a> <strong>parameters.color</strong>: A Color for the clickable button.</li>
+<li><a href="../intro#color"><span class="tag col"></span></a> <strong>parameters.font_color</strong>: A Color for the label text.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.tooltip</strong>: Text of a popup of text, similar to how an Object's name is displayed on mouseover.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">editButton</span><span class="p">({</span><span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;New Label&quot;</span><span class="p">})</span>
+</pre></div>
+
+<hr />
+<h4 id="editinput">editInput(...)<a class="headerlink" href="#editinput" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Modify an existing input. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited input's element to remain. Indexes start at 0. The first input on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.</p>
+<div class="admonition info">
+<p class="admonition-title">editInput(parameters)</p>
+<p><em>All fields besides <code class="codehilite">index</code> are optional. If not used, the element will default to the element's current setting.</em></p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table containing the information used to spawn the input.<ul>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>parameters.index</strong>: Index of the input you want to edit.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.input_function</strong>: The function's name that will be run when the input is selected.</li>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>parameters.function_owner</strong>: The Object which contains the input_function function.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.label</strong>: Text that appears as greyed out text when there is no value in the input.</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Where the input appears, relative to the Object's center.</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: How the input is rotated, relative to the Object's rotation.</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the input, relative to the Object's scale.</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>parameters.width</strong>: How wide the input will be, relative to the Object.</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>parameters.height</strong>: How tall the input will be, relative to the Object.</li>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>parameters.font_size</strong>: Size the label/value font will be, relative to the Object.</li>
+<li><a href="../intro#color"><span class="tag col"></span></a> <strong>parameters.color</strong>: A Color for the input's background.</li>
+<li><a href="../intro#color"><span class="tag col"></span></a> <strong>parameters.font_color</strong>: A Color for the value text.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.tooltip</strong>: A popup of text, similar to how an Object's name is displayed on mouseover.</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>parameters.alignment</strong>: How text is aligned in the input box.<ul>
+<li><strong>1</strong>: Automatic</li>
+<li><strong>2</strong>: Left</li>
+<li><strong>3</strong>: Center</li>
+<li><strong>4</strong>: Right</li>
+<li><strong>5</strong>: Justified</li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.value</strong>: A String of the text entered into the input.</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>parameters.validation</strong>: An Int which determines what characters can be input into the value.<ul>
+<li><strong>1</strong>: None</li>
+<li><strong>2</strong>: Integer</li>
+<li><strong>3</strong>: Float</li>
+<li><strong>4</strong>: Alphanumeric</li>
+<li><strong>5</strong>: Username</li>
+<li><strong>6</strong>: Name</li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>parameters.tab</strong>: An Int which determines how pressing tab is handled when inputting.<ul>
+<li><strong>1</strong>: None</li>
+<li><strong>2</strong>: Select Next Input</li>
+<li><strong>3</strong>: Indent</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">editInput</span><span class="p">({</span><span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;New Value&quot;</span><span class="p">})</span>
+</pre></div>
+
+<hr />
+<h4 id="getbuttons">getButtons()<a class="headerlink" href="#getbuttons" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp; Returns a Table of all buttons on this Object. The Table contains parameters tables with the same keys as seen in the <a href="#createbutton">createButton</a> section, except each Table of parameters also contains an <strong>index</strong> entry. This is used to identify each button, used by <a href="#editbutton">editButton</a> and <a href="#removebutton">removeButton</a>.</p>
+<p>Indexes start at 0.</p>
+<hr />
+<h4 id="getinputs">getInputs()<a class="headerlink" href="#getinputs" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp; Returns a Table of all inputs on this Object. The Table contains parameters tables with the same keys as seen in the <a href="#createinput">createInput</a> section, except each Table of parameters also contains an <strong>index</strong> entry. This is used to identify each input, used by <a href="#editinput">editInput</a> and <a href="#removeinput">removeInput</a>.</p>
+<p>Indexes start at 0.</p>
+<hr />
+<h4 id="removebutton">removeButton(...)<a class="headerlink" href="#removebutton" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Removes a specific button. Indexes start at 0. The first button on any given Object has an index of 0, the next button on it has an index of 1, etc. Each Object has its own indexes.</p>
+<p>Removing an index instantly causes all other higher indexes to shift down 1.</p>
+<div class="admonition info">
+<p class="admonition-title">removeButton(index)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>index</strong>: Button index to remove.</li>
+</ul>
+</div>
+<hr />
+<h4 id="removeinput">removeInput(...)<a class="headerlink" href="#removeinput" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Removes a specific input. Indexes start at 0. The first button on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.</p>
+<p>Removing an index instantly causes all other higher indexes to shift down 1.</p>
+<div class="admonition info">
+<p class="admonition-title">removeInput(index)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>index</strong>: Input index to remove.</li>
+</ul>
+</div>
+<hr />
+<h3 id="get-function-details">Get Function Details<a class="headerlink" href="#get-function-details" title="Permanent link">&para;</a></h3>
+<h4 id="getcustomobject">getCustomObject()<a class="headerlink" href="#getcustomobject" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp; Returns a Table with the Custom Object information of a Custom Object. See the <a href="../spawnableobject">Spawnable Objects</a> page for the kind of information returned.</p>
+<div class="codehilite"><pre><span></span><span class="c1">--Example returned Table for a custom token</span>
+<span class="p">{</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="s2">&quot;SOME URL HERE&quot;</span><span class="p">,</span>
+    <span class="n">thickness</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">merge_distance</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="n">stackable</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+<hr />
+<h4 id="getobjects">getObjects()<a class="headerlink" href="#getobjects" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp; Returns a Table of objects in the script zone/bag/deck. What it returns varies depending on the type of Object it is used on.</p>
+<p>If an Object is inside of a container, it does not exist in-game. As a result, you only get data on each Object, not an Object reference.</p>
+<div class="admonition info">
+<p class="admonition-title">Return Table by Object Type</p>
+<div class="admonition info">
+<p class="admonition-title">Scripting Zone</p>
+<p>Returns a Table of Object references to every object in the scripting zone.</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="n">object_1</span><span class="p">,</span>
+    <span class="n">object_2</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+<div class="admonition info">
+<p class="admonition-title">Bag</p>
+<p>Returns a Table of sub-Tables, each sub-Table containing data on 1 bagged item. Indexes start at 0.</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>name</strong>: Name of the Object.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>guid</strong>: GUID of the Object.</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>index</strong>: Index of the Object, represents the Object's place in the bag.</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">name</span>  <span class="o">=</span> <span class="s2">&quot;Object Name&quot;</span><span class="p">,</span>
+        <span class="n">guid</span>  <span class="o">=</span> <span class="s2">&quot;AAA111&quot;</span><span class="p">,</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>  
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+<div class="admonition info">
+<p class="admonition-title">Deck</p>
+<p>Returns a Table of sub-Tables, each sub-Table containing data on 1 card. Indexes start at 0.</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>nickname</strong>: Name of the card.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>description</strong>: Description of the card.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>guid</strong>: GUID of the card.</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>index</strong>: Index of the card, represents the card's order in the deck.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>lua_script</strong>: Any Lua scripting saved on the card.</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">nickname</span>    <span class="o">=</span> <span class="s2">&quot;Object Name&quot;</span><span class="p">,</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Object Descripotion&quot;</span><span class="p">,</span>
+        <span class="n">guid</span>        <span class="o">=</span> <span class="s2">&quot;AAA111&quot;</span><span class="p">,</span>
+        <span class="n">index</span>       <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">lua_script</span>  <span class="o">=</span> <span class="s2">&quot;Any Lua Script On This Card&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+<p>This function is often used with <a href="#takeobject">takeObject(...)</a> to remove objects from containers.</p>
+<hr />
+<h4 id="getrotationvalues">getRotationValues()<a class="headerlink" href="#getrotationvalues" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp; Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice) based on which side is pointed "up". It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.</p>
+<p>You can manually assign rotation values to objects using the Rotation Value Gizmo tool (in the left side Gizmo menu) or using <a href="../setrotationvalues">setRotationValues(...)</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Return Table</p>
+<p>The returned Table contains sub-Tables, each sub-Table containing these 2 key/value pairs.</p>
+<ul>
+<li><a href="../intro#types"><span class="tag var"></span></a> <strong>value</strong>: What value is associated with a given rotation. Often a String or Int.</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>rotation</strong>: Rotation of the Object that best represents the given value pointing up.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="c1">--Example returned Table for a coin</span>
+<span class="p">{</span>
+    <span class="p">{</span><span class="n">value</span><span class="o">=</span><span class="s2">&quot;Heads&quot;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">}},</span>
+    <span class="p">{</span><span class="n">value</span><span class="o">=</span><span class="s2">&quot;Tails&quot;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">}},</span>
+<span class="p">}</span>
+</pre></div>
+
+<hr />
+<h4 id="getstates">getStates()<a class="headerlink" href="#getstates" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp; Returns a Table of information on the <a href="http://berserk-games.com/knowledgebase/creating-states/">states</a> of an Object. Stated Objects have ids (indexes) starting with 1.</p>
+<div class="admonition info">
+<p class="admonition-title">Return Table</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>name</strong>: Name of the Object.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>guid</strong>: GUID of the Object.</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>id</strong>: ID (index) of the state.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="c1">--Example returned Table</span>
+<span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;First State&quot;</span><span class="p">,</span>
+        <span class="n">guid</span> <span class="o">=</span> <span class="s2">&quot;AAA111&quot;</span><span class="p">,</span>
+        <span class="n">id</span>   <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Second State&quot;</span><span class="p">,</span>
+        <span class="n">guid</span> <span class="o">=</span> <span class="s2">&quot;BBB222&quot;</span><span class="p">,</span>
+        <span class="n">id</span>   <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+
+<hr />
+<h4 id="getvalue">getValue()<a class="headerlink" href="#getvalue" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret int"></span></a>&nbsp; Gets a value. What the value represents depends on what type of Object this function is used on.</p>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../clock">Clock</a></td>
+<td>Returns Int of stopwatch/timer current time <em>(in seconds)</em>.</td>
+</tr>
+<tr>
+<td><a href="../clock">Counter</a></td>
+<td>Returns Int of counter value.</td>
+</tr>
+<tr>
+<td>Rotation Value</td>
+<td>Returns Var of the face-up value.</td>
+</tr>
+<tr>
+<td>Hidden Zone</td>
+<td>Returns String of the Player <a href="../color">Color</a> of the zone.</td>
+</tr>
+<tr>
+<td>Poker Chip</td>
+<td>Returns Int of the face value. <span class="critic comment">Does not work on custom chips.</span></td>
+</tr>
+<tr>
+<td>Tablet</td>
+<td>Returns String of the current URL.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="set-function-details">Set Function Details<a class="headerlink" href="#set-function-details" title="Permanent link">&para;</a></h3>
+<h4 id="setcustomobject">setCustomObject(...)<a class="headerlink" href="#setcustomobject" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Sets a custom Object's properties. It can be used after <a href="../base#spawnobject">spawnObject</a> or on an already existing custom Object. If used on an already existing custom Object, you must use <a href="#reload">reload</a> on the object after setCustomObject for the changes to be displayed.</p>
+<div class="admonition info">
+<p class="admonition-title">setCustomObject(parameters)</p>
+<p>The Table of parameters varies, depending on which type of custom Object it is. See the <a href="../spawnableobject">Spawnable Object</a> page for the parameters needed.</p>
+</div>
+<div class="codehilite"><pre><span></span><span class="c1">--Example of a custom token</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="s2">&quot;SOME URL HERE&quot;</span><span class="p">,</span>
+    <span class="n">thickness</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">merge_distance</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="n">stackable</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">obj</span><span class="p">.</span><span class="n">setCustomObject</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+
+<hr />
+<h4 id="setrotationvalues">setRotationValues(...)<a class="headerlink" href="#setrotationvalues" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.</p>
+<div class="admonition info">
+<p class="admonition-title">setRotationValues(rotation_values)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>rotation_values</strong>: A Table containing Tables with the following values. 1 sub-Table per "face".<ul>
+<li><a href="../intro#types"><span class="tag var"></span></a> <strong>rotation_values.value</strong>: What value is associated with a given rotation. Often a String or Int.</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>rotation_values.rotation</strong>: The rotation Vector of the Object that best represents the given value pointing up.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="c1">--Example setting of rotation values for a coin</span>
+<span class="n">rotation_values</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span><span class="n">value</span><span class="o">=</span><span class="s2">&quot;Heads&quot;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">}},</span>
+    <span class="p">{</span><span class="n">value</span><span class="o">=</span><span class="s2">&quot;Tails&quot;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">}},</span>
+<span class="p">}</span>
+<span class="n">self</span><span class="p">.</span><span class="n">setRotationValues</span><span class="p">(</span><span class="n">rotation_values</span><span class="p">)</span>
+</pre></div>
+
+<hr />
+<h4 id="setvalue">setValue(...)<a class="headerlink" href="#setvalue" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Sets a value on an Object. What the value represents depends on what type of Object it is.</p>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../clock">Clock</a></td>
+<td>Set Int for stopwatch/timer current time <em>(in seconds)</em>.</td>
+</tr>
+<tr>
+<td><a href="../clock">Counter</a></td>
+<td>Set Int for counter value.</td>
+</tr>
+<tr>
+<td>Rotation Value</td>
+<td>Set Var for the face-up value.</td>
+</tr>
+<tr>
+<td>Hidden Zone</td>
+<td>Set String for the Player <a href="../color">Color</a> of the zone.</td>
+</tr>
+<tr>
+<td>Tablet</td>
+<td>Set String for the current URL.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="action-function-details">Action Function Details<a class="headerlink" href="#action-function-details" title="Permanent link">&para;</a></h3>
+<h4 id="call">call(...)<a class="headerlink" href="#call" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret var"></span></a>&nbsp; Used to call a Lua function on this Object. This is used to remotely call functions in other scripts, either in Global or Object scripts. <code class="codehilite">Global</code> is the "Object" to use to call a function in the Global script.</p>
+<p><em>Var is only returned if the function called has a <code class="codehilite">return</code>. Otherwise return is <code class="codehilite">nil</code>. See example.</em></p>
+<div class="admonition info">
+<p class="admonition-title">call(func_name, func_params)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>func_name</strong>: Function name you want to activate.</li>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>func_params</strong>: A Table containing any data you want to pass to that function.<ul>
+<li><span class="critic comment">Optional, will not be sent by default.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><div class="codehilite"><pre><span></span><span class="c1">--Call, used from an Object script</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">msg</span>   <span class="o">=</span> <span class="s2">&quot;Hello world!&quot;</span><span class="p">,</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="p">{</span><span class="n">r</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.2</span><span class="p">},</span>
+<span class="p">}</span>
+<span class="c1">--Success would be set to true by the return value in the function</span>
+<span class="n">success</span> <span class="o">=</span> <span class="n">Global</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;testFunc&quot;</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+</pre></div>
+<div class="codehilite"><pre><span></span><span class="c1">--Function in Global</span>
+<span class="kr">function</span> <span class="nf">testFunc</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">broadcastToAll</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">msg</span><span class="p">,</span> <span class="n">params</span><span class="p">.</span><span class="n">color</span><span class="p">)</span>
+    <span class="kr">return</span> <span class="kc">true</span>
+<span class="kr">end</span>
+</pre></div></p>
+<hr />
+<h4 id="clone">clone(...)<a class="headerlink" href="#clone" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret obj"></span></a>&nbsp; Copy/Paste this Object.</p>
+<div class="admonition info">
+<p class="admonition-title">clone(parameters)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table with information used when pasting.<ul>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Where the Object is placed.<ul>
+<li><span class="critic comment">Optional, defaults to {x=0, y=3, z=0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>parameters.snap_to_grid</strong>: If the Object snaps to grid.<ul>
+<li><span class="critic comment">Optional, defaults to false.</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h4 id="deal">deal(...)<a class="headerlink" href="#deal" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp; Deals Objects to hand zones. Will deal from decks/bags/stacks as well as individual items. If dealing an individual item to a hand zone, it is a good idea to make sure that its <a href="#member-variables">Member Variable</a> for <code class="codehilite">use_hands</code> is <code class="codehilite">true</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">deal(number, player_color, index)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>number</strong>: How many to deal.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_color</strong>: The <a href="../player-color">Player Color</a> to deal to.<ul>
+<li><span class="critic comment">Optional, defaults to an empty string. If not supplied, it will attempt to deal to all seated players.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>index</strong>: Index of which Object to deal from a container.<ul>
+<li><span class="critic comment">Optional, defaults to 0. If not supplied it will deal in regular order.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h4 id="dealtocolorwithoffset">dealToColorWithOffset(...)<a class="headerlink" href="#dealtocolorwithoffset" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret obj"></span></a>&nbsp; Deals from a deck to a position relative to the hand zone.</p>
+<div class="admonition info">
+<p class="admonition-title">dealToColorWithOffset(offset, flip, player_color)</p>
+<ul>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>offset</strong>: The x/y/z offset to deal to around the given hand zone.</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>flip</strong>: If the card is flipped over when dealt.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_color</strong>: Hand zone <a href="../player-color">Player Color</a> to offset dealing to.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="c1">--Example of dealing 2 cards in front of the White player, face up.</span>
+<span class="n">self</span><span class="p">.</span><span class="n">dealToColorWithOffset</span><span class="p">({</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;White&quot;</span><span class="p">)</span>
+<span class="n">self</span><span class="p">.</span><span class="n">dealToColorWithOffset</span><span class="p">({</span> <span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;White&quot;</span><span class="p">)</span>
+</pre></div>
+
+<h4 id="putobject">putObject(...)<a class="headerlink" href="#putobject" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret obj"></span></a>&nbsp; Places an object into a container (chip stacks/bags/decks).</p>
+<div class="admonition info">
+<p class="admonition-title">putObject(put_object)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>put_object</strong>: An Object to place into the container.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="c1">--Example of a script on a bag that places Object into itself</span>
+<span class="kd">local</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;AAA111&quot;</span><span class="p">)</span>
+<span class="n">self</span><span class="p">.</span><span class="n">putObject</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</pre></div>
+
+<hr />
+<h4 id="reload">reload()<a class="headerlink" href="#reload" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret obj"></span></a>&nbsp; Returns Object reference of itself after it respawns itself. This function causes the Object to be deleted and respawned instantly to refresh it, so its old Object reference will no longer be valid.</p>
+<p>Most often this is used after using <a href="#setcustomobject">setCustomObject(...)</a> to modify a custom object.</p>
+<hr />
+<h4 id="takeobject">takeObject(...)<a class="headerlink" href="#takeobject" title="Permanent link">&para;</a></h4>
+<p><a href="../intro#types"><span class="ret obj"></span></a>&nbsp; Takes an object from a container (bag/deck/chip stack) and places it in the world.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. It is also possible to add a delay using a <a href="#startluacoroutine">coroutine</a>.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">takeObject(parameters)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to determine how takeObject will act.<ul>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: A Vector of the position to place Object.<ul>
+<li><span class="critic comment">Optional, defaults to container's position + 2 on the x axis.</span></li>
+</ul>
+</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: A Vector of the rotation of the Object.<ul>
+<li><span class="critic comment">Optional, defaults to the container's rotation.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>parameters.flip</strong>: If the Object is flipped over.<ul>
+<li><span class="critic comment">Optional, defaults to false. Only used with decks, not bags/stacks.</span></li>
+<li><span class="critic comment">If rotation is used, flip's Bool will be ignored.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.guid</strong>: GUID of the Object to take.<ul>
+<li><span class="critic comment">Optional,  no default. Only use index or guid, never both.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>parameters.index</strong>: Index of the Object to take.<ul>
+<li><span class="critic comment">Optional,  no default. Only use index or guid, never both.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>parameters.top</strong>: If an object is taken from the top (vs bottom).<ul>
+<li><span class="critic comment">Optional, defaults to true.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>parameters.smooth</strong>: If the taken Object moves smoothly or instantly. <ul>
+<li><span class="critic comment">Optional, defaults to true.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.callback</strong>: Function name you want activated once the Object is initiated.<ul>
+<li><span class="critic comment">Optional, no default.</span></li>
+<li><span class="critic comment">A callback function has 2 parameters, the Object spawned and, if used, the Table of params.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>parameters.callback_owner</strong>: What Object has the callback function in its script. Global is a valid target.<ul>
+<li><span class="critic comment">Optional, defaults to container Object. Serves no purpose if callback is not also used.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters.params</strong>: Data to send to the callback to use as parameters. See example.<ul>
+<li><span class="critic comment">Optional, no default. Serves no purpose if callback is not also used.</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="n">futureName</span> <span class="o">=</span> <span class="s2">&quot;Taken from container!&quot;</span>
+    <span class="n">takeParams</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">5</span><span class="p">},</span>
+        <span class="n">callback</span> <span class="o">=</span> <span class="s2">&quot;take_callback&quot;</span><span class="p">,</span>
+        <span class="n">callback_owner</span> <span class="o">=</span> <span class="n">self</span><span class="p">,</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="n">futureName</span><span class="p">},</span>
+    <span class="p">}</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">takeObject</span><span class="p">(</span><span class="n">takeParams</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nf">take_callback</span><span class="p">(</span><span class="n">object_spawned</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<details class="tip"><summary>Tip for using GUID to pull Object</summary><p>When getting the GUIDs of objects in a container, it is possible items can have the same GUID while in a container. This is because only once two items try to exist at the same time is one of them given a new GUID, and Objects in a container do not currently exist. Removing all Objects from the container at once will force all of them to be given unique GUIDs.</p></details><details class="tip"><summary>Tip for using index to pull Object</summary><p>When you take an Object from the container, all higher indexes are reduced by 1 instantly. If you pull more than once Object at once by their index, you must account for this index changing.</p></details>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!--This is empty because it is killing the default footer-->
+<!--Do not remove.-->
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.abd7b172.js"></script>
+      
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

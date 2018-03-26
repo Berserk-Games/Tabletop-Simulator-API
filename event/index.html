@@ -1,0 +1,1780 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/Icon-Dice.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.6.2">
+    
+    
+      
+        <title>Event - Tabletop Simulator Scripting Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.9b572555.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../css/theme.css">
+    
+      <link rel="stylesheet" href="../css/table.css">
+    
+      <link rel="stylesheet" href="../css/type_icons.css">
+    
+      <link rel="stylesheet" href="../css/i_icons.css">
+    
+      <link rel="stylesheet" href="../css/player_color_table.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#function-summary" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Tabletop Simulator Scripting Documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../img/TSIcon.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Tabletop Simulator Scripting Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                Event
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub Source
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <img src="../img/TSIcon.png" width="24" height="24">
+      
+    </span>
+    Tabletop Simulator Scripting Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub Source
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../atom/" title="Atom" class="md-nav__link">
+      Atom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../externaleditorapi/" title="External Editor AP" class="md-nav__link">
+      External Editor AP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Lua API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Lua API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Event
+      </label>
+    
+    <a href="./" title="Event" class="md-nav__link md-nav__link--active">
+      Event
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#function-summary" title="Function Summary" class="md-nav__link">
+    Function Summary
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-events-global-object" title="Default Events (Global &amp; Object)" class="md-nav__link">
+    Default Events (Global &amp; Object)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-events-object-only" title="Default Events (Object Only)" class="md-nav__link">
+    Default Events (Object Only)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-details-global-object" title="Function Details (Global &amp; Object)" class="md-nav__link">
+    Function Details (Global &amp; Object)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onchat" title="onChat(...)" class="md-nav__link">
+    onChat(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onexternalmessage" title="onExternalMessage(...)" class="md-nav__link">
+    onExternalMessage(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onfixedupdate" title="onFixedUpdate()" class="md-nav__link">
+    onFixedUpdate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onload" title="onLoad(...)" class="md-nav__link">
+    onLoad(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectdestroy" title="onObjectDestroy(...)" class="md-nav__link">
+    onObjectDestroy(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectdrop" title="onObjectDrop(...)" class="md-nav__link">
+    onObjectDrop(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectenterscriptingzone" title="onObjectEnterScriptingZone(...)" class="md-nav__link">
+    onObjectEnterScriptingZone(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectleavescriptingzone" title="onObjectLeaveScriptingZone(...)" class="md-nav__link">
+    onObjectLeaveScriptingZone(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectleavecontainer" title="onObjectLeaveContainer(...)" class="md-nav__link">
+    onObjectLeaveContainer(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectloopingeffect" title="onObjectLoopingEffect(...)" class="md-nav__link">
+    onObjectLoopingEffect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectpickup" title="onObjectPickUp(...)" class="md-nav__link">
+    onObjectPickUp(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectrandomize" title="onObjectRandomize(...)" class="md-nav__link">
+    onObjectRandomize(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectspawn" title="onObjectSpawn(...)" class="md-nav__link">
+    onObjectSpawn(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjecttriggereffect" title="onObjectTriggerEffect(...)" class="md-nav__link">
+    onObjectTriggerEffect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onplayerchangecolor" title="onPlayerChangeColor(...)" class="md-nav__link">
+    onPlayerChangeColor(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onplayerturnend" title="onPlayerTurnEnd(...)" class="md-nav__link">
+    onPlayerTurnEnd(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onplayerturnstart" title="onPlayerTurnStart(...)" class="md-nav__link">
+    onPlayerTurnStart(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onsave" title="onSave()" class="md-nav__link">
+    onSave()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onscriptingbuttondown" title="onScriptingButtonDown(...)" class="md-nav__link">
+    onScriptingButtonDown(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onscriptingbuttonup" title="onScriptingButtonUp(...)" class="md-nav__link">
+    onScriptingButtonUp(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onupdate" title="onUpdate()" class="md-nav__link">
+    onUpdate()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-details-object-only" title="Function Details (Object only)" class="md-nav__link">
+    Function Details (Object only)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oncollisionenter" title="onCollisionEnter(...)" class="md-nav__link">
+    onCollisionEnter(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oncollisionexit" title="onCollisionExit(...)" class="md-nav__link">
+    onCollisionExit(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oncollisionstay" title="onCollisionStay(...)" class="md-nav__link">
+    onCollisionStay(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ondestroy" title="onDestroy()" class="md-nav__link">
+    onDestroy()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ondrop" title="onDrop(...)" class="md-nav__link">
+    onDrop(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onpickup" title="onPickUp(...)" class="md-nav__link">
+    onPickUp(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../base/" title="Base" class="md-nav__link">
+      Base
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../object/" title="Object" class="md-nav__link">
+      Object
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assetbundle/" title="AssetBundle" class="md-nav__link">
+      AssetBundle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clock/" title="Clock" class="md-nav__link">
+      Clock
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../counter/" title="Counter" class="md-nav__link">
+      Counter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../json/" title="JSON" class="md-nav__link">
+      JSON
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lighting/" title="Lighting" class="md-nav__link">
+      Lighting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../physics/" title="Physics" class="md-nav__link">
+      Physics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../player/" title="Player" class="md-nav__link">
+      Player
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../player-color/" title="Player Color" class="md-nav__link">
+      Player Color
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rpgfigurine/" title="RPGFigurine" class="md-nav__link">
+      RPGFigurine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../spawnableobjects/" title="Spawnable Objects" class="md-nav__link">
+      Spawnable Objects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../texttool/" title="TextTool" class="md-nav__link">
+      TextTool
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../timer/" title="Timer" class="md-nav__link">
+      Timer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../webrequest/" title="Web Request" class="md-nav__link">
+      Web Request
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#function-summary" title="Function Summary" class="md-nav__link">
+    Function Summary
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-events-global-object" title="Default Events (Global &amp; Object)" class="md-nav__link">
+    Default Events (Global &amp; Object)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-events-object-only" title="Default Events (Object Only)" class="md-nav__link">
+    Default Events (Object Only)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-details-global-object" title="Function Details (Global &amp; Object)" class="md-nav__link">
+    Function Details (Global &amp; Object)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onchat" title="onChat(...)" class="md-nav__link">
+    onChat(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onexternalmessage" title="onExternalMessage(...)" class="md-nav__link">
+    onExternalMessage(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onfixedupdate" title="onFixedUpdate()" class="md-nav__link">
+    onFixedUpdate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onload" title="onLoad(...)" class="md-nav__link">
+    onLoad(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectdestroy" title="onObjectDestroy(...)" class="md-nav__link">
+    onObjectDestroy(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectdrop" title="onObjectDrop(...)" class="md-nav__link">
+    onObjectDrop(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectenterscriptingzone" title="onObjectEnterScriptingZone(...)" class="md-nav__link">
+    onObjectEnterScriptingZone(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectleavescriptingzone" title="onObjectLeaveScriptingZone(...)" class="md-nav__link">
+    onObjectLeaveScriptingZone(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectleavecontainer" title="onObjectLeaveContainer(...)" class="md-nav__link">
+    onObjectLeaveContainer(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectloopingeffect" title="onObjectLoopingEffect(...)" class="md-nav__link">
+    onObjectLoopingEffect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectpickup" title="onObjectPickUp(...)" class="md-nav__link">
+    onObjectPickUp(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectrandomize" title="onObjectRandomize(...)" class="md-nav__link">
+    onObjectRandomize(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectspawn" title="onObjectSpawn(...)" class="md-nav__link">
+    onObjectSpawn(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjecttriggereffect" title="onObjectTriggerEffect(...)" class="md-nav__link">
+    onObjectTriggerEffect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onplayerchangecolor" title="onPlayerChangeColor(...)" class="md-nav__link">
+    onPlayerChangeColor(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onplayerturnend" title="onPlayerTurnEnd(...)" class="md-nav__link">
+    onPlayerTurnEnd(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onplayerturnstart" title="onPlayerTurnStart(...)" class="md-nav__link">
+    onPlayerTurnStart(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onsave" title="onSave()" class="md-nav__link">
+    onSave()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onscriptingbuttondown" title="onScriptingButtonDown(...)" class="md-nav__link">
+    onScriptingButtonDown(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onscriptingbuttonup" title="onScriptingButtonUp(...)" class="md-nav__link">
+    onScriptingButtonUp(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onupdate" title="onUpdate()" class="md-nav__link">
+    onUpdate()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-details-object-only" title="Function Details (Object only)" class="md-nav__link">
+    Function Details (Object only)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oncollisionenter" title="onCollisionEnter(...)" class="md-nav__link">
+    onCollisionEnter(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oncollisionexit" title="onCollisionExit(...)" class="md-nav__link">
+    onCollisionExit(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oncollisionstay" title="onCollisionStay(...)" class="md-nav__link">
+    onCollisionStay(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ondestroy" title="onDestroy()" class="md-nav__link">
+    onDestroy()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ondrop" title="onDrop(...)" class="md-nav__link">
+    onDrop(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onpickup" title="onPickUp(...)" class="md-nav__link">
+    onPickUp(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation/edit/master/docs/event.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Event</h1>
+                
+                <p>Events are functions which are activated by Tabletop Simulator when something takes place in-game. It is possible to use all of them within scripts on Objects, and most will also work in Global scripts.</p>
+<p>Many contain parameters which can be used to utilize additional information related to the event.</p>
+<h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link">&para;</a></h2>
+<h3 id="default-events-global-object">Default Events (Global &amp; Object)<a class="headerlink" href="#default-events-global-object" title="Permanent link">&para;</a></h3>
+<p>These are functions which are triggered by an event taking place in-game. They work when within the script of an Object or the Global script.</p>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Description</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onChat(<a href="../intro#types"><span class="tag str"></span></a> message, <a href="../intro#types"><span class="tag pla"></span></a> sender)</td>
+<td>Called when a chat message is sent in game chat.</td>
+<td><a href="#onchat"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onConnect(Player)</td>
+<td>Called when a <a href="../player">Player</a> connects to a game.</td>
+<td></td>
+</tr>
+<tr>
+<td>onDisconnect(Player)</td>
+<td>Called when a <a href="../player">Player</a> disconnects from a game.</td>
+<td></td>
+</tr>
+<tr>
+<td>onExternalMessage(<a href="../intro#types"><span class="tag tab"></span></a> data)</td>
+<td>Called when an external script editor (like <a href="../atom">Atom</a>) sends a message back to the game. Used for custom editor functionality.</td>
+<td><a href="#onexternalmessage"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onFixedUpdate()</td>
+<td>Called <strong>every physics tick</strong> (90 times a second). This is a frame independent onUpdate().</td>
+<td><a href="#onfixedupdate"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onLoad(<a href="../intro#types"><span class="tag str"></span></a> save_state)</td>
+<td>Called when a game save is finished loading every Object. It is where most setup code will go.</td>
+<td><a href="#onload"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onObjectDestroy(<a href="../intro#types"><span class="tag obj"></span></a> dying_object)</td>
+<td>Called whenever any object is destroyed.</td>
+<td><a href="#onobjectdestroy"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onObjectDrop(<a href="../intro#types"><span class="tag str"></span></a> player_color, <a href="../intro#types"><span class="tag obj"></span></a> dropped_object)</td>
+<td>Called whenever any object is dropped by a player.</td>
+<td><a href="#onobjectdrop"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onObjectEnterScriptingZone(<a href="../intro#types"><span class="tag obj"></span></a> zone, <a href="../intro#types"><span class="tag obj"></span></a> enter_object)</td>
+<td>Called when any object enters any scripting zone.</td>
+<td><a href="#onobjectenterscriptingzone"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onObjectLeaveScriptingZone(<a href="../intro#types"><span class="tag obj"></span></a> zone, <a href="../intro#types"><span class="tag obj"></span></a> enter_object)</td>
+<td>Called when any object leaves any scripting zone.</td>
+<td><a href="#onobjectleavescriptingzone"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onObjectLeaveContainer(<a href="../intro#types"><span class="tag obj"></span></a> container, <a href="../intro#types"><span class="tag obj"></span></a> leave_object)</td>
+<td>Called when any object leaves any container.</td>
+<td><a href="#onobjectleavecontainer"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onObjectLoopingEffect(<a href="../intro#types"><span class="tag obj"></span></a> loop_object, <a href="../intro#types"><span class="tag int"></span></a> index)</td>
+<td>Called whenever the looping effect of an <a href="../assetbundle">AssetBundle</a> is activated.</td>
+<td><a href="#onobjectloopingeffect"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onObjectPickUp(<a href="../intro#types"><span class="tag str"></span></a> player_color, <a href="../intro#types"><span class="tag obj"></span></a> picked_up_object)</td>
+<td>Called whenever a Player picks up an Object.</td>
+<td><a href="#onobjectpickup"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onObjectRandomize(<a href="../intro#types"><span class="tag obj"></span></a> randomize_object, <a href="../intro#types"><span class="tag str"></span></a> player_color)</td>
+<td>Called when an Object is randomized. Like when shuffling a deck or shaking dice.</td>
+<td><a href="#onobjectrandomize"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onObjectSpawn(<a href="../intro#types"><span class="tag obj"></span></a> spawn_object)</td>
+<td>Called when any Object is spawned/created.</td>
+<td><a href="#onobjectspawn"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onObjectTriggerEffect(<a href="../intro#types"><span class="tag obj"></span></a> trigger_object, <a href="../intro#types"><span class="tag int"></span></a> index)</td>
+<td>Called whenever the trigger effect of an <a href="../assetbundle">AssetBundle</a> is activated.</td>
+<td><a href="#onobjecttriggereffect"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onPlayerChangeColor(<a href="../intro#types"><span class="tag str"></span></a> player_color)</td>
+<td>Called when a player changes color or selects it for the first time. It also returns <code class="codehilite">&quot;Grey&quot;</code> if they disconnect.</td>
+<td><a href="#onplayerchangecolor"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onPlayerTurnEnd(<a href="../intro#types"><span class="tag str"></span></a> player_color_end, <a href="../intro#types"><span class="tag str"></span></a> player_color_next)</td>
+<td>Called at the end of a player's turn when using the in-game turn system.</td>
+<td><a href="#onplayerturnend"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onPlayerTurnStart(<a href="../intro#types"><span class="tag str"></span></a> player_color_start, <a href="../intro#types"><span class="tag str"></span></a> player_color_prev)</td>
+<td>Called at the start of a player's turn when using the in-game turn system.</td>
+<td><a href="#onplayerturnstart"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onSave()</td>
+<td>Called whenever your game is saved.</td>
+<td><a href="#onsave"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onScriptingButtonDown(<a href="../intro#types"><span class="tag int"></span></a> index, <a href="../intro#types"><span class="tag str"></span></a> player_color)</td>
+<td>Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10.</td>
+<td><a href="#onscriptingbuttondown"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onScriptingButtonUp(<a href="../intro#types"><span class="tag int"></span></a> index, <a href="../intro#types"><span class="tag str"></span></a> player_color)</td>
+<td>Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10.</td>
+<td><a href="#onscriptingbuttonup"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onUpdate()</td>
+<td>Called <strong>every frame</strong>.</td>
+<td><a href="#onupdate"><span class="i"></span></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="default-events-object-only">Default Events (Object Only)<a class="headerlink" href="#default-events-object-only" title="Permanent link">&para;</a></h3>
+<p>These are functions which are triggered by an event taking place in-game. They only work within scripts that are on Objects, never in Global.</p>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Description</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onCollisionEnter(<a href="../intro#types"><span class="tag tab"></span></a> collision_info)</td>
+<td>Called when an Object starts colliding with the Object the function is on.</td>
+<td><a href="#oncollisionenter"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onCollisionExit(<a href="../intro#types"><span class="tag tab"></span></a> collision_info)</td>
+<td>Called when an Object stops colliding with the Object the function is on.</td>
+<td><a href="#oncollisionexit"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onCollisionStay(<a href="../intro#types"><span class="tag tab"></span></a> collision_info)</td>
+<td>Called <strong>every frame</strong> that an Object is colliding with the Object this function is on.</td>
+<td><a href="#oncollisionstay"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onDestroy()</td>
+<td>Called when an Object it is on is destroyed.</td>
+<td><a href="#ondestroy"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onDrop(<a href="../intro#types"><span class="tag str"></span></a> player_color)</td>
+<td>Called when a player releases an Object after picking it up.</td>
+<td><a href="#ondrop"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onPickUp(<a href="../intro#types"><span class="tag str"></span></a> player_color)</td>
+<td>Called when a player picks up an Object.</td>
+<td><a href="#onpickup"><span class="i"></span></a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="function-details-global-object">Function Details (Global &amp; Object)<a class="headerlink" href="#function-details-global-object" title="Permanent link">&para;</a></h2>
+<h3 id="onchat">onChat(...)<a class="headerlink" href="#onchat" title="Permanent link">&para;</a></h3>
+<p>This function is called when a message is sent through the in-game chat. It does not trigger when global chat messages are sent. Using <code class="codehilite"><span class="kr">return</span> <span class="kc">false</span></code> inside of this function prevents the chat message which triggered it to be suppressed.</p>
+<div class="admonition info">
+<p class="admonition-title">onChat(message, sender)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>message</strong>: Chat message which triggered the function.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>sender</strong>: Player which sent the chat message.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onChat</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">player</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">color</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onexternalmessage">onExternalMessage(...)<a class="headerlink" href="#onexternalmessage" title="Permanent link">&para;</a></h3>
+<p>This function is called when an external script editor (like <a href="../atom">Atom</a>) sends a message back to the game. Used for custom editor functionality.</p>
+<div class="admonition info">
+<p class="admonition-title">onExternalMessage(data)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>data</strong>: The data returned by the external editor into the game.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onExternalMessage</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;External message received&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onfixedupdate">onFixedUpdate()<a class="headerlink" href="#onfixedupdate" title="Permanent link">&para;</a></h3>
+<p>Called <strong>every physics tick</strong> (90 times a second). This is a frame independent onUpdate(). | <a href="#onfixedupdate"><span class="i"></span></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a very expensive function and can easily slow/crash your game if misused. Use with caution.</p>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onFixedUpdate</span><span class="p">()</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">addTorque</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span> <span class="mi">1</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<h3 id="onload">onLoad(...)<a class="headerlink" href="#onload" title="Permanent link">&para;</a></h3>
+<p>This function is called when a game save is finished loading every Object. This is where most setup code will go. The fast-forward and rewind feature will also cause this function to activate. If this function is in an Object's script and that Object is spawned, like by removing it from a container, it too will trigger onLoad().</p>
+<div class="admonition info">
+<p class="admonition-title">onLoad(save_state)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>save_state</strong>: The encoded string containing any save_state (saved) data.<ul>
+<li><span class="critic comment">If there is no data saved, this returns an empty String.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading complete&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<details class="example"><summary>Example of onLoad and onSave being used to save/load data</summary><div class="codehilite"><pre><span></span><span class="c1">--Runs whenever game is saved/autosaved</span>
+<span class="kr">function</span> <span class="nf">onSave</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">data_to_save</span> <span class="o">=</span> <span class="p">{</span><span class="n">someData</span><span class="o">=</span><span class="mi">50</span><span class="p">}</span>
+    <span class="n">saved_data</span> <span class="o">=</span> <span class="n">JSON</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">data_to_save</span><span class="p">)</span>
+    <span class="c1">--saved_data = &quot;&quot; --Remove -- at start &amp; save to clear save data</span>
+    <span class="kr">return</span> <span class="n">saved_data</span>
+<span class="kr">end</span>
+
+<span class="c1">--Runs when game is loaded</span>
+<span class="kr">function</span> <span class="nf">onLoad</span><span class="p">(</span><span class="n">saved_data</span><span class="p">)</span>
+    <span class="c1">--Loads the tracking for if the game has started yet</span>
+    <span class="kr">if</span> <span class="n">saved_data</span> <span class="o">~=</span> <span class="s2">&quot;&quot;</span> <span class="kr">then</span>
+        <span class="kd">local</span> <span class="n">loaded_data</span> <span class="o">=</span> <span class="n">JSON</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">saved_data</span><span class="p">)</span>
+        <span class="n">someData</span> <span class="o">=</span> <span class="n">loaded_data</span><span class="p">.</span><span class="n">someData</span>
+    <span class="kr">else</span>
+        <span class="n">someData</span> <span class="o">=</span> <span class="mi">50</span>
+    <span class="kr">end</span>
+<span class="kr">end</span>
+</pre></div>
+</details><hr />
+<h3 id="onobjectdestroy">onObjectDestroy(...)<a class="headerlink" href="#onobjectdestroy" title="Permanent link">&para;</a></h3>
+<p>Called whenever any object is destroyed. The dying Object has 1 frame left to live. This event fires immediately before the dying Object’s <code class="codehilite">onDestroy()</code> but their lifetime is the same final frame.</p>
+<div class="admonition info">
+<p class="admonition-title">onObjectDestroy(dying_object)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>dying_object</strong>: The object that was destroyed.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectDestroy</span><span class="p">(</span><span class="n">destroyedObj</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">destroyedObj</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onobjectdrop">onObjectDrop(...)<a class="headerlink" href="#onobjectdrop" title="Permanent link">&para;</a></h3>
+<p>Called whenever any object is dropped by a player.</p>
+<div class="admonition info">
+<p class="admonition-title">onObjectDrop(player_color, dropped_object)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color">Player Color</a> of the Player who dropped the Object.</li>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>dropped_object</strong>: The Object in game which was dropped.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectDrop</span><span class="p">(</span><span class="n">colorName</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">colorName</span> <span class="o">..</span> <span class="s2">&quot; dropped &quot;</span> <span class="o">..</span> <span class="n">obj</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onobjectenterscriptingzone">onObjectEnterScriptingZone(...)<a class="headerlink" href="#onobjectenterscriptingzone" title="Permanent link">&para;</a></h3>
+<p>Called when any object enters any scripting zone.</p>
+<div class="admonition info">
+<p class="admonition-title">onObjectEnterScriptingZone(zone, enter_object)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>zone</strong>: The Object of the scripting zone.</li>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>enter_object</strong>: The Object triggering the function.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectEnterScriptingZone</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">getGUID</span><span class="p">())</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onobjectleavescriptingzone">onObjectLeaveScriptingZone(...)<a class="headerlink" href="#onobjectleavescriptingzone" title="Permanent link">&para;</a></h3>
+<p>Called when any object leaves any scripting zone.</p>
+<div class="admonition info">
+<p class="admonition-title">onObjectLeaveScriptingZone(zone, enter_object)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>zone</strong>: The Object of the scripting zone.</li>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>enter_object</strong>: The Object triggering the function.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectLeaveScriptingZone</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">getGUID</span><span class="p">())</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onobjectleavecontainer">onObjectLeaveContainer(...)<a class="headerlink" href="#onobjectleavecontainer" title="Permanent link">&para;</a></h3>
+<p>Called when any object leaves any container.</p>
+<div class="admonition info">
+<p class="admonition-title">onObjectLeaveContainer(container, leave_object)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>container</strong>: Container the object left.</li>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>leave_object</strong>: Object that left the container.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectLeaveContainer</span><span class="p">(</span><span class="n">bag</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">bag</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onobjectloopingeffect">onObjectLoopingEffect(...)<a class="headerlink" href="#onobjectloopingeffect" title="Permanent link">&para;</a></h3>
+<p>Called whenever the looping effect of an <a href="../assetbundle">AssetBundle</a> is activated.</p>
+<div class="admonition info">
+<p class="admonition-title">onObjectLoopingEffect(loop_object, index)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>loop_object</strong>: AssetBundle which had its loop activated.</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>index</strong>: Index number for the loop activated.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectLoopingEffect</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop &quot;</span> <span class="o">..</span> <span class="n">index</span> <span class="o">..</span> <span class="s2">&quot; activated.&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onobjectpickup">onObjectPickUp(...)<a class="headerlink" href="#onobjectpickup" title="Permanent link">&para;</a></h3>
+<p>Called whenever a Player picks up an Object.</p>
+<div class="admonition info">
+<p class="admonition-title">onObjectPickUp(player_color, picked_up_object)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color">Player Color</a> of the Player who picked up the object.</li>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>picked_up_object</strong>: The Object in game which was picked up.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectPickUp</span><span class="p">(</span><span class="n">colorName</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">colorName</span> <span class="o">..</span> <span class="s2">&quot; picked up &quot;</span> <span class="o">..</span> <span class="n">obj</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onobjectrandomize">onObjectRandomize(...)<a class="headerlink" href="#onobjectrandomize" title="Permanent link">&para;</a></h3>
+<p>Called when an Object is randomized. Like when shuffling a deck or shaking dice.</p>
+<div class="admonition info">
+<p class="admonition-title">onObjectRandomize(randomize_object, player_color)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>spawn_object</strong>: The Object which triggered this function.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color">Player Color</a> of the player who triggered the function.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectRandomize</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">..</span> <span class="s2">&quot; was randomized by &quot;</span> <span class="o">..</span> <span class="n">color</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onobjectspawn">onObjectSpawn(...)<a class="headerlink" href="#onobjectspawn" title="Permanent link">&para;</a></h3>
+<p>Called when any Object is spawned/created.</p>
+<div class="admonition info">
+<p class="admonition-title">onObjectSpawn(spawn_object)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>spawn_object</strong>: The Object which triggered this function.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectSpawn</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onobjecttriggereffect">onObjectTriggerEffect(...)<a class="headerlink" href="#onobjecttriggereffect" title="Permanent link">&para;</a></h3>
+<p>Called whenever the trigger effect of an <a href="../assetbundle">AssetBundle</a> is activated.</p>
+<div class="admonition info">
+<p class="admonition-title">onObjectTriggerEffect(loop_object, index)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>loop_object</strong>: AssetBundle which had its trigger activated.</li>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>index</strong>: Index number for the trigger activated.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectTriggerEffect</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop &quot;</span> <span class="o">..</span> <span class="n">index</span> <span class="o">..</span> <span class="s2">&quot; activated.&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onplayerchangecolor">onPlayerChangeColor(...)<a class="headerlink" href="#onplayerchangecolor" title="Permanent link">&para;</a></h3>
+<p>Called when a player changes color or selects it for the first time. It also returns <code class="codehilite">&quot;Grey&quot;</code> if they disconnect.</p>
+<div class="admonition info">
+<p class="admonition-title">onPlayerChangeColor(player_color)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color">Player Color</a> of the player who triggered the function.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onPlayerChangeColor</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onplayerturnend">onPlayerTurnEnd(...)<a class="headerlink" href="#onplayerturnend" title="Permanent link">&para;</a></h3>
+<p>Called at the end of a player's turn when using the in-game turn system.</p>
+<div class="admonition info">
+<p class="admonition-title">onPlayerTurnEnd(player_color_end, player_color_next)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_color_end</strong>: <a href="../player-color">Player Color</a> of the player who's turn ended.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_color_next</strong>: <a href="../player-color">Player Color</a> of the player who's turn is next.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onPlayerTurnEnd</span><span class="p">(</span><span class="n">color_end</span><span class="p">,</span> <span class="n">color_next</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">color_end</span> <span class="o">..</span> <span class="s2">&quot;&#39;s turn has ended.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">color_next</span> <span class="o">..</span> <span class="s2">&quot;&#39;s turn starts now.&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onplayerturnstart">onPlayerTurnStart(...)<a class="headerlink" href="#onplayerturnstart" title="Permanent link">&para;</a></h3>
+<p>Called at the end of a player's turn when using the in-game turn system.</p>
+<div class="admonition info">
+<p class="admonition-title">onPlayerTurnStart(player_color_start, player_color_prev)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_color_start</strong>: <a href="../player-color">Player Color</a> of the player who's turn is starting.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_color_prev</strong>: <a href="../player-color">Player Color</a> of the player who's turn just ended.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onPlayerTurnStart</span><span class="p">(</span><span class="n">color_start</span><span class="p">,</span> <span class="n">color_prev</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">color_start</span> <span class="o">..</span> <span class="s2">&quot;&#39;s turn starts now.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">color_prev</span> <span class="o">..</span> <span class="s2">&quot;&#39;s turn has ended.&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onsave">onSave()<a class="headerlink" href="#onsave" title="Permanent link">&para;</a></h3>
+<p>Called whenever your game is saved, either manually or by auto-save. It is used to allow information to persist through saving/loading. It allows you to place information into a table that is written into the save file. It works on Global information and can also be used to save information onto an Object.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When using <code class="codehilite">onSave()</code>, information is saved into the save file you are using. Using <em>Save &amp; Apply</em> does NOT cause it to record data, only overwriting your save will update what information <code class="codehilite">onSave()</code> is trying to record.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You can save almost any data in a table using this function, but Object references <strong>DO NOT</strong> persist. If you need to record an Object using <code class="codehilite">onSave()</code>, record its GUID instead.</p>
+</div>
+<div class="codehilite"><pre><span></span><span class="n">data_table</span> <span class="o">=</span> <span class="p">{</span><span class="n">answer</span><span class="o">=</span><span class="mi">42</span><span class="p">}</span>
+
+<span class="kr">function</span> <span class="nf">onSave</span><span class="p">()</span>
+    <span class="n">saved_data</span> <span class="o">=</span> <span class="n">JSON</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">data_table</span><span class="p">)</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">script_state</span> <span class="o">=</span> <span class="n">saved_data</span>
+<span class="kr">end</span>
+</pre></div>
+
+<p>Check the <a href="#onload"><code class="codehilite">onLoad()</code></a> section for how to load the information you record into your save file.</p>
+<hr />
+<h3 id="onscriptingbuttondown">onScriptingButtonDown(...)<a class="headerlink" href="#onscriptingbuttondown" title="Permanent link">&para;</a></h3>
+<p>Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10.</p>
+<div class="admonition info">
+<p class="admonition-title">onScriptingButtonDown(index, player_color)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>index</strong>: Index number, representing which key was pressed.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color">Player Color</a> of the player who triggered the function.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onScriptingButtonDown</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onscriptingbuttonup">onScriptingButtonUp(...)<a class="headerlink" href="#onscriptingbuttonup" title="Permanent link">&para;</a></h3>
+<p>Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10.</p>
+<div class="admonition info">
+<p class="admonition-title">onScriptingButtonUp(index, player_color)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag int"></span></a> <strong>index</strong>: Index number, representing which key was released.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color">Player Color</a> of the player who triggered the function.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onScriptingButtonUp</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onupdate">onUpdate()<a class="headerlink" href="#onupdate" title="Permanent link">&para;</a></h3>
+<p>Called <strong>every frame</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a very expensive function and can easily slow/crash your game if misused. Use with caution.</p>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onUpdate</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This will probably slow your game down.&quot;</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<hr />
+<h2 id="function-details-object-only">Function Details (Object only)<a class="headerlink" href="#function-details-object-only" title="Permanent link">&para;</a></h2>
+<h3 id="oncollisionenter">onCollisionEnter(...)<a class="headerlink" href="#oncollisionenter" title="Permanent link">&para;</a></h3>
+<p>This function is called when an Object starts colliding with the Object the function is on. Does not work in Global.</p>
+<div class="admonition info">
+<p class="admonition-title">onCollisionEnter(collision_info)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>collision_info</strong>: A Table containing data on colliding object.<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>collision_info.<em>collision_object</em></strong>: Object coming into contact with <code class="codehilite">self</code>.</li>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>collision_info.<em>contact_points</em></strong>: Sub-table full of the Vectors where contact took place.</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>collision_info.<em>relative_velocity</em></strong>: Direction and magnitude at the time of collision.</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><div class="codehilite"><pre><span></span><span class="c1">--Example Usage</span>
+<span class="kr">function</span> <span class="nf">onCollisionEnter</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">collision_object</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+<div class="codehilite"><pre><span></span><span class="c1">--Example returned table</span>
+<span class="p">{</span>
+    <span class="n">collision_object</span> <span class="o">=</span> <span class="n">objectReference</span>
+    <span class="n">contact_points</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">},</span>
+    <span class="p">}</span>
+    <span class="n">relative_velocity</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<hr />
+<h3 id="oncollisionexit">onCollisionExit(...)<a class="headerlink" href="#oncollisionexit" title="Permanent link">&para;</a></h3>
+<p>This function is called when an Object stops colliding with the Object the function is on. Does not work in Global.</p>
+<div class="admonition info">
+<p class="admonition-title">onCollisionExit(collision_info)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>collision_info</strong>: A Table containing data on colliding object.<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>collision_info.<em>collision_object</em></strong>: Object leaving contact with <code class="codehilite">self</code>.</li>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>collision_info.<em>contact_points</em></strong>: Sub-table full of the Vectors where contact last broke off.</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>collision_info.<em>relative_velocity</em></strong>: Direction and magnitude of the departing Object.</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><div class="codehilite"><pre><span></span><span class="c1">--Example Usage</span>
+<span class="kr">function</span> <span class="nf">onCollisionExit</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">collision_object</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+<div class="codehilite"><pre><span></span><span class="c1">--Example returned table</span>
+<span class="p">{</span>
+    <span class="n">collision_object</span> <span class="o">=</span> <span class="n">objectReference</span>
+    <span class="n">contact_points</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">},</span>
+    <span class="p">}</span>
+    <span class="n">relative_velocity</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<hr />
+<h3 id="oncollisionstay">onCollisionStay(...)<a class="headerlink" href="#oncollisionstay" title="Permanent link">&para;</a></h3>
+<p>This function is called <strong>every frame</strong> that an Object is colliding with the Object this function is on. Does not work in Global.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a very expensive function and can easily slow/crash your game if misused. Use with caution.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">onCollisionExit(collision_info)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>collision_info</strong>: A Table containing data on colliding object.<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>collision_info.<em>collision_object</em></strong>: Object coming into contact with <code class="codehilite">self</code>.</li>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>collision_info.<em>contact_points</em></strong>: Sub-table full of the Vectors where contact is taking place.</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>collision_info.<em>relative_velocity</em></strong>: Direction and magnitude of the Object, currently.</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><div class="codehilite"><pre><span></span><span class="c1">--Example Usage</span>
+<span class="kr">function</span> <span class="nf">onCollisionStay</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">collision_object</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+<div class="codehilite"><pre><span></span><span class="c1">--Example returned table</span>
+<span class="p">{</span>
+    <span class="n">collision_object</span> <span class="o">=</span> <span class="n">objectReference</span>
+    <span class="n">contact_points</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">},</span>
+    <span class="p">}</span>
+    <span class="n">relative_velocity</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<hr />
+<h3 id="ondestroy">onDestroy()<a class="headerlink" href="#ondestroy" title="Permanent link">&para;</a></h3>
+<p>This function is called when an <a href="../object">Object</a> it is on is destroyed. When <code class="codehilite">onDestroy()</code> is called, the Object has one frame left to live but its recommended to avoid using it as a reference here. This event fires immediately after <a href="#onobjectdestroy">onObjectDestroy()</a> but their lifetime is the same final frame. Does not work in Global.</p>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onDestroy</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This object was destroyed!&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="ondrop">onDrop(...)<a class="headerlink" href="#ondrop" title="Permanent link">&para;</a></h3>
+<p>This function is called when this <a href="../object">Object</a> is dropped. Does not work in Global.</p>
+<div class="admonition info">
+<p class="admonition-title">onDrop(player_color)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color">Player Color</a> of the Player.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onDrop</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onpickup">onPickUp(...)<a class="headerlink" href="#onpickup" title="Permanent link">&para;</a></h3>
+<p>Called when a player picks up an Object.</p>
+<div class="admonition info">
+<p class="admonition-title">onPickUp(player_color)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color">Player Color</a> of the Player.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onPickUp</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!--This is empty because it is killing the default footer-->
+<!--Do not remove.-->
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.abd7b172.js"></script>
+      
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

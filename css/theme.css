@@ -1,0 +1,73 @@
+/*Increase width/height of icon on top bar*/
+.md-header-nav__button.md-logo * {
+    width: 42px;
+    height: 42px;
+    position: relative;
+    bottom: 5px;
+}
+
+/*background behind current selection in left bar*/
+[data-md-color-primary=indigo] .md-nav__link--active, [data-md-color-primary=indigo] .md-nav__link:active {
+    color: black;
+    background-color: #d3d3d3;
+    padding: 2px;
+}
+
+/*Coloring of top bar*/
+[data-md-color-primary=indigo] .md-header, [data-md-color-primary=indigo] .md-hero {
+  background-color: #bb0c0d;
+}
+
+/*Header coloring and formatting*/
+.md-typeset h1 {
+    color: #000000;
+    font-weight: 600;
+    font-size: 3.2rem;
+    text-transform: none;
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.md-typeset h2{
+    color: #202020;
+    font-weight: 500;
+    font-size: 2.9rem;
+    text-transform: none;
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.md-typeset h3 {
+    color: #404040;
+    font-weight: 500;
+    font-size: 2.6rem;
+    text-transform: none;
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.md-typeset h4 {
+    color: #606060;
+    font-weight: 400;
+    font-size: 2.3rem;
+    text-transform: none;
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.md-typeset h5 {
+    color: #808080;
+    font-weight: 300;
+    font-size: 2rem;
+    text-transform: none;
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.md-typeset h6 {
+    color: #A0A0A0;
+    font-weight: 200;
+    font-size: 1.7rem;
+    text-transform: none;
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/*Coloring of permalink icon*/
+[data-md-color-accent=indigo] .md-nav__link:focus, [data-md-color-accent=indigo] .md-nav__link:hover, [data-md-color-accent=indigo] .md-typeset .footnote li:hover .footnote-backref:hover, [data-md-color-accent=indigo] .md-typeset .footnote li:target .footnote-backref, [data-md-color-accent=indigo] .md-typeset .md-clipboard:active:before, [data-md-color-accent=indigo] .md-typeset .md-clipboard:hover:before, [data-md-color-accent=indigo] .md-typeset [id] .headerlink:focus, [data-md-color-accent=indigo] .md-typeset [id]:hover .headerlink:hover, [data-md-color-accent=indigo] .md-typeset [id]:target .headerlink {
+    color: #bb0c0d;
+}
+
+/*Make edit button red, !important required*/
+.md-content__icon {
+    color: #bb0c0d !important; 
+}

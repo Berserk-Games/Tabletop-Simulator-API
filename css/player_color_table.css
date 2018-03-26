@@ -1,0 +1,27 @@
+/*Formatting for Player Color page's table*/
+
+table.playerColorTable {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.playerColorTable td {
+  border: 1px solid #000000;
+  padding: 6px 2px;
+}
+table.playerColorTable tr:nth-child(even) {
+  background: #E8E8E8;
+}
+table.playerColorTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,.54);
+  text-align: center;
+}
+table.playerColorTable td {
+    vertical-align: middle;
+}
+table.playerColorTable th {
+    padding: 16px 2px;
+}

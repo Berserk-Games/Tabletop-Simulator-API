@@ -1,0 +1,10 @@
+/*Styling the i icons that link to details*/
+
+.i:after {
+    font-family: "Material Icons";
+    content: "\E88F";
+    font-size: 22px;
+    
+    position: relative;
+    right: 2px;
+}
