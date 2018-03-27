@@ -37,7 +37,7 @@ Activates when an attack is performed by an identified RPGFigurine Object. An at
     * [<span class="tag tab"></span>](intro#types)&nbsp;**hit_list**: A Table of RPGFigurine Object references within the reach of the attack.
 
 ``` Lua
---Monitoring and announcing a cyclops attacks
+-- Monitoring and announcing a cyclops attacks
 function onLoad()
     cyclops = getObjectFromGUID("aaa111")
     
@@ -60,7 +60,7 @@ Activates when an attack is performed on this RPGFigurine Object. An attack is t
     * [<span class="tag obj"></span>](intro#types)&nbsp;**attacker**: Reference to the RPGFigurine attacking the indicated RPGFigurine.
 
 ``` Lua
---Monitoring and announcing a cyclops being hit
+-- Monitoring and announcing a cyclops being hit
 function onLoad()
     cyclops = getObjectFromGUID("aaa111")
     

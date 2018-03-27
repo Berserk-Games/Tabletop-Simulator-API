@@ -1,1 +1,1 @@
-# Tabletop-Simulator-Scripting-Documentation
+# Tabletop Simulator Scripting Documentation

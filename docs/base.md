@@ -197,7 +197,7 @@ function onLoad()
 	startLuaCoroutine(Global, "print_coroutine")
 end
 
---Prints a message, waits 250 frames, prints another message
+-- Prints a message, waits 250 frames, prints another message
 function print_coroutine()
 	print("Routine has Started")
 	count = 0

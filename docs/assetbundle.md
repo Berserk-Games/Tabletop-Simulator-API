@@ -23,11 +23,11 @@ playTriggerEffect([<span class="tag int"></span>](intro#types)&nbsp;index)  |  S
 [<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table with the keys "index" and "name" for each looping effect.
 
 ``` Lua
-	--Example usage
+	-- Example usage
 	effectTable = self.AssetBundle.getLoopingEffects()
 ```
 ``` Lua
-	--Example returned table
+	-- Example returned table
 	{
 		{index=0, name="Effect Name 1"},
 		{index=1, name="Effect Name 2"},
@@ -42,11 +42,11 @@ playTriggerEffect([<span class="tag int"></span>](intro#types)&nbsp;index)  |  S
 [<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table with the keys "index" and "name" for each trigger effect.
 
 ``` Lua
-	--Example usage
+	-- Example usage
 	effectTable = self.AssetBundle.getTriggerEffects()
 ```
 ``` Lua
-	--Example returned table
+	-- Example returned table
 	{
 		{index=0, name="Effect Name 1"},
 		{index=1, name="Effect Name 2"},

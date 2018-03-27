@@ -157,7 +157,7 @@ Player["White"].changeColor("Red")
             * {>>Optional, defaults to 40.<<}
         
 ``` Lua
---Assuming someone is in the White seat
+-- Assuming someone is in the White seat
 Player["White"].lookAt({
     position = {x=0,y=0,z=0},
     pitch    = 25,
@@ -200,7 +200,7 @@ Player["White"].lookAt({
     Hand indexes start at 1 and are numbered in the order of their creation. Each Player color has its own indexes.
     
 ``` Lua
---Example of moving/rotating/scaling hand zone
+-- Example of moving/rotating/scaling hand zone
 params = {
     position = {x=0, y=5, z=0},
     rotation = {x=0, y=45, z=0},
@@ -219,7 +219,7 @@ Player["White"].setHandTransform(params, 2)
 [<span class="ret tab"></span>](intro#types)&nbsp;Returns Table of all Players in the instance.
 
 ``` Lua
---Blindfolding all players
+-- Blindfolding all players
 playerList = Player.getPlayers()
 for _, playerReference in ipairs(playerList) do
     playerReference.blindfolded = true
@@ -234,7 +234,7 @@ end
 [<span class="ret tab"></span>](intro#types)&nbsp;Returns Table of all Players in spectator (Grey).
 
 ``` Lua
---Printing steam name of all players to host chat
+-- Printing steam name of all players to host chat
 playerList = Player.getSpectators()
 for _, playerReference in ipairs(playerList) do
     print(playerReference.steam_name)

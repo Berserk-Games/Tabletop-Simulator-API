@@ -62,8 +62,8 @@ It draws the imaginary cast, then moves the rap/box/sphere along that path insta
         * [<span class="tag obj"></span>](intro#types) **table.hit_object**: An Object reference to the Object hit by the cast.
 
 ``` Lua
---Example usage
---This function, when called, returns a table of hit data
+-- Example usage
+-- This function, when called, returns a table of hit data
 function findHitsInRadius(pos, radius)
     local radius = (radius or 1)
     local hitList = Physics.cast({
@@ -80,7 +80,7 @@ end
 ```
 
 ``` Lua
---Example returned Table
+-- Example returned Table
 {
     {
         point = {x=0,y=0,z=0},

@@ -133,7 +133,7 @@ end
 
 ???example "Example of onLoad and onSave being used to save/load data"
     ``` Lua
-	--Runs whenever game is saved/autosaved
+	-- Runs whenever game is saved/autosaved
 	function onSave()
 		local data_to_save = {someData=50}
 		saved_data = JSON.encode(data_to_save)
@@ -141,9 +141,9 @@ end
 		return saved_data
 	end
 
-	--Runs when game is loaded
+	-- Runs when game is loaded
 	function onLoad(saved_data)
-		--Loads the tracking for if the game has started yet
+		-- Loads the tracking for if the game has started yet
 		if saved_data ~= "" then
 			local loaded_data = JSON.decode(saved_data)
 			someData = loaded_data.someData
@@ -487,13 +487,13 @@ This function is called when an Object starts colliding with the Object the func
 		* [<span class="tag vec"></span>](intro#vector) **collision_info.*relative_velocity***: Direction and magnitude at the time of collision.
 
 ``` Lua
---Example Usage
+-- Example Usage
 function onCollisionEnter(info)
 	print(info.collision_object)
 end
 ```
 ``` Lua
---Example returned table
+-- Example returned table
 {
 	collision_object = objectReference
 	contact_points = {
@@ -517,13 +517,13 @@ This function is called when an Object stops colliding with the Object the funct
 		* [<span class="tag vec"></span>](intro#vector) **collision_info.*relative_velocity***: Direction and magnitude of the departing Object.
 
 ``` Lua
---Example Usage
+-- Example Usage
 function onCollisionExit(info)
 	print(info.collision_object)
 end
 ```
 ``` Lua
---Example returned table
+-- Example returned table
 {
 	collision_object = objectReference
 	contact_points = {
@@ -550,13 +550,13 @@ This function is called **every frame** that an Object is colliding with the Obj
 		* [<span class="tag vec"></span>](intro#vector) **collision_info.*relative_velocity***: Direction and magnitude of the Object, currently.
 
 ``` Lua
---Example Usage
+-- Example Usage
 function onCollisionStay(info)
 	print(info.collision_object)
 end
 ```
 ``` Lua
---Example returned table
+-- Example returned table
 {
 	collision_object = objectReference
 	contact_points = {

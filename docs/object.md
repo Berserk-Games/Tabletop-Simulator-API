@@ -217,7 +217,7 @@ takeObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Retur
 	* [<span class="tag tab"></span>](intro#types) **offset**: The Vector of the offset of the center of the bounding box from the middle of the Object model.
 
 ``` Lua
---Example returned Table
+-- Example returned Table
 {
 	center = {x=0, y=3, z=0, 0, 3, 0},
 	size = {x=5, y=5, z=5}, 5, 5, 5},
@@ -238,7 +238,7 @@ takeObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Retur
 	* [<span class="tag tab"></span>](intro#types) **offset**: The Vector of the offset of the center of the bounding box from the middle of the Object model.
 
 ``` Lua
---Example returned Table
+-- Example returned Table
 {
 	center = {x=0, y=3, z=0, 0, 3, 0},
 	size = {x=5, y=5, z=5}, 5, 5, 5},
@@ -261,7 +261,7 @@ takeObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Retur
 [<span class="ret tab"></span>](intro#types)&nbsp;Returns a Vector of the forward direction of this Object. The direction is relative to how the object is facing.
 
 ``` Lua
---Example of moving forward 5 units
+-- Example of moving forward 5 units
 function onLoad()
     distance = 5
     pos_target = self.getTransformForward()
@@ -283,7 +283,7 @@ end
 [<span class="ret tab"></span>](intro#types)&nbsp;Returns a Vector of the forward direction of this object. The direction is relative to how the object is facing.
 
 ``` Lua
---Example of moving right 5 units
+-- Example of moving right 5 units
 function onLoad()
     distance = 5
     pos_target = self.getTransformRight()
@@ -305,7 +305,7 @@ end
 [<span class="ret tab"></span>](intro#types)&nbsp;Returns a Vector of the up direction of this Object. The direction is relative to how the object is facing.
 
 ``` Lua
---Example of moving up 5 units
+-- Example of moving up 5 units
 function onLoad()
     distance = 5
     pos_target = self.getTransformUp()
@@ -366,7 +366,7 @@ self.rotate({x=0, y=90, z=0})
 		* {>>1 would not change the scale.<<}
 
 ``` Lua
---Both examples work to scale an object to be twice its current scale
+-- Both examples work to scale an object to be twice its current scale
 self.scale({x=2, y=2, z=2})
 self.scale(2)
 ```
@@ -694,7 +694,7 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 [<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table with the Custom Object information of a Custom Object. See the [Spawnable Objects](spawnableobject) page for the kind of information returned.
 
 ``` Lua
---Example returned Table for a custom token
+-- Example returned Table for a custom token
 {
 	image = "SOME URL HERE",
 	thickness = 0.2,
@@ -779,7 +779,7 @@ You can manually assign rotation values to objects using the Rotation Value Gizm
 	* [<span class="tag vec"></span>](intro#vector)&nbsp;**rotation**: Rotation of the Object that best represents the given value pointing up.
 
 ``` Lua
---Example returned Table for a coin
+-- Example returned Table for a coin
 {
 	{value="Heads", rotation={x=0, y=0, z=0}},
 	{value="Tails", rotation={x=0, y=180, z=0}},
@@ -799,7 +799,7 @@ You can manually assign rotation values to objects using the Rotation Value Gizm
 	* [<span class="tag int"></span>](intro#types)&nbsp;**id**: ID (index) of the state.
 
 ``` Lua
---Example returned Table
+-- Example returned Table
 {
 	{
 		name = "First State",
@@ -843,7 +843,7 @@ Tablet | Returns String of the current URL.
 	The Table of parameters varies, depending on which type of custom Object it is. See the [Spawnable Object](spawnableobject) page for the parameters needed.
 
 ``` Lua
---Example of a custom token
+-- Example of a custom token
 params = {
 	image = "SOME URL HERE",
 	thickness = 0.2,
@@ -866,7 +866,7 @@ obj.setCustomObject(params)
 		* [<span class="tag vec"></span>](intro#vector)&nbsp;**rotation_values.rotation**: The rotation Vector of the Object that best represents the given value pointing up.
 
 ``` Lua
---Example setting of rotation values for a coin
+-- Example setting of rotation values for a coin
 rotation_values = {
 	{value="Heads", rotation={x=0, y=0, z=0}},
 	{value="Tails", rotation={x=0, y=180, z=0}},
@@ -906,16 +906,16 @@ Tablet | Set String for the current URL.
 		* {>>Optional, will not be sent by default.<<}
 
 ``` Lua
---Call, used from an Object script
+-- Call, used from an Object script
 params = {
 	msg   = "Hello world!",
 	color = {r=0.2, g=1, b=0.2},
 }
---Success would be set to true by the return value in the function
+-- Success would be set to true by the return value in the function
 success = Global.call("testFunc", params)
 ```
 ``` Lua
---Function in Global
+-- Function in Global
 function testFunc(params)
 	broadcastToAll(params.msg, params.color)
 	return true
@@ -963,7 +963,7 @@ end
 	* [<span class="tag str"></span>](intro#types) **player_color**: Hand zone [Player Color](player-color) to offset dealing to.
 
 ``` Lua
---Example of dealing 2 cards in front of the White player, face up.
+-- Example of dealing 2 cards in front of the White player, face up.
 self.dealToColorWithOffset({-2,0,5}, true, "White")
 self.dealToColorWithOffset({ 2,0,5}, true, "White")
 ```
@@ -977,7 +977,7 @@ self.dealToColorWithOffset({ 2,0,5}, true, "White")
 	* [<span class="tag obj"></span>](intro#types) **put_object**: An Object to place into the container.
 
 ``` Lua
---Example of a script on a bag that places Object into itself
+-- Example of a script on a bag that places Object into itself
 local obj = getObjectFromGUID("AAA111")
 self.putObject(obj)
 ```
