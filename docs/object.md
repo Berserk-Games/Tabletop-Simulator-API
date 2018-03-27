@@ -782,7 +782,7 @@ You can manually assign rotation values to objects using the Rotation Value Gizm
 -- Example returned Table for a coin
 {
 	{value="Heads", rotation={x=0, y=0, z=0}},
-	{value="Tails", rotation={x=180, y=0, z=0}},
+	{value="Tails", rotation={x=0, y=180, z=0}},
 }
 ```
 
@@ -868,8 +868,8 @@ obj.setCustomObject(params)
 ``` Lua
 -- Example setting of rotation values for a coin
 rotation_values = {
-	{value="Heads", rotation={x=0, y=0, z=0}},
-	{value="Tails", rotation={x=180, y=0, z=0}},
+	{value="Heads", rotation={x=0, y=180, z=0}},
+	{value="Tails", rotation={x=0, y=180, z=180}},
 }
 self.setRotationValues(rotation_values)
 ```
