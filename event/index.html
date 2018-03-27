@@ -1376,7 +1376,7 @@
 <span class="kr">end</span>
 </pre></div>
 
-<details class="example"><summary>Example of onLoad and onSave being used to save/load data</summary><div class="codehilite"><pre><span></span><span class="c1">--Runs whenever game is saved/autosaved</span>
+<details class="example"><summary>Example of onLoad and onSave being used to save/load data</summary><div class="codehilite"><pre><span></span><span class="c1">-- Runs whenever game is saved/autosaved</span>
 <span class="kr">function</span> <span class="nf">onSave</span><span class="p">()</span>
     <span class="kd">local</span> <span class="n">data_to_save</span> <span class="o">=</span> <span class="p">{</span><span class="n">someData</span><span class="o">=</span><span class="mi">50</span><span class="p">}</span>
     <span class="n">saved_data</span> <span class="o">=</span> <span class="n">JSON</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">data_to_save</span><span class="p">)</span>
@@ -1384,9 +1384,9 @@
     <span class="kr">return</span> <span class="n">saved_data</span>
 <span class="kr">end</span>
 
-<span class="c1">--Runs when game is loaded</span>
+<span class="c1">-- Runs when game is loaded</span>
 <span class="kr">function</span> <span class="nf">onLoad</span><span class="p">(</span><span class="n">saved_data</span><span class="p">)</span>
-    <span class="c1">--Loads the tracking for if the game has started yet</span>
+    <span class="c1">-- Loads the tracking for if the game has started yet</span>
     <span class="kr">if</span> <span class="n">saved_data</span> <span class="o">~=</span> <span class="s2">&quot;&quot;</span> <span class="kr">then</span>
         <span class="kd">local</span> <span class="n">loaded_data</span> <span class="o">=</span> <span class="n">JSON</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">saved_data</span><span class="p">)</span>
         <span class="n">someData</span> <span class="o">=</span> <span class="n">loaded_data</span><span class="p">.</span><span class="n">someData</span>
@@ -1686,12 +1686,12 @@
 </li>
 </ul>
 </div>
-<p><div class="codehilite"><pre><span></span><span class="c1">--Example Usage</span>
+<p><div class="codehilite"><pre><span></span><span class="c1">-- Example Usage</span>
 <span class="kr">function</span> <span class="nf">onCollisionEnter</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">collision_object</span><span class="p">)</span>
 <span class="kr">end</span>
 </pre></div>
-<div class="codehilite"><pre><span></span><span class="c1">--Example returned table</span>
+<div class="codehilite"><pre><span></span><span class="c1">-- Example returned table</span>
 <span class="p">{</span>
     <span class="n">collision_object</span> <span class="o">=</span> <span class="n">objectReference</span>
     <span class="n">contact_points</span> <span class="o">=</span> <span class="p">{</span>
@@ -1714,12 +1714,12 @@
 </li>
 </ul>
 </div>
-<p><div class="codehilite"><pre><span></span><span class="c1">--Example Usage</span>
+<p><div class="codehilite"><pre><span></span><span class="c1">-- Example Usage</span>
 <span class="kr">function</span> <span class="nf">onCollisionExit</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">collision_object</span><span class="p">)</span>
 <span class="kr">end</span>
 </pre></div>
-<div class="codehilite"><pre><span></span><span class="c1">--Example returned table</span>
+<div class="codehilite"><pre><span></span><span class="c1">-- Example returned table</span>
 <span class="p">{</span>
     <span class="n">collision_object</span> <span class="o">=</span> <span class="n">objectReference</span>
     <span class="n">contact_points</span> <span class="o">=</span> <span class="p">{</span>
@@ -1746,12 +1746,12 @@
 </li>
 </ul>
 </div>
-<p><div class="codehilite"><pre><span></span><span class="c1">--Example Usage</span>
+<p><div class="codehilite"><pre><span></span><span class="c1">-- Example Usage</span>
 <span class="kr">function</span> <span class="nf">onCollisionStay</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">collision_object</span><span class="p">)</span>
 <span class="kr">end</span>
 </pre></div>
-<div class="codehilite"><pre><span></span><span class="c1">--Example returned table</span>
+<div class="codehilite"><pre><span></span><span class="c1">-- Example returned table</span>
 <span class="p">{</span>
     <span class="n">collision_object</span> <span class="o">=</span> <span class="n">objectReference</span>
     <span class="n">contact_points</span> <span class="o">=</span> <span class="p">{</span>

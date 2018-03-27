@@ -1235,7 +1235,7 @@
 </li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="c1">--Assuming someone is in the White seat</span>
+<div class="codehilite"><pre><span></span><span class="c1">-- Assuming someone is in the White seat</span>
 <span class="n">Player</span><span class="p">[</span><span class="s2">&quot;White&quot;</span><span class="p">].</span><span class="n">lookAt</span><span class="p">({</span>
     <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">},</span>
     <span class="n">pitch</span>    <span class="o">=</span> <span class="mi">25</span><span class="p">,</span>
@@ -1288,7 +1288,7 @@
 <p class="admonition-title">Indexing</p>
 <p>Hand indexes start at 1 and are numbered in the order of their creation. Each Player color has its own indexes.</p>
 </div>
-<div class="codehilite"><pre><span></span><span class="c1">--Example of moving/rotating/scaling hand zone</span>
+<div class="codehilite"><pre><span></span><span class="c1">-- Example of moving/rotating/scaling hand zone</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">},</span>
     <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">},</span>
@@ -1301,7 +1301,7 @@
 <h3 id="direct-class-function-details">Direct Class Function Details<a class="headerlink" href="#direct-class-function-details" title="Permanent link"> </a></h3>
 <h4 id="getplayers">getPlayers()<a class="headerlink" href="#getplayers" title="Permanent link"> </a></h4>
 <p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp;Returns Table of all Players in the instance.</p>
-<div class="codehilite"><pre><span></span><span class="c1">--Blindfolding all players</span>
+<div class="codehilite"><pre><span></span><span class="c1">-- Blindfolding all players</span>
 <span class="n">playerList</span> <span class="o">=</span> <span class="n">Player</span><span class="p">.</span><span class="n">getPlayers</span><span class="p">()</span>
 <span class="kr">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">playerReference</span> <span class="kr">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">playerList</span><span class="p">)</span> <span class="kr">do</span>
     <span class="n">playerReference</span><span class="p">.</span><span class="n">blindfolded</span> <span class="o">=</span> <span class="kc">true</span>
@@ -1311,7 +1311,7 @@
 <hr />
 <h4 id="getspectators">getSpectators()<a class="headerlink" href="#getspectators" title="Permanent link"> </a></h4>
 <p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp;Returns Table of all Players in spectator (Grey).</p>
-<div class="codehilite"><pre><span></span><span class="c1">--Printing steam name of all players to host chat</span>
+<div class="codehilite"><pre><span></span><span class="c1">-- Printing steam name of all players to host chat</span>
 <span class="n">playerList</span> <span class="o">=</span> <span class="n">Player</span><span class="p">.</span><span class="n">getSpectators</span><span class="p">()</span>
 <span class="kr">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">playerReference</span> <span class="kr">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">playerList</span><span class="p">)</span> <span class="kr">do</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">playerReference</span><span class="p">.</span><span class="n">steam_name</span><span class="p">)</span>
