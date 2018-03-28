@@ -1,7 +1,7 @@
 ## Available scripting methods
 
 ### In-Game Lua Editor
-You can access the in-game Lua Editor by clicking on **Host -> Scripting** or by right clicking on an object, choosing Scripting, and then selecting Lua Editor from the contextual menu. In the Lua Editor, the tabs on the left of the editor let you switch between the Global and the Object scripts. Once your Lua code is written, you can use the *Save and Play* button to commit your changes to your save file and reload for quick iteration. *Save and Play* will only commit your script changes, any changes made that weren't scripting will be lost.
+You can access the in-game Lua Editor by clicking on **Scripting** on the top bar or by right clicking on an object, choosing Scripting, and then selecting Lua Editor from the contextual menu. In the Lua Editor, the tabs on the left of the editor let you switch between the Global and the Object scripts. Once your Lua code is written, you can use the *Save and Play* button to commit your changes to your save file and reload for quick iteration. *Save and Play* will only commit your script changes, any changes made that weren't scripting will be lost.
 
 The advantage of this method is it requires no additional setup. However it lacks many features included in some of the other options.
 
