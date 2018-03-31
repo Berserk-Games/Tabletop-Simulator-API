@@ -10,13 +10,13 @@ A WebRequest is returned as part of a function, and these member variables are h
 
 Variable | Description | Type
 -- | -- | :--
-@download_progress | Download percentage, represented as a value from 0-1. | [<span class="tag flo"></span>](intro#types)
-@error | Error text. | [<span class="tag str"></span>](intro#types)
-@is_error | If there is an error with the WebRequest. | [<span class="tag boo"></span>](intro#types)
-@is_done | If the WebRequest has finished. | [<span class="tag boo"></span>](intro#types)
-@text | Returned data. | [<span class="tag flo"></span>](intro#types)
-@upload_progress | Upload percentage, represented as a value from 0-1. | [<span class="tag flo"></span>](intro#types)
-@url | The targeted URL. | [<span class="tag str"></span>](intro#types)
+<a class="anchor" id="download_progress"></a>download_progress | Download percentage, represented as a value from 0-1. | [<span class="tag flo"></span>](intro#types)
+<a class="anchor" id="error"></a>error | Error text. | [<span class="tag str"></span>](intro#types)
+<a class="anchor" id="is_error"></a>is_error | If there is an error with the WebRequest. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="is_done"></a>is_done | If the WebRequest has finished. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="text"></a>text | Returned data. | [<span class="tag flo"></span>](intro#types)
+<a class="anchor" id="upload_progress"></a>upload_progress | Upload percentage, represented as a value from 0-1. | [<span class="tag flo"></span>](intro#types)
+<a class="anchor" id="url"></a>url | The targeted URL. | [<span class="tag str"></span>](intro#types)
 
 
 ##Function Summary
