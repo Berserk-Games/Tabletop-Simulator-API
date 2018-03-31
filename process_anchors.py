@@ -2,7 +2,7 @@ import glob, re
 
 def replace(matchobj):
     id = matchobj.group(1).lower()
-    return '<a id="%s"></a>%s' % (id, id)
+    return '<a class="anchor" id="%s"></a>%s' % (id, id)
 
 for filename in glob.glob("docs/*.md"):
     data = ''.join((x for x in open(filename)))
