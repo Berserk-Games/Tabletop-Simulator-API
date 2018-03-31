@@ -40,11 +40,11 @@ These member variables are classes of their own, and have their own member varia
 
 Variable Name | Description
 -- | --
-AssetBundle | An [AssetBundle](assetbundle), which is a type of custom object made in Unity.
-Clock | A [Clock](clock), which is the in-game digital clock.
-Counter | A [Counter](counter), which is the in-game digital counter.
-RPGFigurine | An [RPGFigurine](rpgfigurine), which is an in-game animated figurine.
-TextTool | A [TextTool](texttool), which is an in-game text display system.
+<a class="anchor" id="assetbundle"></a>AssetBundle | An [AssetBundle](assetbundle), which is a type of custom object made in Unity.
+<a class="anchor" id="clock"></a>Clock | A [Clock](clock), which is the in-game digital clock.
+<a class="anchor" id="counter"></a>Counter | A [Counter](counter), which is the in-game digital counter.
+<a class="anchor" id="rpgfigurine"></a>RPGFigurine | An [RPGFigurine](rpgfigurine), which is an in-game animated figurine.
+<a class="anchor" id="texttool"></a>TextTool | A [TextTool](texttool), which is an in-game text display system.
 
 ---
 
