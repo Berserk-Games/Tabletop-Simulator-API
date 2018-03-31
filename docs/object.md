@@ -13,28 +13,28 @@ Read Example = `isResting = self.resting` Write Example = `self.resting = true`
 
 Variable | Description | Type
 -- | -- | :--
-angular_drag | Angular drag. [Unity rigidbody property](https://docs.unity3d.com/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](intro#types)
-auto_raise | If an object should be lifted above other objects to avoid collision when held by a player. | [<span class="tag boo"></span>](intro#types)
-bounciness | Bounciness, value of 0-1. [Unity physics material](https://docs.unity3d.com/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](intro#types)
-drag | Drag. [Unity rigidbody property](https://docs.unity3d.com/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](intro#types)
-dynamic_friction | Dynamic friction, value of 0-1. [Unity physics material](https://docs.unity3d.com/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](intro#types)
-grid_projection | If grid lines can appear on the Object if visible grids are turned on. | [<span class="tag boo"></span>](intro#types)
-guid | The 6 character unique Object identifier within Tabletop Simulator. | [<span class="tag str"></span>](intro#types)
-held_by_color | The Color of the Player that is holding the object. | [<span class="tag str"></span>](intro#types)
-interactable | If an object can be interacted with by Players. Other object will still be able to interact with it. | [<span class="tag boo"></span>](intro#types)
-mass | Mass. [Unity rigidbody property](https://docs.unity3d.com/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](intro#types)
-name | The Object's name. Read only, use `setName("")` to write to it. | [<span class="tag str"></span>](intro#types)
-resting | If an Object is at rest. [Unity rigidbody property](https://docs.unity3d.com/412/Documentation/Components/RigidbodySleeping.html). | [<span class="tag boo"></span>](intro#types)
-script_code | The Lua Script on the Object. | [<span class="tag str"></span>](intro#types)
-script_state | The saved data on the object. See [onSave()](event#onsave). | [<span class="tag str"></span>](intro#types)
-static_friction | Static friction, value of 0-1. [Unity physics material](https://docs.unity3d.com/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](intro#types)
-sticky | If other Objects on top of this one are also picked up when this Object is. | [<span class="tag boo"></span>](intro#types)
-tag | This object's type. Read only. | [<span class="tag str"></span>](intro#types)
-tooltip | If the tooltip opens when a pointer hovers over the object. Tooltips display name and description. | [<span class="tag boo"></span>](intro#types)
-use_gravity | If gravity affects this object. | [<span class="tag boo"></span>](intro#types)
-use_grid | If snapping to grid is enabled or not. | [<span class="tag boo"></span>](intro#types)
-use_hands | If this object can be held in a hand zone. | [<span class="tag boo"></span>](intro#types)
-use_snap_points | If snap points are used or ignored. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="angular_drag"></a>angular_drag | Angular drag. [Unity rigidbody property](https://docs.unity3d.com/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](intro#types) <a class="anchor" id="angular_drag"></a>
+<a class="anchor" id="auto_raise"></a>auto_raise | If an object should be lifted above other objects to avoid collision when held by a player. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="bounciness"></a>bounciness | Bounciness, value of 0-1. [Unity physics material](https://docs.unity3d.com/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](intro#types)
+<a class="anchor" id="drag"></a>drag | Drag. [Unity rigidbody property](https://docs.unity3d.com/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](intro#types)
+<a class="anchor" id="dynamic_friction"></a>dynamic_friction | Dynamic friction, value of 0-1. [Unity physics material](https://docs.unity3d.com/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](intro#types)
+<a class="anchor" id="grid_projection"></a>grid_projection | If grid lines can appear on the Object if visible grids are turned on. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="guid"></a>guid | The 6 character unique Object identifier within Tabletop Simulator. | [<span class="tag str"></span>](intro#types)
+<a class="anchor" id="held_by_color"></a>held_by_color | The Color of the Player that is holding the object. | [<span class="tag str"></span>](intro#types)
+<a class="anchor" id="interactable"></a>interactable | If an object can be interacted with by Players. Other object will still be able to interact with it. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="mass"></a>mass | Mass. [Unity rigidbody property](https://docs.unity3d.com/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](intro#types)
+<a class="anchor" id="name"></a>name | The Object's name. Read only, use `setName("")` to write to it. | [<span class="tag str"></span>](intro#types)
+<a class="anchor" id="resting"></a>resting | If an Object is at rest. [Unity rigidbody property](https://docs.unity3d.com/412/Documentation/Components/RigidbodySleeping.html). | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="script_code"></a>script_code | The Lua Script on the Object. | [<span class="tag str"></span>](intro#types)
+<a class="anchor" id="script_state"></a>script_state | The saved data on the object. See [onSave()](event#onsave). | [<span class="tag str"></span>](intro#types)
+<a class="anchor" id="static_friction"></a>static_friction | Static friction, value of 0-1. [Unity physics material](https://docs.unity3d.com/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](intro#types)
+<a class="anchor" id="sticky"></a>sticky | If other Objects on top of this one are also picked up when this Object is. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="tag"></a>tag | This object's type. Read only. | [<span class="tag str"></span>](intro#types)
+<a class="anchor" id="tooltip"></a>tooltip | If the tooltip opens when a pointer hovers over the object. Tooltips display name and description. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="use_gravity"></a>use_gravity | If gravity affects this object. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="use_grid"></a>use_grid | If snapping to grid is enabled or not. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="use_hands"></a>use_hands | If this object can be held in a hand zone. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="use_snap_points"></a>use_snap_points | If snap points are used or ignored. | [<span class="tag boo"></span>](intro#types)
 
 These member variables are classes of their own, and have their own member variables. Each one is for a special type of Object.
 
@@ -64,29 +64,29 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 addForce([<span class="tag vec"></span>](intro#vector)&nbsp;vector, [<span class="tag int"></span>](intro#types)&nbsp;force_type) | Adds force to an object in a directional Vector. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#addforce)
 addTorque([<span class="tag vec"></span>](intro#vector)&nbsp;vector, [<span class="tag int"></span>](intro#types)&nbsp;force_type) | Adds torque to an object in a rotational Vector. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#addtorque)
-getAngularVelocity() | Returns a Vector of the current angular velocity. | [<span class="ret vec"></span>](intro#vector)
+<a class="anchor" id="getangularvelocity"></a>getAngularVelocity() | Returns a Vector of the current angular velocity. | [<span class="ret vec"></span>](intro#vector)
 getBounds() | Returns a Vector describing the size of an object in Global terms. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#getbounds)
 getBoundsNormalized() | Returns a Vector describing the size of an object in Global terms, as if it was rotated to {0,0,0}. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#getboundsnormalized)
-getPosition() | Returns a Vector of the current world position. | [<span class="ret vec"></span>](intro#vector)
-getRotation() | Returns a Vector of the current rotation. | [<span class="ret vec"></span>](intro#vector)
+<a class="anchor" id="getposition"></a>getPosition() | Returns a Vector of the current world position. | [<span class="ret vec"></span>](intro#vector)
+<a class="anchor" id="getrotation"></a>getRotation() | Returns a Vector of the current rotation. | [<span class="ret vec"></span>](intro#vector)
 getScale() | Returns a Vector of the current scale. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#getscale)
 getTransformForward() | Returns a Vector of the forward direction of this object. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#gettransformforward)
 getTransformRight() | Returns a Vector of the right direction of this object. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#gettransformright)
 getTransformUp() | Returns a Vector of the up direction of this object. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#gettransformup)
-getVelocity() | Returns a Vector of the current velocity. | [<span class="ret vec"></span>](intro#vector) |
-isSmoothMoving() | Indicates if an object is traveling as part of a Smooth move. Smooth moving is performed by setPositionSmooth and setRotationSmooth. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="getvelocity"></a>getVelocity() | Returns a Vector of the current velocity. | [<span class="ret vec"></span>](intro#vector) |
+<a class="anchor" id="issmoothmoving"></a>isSmoothMoving() | Indicates if an object is traveling as part of a Smooth move. Smooth moving is performed by setPositionSmooth and setRotationSmooth. | [<span class="ret boo"></span>](intro#types) |
 positionToLocal([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Returns a Vector after converting a world Vector to a local Vector. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#positiontolocal)
 positionToWorld([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Returns a Vector after converting a local Vector to a world Vector. | [<span class="ret vec"></span>](intro#vector) | [<span class="i"></span>](#positiontoworld)
-rotate([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Rotates Object smoothly in the direction of the given Vector. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="rotate"></a>rotate([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Rotates Object smoothly in the direction of the given Vector. | [<span class="ret boo"></span>](intro#types) |
 scale([<span class="tag vec"></span>](intro#vector)&nbsp;vector or [<span class="tag flo"></span>](intro#types)) | Scales Object by a multiple. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#scale)
-setAngularVelocity([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Sets a Vector as the current angular velocity. | [<span class="ret boo"></span>](intro#types) |
-setPosition([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Instantly moves an Object to the given Vector. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="setangularvelocity"></a>setAngularVelocity([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Sets a Vector as the current angular velocity. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="setposition"></a>setPosition([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Instantly moves an Object to the given Vector. | [<span class="ret boo"></span>](intro#types) |
 setPositionSmooth([<span class="tag vec"></span>](intro#vector)&nbsp;vector, [<span class="tag boo"></span>](intro#types)&nbsp;collide, [<span class="tag boo"></span>](intro#types)&nbsp;fast) | Moves the Object smoothly to the given Vector. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setpositionsmooth)
-setRotation([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Instantly rotates an Object to the given Vector. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="setrotation"></a>setRotation([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Instantly rotates an Object to the given Vector. | [<span class="ret boo"></span>](intro#types) |
 setRotationSmooth([<span class="tag vec"></span>](intro#vector)&nbsp;vector, [<span class="tag boo"></span>](intro#types)&nbsp;collide, [<span class="tag boo"></span>](intro#types)&nbsp;fast) | Rotates the Object smoothly to the given Vector. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setrotationsmooth)
-setScale([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Sets a Vector as the current scale. | [<span class="ret boo"></span>](intro#types) |
-setVelocity([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Sets a Vector as the current velocity. | [<span class="ret boo"></span>](intro#types) |
-translate([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Smoothly moves Object by the given Vector offset. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="setscale"></a>setScale([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Sets a Vector as the current scale. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="setvelocity"></a>setVelocity([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Sets a Vector as the current velocity. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="translate"></a>translate([<span class="tag vec"></span>](intro#vector)&nbsp;vector) | Smoothly moves Object by the given Vector offset. | [<span class="ret boo"></span>](intro#types) |
 
 
 
@@ -95,8 +95,8 @@ These functions allow for the creation/editing/removal of functional buttons and
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-clearButtons() | Removes all scripted buttons. | [<span class="ret boo"></span>](intro#types) |
-clearInputs() | Removes all scripted inputs. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="clearbuttons"></a>clearButtons() | Removes all scripted buttons. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="clearinputs"></a>clearInputs() | Removes all scripted inputs. | [<span class="ret boo"></span>](intro#types) |
 createButton([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Creates a scripted button attached to the Object. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#createbutton)
 createInput([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Creates a scripted input attached to the Object. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#createinput)
 editButton([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Modify an existing button. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#editbutton)
@@ -113,13 +113,13 @@ These functions obtain information from an object.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-getColorTint() | Returns Color tint. | [<span class="ret col"></span>](intro#color) |
+<a class="anchor" id="getcolortint"></a>getColorTint() | Returns Color tint. | [<span class="ret col"></span>](intro#color) |
 getCustomObject() | Returns a Table with the Custom Object information of a Custom Object. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getcustomobject)
-getLock() | Returns bool representing if the Object is locked. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="getlock"></a>getLock() | Returns bool representing if the Object is locked. | [<span class="ret boo"></span>](intro#types) |
 getObjects() | Returns a Table of Objects in the script zone/bag/deck. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getobjects)
-getQuantity() | Returns an Int of how many objects are in the stack. Returns -1 if the Object is not a stack. | [<span class="ret int"></span>](intro#types) |
+<a class="anchor" id="getquantity"></a>getQuantity() | Returns an Int of how many objects are in the stack. Returns -1 if the Object is not a stack. | [<span class="ret int"></span>](intro#types) |
 getRotationValues() | Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getrotationvalues)
-getStateId() | Returns the current [state](http://berserk-games.com/knowledgebase/creating-states/) ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1. | [<span class="ret int"></span>](intro#types) |
+<a class="anchor" id="getstateid"></a>getStateId() | Returns the current [state](http://berserk-games.com/knowledgebase/creating-states/) ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1. | [<span class="ret int"></span>](intro#types) |
 getStates() | Returns a Table of information on the [states](http://berserk-games.com/knowledgebase/creating-states/) of an Object. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getstates)
 getValue() | Returns an Int as the value. What the value represents depends on what type of Object this function is used on. | [<span class="ret int"></span>](intro#types) | [<span class="i"></span>](#getvalue)
 
@@ -130,11 +130,11 @@ These functions apply action to an object. They take some property in order to w
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-setColorTint([<span class="tag col"></span>](intro#color)&nbsp;Color) | Sets the Color tint. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="setcolortint"></a>setColorTint([<span class="tag col"></span>](intro#color)&nbsp;Color) | Sets the Color tint. | [<span class="ret boo"></span>](intro#types) |
 setCustomObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Sets a custom Object's properties. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setcustomobject)
-setLock([<span class="tag boo"></span>](intro#types)&nbsp;lock) | Sets if an object is locked in place. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="setlock"></a>setLock([<span class="tag boo"></span>](intro#types)&nbsp;lock) | Sets if an object is locked in place. | [<span class="ret boo"></span>](intro#types) |
 setRotationValues([<span class="tag tab"></span>](intro#types)&nbsp;rotation_values) | Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setrotationvalues)
-setState([<span class="tag int"></span>](intro#types)&nbsp;state_id) | Sets [state](http://berserk-games.com/knowledgebase/creating-states/) of an Object. State ids (indexes) start at 1. | [<span class="ret obj"></span>](intro#types) |
+<a class="anchor" id="setstate"></a>setState([<span class="tag int"></span>](intro#types)&nbsp;state_id) | Sets [state](http://berserk-games.com/knowledgebase/creating-states/) of an Object. State ids (indexes) start at 1. | [<span class="ret obj"></span>](intro#types) |
 setValue([<span class="tag var"></span>](intro#types)&nbsp;value) | Sets an Int as the value. What the value represents depends on what type of Object it is. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setvalue)
 
 
@@ -145,20 +145,20 @@ These functions perform general actions on objects and do not require any input 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 call([<span class="tag str"></span>](intro#types)&nbsp;func_name, [<span class="tag tab"></span>](intro#types)&nbsp;func_params) | Used to call a Lua function on this Object. | [<span class="ret var"></span>](intro#types) | [<span class="i"></span>](#call)
-flip() | Flip Object over. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="flip"></a>flip() | Flip Object over. | [<span class="ret boo"></span>](intro#types) |
 clone([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Copy/Paste this Object, returning a reference to the new Object. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#clone)
-cut() | Cuts (splits in half) a deck or stack Object. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="cut"></a>cut() | Cuts (splits in half) a deck or stack Object. | [<span class="ret boo"></span>](intro#types) |
 deal([<span class="tag int"></span>](intro#types)&nbsp;number, [<span class="tag str"></span>](intro#types)&nbsp;player_color, [<span class="tag int"></span>](intro#types)&nbsp;index) | Deals Objects. Will deal from decks/bags/stacks/individual items. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#deal)
 dealToColorWithOffset([<span class="tag vec"></span>](intro#vector)&nbsp;offset, [<span class="tag boo"></span>](intro#types)&nbsp;flip, [<span class="tag str"></span>](intro#types)&nbsp;player_color) | Deals from a deck to a position relative to the hand zone. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#dealtocolorwithoffset)
-destruct() | Destroys Object. Allows for `self.destruct()`. | [<span class="ret boo"></span>](intro#types) |
-highlightOn([<span class="tag col"></span>](intro#color)&nbsp;color, [<span class="tag flo"></span>](intro#types)&nbsp;duration) | Creates a highlight around an Object. | [<span class="ret boo"></span>](intro#types) |
-highlightOff([<span class="tag col"></span>](intro#color)&nbsp;color) | Removes a highlight from around an Object. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="destruct"></a>destruct() | Destroys Object. Allows for `self.destruct()`. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="highlighton"></a>highlightOn([<span class="tag col"></span>](intro#color)&nbsp;color, [<span class="tag flo"></span>](intro#types)&nbsp;duration) | Creates a highlight around an Object. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="highlightoff"></a>highlightOff([<span class="tag col"></span>](intro#color)&nbsp;color) | Removes a highlight from around an Object. | [<span class="ret boo"></span>](intro#types) |
 putObject([<span class="tag obj"></span>](intro#types)&nbsp;put_object) | Places an object into a container (chip stacks/bags/decks). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#putobject)
-randomize() | Shuffles deck/bag, rolls dice/coin, lifts other objects into the air. Same as pressing `R` by default. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="randomize"></a>randomize() | Shuffles deck/bag, rolls dice/coin, lifts other objects into the air. Same as pressing `R` by default. | [<span class="ret boo"></span>](intro#types) |
 reload() | Returns Object reference of itself after it respawns itself. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#reload)
-roll() | Rolls dice/coins. | [<span class="ret boo"></span>](intro#types) |
-shuffle() | Shuffles/shakes up contents of a deck or bag. | [<span class="ret boo"></span>](intro#types) |
-shuffleStates() | Returns an Object reference to a new [state](http://berserk-games.com/knowledgebase/creating-states/) after randomly selecting and changing to one. | [<span class="ret obj"></span>](intro#types) |
+<a class="anchor" id="roll"></a>roll() | Rolls dice/coins. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="shuffle"></a>shuffle() | Shuffles/shakes up contents of a deck or bag. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="shufflestates"></a>shuffleStates() | Returns an Object reference to a new [state](http://berserk-games.com/knowledgebase/creating-states/) after randomly selecting and changing to one. | [<span class="ret obj"></span>](intro#types) |
 takeObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Returns an Object reference of Object taken from a container (bag/deck/chip stack) and placed into the world. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#takeobject)
 
 ---

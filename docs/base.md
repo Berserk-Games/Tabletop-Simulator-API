@@ -7,15 +7,15 @@ General functions which work within any function.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-clearPixelPaint() | Remove pixel paint from the instance. | [<span class="ret boo"></span>](intro#types) | 
-clearVectorPaint() | Remove vector paint from the instance. | [<span class="ret boo"></span>](intro#types) | 
+<a class="anchor" id="clearpixelpaint"></a>clearPixelPaint() | Remove pixel paint from the instance. | [<span class="ret boo"></span>](intro#types) | 
+<a class="anchor" id="clearvectorpaint"></a>clearVectorPaint() | Remove vector paint from the instance. | [<span class="ret boo"></span>](intro#types) | 
 copy([<span class="tag tab"></span>](intro#types)&nbsp;object_list) | Copy a list of Objects to the clipboard. Works with [paste(...)](#paste). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#copy)
 destroyObject([<span class="tag obj"></span>](intro#types)&nbsp;obj) | Destory an Object. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#destroyobject)
-flipTable() | Flip the table. | [<span class="ret boo"></span>](intro#types) | 
-getAllObjects() | Returns Table of all spawned [Objects](object) in the game. | [<span class="ret tab"></span>](intro#types) | 
-getNotes() | Returns the contents of the on-screen notes section. | [<span class="ret str"></span>](intro#types) | 
+<a class="anchor" id="fliptable"></a>flipTable() | Flip the table. | [<span class="ret boo"></span>](intro#types) | 
+<a class="anchor" id="getallobjects"></a>getAllObjects() | Returns Table of all spawned [Objects](object) in the game. | [<span class="ret tab"></span>](intro#types) | 
+<a class="anchor" id="getnotes"></a>getNotes() | Returns the contents of the on-screen notes section. | [<span class="ret str"></span>](intro#types) | 
 getObjectFromGUID([<span class="tag str"></span>](intro#types)&nbsp;guid) | Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#getobjectfromguid)
-getSeatedPlayers() | Returns Table of the [Player Colors](player-color) strings of seated players. | [<span class="ret tab"></span>](intro#types) | 
+<a class="anchor" id="getseatedplayers"></a>getSeatedPlayers() | Returns Table of the [Player Colors](player-color) strings of seated players. | [<span class="ret tab"></span>](intro#types) | 
 paste([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#paste)
 setNotes([<span class="tag str"></span>](intro#types)&nbsp;notes) | Replace the text in the notes window with the string. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setnotes)
 spawnObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Spawns an Object. View the [Spawnable Object](spawnableobjects) page for Objects that can be spawned. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#spawnobject)
@@ -34,7 +34,7 @@ logStyle([<span class="tag str"></span>](intro#types)&nbsp;tag, [<span class="ta
 print([<span class="tag str"></span>](intro#types)&nbsp;message) | Prints a string into chat that only the host is able to see. Used for debugging scripts. | [<span class="ret nil"></span>](intro#types) | [<span class="i"></span>](#print)
 printToAll([<span class="tag str"></span>](intro#types)&nbsp;message, [<span class="tag col"></span>](intro#color)&nbsp;message_tint) | Print a message into the chat of all connected players. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#printtoall)
 printToColor([<span class="tag str"></span>](intro#types)&nbsp;message, [<span class="tag str"></span>](intro#types)&nbsp;player_color, [<span class="tag col"></span>](intro#color)&nbsp;message_tint) | Print a message to a specific [Player Color](player-color). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#printtocolor)
-sendExternalMessage([<span class="tag tab"></span>](intro#types)&nbsp;data) | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](intro#types) | 
+<a class="anchor" id="sendexternalmessage"></a>sendExternalMessage([<span class="tag tab"></span>](intro#types)&nbsp;data) | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](intro#types) | 
 
 
 ###Notebook Functions

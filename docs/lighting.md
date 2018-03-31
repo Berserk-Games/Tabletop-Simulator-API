@@ -8,10 +8,10 @@ Like [Object member variables](object#member-variables), Lighting has its own me
 
 Variable | Description | Type
 -- | -- | :--
-ambient_type | The source of ambient light. 1 = background, 2 = gradient. | [<span class="tag int"></span>](intro#types)
-ambient_intensity | The strength of the ambient light. Range = 0 to 4. | [<span class="tag flo"></span>](intro#types)
-light_intensity | The strength of the directional light shining down in the scene. Range = 0 to 4. | [<span class="tag flo"></span>](intro#types)
-reflection_intensity | The strength of the reflections from the background. Range = 0 to 1. | [<span class="tag flo"></span>](intro#types)
+<a class="anchor" id="ambient_type"></a>ambient_type | The source of ambient light. 1 = background, 2 = gradient. | [<span class="tag int"></span>](intro#types)
+<a class="anchor" id="ambient_intensity"></a>ambient_intensity | The strength of the ambient light. Range = 0 to 4. | [<span class="tag flo"></span>](intro#types)
+<a class="anchor" id="light_intensity"></a>light_intensity | The strength of the directional light shining down in the scene. Range = 0 to 4. | [<span class="tag flo"></span>](intro#types)
+<a class="anchor" id="reflection_intensity"></a>reflection_intensity | The strength of the reflections from the background. Range = 0 to 1. | [<span class="tag flo"></span>](intro#types)
 
 ##Function Summary
 
@@ -19,15 +19,15 @@ reflection_intensity | The strength of the reflections from the background. Rang
 
 Function Name | Description | Return 
 -- | -- | --:
-apply() | Applies changes made to the lighting Class using these functions or member variables. | [<span class="ret boo"></span>](intro#types)
-getAmbientEquatorColor() | Returns Color Table of the gradient equator. Not used if `ambient_type = 1`. | [<span class="ret col"></span>](intro#color)
-getAmbientGroundColor() | Returns Color Table of the gradient ground. Not used if `ambient_type = 1`. | [<span class="ret col"></span>](intro#color)
-getAmbientSkyColor() | Returns Color Table of the gradient sky. Not used if `ambient_type = 1`. | [<span class="ret col"></span>](intro#color)
-getLightColor() | Returns Color Table of the directional light, which shines straight down on the table. | [<span class="ret col"></span>](intro#color)
-setAmbientEquatorColor([<span class="tag col"></span>](intro#color)&nbsp;tint) | Sets the color of the gradient equator. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](intro#types)
-setAmbientGroundColor([<span class="tag col"></span>](intro#color)&nbsp;tint) | Sets the color of the gradient ground. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](intro#types)
-setAmbientSkyColor([<span class="tag col"></span>](intro#color)&nbsp;tint) | Sets the color of the gradient sky. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](intro#types)
-setLightColor([<span class="tag col"></span>](intro#color)&nbsp;tint) | Sets the color of the directional light, which shines straight down on the table. | [<span class="ret boo"></span>](intro#types)
+<a class="anchor" id="apply"></a>apply() | Applies changes made to the lighting Class using these functions or member variables. | [<span class="ret boo"></span>](intro#types)
+<a class="anchor" id="getambientequatorcolor"></a>getAmbientEquatorColor() | Returns Color Table of the gradient equator. Not used if `ambient_type = 1`. | [<span class="ret col"></span>](intro#color)
+<a class="anchor" id="getambientgroundcolor"></a>getAmbientGroundColor() | Returns Color Table of the gradient ground. Not used if `ambient_type = 1`. | [<span class="ret col"></span>](intro#color)
+<a class="anchor" id="getambientskycolor"></a>getAmbientSkyColor() | Returns Color Table of the gradient sky. Not used if `ambient_type = 1`. | [<span class="ret col"></span>](intro#color)
+<a class="anchor" id="getlightcolor"></a>getLightColor() | Returns Color Table of the directional light, which shines straight down on the table. | [<span class="ret col"></span>](intro#color)
+<a class="anchor" id="setambientequatorcolor"></a>setAmbientEquatorColor([<span class="tag col"></span>](intro#color)&nbsp;tint) | Sets the color of the gradient equator. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](intro#types)
+<a class="anchor" id="setambientgroundcolor"></a>setAmbientGroundColor([<span class="tag col"></span>](intro#color)&nbsp;tint) | Sets the color of the gradient ground. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](intro#types)
+<a class="anchor" id="setambientskycolor"></a>setAmbientSkyColor([<span class="tag col"></span>](intro#color)&nbsp;tint) | Sets the color of the gradient sky. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](intro#types)
+<a class="anchor" id="setlightcolor"></a>setLightColor([<span class="tag col"></span>](intro#color)&nbsp;tint) | Sets the color of the directional light, which shines straight down on the table. | [<span class="ret boo"></span>](intro#types)
 
 
 ---

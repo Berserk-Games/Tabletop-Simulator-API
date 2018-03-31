@@ -9,16 +9,16 @@ Like [Object member variables](object#member-variables), Player has its own memb
 
 Variable | Description | Type
 -- | -- | :--
-admin | If the player is promoted or the host of the game. Read only. | [<span class="tag boo"></span>](intro#types)
-blindfolded | If the player is blindfolded. | [<span class="tag boo"></span>](intro#types)
-color | The player's [Player Color](player-color). Read only. | [<span class="tag str"></span>](intro#types)
-host | If the player is the host. Read only. | [<span class="tag boo"></span>](intro#types)
-lift_height | The lift height for the player. This is how far an object is raised when held in a player's hand. Value is ranged 0 to 1. | [<span class="tag flo"></span>](intro#types)
-promoted | If the current player is promoted. | [<span class="tag boo"></span>](intro#types)
-seated | If a player is currently seated at this color. Read only. | [<span class="tag boo"></span>](intro#types)
-steam_id | The Steam ID of the player. This is unique to each player's Steam account. Read only. | [<span class="tag str"></span>](intro#types)
-steam_name | The Steam name of the player. Read only. | [<span class="tag str"></span>](intro#types)
-team | The team of the player.<br>Options: `"None", "Clubs", "Diamonds", "Hearts", "Spades", "Jokers"`. | [<span class="tag str"></span>](intro#types)
+<a class="anchor" id="admin"></a>admin | If the player is promoted or the host of the game. Read only. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="blindfolded"></a>blindfolded | If the player is blindfolded. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="color"></a>color | The player's [Player Color](player-color). Read only. | [<span class="tag str"></span>](intro#types)
+<a class="anchor" id="host"></a>host | If the player is the host. Read only. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="lift_height"></a>lift_height | The lift height for the player. This is how far an object is raised when held in a player's hand. Value is ranged 0 to 1. | [<span class="tag flo"></span>](intro#types)
+<a class="anchor" id="promoted"></a>promoted | If the current player is promoted. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="seated"></a>seated | If a player is currently seated at this color. Read only. | [<span class="tag boo"></span>](intro#types)
+<a class="anchor" id="steam_id"></a>steam_id | The Steam ID of the player. This is unique to each player's Steam account. Read only. | [<span class="tag str"></span>](intro#types)
+<a class="anchor" id="steam_name"></a>steam_name | The Steam name of the player. Read only. | [<span class="tag str"></span>](intro#types)
+<a class="anchor" id="team"></a>team | The team of the player.<br>Options: `"None", "Clubs", "Diamonds", "Hearts", "Spades", "Jokers"`. | [<span class="tag str"></span>](intro#types)
 
 ---
 
@@ -31,18 +31,18 @@ Function Name | Description | Return | &nbsp;
 attachCameraToObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Makes a Player's camera follow an Object. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#attachcameratoobject)
 broadcast([<span class="tag str"></span>](intro#types)&nbsp;message, [<span class="tag str"></span>](intro#types)&nbsp;Color) | Print message on Player's screen and their game chat log. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#broadcast)
 changeColor([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Changes player to this [Player Color](player-color). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#changecolor)
-getHandCount() | Returns the number of [hand zones](http://berserk-games.com/knowledgebase/hands/) owned by this color. | [<span class="ret int"></span>](intro#types)
+<a class="anchor" id="gethandcount"></a>getHandCount() | Returns the number of [hand zones](http://berserk-games.com/knowledgebase/hands/) owned by this color. | [<span class="ret int"></span>](intro#types)
 getHandObjects([<span class="tag int"></span>](intro#types)&nbsp;hand_index) | Returns a Table of Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#gethandobjects)
 getHandTransform([<span class="tag int"></span>](intro#types)&nbsp;hand_index) | Returns a Table of data on this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#gethandtransform)
-getHoldingObjects() | Returns Table of Objects a Player is holding in their hand. | [<span class="ret tab"></span>](intro#types)
-getHoverObject() | Object that the Player's pointer is hovering over. | [<span class="ret obj"></span>](intro#types)
-getPointerPosition() | Returns the Vector of the Player's pointer coordinates. | [<span class="ret vec"></span>](intro#vector)
-getSelectedObjects() | Returns Table of Objects that the Player has selected with an area selection. | [<span class="ret tab"></span>](intro#types)
-kick() | Kicks Player out of the room. | [<span class="ret boo"></span>](intro#types)
+<a class="anchor" id="getholdingobjects"></a>getHoldingObjects() | Returns Table of Objects a Player is holding in their hand. | [<span class="ret tab"></span>](intro#types)
+<a class="anchor" id="gethoverobject"></a>getHoverObject() | Object that the Player's pointer is hovering over. | [<span class="ret obj"></span>](intro#types)
+<a class="anchor" id="getpointerposition"></a>getPointerPosition() | Returns the Vector of the Player's pointer coordinates. | [<span class="ret vec"></span>](intro#vector)
+<a class="anchor" id="getselectedobjects"></a>getSelectedObjects() | Returns Table of Objects that the Player has selected with an area selection. | [<span class="ret tab"></span>](intro#types)
+<a class="anchor" id="kick"></a>kick() | Kicks Player out of the room. | [<span class="ret boo"></span>](intro#types)
 lookAt([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Moves a Player's camera, forcing 3'rd person camera mode. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#lookat)
-mute() | Mutes or unmutes Player, preventing/allowing voice chat. | [<span class="ret boo"></span>](intro#types)
+<a class="anchor" id="mute"></a>mute() | Mutes or unmutes Player, preventing/allowing voice chat. | [<span class="ret boo"></span>](intro#types)
 print([<span class="tag str"></span>](intro#types)&nbsp;message, [<span class="tag col"></span>](intro#color)&nbsp;message_color) | Prints a message into the Player's game chat. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#print)
-promote() | Promotes/demotes a Player. Promoted players have access to most host privileges. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="promote"></a>promote() | Promotes/demotes a Player. Promoted players have access to most host privileges. | [<span class="ret boo"></span>](intro#types) |
 setHandTransform([<span class="tag tab"></span>](intro#types)&nbsp;parameters, [<span class="tag int"></span>](intro#types)&nbsp;hand_index) | Sets transform elements of a hand zone. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#sethandtransform)
 
 
