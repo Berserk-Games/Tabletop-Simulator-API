@@ -1857,7 +1857,7 @@
 <tbody>
 <tr>
 <td><a class="anchor" id="getcolortint"></a>getColorTint()</td>
-<td>Returns Color tint.</td>
+<td>Color tint.</td>
 <td><a href="../intro#color"><span class="ret col"></span></a></td>
 <td></td>
 </tr>
@@ -1868,9 +1868,33 @@
 <td><a href="#getcustomobject"><span class="i"></span></a></td>
 </tr>
 <tr>
+<td><a class="anchor" id="getdescription"></a>getDescription()</td>
+<td>Description, also shows as part of Object's tooltip.</td>
+<td><a href="../intro#types"><span class="ret str"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="anchor" id="getguid"></a>getGUID()</td>
+<td>String of the Object's unique identifier.</td>
+<td><a href="../intro#types"><span class="ret str"></span></a></td>
+<td></td>
+</tr>
+<tr>
 <td><a class="anchor" id="getlock"></a>getLock()</td>
-<td>Returns bool representing if the Object is locked.</td>
+<td>If the Object is locked.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="anchor" id="getluascript"></a>getLuaScript()</td>
+<td>Get a Lua script as a string.</td>
+<td><a href="../intro#types"><span class="ret str"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="anchor" id="getname"></a>getName()</td>
+<td>Name, also shows as part of Object's tooltip.</td>
+<td><a href="../intro#types"><span class="ret str"></span></a></td>
 <td></td>
 </tr>
 <tr>
@@ -1881,7 +1905,7 @@
 </tr>
 <tr>
 <td><a class="anchor" id="getquantity"></a>getQuantity()</td>
-<td>Returns an Int of how many objects are in the stack. Returns -1 if the Object is not a stack.</td>
+<td>How many objects are in the stack. Returns -1 if the Object is not a stack.</td>
 <td><a href="../intro#types"><span class="ret int"></span></a></td>
 <td></td>
 </tr>
@@ -1893,7 +1917,7 @@
 </tr>
 <tr>
 <td><a class="anchor" id="getstateid"></a>getStateId()</td>
-<td>Returns the current <a href="http://berserk-games.com/knowledgebase/creating-states/">state</a> ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1.</td>
+<td>Current <a href="http://berserk-games.com/knowledgebase/creating-states/">state</a> ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1.</td>
 <td><a href="../intro#types"><span class="ret int"></span></a></td>
 <td></td>
 </tr>
@@ -1904,10 +1928,22 @@
 <td><a href="#getstates"><span class="i"></span></a></td>
 </tr>
 <tr>
+<td><a class="anchor" id="gettable"></a>getTable(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;func_name)</td>
+<td>Data value of a variable in another Object's script. Can only return a table.</td>
+<td><a href="../intro#types"><span class="ret tab"></span></a></td>
+<td></td>
+</tr>
+<tr>
 <td>getValue()</td>
-<td>Returns an Int as the value. What the value represents depends on what type of Object this function is used on.</td>
+<td>Object value. What the value represents depends on what type of Object this function is used on.</td>
 <td><a href="../intro#types"><span class="ret int"></span></a></td>
 <td><a href="#getvalue"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="getvar"></a>getVar(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;func_name)</td>
+<td>Data value of a variable in another Object's script. Cannot return a table.</td>
+<td><a href="../intro#types"><span class="ret var"></span></a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -1936,8 +1972,26 @@
 <td><a href="#setcustomobject"><span class="i"></span></a></td>
 </tr>
 <tr>
+<td><a class="anchor" id="setdescription"></a>setDescription(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;description)</td>
+<td>Sets a description for an Object. Shows in tooltip after delay.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
 <td><a class="anchor" id="setlock"></a>setLock(<a href="../intro#types"><span class="tag boo"></span></a>&nbsp;lock)</td>
 <td>Sets if an object is locked in place.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="anchor" id="setluascript"></a>setLuaScript(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;script)</td>
+<td>Input a string as an Object's Lua script. Generally only used after spawning a new Object.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="anchor" id="setname"></a>setName(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;name)</td>
+<td>Sets a name for an Object. Shows in tooltip.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
@@ -1954,10 +2008,22 @@
 <td></td>
 </tr>
 <tr>
+<td><a class="anchor" id="settable"></a>setTable(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;func_name, <a href="../intro#types"><span class="tag tab"></span></a>&nbsp;data)</td>
+<td>Creates/updates a variable in another Object's script. Only used for tables.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
 <td>setValue(<a href="../intro#types"><span class="tag var"></span></a>&nbsp;value)</td>
 <td>Sets an Int as the value. What the value represents depends on what type of Object it is.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#setvalue"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="setvar"></a>setVar(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;func_name, <a href="../intro#types"><span class="tag var"></span></a>&nbsp;data)</td>
+<td>Creates/updates a variable in another Object's script. Cannot set a table.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
