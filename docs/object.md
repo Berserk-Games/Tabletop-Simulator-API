@@ -167,6 +167,7 @@ dealToColorWithOffset([<span class="tag vec"></span>](intro#vector)&nbsp;offset,
 putObject([<span class="tag obj"></span>](intro#types)&nbsp;put_object) | Places an object into a container (chip stacks/bags/decks). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#putobject)
 <a class="anchor" id="randomize"></a>randomize() | Shuffles deck/bag, rolls dice/coin, lifts other objects into the air. Same as pressing `R` by default. | [<span class="ret boo"></span>](intro#types) |
 reload() | Returns Object reference of itself after it respawns itself. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#reload)
+<a class="anchor" id="reset"></a>reset() | Resets this Object. Resetting a Deck brings all the Cards back into it. Resetting a Bag clears its contents (works for both Loot and Infinite Bags). | [<span class="ret boo"></span>](intro#types) |
 <a class="anchor" id="roll"></a>roll() | Rolls dice/coins. | [<span class="ret boo"></span>](intro#types) |
 <a class="anchor" id="shuffle"></a>shuffle() | Shuffles/shakes up contents of a deck or bag. | [<span class="ret boo"></span>](intro#types) |
 <a class="anchor" id="shufflestates"></a>shuffleStates() | Returns an Object reference to a new [state](http://berserk-games.com/knowledgebase/creating-states/) after randomly selecting and changing to one. | [<span class="ret obj"></span>](intro#types) |
