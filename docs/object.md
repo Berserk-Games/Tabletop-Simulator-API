@@ -113,15 +113,21 @@ These functions obtain information from an object.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-<a class="anchor" id="getcolortint"></a>getColorTint() | Returns Color tint. | [<span class="ret col"></span>](intro#color) |
+<a class="anchor" id="getcolortint"></a>getColorTint() | Color tint. | [<span class="ret col"></span>](intro#color) |
 getCustomObject() | Returns a Table with the Custom Object information of a Custom Object. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getcustomobject)
-<a class="anchor" id="getlock"></a>getLock() | Returns bool representing if the Object is locked. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="getdescription"></a>getDescription() | Description, also shows as part of Object's tooltip. | [<span class="ret str"></span>](intro#types)
+<a class="anchor" id="getguid"></a>getGUID() | String of the Object's unique identifier. | [<span class="ret str"></span>](intro#types) |
+<a class="anchor" id="getlock"></a>getLock() | If the Object is locked. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="getluascript"></a>getLuaScript() | Get a Lua script as a string. | [<span class="ret str"></span>](intro#types) |
+<a class="anchor" id="getname"></a>getName() | Name, also shows as part of Object's tooltip. | [<span class="ret str"></span>](intro#types) |
 getObjects() | Returns a Table of Objects in the script zone/bag/deck. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getobjects)
-<a class="anchor" id="getquantity"></a>getQuantity() | Returns an Int of how many objects are in the stack. Returns -1 if the Object is not a stack. | [<span class="ret int"></span>](intro#types) |
+<a class="anchor" id="getquantity"></a>getQuantity() | How many objects are in the stack. Returns -1 if the Object is not a stack. | [<span class="ret int"></span>](intro#types) |
 getRotationValues() | Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getrotationvalues)
-<a class="anchor" id="getstateid"></a>getStateId() | Returns the current [state](http://berserk-games.com/knowledgebase/creating-states/) ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1. | [<span class="ret int"></span>](intro#types) |
+<a class="anchor" id="getstateid"></a>getStateId() | Current [state](http://berserk-games.com/knowledgebase/creating-states/) ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1. | [<span class="ret int"></span>](intro#types) |
 getStates() | Returns a Table of information on the [states](http://berserk-games.com/knowledgebase/creating-states/) of an Object. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getstates)
-getValue() | Returns an Int as the value. What the value represents depends on what type of Object this function is used on. | [<span class="ret int"></span>](intro#types) | [<span class="i"></span>](#getvalue)
+<a class="anchor" id="gettable"></a>getTable([<span class="tag str"></span>](intro#types)&nbsp;func_name) | Data value of a variable in another Object's script. Can only return a table. | [<span class="ret tab"></span>](intro#types) |
+getValue() | Object value. What the value represents depends on what type of Object this function is used on. | [<span class="ret int"></span>](intro#types) | [<span class="i"></span>](#getvalue)
+<a class="anchor" id="getvar"></a>getVar([<span class="tag str"></span>](intro#types)&nbsp;func_name) | Data value of a variable in another Object's script. Cannot return a table. | [<span class="ret var"></span>](intro#types) |
 
 
 
@@ -132,10 +138,15 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 <a class="anchor" id="setcolortint"></a>setColorTint([<span class="tag col"></span>](intro#color)&nbsp;Color) | Sets the Color tint. | [<span class="ret boo"></span>](intro#types) |
 setCustomObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Sets a custom Object's properties. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setcustomobject)
+<a class="anchor" id="setdescription"></a>setDescription([<span class="tag str"></span>](intro#types)&nbsp;description) | Sets a description for an Object. Shows in tooltip after delay. | [<span class="ret boo"></span>](intro#types)
 <a class="anchor" id="setlock"></a>setLock([<span class="tag boo"></span>](intro#types)&nbsp;lock) | Sets if an object is locked in place. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="setluascript"></a>setLuaScript([<span class="tag str"></span>](intro#types)&nbsp;script) | Input a string as an Object's Lua script. Generally only used after spawning a new Object. | [<span class="ret boo"></span>](intro#types) |
+<a class="anchor" id="setname"></a>setName([<span class="tag str"></span>](intro#types)&nbsp;name) | Sets a name for an Object. Shows in tooltip. | [<span class="ret boo"></span>](intro#types)
 setRotationValues([<span class="tag tab"></span>](intro#types)&nbsp;rotation_values) | Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setrotationvalues)
 <a class="anchor" id="setstate"></a>setState([<span class="tag int"></span>](intro#types)&nbsp;state_id) | Sets [state](http://berserk-games.com/knowledgebase/creating-states/) of an Object. State ids (indexes) start at 1. | [<span class="ret obj"></span>](intro#types) |
+<a class="anchor" id="settable"></a>setTable([<span class="tag str"></span>](intro#types)&nbsp;func_name, [<span class="tag tab"></span>](intro#types)&nbsp;data) | Creates/updates a variable in another Object's script. Only used for tables. | [<span class="ret boo"></span>](intro#types) |
 setValue([<span class="tag var"></span>](intro#types)&nbsp;value) | Sets an Int as the value. What the value represents depends on what type of Object it is. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setvalue)
+<a class="anchor" id="setvar"></a>setVar([<span class="tag str"></span>](intro#types)&nbsp;func_name, [<span class="tag var"></span>](intro#types)&nbsp;data) | Creates/updates a variable in another Object's script. Cannot set a table. | [<span class="ret boo"></span>](intro#types) |
 
 
 
