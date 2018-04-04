@@ -887,8 +887,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rotatevector" title="rotate(Vector)" class="md-nav__link">
-    rotate(Vector)
+  <a href="#rotate" title="rotate(...)" class="md-nav__link">
+    rotate(...)
   </a>
   
 </li>
@@ -1876,8 +1876,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rotatevector" title="rotate(Vector)" class="md-nav__link">
-    rotate(Vector)
+  <a href="#rotate" title="rotate(...)" class="md-nav__link">
+    rotate(...)
   </a>
   
 </li>
@@ -2984,6 +2984,12 @@
 <p class="admonition-title">Object Scale</p>
 <p>This function takes the Object's scale into account, as the Object is the key relative point.</p>
 </div>
+<div class="admonition info">
+<p class="admonition-title">positionToLocal(vector)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag vec"></span></a> <strong>vector</strong>: The world position to convert into a local position.</li>
+</ul>
+</div>
 <hr />
 <h4 id="positiontoworld">positionToWorld(...)<a class="headerlink" href="#positiontoworld" title="Permanent link"> </a></h4>
 <p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp;Returns a Vector after converting a local Vector to a world Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.</p>
@@ -2991,9 +2997,21 @@
 <p class="admonition-title">Object Scale</p>
 <p>This function takes the Object's scale into account, as the Object is the key relative point.</p>
 </div>
+<div class="admonition info">
+<p class="admonition-title">positionToLocal(vector)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag vec"></span></a> <strong>vector</strong>: The local position to convert into a world position.</li>
+</ul>
+</div>
 <hr />
-<h4 id="rotatevector">rotate(Vector)<a class="headerlink" href="#rotatevector" title="Permanent link"> </a></h4>
+<h4 id="rotate">rotate(...)<a class="headerlink" href="#rotate" title="Permanent link"> </a></h4>
 <p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Rotates Object smoothly in the direction of the given Vector. This does not set the Object to face a specific rotation, it rotates the Object around by the number of degrees given for x/y/z.</p>
+<div class="admonition info">
+<p class="admonition-title">rotate(vector)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag vec"></span></a> <strong>vector</strong>: The amount of x/y/z to rotate by.</li>
+</ul>
+</div>
 <div class="codehilite"><pre><span></span><span class="c1">--Rotates object 90 degrees around its Y axis</span>
 <span class="n">self</span><span class="p">.</span><span class="n">rotate</span><span class="p">({</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">})</span>
 </pre></div>
