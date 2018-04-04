@@ -340,6 +340,9 @@ end
 
 !!!tip "Object Scale"
 	This function takes the Object's scale into account, as the Object is the key relative point.
+	
+!!!info "positionToLocal(vector)"
+	* [<span class="tag vec"></span>](intro#types) **vector**: The world position to convert into a local position.
 
 ---
 
@@ -350,13 +353,19 @@ end
 
 !!!tip "Object Scale"
 	This function takes the Object's scale into account, as the Object is the key relative point.
+	
+!!!info "positionToLocal(vector)"
+	* [<span class="tag vec"></span>](intro#types) **vector**: The local position to convert into a world position.
 
 ---
 
 
-####rotate(Vector)
+####rotate(...)
 
 [<span class="ret boo"></span>](intro#types)&nbsp;Rotates Object smoothly in the direction of the given Vector. This does not set the Object to face a specific rotation, it rotates the Object around by the number of degrees given for x/y/z.
+
+!!!info "rotate(vector)"
+	* [<span class="tag vec"></span>](intro#types) **vector**: The amount of x/y/z to rotate by.
 
 ``` Lua
 --Rotates object 90 degrees around its Y axis
