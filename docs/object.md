@@ -461,7 +461,7 @@ self.scale(2)
 			* {>>Optional, defaults to an empty string.<<}
 
 !!!info "click_function(obj, player_clicker_color)"
-	The click function which is activated by clicking this button has its own parameters it is passed automatically.
+	*The click function which is activated by clicking this button has its own parameters it is passed automatically.*
 
 	* [<span class="tag obj"></span>](intro#types) **obj**: The Object the button is attached to.
 	* [<span class="tag str"></span>](intro#types) **player_clicker_color**: [Player Color](player-color) of the player that pressed the button.
@@ -558,7 +558,7 @@ end
 			* **3**: Indent
 
 !!!info "input_function(obj, player_clicker_color, input_value, selected)"
-	*The click function which is activated by clicking this button has its own parameters it is passed automatically.*
+	*The click function which is activated by editing the text in this input has its own parameters it is passed automatically.*
 
 	* [<span class="tag obj"></span>](intro#types) **obj**: The Object the input is attached to.
 	* [<span class="tag str"></span>](intro#types) **player_clicker_color**: [Player Color](player-color) of the player that has selected/edited the input.
