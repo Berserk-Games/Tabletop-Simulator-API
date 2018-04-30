@@ -462,7 +462,7 @@ Called **every frame**.
 
 ``` Lua
 function onUpdate()
-	print("This will probably slow your game down."
+	print("This will probably slow your game down.")
 end
 ```
 
