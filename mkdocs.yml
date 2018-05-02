@@ -47,7 +47,7 @@ pages:
     - Atom: atom.md
     - External Editor AP: externaleditorapi.md
     - Learning Lua: learninglua.md
-  - Lua API:
+  - Scripting API:
     - Introduction: intro.md
     - Event: event.md
     - Base: base.md
@@ -66,5 +66,6 @@ pages:
     - Timer: timer.md
     - Web Request: webrequest.md
     - Changelog: changelog.md
+
 
     
