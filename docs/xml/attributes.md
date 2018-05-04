@@ -20,7 +20,7 @@ For XML, most of the attribute types are self-explanatory, like string or float 
     * **False**: `0` or `false`
 * **RectOffset**
     * Padding accepts multiple padding values
-        * **left/right/top/bottom**: Example: `5, 5, 10, 10`
+        * **left/right/top/bottom**: Example: `5 5 10 10`
         * **all sides**: Example: `10`
 
 ---
@@ -35,6 +35,20 @@ active | Specifies whether or not this element is active. | bool | `true`
 class | This allows you to group elements together by giving them the same class. It is used with [Defaults](defaults). | string | (none)
 id | Used by Lua scripting to identify an element within the XML. | string | (none)
 visibility | What colors are able to see the element. | string | (visible to all)
+rectAlignment | Defines this elements position within its parent. Only applies to elements not contained within layout groups. | UpperLeft
+UpperCenter
+UpperRight
+MiddleLeft
+MiddleCenter
+MiddleRight
+LowerLeft
+LowerCenter
+LowerRight | MiddleCenter
+width | Defines the width of this element. | float (fixed width)
+or a Percentage value | 100%
+height | Defines the height of this element. | float (fixed width)
+or a Percentage value | 100%
+offsetXY | Defines an offset to the position of this element, e.g. a value of `-32 0` will cause this element to be 32 pixels to the left of where it would otherwise be. | float (x) float (y) | 0 0
 
 !!!important
     For visiblity, you can use multiple color names by putting a `|` between each color name. `"Red|Blue|Green"`
@@ -95,10 +109,7 @@ Defaults tags can be placed anywhere in the Xml document, but will only apply to
     <Text color="#DDDDDD" fontSize="16" />
     
     <!-- Set the default color for all Text elements using the 'darker' class -->
-    <Text class="darker" color="#AAAAAA" />
-
-    <!-- Set the default background image for all Button images -->
-    <Button image="Sprites/Layout/Button" />
+    <Text class="darker" color="#AAAAAA" />    
 </Defaults>
 
 <!-- This text's color will be "#DDDDDD" and its font size will be "16" -->
