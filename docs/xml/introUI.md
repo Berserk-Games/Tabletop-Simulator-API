@@ -10,7 +10,7 @@ The Custom UI system allows users to create custom UIs to support their game. Th
     * Layout elements for grouping elements together easily
     * Various other small features to give you more control over the looks of your elements
 
-For more info check out the documentation for XML UI: http://www.digital-legacy.co.za/XmlLayout/Documentation#Attributetypes
+For more info check out the documentation for XML Layout: http://www.digital-legacy.co.za/XmlLayout/Documentation#Attributetypes
 
 ##Core Features
 
