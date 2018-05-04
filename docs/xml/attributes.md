@@ -35,19 +35,9 @@ active | Specifies whether or not this element is active. | bool | `true`
 class | This allows you to group elements together by giving them the same class. It is used with [Defaults](defaults). | string | (none)
 id | Used by Lua scripting to identify an element within the XML. | string | (none)
 visibility | What colors are able to see the element. | string | (visible to all)
-rectAlignment | Defines this elements position within its parent. Only applies to elements not contained within layout groups. | UpperLeft
-UpperCenter
-UpperRight
-MiddleLeft
-MiddleCenter
-MiddleRight
-LowerLeft
-LowerCenter
-LowerRight | MiddleCenter
-width | Defines the width of this element. | float (fixed width)
-or a Percentage value | 100%
-height | Defines the height of this element. | float (fixed width)
-or a Percentage value | 100%
+rectAlignment | Defines this elements position within its parent. Only applies to elements not contained within layout groups. | UpperLeft, UpperCenter, UpperRight, MiddleLeft, MiddleCenter, MiddleRight, LowerLeft, LowerCenter, LowerRight | MiddleCenter
+width | Defines the width of this element. | float (fixed width) or a Percentage value | 100%
+height | Defines the height of this element. | float (fixed width) or a Percentage value | 100%
 offsetXY | Defines an offset to the position of this element, e.g. a value of `-32 0` will cause this element to be 32 pixels to the left of where it would otherwise be. | float (x) float (y) | 0 0
 
 !!!important
