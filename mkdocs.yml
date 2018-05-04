@@ -64,14 +64,9 @@ pages:
     - Spawnable Objects: spawnableobjects.md
     - TextTool: texttool.md
     - Timer: timer.md
-    - UI: ui.md
     - Web Request: webrequest.md
     - Changelog: changelog.md
-  - UI API:
-    - Introduction: xml/introUI.md
-    - Attributes: xml/attributes.md
-    - Basic Elements: xml/basicelements.md
-    - Input Elements: xml/inputelements.md
+
 
 
 
