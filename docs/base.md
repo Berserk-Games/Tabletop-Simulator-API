@@ -127,7 +127,7 @@ setNotes("This appears in the notes section")
 
 ####spawnObject(...)
 
-[<span class="ret obj"></span>](intro#types)&nbsp;Spawn an Object. View the [Spawnable Object](spawnableobject) page for Objects that can be spawned.
+[<span class="ret obj"></span>](intro#types)&nbsp;Spawn an Object. View the [Spawnable Objects](spawnableobjects) page for Objects that can be spawned.
 
 If you are spawning a **custom Object**, you should call [setCustomObject](object#setcustomobject) immediately after spawnObject to set its custom properties.
 
