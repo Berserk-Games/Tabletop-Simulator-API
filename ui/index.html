@@ -36,7 +36,7 @@
     
     
       
-        <title>RPGFigurine - Tabletop Simulator API</title>
+        <title>UI - Tabletop Simulator API</title>
       
     
     
@@ -102,7 +102,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#function-summary" tabindex="1" class="md-skip">
+      <a href="#inputs" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -128,7 +128,7 @@
                 Tabletop Simulator API
               </span>
               <span class="md-header-nav__topic">
-                RPGFigurine
+                UI
               </span>
             
           
@@ -1046,121 +1046,16 @@
 <!-- Determine class according to level -->
 
 
-  
-
 
 
 <!-- Main navigation item with nested items -->
 
-  <li class="md-nav__item md-nav__item--active">
-    
-
-    <!-- Active checkbox expands items contained within nested section -->
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc"
-        type="checkbox" id="toc" />
-
-    <!-- Hack: see partials/toc.html for more information -->
-    
-
-    <!-- Render table of contents, if not empty -->
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        RPGFigurine
-      </label>
-    
-    <a href="./" title="RPGFigurine"
-        class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../rpgfigurine/" title="RPGFigurine"
+        class="md-nav__link">
       RPGFigurine
     </a>
-
-    <!-- Show table of contents -->
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#function-summary" title="Function Summary" class="md-nav__link">
-    Function Summary
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#object-functions" title="Object Functions" class="md-nav__link">
-    Object Functions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#event-functions" title="Event Functions" class="md-nav__link">
-    Event Functions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#function-details" title="Function Details" class="md-nav__link">
-    Function Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#event-function-details" title="Event Function Details" class="md-nav__link">
-    Event Function Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#onattack" title="onAttack(...)" class="md-nav__link">
-    onAttack(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onhit" title="onHit(...)" class="md-nav__link">
-    onHit(...)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
-
-<!-- Main navigation item -->
 
         
           
@@ -1307,16 +1202,109 @@
 <!-- Determine class according to level -->
 
 
+  
+
 
 
 <!-- Main navigation item with nested items -->
 
-  <li class="md-nav__item">
-    <a href="../ui/" title="UI"
-        class="md-nav__link">
+  <li class="md-nav__item md-nav__item--active">
+    
+
+    <!-- Active checkbox expands items contained within nested section -->
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc"
+        type="checkbox" id="toc" />
+
+    <!-- Hack: see partials/toc.html for more information -->
+    
+
+    <!-- Render table of contents, if not empty -->
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        UI
+      </label>
+    
+    <a href="./" title="UI"
+        class="md-nav__link md-nav__link--active">
       UI
     </a>
+
+    <!-- Show table of contents -->
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inputs" title="Inputs" class="md-nav__link">
+    Inputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element-function-summary" title="Element Function Summary" class="md-nav__link">
+    Element Function Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element-function-details" title="Element Function Details" class="md-nav__link">
+    Element Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getattribute" title="getAttribute(...)" class="md-nav__link">
+    getAttribute(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getattributes" title="getAttributes(...)" class="md-nav__link">
+    getAttributes(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setattribute" title="setAttribute(...)" class="md-nav__link">
+    setAttribute(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setattributes" title="setAttributes(...)" class="md-nav__link">
+    setAttributes(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
+
+<!-- Main navigation item -->
 
         
           
@@ -1640,64 +1628,52 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#function-summary" title="Function Summary" class="md-nav__link">
-    Function Summary
+  <a href="#inputs" title="Inputs" class="md-nav__link">
+    Inputs
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#object-functions" title="Object Functions" class="md-nav__link">
-    Object Functions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#event-functions" title="Event Functions" class="md-nav__link">
-    Event Functions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#function-details" title="Function Details" class="md-nav__link">
-    Function Details
+  <a href="#element-function-summary" title="Element Function Summary" class="md-nav__link">
+    Element Function Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element-function-details" title="Element Function Details" class="md-nav__link">
+    Element Function Details
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#event-function-details" title="Event Function Details" class="md-nav__link">
-    Event Function Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#onattack" title="onAttack(...)" class="md-nav__link">
-    onAttack(...)
+  <a href="#getattribute" title="getAttribute(...)" class="md-nav__link">
+    getAttribute(...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#onhit" title="onHit(...)" class="md-nav__link">
-    onHit(...)
+  <a href="#getattributes" title="getAttributes(...)" class="md-nav__link">
+    getAttributes(...)
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#setattribute" title="setAttribute(...)" class="md-nav__link">
+    setAttribute(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setattributes" title="setAttributes(...)" class="md-nav__link">
+    setAttributes(...)
+  </a>
   
 </li>
         
@@ -1722,105 +1698,152 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation/edit/master/docs/rpgfigurine.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Knils/Tabletop-Simulator-Scripting-Documentation/edit/master/docs/ui.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>RPGFigurine</h1>
+                  <h1>UI</h1>
                 
-                <p>An RPGFigurine is an in-game Object of a figurine with built-in animations. It has its own class, RPGFigurine, with functions associated with it. This allows you to manipulate the special properties of these figurines.</p>
-<h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link"> </a></h2>
-<h3 id="object-functions">Object Functions<a class="headerlink" href="#object-functions" title="Permanent link"> </a></h3>
-<p>These functions are called like this: <code class="codehilite">self.RPGFigurine.attack()</code>.</p>
+                <p>UI, a static global class, is the method to interact with custom UI elements. It allows you to read/write attributes of elements defined in the XML of the UI. It also allows you to receive information from various inputs (like buttons) on-screen.</p>
+<p><strong>What this class does NOT do is create new UI elements.</strong> Those are created in the custom UI using XML. See the <a href="../xml/introUI/">UI API</a> for info on how.</p>
+<p>Example of calling a function: <code class="codehilite">UI.getAttributes(id)</code>.</p>
+<h2 id="inputs">Inputs<a class="headerlink" href="#inputs" title="Permanent link"> </a></h2>
+<p><a href="../xml/inputelements">Input Elements</a> are able to trigger a function. By default, they trigger a function in Global. <a href="../xml/inputelements#targeting-triggers">View here</a> for information on how to trigger a function on an Object's script.</p>
+<p>When creating the input element in XML, you will select the name of the function it activates. Regardless of its name, it always will pass parameters</p>
+<div class="admonition info">
+<p class="admonition-title">functionName(player, value, id)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag pla"></span></a> <strong>player</strong>: A direct Player reference to the person that triggered the input.</li>
+<li><a href="../intro#types"><span class="tag var"></span></a> <strong>value</strong>: The value sent by the input. A numeric value or a string, generally.<ul>
+<li><span class="critic comment">This is not passed by buttons!</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>id</strong>: <ul>
+<li><span class="critic comment">This is only passed if the element was given an Id attribute in the XML.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onButtonClick</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">id</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">steam_name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h2 id="element-function-summary">Element Function Summary<a class="headerlink" href="#element-function-summary" title="Permanent link"> </a></h2>
 <table>
 <thead>
 <tr>
 <th>Function Name</th>
 <th>Description</th>
 <th>Return</th>
+<th>&nbsp;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a class="anchor" id="attack"></a>attack()</td>
-<td>Plays a random attack animation.</td>
+<td>getAttribute(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;id, <a href="../intro#types"><span class="tag str"></span></a>&nbsp;attribute)</td>
+<td>Obtains the value of a specified attribute of a UI element.</td>
+<td><a href="../intro#types"><span class="ret var"></span></a></td>
+<td><a href="#getattribute"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getAttributes(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;id)</td>
+<td>Returns the attributes and their values of a UI element.</td>
+<td><a href="../intro#types"><span class="ret tab"></span></a></td>
+<td><a href="#getattributes"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>setAttribute(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;id, <a href="../intro#types"><span class="tag str"></span></a>&nbsp;attribute, <a href="../intro#types"><span class="tag var"></span></a>&nbsp;value)</td>
+<td>Sets the value of a specified attribute of a UI element.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#setattribute"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="changemode"></a>changeMode()</td>
-<td>Changes the figurine's current mode. What the mode represents is based on the figurine.</td>
+<td>setAttributes(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;id, <a href="../intro#types"><span class="tag tab"></span></a>&nbsp;data)</td>
+<td>Updates the value of the supplied attributes of a UI element.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
-</tr>
-<tr>
-<td><a class="anchor" id="die"></a>die()</td>
-<td>Plays the death animation or causes it to return to life.</td>
-<td><a href="../intro#types"><span class="ret boo"></span></a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="event-functions">Event Functions<a class="headerlink" href="#event-functions" title="Permanent link"> </a></h3>
-<p>These functions are called by the game whenever a figurine attacks or is attacked. See details for example usage.</p>
-<table>
-<thead>
-<tr>
-<th>Function Name</th>
-<th>Description</th>
-<th align="right">&nbsp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>onAttack(<a href="../intro#types"><span class="tag tab"></span></a>&nbsp;hit_list)</td>
-<td>Activates when an attack is performed by an identified RPGFigurine Object.</td>
-<td align="right"><a href="#onattack"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td>onHit(<a href="../intro#types"><span class="tag obj"></span></a>&nbsp;attacker)</td>
-<td>Activates when an attack is performed on this RPGFigurine Object.</td>
-<td align="right"><a href="#onattack"><span class="i"></span></a></td>
+<td><a href="#setattributes"><span class="i"></span></a></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link"> </a></h2>
-<h3 id="event-function-details">Event Function Details<a class="headerlink" href="#event-function-details" title="Permanent link"> </a></h3>
-<h4 id="onattack">onAttack(...)<a class="headerlink" href="#onattack" title="Permanent link"> </a></h4>
-<p>Activates when an attack is performed by an identified RPGFigurine Object. An attack is triggered via the context menu or pressing the appropriate number key. If another RPGFigurine is within its attack arch, then the function will be triggered with the figurine hit passed as a parameter.</p>
+<h2 id="element-function-details">Element Function Details<a class="headerlink" href="#element-function-details" title="Permanent link"> </a></h2>
+<h3 id="getattribute">getAttribute(...)<a class="headerlink" href="#getattribute" title="Permanent link"> </a></h3>
+<p><a href="../intro#types"><span class="ret var"></span></a>&nbsp;Obtains the value of a specified attribute of a UI element. What it returns will typically be a string or a number.</p>
 <div class="admonition info">
-<p class="admonition-title">onAttack(hit_list)</p>
+<p class="admonition-title">getAttribute(id, attribute)</p>
 <ul>
-<li><a href="../intro#types"><span class="tag tab"></span></a>&nbsp;<strong>hit_list</strong>: A Table of RPGFigurine Object references within the reach of the attack.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>id</strong>: The Id that was assigned, as an attribute, to the desired XML Ui element.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>attribute</strong>: The name of the attribute you wish to get the value of.</li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="c1">-- Monitoring and announcing a cyclops attacks</span>
-<span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="n">cyclops</span> <span class="o">=</span> <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;aaa111&quot;</span><span class="p">)</span>
-
-    <span class="kr">function</span> <span class="nc">cyclops</span><span class="p">.</span><span class="nc">RPGFigurine</span><span class="p">.</span><span class="nf">onAttack</span><span class="p">(</span><span class="n">hit_list</span><span class="p">)</span>
-        <span class="kr">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">v</span> <span class="kr">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">hit_list</span><span class="p">)</span> <span class="kr">do</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">..</span> <span class="s2">&quot; was hit!&quot;</span><span class="p">)</span>
-        <span class="kr">end</span>
-    <span class="kr">end</span>
-<span class="kr">end</span>
+<div class="codehilite"><pre><span></span><span class="n">UI</span><span class="p">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">&quot;testElement&quot;</span><span class="p">,</span> <span class="s2">&quot;fontSize&quot;</span><span class="p">)</span>
 </pre></div>
 
 <hr />
-<h4 id="onhit">onHit(...)<a class="headerlink" href="#onhit" title="Permanent link"> </a></h4>
-<p>Activates when an attack is performed on this RPGFigurine Object. An attack is triggered via the context menu or pressing the appropriate number key. If this RPGFigurine is within the attack radius, this function is triggered, passing a parameter of the Object which attacked.</p>
+<h3 id="getattributes">getAttributes(...)<a class="headerlink" href="#getattributes" title="Permanent link"> </a></h3>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp;Returns the attributes and their values of a UI element. It only returns the attributes (and values) for elements that have had those attributes set by the user.</p>
 <div class="admonition info">
-<p class="admonition-title">onHit(attacker)</p>
+<p class="admonition-title">getAttributes(id)</p>
 <ul>
-<li><a href="../intro#types"><span class="tag obj"></span></a>&nbsp;<strong>attacker</strong>: Reference to the RPGFigurine attacking the indicated RPGFigurine.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>id</strong>: The Id that was assigned, as an attribute, to the desired XML UI element.</li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="c1">-- Monitoring and announcing a cyclops being hit</span>
-<span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="n">cyclops</span> <span class="o">=</span> <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;aaa111&quot;</span><span class="p">)</span>
-
-    <span class="kr">function</span> <span class="nc">cyclops</span><span class="p">.</span><span class="nc">RPGFigurine</span><span class="p">.</span><span class="nf">onHit</span><span class="p">(</span><span class="n">attacker</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">attacker</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">..</span> <span class="s2">&quot; attacked the Cyclops!&quot;</span><span class="p">)</span>
-    <span class="kr">end</span>
-<span class="kr">end</span>
+<div class="admonition info">
+<p class="admonition-title">Return table</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table with the attributes as keys and their XML value as the key's value.<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>texture</strong>: The name of the image element</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>color</strong>: The hex used for the color element's value.</li>
+</ul>
+</li>
+</ul>
+<p><strong>IMPORTANT</strong>: This return table is an example of one you may get back from using it on a RawImage element type. The attribute keys you get back and their values will depend on the element you use the function on as well as the attributes you, the user, have assigned to it.</p>
+</div>
+<hr />
+<h3 id="setattribute">setAttribute(...)<a class="headerlink" href="#setattribute" title="Permanent link"> </a></h3>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Sets the value of a specified attribute of a UI element.</p>
+<div class="admonition info">
+<p class="admonition-title">setAttribute(id, attribute, value)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>id</strong>: The Id that was assigned, as an attribute, to the desired XML UI element.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>attribute</strong>: The name of the attribute you want to set the value of.</li>
+<li><a href="../intro#types"><span class="tag var"></span></a> <strong>value</strong>: The value to set for the attribute.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="n">UI</span><span class="p">.</span><span class="n">setAttribute</span><span class="p">(</span><span class="s2">&quot;testElement&quot;</span><span class="p">,</span> <span class="s2">&quot;fontSize&quot;</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 </pre></div>
+
+<hr />
+<h3 id="setattributes">setAttributes(...)<a class="headerlink" href="#setattributes" title="Permanent link"> </a></h3>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Updates the value of the supplied attributes of a UI element. You do not need to set every attribute with the data table, an element will continue using any previous values you do not overwrite.</p>
+<div class="admonition info">
+<p class="admonition-title">setAttributes(id, data)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>id</strong>: The Id that was assigned, as an attribute, to the desired XML UI element.</li>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>data</strong>: A Table with key/value pairs representing attributes and their values.</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Example data table</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>data</strong>: A Table with parameters which guide the function.<ul>
+<li><a href="../intro#types"><span class="tag flo"></span></a> <strong>data.fontSize</strong>: Attribute's desired value value</li>
+<li><a href="../intro#vector"><span class="tag str"></span></a> <strong>data.color</strong>: Attribute's desired value</li>
+</ul>
+</li>
+</ul>
+<p><strong>IMPORTANT</strong>: This table is an example of one you may use when setting a text UI element. The attribute keys you use and their values will depend on the element you use the function on.</p>
+</div>
+<div class="codehilite"><pre><span></span><span class="n">attributeTable</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">fontSize</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#000000&quot;</span>
+<span class="p">}</span>
+<span class="n">UI</span><span class="p">.</span><span class="n">setAttributes</span><span class="p">(</span><span class="s2">&quot;exampleText&quot;</span><span class="p">,</span> <span class="n">attributeTable</span><span class="p">)</span>
+</pre></div>
+
+<hr />
                 
                   
                 
