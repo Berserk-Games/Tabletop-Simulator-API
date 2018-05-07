@@ -94,3 +94,9 @@
     height:130px; /* fixed header height*/
     margin:-130px 0 0; /* negative fixed header height */
 }
+
+/*prevent left/right scrollbar
+.md-typeset .admonition, .md-typeset details {
+    overflow-x:hidden;
+}
+disabled due to lack of need currently, but works*/
