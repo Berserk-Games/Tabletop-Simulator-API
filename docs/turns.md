@@ -24,8 +24,8 @@ Variable | Description | Type
 
 Function Name | Description | Return 
 -- | -- | --:
-<a class="anchor" id="getNextTurnColor"></a>getNextTurnColor() | Returns the Player Color string of the next player in the turn order. | [<span class="ret str"></span>](intro#types)
-<a class="anchor" id="getPreviousTurnColor"></a>getPreviousTurnColor() | Returns the Player Color string of the previous player in the turn order. | [<span class="ret str"></span>](intro#types)
+<a class="anchor" id="getnextturncolor"></a>getNextTurnColor() | Returns the Player Color string of the next player in the turn order. | [<span class="ret str"></span>](intro#types)
+<a class="anchor" id="getpreviousturncolor"></a>getPreviousTurnColor() | Returns the Player Color string of the previous player in the turn order. | [<span class="ret str"></span>](intro#types)
 
 
 

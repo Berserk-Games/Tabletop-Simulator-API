@@ -19,6 +19,7 @@ getObjectFromGUID([<span class="tag str"></span>](intro#types)&nbsp;guid) | Retu
 paste([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#paste)
 setNotes([<span class="tag str"></span>](intro#types)&nbsp;notes) | Replace the text in the notes window with the string. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setnotes)
 spawnObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Spawns an Object. View the [Spawnable Object](spawnableobjects) page for Objects that can be spawned. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#spawnobject)
+spawnObjectJSON([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Spawns an Object using a JSON string. Works with [getJSON()](object#getjson). | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#spawnobjectjson)
 startLuaCoroutine([<span class="tag obj"></span>](intro#types)&nbsp;function_owner, [<span class="tag str"></span>](intro#types)&nbsp;function_name) | Start a coroutine. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#startluacoroutine)
 stringColorToRGB([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Converts a [Player Color](player-color) string into a Color Table for tinting. | [<span class="ret col"></span>](intro#color) | [<span class="i"></span>](#stringcolortorgb)
 
@@ -179,6 +180,64 @@ end
 ```
 
 ---
+
+
+
+
+####spawnObjectJSON(...)
+
+Spawns an Object using a JSON string. Works with [getJSON()](object#getjson). It works just like spawnObject, but instead of a `type`, you supply a `json` string. The other parameters will overwrite those in the JSON.
+
+!!!tip
+	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance.
+
+!!!info "spawnObjectJSON(parameters)"
+	* [<span class="tag tab"></span>](intro#types) **parameters**: A Table of parameters used to determine how spawnObjectJSON will act.
+		* [<span class="tag str"></span>](intro#types) **parameters.json**: [getJSON()](object#getjson) string.
+		* [<span class="tag vec"></span>](intro#vector) **parameters.position**: Position to place Object.
+			* {>>Optional, defaults to JSON's value.<<}
+		* [<span class="tag vec"></span>](intro#vector) **parameters.rotation**: Rotation of the Object.
+			* {>>Optional, defaults to JSON's value.<<}
+		* [<span class="tag vec"></span>](intro#vector) **parameters.scale**: Scale of the Object.
+			* {>>Optional, defaults to JSON's value.<<}
+		* [<span class="tag boo"></span>](intro#types) **parameters.sound**: If the spawned Object noise is played.
+			* {>>Optional, defaults to JSON's value.<<}
+		* [<span class="tag boo"></span>](intro#types) **parameters.snap_to_grid**: If snap-to-grid is active on the Object.
+			* {>>Optional, defaults to JSON's value.<<}
+		* [<span class="tag str"></span>](intro#types) **parameters.callback**: Name of the function you want activated once the Object is initiated.
+			* {>>Optional, no callback is triggered without it.<<}
+			* {>>A callback function has 2 parameters, the Object spawned and, if used, the Table of params.<<}
+		* [<span class="tag obj"></span>](intro#types) **parameters.callback_owner**: Which Object has the callback function on it. Global is a valid target as well.
+			* {>>Optional, defaults to Global. Serves no purpose if callback is not also used.<<}
+		* [<span class="tag tab"></span>](intro#types) **parameters.params**: A Table of data to send to the callback to use as parameters. See example.
+			* {>>Optional, default is to not be used.<<}
+
+``` Lua
+function onLoad()
+	futureName = "Spawned By Script!"
+	spawnParams = {
+		json = self.getJSON(),
+		position       = {x=0, y=3, z=-5},
+		rotation       = {x=0, y=90, z=0},
+		scale          = {x=2, y=2, z=2},
+		sound          = false,
+		snap_to_grid   = true,
+		callback       = "spawn_callback",
+		callback_owner = Global,
+		params         = {name = futureName}
+	}
+	spawnObject(spawnParams)
+end
+
+function spawn_callback(object_spawned, params)
+	object_spawned.setName(params.name)
+	object_spawned.setColorTint({r=0,g=1,b=0})
+end
+```
+
+---
+
+
 
 
 ####startLuaCoroutine(...)

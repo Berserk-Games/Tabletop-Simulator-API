@@ -15,6 +15,7 @@ This is an ongoing list of scripting changes that have been implemented to scrip
         * New event trigger for player turns beginning (onPlayerTurn)
         * Devalued previous onPlayerTurn events
     * Changelog moved under Getting Started due to the fact that it applies to the UI API as well as the scripting API. But I guess you figured that out already, didn't ya.
+    * Added getJSON and spawnObjectJSON to Object/Base, respectively.
     
 
 ######3/26/18 - v10.4 Hotfix 2

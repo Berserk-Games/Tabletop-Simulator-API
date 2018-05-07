@@ -117,6 +117,7 @@ Function Name | Description | Return | &nbsp;
 getCustomObject() | Returns a Table with the Custom Object information of a Custom Object. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getcustomobject)
 <a class="anchor" id="getdescription"></a>getDescription() | Description, also shows as part of Object's tooltip. | [<span class="ret str"></span>](intro#types)
 <a class="anchor" id="getguid"></a>getGUID() | String of the Object's unique identifier. | [<span class="ret str"></span>](intro#types) |
+<a class="anchor" id="getjson"></a>getJSON() | Returns a serialization of the JSON string which represents this item. Works with [spawnObjectJSON()](base#spawnobjectjson). | [<span class="ret str"></span>](intro#types) |
 <a class="anchor" id="getlock"></a>getLock() | If the Object is locked. | [<span class="ret boo"></span>](intro#types) |
 <a class="anchor" id="getluascript"></a>getLuaScript() | Get a Lua script as a string. | [<span class="ret str"></span>](intro#types) |
 <a class="anchor" id="getname"></a>getName() | Name, also shows as part of Object's tooltip. | [<span class="ret str"></span>](intro#types) |
