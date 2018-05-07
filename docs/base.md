@@ -29,7 +29,7 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 broadcastToAll([<span class="tag str"></span>](intro#types)&nbsp;message, [<span class="tag col"></span>](intro#color)&nbsp;message_tint) | Print an on-screen message to all Players, as well as their in-game chat. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#broadcasttoall)
 broadcastToColor([<span class="tag str"></span>](intro#types)&nbsp;message, [<span class="tag str"></span>](intro#types)&nbsp;player_color, [<span class="tag col"></span>](intro#color)&nbsp;message_tint) | Print an on-screen message to a specified Player, as well as their in-game chat. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#broadcasttocolor)
-log([<span class="tag var"></span>](intro#types)&nbsp;element, [<span class="tag str"></span>](intro#types)&nbsp;tag, [<span class="tag str"></span>](intro#types)&nbsp;label) | Print information to the log tab. (Shortcut: ~) | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#log)
+log([<span class="tag var"></span>](intro#types)&nbsp;element, [<span class="tag str"></span>](intro#types)&nbsp;label, [<span class="tag str"></span>](intro#types)&nbsp;tag) | Print information to the log tab. (Shortcut: ~) | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#log)
 logStyle([<span class="tag str"></span>](intro#types)&nbsp;tag, [<span class="tag col"></span>](intro#color)&nbsp;tint, [<span class="tag str"></span>](intro#types)&nbsp;prefix, [<span class="tag str"></span>](intro#types)&nbsp;postfix) | Set style options for the specified tag type for the log. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#logstyle)
 print([<span class="tag str"></span>](intro#types)&nbsp;message) | Prints a string into chat that only the host is able to see. Used for debugging scripts. | [<span class="ret nil"></span>](intro#types) | [<span class="i"></span>](#print)
 printToAll([<span class="tag str"></span>](intro#types)&nbsp;message, [<span class="tag col"></span>](intro#color)&nbsp;message_tint) | Print a message into the chat of all connected players. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#printtoall)
@@ -273,12 +273,13 @@ broadcastToColor(msg, color, rgb)
 
 If a table is used for "element", the log will automatically display the key/value contents of it.
 
-!!!info "log(element, tag, label)"
+!!!info "log(element, label, tag)"
 	* [<span class="tag var"></span>](intro#types) **element**: The information you want placed into the log.
-	* [<span class="tag str"></span>](intro#types) **tag**: Name that is usable to categorize log entries. (See: [logStyle](logstyle))
-		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
 	* [<span class="tag str"></span>](intro#types) **label**: Text to be placed before the Var element is printed to the log.
 		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
+	* [<span class="tag str"></span>](intro#types) **tag**: Name that is usable to categorize log entries. (See: [logStyle](logstyle))
+		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
+
 
 ``` Lua
 log(getAllObjects(), "table", "All Objects:")

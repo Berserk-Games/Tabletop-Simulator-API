@@ -1,17 +1,5 @@
 The Custom UI system allows users to create custom UIs to support their game. The UI system is unique because the elements are created using a simple XML system.
 
-##UNDER CONSTRUCTION
-
-{==This documentation is still a work in progress. Expect to see a lot of additional information added over the next week! Please hold your feedback and reports of improvements until this message is removed.==}
-
-* Planned Features
-    * Example Project
-    * Transition animations
-    * Layout elements for grouping elements together easily
-    * Various other small features to give you more control over the looks of your elements
-
-For more info check out the documentation for XML Layout: http://www.digital-legacy.co.za/XmlLayout/Documentation#Attributetypes
-
 ##Core Features
 
 There are 3 main pieces to the UI system.
@@ -20,6 +8,7 @@ There are 3 main pieces to the UI system.
     * You are able to create individual elements and position them on the screen in a variety of ways.
 * **Import Assets**
     * By clicking the button in the upper-right corner of the scripting window in-game, you open a menu that lets you upload/manage assets that can be utilized by the UI. When you save your table after uploading images here, they are saved forever.
+    * {==This feature is currently disabled due to a display issue. It is being worked on and should be available soon.==}
 * **Communicate with Lua**
     * Your scripts can be triggered by UI elements and your Lua scripts can also modify elements in the UI during gameplay.
 
@@ -34,7 +23,7 @@ If you do not see your UI elements appearing, it is possible your code has an er
 
 ###Basics of XML
 
-In the UI XML, you create **elements** and modify them with **attributes**. Each element is created using elements. Here is an element being created.
+In the UI XML, you create **elements** and modify them with **attributes**. Each element is created using tags. Here is an element being created.
 
 ```xml
 <Text>Displayed Text</Text>
@@ -60,3 +49,6 @@ There are even organizational methods you can do to easily group these elements 
     **INCORRECT**: `#!xml <Text fontSize=200>Bigger Displayed Text</Text>`
     
     **CORRECT**: `#!xml <Text fontSize="200">Bigger Displayed Text</Text>`
+    
+###Example UI
+Nothing here. Yet.

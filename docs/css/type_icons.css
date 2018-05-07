@@ -154,3 +154,23 @@
 .pla:after {
     content: "player";
 }
+
+/*XML stuff*/
+
+/*xmlcolor*/
+.xmlco {
+    color: #000000;
+    background-color: #B87FED;
+}
+.xmlco:after {
+    content: "color";
+}
+
+/*xmlcolorblock*/
+.xmlcb {
+    color: #000000;
+    background-color: #ed7feb;
+}
+.xmlcb:after {
+    content: "colorblock";
+}

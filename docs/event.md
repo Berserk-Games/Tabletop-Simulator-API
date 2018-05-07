@@ -21,13 +21,14 @@ onObjectLeaveContainer([<span class="tag obj"></span>](intro#types)&nbsp;contain
 onObjectLoopingEffect([<span class="tag obj"></span>](intro#types)&nbsp;loop_object, [<span class="tag int"></span>](intro#types)&nbsp;index) | Called whenever the looping effect of an [AssetBundle](assetbundle) is activated. | [<span class="i"></span>](#onobjectloopingeffect)
 onObjectPickUp([<span class="tag str"></span>](intro#types)&nbsp;player_color, [<span class="tag obj"></span>](intro#types)&nbsp;picked_up_object) | Called whenever a Player picks up an Object. | [<span class="i"></span>](#onobjectpickup)
 onObjectRandomize([<span class="tag obj"></span>](intro#types)&nbsp;randomize_object, [<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when an Object is randomized. Like when shuffling a deck or shaking dice. | [<span class="i"></span>](#onobjectrandomize)
+onObjectSearchEnd([<span class="tag obj"></span>](intro#types)&nbsp;obj, [<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a search is finished on any container. | [<span class="i"></span>](#onobjectsearchend)
+onObjectSearchStart([<span class="tag obj"></span>](intro#types)&nbsp;obj, [<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a search is started on any container. | [<span class="i"></span>](#onobjectsearchstart)
 onObjectSpawn([<span class="tag obj"></span>](intro#types)&nbsp;spawn_object) | Called when any Object is spawned/created. | [<span class="i"></span>](#onobjectspawn)
 onObjectTriggerEffect([<span class="tag obj"></span>](intro#types)&nbsp;trigger_object, [<span class="tag int"></span>](intro#types)&nbsp;index) | Called whenever the trigger effect of an [AssetBundle](assetbundle) is activated. | [<span class="i"></span>](#onobjecttriggereffect)
 onPlayerChangeColor([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [<span class="i"></span>](#onplayerchangecolor)
 onPlayerConnect([<span class="tag pla"></span>](intro#types)&nbsp;person) | Called when a [Player](player) connects to a game. | [<span class="i"></span>](#onconnect)
 onPlayerDisconnect([<span class="tag pla"></span>](intro#types)&nbsp;person) | Called when a [Player](player) disconnects from a game. | [<span class="i"></span>](#ondisconnect)
-onPlayerTurnEnd([<span class="tag str"></span>](intro#types)&nbsp;player_color_end, [<span class="tag str"></span>](intro#types)&nbsp;player_color_next) | Called at the end of a player's turn when using the in-game turn system. | [<span class="i"></span>](#onplayerturnend)
-onPlayerTurnStart([<span class="tag str"></span>](intro#types)&nbsp;player_color_start, [<span class="tag str"></span>](intro#types)&nbsp;player_color_prev) | Called at the start of a player's turn when using the in-game turn system. | [<span class="i"></span>](#onplayerturnstart)
+onPlayerTurn([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called at the start of a player's turn when using the in-game turn system. | [<span class="i"></span>](#onplayerturn)
 onSave() | Called whenever your game is saved. | [<span class="i"></span>](#onsave)
 onScriptingButtonDown([<span class="tag int"></span>](intro#types)&nbsp;index, [<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttondown)
 onScriptingButtonUp([<span class="tag int"></span>](intro#types)&nbsp;index, [<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttonup)
@@ -53,6 +54,9 @@ onCollisionStay([<span class="tag tab"></span>](intro#types)&nbsp;collision_info
 onDestroy() | Called when an Object it is on is destroyed. | [<span class="i"></span>](#ondestroy)
 onDrop([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a player releases an Object after picking it up. | [<span class="i"></span>](#ondrop)
 onPickUp([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a player picks up an Object. | [<span class="i"></span>](#onpickup)
+onSearchEnd([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a player first searches this Object. | [<span class="i"></span>](#onsearchend)
+onSearchStart([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a player finishes searching this Object. | [<span class="i"></span>](#onsearchstart)
+
 
 
 
@@ -291,6 +295,28 @@ end
 ---
 
 
+###onObjectSearchEnd(...)
+
+Called when a search is finished on any container.
+
+!!!info "onObjectSearchEnd(obj, player_color)"
+* [<span class="tag obj"></span>](intro#types)&nbsp;**obj**: The Object which was searched.
+* [<span class="tag str"></span>](intro#types)&nbsp;**player_color**: [Player Color](player-color) of the player who triggered the function.
+
+---
+
+
+###onObjectSearchStart(...)
+
+Called when a search is started on any container.
+
+!!!info "onObjectSearchStart(obj, player_color)"
+* [<span class="tag obj"></span>](intro#types)&nbsp;**obj**: The Object which was searched.
+* [<span class="tag str"></span>](intro#types)&nbsp;**player_color**: [Player Color](player-color) of the player who triggered the function.
+
+---
+
+
 ###onObjectSpawn(...)
 
 Called when any Object is spawned/created.
@@ -360,36 +386,15 @@ Called when a [Player](player) disconnects from a game.
 ---
 
 
-###onPlayerTurnEnd(...)
-
+###onPlayerTurn(...)
 Called at the end of a player's turn when using the in-game turn system.
 
-!!!info "onPlayerTurnEnd(player_color_end, player_color_next)"
-	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color_end**: [Player Color](player-color) of the player who's turn ended.
-	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color_next**: [Player Color](player-color) of the player who's turn is next.
+!!!info "onPlayerTurn(player_color)"
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color**: [Player Color](player-color) of the player who's turn is starting.
 
 ``` Lua
-function onPlayerTurnEnd(color_end, color_next)
-	print(color_end .. "'s turn has ended.")
-	print(color_next .. "'s turn starts now.")
-end
-```
-
----
-
-
-###onPlayerTurnStart(...)
-
-Called at the end of a player's turn when using the in-game turn system.
-
-!!!info "onPlayerTurnStart(player_color_start, player_color_prev)"
-	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color_start**: [Player Color](player-color) of the player who's turn is starting.
-	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color_prev**: [Player Color](player-color) of the player who's turn just ended.
-
-``` Lua
-function onPlayerTurnStart(color_start, color_prev)
-	print(color_start .. "'s turn starts now.")
-	print(color_prev .. "'s turn has ended.")
+function onPlayerTurn(color)
+	print(color .. "'s turn starts now.")
 end
 ```
 
@@ -610,4 +615,24 @@ function onPickUp(color)
 end
 ```
 
+---
+
+
+###onSearchEnd(...)
+
+Called when a player first searches this Object.
+
+!!!info "onSearchEnd([<span class="tag str"></span>](intro#types)&nbsp;player_color)"
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color**: [Player Color](player-color) of the Player.
+	
+---
+
+
+###onSearchStart(...)
+
+Called when a player finishes searching this Object.
+
+!!!info "onSearchStart([<span class="tag str"></span>](intro#types)&nbsp;player_color)"
+	* [<span class="tag str"></span>](intro#types)&nbsp;**player_color**: [Player Color](player-color) of the Player.
+	
 ---

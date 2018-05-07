@@ -1,8 +1,11 @@
 UI, a static global class, is the method to interact with custom UI elements. It allows you to read/write attributes of elements defined in the XML of the UI. It also allows you to receive information from various inputs (like buttons) on-screen.
 
-**What this class does NOT do is create new UI elements.** Those are created in the custom UI using XML. See the [UI API](xml/introUI.md) for info on how.
-
 Example of calling a function: `UI.getAttributes(id)`.
+
+!!!warning
+    **What this class does NOT do is create new UI elements.** Those are created in the custom UI using XML. The UI scripting class is only used to modify or communicate with existing UI elements.
+    
+    See the [UI API](xml/introUI.md) for info on how.
 
 
 ##Inputs

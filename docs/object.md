@@ -457,14 +457,19 @@ self.scale(2)
 			* {>>Optional, defaults to {r=1, g=1, b=1}.<<}
 		* [<span class="tag col"></span>](intro#color) **parameters.font_color**: A Color for the label text.
 			* {>>Optional, defaults to {r=0, g=0, b=0}.<<}
+		* [<span class="tag col"></span>](intro#color) **parameters.hover_color**: A Color for the background during mouse-over.
+			* {>>Optional.<<}
+		* [<span class="tag col"></span>](intro#color) **parameters.press_color**: A Color for the background when clicked.
+			* {>>Optional.<<}
 		* [<span class="tag str"></span>](intro#types) **parameters.tooltip**: Popup of text, similar to how an Object's name is displayed on mouseover.
 			* {>>Optional, defaults to an empty string.<<}
 
-!!!info "click_function(obj, player_clicker_color)"
+!!!info "click_function(obj, player_clicker_color, alt_click)"
 	*The click function which is activated by clicking this button has its own parameters it is passed automatically.*
 
 	* [<span class="tag obj"></span>](intro#types) **obj**: The Object the button is attached to.
 	* [<span class="tag str"></span>](intro#types) **player_clicker_color**: [Player Color](player-color) of the player that pressed the button.
+	* [<span class="tag boo"></span>](intro#types) **alt_click**: True if a button other than left-click was used to click the button.
 
 ``` Lua
 function onLoad()
@@ -484,9 +489,10 @@ function onLoad()
 	self.createButton(params)
 end
 
-function click_func(obj, color)
+function click_func(obj, color, alt_click)
 	print(obj)
 	print(color)
+	print(alt_click)
 end
 ```
 
@@ -609,6 +615,8 @@ end
 		* [<span class="tag flo"></span>](intro#types) **parameters.font_size**: Size the label font will be, relative to the Object.
 		* [<span class="tag col"></span>](intro#color) **parameters.color**: A Color for the clickable button.
 		* [<span class="tag col"></span>](intro#color) **parameters.font_color**: A Color for the label text.
+		* [<span class="tag col"></span>](intro#color) **parameters.hover_color**: A Color for the background during mouse-over.
+		* [<span class="tag col"></span>](intro#color) **parameters.press_color**: A Color for the background when clicked.
 		* [<span class="tag str"></span>](intro#types) **parameters.tooltip**: Text of a popup of text, similar to how an Object's name is displayed on mouseover.
 
 ``` Lua

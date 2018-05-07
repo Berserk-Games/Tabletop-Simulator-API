@@ -47,6 +47,7 @@ pages:
     - Atom: atom.md
     - External Editor API: externaleditorapi.md
     - Learning Lua: learninglua.md
+    - Changelog: changelog.md
   - Scripting API:
     - Introduction: intro.md
     - Event: event.md
@@ -64,8 +65,16 @@ pages:
     - Spawnable Objects: spawnableobjects.md
     - TextTool: texttool.md
     - Timer: timer.md
+    - Turns: turns.md
+    - UI: ui.md
     - Web Request: webrequest.md
-    - Changelog: changelog.md
+  - UI API:
+    - Introduction: ui/introUI.md
+    - Attributes: ui/attributes.md
+    - Basic Elements: ui/basicelements.md
+    - Input Elements: ui/inputelements.md
+    - Layout/Grouping: ui/layoutgrouping.md
+    - Defaults: ui/defaults.md
 
 
 

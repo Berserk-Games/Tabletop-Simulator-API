@@ -88,6 +88,8 @@ Associated with in-game properties and systems.
 * [WebRequest](webrequest)
 * [Physics](physics)
 * [Lighting](lighting)
+* [Turns](turns)
+* [UI](ui)
 
 For more information on what a class is, you can refer to the relevant [Lua Documentation](https://www.lua.org/pil/16.1.html).
 
