@@ -825,6 +825,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#spawnobjectjson" title="spawnObjectJSON(...)" class="md-nav__link">
+    spawnObjectJSON(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#startluacoroutine" title="startLuaCoroutine(...)" class="md-nav__link">
     startLuaCoroutine(...)
   </a>
@@ -2001,6 +2008,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#spawnobjectjson" title="spawnObjectJSON(...)" class="md-nav__link">
+    spawnObjectJSON(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#startluacoroutine" title="startLuaCoroutine(...)" class="md-nav__link">
     startLuaCoroutine(...)
   </a>
@@ -2233,6 +2247,12 @@
 <td>Spawns an Object. View the <a href="../spawnableobjects">Spawnable Object</a> page for Objects that can be spawned.</td>
 <td><a href="../intro#types"><span class="ret obj"></span></a></td>
 <td><a href="#spawnobject"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>spawnObjectJSON(<a href="../intro#types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>Spawns an Object using a JSON string. Works with <a href="../object#getjson">getJSON()</a>.</td>
+<td><a href="../intro#types"><span class="ret obj"></span></a></td>
+<td><a href="#spawnobjectjson"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>startLuaCoroutine(<a href="../intro#types"><span class="tag obj"></span></a>&nbsp;function_owner, <a href="../intro#types"><span class="tag str"></span></a>&nbsp;function_name)</td>
@@ -2476,6 +2496,77 @@
     <span class="n">futureName</span> <span class="o">=</span> <span class="s2">&quot;Spawned By Script!&quot;</span>
     <span class="n">spawnParams</span> <span class="o">=</span> <span class="p">{</span>
         <span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;rpg_BEAR&quot;</span><span class="p">,</span>
+        <span class="n">position</span>       <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">5</span><span class="p">},</span>
+        <span class="n">rotation</span>       <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">scale</span>          <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">},</span>
+        <span class="n">sound</span>          <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="n">snap_to_grid</span>   <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="n">callback</span>       <span class="o">=</span> <span class="s2">&quot;spawn_callback&quot;</span><span class="p">,</span>
+        <span class="n">callback_owner</span> <span class="o">=</span> <span class="n">Global</span><span class="p">,</span>
+        <span class="n">params</span>         <span class="o">=</span> <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="n">futureName</span><span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">spawnObject</span><span class="p">(</span><span class="n">spawnParams</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nf">spawn_callback</span><span class="p">(</span><span class="n">object_spawned</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setColorTint</span><span class="p">({</span><span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">g</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">})</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h4 id="spawnobjectjson">spawnObjectJSON(...)<a class="headerlink" href="#spawnobjectjson" title="Permanent link"> </a></h4>
+<p>Spawns an Object using a JSON string. Works with <a href="../object#getjson">getJSON()</a>. It works just like spawnObject, but instead of a <code class="codehilite">type</code>, you supply a <code class="codehilite">json</code> string. The other parameters will overwrite those in the JSON.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">spawnObjectJSON(parameters)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to determine how spawnObjectJSON will act.<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.json</strong>: <a href="../object#getjson">getJSON()</a> string.</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to place Object.<ul>
+<li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
+</ul>
+</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the Object.<ul>
+<li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
+</ul>
+</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the Object.<ul>
+<li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>parameters.sound</strong>: If the spawned Object noise is played.<ul>
+<li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>parameters.snap_to_grid</strong>: If snap-to-grid is active on the Object.<ul>
+<li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters.callback</strong>: Name of the function you want activated once the Object is initiated.<ul>
+<li><span class="critic comment">Optional, no callback is triggered without it.</span></li>
+<li><span class="critic comment">A callback function has 2 parameters, the Object spawned and, if used, the Table of params.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>parameters.callback_owner</strong>: Which Object has the callback function on it. Global is a valid target as well.<ul>
+<li><span class="critic comment">Optional, defaults to Global. Serves no purpose if callback is not also used.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters.params</strong>: A Table of data to send to the callback to use as parameters. See example.<ul>
+<li><span class="critic comment">Optional, default is to not be used.</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="n">futureName</span> <span class="o">=</span> <span class="s2">&quot;Spawned By Script!&quot;</span>
+    <span class="n">spawnParams</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">json</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getJSON</span><span class="p">(),</span>
         <span class="n">position</span>       <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">5</span><span class="p">},</span>
         <span class="n">rotation</span>       <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">},</span>
         <span class="n">scale</span>          <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">},</span>
