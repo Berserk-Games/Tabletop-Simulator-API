@@ -10,7 +10,7 @@ Example of calling a function: `UI.getAttributes(id)`.
 
 ##Inputs
 
-[Input Elements](xml/inputelements) are able to trigger a function. By default, they trigger a function in Global. [View here](xml/inputelements#targeting-triggers) for information on how to trigger a function on an Object's script.
+[Input Elements](ui/inputelements) are able to trigger a function. By default, they trigger a function in Global. [View here](ui/inputelements#targeting-triggers) for information on how to trigger a function on an Object's script.
 
 When creating the input element in XML, you will select the name of the function it activates. Regardless of its name, it always will pass parameters
 
