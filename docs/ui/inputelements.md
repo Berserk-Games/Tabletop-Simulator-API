@@ -81,9 +81,9 @@ Example:
 <!-- Standard Button -->
 <Button>Button Text</Button>
 <!-- Button with Icon -->
-<Button icon="Sprites/Icons/Arrow_Up" />
+<Button icon="Arrow_Up" />
 <!-- Button with Icon and Text -->
-<Button icon="Sprites/Icons/Arrow_Left">Button With Icon</Button>
+<Button icon="Arrow_Left">Button With Icon</Button>
 ```
 
 ---
