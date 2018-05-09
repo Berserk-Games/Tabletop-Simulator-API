@@ -48,7 +48,7 @@ setAttributes([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class
 [<span class="ret var"></span>](intro#types)&nbsp;Obtains the value of a specified attribute of a UI element. What it returns will typically be a string or a number.
 
 !!!info "getAttribute(id, attribute)"
-    * [<span class="tag str"></span>](intro#types) **id**: The Id that was assigned, as an attribute, to the desired XML Ui element.
+    * [<span class="tag str"></span>](intro#types) **id**: The Id that was assigned, as an attribute, to the desired XML UI element.
     * [<span class="tag str"></span>](intro#types) **attribute**: The name of the attribute you wish to get the value of.
     
 ``` Lua
