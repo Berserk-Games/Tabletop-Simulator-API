@@ -1,6 +1,6 @@
 This is an ongoing list of scripting changes that have been implemented to scripting side of Tabletop Simulator.
 
-######5/9/18 - v10.5 Hotfix 2
+######5/9/18 - v10.5.1
 
 !!!info ""
     * Custom UI:
