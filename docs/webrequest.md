@@ -74,7 +74,7 @@ Post the form to the URL.
 
 ###put(...)
 
-Post the form to the URL.
+Post the data to the URL.
 
 !!!info "put(url, data, callback_owner, callback)"
     * [<span class="tag str"></span>](intro#types) **url**: The url to pull post to.
