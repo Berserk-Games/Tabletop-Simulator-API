@@ -1566,6 +1566,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tooltip-attributes" title="Tooltip Attributes" class="md-nav__link">
+    Tooltip Attributes
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1883,6 +1890,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tooltip-attributes" title="Tooltip Attributes" class="md-nav__link">
+    Tooltip Attributes
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1998,7 +2012,7 @@
 <tbody>
 <tr>
 <td>active</td>
-<td>Specifies whether or not this element is active. This can be used to hide/show elements via scripting.</td>
+<td>Specifies whether or not this element is active. This can be used to hide/show elements via scripting. Triggering this via script will not trigger animations.</td>
 <td>bool</td>
 <td><code class="codehilite">true</code></td>
 </tr>
@@ -2027,6 +2041,7 @@
 <p>For visiblity, you can use multiple color names by putting a <code class="codehilite">|</code> between each color name. <code class="codehilite">&quot;Red|Blue|Green&quot;</code></p>
 </div>
 <h3 id="image-attributes">Image Attributes<a class="headerlink" href="#image-attributes" title="Permanent link"> </a></h3>
+<p>Applies to elements with an image component. The string that <code class="codehilite">image</code>s all take is the <strong>NAME THE IMAGE WAS GIVEN WHEN YOU PUT IT IN THE IN-GAME ASSET MANAGER</strong>. </p>
 <table>
 <thead>
 <tr>
@@ -2037,6 +2052,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>image</td>
+<td>Name of image (in the asset manager).</td>
+<td>string</td>
+<td>(<em>none</em>)</td>
+</tr>
 <tr>
 <td>preserveAspect</td>
 <td>Should the aspect ratio of this image be preserved?</td>
@@ -2327,6 +2348,68 @@
 <td>Specifies how long show/hide animations should take to play.</td>
 <td>float</td>
 <td><code class="codehilite">0.25</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tooltip-attributes">Tooltip Attributes<a class="headerlink" href="#tooltip-attributes" title="Permanent link"> </a></h3>
+<p>Allow any element to have a tooltip (text that appears when the element is hovered over by the mouse).</p>
+<table>
+<thead>
+<tr>
+<th>Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tooltip</td>
+<td>Tooltip text.</td>
+<td>string</td>
+<td><em>(none)</em></td>
+</tr>
+<tr>
+<td>tooltipBorderColor</td>
+<td>Color of the tooltips border.</td>
+<td><a href="../attributes#attribute-types"><span class="tag xmlco"></span></a></td>
+<td><code class="codehilite">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>tooltipBackgroundColor</td>
+<td>Color of the tooltips background</td>
+<td><a href="../attributes#attribute-types"><span class="tag xmlco"></span></a></td>
+<td><code class="codehilite">rgba(0,0,0,0.62)</code></td>
+</tr>
+<tr>
+<td>tooltipTextColor</td>
+<td>Color of the text within this tooltip</td>
+<td><a href="../attributes#attribute-types"><span class="tag xmlco"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>tooltipPosition</td>
+<td>Position of this tooltip in relation to the element.</td>
+<td><ul><li>Above</li><li>Below</li><li>Left</li><li>Right</li></ul></td>
+<td><code class="codehilite">Right</code></td>
+</tr>
+<tr>
+<td>tooltipBorderImage</td>
+<td>This attribute allows you to override the default image used for the tooltips border.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>tooltipBackgroundImage</td>
+<td>This attribute allows you to override the default image used for the tooltips background.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>tooltipOffset</td>
+<td>This attribute allows you to modify the distance this tooltip will appear from the element.</td>
+<td>float</td>
+<td></td>
 </tr>
 </tbody>
 </table>

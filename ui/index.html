@@ -1354,8 +1354,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#hide" title="hide(...)" class="md-nav__link">
+    hide(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setattribute" title="setAttribute(...)" class="md-nav__link">
     setAttribute(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show" title="show(...)" class="md-nav__link">
+    show(...)
   </a>
   
 </li>
@@ -1781,8 +1795,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#hide" title="hide(...)" class="md-nav__link">
+    hide(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setattribute" title="setAttribute(...)" class="md-nav__link">
     setAttribute(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show" title="show(...)" class="md-nav__link">
+    show(...)
   </a>
   
 </li>
@@ -1835,7 +1863,7 @@
 <ul>
 <li><a href="../intro#types"><span class="tag pla"></span></a> <strong>player</strong>: A direct Player reference to the person that triggered the input.</li>
 <li><a href="../intro#types"><span class="tag var"></span></a> <strong>value</strong>: The value sent by the input. A numeric value or a string, generally.<ul>
-<li><span class="critic comment">This is not passed by buttons!</span></li>
+<li><span class="critic comment">This is not used by buttons!</span></li>
 </ul>
 </li>
 <li><a href="../intro#types"><span class="tag str"></span></a> <strong>id</strong>: <ul>
@@ -1844,7 +1872,7 @@
 </li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onButtonClick</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">id</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onButtonClick</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">id</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">steam_name</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
 <span class="kr">end</span>
@@ -1875,10 +1903,22 @@
 <td><a href="#getattributes"><span class="i"></span></a></td>
 </tr>
 <tr>
+<td>hide(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;id)</td>
+<td>Hides the given UI element. Unlike the "active" attribute, hide triggers animations.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#hide"><span class="i"></span></a></td>
+</tr>
+<tr>
 <td>setAttribute(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;id, <a href="../intro#types"><span class="tag str"></span></a>&nbsp;attribute, <a href="../intro#types"><span class="tag var"></span></a>&nbsp;value)</td>
 <td>Sets the value of a specified attribute of a UI element.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#setattribute"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>show(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;id)</td>
+<td>Displays the given UI element. Unlike the "active" attribute, show triggers animations.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#show"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>setAttributes(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;id, <a href="../intro#types"><span class="tag tab"></span></a>&nbsp;data)</td>
@@ -1895,7 +1935,7 @@
 <div class="admonition info">
 <p class="admonition-title">getAttribute(id, attribute)</p>
 <ul>
-<li><a href="../intro#types"><span class="tag str"></span></a> <strong>id</strong>: The Id that was assigned, as an attribute, to the desired XML Ui element.</li>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>id</strong>: The Id that was assigned, as an attribute, to the desired XML UI element.</li>
 <li><a href="../intro#types"><span class="tag str"></span></a> <strong>attribute</strong>: The name of the attribute you wish to get the value of.</li>
 </ul>
 </div>
@@ -1923,6 +1963,18 @@
 <p><strong>IMPORTANT</strong>: This return table is an example of one you may get back from using it on a RawImage element type. The attribute keys you get back and their values will depend on the element you use the function on as well as the attributes you, the user, have assigned to it.</p>
 </div>
 <hr />
+<h3 id="hide">hide(...)<a class="headerlink" href="#hide" title="Permanent link"> </a></h3>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Hides the given UI element. Unlike the "active" attribute, hide triggers animations.</p>
+<div class="admonition info">
+<p class="admonition-title">hide(id)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>id</strong>: The Id that was assigned, as an attribute, to the desired XML UI element.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="n">UI</span><span class="p">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;testElement&quot;</span><span class="p">)</span>
+</pre></div>
+
+<hr />
 <h3 id="setattribute">setAttribute(...)<a class="headerlink" href="#setattribute" title="Permanent link"> </a></h3>
 <p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Sets the value of a specified attribute of a UI element.</p>
 <div class="admonition info">
@@ -1937,6 +1989,17 @@
 </pre></div>
 
 <hr />
+<h3 id="show">show(...)<a class="headerlink" href="#show" title="Permanent link"> </a></h3>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Shows the given UI element. Unlike the "active" attribute, show triggers animations.</p>
+<div class="admonition info">
+<p class="admonition-title">show(id)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>id</strong>: The Id that was assigned, as an attribute, to the desired XML UI element.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="n">UI</span><span class="p">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;testElement&quot;</span><span class="p">)</span>
+</pre></div>
+
 <h3 id="setattributes">setAttributes(...)<a class="headerlink" href="#setattributes" title="Permanent link"> </a></h3>
 <p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Updates the value of the supplied attributes of a UI element. You do not need to set every attribute with the data table, an element will continue using any previous values you do not overwrite.</p>
 <div class="admonition info">

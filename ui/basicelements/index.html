@@ -1557,6 +1557,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#image" title="Image" class="md-nav__link">
+    Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#progressbar" title="ProgressBar" class="md-nav__link">
     ProgressBar
   </a>
@@ -1746,6 +1753,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#image" title="Image" class="md-nav__link">
+    Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#progressbar" title="ProgressBar" class="md-nav__link">
     ProgressBar
   </a>
@@ -1794,6 +1808,11 @@
 <td><code class="codehilite"><span class="nt">&lt;Text&gt;&lt;/Text&gt;</span></code></td>
 <td>Adds basic text.</td>
 <td><a href="#text"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="nt">&lt;Image&gt;&lt;/Image&gt;</span></code></td>
+<td>Adds an image.</td>
+<td><a href="#image"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="nt">&lt;ProgressBar&gt;&lt;/ProgressBar&gt;</span></code></td>
@@ -1873,6 +1892,45 @@
 </tbody>
 </table>
 <hr />
+<h3 id="image">Image<a class="headerlink" href="#image" title="Permanent link"> </a></h3>
+<p>Adds an image.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>image</td>
+<td>The name of the file in the asset manager (upper right corner of the scripting window in-game).</td>
+<td>string</td>
+<td><em>(none)</em></td>
+</tr>
+<tr>
+<td>color</td>
+<td></td>
+<td><a href="../attributes#attribute-types"><span class="tag xmlco"></span></a></td>
+<td><code class="codehilite">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>type</td>
+<td>Image Type</td>
+<td><ul><li>Simple</li><li>Sliced</li><li>Filled</li><li>Tiled</li></ul></td>
+<td><code class="codehilite">Simple</code></td>
+</tr>
+<tr>
+<td>raycastTarget</td>
+<td>Should this image block clicks from passing through it?</td>
+<td><a href="../attributes#attribute-types"><span class="tag boo"></span></a></td>
+<td><code class="codehilite">true</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h3 id="progressbar">ProgressBar<a class="headerlink" href="#progressbar" title="Permanent link"> </a></h3>
 <p>Displays a progress bar which can be updated dynamically via script.</p>
 <table>
@@ -1896,6 +1954,12 @@
 <td>Background Color</td>
 <td><a href="../attributes#attribute-types"><span class="tag xmlco"></span></a></td>
 <td><code class="codehilite">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>fillImage</td>
+<td>Fill Image</td>
+<td>string</td>
+<td><em>(none)</em></td>
 </tr>
 <tr>
 <td>fillImageColor</td>

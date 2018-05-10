@@ -1617,6 +1617,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#togglebutton" title="ToggleButton" class="md-nav__link">
+    ToggleButton
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#togglegroup" title="ToggleGroup" class="md-nav__link">
+    ToggleGroup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#slider" title="Slider" class="md-nav__link">
     Slider
   </a>
@@ -1795,6 +1809,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#togglebutton" title="ToggleButton" class="md-nav__link">
+    ToggleButton
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#togglegroup" title="ToggleGroup" class="md-nav__link">
+    ToggleGroup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#slider" title="Slider" class="md-nav__link">
     Slider
   </a>
@@ -1873,6 +1901,16 @@ Now when the button is clicked, it will still try to activate <code class="codeh
 <td><code class="codehilite"><span class="nt">&lt;Toggle&gt;&lt;/Toggle&gt;</span></code></td>
 <td>A simple on/off toggle. Is able to send on/off status.</td>
 <td><a href="#toggle"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="nt">&lt;ToggleButton&gt;&lt;/ToggleButton&gt;</span></code></td>
+<td>A toggle, but styled as a button.</td>
+<td><a href="#togglebutton"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="nt">&lt;ToggleGroup&gt;&lt;/ToggleGroup&gt;</span></code></td>
+<td>Allows a group of toggles to act as a radio button, where only 1 of them can be "checked" at once.</td>
+<td><a href="#togglegroup"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="nt">&lt;Slider&gt;&lt;/Slider&gt;</span></code></td>
@@ -2039,10 +2077,58 @@ Now when the button is clicked, it will still try to activate <code class="codeh
 <td><code class="codehilite">UpperLeft</code></td>
 </tr>
 <tr>
+<td>icon</td>
+<td></td>
+<td>string</td>
+<td><em>(none)</em></td>
+</tr>
+<tr>
+<td>iconWidth</td>
+<td></td>
+<td>float</td>
+<td></td>
+</tr>
+<tr>
+<td>iconColor</td>
+<td></td>
+<td><a href="../attributes#attribute-types"><span class="tag xmlco"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>iconAlignment</td>
+<td></td>
+<td><ul><li>Left</li><li>Right</li></ul></td>
+<td><code class="codehilite">Left</code></td>
+</tr>
+<tr>
 <td>padding</td>
 <td></td>
 <td>float float float float</td>
 <td><code class="codehilite">0 0 0 0</code></td>
+</tr>
+<tr>
+<td>transition</td>
+<td></td>
+<td><ul><li>None</li><li>ColorTint</li><li>SpriteSwap</li><li>Animation</li></ul></td>
+<td><code class="codehilite">ColorTint</code></td>
+</tr>
+<tr>
+<td>highlightedSprite</td>
+<td></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>pressedSprite</td>
+<td></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>disabledSprite</td>
+<td></td>
+<td>string</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2050,9 +2136,15 @@ Now when the button is clicked, it will still try to activate <code class="codeh
 <div class="codehilite"><pre><span></span><span class="c">&lt;!-- Standard Button --&gt;</span>
 <span class="nt">&lt;Button&gt;</span>Button Text<span class="nt">&lt;/Button&gt;</span>
 <span class="c">&lt;!-- Button with Icon --&gt;</span>
-<span class="nt">&lt;Button</span> <span class="na">icon=</span><span class="s">&quot;Sprites/Icons/Arrow_Up&quot;</span> <span class="nt">/&gt;</span>
+<span class="err">&lt;&lt;&lt;&lt;&lt;&lt;</span><span class="nt">&lt; HEAD</span>
+<span class="err">&lt;Button</span> <span class="na">icon=</span><span class="s">&quot;SomeName&quot;</span> <span class="nt">/&gt;</span>
 <span class="c">&lt;!-- Button with Icon and Text --&gt;</span>
-<span class="nt">&lt;Button</span> <span class="na">icon=</span><span class="s">&quot;Sprites/Icons/Arrow_Left&quot;</span><span class="nt">&gt;</span>Button With Icon<span class="nt">&lt;/Button&gt;</span>
+<span class="nt">&lt;Button</span> <span class="na">icon=</span><span class="s">&quot;SomeName&quot;</span><span class="nt">&gt;</span>Button With Icon<span class="nt">&lt;/Button&gt;</span>
+=======
+<span class="nt">&lt;Button</span> <span class="na">icon=</span><span class="s">&quot;Arrow_Up&quot;</span> <span class="nt">/&gt;</span>
+<span class="c">&lt;!-- Button with Icon and Text --&gt;</span>
+<span class="nt">&lt;Button</span> <span class="na">icon=</span><span class="s">&quot;Arrow_Left&quot;</span><span class="nt">&gt;</span>Button With Icon<span class="nt">&lt;/Button&gt;</span>
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 6ed14ccd4ab8e663919206187a89b274c6d85380
 </pre></div></p>
 <hr />
 <h3 id="toggle">Toggle<a class="headerlink" href="#toggle" title="Permanent link"> </a></h3>
@@ -2104,6 +2196,164 @@ Now when the button is clicked, it will still try to activate <code class="codeh
 <span class="c">&lt;!-- Toggle which is selected by default --&gt;</span>
 <span class="nt">&lt;Toggle</span> <span class="na">isOn=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Toggle Text<span class="nt">&lt;/Toggle&gt;</span>
 </pre></div></p>
+<hr />
+<h3 id="togglebutton">ToggleButton<a class="headerlink" href="#togglebutton" title="Permanent link"> </a></h3>
+<p>A toggle, but styled as a button.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onValueChanged</td>
+<td>When toggled, a Lua function with this name will be triggered.</td>
+<td>string</td>
+<td><em>(none)</em></td>
+</tr>
+<tr>
+<td>interactable</td>
+<td></td>
+<td><a href="../attributes#attribute-types"><span class="tag boo"></span></a></td>
+<td><code class="codehilite">true</code></td>
+</tr>
+<tr>
+<td>textColor</td>
+<td></td>
+<td><a href="../attributes#attribute-types"><span class="tag xmlco"></span></a></td>
+<td><code class="codehilite">#000000</code></td>
+</tr>
+<tr>
+<td>colors</td>
+<td></td>
+<td><a href="../attributes#attribute-types"><span class="tag xmlcb"></span></a></td>
+<td><code class="codehilite">#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)</code></td>
+</tr>
+<tr>
+<td>isOn</td>
+<td>If the toggle is "on" or not. Is the value sent to onValueChanged's function.</td>
+<td><a href="../attributes#attribute-types"><span class="tag boo"></span></a></td>
+<td>false</td>
+</tr>
+<tr>
+<td>textShadow</td>
+<td></td>
+<td><a href="../attributes#attribute-types"><span class="tag xmlco"></span></a></td>
+<td><em>(none)</em></td>
+</tr>
+<tr>
+<td>textOutline</td>
+<td></td>
+<td><a href="../attributes#attribute-types"><span class="tag xmlco"></span></a></td>
+<td><em>(none)</em></td>
+</tr>
+<tr>
+<td>textAlignment</td>
+<td></td>
+<td><ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul></td>
+<td><code class="codehilite">UpperLeft</code></td>
+</tr>
+<tr>
+<td>icon</td>
+<td></td>
+<td>string</td>
+<td><em>(none)</em></td>
+</tr>
+<tr>
+<td>iconWidth</td>
+<td></td>
+<td>float</td>
+<td></td>
+</tr>
+<tr>
+<td>iconColor</td>
+<td></td>
+<td><a href="../attributes#attribute-types"><span class="tag xmlco"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>iconAlignment</td>
+<td></td>
+<td><ul><li>Left</li><li>Right</li></ul></td>
+<td><code class="codehilite">Left</code></td>
+</tr>
+<tr>
+<td>padding</td>
+<td></td>
+<td>float float float float</td>
+<td><code class="codehilite">0 0 0 0</code></td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;ToggleButton&gt;</span>Toggle Button Text<span class="nt">&lt;/Toggle&gt;</span>
+</pre></div>
+
+<hr />
+<h3 id="togglegroup">ToggleGroup<a class="headerlink" href="#togglegroup" title="Permanent link"> </a></h3>
+<p>Allows a group of toggles to act as a radio button, where only 1 of them can be "checked" at once. Works with Toggle or ToggleButton</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>allowSwitchOff</td>
+<td>If this is set to true, then the user may clear their selection from within the ToggleGroup by clicking on the selected Toggle.</td>
+<td><a href="../attributes#attribute-types"><span class="tag boo"></span></a></td>
+<td><code class="codehilite">false</code></td>
+</tr>
+<tr>
+<td>toggleBackgroundImage</td>
+<td>Sets the default background image to use for nested Toggle elements.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>toggleBackgroundColor</td>
+<td></td>
+<td><a href="../attributes#attribute-types"><span class="tag xmlco"></span></a></td>
+<td><code class="codehilite">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>toggleSelectedImage</td>
+<td>Sets the default image to use for selected (checked) nested Toggle elements.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>toggleSelectedColor</td>
+<td></td>
+<td><a href="../attributes#attribute-types"><span class="tag xmlco"></span></a></td>
+<td><code class="codehilite">#FFFFFF</code></td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;ToggleGroup&gt;</span>
+    <span class="nt">&lt;VerticalLayout&gt;</span>
+        <span class="nt">&lt;Toggle&gt;</span>Toggle A<span class="nt">&lt;/Toggle&gt;</span>
+        <span class="nt">&lt;Toggle&gt;</span>Toggle B<span class="nt">&lt;/Toggle&gt;</span>
+        <span class="nt">&lt;Toggle&gt;</span>Toggle C<span class="nt">&lt;/Toggle&gt;</span>
+    <span class="nt">&lt;/VerticalLayout&gt;</span>
+<span class="nt">&lt;/ToggleGroup&gt;</span>
+
+<span class="nt">&lt;ToggleGroup&gt;</span>
+    <span class="nt">&lt;HorizontalLayout&gt;</span>
+        <span class="nt">&lt;ToggleButton&gt;</span>ToggleButton A<span class="nt">&lt;/ToggleButton&gt;</span>
+        <span class="nt">&lt;ToggleButton&gt;</span>ToggleButton B<span class="nt">&lt;/ToggleButton&gt;</span>
+        <span class="nt">&lt;ToggleButton&gt;</span>ToggleButton C<span class="nt">&lt;/ToggleButton&gt;</span>
+    <span class="nt">&lt;/HorizontalLayout&gt;</span>
+<span class="nt">&lt;/ToggleGroup&gt;</span>
+</pre></div>
+
 <hr />
 <h3 id="slider">Slider<a class="headerlink" href="#slider" title="Permanent link"> </a></h3>
 <p>A value slider. Is able to send Value.</p>
@@ -2178,10 +2428,22 @@ Now when the button is clicked, it will still try to activate <code class="codeh
 <td><em>(none)</em></td>
 </tr>
 <tr>
+<td>fillImage</td>
+<td></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
 <td>handleColor</td>
 <td></td>
 <td><a href="../attributes#attribute-types"><span class="tag xmlco"></span></a></td>
 <td><em>(none)</em></td>
+</tr>
+<tr>
+<td>handleImage</td>
+<td></td>
+<td>string</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2244,10 +2506,22 @@ Now when the button is clicked, it will still try to activate <code class="codeh
 <td><code class="codehilite">#000000</code></td>
 </tr>
 <tr>
+<td>checkImage</td>
+<td></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
 <td>arrowColor</td>
 <td></td>
 <td><a href="../attributes#attribute-types"><span class="tag xmlco"></span></a></td>
 <td><code class="codehilite">#000000</code></td>
+</tr>
+<tr>
+<td>arrowImage</td>
+<td></td>
+<td>string</td>
+<td></td>
 </tr>
 <tr>
 <td>dropdownBackgroundColor</td>
@@ -2256,9 +2530,21 @@ Now when the button is clicked, it will still try to activate <code class="codeh
 <td><code class="codehilite">#000000</code></td>
 </tr>
 <tr>
+<td>dropdownBackgroundImage</td>
+<td></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
 <td>scrollbarColors</td>
 <td></td>
 <td><a href="../attributes#attribute-types"><span class="tag xmlcb"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td>scrollbarImage</td>
+<td></td>
+<td>string</td>
 <td></td>
 </tr>
 <tr>
