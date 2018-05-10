@@ -8,7 +8,6 @@ There are 3 main pieces to the UI system.
     * You are able to create individual elements and position them on the screen in a variety of ways.
 * **Import Assets**
     * By clicking the button in the upper-right corner of the scripting window in-game, you open a menu that lets you upload/manage assets that can be utilized by the UI. When you save your table after uploading images here, they are saved forever.
-    * {==This feature is currently disabled due to a display issue. It is being worked on and should be available soon.==}
 * **Communicate with Lua**
     * Your scripts can be triggered by UI elements and your Lua scripts can also modify elements in the UI during gameplay.
 

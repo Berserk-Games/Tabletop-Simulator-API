@@ -26,6 +26,8 @@ Element Name | Description | &nbsp;
 `#!xml <InputField></InputField>` | A text input for single or multiple lines. Is able to send the text (during edit and when finished). | [<span class="i"></span>](#inputfield)
 `#!xml <Button></Button>` | A button. Is able to send a trigger event. | [<span class="i"></span>](#button)
 `#!xml <Toggle></Toggle>` | A simple on/off toggle. Is able to send on/off status. | [<span class="i"></span>](#toggle)
+`#!xml <ToggleButton></ToggleButton>` | A toggle, but styled as a button. | [<span class="i"></span>](#togglebutton)
+`#!xml <ToggleGroup></ToggleGroup>` | Allows a group of toggles to act as a radio button, where only 1 of them can be "checked" at once.| [<span class="i"></span>](#togglegroup)
 `#!xml <Slider></Slider>` | A value slider. Is able to send Value.  | [<span class="i"></span>](#slider)
 `#!xml <Dropdown></Dropdown>` | A dropdown menu. Is able to send the contents of the selection made in it. | [<span class="i"></span>](#dropdown)
 
@@ -74,16 +76,24 @@ colors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | `#FF
 textShadow |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
 textOutline |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
 textAlignment |  | <ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul> | `UpperLeft`
+icon |  | string | *(none)*
+iconWidth |  | float | 
+iconColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | 
+iconAlignment |  | <ul><li>Left</li><li>Right</li></ul> | `Left`
 padding |  | float float float float | `0 0 0 0`
+transition |  | <ul><li>None</li><li>ColorTint</li><li>SpriteSwap</li><li>Animation</li></ul> | `ColorTint`
+highlightedSprite |  | string | 
+pressedSprite |  | string | 
+disabledSprite |  | string | 
 
 Example:
 ```xml
 <!-- Standard Button -->
 <Button>Button Text</Button>
 <!-- Button with Icon -->
-<Button icon="Sprites/Icons/Arrow_Up" />
+<Button icon="SomeName" />
 <!-- Button with Icon and Text -->
-<Button icon="Sprites/Icons/Arrow_Left">Button With Icon</Button>
+<Button icon="SomeName">Button With Icon</Button>
 ```
 
 ---
@@ -111,6 +121,66 @@ Example:
 ---
 
 
+###ToggleButton
+
+A toggle, but styled as a button.
+
+Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-- | -- | -- | --
+onValueChanged | When toggled, a Lua function with this name will be triggered. | string | *(none)*
+interactable |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
+textColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
+colors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
+isOn | If the toggle is "on" or not. Is the value sent to onValueChanged's function. | [<span class="tag boo"></span>](attributes#attribute-types) | false
+textShadow |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
+textOutline |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
+textAlignment |  | <ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul> | `UpperLeft`
+icon |  | string | *(none)*
+iconWidth |  | float | 
+iconColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | 
+iconAlignment |  | <ul><li>Left</li><li>Right</li></ul> | `Left`
+padding |  | float float float float | `0 0 0 0`
+
+```xml
+<ToggleButton>Toggle Button Text</Toggle>
+```
+
+---
+
+
+###ToggleGroup
+
+Allows a group of toggles to act as a radio button, where only 1 of them can be "checked" at once. Works with Toggle or ToggleButton
+
+Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-- | -- | -- | --
+allowSwitchOff | If this is set to true, then the user may clear their selection from within the ToggleGroup by clicking on the selected Toggle. | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
+toggleBackgroundImage | Sets the default background image to use for nested Toggle elements. | string | 
+toggleBackgroundColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
+toggleSelectedImage | Sets the default image to use for selected (checked) nested Toggle elements. | string | 
+toggleSelectedColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
+
+```xml
+<ToggleGroup>
+    <VerticalLayout>
+        <Toggle>Toggle A</Toggle>
+        <Toggle>Toggle B</Toggle>
+        <Toggle>Toggle C</Toggle>
+    </VerticalLayout>
+</ToggleGroup>
+
+<ToggleGroup>
+    <HorizontalLayout>
+        <ToggleButton>ToggleButton A</ToggleButton>
+        <ToggleButton>ToggleButton B</ToggleButton>
+        <ToggleButton>ToggleButton C</ToggleButton>
+    </HorizontalLayout>
+</ToggleGroup>
+```
+
+---
+
+
 ###Slider
 
 A value slider. Is able to send Value.
@@ -127,7 +197,9 @@ wholeNumbers |  | [<span class="tag boo"></span>](attributes#attribute-types) | 
 direction |  | <ul><li>LeftToRight</li><li>RightToLeft</li><li>TopToBottom</li><li>BottomToTop</li></ul> | `LeftToRight`
 backgroundColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
 fillColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
+fillImage |  | string |
 handleColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
+handleImage |  | string | 
 
 Example:
 ```xml
@@ -150,10 +222,14 @@ interactable |  | [<span class="tag boo"></span>](attributes#attribute-types) | 
 textColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
 itemBackgroundColors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | #FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)
 itemTextColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
-checkColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000 `
-arrowColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000 `
-dropdownBackgroundColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000 `
+checkColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
+checkImage |  | string | 
+arrowColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
+arrowImage |  | string | 
+dropdownBackgroundColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
+dropdownBackgroundImage |  | string | 
 scrollbarColors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | 
+scrollbarImage |  | string | 
 itemHeight |  | float | 
 
 Example:

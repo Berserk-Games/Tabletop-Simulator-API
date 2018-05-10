@@ -128,7 +128,9 @@ automaticallyRemoveEmptyColumns | If there are more entries in columnWidths than
 autoCalculateHeight | If set to true, then the height of this TableLayout will automatically be calculated as the sum of each rows preferredHeight value. This option cannot be used without explicitly sized rows. | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
 useGlobalCellPadding | If set to true, then all cells will use this TableLayout's cellPadding value. | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
 cellPadding | Padding for each cell. | float(left) float(right) float(top) float(bottom) | `0 0 0 0`
+cellBackgroundImage | Image to use as the background for each cell.	| string | 
 cellBackgroundColor | Color for each cells background. | [<span class="tag xmlco"></span>](attributes#attribute-types) | `rgba(1,1,1,0.4)`
+rowBackgroundImage | Image to use as the background for each row. | string | 
 rowBackgroundColor | Color to use for each rows background. | [<span class="tag xmlco"></span>](attributes#attribute-types) | `clear`
 
 ```xml
@@ -189,6 +191,7 @@ verticalScrollbarVisibility |  | <ul><li>Permanent</li><li>AutoHide</li><li>Auto
 noScrollbars | If set to true, then this scroll view will have no visible scrollbars. | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
 scrollbarBackgroundColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
 scrollbarColors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
+scrollbarImage |  | string | 
 
 ```xml
 <HorizontalScrollView>
@@ -233,6 +236,7 @@ verticalScrollbarVisibility |  | <ul><li>Permanent</li><li>AutoHide</li><li>Auto
 noScrollbars | If set to true, then this scroll view will have no visible scrollbars. | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
 scrollbarBackgroundColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
 scrollbarColors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
+scrollbarImage |  | string | 
 
 ```xml
 <VerticalScrollView>

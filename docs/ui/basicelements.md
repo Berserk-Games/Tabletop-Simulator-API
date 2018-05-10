@@ -7,6 +7,7 @@ Each element has its own attributes specific to its type that work in addition t
 Element Name | Description | &nbsp;
 -- | -- | --
 `#!xml <Text></Text>` | Adds basic text. | [<span class="i"></span>](#text)
+`#!xml <Image></Image>` | Adds an image. | [<span class="i"></span>](#image)
 `#!xml <ProgressBar></ProgressBar>` | Displays a progress bar which can be updated dynamically via script. | [<span class="i"></span>](#progressbar)
 
 ---
@@ -32,6 +33,20 @@ verticalOverflow | | <ul><li>Truncate</li><li>Overflow</li></ul> | `Truncate`
 ---
 
 
+###Image
+
+Adds an image.
+
+Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-- | -- | -- | --
+image | The name of the file in the asset manager (upper right corner of the scripting window in-game). | string | *(none)*
+color |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
+type | Image Type | <ul><li>Simple</li><li>Sliced</li><li>Filled</li><li>Tiled</li></ul> | `Simple`
+raycastTarget | Should this image block clicks from passing through it? | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
+
+---
+
+
 ###ProgressBar
 
 Displays a progress bar which can be updated dynamically via script.
@@ -40,6 +55,7 @@ Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 image | Background Image | (path to image) | *(none)*
 color | Background Color | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
+fillImage | Fill Image | string | *(none)*
 fillImageColor | Fill Color | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
 percentage | Percentage to Display | float | `0`
 showPercentageText | Is the percentage text displayed? | [<span class="tag boo"></span>](attributes#attribute-types) | `true`

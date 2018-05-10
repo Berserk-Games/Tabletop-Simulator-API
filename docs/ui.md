@@ -36,8 +36,12 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 getAttribute([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class="tag str"></span>](intro#types)&nbsp;attribute) | Obtains the value of a specified attribute of a UI element. | [<span class="ret var"></span>](intro#types) | [<span class="i"></span>](#getattribute)
 getAttributes([<span class="tag str"></span>](intro#types)&nbsp;id) | Returns the attributes and their values of a UI element. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getattributes)
+hide([<span class="tag str"></span>](intro#types)&nbsp;id) | Hides the given UI element. Unlike the "active" attribute, hide triggers animations. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#hide)
 setAttribute([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class="tag str"></span>](intro#types)&nbsp;attribute, [<span class="tag var"></span>](intro#types)&nbsp;value) | Sets the value of a specified attribute of a UI element. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setattribute)
+show([<span class="tag str"></span>](intro#types)&nbsp;id) | Displays the given UI element. Unlike the "active" attribute, show triggers animations. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#show)
 setAttributes([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class="tag tab"></span>](intro#types)&nbsp;data) | Updates the value of the supplied attributes of a UI element. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setattributes)
+
+
  
 ---
 
@@ -75,6 +79,21 @@ UI.getAttribute("testElement", "fontSize")
 ---
 
 
+###hide(...)
+
+[<span class="ret boo"></span>](intro#types)&nbsp;Hides the given UI element. Unlike the "active" attribute, hide triggers animations.
+
+!!!info "hide(id)"
+    * [<span class="tag str"></span>](intro#types) **id**: The Id that was assigned, as an attribute, to the desired XML UI element.
+
+    
+``` Lua
+UI.hide("testElement")
+```
+
+---
+
+
 ###setAttribute(...)
 
 [<span class="ret boo"></span>](intro#types)&nbsp;Sets the value of a specified attribute of a UI element.
@@ -90,6 +109,23 @@ UI.setAttribute("testElement", "fontSize", 200)
 ```
 
 ---
+
+
+###show(...)
+
+[<span class="ret boo"></span>](intro#types)&nbsp;Shows the given UI element. Unlike the "active" attribute, show triggers animations.
+
+!!!info "show(id)"
+    * [<span class="tag str"></span>](intro#types) **id**: The Id that was assigned, as an attribute, to the desired XML UI element.
+
+    
+``` Lua
+UI.show("testElement")
+```
+
+
+
+
 
 
 ###setAttributes(...)

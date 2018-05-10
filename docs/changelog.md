@@ -1,5 +1,16 @@
 This is an ongoing list of scripting changes that have been implemented to scripting side of Tabletop Simulator.
 
+######5/9/18 - v10.5 Hotfix 2
+
+!!!info ""
+    * Custom UI:
+        * Added UI.show(id) and UI.hide(id) for disabling and enabling ui with animations.
+        * Now support the Image tag for custom images. 
+        * Supports overriding the look of the UI using this custom image support.
+        * Fixed visibility attribute not working correctly on elements with no id attribute or layout tag.
+        * Fixed offsetXY set/getAttribute() not working.
+        * Added Tooltip attribute for all objects
+
 ######5/7/18 - v10.5
 
 !!!info ""
