@@ -17,12 +17,10 @@ When creating the input element in XML, you will select the name of the function
 !!!info "functionName(player, value, id)"
     * [<span class="tag pla"></span>](intro#types) **player**: A direct Player reference to the person that triggered the input.
     * [<span class="tag var"></span>](intro#types) **value**: The value sent by the input. A numeric value or a string, generally.
-        * {>>This is not passed by buttons!<<}
     * [<span class="tag str"></span>](intro#types) **id**: 
         * {>>This is only passed if the element was given an Id attribute in the XML.<<}
 
 ```lua
-function onButtonClick(player, id)
     print(player.steam_name)
     print(id)
 end
@@ -52,7 +50,6 @@ setAttributes([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class
 [<span class="ret var"></span>](intro#types)&nbsp;Obtains the value of a specified attribute of a UI element. What it returns will typically be a string or a number.
 
 !!!info "getAttribute(id, attribute)"
-    * [<span class="tag str"></span>](intro#types) **id**: The Id that was assigned, as an attribute, to the desired XML Ui element.
     * [<span class="tag str"></span>](intro#types) **attribute**: The name of the attribute you wish to get the value of.
     
 ``` Lua

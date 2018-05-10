@@ -91,9 +91,15 @@ Example:
 <!-- Standard Button -->
 <Button>Button Text</Button>
 <!-- Button with Icon -->
+<<<<<<< HEAD
 <Button icon="SomeName" />
 <!-- Button with Icon and Text -->
 <Button icon="SomeName">Button With Icon</Button>
+=======
+<Button icon="Arrow_Up" />
+<!-- Button with Icon and Text -->
+<Button icon="Arrow_Left">Button With Icon</Button>
+>>>>>>> 6ed14ccd4ab8e663919206187a89b274c6d85380
 ```
 
 ---
