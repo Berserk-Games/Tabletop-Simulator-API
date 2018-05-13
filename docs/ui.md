@@ -5,7 +5,7 @@ Example of calling a function: `UI.getAttributes(id)`.
 !!!warning
     **What this class does NOT do is create new UI elements.** Those are created in the custom UI using XML. The UI scripting class is only used to modify or communicate with existing UI elements.
     
-    See the [UI API](xml/introUI.md) for info on how.
+    See the [UI API](ui/introUI.md) for info on how.
 
 
 ##Inputs
