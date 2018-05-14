@@ -137,7 +137,7 @@ If you are spawning a **custom Object**, you should call [setCustomObject](objec
 
 !!!info "spawnObject(parameters)"
 	* [<span class="tag tab"></span>](intro#types) **parameters**: A Table of parameters used to determine how spawnObject will act.
-		* [<span class="tag str"></span>](intro#types) **parameters.type**: [Spawnable Object](spawnableobject) type.
+		* [<span class="tag str"></span>](intro#types) **parameters.type**: [Spawnable Object](spawnableobjects) type.
 		* [<span class="tag vec"></span>](intro#vector) **parameters.position**: Position to place Object.
 			* {>>Optional, defaults to {x=0, y=3, z=0}.<<}
 		* [<span class="tag vec"></span>](intro#vector) **parameters.rotation**: Rotation of the Object.
