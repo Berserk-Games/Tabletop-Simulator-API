@@ -216,7 +216,7 @@ A dropdown menu. Is able to send the contents of the selection made in it.
 
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
-onValueChanged | When the slider is moved, a Lua function with this name will be triggered. | string | *(none)*
+onValueChanged | When an option is selected, a Lua function with this name will be triggered. | string | *(none)*
 text | The string in the text box, if any. Is the value sent to onValueChanged's or onEndEdit's function. | string | *(none)*
 interactable |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
 textColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
@@ -234,12 +234,17 @@ itemHeight |  | float |
 
 Example:
 ```
- <Dropdown>
+ <Dropdown id="Selection" onValueChanged="optionSelected">
     <Option selected="true">Option 1</Option>
     <Option>Option 2</Option>
     <Option>Option 3</Option>
     <Option>Option 4</Option>
 </Dropdown>
 ```
-
+```
+ function optionSelected(player, option, id)
+    print(player.steam_name .. " selected: " .. option)
+ end
+```
+   
 ---
