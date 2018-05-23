@@ -2459,7 +2459,7 @@ Now when the button is clicked, it will still try to activate <code class="codeh
 <tbody>
 <tr>
 <td>onValueChanged</td>
-<td>When the slider is moved, a Lua function with this name will be triggered.</td>
+<td>When an option is selected, a Lua function with this name will be triggered.</td>
 <td>string</td>
 <td><em>(none)</em></td>
 </tr>
@@ -2550,12 +2550,16 @@ Now when the button is clicked, it will still try to activate <code class="codeh
 </tbody>
 </table>
 <p>Example:
-<div class="codehilite"><pre><span></span> <span class="nt">&lt;Dropdown&gt;</span>
+<div class="codehilite"><pre><span></span> <span class="nt">&lt;Dropdown</span> <span class="na">id=</span><span class="s">&quot;Selection&quot;</span> <span class="na">onValueChanged=</span><span class="s">&quot;optionSelected&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;Option</span> <span class="na">selected=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Option 1<span class="nt">&lt;/Option&gt;</span>
     <span class="nt">&lt;Option&gt;</span>Option 2<span class="nt">&lt;/Option&gt;</span>
     <span class="nt">&lt;Option&gt;</span>Option 3<span class="nt">&lt;/Option&gt;</span>
     <span class="nt">&lt;Option&gt;</span>Option 4<span class="nt">&lt;/Option&gt;</span>
 <span class="nt">&lt;/Dropdown&gt;</span>
+</pre></div>
+<div class="codehilite"><pre><span></span> function optionSelected(player, option, id)
+    print(player.steam_name .. &quot; selected: &quot; .. option)
+ end
 </pre></div></p>
 <hr />
                 
