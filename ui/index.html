@@ -1368,15 +1368,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#load" title="load(...)" class="md-nav__link">
-    load(...)
+  <a href="#setattribute" title="setAttribute(...)" class="md-nav__link">
+    setAttribute(...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#setattribute" title="setAttribute(...)" class="md-nav__link">
-    setAttribute(...)
+  <a href="#setxml" title="setXml(...)" class="md-nav__link">
+    setXml(...)
   </a>
   
 </li>
@@ -1823,15 +1823,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#load" title="load(...)" class="md-nav__link">
-    load(...)
+  <a href="#setattribute" title="setAttribute(...)" class="md-nav__link">
+    setAttribute(...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#setattribute" title="setAttribute(...)" class="md-nav__link">
-    setAttribute(...)
+  <a href="#setxml" title="setXml(...)" class="md-nav__link">
+    setXml(...)
   </a>
   
 </li>
@@ -1938,22 +1938,28 @@ Example of calling a function targeted at an Object UI:
 <td><a href="#getattributes"><span class="i"></span></a></td>
 </tr>
 <tr>
+<td>getXml()</td>
+<td>Returns the current xml string. This will not have any dynamic changes done from scripts.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#getxml"><span class="i"></span></a></td>
+</tr>
+<tr>
 <td>hide(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;id)</td>
 <td>Hides the given UI element. Unlike the "active" attribute, hide triggers animations.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#hide"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>load(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;xml)</td>
-<td>Replaces the targeted XML script with the string provided.</td>
-<td><a href="../intro#types"><span class="ret boo"></span></a></td>
-<td><a href="#load"><span class="i"></span></a></td>
-</tr>
-<tr>
 <td>setAttribute(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;id, <a href="../intro#types"><span class="tag str"></span></a>&nbsp;attribute, <a href="../intro#types"><span class="tag var"></span></a>&nbsp;value)</td>
 <td>Sets the value of a specified attribute of a UI element.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td><a href="#setattribute"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>setXml(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;xml)</td>
+<td>Replaces the targeted XML script with the string provided.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#setxml"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>show(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;id)</td>
@@ -1985,7 +1991,7 @@ Example of calling a function targeted at an Object UI:
 <li><a href="../intro#types"><span class="tag str"></span></a> <strong>attribute</strong>: The name of the attribute you wish to get the value of.</li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="n">UI</span><span class="p">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">&quot;testElement&quot;</span><span class="p">,</span> <span class="s2">&quot;fontSize&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">&quot;testElement&quot;</span><span class="p">,</span> <span class="s2">&quot;fontSize&quot;</span><span class="p">)</span>
 </pre></div>
 
 <hr />
@@ -2022,23 +2028,7 @@ Example of calling a function targeted at an Object UI:
 <li><a href="../intro#types"><span class="tag str"></span></a> <strong>id</strong>: The Id that was assigned, as an attribute, to the desired XML UI element.</li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="n">UI</span><span class="p">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;testElement&quot;</span><span class="p">)</span>
-</pre></div>
-
-<hr />
-<h3 id="load">load(...)<a class="headerlink" href="#load" title="Permanent link"> </a></h3>
-<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Replaces the targeted XML script with the string provided.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This will OVERWRITE currently existing XML that is already on the target Global/object.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">load(xml)</p>
-<ul>
-<li><a href="../intro#types"><span class="tag str"></span></a> <strong>xml</strong>: A single string with the contents of the XML to use</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="n">UI</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;&lt;Text&gt;Test&lt;/Text&gt;&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;testElement&quot;</span><span class="p">)</span>
 </pre></div>
 
 <hr />
@@ -2060,6 +2050,22 @@ Example of calling a function targeted at an Object UI:
 </pre></div>
 
 <hr />
+<h3 id="setxml">setXml(...)<a class="headerlink" href="#setxml" title="Permanent link"> </a></h3>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Replaces the targeted XML script with the string provided.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This will OVERWRITE currently existing XML that is already on the target Global/object.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">setXml(xml)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>xml</strong>: A single string with the contents of the XML to use</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">setXml</span><span class="p">(</span><span class="s2">&quot;&lt;Text&gt;Test&lt;/Text&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+
+<hr />
 <h3 id="show">show(...)<a class="headerlink" href="#show" title="Permanent link"> </a></h3>
 <p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Shows the given UI element. Unlike the "active" attribute, show triggers animations.</p>
 <div class="admonition info">
@@ -2068,7 +2074,7 @@ Example of calling a function targeted at an Object UI:
 <li><a href="../intro#types"><span class="tag str"></span></a> <strong>id</strong>: The Id that was assigned, as an attribute, to the desired XML UI element.</li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="n">UI</span><span class="p">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;testElement&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;testElement&quot;</span><span class="p">)</span>
 </pre></div>
 
 <h3 id="setattributes">setAttributes(...)<a class="headerlink" href="#setattributes" title="Permanent link"> </a></h3>
@@ -2099,7 +2105,7 @@ Example of calling a function targeted at an Object UI:
     <span class="n">fontSize</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span>
     <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#000000&quot;</span>
 <span class="p">}</span>
-<span class="n">UI</span><span class="p">.</span><span class="n">setAttributes</span><span class="p">(</span><span class="s2">&quot;exampleText&quot;</span><span class="p">,</span> <span class="n">attributeTable</span><span class="p">)</span>
+<span class="n">self</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">setAttributes</span><span class="p">(</span><span class="s2">&quot;exampleText&quot;</span><span class="p">,</span> <span class="n">attributeTable</span><span class="p">)</span>
 </pre></div>
 
 <hr />
