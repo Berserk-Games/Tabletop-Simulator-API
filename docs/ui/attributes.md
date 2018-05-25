@@ -107,6 +107,7 @@ anchorMin |  | float(x) float(y) |
 anchorMax |  | float(x) float(y) | 
 sizeDelta |  | float(x) float(y) | 
 pivot |  | float(x) float(y) | 
+position |  | float(x) float(y) float(z) | 
 rotation |  | float(x) float(y) float(z) | 
 scale |  | float(x) float(y) | 
 offsetMin |  | float(left) float(bottom) | 
