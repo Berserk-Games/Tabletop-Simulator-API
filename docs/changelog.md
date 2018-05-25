@@ -8,7 +8,7 @@ This is an ongoing list of scripting changes that have been implemented to scrip
             * Each object can have its own assets (images)
             * Point scripting towards an object UI with `object.UI.setAttribute(...)`
             * Events called from an object's UI will automatically go to that object's Script. To override that feature and send it to Global, use `Global/functionName` for the attribute's name.
-        * `UI.load()` added:
+        * `UI.getXml()` and `UI.setXml()` added:
             * Allows for dynamic UI creation from a string
             * This OVERWRITES THE CURRENT XML on the target Global/object!!!
         * Click sounds added for inputs
