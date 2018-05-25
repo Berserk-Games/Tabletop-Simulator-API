@@ -90,8 +90,12 @@ setRotationSmooth([<span class="tag vec"></span>](intro#vector)&nbsp;vector, [<s
 
 
 
+
 ###UI Functions
-These functions allow for the creation/editing/removal of functional buttons and text inputs which themselves trigger code within your scripts.
+A new UI system was added to Tabletop Simulator which allows for more flexibility in the creation of UI elements on Objects. The old system (Classic UI) and new system (Custom UI) both work, and each has its own strengths.
+
+####Classic UI
+These functions allow for the creation/editing/removal of functional buttons and text inputs which themselves trigger code within your scripts. These buttons/inputs are attached to the object they are created on.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
@@ -106,6 +110,8 @@ getInputs() | Returns a Table of all inputs on this Object. | [<span class="ret 
 removeButton([<span class="tag int"></span>](intro#types)&nbsp;index) | Removes a specific button. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#removebutton)
 removeInput([<span class="tag int"></span>](intro#types)&nbsp;index) | Removes a specific button. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#removeinput)
 
+####Custom UI
+Custom UI gives you a wide variety of element types, not just buttons and inputs, to place onto an Object. It is an extension of the UI class, and details on its use can be found [on the UI page](ui).
 
 
 ###Get Functions
@@ -706,7 +712,7 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 
 ####removeInput(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp;Removes a specific input. Indexes start at 0. The first button on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.
+[<span class="ret boo"></span>](intro#types)&nbsp;Removes a specific input. Indexes start at 0. The first input on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.
 
 Removing an index instantly causes all other higher indexes to shift down 1.
 

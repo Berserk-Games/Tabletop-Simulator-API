@@ -35,7 +35,24 @@ visibility | What colors are able to see the element. | string | (visible to all
 
 !!!important "Designating Multiple Visibility Targets"
     For visiblity, you can use multiple color names by putting a `|` between each color name. `"Red|Blue|Green"`
-    
+
+
+###Text Attributes
+Many, but not all, elements have a text attribute.
+
+Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-- | -- | -- | --
+text | This can be used to determine the text that appears. It can also be modified externally by the script. | string | *(none)*
+alignment | | <ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul> | MiddleCenter
+color | | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#323232`
+fontStyle | | <ul><li>Normal</li><li>Bold</li><li>Italic</li><li>BoldItalic</li></ul> | `Normal`
+fontSize | | float | `14`
+resizeTextForBestFit | Resize text to fit? | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
+resizeTextMinSize | Minimum font size | float | `10`
+resizeTextMaxSize | Maximum font size | float | `40`
+horizontalOverflow | | <ul><li>Wrap</li><li>Overflow</li></ul> | `Overflow`
+verticalOverflow | | <ul><li>Truncate</li><li>Overflow</li></ul> | `Truncate`
+
 
 ###Image Attributes
 Applies to elements with an image component. The string that `image`s all take is the **NAME THE IMAGE WAS GIVEN WHEN YOU PUT IT IN THE IN-GAME ASSET MANAGER**. 

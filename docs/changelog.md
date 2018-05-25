@@ -1,5 +1,24 @@
 This is an ongoing list of scripting changes that have been implemented to scripting side of Tabletop Simulator.
 
+######5/25/18 - v10.6
+
+!!!info ""
+    * Custom UI:
+        * 3D UI added for objects (simialar to createButton/Input)
+            * Each object can have its own assets (images)
+            * Point scripting towards an object UI with `object.UI.setAttribute(...)`
+            * Events called from an object's UI will automatically go to that object's Script. To override that feature and send it to Global, use `Global/functionName` for the attribute's name.
+        * `UI.load()` added:
+            * Allows for dynamic UI creation from a string
+            * This OVERWRITES THE CURRENT XML on the target Global/object!!!
+        * Click sounds added for inputs
+        * Text universal attributes outlined in attributes section
+        * FIXED: Player colors now match TTS colors. For example, "red" is now equivalent to the player color red exactly.
+        * FIXED: Dragging is improved so the element doesn't snap to its rectAlignment when dragged.
+        * FIXED: When changing active attribute from script visibility would sometimes not work correctly
+        
+        
+
 ######5/9/18 - v10.5.1
 
 !!!info ""
