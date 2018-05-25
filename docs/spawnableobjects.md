@@ -284,7 +284,7 @@ You can also use setCustomObject along with [reload()](object#reload) to modify 
                 * **0**: Square/Rectangle
                 * **1**: Hex
                 * **2**: Circle
-        * [<span class="tag str"></span>](intro#types) **image_buttom**: The path/url for the bottom-side image.
+        * [<span class="tag str"></span>](intro#types) **image_bottom**: The path/url for the bottom-side image.
             * {>>Optional, uses the top image by default.<<}
         * [<span class="tag flo"></span>](intro#types) **thickness**: How thick the tile is.
             * {>>Optional, defaults to 0.5.<<}
