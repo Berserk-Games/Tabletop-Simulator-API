@@ -41,7 +41,7 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 getAttribute([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class="tag str"></span>](intro#types)&nbsp;attribute) | Obtains the value of a specified attribute of a UI element. | [<span class="ret var"></span>](intro#types) | [<span class="i"></span>](#getattribute)
 getAttributes([<span class="tag str"></span>](intro#types)&nbsp;id) | Returns the attributes and their values of a UI element. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getattributes)
-getXml() | Returns the current xml string. This will not have any dynamic changes done from scripts. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#getxml)
+<a class="anchor" id="getxml"></a>getXml() | Returns the current xml string. This will not have any dynamic changes done from scripts. | [<span class="ret boo"></span>](intro#types) | 
 hide([<span class="tag str"></span>](intro#types)&nbsp;id) | Hides the given UI element. Unlike the "active" attribute, hide triggers animations. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#hide)
 setAttribute([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class="tag str"></span>](intro#types)&nbsp;attribute, [<span class="tag var"></span>](intro#types)&nbsp;value) | Sets the value of a specified attribute of a UI element. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setattribute)
 setXml([<span class="tag str"></span>](intro#types)&nbsp;xml) | Replaces the targeted XML script with the string provided. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setxml)

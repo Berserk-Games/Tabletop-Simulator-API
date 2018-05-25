@@ -3,7 +3,7 @@
 ##Function Summary
 
 ###Global Functions
-General functions which work within any function.
+General functions which work within any script.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
@@ -18,6 +18,7 @@ getObjectFromGUID([<span class="tag str"></span>](intro#types)&nbsp;guid) | Retu
 <a class="anchor" id="getseatedplayers"></a>getSeatedPlayers() | Returns Table of the [Player Colors](player-color) strings of seated players. | [<span class="ret tab"></span>](intro#types) | 
 paste([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#paste)
 setNotes([<span class="tag str"></span>](intro#types)&nbsp;notes) | Replace the text in the notes window with the string. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setnotes)
+<a class="anchor" id="setlookingforplayers"></a>setLookingForPlayers([<span class="tag boo"></span>](intro#types)&nbsp;lfp) | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](intro#types) | 
 spawnObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Spawns an Object. View the [Spawnable Object](spawnableobjects) page for Objects that can be spawned. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#spawnobject)
 spawnObjectJSON([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Spawns an Object using a JSON string. Works with [getJSON()](object#getjson). | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#spawnobjectjson)
 startLuaCoroutine([<span class="tag obj"></span>](intro#types)&nbsp;function_owner, [<span class="tag str"></span>](intro#types)&nbsp;function_name) | Start a coroutine. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#startluacoroutine)
