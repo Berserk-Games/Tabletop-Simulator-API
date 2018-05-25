@@ -41,9 +41,10 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 getAttribute([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class="tag str"></span>](intro#types)&nbsp;attribute) | Obtains the value of a specified attribute of a UI element. | [<span class="ret var"></span>](intro#types) | [<span class="i"></span>](#getattribute)
 getAttributes([<span class="tag str"></span>](intro#types)&nbsp;id) | Returns the attributes and their values of a UI element. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getattributes)
+getXml() | Returns the current xml string. This will not have any dynamic changes done from scripts. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#getxml)
 hide([<span class="tag str"></span>](intro#types)&nbsp;id) | Hides the given UI element. Unlike the "active" attribute, hide triggers animations. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#hide)
-load([<span class="tag str"></span>](intro#types)&nbsp;xml) | Replaces the targeted XML script with the string provided. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#load)
 setAttribute([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class="tag str"></span>](intro#types)&nbsp;attribute, [<span class="tag var"></span>](intro#types)&nbsp;value) | Sets the value of a specified attribute of a UI element. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setattribute)
+setXml([<span class="tag str"></span>](intro#types)&nbsp;xml) | Replaces the targeted XML script with the string provided. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setxml)
 show([<span class="tag str"></span>](intro#types)&nbsp;id) | Displays the given UI element. Unlike the "active" attribute, show triggers animations. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#show)
 setAttributes([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class="tag tab"></span>](intro#types)&nbsp;data) | Updates the value of the supplied attributes of a UI element. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setattributes)
 
@@ -67,7 +68,7 @@ setAttributes([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class
     * [<span class="tag str"></span>](intro#types) **attribute**: The name of the attribute you wish to get the value of.
     
 ``` Lua
-UI.getAttribute("testElement", "fontSize")
+self.UI.getAttribute("testElement", "fontSize")
 ```
 
 ---
@@ -104,25 +105,7 @@ UI.getAttribute("testElement", "fontSize")
 
     
 ``` Lua
-UI.hide("testElement")
-```
-
----
-
-
-###load(...)
-
-[<span class="ret boo"></span>](intro#types)&nbsp;Replaces the targeted XML script with the string provided.
-
-!!!warning
-    This will OVERWRITE currently existing XML that is already on the target Global/object.
-
-!!!info "load(xml)"
-    * [<span class="tag str"></span>](intro#types) **xml**: A single string with the contents of the XML to use
-
-    
-``` Lua
-UI.load("<Text>Test</Text>")
+self.UI.hide("testElement")
 ```
 
 ---
@@ -148,6 +131,24 @@ self.UI.setAttribute("testElement", "fontSize", 200)
 ---
 
 
+###setXml(...)
+
+[<span class="ret boo"></span>](intro#types)&nbsp;Replaces the targeted XML script with the string provided.
+
+!!!warning
+    This will OVERWRITE currently existing XML that is already on the target Global/object.
+
+!!!info "setXml(xml)"
+    * [<span class="tag str"></span>](intro#types) **xml**: A single string with the contents of the XML to use
+
+    
+``` Lua
+self.UI.setXml("<Text>Test</Text>")
+```
+
+---
+
+
 ###show(...)
 
 [<span class="ret boo"></span>](intro#types)&nbsp;Shows the given UI element. Unlike the "active" attribute, show triggers animations.
@@ -157,7 +158,7 @@ self.UI.setAttribute("testElement", "fontSize", 200)
 
     
 ``` Lua
-UI.show("testElement")
+self.UI.show("testElement")
 ```
 
 
@@ -188,7 +189,7 @@ attributeTable = {
     fontSize = 300,
     color = "#000000"
 }
-UI.setAttributes("exampleText", attributeTable)
+self.UI.setAttributes("exampleText", attributeTable)
 ```
 
 ---
