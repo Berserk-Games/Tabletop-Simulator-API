@@ -811,6 +811,26 @@
     UI Functions
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classic-ui" title="Classic UI" class="md-nav__link">
+    Classic UI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-ui" title="Custom UI" class="md-nav__link">
+    Custom UI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2134,6 +2154,26 @@
     UI Functions
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classic-ui" title="Classic UI" class="md-nav__link">
+    Classic UI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-ui" title="Custom UI" class="md-nav__link">
+    Custom UI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2849,7 +2889,9 @@
 </tbody>
 </table>
 <h3 id="ui-functions">UI Functions<a class="headerlink" href="#ui-functions" title="Permanent link"> </a></h3>
-<p>These functions allow for the creation/editing/removal of functional buttons and text inputs which themselves trigger code within your scripts.</p>
+<p>A new UI system was added to Tabletop Simulator which allows for more flexibility in the creation of UI elements on Objects. The old system (Classic UI) and new system (Custom UI) both work, and each has its own strengths.</p>
+<h4 id="classic-ui">Classic UI<a class="headerlink" href="#classic-ui" title="Permanent link"> </a></h4>
+<p>These functions allow for the creation/editing/removal of functional buttons and text inputs which themselves trigger code within your scripts. These buttons/inputs are attached to the object they are created on.</p>
 <table>
 <thead>
 <tr>
@@ -2922,6 +2964,8 @@
 </tr>
 </tbody>
 </table>
+<h4 id="custom-ui">Custom UI<a class="headerlink" href="#custom-ui" title="Permanent link"> </a></h4>
+<p>Custom UI gives you a wide variety of element types, not just buttons and inputs, to place onto an Object. It is an extension of the UI class, and details on its use can be found <a href="../ui">on the UI page</a>.</p>
 <h3 id="get-functions">Get Functions<a class="headerlink" href="#get-functions" title="Permanent link"> </a></h3>
 <p>These functions obtain information from an object.</p>
 <table>
@@ -3764,7 +3808,7 @@
 </div>
 <hr />
 <h4 id="removeinput">removeInput(...)<a class="headerlink" href="#removeinput" title="Permanent link"> </a></h4>
-<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Removes a specific input. Indexes start at 0. The first button on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.</p>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Removes a specific input. Indexes start at 0. The first input on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.</p>
 <p>Removing an index instantly causes all other higher indexes to shift down 1.</p>
 <div class="admonition info">
 <p class="admonition-title">removeInput(index)</p>

@@ -1778,12 +1778,12 @@
                 
                   <h1>Introduction</h1>
                 
-                <p>The Custom UI system allows users to create custom UIs to support their game. The UI system is unique because the elements are created using a simple XML system.</p>
+                <p>The Custom UI system allows users to create custom UIs to support their game. The UI system is unique because the elements are created using a simple XML system. These UI elements can be created on screen using a Global UI or on individual in-game Objects.</p>
 <h2 id="core-features">Core Features<a class="headerlink" href="#core-features" title="Permanent link"> </a></h2>
 <p>There are 3 main pieces to the UI system.</p>
 <ul>
 <li><strong>Create Elements</strong><ul>
-<li>You are able to create individual elements and position them on the screen in a variety of ways.</li>
+<li>You are able to create individual elements and position them on the screen/object in a variety of ways.</li>
 </ul>
 </li>
 <li><strong>Import Assets</strong><ul>
@@ -1797,7 +1797,7 @@
 </ul>
 <hr />
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link"> </a></h2>
-<p>Once you load a saved table, click the Scripting button at the top of the screen. The traditional scripting window will now be visible, but you will also see a green tab labeled <strong>UI</strong>. Clicking that will open a blank window. In this box you will input your XML. Once you are finished, click <strong>Save &amp; Play</strong> in its upper-left hand corner and the save file will re-load with your changes applied to it.</p>
+<p>Once you load a saved table, click the Scripting button at the top of the screen. The traditional scripting window will now be visible, but you will also see a button labeled <strong>UI</strong>. Using this button, you can toggle back and forth between Lua scripting and UI XML. In this UI window you will input your XML. Once you are finished, click <strong>Save &amp; Play</strong> in its upper-left hand corner and the save file will re-load with your changes applied to it.</p>
 <p>If you do not see your UI elements appearing, it is possible your code has an error in it. Look down to the In-Game chat box for the error message It will indicate the line and character position the issue was discovered when trying to parse your code.</p>
 <h3 id="basics-of-xml">Basics of XML<a class="headerlink" href="#basics-of-xml" title="Permanent link"> </a></h3>
 <p>In the UI XML, you create <strong>elements</strong> and modify them with <strong>attributes</strong>. Each element is created using tags. Here is an element being created.</p>
@@ -1820,8 +1820,12 @@
 <p><strong>CORRECT</strong>: <code class="codehilite"><span class="nt">&lt;Text</span> <span class="na">fontSize=</span><span class="s">&quot;200&quot;</span><span class="nt">&gt;</span>Bigger Displayed Text<span class="nt">&lt;/Text&gt;</span></code></p>
 </div>
 <h3 id="example-ui">Example UI<a class="headerlink" href="#example-ui" title="Permanent link"> </a></h3>
-<p>Example Grid Menu: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1382344471">https://steamcommunity.com/sharedfiles/filedetails/?id=1382344471</a>
-Example Rulebook: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1384145407">https://steamcommunity.com/sharedfiles/filedetails/?id=1384145407</a></p>
+<p>Below you will find a variety of example projects to help you understand how the UI works.</p>
+<ul>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1382344471">Example Grid Menu</a> by UnrealEd</li>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1384145407">Example Rulebook</a> by UnrealEd</li>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1393821479">Example Splash Screen + Collapsible Die Roller</a> by MrStump</li>
+</ul>
                 
                   
                 

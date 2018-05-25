@@ -1868,13 +1868,16 @@
 <p>Be sure to check out the <a href="../../ui"><strong>UI section of the Lua Scripting API</strong></a> for how to receive the input from these element types. With Lua scripting, you can even modify the UI elements!</p>
 </div>
 <h2 id="targeting-triggers">Targeting Triggers<a class="headerlink" href="#targeting-triggers" title="Permanent link"> </a></h2>
-<p>When using an attribute that triggers scripting, like onValueChanged or onClick, it will always trigger the Global Lua script. For example:
-<div class="codehilite"><pre><span></span><span class="nt">&lt;Button</span> <span class="na">onClick=</span><span class="s">&quot;uiClickFunc&quot;</span><span class="nt">&gt;</span>Click Me<span class="nt">&lt;/Button&gt;</span>
+<p>When using an attribute that triggers scripting, like onValueChanged or onClick, the UI will target a default location. Global UI targets Global script, Object UI targets the Object's script. This behavior can be overwritten. For example:</p>
+<p><div class="codehilite"><pre><span></span><span class="nt">&lt;Button</span> <span class="na">onClick=</span><span class="s">&quot;uiClickFunc&quot;</span><span class="nt">&gt;</span>Click Me<span class="nt">&lt;/Button&gt;</span>
 </pre></div>
-This would trigger a function in the Global Lua script <code class="codehilite"><span class="kd">function</span> <span class="nx">uiClickFunc</span><span class="p">()</span></code>. But if you want to target a function on an Object's script? Place the GUID for the object before the function name, like so:
+If this was in the Global UI, this would trigger a function in the Global Lua script <code class="codehilite"><span class="kd">function</span> <span class="nx">uiClickFunc</span><span class="p">()</span></code>. But if you want to target a function on an Object's script? Place the GUID for the object before the function name, like so:
 <div class="codehilite"><pre><span></span><span class="nt">&lt;Button</span> <span class="na">onClick=</span><span class="s">&quot;aaa111/uiClickFunc&quot;</span><span class="nt">&gt;</span>Click Me<span class="nt">&lt;/Button&gt;</span>
 </pre></div>
-Now when the button is clicked, it will still try to activate <code class="codehilite"><span class="kd">function</span> <span class="nx">uiClickFunc</span><span class="p">()</span></code> but it will try to do so on the Object Lua script of the Object with the GUID of "aaa111".</p>
+Now when the button is clicked, it will still try to activate <code class="codehilite"><span class="kd">function</span> <span class="nx">uiClickFunc</span><span class="p">()</span></code> but it will try to do so on the Object Lua script of the Object with the GUID of "aaa111".
+<div class="codehilite"><pre><span></span><span class="nt">&lt;Button</span> <span class="na">onClick=</span><span class="s">&quot;Global/uiClickFunc&quot;</span><span class="nt">&gt;</span>Click Me<span class="nt">&lt;/Button&gt;</span>
+</pre></div>
+And if this was in an Object's UI, it would direct the function activation to Global instead of that Object.</p>
 <p>Remember you can also use the <a href="../attributes#general-attributes">Id attribute</a> to identify which UI element triggered the function.</p>
 <hr />
 <h2 id="element-summary">Element Summary<a class="headerlink" href="#element-summary" title="Permanent link"> </a></h2>

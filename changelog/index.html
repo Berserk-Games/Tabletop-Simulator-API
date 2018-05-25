@@ -102,7 +102,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#5918-v1051" tabindex="1" class="md-skip">
+      <a href="#52518-v106" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -553,6 +553,13 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#52518-v106" title="5/25/18 - v10.6" class="md-nav__link">
+    5/25/18 - v10.6
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#5918-v1051" title="5/9/18 - v10.5.1" class="md-nav__link">
@@ -1711,6 +1718,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#52518-v106" title="5/25/18 - v10.6" class="md-nav__link">
+    5/25/18 - v10.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#5918-v1051" title="5/9/18 - v10.5.1" class="md-nav__link">
     5/9/18 - v10.5.1
   </a>
@@ -1753,6 +1767,30 @@
                   <h1>Changelog</h1>
                 
                 <p>This is an ongoing list of scripting changes that have been implemented to scripting side of Tabletop Simulator.</p>
+<h6 id="52518-v106">5/25/18 - v10.6<a class="headerlink" href="#52518-v106" title="Permanent link"> </a></h6>
+<div class="admonition info">
+<ul>
+<li>Custom UI:<ul>
+<li>3D UI added for objects (simialar to createButton/Input)<ul>
+<li>Each object can have its own assets (images)</li>
+<li>Point scripting towards an object UI with <code class="codehilite">object.UI.setAttribute(...)</code></li>
+<li>Events called from an object's UI will automatically go to that object's Script. To override that feature and send it to Global, use <code class="codehilite">Global/functionName</code> for the attribute's name.</li>
+</ul>
+</li>
+<li><code class="codehilite">UI.load()</code> added:<ul>
+<li>Allows for dynamic UI creation from a string</li>
+<li>This OVERWRITES THE CURRENT XML on the target Global/object!!!</li>
+</ul>
+</li>
+<li>Click sounds added for inputs</li>
+<li>Text universal attributes outlined in attributes section</li>
+<li>FIXED: Player colors now match TTS colors. For example, "red" is now equivalent to the player color red exactly.</li>
+<li>FIXED: Dragging is improved so the element doesn't snap to its rectAlignment when dragged.</li>
+<li>FIXED: When changing active attribute from script visibility would sometimes not work correctly</li>
+</ul>
+</li>
+</ul>
+</div>
 <h6 id="5918-v1051">5/9/18 - v10.5.1<a class="headerlink" href="#5918-v1051" title="Permanent link"> </a></h6>
 <div class="admonition info">
 <ul>
