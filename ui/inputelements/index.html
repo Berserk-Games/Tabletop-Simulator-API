@@ -2143,6 +2143,14 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 <span class="c">&lt;!-- Button with Icon and Text --&gt;</span>
 <span class="nt">&lt;Button</span> <span class="na">icon=</span><span class="s">&quot;SomeName&quot;</span><span class="nt">&gt;</span>Button With Icon<span class="nt">&lt;/Button&gt;</span>
 </pre></div></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>onClick passes nil for the value by default. However, you can assign a string that will be passed in onClick.</p>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;Button</span> <span class="na">onClick=</span><span class="s">&quot;clickFunction(stringName)&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+
+<p>The above example passes a string with the name of <code class="codehilite">&quot;stringName&quot;</code> to the Lua function for the value property.</p>
+</div>
 <hr />
 <h3 id="toggle">Toggle<a class="headerlink" href="#toggle" title="Permanent link"> </a></h3>
 <p>A simple on/off toggle. Is able to send on/off status.</p>
