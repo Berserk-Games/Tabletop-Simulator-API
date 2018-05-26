@@ -54,8 +54,8 @@ onCollisionStay([<span class="tag tab"></span>](intro#types)&nbsp;collision_info
 onDestroy() | Called when an Object it is on is destroyed. | [<span class="i"></span>](#ondestroy)
 onDrop([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a player releases an Object after picking it up. | [<span class="i"></span>](#ondrop)
 onPickUp([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a player picks up an Object. | [<span class="i"></span>](#onpickup)
-onSearchEnd([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a player first searches this Object. | [<span class="i"></span>](#onsearchend)
-onSearchStart([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a player finishes searching this Object. | [<span class="i"></span>](#onsearchstart)
+onSearchEnd([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a player finishes searches this Object. | [<span class="i"></span>](#onsearchend)
+onSearchStart([<span class="tag str"></span>](intro#types)&nbsp;player_color) | Called when a player starts searching this Object. | [<span class="i"></span>](#onsearchstart)
 
 
 
