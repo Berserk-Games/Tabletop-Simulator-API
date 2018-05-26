@@ -101,6 +101,15 @@ Example:
 <Button icon="SomeName">Button With Icon</Button>
 ```
 
+!!!tip
+    onClick passes nil for the value by default. However, you can assign a string that will be passed in onClick.
+    
+    ```xml
+    <Button onClick="clickFunction(stringName)" />
+    ```
+    
+    The above example passes a string with the name of `"stringName"` to the Lua function for the value property.
+
 ---
 
 
