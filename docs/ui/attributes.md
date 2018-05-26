@@ -12,9 +12,10 @@ For XML, most of the attribute types are self-explanatory, like string or float 
     * **8 Char Hex**: `#FFFFFFCC` {>>(white 80% opacity)<<}
     * **RGB Color**: `rgb(1,1,1)` {>>(white 100% opacity)<<}
     * **RGBA Color**: `rgba(1,1,1,0.8)` {>>(white 80% opacity)<<}
+    * **Player Color**: `White` {>>(white 100% opacity)<<}
 * <span class="tag xmlcb"></span>
     * Color block values are used to specify the colors for elements such as buttons and input fields.
-    * Format: **(normalColor|highlightedColor|pressedColor|disabledColor)** where each color is formatted as above, e.g. `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
+    * Format: **(normalColor|highlightedColor|pressedColor|disabledColor)** where each color is formatted as above, e.g. `#FFFFFF|White|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
 * <span class="tag boo"></span>
     * **True**: `1` or `true`
     * **False**: `0` or `false`
