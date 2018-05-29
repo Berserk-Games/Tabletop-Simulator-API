@@ -28,7 +28,7 @@ When clicking on "Scripting Editor" in the right click contextual menu in TTS fo
 
 ###Loading a New Game
 
-After loading a new game in TTS, TTS will send all the Lua Scripts and UI XML from the new game to Atom. TTS sends a JSON message with an ID of 1 and an array of the Lua Scripts and UI XMLs. TTS also sends this message as a response to requests made by the editor, as described later under messages TTS listens for and handles.
+After loading a new game in TTS, TTS will send all the Lua scripts and UI XML from the new game to Atom. TTS sends a JSON message with an ID of 1 and an array of the Lua Scripts and UI XMLs. TTS also sends this message as a response to requests made by the editor, as described later under messages TTS listens for and handles.
 
 ```JSON
 {
@@ -119,6 +119,6 @@ TTS listens for a JSON message with an ID of 1 containing an array of the Lua Sc
 
 TTS updates the Lua scripts and UI XML for any objects listed in the message, and then reloads the save file, the same way it does when pressing "Save & Play" within the in-game editor. Objects not mentioned in the scriptStates array are not updated.
 
-Any objects mentioned have both their Lua script and their UI XML updates. If no value is set for either the "script" or "ui" key then the corresponding Lua script or UI XML is deleted. That means if you want to update a Lua script for an object without changing its UI XML, then the message must contain both the updated Lua script and the unchanged UI XML.
+Any objects mentioned have both their Lua script and their UI XML updated. If no value is set for either the "script" or "ui" key then the corresponding Lua script or UI XML is deleted. That means if you want to update a Lua script for an object without changing its UI XML, then the message must contain both the updated Lua script and the unchanged UI XML.
 
 After TTS reloads the game, it then also sends a message with an ID of 1 back to the editor, with content the same as the message TTS sends when loading a new game. 
