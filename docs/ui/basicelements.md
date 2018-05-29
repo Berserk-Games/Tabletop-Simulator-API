@@ -16,7 +16,7 @@ Element Name | Description | &nbsp;
 
 ###Text
 
-Adds basic text.
+Adds basic text. This tag supports Rich Text as shown in the example below.
 
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type / Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
@@ -30,6 +30,20 @@ resizeTextMinSize | Minimum font size | float | `10`
 resizeTextMaxSize | Maximum font size | float | `40`
 horizontalOverflow | | <ul><li>Wrap</li><li>Overflow</li></ul> | `Overflow`
 verticalOverflow | | <ul><li>Truncate</li><li>Overflow</li></ul> | `Truncate`
+
+Example:
+```xml
+<!-- Standard Text element -->
+<Text>Some Text</Text>
+
+<!-- Rich Text -->
+<Text>
+    This text is <b>Bold</b>, <i>Italic</i>, 
+    and <textcolor color="#00FF00">Green</textcolor>.
+    <br>
+    This text is <textsize size="18">Larger</textsize>.
+</Text>
+```
 
 ---
 
