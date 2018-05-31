@@ -102,7 +102,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#52518-v106" tabindex="1" class="md-skip">
+      <a href="#53018-v1061" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -553,6 +553,13 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#53018-v1061" title="5/30/18 - v10.6.1" class="md-nav__link">
+    5/30/18 - v10.6.1
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#52518-v106" title="5/25/18 - v10.6" class="md-nav__link">
@@ -1718,6 +1725,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#53018-v1061" title="5/30/18 - v10.6.1" class="md-nav__link">
+    5/30/18 - v10.6.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#52518-v106" title="5/25/18 - v10.6" class="md-nav__link">
     5/25/18 - v10.6
   </a>
@@ -1767,6 +1781,24 @@
                   <h1>Changelog</h1>
                 
                 <p>This is an ongoing list of scripting changes that have been implemented to scripting side of Tabletop Simulator.</p>
+<h6 id="53018-v1061">5/30/18 - v10.6.1<a class="headerlink" href="#53018-v1061" title="Permanent link"> </a></h6>
+<div class="admonition info">
+<ul>
+<li>Custom UI: <ul>
+<li>Added getXmlTable() and setXmlTable() for dealing with Xml easier with Lua tables.</li>
+<li>Changed setXml() from changing the actual Xml for the save file so everything is runtime changes only.</li>
+<li>Changed getXml() to return the current Xml string including any runtime changes from setAttribute().</li>
+<li>Fixed event recursion causing a potential lock up.</li>
+<li>Fixed setXml() not working with empty string.</li>
+</ul>
+</li>
+<li>Scripting:<ul>
+<li>Added a 'debug_external_api' console command to show logging for external api messages.</li>
+<li>Fixed logging an empty table throwing null.</li>
+</ul>
+</li>
+</ul>
+</div>
 <h6 id="52518-v106">5/25/18 - v10.6<a class="headerlink" href="#52518-v106" title="Permanent link"> </a></h6>
 <div class="admonition info">
 <ul>
