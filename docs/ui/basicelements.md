@@ -39,8 +39,7 @@ Example:
 <!-- Rich Text -->
 <Text>
     This text is <b>Bold</b>, <i>Italic</i>, 
-    and <textcolor color="#00FF00">Green</textcolor>.
-    <br>
+    and <textcolor color="#00FF00">Green</textcolor>.    
     This text is <textsize size="18">Larger</textsize>.
 </Text>
 ```
