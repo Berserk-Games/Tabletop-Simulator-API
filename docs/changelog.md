@@ -1,5 +1,18 @@
 This is an ongoing list of scripting changes that have been implemented to scripting side of Tabletop Simulator.
 
+######5/30/18 - v10.6.1
+
+!!!info ""
+    * Custom UI: 
+        * Added getXmlTable() and setXmlTable() for dealing with Xml easier with Lua tables.
+        * Changed setXml() from changing the actual Xml for the save file so everything is runtime changes only.
+        * Changed getXml() to return the current Xml string including any runtime changes from setAttribute().
+        * Fixed event recursion causing a potential lock up.
+        * Fixed setXml() not working with empty string.
+    * Scripting:
+        * Added a 'debug_external_api' console command to show logging for external api messages.
+        * Fixed logging an empty table throwing null.
+
 ######5/25/18 - v10.6
 
 !!!info ""

@@ -1,8 +1,10 @@
 UI, a static global class AND an Object class. It is the method to interact with custom UI elements. It allows you to read/write attributes of elements defined in the XML of the UI. It also allows you to receive information from various inputs (like buttons) on-screen and on objects.
 
 !!!attention
-    The primary function of this class is to modify the UI, not to create it. The [UI API](ui/introUI.md) is used to create UI on Objects or on the screen (Global).
+    This class allows for the **manipulation** of UI **at runtime**. It does **NOT** modify or fetch **the original XML** in the editor, but rather what is displayed as it continues to run during a game. Just like with Lua, you can only get/set dynamic values during runtime. You can use [onSave](event#onsave) and [onLoad](event#onload) to record any data you want to persist through save/load/undo.
     
+    For more information on how to build UI elements within XML, view the [UI API](ui/introUI.md).
+
 
 ##Global and Object
 UI can either be placed on the screen by using the **Global UI** or placed on an Object using **Object UI**. Depending on which you are using, these commands are used differently.
@@ -41,10 +43,12 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 getAttribute([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class="tag str"></span>](intro#types)&nbsp;attribute) | Obtains the value of a specified attribute of a UI element. | [<span class="ret var"></span>](intro#types) | [<span class="i"></span>](#getattribute)
 getAttributes([<span class="tag str"></span>](intro#types)&nbsp;id) | Returns the attributes and their values of a UI element. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getattributes)
-<a class="anchor" id="getxml"></a>getXml() | Returns the current xml string. This will not have any dynamic changes done from scripts. | [<span class="ret boo"></span>](intro#types) | 
+<a class="anchor" id="getxml"></a>getXml() | Returns the run-time UI's XML in string format. | [<span class="ret str"></span>](intro#types) | 
+getXmlTable() | Returns the run-time UI's XML formatted as a Lua table. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getxmltable)
 hide([<span class="tag str"></span>](intro#types)&nbsp;id) | Hides the given UI element. Unlike the "active" attribute, hide triggers animations. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#hide)
 setAttribute([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class="tag str"></span>](intro#types)&nbsp;attribute, [<span class="tag var"></span>](intro#types)&nbsp;value) | Sets the value of a specified attribute of a UI element. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setattribute)
-setXml([<span class="tag str"></span>](intro#types)&nbsp;xml) | Replaces the targeted XML script with the string provided. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setxml)
+setXml([<span class="tag str"></span>](intro#types)&nbsp;xml) | Replaces the run-time UI with the XML string. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setxml)
+setXmlTable([<span class="tag tab"></span>](intro#types)&nbsp;data) | Replaces the run-time UI with an XML string which is generated from a table of data. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setxmltable)
 show([<span class="tag str"></span>](intro#types)&nbsp;id) | Displays the given UI element. Unlike the "active" attribute, show triggers animations. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#show)
 setAttributes([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class="tag tab"></span>](intro#types)&nbsp;data) | Updates the value of the supplied attributes of a UI element. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setattributes)
 
@@ -57,11 +61,6 @@ setAttributes([<span class="tag str"></span>](intro#types)&nbsp;id, [<span class
 ###getAttribute(...)
 
 [<span class="ret var"></span>](intro#types)&nbsp;Obtains the value of a specified attribute of a UI element. What it returns will typically be a string or a number.
-
-!!!important
-    This will return the value from the XML UI, not the dynamic UI. For example, if you had a toggle and clicked it on-screen, using getAttribute on `isOn` would still return `false`. This is because elements are not synced between clients by default.
-    
-    If you wanted them synced you could, using the toggle's onValueChanged function, do a `UI.setAttribute(...)` to make that element's `isOn` equal `true`.
 
 !!!info "getAttribute(id, attribute)"
     * [<span class="tag str"></span>](intro#types) **id**: The Id that was assigned, as an attribute, to the desired XML UI element.
@@ -78,11 +77,6 @@ self.UI.getAttribute("testElement", "fontSize")
 
 [<span class="ret tab"></span>](intro#types)&nbsp;Returns the attributes and their values of a UI element. It only returns the attributes (and values) for elements that have had those attributes set by the user.
 
-!!!important
-    This will return the value from the XML UI, not the dynamic UI. For example, if you had a toggle and clicked it on-screen, using getAttribute on `isOn` would still return `false`. This is because elements are not synced between clients by default.
-    
-    If you wanted them synced you could, using the toggle's onValueChanged function, do a `UI.setAttribute(...)` to make that element's `isOn` equal `true`.
-
 !!!info "getAttributes(id)"
     * [<span class="tag str"></span>](intro#types) **id**: The Id that was assigned, as an attribute, to the desired XML UI element.
 
@@ -92,6 +86,45 @@ self.UI.getAttribute("testElement", "fontSize")
         * [<span class="tag str"></span>](intro#types) **color**: The hex used for the color element's value.
     
     **IMPORTANT**: This return table is an example of one you may get back from using it on a RawImage element type. The attribute keys you get back and their values will depend on the element you use the function on as well as the attributes you, the user, have assigned to it.
+
+---
+
+
+###getXmlTable()
+
+[<span class="ret tab"></span>](intro#types)&nbsp;Obtain the run-time UI formatted as a Lua table of data.
+
+Example Returned Table:
+```lua
+{
+    {
+        tag="HorizontalLayout",
+        attributes={
+            height=200,
+            width=1000,
+            color="rgba(0,0,0,0.7)",
+        },
+        children={
+            {
+                tag="Text",
+                attributes={
+                    fontSize=100,
+                    color="red",
+                },
+                text="Example",
+            },
+            {
+                tag="Text",
+                attributes={
+                    text="Message",
+                    fontSize=100,
+                    color="blue",
+                },
+            },
+        }
+    }
+}
+```
 
 ---
 
@@ -116,7 +149,7 @@ self.UI.hide("testElement")
 [<span class="ret boo"></span>](intro#types)&nbsp;Sets the value of a specified attribute of a UI element.
 
 !!!important
-    This will override the dynamic value from the XML UI for all players, forcing them to see the same value.
+    This will override the run-time value from the XML UI for all players, forcing them to see the same value.
 
 !!!info "setAttribute(id, attribute, value)"
     * [<span class="tag str"></span>](intro#types) **id**: The Id that was assigned, as an attribute, to the desired XML UI element.
@@ -133,10 +166,7 @@ self.UI.setAttribute("testElement", "fontSize", 200)
 
 ###setXml(...)
 
-[<span class="ret boo"></span>](intro#types)&nbsp;Replaces the targeted XML script with the string provided.
-
-!!!warning
-    This will OVERWRITE currently existing XML that is already on the target Global/object.
+[<span class="ret boo"></span>](intro#types)&nbsp;Replaces the run-time UI with the XML string.
 
 !!!info "setXml(xml)"
     * [<span class="tag str"></span>](intro#types) **xml**: A single string with the contents of the XML to use
@@ -144,6 +174,60 @@ self.UI.setAttribute("testElement", "fontSize", 200)
     
 ``` Lua
 self.UI.setXml("<Text>Test</Text>")
+```
+
+---
+
+
+###setXmlTable(...)
+
+[<span class="ret boo"></span>](intro#types)&nbsp;Replaces the run-time UI with an XML string which is generated from a table of data.
+
+!!!warning
+    This updates the run-time UI, not the one stored in the XML. Meaning the change will not persist through save/load.
+
+!!!info "setXmlTable(data)"
+    * [<span class="tag tab"></span>](intro#types) **data**: A table containing sub-tables. One sub-table for each element being created.
+        * [<span class="tag str"></span>](intro#types) **tag**: The element type. 
+        * [<span class="tag tab"></span>](intro#types) **attributes**: A table containing attribute names for keys. Available attribute types depend on tag's element type.
+            * {>>Optional, defaults to not being used.<<}
+            * {>>Example key/value pairs: text="Test", color="black"<<}
+        * [<span class="tag str"></span>](intro#types) **text**: Text that appears `<Text>Here</Text>`, between the `<>` and `</>`.
+            * {>>Optional, defaults to an empty string.<<}
+        * [<span class="tag tab"></span>](intro#types) **children**: A table containing more sub-tables, formatted as above. This does mean the sub-tables can contain their own children as well, containing sub-sub tables, etc.
+            * {>>Optional, defaults to not being used.<<}
+
+```lua
+function onLoad()
+    UI.setXmlTable({
+        {
+            tag="HorizontalLayout",
+            attributes={
+                height=200,
+                width=1000,
+                color="rgba(0,0,0,0.7)",
+            },
+            children={
+                {
+                    tag="Text",
+                    attributes={
+                        fontSize=100,
+                        color="red",
+                    },
+                    text="Example",
+                },
+                {
+                    tag="Text",
+                    attributes={
+                        text="Message",
+                        fontSize=100,
+                        color="blue",
+                    },
+                },
+            }
+        }
+    })
+end
 ```
 
 ---
@@ -161,9 +245,7 @@ self.UI.setXml("<Text>Test</Text>")
 self.UI.show("testElement")
 ```
 
-
-
-
+---
 
 
 ###setAttributes(...)
@@ -171,7 +253,7 @@ self.UI.show("testElement")
 [<span class="ret boo"></span>](intro#types)&nbsp;Updates the value of the supplied attributes of a UI element. You do not need to set every attribute with the data table, an element will continue using any previous values you do not overwrite.
 
 !!!important
-    This will override the dynamic value from the XML UI for all players, forcing them to see the same value.
+    This will override the run-time value from the XML UI for all players, forcing them to see the same value.
 
 !!!info "setAttributes(id, data)"
     * [<span class="tag str"></span>](intro#types) **id**: The Id that was assigned, as an attribute, to the desired XML UI element.
