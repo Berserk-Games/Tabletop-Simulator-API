@@ -126,6 +126,14 @@ Example Returned Table:
 }
 ```
 
+What the XML would look like which returns that table:
+```xml
+<HorizontalLayout height="200" width="1000" color="rgba(0,0,0,0.7)">
+    <Text fontSize="100" color="red">Example</Text>
+    <Text text="Message" fontSize="100" color="blue" />
+</HorizontalLayout>
+```
+
 ---
 
 
@@ -176,15 +184,15 @@ self.UI.setAttribute("testElement", "fontSize", 200)
 self.UI.setXml("<Text>Test</Text>")
 ```
 
+!!!warning
+    setXml takes 1 frame to update the runtime UI. This means any change or get of xml/attributes during this frame will not be recognized correctly.
+
 ---
 
 
 ###setXmlTable(...)
 
 [<span class="ret boo"></span>](intro#types)&nbsp;Replaces the run-time UI with an XML string which is generated from a table of data.
-
-!!!warning
-    This updates the run-time UI, not the one stored in the XML. Meaning the change will not persist through save/load.
 
 !!!info "setXmlTable(data)"
     * [<span class="tag tab"></span>](intro#types) **data**: A table containing sub-tables. One sub-table for each element being created.
@@ -230,6 +238,9 @@ function onLoad()
 end
 ```
 
+!!!warning
+    setXmlTable takes 1 frame to update the runtime UI. This means any change or get of xml/attributes during this frame will not be recognized correctly.
+    
 ---
 
 
