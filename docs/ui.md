@@ -111,7 +111,7 @@ Example Returned Table:
                     fontSize=100,
                     color="red",
                 },
-                text="Example",
+                value="Example",
             },
             {
                 tag="Text",
@@ -192,7 +192,7 @@ self.UI.setXml("<Text>Test</Text>")
         * [<span class="tag tab"></span>](intro#types) **attributes**: A table containing attribute names for keys. Available attribute types depend on tag's element type.
             * {>>Optional, defaults to not being used.<<}
             * {>>Example key/value pairs: text="Test", color="black"<<}
-        * [<span class="tag str"></span>](intro#types) **text**: Text that appears `<Text>Here</Text>`, between the `<>` and `</>`.
+        * [<span class="tag str"></span>](intro#types) **value**: Text that appears `<Text>Here</Text>`, between the `<>` and `</>`.
             * {>>Optional, defaults to an empty string.<<}
         * [<span class="tag tab"></span>](intro#types) **children**: A table containing more sub-tables, formatted as above. This does mean the sub-tables can contain their own children as well, containing sub-sub tables, etc.
             * {>>Optional, defaults to not being used.<<}
@@ -214,7 +214,7 @@ function onLoad()
                         fontSize=100,
                         color="red",
                     },
-                    text="Example",
+                    value="Example",
                 },
                 {
                     tag="Text",
