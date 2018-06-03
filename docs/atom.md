@@ -11,10 +11,10 @@ We created an official plugin for the Atom text editor to make writing Lua scrip
 This page provides a basic overview of how to install and use the plugin; if you would like a more in-depth explanation of its features and how to install/use it then please see its documentation:
 
 * [Atom Plugin Documentation Home](https://github.com/Berserk-Games/atom-tabletopsimulator-lua/wiki)
-* ->[Installation Instructions](https://github.com/Berserk-Games/atom-tabletopsimulator-lua/wiki/Installation)
-* ->[Features](https://github.com/Berserk-Games/atom-tabletopsimulator-lua/wiki/Features)
-* ->[Commands](https://github.com/Berserk-Games/atom-tabletopsimulator-lua/wiki/Commands)
-* ->[Settings](https://github.com/Berserk-Games/atom-tabletopsimulator-lua/wiki/Settings)
+	* [Installation Instructions](https://github.com/Berserk-Games/atom-tabletopsimulator-lua/wiki/Installation)
+	* [Features](https://github.com/Berserk-Games/atom-tabletopsimulator-lua/wiki/Features)
+	* [Commands](https://github.com/Berserk-Games/atom-tabletopsimulator-lua/wiki/Commands)
+	* [Settings](https://github.com/Berserk-Games/atom-tabletopsimulator-lua/wiki/Settings)
 
 Our official plugin introduces syntax highlighting, code autocompletion for the Tabletop Simulator Lua API, and functions to interact with the game. The in-game editor will continue to exist for quick access to scripts, but development on it will cease to continue.
 
