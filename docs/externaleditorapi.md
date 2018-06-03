@@ -148,7 +148,7 @@ TTS listens for a JSON message with an ID of 3 containing an object guid and lua
 }
 ```
 
-To execute Lua code for an object in the game that object must have an associated script in TTS. Otherwise the TTS scripting engine will fail with an error "function \<executeScript\>: Object reference not set to an instance of an object". Once the in-game editor shows a script associated with an object then TTS will be able to execute Lua code send by this message for that object.
+To execute Lua code for an object in the game that object must have an associated script in TTS. Otherwise the TTS scripting engine will fail with an error "function \<executeScript\>: Object reference not set to an instance of an object". Once the in-game editor shows a script associated with an object then TTS will be able to execute Lua code sent via JSON message for that object.
     
 ```JSON
 {
