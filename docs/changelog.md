@@ -26,7 +26,7 @@ This is an ongoing list of scripting changes that have been implemented to scrip
             * This OVERWRITES THE CURRENT XML on the target Global/object!!!
         * Click sounds added for inputs
         * Text universal attributes outlined in attributes section
-        * lookingForPlayers() added.
+        * setLookingForPlayers() added.
         * FIXED: Player colors now match TTS colors. For example, "red" is now equivalent to the player color red exactly.
         * FIXED: Dragging is improved so the element doesn't snap to its rectAlignment when dragged.
         * FIXED: When changing active attribute from script visibility would sometimes not work correctly
