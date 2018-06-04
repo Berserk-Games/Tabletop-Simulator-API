@@ -38,7 +38,7 @@ After loading a new game in TTS, TTS will send all the Lua scripts and UI XML fr
             "name": "Global",
             "guid": "-1",
             "script": "...",
-	    "ui": "..."
+            "ui": "..."
         },
         {
             "name": "BlackJack Dealer's Deck",
@@ -107,7 +107,7 @@ TTS listens for a JSON message with an ID of 1 containing an array of the Lua Sc
         {
             "guid": "-1",
             "script": "...",
-	    "ui": "..."
+            "ui": "..."
         },
         {
             "guid": "a0b2d5",
@@ -121,4 +121,41 @@ TTS updates the Lua scripts and UI XML for any objects listed in the message, an
 
 Any objects mentioned have both their Lua script and their UI XML updated. If no value is set for either the "script" or "ui" key then the corresponding Lua script or UI XML is deleted. That means if you want to update a Lua script for an object without changing its UI XML, then the message must contain both the updated Lua script and the unchanged UI XML.
 
-After TTS reloads the game, it then also sends a message with an ID of 1 back to the editor, with content the same as the message TTS sends when loading a new game. 
+After TTS reloads the game, it then also sends a message with an ID of 1 back to the editor, with content the same as the message TTS sends when loading a new game.
+
+###Custom Message
+
+TTS listens for a JSON message with an ID of 2 containing a custom message to be forwarded to the [`onExternalMessage`](event#onexternalmessage) event handler in the currently loaded game.
+
+```JSON
+{
+    "messageID": 2,
+    "customMessage": {...}
+}
+```
+
+The value of `customMessage` must be a table, and is passed as a parameter to the event handler. If this value is not a table then the event is not triggered.
+
+###Execute Lua Code
+
+TTS listens for a JSON message with an ID of 3 containing an object guid and lua script to run.
+
+```JSON
+{
+    "messageID": 3,
+    "guid":"-1",
+    "script":"print(\"Hello, World\")"
+}
+```
+
+To execute Lua code for an object in the game that object must have an associated script in TTS. Otherwise the TTS scripting engine will fail with an error "function \<executeScript\>: Object reference not set to an instance of an object". Once the in-game editor shows a script associated with an object then TTS will be able to execute Lua code sent via JSON message for that object.
+    
+```JSON
+{
+    "messageID": 3,
+    "guid":"e8e104",
+    "script":"self.setPosition({0,10,0}"
+}
+```
+
+
