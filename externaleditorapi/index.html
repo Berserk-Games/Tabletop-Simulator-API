@@ -539,6 +539,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#custom-message" title="Custom Message" class="md-nav__link">
+    Custom Message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute-lua-code" title="Execute Lua Code" class="md-nav__link">
+    Execute Lua Code
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1820,6 +1834,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#custom-message" title="Custom Message" class="md-nav__link">
+    Custom Message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute-lua-code" title="Execute Lua Code" class="md-nav__link">
+    Execute Lua Code
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1876,7 +1904,7 @@
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Global&quot;</span><span class="p">,</span>
             <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;-1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ui&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span>
+            <span class="nt">&quot;ui&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span>
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;BlackJack Dealer&#39;s Deck&quot;</span><span class="p">,</span>
@@ -1927,7 +1955,7 @@
         <span class="p">{</span>
             <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;-1&quot;</span><span class="p">,</span>
             <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ui&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span>
+            <span class="nt">&quot;ui&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span>
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;a0b2d5&quot;</span><span class="p">,</span>
@@ -1939,7 +1967,32 @@
 
 <p>TTS updates the Lua scripts and UI XML for any objects listed in the message, and then reloads the save file, the same way it does when pressing "Save &amp; Play" within the in-game editor. Objects not mentioned in the scriptStates array are not updated.</p>
 <p>Any objects mentioned have both their Lua script and their UI XML updated. If no value is set for either the "script" or "ui" key then the corresponding Lua script or UI XML is deleted. That means if you want to update a Lua script for an object without changing its UI XML, then the message must contain both the updated Lua script and the unchanged UI XML.</p>
-<p>After TTS reloads the game, it then also sends a message with an ID of 1 back to the editor, with content the same as the message TTS sends when loading a new game. </p>
+<p>After TTS reloads the game, it then also sends a message with an ID of 1 back to the editor, with content the same as the message TTS sends when loading a new game.</p>
+<h3 id="custom-message">Custom Message<a class="headerlink" href="#custom-message" title="Permanent link"> </a></h3>
+<p>TTS listens for a JSON message with an ID of 2 containing a custom message to be forwarded to the <a href="../event#onexternalmessage"><code class="codehilite">onExternalMessage</code></a> event handler in the currently loaded game.</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;customMessage&quot;</span><span class="p">:</span> <span class="p">{</span><span class="err">...</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>The value of <code class="codehilite">customMessage</code> must be a table, and is passed as a parameter to the event handler. If this value is not a table then the event is not triggered.</p>
+<h3 id="execute-lua-code">Execute Lua Code<a class="headerlink" href="#execute-lua-code" title="Permanent link"> </a></h3>
+<p>TTS listens for a JSON message with an ID of 3 containing an object guid and lua script to run.</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="s2">&quot;-1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;script&quot;</span><span class="p">:</span><span class="s2">&quot;print(\&quot;Hello, World\&quot;)&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>To execute Lua code for an object in the game that object must have an associated script in TTS. Otherwise the TTS scripting engine will fail with an error "function \&lt;executeScript>: Object reference not set to an instance of an object". Once the in-game editor shows a script associated with an object then TTS will be able to execute Lua code sent via JSON message for that object.</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="s2">&quot;e8e104&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;script&quot;</span><span class="p">:</span><span class="s2">&quot;self.setPosition({0,10,0}&quot;</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 

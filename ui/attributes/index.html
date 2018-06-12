@@ -1580,6 +1580,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#event-attributes" title="Event Attributes" class="md-nav__link">
+    Event Attributes
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1911,6 +1918,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#event-attributes" title="Event Attributes" class="md-nav__link">
+    Event Attributes
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1984,7 +1998,7 @@
                 
                   <h1>Attributes</h1>
                 
-                <p>As mentioned in the <a href="../xml/introUI">Introduction</a>, attributes are modifiers that can be applied to elements. They can be applied to individual elements or to whole groups of them.</p>
+                <p>boundaryAs mentioned in the <a href="../xml/introUI">Introduction</a>, attributes are modifiers that can be applied to elements. They can be applied to individual elements or to whole groups of them.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>They consists of two parts, a <strong>tag</strong> and a <strong>value</strong>. <strong><em>The value is always in quotation marks.</em></strong></p>
@@ -2504,6 +2518,74 @@
 <td>tooltipOffset</td>
 <td>This attribute allows you to modify the distance this tooltip will appear from the element.</td>
 <td>float</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="event-attributes">Event Attributes<a class="headerlink" href="#event-attributes" title="Permanent link"> </a></h3>
+<p>Allows Lua scripting events to be triggered by any element, through a variety of interactions. See the <a href="../inputelements">Input Elements</a> page for how to interact with Lua scripting.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onClick</td>
+<td>Clicking on the element.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>onMouseEnter</td>
+<td>Pointer entering the boundary of the element.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>onMouseExit</td>
+<td>Pointer leaving the boundary of the element.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>onDrag</td>
+<td>Element drag event.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>onBeginDrag</td>
+<td>Element beginning to be dragged.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>onEndDrag</td>
+<td>Element being release from its drag.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>onMouseDown</td>
+<td>Mouse click action.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>onMouseUp</td>
+<td>Mouse click finishing action.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>onSubmit</td>
+<td></td>
+<td>string</td>
 <td></td>
 </tr>
 </tbody>
