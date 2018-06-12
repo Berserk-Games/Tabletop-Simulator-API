@@ -1,4 +1,4 @@
-As mentioned in the [Introduction](xml/introUI), attributes are modifiers that can be applied to elements. They can be applied to individual elements or to whole groups of them.
+boundaryAs mentioned in the [Introduction](xml/introUI), attributes are modifiers that can be applied to elements. They can be applied to individual elements or to whole groups of them.
 
 !!!important 
     They consists of two parts, a **tag** and a **value**. ***The value is always in quotation marks.***
@@ -149,7 +149,20 @@ tooltipBorderImage | This attribute allows you to override the default image use
 tooltipBackgroundImage | This attribute allows you to override the default image used for the tooltips background. | string | 
 tooltipOffset | This attribute allows you to modify the distance this tooltip will appear from the element. | float | 
 
+###Event Attributes
+Allows Lua scripting events to be triggered by any element, through a variety of interactions. See the [Input Elements](inputelements) page for how to interact with Lua scripting.
 
+Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-- | -- | -- | --
+onClick | Clicking on the element. | string | 
+onMouseEnter | Pointer entering the boundary of the element. | string | 
+onMouseExit | Pointer leaving the boundary of the element. | string | 
+onDrag | Element drag event. | string | 
+onBeginDrag | Element beginning to be dragged. | string | 
+onEndDrag | Element being release from its drag. | string | 
+onMouseDown | Mouse click action. | string | 
+onMouseUp | Mouse click finishing action. | string | 
+onSubmit |  | string | 
 
 
 
