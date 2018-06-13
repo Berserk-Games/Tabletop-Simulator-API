@@ -14,7 +14,7 @@ Variable | Description | Type
 <a class="anchor" id="error"></a>error | Error text. | [<span class="tag str"></span>](intro#types)
 <a class="anchor" id="is_error"></a>is_error | If there is an error with the WebRequest. | [<span class="tag boo"></span>](intro#types)
 <a class="anchor" id="is_done"></a>is_done | If the WebRequest has finished. | [<span class="tag boo"></span>](intro#types)
-<a class="anchor" id="text"></a>text | Returned data. | [<span class="tag flo"></span>](intro#types)
+<a class="anchor" id="text"></a>text | Returned data. | [<span class="tag str"></span>](intro#types)
 <a class="anchor" id="upload_progress"></a>upload_progress | Upload percentage, represented as a value from 0-1. | [<span class="tag flo"></span>](intro#types)
 <a class="anchor" id="url"></a>url | The targeted URL. | [<span class="tag str"></span>](intro#types)
 
