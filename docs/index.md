@@ -9,7 +9,7 @@ A game is composed of one Global Script and zero to many Object Scripts. The Glo
 
 ## Resources
 
-You are able to follow the links on the left side of the page for available tools to help utiliz and learn the basics of scripting. When at the top of the page, you will see a link to the Lua API for documentation on all of the available Tabletop Simulator Lua functionality. Links on the right side of the page help navigate the article you are viewing.
+You are able to follow the links on the left side of the page for available tools to help utilize and learn the basics of scripting. When at the top of the page, you will see a link to the Lua API for documentation on all of the available Tabletop Simulator Lua functionality. Links on the right side of the page help navigate the article you are viewing.
 
 
 ## Writing Lua Scripts
