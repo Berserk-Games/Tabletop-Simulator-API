@@ -1,4 +1,4 @@
-Timer is a statis global class which provides methods for executing other functions after a delay and/or repeatedly. Each Timer is tracked by a unique "identifier" string. 
+Timer is a static global class which provides methods for executing other functions after a delay and/or repeatedly. Each Timer is tracked by a unique "identifier" string. 
 
 > Example Usage: `Timer.destroy(...)`
 
