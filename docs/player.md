@@ -189,7 +189,7 @@ Player["White"].lookAt({
 [<span class="ret boo"></span>](intro#types)&nbsp;Sets transform elements of a [hand zone](http://berserk-games.com/knowledgebase/hands/).
 
 !!!info "setHandTransform(parameters, hand_index)"
-    * [<span class="tag tab"></span>](intro#types) **parameters**: The Table the data to transform the hand zone with.
+    * [<span class="tag tab"></span>](intro#types) **parameters**: The Table of data to transform the hand zone with.
         * [<span class="tag vec"></span>](intro#vector) **parameters.position**: Position of the hand zone.
             * {>>Optional, defaults to {x=0, y=0, z=0}.<<}
         * [<span class="tag vec"></span>](intro#vector) **parameters.rotation**: Rotation of the hand zone.
