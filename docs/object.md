@@ -1098,8 +1098,8 @@ Example of Fixed:
 self.jointTo(obj, {
 	["type"]        = "Fixed",
 	["collision"]   = true, 
-	["breakForce"]  = 1000.0,
-	["breakTorgue"] = 1000.0,
+	["break_force"]  = 1000.0,
+	["break_torgue"] = 1000.0,
 })
 ```
 	
@@ -1108,12 +1108,12 @@ Example of Spring:
 self.jointTo(obj, {
 	["type"]        = "Spring",
 	["collision"]   = false, 
-	["breakForce"]  = 1000.0,
-	["breakTorgue"] = 1000.0,
+	["break_force"]  = 1000.0,
+	["break_torgue"] = 1000.0,
 	["spring"]      = 50,
 	["damper"]      = 0.1,
-	["maxDistance"] = 10,
-	["minDistance"] = 1
+	["max_distance"] = 10,
+	["min_distance"] = 1
 })
 ```	
 	
@@ -1124,11 +1124,11 @@ self.jointTo(obj, {
 	["collision"]   = true, 
 	["axis"]        = {1,1,1},
 	["anchor"]      = {1,1,1},
-	["breakForce"]  = 1000.0,
-	["breakTorgue"] = 1000.0,
-	["motorForce"]  = 100.0,
-	["motorVelocity"] = 10.0,
-	["motorFreeSpin"] = true
+	["break_force"]  = 1000.0,
+	["break_torgue"] = 1000.0,
+	["motor_force"]  = 100.0,
+	["motor_velocity"] = 10.0,
+	["motor_freeSpin"] = true
 })
 ```
 
