@@ -1,5 +1,29 @@
 This is an ongoing list of scripting changes that have been implemented to scripting side of Tabletop Simulator.
 
+
+######6/18/18 - v10.7
+
+!!!info ""
+    * Custom UI:
+        * Visibility attribute now supports admin, host, and team names.
+        * Clicking button won't block your hotkeys anymore.
+        * Added getXmlTable() setXmlTable().
+        * Fixed onValueChanged recursive event loop.
+        * Fixed setAttribute() not working if it thought there wasn't a change.
+        * Fixed not being able to setXml() with an empty string.
+        * Fix support for RichText in Get/SetXmlTable().
+        * Fixed zombie Xml UI when opening File Browser.
+    * Scripting:
+        * Added Player.getAvailableColors() and Player.getColors().
+        * Added SetSnapPoints() and GetSnapPoints().
+        * Added JointTo().
+        * Lots of scripting improvements to make it easier to convert between Lua Tables and C# types.
+        * Fixed Hotseat crash when using scripting input fields.
+        * Fixed camera triggering scripting zone.
+        * Fixed Turns.getNextColor() returning name instead of color.
+
+
+
 ######5/30/18 - v10.6.1
 
 !!!info ""

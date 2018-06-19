@@ -130,6 +130,7 @@ getCustomObject() | Returns a Table with the Custom Object information of a Cust
 getObjects() | Returns a Table of Objects in the script zone/bag/deck. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getobjects)
 <a class="anchor" id="getquantity"></a>getQuantity() | How many objects are in the stack. Returns -1 if the Object is not a stack. | [<span class="ret int"></span>](intro#types) |
 getRotationValues() | Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getrotationvalues)
+getSnapPoints() | Returns a table of sub-tables, each sub-table representing one snap point. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getsnappoints)
 <a class="anchor" id="getstateid"></a>getStateId() | Current [state](http://berserk-games.com/knowledgebase/creating-states/) ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1. | [<span class="ret int"></span>](intro#types) |
 getStates() | Returns a Table of information on the [states](http://berserk-games.com/knowledgebase/creating-states/) of an Object. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getstates)
 <a class="anchor" id="gettable"></a>getTable([<span class="tag str"></span>](intro#types)&nbsp;func_name) | Data value of a variable in another Object's script. Can only return a table. | [<span class="ret tab"></span>](intro#types) |
@@ -150,6 +151,7 @@ setCustomObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | 
 <a class="anchor" id="setluascript"></a>setLuaScript([<span class="tag str"></span>](intro#types)&nbsp;script) | Input a string as an Object's Lua script. Generally only used after spawning a new Object. | [<span class="ret boo"></span>](intro#types) |
 <a class="anchor" id="setname"></a>setName([<span class="tag str"></span>](intro#types)&nbsp;name) | Sets a name for an Object. Shows in tooltip. | [<span class="ret boo"></span>](intro#types)
 setRotationValues([<span class="tag tab"></span>](intro#types)&nbsp;rotation_values) | Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setrotationvalues)
+setSnapPoints([<span class="tag str"></span>](intro#types)&nbsp;parameters) | Spawns snap points from a list of parameters. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setsnappoints)
 <a class="anchor" id="setstate"></a>setState([<span class="tag int"></span>](intro#types)&nbsp;state_id) | Sets [state](http://berserk-games.com/knowledgebase/creating-states/) of an Object. State ids (indexes) start at 1. | [<span class="ret obj"></span>](intro#types) |
 <a class="anchor" id="settable"></a>setTable([<span class="tag str"></span>](intro#types)&nbsp;func_name, [<span class="tag tab"></span>](intro#types)&nbsp;data) | Creates/updates a variable in another Object's script. Only used for tables. | [<span class="ret boo"></span>](intro#types) |
 setValue([<span class="tag var"></span>](intro#types)&nbsp;value) | Sets an Int as the value. What the value represents depends on what type of Object it is. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setvalue)
@@ -158,7 +160,7 @@ setValue([<span class="tag var"></span>](intro#types)&nbsp;value) | Sets an Int 
 
 
 ###Action Function
-These functions perform general actions on objects and do not require any input parameters.
+These functions perform general actions on objects.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
@@ -171,6 +173,7 @@ dealToColorWithOffset([<span class="tag vec"></span>](intro#vector)&nbsp;offset,
 <a class="anchor" id="destruct"></a>destruct() | Destroys Object. Allows for `self.destruct()`. | [<span class="ret boo"></span>](intro#types) |
 <a class="anchor" id="highlighton"></a>highlightOn([<span class="tag col"></span>](intro#color)&nbsp;color, [<span class="tag flo"></span>](intro#types)&nbsp;duration) | Creates a highlight around an Object. | [<span class="ret boo"></span>](intro#types) |
 <a class="anchor" id="highlightoff"></a>highlightOff([<span class="tag col"></span>](intro#color)&nbsp;color) | Removes a highlight from around an Object. | [<span class="ret boo"></span>](intro#types) |
+jointTo([<span class="tag obj"></span>](intro#types)&nbsp;object, [<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Joints objects together, in the same way the Joint tool does. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#jointto)
 putObject([<span class="tag obj"></span>](intro#types)&nbsp;put_object) | Places an object into a container (chip stacks/bags/decks). | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#putobject)
 <a class="anchor" id="randomize"></a>randomize() | Shuffles deck/bag, rolls dice/coin, lifts other objects into the air. Same as pressing `R` by default. | [<span class="ret boo"></span>](intro#types) |
 reload() | Returns Object reference of itself after it respawns itself. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#reload)
@@ -825,6 +828,44 @@ You can manually assign rotation values to objects using the Rotation Value Gizm
 ---
 
 
+####getSnapPoints()
+
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a table of sub-tables, each sub-table representing one snap point. You can also use this as a [Global Base](base) function. This function will only return information on snap points attached to Objects unless you use it without an Object. See an example on [its entry](base#getsnappoints) under the Base page.
+
+!!!info "Sub-table contents"
+	* [<span class="tag vec"></span>](intro#vector) **position**: Position of the snap point.
+		* {>>Optional, defaults to {0,0,0}.<<}
+	* [<span class="tag vec"></span>](intro#vector) **rotation**: Rotation of the snap point.
+		* {>>Optional, defaults to {0,0,0}.<<}
+	* [<span class="tag boo"></span>](intro#types) **rotation_snap**: If the snap point is a "rotation" snap point.
+		* {>>Optional, defaults to false.<<}
+
+
+Example:
+```Lua
+snapPointList = self.getSnapPoints()
+log(snapPointsList)
+```
+
+Returned table:
+```Lua
+{
+	{
+		position = {2,2,2},
+	    rotation = {0,90,0},
+	    rotation_snap = false
+	},
+	{
+		position = {5,2,5},
+	    rotation = {0,0,0},
+	    rotation_snap = true
+	},
+}
+```
+
+---
+
+
 ####getStates()
 
 [<span class="ret tab"></span>](intro#types)&nbsp;Returns a Table of information on the [states](http://berserk-games.com/knowledgebase/creating-states/) of an Object. Stated Objects have ids (indexes) starting with 1.
@@ -911,6 +952,40 @@ self.setRotationValues(rotation_values)
 ```
 
 ---
+
+
+####setSnapPoints(...)
+
+[<span class="ret boo"></span>](intro#types)&nbsp;Spawns snap points from a list of parameters. You can also use this as a [Global Base](base) function. This function will only attach snap points to Objects unless you use it without an Object. See an example on [its entry](base#setsnappoints) under the Base page.
+
+!!!info "setSnapPoints(parameters)"
+	* [<span class="tag str"></span>](intro#types) **parameters**: A table containing numerically indexed sub-tables.
+		* [<span class="tag str"></span>](intro#types) **sub-table**:
+			* [<span class="tag vec"></span>](intro#vector) **position**: Position of the snap point.
+				* {>>Optional, defaults to {0,0,0}.<<}
+			* [<span class="tag vec"></span>](intro#vector) **rotation**: Rotation of the snap point.
+				* {>>Optional, defaults to {0,0,0}.<<}
+			* [<span class="tag boo"></span>](intro#types) **rotation_snap**: If the snap point is a "rotation" snap point.
+				* {>>Optional, defaults to false.<<}
+
+
+```Lua
+self.setSnapPoints({
+	{
+		position = {2,2,2},
+	    rotation = {0,90,0},
+	    rotation_snap = false
+	},
+	{
+		position = {5,2,5},
+	    rotation = {0,0,0},
+	    rotation_snap = true
+	},
+})
+```
+
+---
+
 
 
 ####setValue(...)
@@ -1003,6 +1078,61 @@ end
 self.dealToColorWithOffset({-2,0,5}, true, "White")
 self.dealToColorWithOffset({ 2,0,5}, true, "White")
 ```
+
+---
+
+
+####jointTo(...)
+
+[<span class="ret boo"></span>](intro#types)&nbsp;Joints objects together, in the same way the Joint tool does. 
+
+**Using obj.jointTo(), with no object or parameter used as arguments, will remove all joints from that Object.**
+
+!!!info "jointTo(object, parameters)"
+	* [<span class="tag obj"></span>](intro#types) **object**: The Object that the selected object will be jointed to.
+	* [<span class="tag tab"></span>](intro#types) **parameters**: A table of parameters. Which parameters depends on the joint type. See below for more.
+	* {>>All parameters have defaults, the same as the Joint Tool.<<}
+	
+Example of Fixed:
+```Lua
+self.jointTo(obj, {
+	["type"]        = "Fixed",
+	["collision"]   = true, 
+	["breakForce"]  = 1000.0,
+	["breakTorgue"] = 1000.0,
+})
+```
+	
+Example of Spring:
+```Lua
+self.jointTo(obj, {
+	["type"]        = "Spring",
+	["collision"]   = false, 
+	["breakForce"]  = 1000.0,
+	["breakTorgue"] = 1000.0,
+	["spring"]      = 50,
+	["damper"]      = 0.1,
+	["maxDistance"] = 10,
+	["minDistance"] = 1
+})
+```	
+	
+Example of Hinge:
+```Lua
+self.jointTo(obj, {
+	["type"]        = "Hinge",
+	["collision"]   = true, 
+	["axis"]        = {1,1,1},
+	["anchor"]      = {1,1,1},
+	["breakForce"]  = 1000.0,
+	["breakTorgue"] = 1000.0,
+	["motorForce"]  = 100.0,
+	["motorVelocity"] = 10.0,
+	["motorFreeSpin"] = true
+})
+```
+
+---
 
 
 ####putObject(...)

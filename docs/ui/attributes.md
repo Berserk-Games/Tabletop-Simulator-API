@@ -32,10 +32,25 @@ Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 active | Specifies whether or not this element is active. This can be used to hide/show elements via scripting. Triggering this via script will not trigger animations. | bool | `true`
 class | This allows you to group elements together by giving them the same class. It is used with [Defaults](defaults). | string | (none)
 id | Used by Lua scripting to identify an element within the XML. | string | (none)
-visibility | What colors are able to see the element. | string | (visible to all)
+visibility | What colors are able to see the element. See below for additional details. | string | (visible to all)
 
-!!!important "Designating Multiple Visibility Targets"
-    For visiblity, you can use multiple color names by putting a `|` between each color name. `"Red|Blue|Green"`
+####Visibility Targets
+The visibility attribute allows for only certain people or groups to see an element. Hiding an element will hide its children as well. 
+
+#####Visible To All Players
+Not using the visibility attribute (or setting it to an empty string) does not limit the visibility of the element.
+
+#####Visiblity Selection
+* `Host`:  Only visible to the game host.
+* `Admin`: Only visible to the host and any promoted player.
+* `Red`: Only visible to the player in that seat color. (Works with all valid [color names](/player-color))
+* `Clubs`: Only visible to members of that player group. (Works with all valid [team names](/player#team))
+
+#####Combining Groups
+You are able to list multiple color names in a single string by placing a vertical line `|` between valid entries.
+
+Example: `"Red|Blue|Host"` would be visible to the red seat, blue seat and the host of the server.
+
 
 
 ###Text Attributes

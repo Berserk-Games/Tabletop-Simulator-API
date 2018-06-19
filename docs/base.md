@@ -16,9 +16,11 @@ destroyObject([<span class="tag obj"></span>](intro#types)&nbsp;obj) | Destory a
 <a class="anchor" id="getnotes"></a>getNotes() | Returns the contents of the on-screen notes section. | [<span class="ret str"></span>](intro#types) | 
 getObjectFromGUID([<span class="tag str"></span>](intro#types)&nbsp;guid) | Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#getobjectfromguid)
 <a class="anchor" id="getseatedplayers"></a>getSeatedPlayers() | Returns Table of the [Player Colors](player-color) strings of seated players. | [<span class="ret tab"></span>](intro#types) | 
+getSnapPoints() | Returns a table of sub-tables, each sub-table representing one snap point. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#getsnappoints)
 paste([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#paste)
 setNotes([<span class="tag str"></span>](intro#types)&nbsp;notes) | Replace the text in the notes window with the string. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setnotes)
 <a class="anchor" id="setlookingforplayers"></a>setLookingForPlayers([<span class="tag boo"></span>](intro#types)&nbsp;lfp) | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](intro#types) | 
+setSnapPoints([<span class="tag str"></span>](intro#types)&nbsp;parameters) | Spawns snap points from a list of parameters. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#setsnappoints)
 spawnObject([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Spawns an Object. View the [Spawnable Object](spawnableobjects) page for Objects that can be spawned. | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#spawnobject)
 spawnObjectJSON([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Spawns an Object using a JSON string. Works with [getJSON()](object#getjson). | [<span class="ret obj"></span>](intro#types) | [<span class="i"></span>](#spawnobjectjson)
 startLuaCoroutine([<span class="tag obj"></span>](intro#types)&nbsp;function_owner, [<span class="tag str"></span>](intro#types)&nbsp;function_name) | Start a coroutine. | [<span class="ret boo"></span>](intro#types) | [<span class="i"></span>](#startluacoroutine)
@@ -99,6 +101,44 @@ copy(object_list)
 ---
 
 
+####getSnapPoints()
+
+[<span class="ret tab"></span>](intro#types)&nbsp;Returns a table of sub-tables, each sub-table representing one snap point. You can also use this as an [Object](object) function. This function will NOT return information on snap points attached to Objects unless you use it on the Object. See an example on [its entry](object#getsnappoints) under the Object page.
+
+!!!info "Sub-table contents"
+	* [<span class="tag vec"></span>](intro#vector) **position**: Position of the snap point.
+		* {>>Optional, defaults to {0,0,0}.<<}
+	* [<span class="tag vec"></span>](intro#vector) **rotation**: Rotation of the snap point.
+		* {>>Optional, defaults to {0,0,0}.<<}
+	* [<span class="tag boo"></span>](intro#types) **rotation_snap**: If the snap point is a "rotation" snap point.
+		* {>>Optional, defaults to false.<<}
+
+
+Example:
+```Lua
+snapPointList = getSnapPoints()
+log(snapPointsList)
+```
+
+Returned table:
+```Lua
+{
+	{
+		position = {2,2,2},
+	    rotation = {0,90,0},
+	    rotation_snap = false
+	},
+	{
+		position = {5,2,5},
+	    rotation = {0,0,0},
+	    rotation_snap = true
+	},
+}
+```
+
+---
+
+
 ####paste(...)
 
 [<span class="ret obj"></span>](intro#types)&nbsp;Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy).
@@ -122,6 +162,39 @@ copy(object_list)
 
 ``` Lua
 setNotes("This appears in the notes section")
+```
+
+---
+
+
+####setSnapPoints(...)
+
+[<span class="ret boo"></span>](intro#types)&nbsp;Spawns snap points from a list of parameters. You can also use this as an [Object](object) function. This function will NOT attach snap points to Objects unless you use it on the Object. See an example on [its entry](object#setsnappoints) under the Object page.
+
+!!!info "setSnapPoints(parameters)"
+	* [<span class="tag str"></span>](intro#types) **parameters**: A table containing numerically indexed sub-tables.
+		* [<span class="tag str"></span>](intro#types) **sub-table**:
+			* [<span class="tag vec"></span>](intro#vector) **position**: Position of the snap point.
+				* {>>Optional, defaults to {0,0,0}.<<}
+			* [<span class="tag vec"></span>](intro#vector) **rotation**: Rotation of the snap point.
+				* {>>Optional, defaults to {0,0,0}.<<}
+			* [<span class="tag boo"></span>](intro#types) **rotation_snap**: If the snap point is a "rotation" snap point.
+				* {>>Optional, defaults to false.<<}
+
+
+```Lua
+setSnapPoints({
+	{
+		position = {2,2,2},
+	    rotation = {0,90,0},
+	    rotation_snap = false
+	},
+	{
+		position = {5,2,5},
+	    rotation = {0,0,0},
+	    rotation_snap = true
+	},
+})
 ```
 
 ---
