@@ -102,7 +102,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#53018-v1061" tabindex="1" class="md-skip">
+      <a href="#61818-v107" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -553,6 +553,13 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61818-v107" title="6/18/18 - v10.7" class="md-nav__link">
+    6/18/18 - v10.7
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#53018-v1061" title="5/30/18 - v10.6.1" class="md-nav__link">
@@ -1725,6 +1732,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#61818-v107" title="6/18/18 - v10.7" class="md-nav__link">
+    6/18/18 - v10.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#53018-v1061" title="5/30/18 - v10.6.1" class="md-nav__link">
     5/30/18 - v10.6.1
   </a>
@@ -1781,6 +1795,32 @@
                   <h1>Changelog</h1>
                 
                 <p>This is an ongoing list of scripting changes that have been implemented to scripting side of Tabletop Simulator.</p>
+<h6 id="61818-v107">6/18/18 - v10.7<a class="headerlink" href="#61818-v107" title="Permanent link"> </a></h6>
+<div class="admonition info">
+<ul>
+<li>Custom UI:<ul>
+<li>Visibility attribute now supports admin, host, and team names.</li>
+<li>Clicking button won't block your hotkeys anymore.</li>
+<li>Added getXmlTable() setXmlTable().</li>
+<li>Fixed onValueChanged recursive event loop.</li>
+<li>Fixed setAttribute() not working if it thought there wasn't a change.</li>
+<li>Fixed not being able to setXml() with an empty string.</li>
+<li>Fix support for RichText in Get/SetXmlTable().</li>
+<li>Fixed zombie Xml UI when opening File Browser.</li>
+</ul>
+</li>
+<li>Scripting:<ul>
+<li>Added Player.getAvailableColors() and Player.getColors().</li>
+<li>Added SetSnapPoints() and GetSnapPoints().</li>
+<li>Added JointTo().</li>
+<li>Lots of scripting improvements to make it easier to convert between Lua Tables and C# types.</li>
+<li>Fixed Hotseat crash when using scripting input fields.</li>
+<li>Fixed camera triggering scripting zone.</li>
+<li>Fixed Turns.getNextColor() returning name instead of color.</li>
+</ul>
+</li>
+</ul>
+</div>
 <h6 id="53018-v1061">5/30/18 - v10.6.1<a class="headerlink" href="#53018-v1061" title="Permanent link"> </a></h6>
 <div class="admonition info">
 <ul>

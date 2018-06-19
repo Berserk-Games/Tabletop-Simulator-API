@@ -1077,6 +1077,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getsnappoints" title="getSnapPoints()" class="md-nav__link">
+    getSnapPoints()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getstates" title="getStates()" class="md-nav__link">
     getStates()
   </a>
@@ -1113,6 +1120,13 @@
           <li class="md-nav__item">
   <a href="#setrotationvalues" title="setRotationValues(...)" class="md-nav__link">
     setRotationValues(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsnappoints" title="setSnapPoints(...)" class="md-nav__link">
+    setSnapPoints(...)
   </a>
   
 </li>
@@ -1161,6 +1175,13 @@
           <li class="md-nav__item">
   <a href="#dealtocolorwithoffset" title="dealToColorWithOffset(...)" class="md-nav__link">
     dealToColorWithOffset(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jointto" title="jointTo(...)" class="md-nav__link">
+    jointTo(...)
   </a>
   
 </li>
@@ -2420,6 +2441,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getsnappoints" title="getSnapPoints()" class="md-nav__link">
+    getSnapPoints()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getstates" title="getStates()" class="md-nav__link">
     getStates()
   </a>
@@ -2456,6 +2484,13 @@
           <li class="md-nav__item">
   <a href="#setrotationvalues" title="setRotationValues(...)" class="md-nav__link">
     setRotationValues(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsnappoints" title="setSnapPoints(...)" class="md-nav__link">
+    setSnapPoints(...)
   </a>
   
 </li>
@@ -2504,6 +2539,13 @@
           <li class="md-nav__item">
   <a href="#dealtocolorwithoffset" title="dealToColorWithOffset(...)" class="md-nav__link">
     dealToColorWithOffset(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jointto" title="jointTo(...)" class="md-nav__link">
+    jointTo(...)
   </a>
   
 </li>
@@ -3045,6 +3087,12 @@
 <td><a href="#getrotationvalues"><span class="i"></span></a></td>
 </tr>
 <tr>
+<td>getSnapPoints()</td>
+<td>Returns a table of sub-tables, each sub-table representing one snap point.</td>
+<td><a href="../intro#types"><span class="ret tab"></span></a></td>
+<td><a href="#getsnappoints"><span class="i"></span></a></td>
+</tr>
+<tr>
 <td><a class="anchor" id="getstateid"></a>getStateId()</td>
 <td>Current <a href="http://berserk-games.com/knowledgebase/creating-states/">state</a> ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1.</td>
 <td><a href="../intro#types"><span class="ret int"></span></a></td>
@@ -3131,6 +3179,12 @@
 <td><a href="#setrotationvalues"><span class="i"></span></a></td>
 </tr>
 <tr>
+<td>setSnapPoints(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;parameters)</td>
+<td>Spawns snap points from a list of parameters.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#setsnappoints"><span class="i"></span></a></td>
+</tr>
+<tr>
 <td><a class="anchor" id="setstate"></a>setState(<a href="../intro#types"><span class="tag int"></span></a>&nbsp;state_id)</td>
 <td>Sets <a href="http://berserk-games.com/knowledgebase/creating-states/">state</a> of an Object. State ids (indexes) start at 1.</td>
 <td><a href="../intro#types"><span class="ret obj"></span></a></td>
@@ -3157,7 +3211,7 @@
 </tbody>
 </table>
 <h3 id="action-function">Action Function<a class="headerlink" href="#action-function" title="Permanent link"> </a></h3>
-<p>These functions perform general actions on objects and do not require any input parameters.</p>
+<p>These functions perform general actions on objects.</p>
 <table>
 <thead>
 <tr>
@@ -3221,6 +3275,12 @@
 <td>Removes a highlight from around an Object.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td></td>
+</tr>
+<tr>
+<td>jointTo(<a href="../intro#types"><span class="tag obj"></span></a>&nbsp;object, <a href="../intro#types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>Joints objects together, in the same way the Joint tool does.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#jointto"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>putObject(<a href="../intro#types"><span class="tag obj"></span></a>&nbsp;put_object)</td>
@@ -3907,6 +3967,44 @@
 </pre></div>
 
 <hr />
+<h4 id="getsnappoints">getSnapPoints()<a class="headerlink" href="#getsnappoints" title="Permanent link"> </a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp;Returns a table of sub-tables, each sub-table representing one snap point. You can also use this as a <a href="../base">Global Base</a> function. This function will only return information on snap points attached to Objects unless you use it without an Object. See an example on <a href="../base#getsnappoints">its entry</a> under the Base page.</p>
+<div class="admonition info">
+<p class="admonition-title">Sub-table contents</p>
+<ul>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>position</strong>: Position of the snap point.<ul>
+<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>rotation</strong>: Rotation of the snap point.<ul>
+<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>rotation_snap</strong>: If the snap point is a "rotation" snap point.<ul>
+<li><span class="critic comment">Optional, defaults to false.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Example:
+<div class="codehilite"><pre><span></span><span class="n">snapPointList</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getSnapPoints</span><span class="p">()</span>
+<span class="n">log</span><span class="p">(</span><span class="n">snapPointsList</span><span class="p">)</span>
+</pre></div></p>
+<p>Returned table:
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span>
+        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span>
+        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div></p>
+<hr />
 <h4 id="getstates">getStates()<a class="headerlink" href="#getstates" title="Permanent link"> </a></h4>
 <p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp;Returns a Table of information on the <a href="http://berserk-games.com/knowledgebase/creating-states/">states</a> of an Object. Stated Objects have ids (indexes) starting with 1.</p>
 <div class="admonition info">
@@ -4006,6 +4104,46 @@
     <span class="p">{</span><span class="n">value</span><span class="o">=</span><span class="s2">&quot;Tails&quot;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">}},</span>
 <span class="p">}</span>
 <span class="n">self</span><span class="p">.</span><span class="n">setRotationValues</span><span class="p">(</span><span class="n">rotation_values</span><span class="p">)</span>
+</pre></div>
+
+<hr />
+<h4 id="setsnappoints">setSnapPoints(...)<a class="headerlink" href="#setsnappoints" title="Permanent link"> </a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Spawns snap points from a list of parameters. You can also use this as a <a href="../base">Global Base</a> function. This function will only attach snap points to Objects unless you use it without an Object. See an example on <a href="../base#setsnappoints">its entry</a> under the Base page.</p>
+<div class="admonition info">
+<p class="admonition-title">setSnapPoints(parameters)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters</strong>: A table containing numerically indexed sub-tables.<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>sub-table</strong>:<ul>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>position</strong>: Position of the snap point.<ul>
+<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>rotation</strong>: Rotation of the snap point.<ul>
+<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>rotation_snap</strong>: If the snap point is a "rotation" snap point.<ul>
+<li><span class="critic comment">Optional, defaults to false.</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">setSnapPoints</span><span class="p">({</span>
+    <span class="p">{</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span>
+        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span>
+        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">},</span>
+<span class="p">})</span>
 </pre></div>
 
 <hr />
@@ -4122,6 +4260,52 @@
 <span class="n">self</span><span class="p">.</span><span class="n">dealToColorWithOffset</span><span class="p">({</span> <span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;White&quot;</span><span class="p">)</span>
 </pre></div>
 
+<hr />
+<h4 id="jointto">jointTo(...)<a class="headerlink" href="#jointto" title="Permanent link"> </a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Joints objects together, in the same way the Joint tool does. </p>
+<p><strong>Using obj.jointTo(), with no object or parameter used as arguments, will remove all joints from that Object.</strong></p>
+<div class="admonition info">
+<p class="admonition-title">jointTo(object, parameters)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag obj"></span></a> <strong>object</strong>: The Object that the selected object will be jointed to.</li>
+<li><a href="../intro#types"><span class="tag tab"></span></a> <strong>parameters</strong>: A table of parameters. Which parameters depends on the joint type. See below for more.</li>
+<li><span class="critic comment">All parameters have defaults, the same as the Joint Tool.</span></li>
+</ul>
+</div>
+<p>Example of Fixed:
+<div class="codehilite"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">jointTo</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="p">{</span>
+    <span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span>        <span class="o">=</span> <span class="s2">&quot;Fixed&quot;</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;collision&quot;</span><span class="p">]</span>   <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> 
+    <span class="p">[</span><span class="s2">&quot;breakForce&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;breakTorgue&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
+<span class="p">})</span>
+</pre></div></p>
+<p>Example of Spring:
+<div class="codehilite"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">jointTo</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="p">{</span>
+    <span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span>        <span class="o">=</span> <span class="s2">&quot;Spring&quot;</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;collision&quot;</span><span class="p">]</span>   <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> 
+    <span class="p">[</span><span class="s2">&quot;breakForce&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;breakTorgue&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;spring&quot;</span><span class="p">]</span>      <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;damper&quot;</span><span class="p">]</span>      <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;maxDistance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;minDistance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">})</span>
+</pre></div></p>
+<p>Example of Hinge:
+<div class="codehilite"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">jointTo</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="p">{</span>
+    <span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span>        <span class="o">=</span> <span class="s2">&quot;Hinge&quot;</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;collision&quot;</span><span class="p">]</span>   <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> 
+    <span class="p">[</span><span class="s2">&quot;axis&quot;</span><span class="p">]</span>        <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span>
+    <span class="p">[</span><span class="s2">&quot;anchor&quot;</span><span class="p">]</span>      <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span>
+    <span class="p">[</span><span class="s2">&quot;breakForce&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;breakTorgue&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;motorForce&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">100.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;motorVelocity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;motorFreeSpin&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">})</span>
+</pre></div></p>
+<hr />
 <h4 id="putobject">putObject(...)<a class="headerlink" href="#putobject" title="Permanent link"> </a></h4>
 <p><a href="../intro#types"><span class="ret obj"></span></a>&nbsp;Places an object into a container (chip stacks/bags/decks).</p>
 <div class="admonition info">

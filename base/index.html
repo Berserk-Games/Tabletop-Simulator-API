@@ -804,6 +804,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getsnappoints" title="getSnapPoints()" class="md-nav__link">
+    getSnapPoints()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#paste" title="paste(...)" class="md-nav__link">
     paste(...)
   </a>
@@ -813,6 +820,13 @@
           <li class="md-nav__item">
   <a href="#setnotes" title="setNotes(...)" class="md-nav__link">
     setNotes(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsnappoints" title="setSnapPoints(...)" class="md-nav__link">
+    setSnapPoints(...)
   </a>
   
 </li>
@@ -1987,6 +2001,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getsnappoints" title="getSnapPoints()" class="md-nav__link">
+    getSnapPoints()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#paste" title="paste(...)" class="md-nav__link">
     paste(...)
   </a>
@@ -1996,6 +2017,13 @@
           <li class="md-nav__item">
   <a href="#setnotes" title="setNotes(...)" class="md-nav__link">
     setNotes(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsnappoints" title="setSnapPoints(...)" class="md-nav__link">
+    setSnapPoints(...)
   </a>
   
 </li>
@@ -2231,6 +2259,12 @@
 <td></td>
 </tr>
 <tr>
+<td>getSnapPoints()</td>
+<td>Returns a table of sub-tables, each sub-table representing one snap point.</td>
+<td><a href="../intro#types"><span class="ret tab"></span></a></td>
+<td><a href="#getsnappoints"><span class="i"></span></a></td>
+</tr>
+<tr>
 <td>paste(<a href="../intro#types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
 <td>Pastes Objects in-game that were copied to the in-game clipboard. Works with <a href="#copy">copy(...)</a>.</td>
 <td><a href="../intro#types"><span class="ret tab"></span></a></td>
@@ -2247,6 +2281,12 @@
 <td>Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game.</td>
 <td><a href="../intro#types"><span class="ret boo"></span></a></td>
 <td></td>
+</tr>
+<tr>
+<td>setSnapPoints(<a href="../intro#types"><span class="tag str"></span></a>&nbsp;parameters)</td>
+<td>Spawns snap points from a list of parameters.</td>
+<td><a href="../intro#types"><span class="ret boo"></span></a></td>
+<td><a href="#setsnappoints"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>spawnObject(<a href="../intro#types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
@@ -2418,6 +2458,44 @@
 </ul>
 </div>
 <hr />
+<h4 id="getsnappoints">getSnapPoints()<a class="headerlink" href="#getsnappoints" title="Permanent link"> </a></h4>
+<p><a href="../intro#types"><span class="ret tab"></span></a>&nbsp;Returns a table of sub-tables, each sub-table representing one snap point. You can also use this as an <a href="../object">Object</a> function. This function will NOT return information on snap points attached to Objects unless you use it on the Object. See an example on <a href="../object#getsnappoints">its entry</a> under the Object page.</p>
+<div class="admonition info">
+<p class="admonition-title">Sub-table contents</p>
+<ul>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>position</strong>: Position of the snap point.<ul>
+<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>rotation</strong>: Rotation of the snap point.<ul>
+<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>rotation_snap</strong>: If the snap point is a "rotation" snap point.<ul>
+<li><span class="critic comment">Optional, defaults to false.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Example:
+<div class="codehilite"><pre><span></span><span class="n">snapPointList</span> <span class="o">=</span> <span class="n">getSnapPoints</span><span class="p">()</span>
+<span class="n">log</span><span class="p">(</span><span class="n">snapPointsList</span><span class="p">)</span>
+</pre></div></p>
+<p>Returned table:
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span>
+        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span>
+        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div></p>
+<hr />
 <h4 id="paste">paste(...)<a class="headerlink" href="#paste" title="Permanent link"> </a></h4>
 <p><a href="../intro#types"><span class="ret obj"></span></a>&nbsp;Pastes Objects in-game that were copied to the in-game clipboard. Works with <a href="#copy">copy(...)</a>.</p>
 <div class="admonition info">
@@ -2446,6 +2524,46 @@
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="n">setNotes</span><span class="p">(</span><span class="s2">&quot;This appears in the notes section&quot;</span><span class="p">)</span>
+</pre></div>
+
+<hr />
+<h4 id="setsnappoints">setSnapPoints(...)<a class="headerlink" href="#setsnappoints" title="Permanent link"> </a></h4>
+<p><a href="../intro#types"><span class="ret boo"></span></a>&nbsp;Spawns snap points from a list of parameters. You can also use this as an <a href="../object">Object</a> function. This function will NOT attach snap points to Objects unless you use it on the Object. See an example on <a href="../object#setsnappoints">its entry</a> under the Object page.</p>
+<div class="admonition info">
+<p class="admonition-title">setSnapPoints(parameters)</p>
+<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>parameters</strong>: A table containing numerically indexed sub-tables.<ul>
+<li><a href="../intro#types"><span class="tag str"></span></a> <strong>sub-table</strong>:<ul>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>position</strong>: Position of the snap point.<ul>
+<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#vector"><span class="tag vec"></span></a> <strong>rotation</strong>: Rotation of the snap point.<ul>
+<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
+</ul>
+</li>
+<li><a href="../intro#types"><span class="tag boo"></span></a> <strong>rotation_snap</strong>: If the snap point is a "rotation" snap point.<ul>
+<li><span class="critic comment">Optional, defaults to false.</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="n">setSnapPoints</span><span class="p">({</span>
+    <span class="p">{</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span>
+        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span>
+        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">},</span>
+<span class="p">})</span>
 </pre></div>
 
 <hr />

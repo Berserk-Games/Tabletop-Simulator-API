@@ -1515,6 +1515,46 @@
     General Attributes
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visibility-targets" title="Visibility Targets" class="md-nav__link">
+    Visibility Targets
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visible-to-all-players" title="Visible To All Players" class="md-nav__link">
+    Visible To All Players
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visiblity-selection" title="Visiblity Selection" class="md-nav__link">
+    Visiblity Selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-groups" title="Combining Groups" class="md-nav__link">
+    Combining Groups
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1853,6 +1893,46 @@
     General Attributes
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visibility-targets" title="Visibility Targets" class="md-nav__link">
+    Visibility Targets
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visible-to-all-players" title="Visible To All Players" class="md-nav__link">
+    Visible To All Players
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visiblity-selection" title="Visiblity Selection" class="md-nav__link">
+    Visiblity Selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-groups" title="Combining Groups" class="md-nav__link">
+    Combining Groups
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2059,16 +2139,26 @@
 </tr>
 <tr>
 <td>visibility</td>
-<td>What colors are able to see the element.</td>
+<td>What colors are able to see the element. See below for additional details.</td>
 <td>string</td>
 <td>(visible to all)</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition important">
-<p class="admonition-title">Designating Multiple Visibility Targets</p>
-<p>For visiblity, you can use multiple color names by putting a <code class="codehilite">|</code> between each color name. <code class="codehilite">&quot;Red|Blue|Green&quot;</code></p>
-</div>
+<h4 id="visibility-targets">Visibility Targets<a class="headerlink" href="#visibility-targets" title="Permanent link"> </a></h4>
+<p>The visibility attribute allows for only certain people or groups to see an element. Hiding an element will hide its children as well. </p>
+<h5 id="visible-to-all-players">Visible To All Players<a class="headerlink" href="#visible-to-all-players" title="Permanent link"> </a></h5>
+<p>Not using the visibility attribute (or setting it to an empty string) does not limit the visibility of the element.</p>
+<h5 id="visiblity-selection">Visiblity Selection<a class="headerlink" href="#visiblity-selection" title="Permanent link"> </a></h5>
+<ul>
+<li><code class="codehilite">Host</code>:  Only visible to the game host.</li>
+<li><code class="codehilite">Admin</code>: Only visible to the host and any promoted player.</li>
+<li><code class="codehilite">Red</code>: Only visible to the player in that seat color. (Works with all valid <a href="../../player-color">color names</a>)</li>
+<li><code class="codehilite">Clubs</code>: Only visible to members of that player group. (Works with all valid <a href="../../player#team">team names</a>)</li>
+</ul>
+<h5 id="combining-groups">Combining Groups<a class="headerlink" href="#combining-groups" title="Permanent link"> </a></h5>
+<p>You are able to list multiple color names in a single string by placing a vertical line <code class="codehilite">|</code> between valid entries.</p>
+<p>Example: <code class="codehilite">&quot;Red|Blue|Host&quot;</code> would be visible to the red seat, blue seat and the host of the server.</p>
 <h3 id="text-attributes">Text Attributes<a class="headerlink" href="#text-attributes" title="Permanent link"> </a></h3>
 <p>Many, but not all, elements have a text attribute.</p>
 <table>
