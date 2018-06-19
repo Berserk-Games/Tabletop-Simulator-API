@@ -4276,20 +4276,20 @@
 <div class="codehilite"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">jointTo</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="p">{</span>
     <span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span>        <span class="o">=</span> <span class="s2">&quot;Fixed&quot;</span><span class="p">,</span>
     <span class="p">[</span><span class="s2">&quot;collision&quot;</span><span class="p">]</span>   <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> 
-    <span class="p">[</span><span class="s2">&quot;breakForce&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
-    <span class="p">[</span><span class="s2">&quot;breakTorgue&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;break_force&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;break_torgue&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
 <span class="p">})</span>
 </pre></div></p>
 <p>Example of Spring:
 <div class="codehilite"><pre><span></span><span class="n">self</span><span class="p">.</span><span class="n">jointTo</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="p">{</span>
     <span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span>        <span class="o">=</span> <span class="s2">&quot;Spring&quot;</span><span class="p">,</span>
     <span class="p">[</span><span class="s2">&quot;collision&quot;</span><span class="p">]</span>   <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> 
-    <span class="p">[</span><span class="s2">&quot;breakForce&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
-    <span class="p">[</span><span class="s2">&quot;breakTorgue&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;break_force&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;break_torgue&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
     <span class="p">[</span><span class="s2">&quot;spring&quot;</span><span class="p">]</span>      <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
     <span class="p">[</span><span class="s2">&quot;damper&quot;</span><span class="p">]</span>      <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
-    <span class="p">[</span><span class="s2">&quot;maxDistance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="p">[</span><span class="s2">&quot;minDistance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="p">[</span><span class="s2">&quot;max_distance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;min_distance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="p">})</span>
 </pre></div></p>
 <p>Example of Hinge:
@@ -4298,11 +4298,11 @@
     <span class="p">[</span><span class="s2">&quot;collision&quot;</span><span class="p">]</span>   <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> 
     <span class="p">[</span><span class="s2">&quot;axis&quot;</span><span class="p">]</span>        <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span>
     <span class="p">[</span><span class="s2">&quot;anchor&quot;</span><span class="p">]</span>      <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span>
-    <span class="p">[</span><span class="s2">&quot;breakForce&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
-    <span class="p">[</span><span class="s2">&quot;breakTorgue&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
-    <span class="p">[</span><span class="s2">&quot;motorForce&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">100.0</span><span class="p">,</span>
-    <span class="p">[</span><span class="s2">&quot;motorVelocity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">,</span>
-    <span class="p">[</span><span class="s2">&quot;motorFreeSpin&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">[</span><span class="s2">&quot;break_force&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;break_torgue&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;motor_force&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">100.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;motor_velocity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">&quot;motor_freeSpin&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span>
 <span class="p">})</span>
 </pre></div></p>
 <hr />
