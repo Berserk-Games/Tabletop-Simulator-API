@@ -53,7 +53,8 @@ There are even organizational methods you can do to easily group these elements 
 ###Example UI
 
 Below you will find a variety of example projects to help you understand how the UI works.
-
+* [Example Score Sheet](https://steamcommunity.com/sharedfiles/filedetails/?id=1415879101&searchtext=) By Gikerl
+* [Example Splash Screen + Collapsible Die Roller](https://steamcommunity.com/sharedfiles/filedetails/?id=1393821479) by MrStump
 * [Example Grid Menu](https://steamcommunity.com/sharedfiles/filedetails/?id=1382344471) by UnrealEd
 * [Example Rulebook](https://steamcommunity.com/sharedfiles/filedetails/?id=1384145407) by UnrealEd
-* [Example Splash Screen + Collapsible Die Roller](https://steamcommunity.com/sharedfiles/filedetails/?id=1393821479) by MrStump
+
