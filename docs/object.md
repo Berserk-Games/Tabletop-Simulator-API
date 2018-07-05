@@ -902,7 +902,7 @@ Object | Value
 -- | --
 [Clock](clock) | Returns Int of stopwatch/timer current time *(in seconds)*.
 [Counter](clock) | Returns Int of counter value.
-Rotation Value | Returns Var of the face-up value.
+Rotation Value | Returns Int of the face-up value. For objects with rotation values set using [setRotationValues](#setrotationvalues) this is an index into the table of rotation values.
 Hidden Zone | Returns String of the Player [Color](color) of the zone.
 Poker Chip | Returns Int of the face value. {>>Does not work on custom chips.<<}
 Tablet | Returns String of the current URL.
@@ -996,7 +996,7 @@ Object | Value
 -- | --
 [Clock](clock) | Set Int for stopwatch/timer current time *(in seconds)*.
 [Counter](clock) | Set Int for counter value.
-Rotation Value | Set Var for the face-up value.
+Rotation Value | Set Int for the face-up value. For objects with rotation values set with [setRotationValues](#setrotationvalues) this is an index into the table of rotation values.
 Hidden Zone | Set String for the Player [Color](color) of the zone.
 Tablet | Set String for the current URL.
 
