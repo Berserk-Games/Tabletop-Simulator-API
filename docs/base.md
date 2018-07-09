@@ -182,7 +182,7 @@ setSnapPoints({
 If you are spawning a **custom Object**, you should call [setCustomObject](object#setcustomobject) immediately after spawnObject to set its custom properties.
 
 !!!tip
-	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance.
+	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. You can also add a delay after spawning using a [Wait](wait) function.
 
 !!!info "spawnObject(parameters)"
 	* [<span class="tag tab"></span>](types) **parameters**: A Table of parameters used to determine how spawnObject will act.
@@ -197,34 +197,28 @@ If you are spawning a **custom Object**, you should call [setCustomObject](objec
 			* {>>Optional, defaults to true.<<}
 		* [<span class="tag boo"></span>](types) **parameters.snap_to_grid**: If snap-to-grid is active on the Object.
 			* {>>Optional, defaults to false.<<}
-		* [<span class="tag str"></span>](types) **parameters.callback**: Name of the function you want activated once the Object is initiated.
-			* {>>Optional, no callback is triggered without it.<<}
-			* {>>A callback function has 2 parameters, the Object spawned and, if used, the Table of params.<<}
-		* [<span class="tag obj"></span>](types) **parameters.callback_owner**: Which Object has the callback function on it. Global is a valid target as well.
-			* {>>Optional, defaults to Global. Serves no purpose if callback is not also used.<<}
-		* [<span class="tag tab"></span>](types) **parameters.params**: A Table of data to send to the callback to use as parameters. See example.
-			* {>>Optional, default is to not be used.<<}
+		* [<span class="tag fun"></span>](types#function) **parameters.callback_function**: The function to activate after the Object has finished spawning into the scene.
+			* {>>Optional, defaults to not being used.<<}
+		
 
 ``` Lua
 function onLoad()
 	futureName = "Spawned By Script!"
 	spawnParams = {
 		type = "rpg_BEAR",
-		position       = {x=0, y=3, z=-5},
-		rotation       = {x=0, y=90, z=0},
-		scale          = {x=2, y=2, z=2},
-		sound          = false,
-		snap_to_grid   = true,
-		callback       = "spawn_callback",
-		callback_owner = Global,
-		params         = {name = futureName}
+		position          = {x=0, y=3, z=-5},
+		rotation          = {x=0, y=90, z=0},
+		scale             = {x=2, y=2, z=2},
+		sound             = false,
+		snap_to_grid      = true,
+		callback_function = function(obj) spawn_callback(obj, "Bear", "Green") end,
 	}
 	spawnObject(spawnParams)
 end
 
-function spawn_callback(object_spawned, params)
-	object_spawned.setName(params.name)
-	object_spawned.setColorTint({r=0,g=1,b=0})
+function spawn_callback(object_spawned, name, color)
+	object_spawned.setName(name)
+	object_spawned.setColorTint(color)
 end
 ```
 
@@ -238,7 +232,7 @@ end
 Spawns an Object using a JSON string. Works with [getJSON()](object#getjson). It works just like spawnObject, but instead of a `type`, you supply a `json` string. The other parameters will overwrite those in the JSON.
 
 !!!tip
-	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance.
+	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. You can also add a delay after spawning using a [Wait](wait) function.
 
 !!!info "spawnObjectJSON(parameters)"
 	* [<span class="tag tab"></span>](types) **parameters**: A Table of parameters used to determine how spawnObjectJSON will act.
@@ -253,34 +247,27 @@ Spawns an Object using a JSON string. Works with [getJSON()](object#getjson). It
 			* {>>Optional, defaults to JSON's value.<<}
 		* [<span class="tag boo"></span>](types) **parameters.snap_to_grid**: If snap-to-grid is active on the Object.
 			* {>>Optional, defaults to JSON's value.<<}
-		* [<span class="tag str"></span>](types) **parameters.callback**: Name of the function you want activated once the Object is initiated.
-			* {>>Optional, no callback is triggered without it.<<}
-			* {>>A callback function has 2 parameters, the Object spawned and, if used, the Table of params.<<}
-		* [<span class="tag obj"></span>](types) **parameters.callback_owner**: Which Object has the callback function on it. Global is a valid target as well.
-			* {>>Optional, defaults to Global. Serves no purpose if callback is not also used.<<}
-		* [<span class="tag tab"></span>](types) **parameters.params**: A Table of data to send to the callback to use as parameters. See example.
-			* {>>Optional, default is to not be used.<<}
+		* [<span class="tag fun"></span>](types#function) **parameters.callback_function**: The function to activate after the Object has finished spawning into the scene.
+			* {>>Optional, defaults to not being used.<<}
 
 ``` Lua
 function onLoad()
 	futureName = "Spawned By Script!"
 	spawnParams = {
-		json = self.getJSON(),
-		position       = {x=0, y=3, z=-5},
-		rotation       = {x=0, y=90, z=0},
-		scale          = {x=2, y=2, z=2},
-		sound          = false,
-		snap_to_grid   = true,
-		callback       = "spawn_callback",
-		callback_owner = Global,
-		params         = {name = futureName}
+		json              = self.getJSON(),
+		position          = {x=0, y=3, z=-5},
+		rotation          = {x=0, y=90, z=0},
+		scale             = {x=2, y=2, z=2},
+		sound             = false,
+		snap_to_grid      = true,
+		callback_function = function(obj) spawn_callback(obj, futureName, "Red") end,
 	}
 	spawnObject(spawnParams)
 end
 
-function spawn_callback(object_spawned, params)
-	object_spawned.setName(params.name)
-	object_spawned.setColorTint({r=0,g=1,b=0})
+function spawn_callback(object_spawned, name, color)
+	object_spawned.setName(name)
+	object_spawned.setColorTint(color)
 end
 ```
 
