@@ -1290,15 +1290,13 @@ function onLoad()
     futureName = "Taken from container!"
     takeParams = {
         position = {x=0, y=3, z=5},
-        callback = "take_callback",
-        callback_owner = self,
-        params = {name = futureName},
+        callback_function = function(obj) take_callback(obj, futureName) end,
     }
     self.takeObject(takeParams)
 end
 
-function take_callback(object_spawned, params)
-    object_spawned.setName(params.name)
+function take_callback(object_spawned, name)
+    object_spawned.setName(name)
 end
 ```
 
