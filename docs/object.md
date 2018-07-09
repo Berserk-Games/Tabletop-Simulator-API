@@ -1263,7 +1263,7 @@ newDecks[4].deal(1)
 [<span class="ret obj"></span>](types)&nbsp;Takes an object from a container (bag/deck/chip stack) and places it in the world.
 
 !!!tip
-	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. It is also possible to add a delay using a [coroutine](#startluacoroutine).
+	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. It is also possible to add a delay using a [Wait](wait) function instead.
 
 !!!info "takeObject(parameters)"
 	* [<span class="tag tab"></span>](types) **parameters**: A Table of parameters used to determine how takeObject will act.
@@ -1282,13 +1282,8 @@ newDecks[4].deal(1)
 			* {>>Optional, defaults to true.<<}
 		* [<span class="tag boo"></span>](types) **parameters.smooth**: If the taken Object moves smoothly or instantly.
 			* {>>Optional, defaults to true.<<}
-		* [<span class="tag str"></span>](types) **parameters.callback**: Function name you want activated once the Object is initiated.
-			* {>>Optional, no default.<<}
-			* {>>A callback function has 2 parameters, the Object spawned and, if used, the Table of params.<<}
-		* [<span class="tag obj"></span>](types) **parameters.callback_owner**: What Object has the callback function in its script. Global is a valid target.
-			* {>>Optional, defaults to container Object. Serves no purpose if callback is not also used.<<}
-		* [<span class="tag tab"></span>](types) **parameters.params**: Data to send to the callback to use as parameters. See example.
-			* {>>Optional, no default. Serves no purpose if callback is not also used.<<}
+		* [<span class="tag fun"></span>](types#function) **parameters.callback_function**: Function to activate once the taken Object fully "exists".
+			* {>>Optional, defaults to not being used.<<}
 
 ``` Lua
 function onLoad()
