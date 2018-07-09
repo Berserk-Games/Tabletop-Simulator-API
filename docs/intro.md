@@ -55,7 +55,6 @@ Associated with in-game Objects.
 * [Clock](clock)
 * [Counter](counter)
 * [Object](object)
-* [Notes](notes)
 * [AssetBundle](assetbundle)
 * [RPGFigurine](rpgfigurine)
 * [TextTool](texttool)
@@ -69,8 +68,9 @@ Associated with in-game properties and systems.
 * [Physics](physics)
 * [Lighting](lighting)
 * [Turns](turns)
+* [Notes](notes)
 * [UI](ui)
-* [Wait](timer)
+* [Wait](wait)
 * [Web Request](webrequest)
 
 For more information on what a class is, you can refer to the relevant [Lua Documentation](https://www.lua.org/pil/16.1.html).
