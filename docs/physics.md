@@ -8,9 +8,9 @@ For more information on physics casts in Unity, [refer to the Unity documentatio
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-cast([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Returns Table containing information on hit Objects. | [<span class="ret tab"></span>](intro#types) | [<span class="i"></span>](#cast)
-<a class="anchor" id="getgravity"></a>getGravity() | Returns directional Vector of the direction gravity is pulling. | [<span class="ret vec"></span>](intro#vector) | 
-<a class="anchor" id="setgravity"></a>setGravity([<span class="tag vec"></span>](intro#vector)&nbsp;direction) | Sets the direction gravity gravity pulls. | [<span class="ret boo"></span>](intro#types) 
+cast([<span class="tag tab"></span>](types)&nbsp;parameters) | Returns Table containing information on hit Objects. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#cast)
+<a class="anchor" id="getgravity"></a>getGravity() | Returns directional Vector of the direction gravity is pulling. | [<span class="ret vec"></span>](types#vector) |
+<a class="anchor" id="setgravity"></a>setGravity([<span class="tag vec"></span>](types#vector)&nbsp;direction) | Sets the direction gravity gravity pulls. | [<span class="ret boo"></span>](types)
 
 
 
@@ -24,7 +24,7 @@ cast([<span class="tag tab"></span>](intro#types)&nbsp;parameters) | Returns Tab
 
 ###cast(...)
 
-[<span class="ret tab"></span>](intro#types)&nbsp;Returns Table containing information on hit Objects. There are three kinds of casts:
+[<span class="ret tab"></span>](types)&nbsp;Returns Table containing information on hit Objects. There are three kinds of casts:
 
 Type | Description
 --- | ---
@@ -36,30 +36,30 @@ It draws the imaginary cast, then moves the rap/box/sphere along that path insta
 
 !!!Warning
     Physics casts are somewhat expensive. When running 30+ at once it will cause your game to stutter and/or crash. Do not overuse.
-    
+
 !!!info "cast(parameters)"
-    * [<span class="tag tab"></span>](intro#types) **parameters**: A Table of parameters used to guide the function.
-        * [<span class="tag vec"></span>](intro#vector) **parameters.origin**: Position of the starting point.
+    * [<span class="tag tab"></span>](types) **parameters**: A Table of parameters used to guide the function.
+        * [<span class="tag vec"></span>](types#vector) **parameters.origin**: Position of the starting point.
             * {>>Optional, defaults to {x=0, y=0, z=0}.<<}
-        * [<span class="tag vec"></span>](intro#vector) **parameters.direction**: A direction for the cast to move in.
+        * [<span class="tag vec"></span>](types#vector) **parameters.direction**: A direction for the cast to move in.
             * {>>Optional, but cast is motionless without a direction.<<}
-        * [<span class="tag int"></span>](intro#types) **parameters.type**: The type of cast. {>>1 = Ray, 2 = Sphere, 3= Box<<}
+        * [<span class="tag int"></span>](types) **parameters.type**: The type of cast. {>>1 = Ray, 2 = Sphere, 3= Box<<}
             * {>>Optional, defaults to 1.<<}
-        * [<span class="tag vec"></span>](intro#vector) **parameters.size**: Size of the cast shape. Sphere/Box only.
+        * [<span class="tag vec"></span>](types#vector) **parameters.size**: Size of the cast shape. Sphere/Box only.
             * {>>Optional, defaults to {x=0, y=0, z=0}.<<}
-        * [<span class="tag vec"></span>](intro#vector) **parameters.orientation**: Rotation of the cast shape. Box only.
+        * [<span class="tag vec"></span>](types#vector) **parameters.orientation**: Rotation of the cast shape. Box only.
             * {>>Optional, defaults to {x=0, y=0, z=0}.<<}
-        * [<span class="tag flo"></span>](intro#types) **parameters.max_distance**: How far the cast will travel.
+        * [<span class="tag flo"></span>](types) **parameters.max_distance**: How far the cast will travel.
             * {>>Optional, defaults to infinity. Won't move without direction.<<}
-        * [<span class="tag boo"></span>](intro#types) **parameters.debug**: If the cast is visualized for the user.
+        * [<span class="tag boo"></span>](types) **parameters.debug**: If the cast is visualized for the user.
             * {>>Optional, defaults to false.<<}
-    
+
 !!!info "Returned Table of Hit Objects"
-    * [<span class="tag tab"></span>](intro#types) **table**: A numerically indexed Table, one entry for each hit Object. Entries are in the order of being hit.
-        * [<span class="tag vec"></span>](intro#vector) **table.point**: Position the cast impacted the Object.
-        * [<span class="tag vec"></span>](intro#vector) **table.normal**: The surface normal of the impact point.
-        * [<span class="tag flo"></span>](intro#types) **table.distance**: Distance between cast origin and impact point.
-        * [<span class="tag obj"></span>](intro#types) **table.hit_object**: An Object reference to the Object hit by the cast.
+    * [<span class="tag tab"></span>](types) **table**: A numerically indexed Table, one entry for each hit Object. Entries are in the order of being hit.
+        * [<span class="tag vec"></span>](types#vector) **table.point**: Position the cast impacted the Object.
+        * [<span class="tag vec"></span>](types#vector) **table.normal**: The surface normal of the impact point.
+        * [<span class="tag flo"></span>](types) **table.distance**: Distance between cast origin and impact point.
+        * [<span class="tag obj"></span>](types) **table.hit_object**: An Object reference to the Object hit by the cast.
 
 ``` Lua
 -- Example usage

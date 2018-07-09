@@ -7,14 +7,14 @@ theme:
   logo: 'img/TSIcon.png'
   favicon: 'img/Icon-Dice.png'
   custom_dir: 'theme'
-  
+
 extra_css:
   - css/theme.css
   - css/table.css
   - css/type_icons.css
   - css/i_icons.css
   - css/player_color_table.css
-  
+
 markdown_extensions:
   - admonition
   - codehilite
@@ -36,10 +36,10 @@ markdown_extensions:
   - pymdownx.tilde
   - toc:
       permalink: "\u0020"
-      
+
 repo_name: 'GitHub Source'
 repo_url: 'https://github.com/Berserk-Games/Tabletop-Simulator-API'
-    
+
 pages:
   - Getting Started:
     - Introduction: index.md
@@ -50,6 +50,7 @@ pages:
     - Changelog: changelog.md
   - Scripting API:
     - Introduction: intro.md
+    - Types: types.md
     - Event: event.md
     - Base: base.md
     - Object: object.md
@@ -58,15 +59,16 @@ pages:
     - Counter: counter.md
     - JSON: json.md
     - Lighting: lighting.md
+    - Notes: notes.md
     - Physics: physics.md
     - Player: player.md
     - Player Color: player-color.md
     - RPGFigurine: rpgfigurine.md
     - Spawnable Objects: spawnableobjects.md
     - TextTool: texttool.md
-    - Timer: timer.md
     - Turns: turns.md
     - UI: ui.md
+    - Wait: wait.md
     - Web Request: webrequest.md
   - UI API:
     - Introduction: ui/introUI.md
@@ -75,8 +77,3 @@ pages:
     - Input Elements: ui/inputelements.md
     - Layout/Grouping: ui/layoutgrouping.md
     - Defaults: ui/defaults.md
-
-
-
-
-    

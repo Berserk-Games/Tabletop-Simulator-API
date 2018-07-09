@@ -1,4 +1,44 @@
-This is an ongoing list of scripting changes that have been implemented to scripting side of Tabletop Simulator.
+This is an ongoing list of scripting changes that have been implemented to scripting and Custom UI side of Tabletop Simulator.
+
+
+######7/9/18 - v10.8
+
+!!!info ""
+    * Lua:
+        * putObject() now returns an Object.
+            * Using it to combine two cards will return an object reference to the newly formed deck
+            * Using it to put an object into a container/stack/deck will return the container/stack/deck it was made part of
+        * New class: **Notes**
+            * Contains notebook and set/getNotes functions
+            * Devalued the old "Base" versions of these functions
+                * {>>This means they are not in the documentation but will, for legacy reasons, still function.<<}
+        * New class: **Wait**
+            * This new class allows you to easily trigger functions after some form of delay
+            * Contains frames, time, condition, and stop functions
+            * Devalued Timer class entirely
+                * {>>This means Timer is removed from documentation but, for legacy reasons, still functions.<<}
+        * New Object functions:
+            * **obj.cut(int)** - Cuts a deck at the given card index
+            * **obj.split(int)** - Splits a deck in a number of stacks
+            * **obj.getRotationValue** - Returns the current rotationValue of an object (see: gizmo tool)
+                * This function existed previously, but was not documented.
+        * New Event function:
+            * **onObjectPeeked(object, player)** - Triggers when peek is used by a player
+        * Player Color strings convert automatically
+            * Example: printToAll("Hello", "Green")
+        * Snap points created on objects use Vectors local to the Object, rather than global
+            * This applies to both position and rotation
+        * Fix for optional parameters of spawnObjectJSON()
+        * New Object Member Variables
+            * loading_custom - Indicates if the assets of a custom element are being loaded.
+            * spawning - Indicates if any object is currently in the process of spawning.
+                * These are helpful to determine if elements are loaded into the game fully
+                * Especially useful with the new Wait class!
+    * Custom UI:
+        * New Lua function:
+            * **UI.setValue(string id, string value)** - Updates the value that appears within element tags {>>(ex: <Text>THIS</Text>)<<}
+            * **UI.getValue(string id)** - Obtains the value that appears within element tags {>>(ex: <Text>THIS</Text>)<<}
+            * Both support Rich Text!
 
 
 ######6/18/18 - v10.7
@@ -13,7 +53,7 @@ This is an ongoing list of scripting changes that have been implemented to scrip
         * Fixed not being able to setXml() with an empty string.
         * Fix support for RichText in Get/SetXmlTable().
         * Fixed zombie Xml UI when opening File Browser.
-    * Scripting:
+    * Lua:
         * Added Player.getAvailableColors() and Player.getColors().
         * Added SetSnapPoints() and GetSnapPoints().
         * Added JointTo().
@@ -27,13 +67,13 @@ This is an ongoing list of scripting changes that have been implemented to scrip
 ######5/30/18 - v10.6.1
 
 !!!info ""
-    * Custom UI: 
+    * Custom UI:
         * Added getXmlTable() and setXmlTable() for dealing with Xml easier with Lua tables.
         * Changed setXml() from changing the actual Xml for the save file so everything is runtime changes only.
         * Changed getXml() to return the current Xml string including any runtime changes from setAttribute().
         * Fixed event recursion causing a potential lock up.
         * Fixed setXml() not working with empty string.
-    * Scripting:
+    * Lua:
         * Added a 'debug_external_api' console command to show logging for external api messages.
         * Fixed logging an empty table throwing null.
 
@@ -54,15 +94,15 @@ This is an ongoing list of scripting changes that have been implemented to scrip
         * FIXED: Player colors now match TTS colors. For example, "red" is now equivalent to the player color red exactly.
         * FIXED: Dragging is improved so the element doesn't snap to its rectAlignment when dragged.
         * FIXED: When changing active attribute from script visibility would sometimes not work correctly
-        
-        
+
+
 
 ######5/9/18 - v10.5.1
 
 !!!info ""
     * Custom UI:
         * Added UI.show(id) and UI.hide(id) for disabling and enabling ui with animations.
-        * Now support the Image tag for custom images. 
+        * Now support the Image tag for custom images.
         * Supports overriding the look of the UI using this custom image support.
         * Fixed visibility attribute not working correctly on elements with no id attribute or layout tag.
         * Fixed offsetXY set/getAttribute() not working.
@@ -84,7 +124,7 @@ This is an ongoing list of scripting changes that have been implemented to scrip
         * Devalued previous onPlayerTurn events
     * Changelog moved under Getting Started due to the fact that it applies to the UI API as well as the scripting API. But I guess you figured that out already, didn't ya.
     * Added getJSON and spawnObjectJSON to Object/Base, respectively.
-    
+
 
 ######3/26/18 - v10.4 Hotfix 2
 

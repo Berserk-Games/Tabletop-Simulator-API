@@ -11,9 +11,9 @@ The static global JSON class provides the ability to encode/decode data into JSO
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-decode([<span class="tag str"></span>](intro#types)&nbsp;json_string) | Value obtained from the encoded string. Can return a number, string or Table. | [<span class="ret var"></span>](intro#types) | [<span class="i"></span>](#decode)
-encode([<span class="tag var"></span>](intro#types)&nbsp;data) | Encodes data from a number, string or Table into a JSON string. | [<span class="ret str"></span>](intro#types) | [<span class="i"></span>](#encode)
-encode_pretty([<span class="tag var"></span>](intro#types)&nbsp;data) | Same as encode(...) but this version is slightly less efficient but is easier to read. | [<span class="ret str"></span>](intro#types) | [<span class="i"></span>](#encode_pretty)
+decode([<span class="tag str"></span>](types)&nbsp;json_string) | Value obtained from the encoded string. Can return a number, string or Table. | [<span class="ret var"></span>](types) | [<span class="i"></span>](#decode)
+encode([<span class="tag var"></span>](types)&nbsp;data) | Encodes data from a number, string or Table into a JSON string. | [<span class="ret str"></span>](types) | [<span class="i"></span>](#encode)
+encode_pretty([<span class="tag var"></span>](types)&nbsp;data) | Same as encode(...) but this version is slightly less efficient but is easier to read. | [<span class="ret str"></span>](types) | [<span class="i"></span>](#encode_pretty)
 
 ---
 
@@ -22,10 +22,10 @@ encode_pretty([<span class="tag var"></span>](intro#types)&nbsp;data) | Same as 
 
 ###decode(...)
 
-[<span class="ret var"></span>](intro#types)&nbsp;Value obtained from the encoded string. Can return a number, string or Table.
+[<span class="ret var"></span>](types)&nbsp;Value obtained from the encoded string. Can return a number, string or Table.
 
 !!!info "decode(json_string)"
-    * [<span class="tag str"></span>](intro#types) **json_string**: A String that is decoded, generally created by encode(...) or encode_pretty(...).
+    * [<span class="tag str"></span>](types) **json_string**: A String that is decoded, generally created by encode(...) or encode_pretty(...).
 
 ``` Lua
 coded = JSON.encode("Test")
@@ -39,17 +39,17 @@ print(decoded) --Prints Test
 
 ###encode(...)
 
-[<span class="ret str"></span>](intro#types)&nbsp;Encodes data from a number, string or Table into a JSON string.
+[<span class="ret str"></span>](types)&nbsp;Encodes data from a number, string or Table into a JSON string.
 
 !!!info "encode(data)"
-    * [<span class="tag var"></span>](intro#types) **data**: A Var, either String, Int, Float or Table, to encode as a string.
+    * [<span class="tag var"></span>](types) **data**: A Var, either String, Int, Float or Table, to encode as a string.
 
 ---
 
 
 ###encode_pretty(...)
 
-[<span class="ret str"></span>](intro#types)&nbsp;Encodes data from a number, string or Table into a JSON string. This version is slightly less efficient but is easier to read.
+[<span class="ret str"></span>](types)&nbsp;Encodes data from a number, string or Table into a JSON string. This version is slightly less efficient but is easier to read.
 
 !!!info "encode_pretty(data)"
-    * [<span class="tag var"></span>](intro#types) **data**: A Var, either String, Int, Float or Table, to encode as a string.
+    * [<span class="tag var"></span>](types) **data**: A Var, either String, Int, Float or Table, to encode as a string.
