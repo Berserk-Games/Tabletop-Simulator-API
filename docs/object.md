@@ -1113,8 +1113,8 @@ newDecks[2].deal(1)
 	* [<span class="tag int"></span>](types) **number**: How many to deal.
 	* [<span class="tag str"></span>](types) **player_color**: The [Player Color](player-color) to deal to.
 		* {>>Optional, defaults to an empty string. If not supplied, it will attempt to deal to all seated players.<<}
-	* [<span class="tag int"></span>](types) **index**: Index of which Object to deal from a container.
-		* {>>Optional, defaults to 0. If not supplied it will deal in regular order.<<}
+	* [<span class="tag int"></span>](types) **index**: Index of hand zone to deal to.
+		* {>>Optional, defaults to the first created hand zone.<<}
 
 ---
 
@@ -1284,6 +1284,7 @@ newDecks[4].deal(1)
 			* {>>Optional, defaults to true.<<}
 		* [<span class="tag fun"></span>](types#function) **parameters.callback_function**: Function to activate once the taken Object fully "exists".
 			* {>>Optional, defaults to not being used.<<}
+			* {>>A reference to the object spawned is always passed to callback_function. See the example for how to access it.<<}
 
 ``` Lua
 function onLoad()

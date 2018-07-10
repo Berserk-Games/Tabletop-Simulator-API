@@ -179,6 +179,9 @@ end
 	Wait.frames(function() print("Ding") end, 80)
 	```
 
+---
+
+
 ####Example
 
 As an example, here is [Wait.frames(...)](wait#frames) used 3 times. It waits a set number of frames and then activates a given function:
@@ -203,5 +206,78 @@ function sayTwo(s) print(s) end
 --Does not have any parameters passed to it
 function sayThree() print("Three") end
 ```
+
+---
+
+
+####Lambda-Style Expressions
+You are able to replace `function()` and `end` with `||`, allowing for much shorter functions.
+
+#####Important Tips
+You create a `|`, on a standard keyboard, by holding shift and pressing the key above enter (backslash).
+
+`||` only work for one line. So if you intend to use a multi-line function, lambda-style will not be an option.
+
+When using `||` for a conditional function with `Wait.condition(returnFunc, conditionalFunc)`, you do not need to include return.
+
+If a parameter is passed to the return function, like with `callback_function` from `spawnObject(...)`, you can put a variable between the `||` characters to represent it. See the next section for an example.
+
+#####Lambda-Style Example
+
+Without Lambda-style:
+``` Lua
+function onLoad()
+    --Spawn a deck with a callback function that triggers once deck spawns
+    --Also, pass a reference to the spawned object
+    spawnObject({
+        type = "Deck",
+        callback_function = function(obj) printCardCount(obj) end
+    })
+
+    --Print after 1 second
+	Wait.time(function() print("One Second") end, 1)
+
+    --Trigger a function after 2 seconds and send a parameter
+    Wait.time(function() printString("Two Seconds") end, 2)
+end
+
+function printCardCount(deck)
+    cardList = deck.getObjects()
+    print(#cardList .. " cards.")
+end
+
+function printString(s)
+    print(s)
+end
+```
+
+With Lambda-style:
+``` Lua
+function onLoad()
+    --Spawn a deck with a callback function that triggers once deck spawns
+    --Also, pass a reference to the spawned object
+    spawnObject({
+        type = "Deck",
+        callback_function = |obj| printCardCount(obj)
+    })
+
+    --Print after 1 second
+	Wait.time(|| print("One Second"), 1)
+
+    --Trigger a function after 2 seconds and send a parameter
+    Wait.time(|| printString("Two Seconds"), 2)
+end
+
+function printCardCount(deck)
+    cardList = deck.getObjects()
+    print(#cardList .. " cards.")
+end
+
+function printString(s)
+    print(s)
+end
+```
+
+
 
 ---

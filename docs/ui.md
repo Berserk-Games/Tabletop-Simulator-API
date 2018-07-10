@@ -43,14 +43,17 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 getAttribute([<span class="tag str"></span>](types)&nbsp;id, [<span class="tag str"></span>](types)&nbsp;attribute) | Obtains the value of a specified attribute of a UI element. | [<span class="ret var"></span>](types) | [<span class="i"></span>](#getattribute)
 getAttributes([<span class="tag str"></span>](types)&nbsp;id) | Returns the attributes and their values of a UI element. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getattributes)
+getValue([<span class="tag str"></span>](types)&nbsp;id) | Obtains the value between elements tags, like: `<Text>ValueToGet</Text>` | [<span class="ret str"></span>](types) | [<span class="i"></span>](#getvalue)
 <a class="anchor" id="getxml"></a>getXml() | Returns the run-time UI's XML in string format. | [<span class="ret str"></span>](types) |
 getXmlTable() | Returns the run-time UI's XML formatted as a Lua table. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getxmltable)
 hide([<span class="tag str"></span>](types)&nbsp;id) | Hides the given UI element. Unlike the "active" attribute, hide triggers animations. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#hide)
 setAttribute([<span class="tag str"></span>](types)&nbsp;id, [<span class="tag str"></span>](types)&nbsp;attribute, [<span class="tag var"></span>](types)&nbsp;value) | Sets the value of a specified attribute of a UI element. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setattribute)
+setAttributes([<span class="tag str"></span>](types)&nbsp;id, [<span class="tag tab"></span>](types)&nbsp;data) | Updates the value of the supplied attributes of a UI element. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setattributes)
+setValue([<span class="tag str"></span>](types)&nbsp;id, [<span class="tag str"></span>](types)&nbsp;value) | Updates the value between elements tags, like: `<Text>ValueChanged</Text>` | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setvalue)
 setXml([<span class="tag str"></span>](types)&nbsp;xml) | Replaces the run-time UI with the XML string. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setxml)
 setXmlTable([<span class="tag tab"></span>](types)&nbsp;data) | Replaces the run-time UI with an XML string which is generated from a table of data. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setxmltable)
 show([<span class="tag str"></span>](types)&nbsp;id) | Displays the given UI element. Unlike the "active" attribute, show triggers animations. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#show)
-setAttributes([<span class="tag str"></span>](types)&nbsp;id, [<span class="tag tab"></span>](types)&nbsp;data) | Updates the value of the supplied attributes of a UI element. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setattributes)
+
 
 
 
@@ -88,6 +91,26 @@ self.UI.getAttribute("testElement", "fontSize")
     **IMPORTANT**: This return table is an example of one you may get back from using it on a RawImage element type. The attribute keys you get back and their values will depend on the element you use the function on as well as the attributes you, the user, have assigned to it.
 
 ---
+
+
+###getValue(...)
+[<span class="ret str"></span>](types)&nbsp;Obtains the value between elements tags, like: `<Text>ValueObtained</Text>`
+
+!!!info "getValue(id)"
+    * [<span class="tag str"></span>](types) **id**: The Id that was assigned, as an attribute, to the desired XML UI element.
+
+
+``` Lua
+string = UI.getAttribute("testElement")
+print(string)
+```
+
+
+
+---
+
+
+
 
 
 ###getXmlTable()
@@ -172,6 +195,53 @@ self.UI.setAttribute("testElement", "fontSize", 200)
 ---
 
 
+###setAttributes(...)
+
+[<span class="ret boo"></span>](types)&nbsp;Updates the value of the supplied attributes of a UI element. You do not need to set every attribute with the data table, an element will continue using any previous values you do not overwrite.
+
+!!!important
+    This will override the run-time value from the XML UI for all players, forcing them to see the same value.
+
+!!!info "setAttributes(id, data)"
+    * [<span class="tag str"></span>](types) **id**: The Id that was assigned, as an attribute, to the desired XML UI element.
+    * [<span class="tag tab"></span>](types) **data**: A Table with key/value pairs representing attributes and their values.
+
+!!!info "Example data table"
+    * [<span class="tag tab"></span>](types) **data**: A Table with parameters which guide the function.
+        * [<span class="tag flo"></span>](types) **data.fontSize**: Attribute's desired value value
+        * [<span class="tag str"></span>](types#vector) **data.color**: Attribute's desired value
+
+    **IMPORTANT**: This table is an example of one you may use when setting a text UI element. The attribute keys you use and their values will depend on the element you use the function on.
+
+```lua
+attributeTable = {
+    fontSize = 300,
+    color = "#000000"
+}
+self.UI.setAttributes("exampleText", attributeTable)
+```
+
+---
+
+
+###setValue(...)
+[<span class="ret boo"></span>](types)&nbsp;Updates the value between elements tags, like: `<Text>ValueChanged</Text>`
+
+!!!info "setValue(id, value)"
+    * [<span class="tag str"></span>](types) **id**: The Id that was assigned, as an attribute, to the desired XML UI element.
+    * [<span class="tag str"></span>](types) **value**: The value to put between the element tags.
+
+``` Lua
+UI.setAttribute("testElement", "New Text To Display")
+```
+
+
+
+---
+
+
+
+
 ###setXml(...)
 
 [<span class="ret boo"></span>](types)&nbsp;Replaces the run-time UI with the XML string.
@@ -254,35 +324,6 @@ end
 
 ``` Lua
 self.UI.show("testElement")
-```
-
----
-
-
-###setAttributes(...)
-
-[<span class="ret boo"></span>](types)&nbsp;Updates the value of the supplied attributes of a UI element. You do not need to set every attribute with the data table, an element will continue using any previous values you do not overwrite.
-
-!!!important
-    This will override the run-time value from the XML UI for all players, forcing them to see the same value.
-
-!!!info "setAttributes(id, data)"
-    * [<span class="tag str"></span>](types) **id**: The Id that was assigned, as an attribute, to the desired XML UI element.
-    * [<span class="tag tab"></span>](types) **data**: A Table with key/value pairs representing attributes and their values.
-
-!!!info "Example data table"
-    * [<span class="tag tab"></span>](types) **data**: A Table with parameters which guide the function.
-        * [<span class="tag flo"></span>](types) **data.fontSize**: Attribute's desired value value
-        * [<span class="tag str"></span>](types#vector) **data.color**: Attribute's desired value
-
-    **IMPORTANT**: This table is an example of one you may use when setting a text UI element. The attribute keys you use and their values will depend on the element you use the function on.
-
-```lua
-attributeTable = {
-    fontSize = 300,
-    color = "#000000"
-}
-self.UI.setAttributes("exampleText", attributeTable)
 ```
 
 ---

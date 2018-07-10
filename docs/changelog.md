@@ -34,11 +34,16 @@ This is an ongoing list of scripting changes that have been implemented to scrip
             * spawning - Indicates if any object is currently in the process of spawning.
                 * These are helpful to determine if elements are loaded into the game fully
                 * Especially useful with the new Wait class!
+        * Callback Changes
+            * Callback methods are being devalued (still work, but not documented)
+            * Being replaced with callback_function which directly triggers a function at the same time a callback would have been triggered.
     * Custom UI:
         * New Lua function:
             * **UI.setValue(string id, string value)** - Updates the value that appears within element tags {>>(ex: <Text>THIS</Text>)<<}
             * **UI.getValue(string id)** - Obtains the value that appears within element tags {>>(ex: <Text>THIS</Text>)<<}
             * Both support Rich Text!
+        * New InputField attribute
+            * **placeholder** - Greyed out text that appears in the input if there is no text present. 
 
 
 ######6/18/18 - v10.7

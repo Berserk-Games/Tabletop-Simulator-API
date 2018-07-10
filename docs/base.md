@@ -199,7 +199,8 @@ If you are spawning a **custom Object**, you should call [setCustomObject](objec
 			* {>>Optional, defaults to false.<<}
 		* [<span class="tag fun"></span>](types#function) **parameters.callback_function**: The function to activate after the Object has finished spawning into the scene.
 			* {>>Optional, defaults to not being used.<<}
-		
+			* {>>A reference to the object spawned is always passed to callback_function. See the example for how to access it.<<}
+
 
 ``` Lua
 function onLoad()
@@ -211,7 +212,7 @@ function onLoad()
 		scale             = {x=2, y=2, z=2},
 		sound             = false,
 		snap_to_grid      = true,
-		callback_function = function(obj) spawn_callback(obj, "Bear", "Green") end,
+		callback_function = function(obj) spawn_callback(obj, "Bear", "Green") end
 	}
 	spawnObject(spawnParams)
 end
@@ -249,6 +250,7 @@ Spawns an Object using a JSON string. Works with [getJSON()](object#getjson). It
 			* {>>Optional, defaults to JSON's value.<<}
 		* [<span class="tag fun"></span>](types#function) **parameters.callback_function**: The function to activate after the Object has finished spawning into the scene.
 			* {>>Optional, defaults to not being used.<<}
+			* {>>A reference to the object spawned is always passed to callback_function. See the example for how to access it.<<}
 
 ``` Lua
 function onLoad()
@@ -260,7 +262,9 @@ function onLoad()
 		scale             = {x=2, y=2, z=2},
 		sound             = false,
 		snap_to_grid      = true,
-		callback_function = function(obj) spawn_callback(obj, futureName, "Red") end,
+		callback_function = function(obj) spawn_callback(obj, futureName, "Red") end
+		--alternative format:
+		--callback_function = |obj| spawn_callback(obj, futureName, "Red")
 	}
 	spawnObject(spawnParams)
 end

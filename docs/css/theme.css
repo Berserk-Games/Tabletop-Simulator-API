@@ -84,7 +84,7 @@
 
 /*Make edit button red, !important required*/
 .md-content__icon {
-    color: #bb0c0d !important; 
+    color: #bb0c0d !important;
 }
 
 /*anchor offset*/
@@ -100,3 +100,8 @@
     overflow-x:hidden;
 }
 disabled due to lack of need currently, but works*/
+
+/*Make lines across pages solid*/
+.md-typeset hr {
+    border-bottom: .1rem solid rgba(0,0,0,.26);
+}

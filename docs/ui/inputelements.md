@@ -2,7 +2,7 @@ All input elements allow for the XML UI to interact with the Lua scripts in the 
 
 !!!tip
     Be sure to check out the [**UI section of the Lua Scripting API**](/ui) for how to receive the input from these element types. With Lua scripting, you can even modify the UI elements!
-    
+
 ##Targeting Triggers
 When using an attribute that triggers scripting, like onValueChanged or onClick, the UI will target a default location. Global UI targets Global script, Object UI targets the Object's script. This behavior can be overwritten. For example:
 
@@ -49,6 +49,7 @@ Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 onValueChanged | Each time the text is changed, a Lua function with this name will be triggered. | string | *(none)*
 onEndEdit | When the input box is deselected, a Lua function with this name will be triggered. | string | *(none)*
 text | The string in the text box, if any. Is the value sent to onValueChanged's or onEndEdit's function. | string | *(none)*
+placeholder | A string that is semi-visible when there is no text in the input. | string | *(none)*
 interactable |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
 colors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
 lineType |  | <ul><li>SingleLine</li><li>MultiLineSubmit</li><li>MultiLineNewLine</li></ul> | `SingleLine`
@@ -82,14 +83,14 @@ textShadow |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | 
 textOutline |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
 textAlignment |  | <ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul> | `UpperLeft`
 icon |  | string | *(none)*
-iconWidth |  | float | 
-iconColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | 
+iconWidth |  | float |
+iconColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) |
 iconAlignment |  | <ul><li>Left</li><li>Right</li></ul> | `Left`
 padding |  | float float float float | `0 0 0 0`
 transition |  | <ul><li>None</li><li>ColorTint</li><li>SpriteSwap</li><li>Animation</li></ul> | `ColorTint`
-highlightedSprite |  | string | 
-pressedSprite |  | string | 
-disabledSprite |  | string | 
+highlightedSprite |  | string |
+pressedSprite |  | string |
+disabledSprite |  | string |
 
 Example:
 ```xml
@@ -103,11 +104,11 @@ Example:
 
 !!!tip
     onClick passes nil for the value by default. However, you can assign a string that will be passed in onClick.
-    
+
     ```xml
     <Button onClick="clickFunction(stringName)" />
     ```
-    
+
     The above example passes a string with the name of `"stringName"` to the Lua function for the value property.
 
 ---
@@ -150,8 +151,8 @@ textShadow |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | 
 textOutline |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
 textAlignment |  | <ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul> | `UpperLeft`
 icon |  | string | *(none)*
-iconWidth |  | float | 
-iconColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | 
+iconWidth |  | float |
+iconColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) |
 iconAlignment |  | <ul><li>Left</li><li>Right</li></ul> | `Left`
 padding |  | float float float float | `0 0 0 0`
 
@@ -169,9 +170,9 @@ Allows a group of toggles to act as a radio button, where only 1 of them can be 
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 allowSwitchOff | If this is set to true, then the user may clear their selection from within the ToggleGroup by clicking on the selected Toggle. | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
-toggleBackgroundImage | Sets the default background image to use for nested Toggle elements. | string | 
+toggleBackgroundImage | Sets the default background image to use for nested Toggle elements. | string |
 toggleBackgroundColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
-toggleSelectedImage | Sets the default image to use for selected (checked) nested Toggle elements. | string | 
+toggleSelectedImage | Sets the default image to use for selected (checked) nested Toggle elements. | string |
 toggleSelectedColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
 
 ```xml
@@ -213,7 +214,7 @@ backgroundColor |  | [<span class="tag xmlco"></span>](attributes#attribute-type
 fillColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
 fillImage |  | string |
 handleColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
-handleImage |  | string | 
+handleImage |  | string |
 
 Example:
 ```xml
@@ -237,14 +238,14 @@ textColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `
 itemBackgroundColors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | #FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)
 itemTextColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
 checkColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
-checkImage |  | string | 
+checkImage |  | string |
 arrowColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
-arrowImage |  | string | 
+arrowImage |  | string |
 dropdownBackgroundColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
-dropdownBackgroundImage |  | string | 
-scrollbarColors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | 
-scrollbarImage |  | string | 
-itemHeight |  | float | 
+dropdownBackgroundImage |  | string |
+scrollbarColors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) |
+scrollbarImage |  | string |
+itemHeight |  | float |
 
 Example:
 ```
@@ -260,5 +261,5 @@ Example:
     print(player.steam_name .. " selected: " .. option)
  end
 ```
-   
+
 ---
