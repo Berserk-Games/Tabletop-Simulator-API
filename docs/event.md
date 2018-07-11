@@ -19,7 +19,7 @@ onObjectEnterScriptingZone([<span class="tag obj"></span>](types)&nbsp;zone, [<s
 onObjectLeaveScriptingZone([<span class="tag obj"></span>](types)&nbsp;zone, [<span class="tag obj"></span>](types)&nbsp;enter_object) | Called when any object leaves any scripting zone. | [<span class="i"></span>](#onobjectleavescriptingzone)
 onObjectLeaveContainer([<span class="tag obj"></span>](types)&nbsp;container, [<span class="tag obj"></span>](types)&nbsp;leave_object) | Called when any object leaves any container. | [<span class="i"></span>](#onobjectleavecontainer)
 onObjectLoopingEffect([<span class="tag obj"></span>](types)&nbsp;loop_object, [<span class="tag int"></span>](types)&nbsp;index) | Called whenever the looping effect of an [AssetBundle](assetbundle) is activated. | [<span class="i"></span>](#onobjectloopingeffect)
-onObjectPeeked([<span class="tag obj"></span>](types)&nbsp;object, [<span class="tag str"></span>](types)&nbsp;player) | Called when a player using peek to look under an Object. | [<span class="i"></span>](#onobjectpeeked)
+onObjectPeek([<span class="tag obj"></span>](types)&nbsp;object, [<span class="tag str"></span>](types)&nbsp;player) | Called when a player using peek to look under an Object. | [<span class="i"></span>](#onobjectpeek)
 onObjectPickUp([<span class="tag str"></span>](types)&nbsp;player_color, [<span class="tag obj"></span>](types)&nbsp;picked_up_object) | Called whenever a Player picks up an Object. | [<span class="i"></span>](#onobjectpickup)
 onObjectRandomize([<span class="tag obj"></span>](types)&nbsp;randomize_object, [<span class="tag str"></span>](types)&nbsp;player_color) | Called when an Object is randomized. Like when shuffling a deck or shaking dice. | [<span class="i"></span>](#onobjectrandomize)
 onObjectSearchEnd([<span class="tag obj"></span>](types)&nbsp;obj, [<span class="tag str"></span>](types)&nbsp;player_color) | Called when a search is finished on any container. | [<span class="i"></span>](#onobjectsearchend)
@@ -54,7 +54,9 @@ onCollisionExit([<span class="tag tab"></span>](types)&nbsp;collision_info) | Ca
 onCollisionStay([<span class="tag tab"></span>](types)&nbsp;collision_info) | Called **every frame** that an Object is colliding with the Object this function is on. | [<span class="i"></span>](#oncollisionstay)
 onDestroy() | Called when an Object it is on is destroyed. | [<span class="i"></span>](#ondestroy)
 onDrop([<span class="tag str"></span>](types)&nbsp;player_color) | Called when a player releases an Object after picking it up. | [<span class="i"></span>](#ondrop)
+onPeek([<span class="tag str"></span>](types)&nbsp;player) | Called when a player using peek to look under this Object. | [<span class="i"></span>](#onpeek)
 onPickUp([<span class="tag str"></span>](types)&nbsp;player_color) | Called when a player picks up an Object. | [<span class="i"></span>](#onpickup)
+onRandomize([<span class="tag str"></span>](types)&nbsp;player_color) | Called when this Object is randomized. Like when shuffling a deck or shaking dice. | [<span class="i"></span>](#onrandomize)
 onSearchEnd([<span class="tag str"></span>](types)&nbsp;player_color) | Called when a player finishes searches this Object. | [<span class="i"></span>](#onsearchend)
 onSearchStart([<span class="tag str"></span>](types)&nbsp;player_color) | Called when a player starts searching this Object. | [<span class="i"></span>](#onsearchstart)
 
@@ -263,16 +265,18 @@ end
 
 
 
-###onObjectPeeked(...)
+###onObjectPeek(...)
 
 Called when a player using peek to look under an Object.
 
-!!!info "onObjectPeeked(object, player)"
+!!!info "onObjectPeek(object, player)"
 	* [<span class="tag obj"></span>](types)&nbsp;**object**: A reference to the Object which was peeked at.
 	* [<span class="tag str"></span>](types)&nbsp;**player**: Name of the [Player Color](player-color) that peeked.
 
+
+
 ``` Lua
-function onObjectPeeked(player, color)
+function onObjectPeek(object, color)
 	printToAll(color .. " peeked at an Object.", {1,0,0})
 end
 ```
@@ -307,6 +311,8 @@ Called when an Object is randomized. Like when shuffling a deck or shaking dice.
 !!!info "onObjectRandomize(randomize_object, player_color)"
 	* [<span class="tag obj"></span>](types)&nbsp;**spawn_object**: The Object which triggered this function.
 	* [<span class="tag str"></span>](types)&nbsp;**player_color**: [Player Color](player-color) of the player who triggered the function.
+
+
 
 ``` Lua
 function onObjectRandomize(obj, color)
@@ -624,6 +630,25 @@ end
 ---
 
 
+
+###onPeek(...)
+
+Called when a player using peek to look under an Object.
+
+!!!info "onPeek(player)"
+	* [<span class="tag str"></span>](types)&nbsp;**player**: Name of the [Player Color](player-color) that peeked.
+
+
+``` Lua
+function onPeek(color)
+	printToAll(color .. " peeked at an Object.", {1,0,0})
+end
+```
+
+
+---
+
+
 ###onPickUp(...)
 
 Called when a player picks up an Object.
@@ -638,6 +663,28 @@ end
 ```
 
 ---
+
+
+
+###onRandomize(...)
+
+Called when an Object is randomized. Like when shuffling a deck or shaking dice.
+
+!!!info "onRandomize(player_color)"
+	* [<span class="tag str"></span>](types)&nbsp;**player_color**: [Player Color](player-color) of the player who triggered the function.
+
+
+``` Lua
+function onRandomize(color)
+	print(self.getName() .. " was randomized by " .. color)
+end
+```
+
+---
+
+
+
+
 
 
 ###onSearchEnd(...)

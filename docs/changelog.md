@@ -22,8 +22,10 @@ This is an ongoing list of scripting changes that have been implemented to scrip
             * **obj.split(int)** - Splits a deck in a number of stacks
             * **obj.getRotationValue** - Returns the current rotationValue of an object (see: gizmo tool)
                 * This function existed previously, but was not documented.
-        * New Event function:
-            * **onObjectPeeked(object, player)** - Triggers when peek is used by a player
+        * New Event functions:
+            * **onObjectPeeked(player, object)** - Triggers when peek is used by a player
+            * **onPeek(player)** - Triggers when a specific object is peeked
+            * **onRandomize(player)** - Triggers when randomize (R) is used on an object.
         * Player Color strings convert automatically
             * Example: printToAll("Hello", "Green")
         * Snap points created on objects use Vectors local to the Object, rather than global
@@ -43,7 +45,7 @@ This is an ongoing list of scripting changes that have been implemented to scrip
             * **UI.getValue(string id)** - Obtains the value that appears within element tags {>>(ex: <Text>THIS</Text>)<<}
             * Both support Rich Text!
         * New InputField attribute
-            * **placeholder** - Greyed out text that appears in the input if there is no text present. 
+            * **placeholder** - Greyed out text that appears in the input if there is no text present.
 
 
 ######6/18/18 - v10.7

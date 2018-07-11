@@ -19,7 +19,7 @@ Variable | Description | Type
 <a class="anchor" id="drag"></a>drag | Drag. [Unity rigidbody property](https://docs.unity3d.com/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types)
 <a class="anchor" id="dynamic_friction"></a>dynamic_friction | Dynamic friction, value of 0-1. [Unity physics material](https://docs.unity3d.com/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](types)
 <a class="anchor" id="grid_projection"></a>grid_projection | If grid lines can appear on the Object if visible grids are turned on. | [<span class="tag boo"></span>](types)
-<a class="anchor" id="guid"></a>guid | The 6 character unique Object identifier within Tabletop Simulator. | [<span class="tag str"></span>](types)
+<a class="anchor" id="guid"></a>guid | The 6 character unique Object identifier within Tabletop Simulator. It is assigned correctly once the `spawning` member variable becomes false. | [<span class="tag str"></span>](types)
 <a class="anchor" id="held_by_color"></a>held_by_color | The Color of the Player that is holding the object. | [<span class="tag str"></span>](types)
 <a class="anchor" id="interactable"></a>interactable | If an object can be interacted with by Players. Other object will still be able to interact with it. | [<span class="tag boo"></span>](types)
 <a class="anchor" id="loading_custom"></a>loading_custom | If the Object's custom elements (images/models/etc) are loading. Read only. | [<span class="tag boo"></span>](types)
