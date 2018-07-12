@@ -24,9 +24,9 @@ All functions return a WebRequest.
 
 Function Name | Description | &nbsp;
 -- | -- | --:
-get([<span class="tag str"></span>](types)&nbsp;url, [<span class="tag obj"></span>](types)&nbsp;callback_owner, [<span class="tag str"></span>](types)&nbsp;callback) | Get data from the current URL. | [<span class="i"></span>](#get)
-post([<span class="tag str"></span>](types)&nbsp;url,  [<span class="tag tab"></span>](types)&nbsp;form, [<span class="tag obj"></span>](types)&nbsp;callback_owner, [<span class="tag str"></span>](types)&nbsp;callback) | Post the form to the URL. | [<span class="i"></span>](#post)
-put([<span class="tag str"></span>](types)&nbsp;url,  [<span class="tag str"></span>](types)&nbsp;data, [<span class="tag obj"></span>](types)&nbsp;callback_owner, [<span class="tag str"></span>](types)&nbsp;callback) | Post the data to the URL. | [<span class="i"></span>](#put)
+get([<span class="tag str"></span>](types)&nbsp;url, [<span class="tag fun"></span>](types#function)&nbsp;callback_function) | Get data from the current URL. | [<span class="i"></span>](#get)
+post([<span class="tag str"></span>](types)&nbsp;url,  [<span class="tag tab"></span>](types)&nbsp;form, [<span class="tag fun"></span>](types#function)&nbsp;callback_function) | Post the form to the URL. | [<span class="i"></span>](#post)
+put([<span class="tag str"></span>](types)&nbsp;url,  [<span class="tag str"></span>](types)&nbsp;data, [<span class="tag fun"></span>](types#function)&nbsp;callback_function) | Post the data to the URL. | [<span class="i"></span>](#put)
 
 ---
 
@@ -37,16 +37,15 @@ put([<span class="tag str"></span>](types)&nbsp;url,  [<span class="tag str"></s
 
 Get data from the current URL.
 
-!!!info "get(url, callback_owner, callback)"
+!!!info "get(url, callback_function)"
     * [<span class="tag str"></span>](types) **url**: The url to pull data from.
-    * [<span class="tag obj"></span>](types) **callback_owner**: The Object that the callback function will be called on.
-        * {>>Global, self or any Object reference are all valid targets.<<}
-    * [<span class="tag str"></span>](types) **callback**: The name of the function to be called.
+    * [<span class="tag fun"></span>](types#function) **callback_function**: The function that will be triggered
+        * {>>Optional, but you will get no data back from the get if it isn't used.<<}
 
 ``` Lua
 function onLoad()
     print("Web Request Called")
-    WebRequest.get("https://www.google.com", Global, "webRequestCallback")
+    WebRequest.get("https://www.google.com", function(a) webRequestCallback(a) end)
 end
 
 function webRequestCallback(webReturn)
@@ -62,12 +61,11 @@ end
 
 Post the form to the URL.
 
-!!!info "post(url, form, callback_owner, callback)"
+!!!info "post(url, form, callback_function)"
     * [<span class="tag str"></span>](types) **url**: The url to pull post to.
     * [<span class="tag tab"></span>](types) **form**: The form of data to post.    
-    * [<span class="tag obj"></span>](types) **callback_owner**: The Object that the callback function will be called on.
-        * {>>Global, self or any Object reference are all valid targets.<<}
-    * [<span class="tag str"></span>](types) **callback**: The name of the function to be called.
+    * [<span class="tag fun"></span>](types#function) **callback_function**: The function that will be triggered
+        * {>>Optional, but you will get no data back from the get if it isn't used.<<}
 
 ---
 
@@ -76,9 +74,8 @@ Post the form to the URL.
 
 Post the data to the URL.
 
-!!!info "put(url, data, callback_owner, callback)"
+!!!info "put(url, data, callback_function)"
     * [<span class="tag str"></span>](types) **url**: The url to pull post to.
     * [<span class="tag str"></span>](types) **data**: The data string to post.    
-    * [<span class="tag obj"></span>](types) **callback_owner**: The Object that the callback function will be called on.
-        * {>>Global, self or any Object reference are all valid targets.<<}
-    * [<span class="tag str"></span>](types) **callback**: The name of the function to be called.
+    * [<span class="tag fun"></span>](types#function) **callback_function**: The function that will be triggered
+        * {>>Optional, but you will get no data back from the get if it isn't used.<<}

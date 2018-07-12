@@ -39,6 +39,7 @@ This is an ongoing list of scripting changes that have been implemented to scrip
         * Callback Changes
             * Callback methods are being devalued (still work, but not documented)
             * Being replaced with callback_function which directly triggers a function at the same time a callback would have been triggered.
+            * Done with takeObject, spawnObject(s) and webRequest(s).
     * Custom UI:
         * New Lua function:
             * **UI.setValue(string id, string value)** - Updates the value that appears within element tags {>>(ex: <Text>THIS</Text>)<<}
