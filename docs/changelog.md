@@ -47,6 +47,8 @@ This is an ongoing list of scripting changes that have been implemented to scrip
             * Both support Rich Text!
         * New InputField attribute
             * **placeholder** - Greyed out text that appears in the input if there is no text present.
+        * New Lua Function:
+            * **get/setCustomAssets()** - Allows you to obtain custom UI assets uploaded to the UI Assets window. Works on global or on object's assets.
 
 
 ######6/18/18 - v10.7

@@ -43,12 +43,14 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 getAttribute([<span class="tag str"></span>](types)&nbsp;id, [<span class="tag str"></span>](types)&nbsp;attribute) | Obtains the value of a specified attribute of a UI element. | [<span class="ret var"></span>](types) | [<span class="i"></span>](#getattribute)
 getAttributes([<span class="tag str"></span>](types)&nbsp;id) | Returns the attributes and their values of a UI element. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getattributes)
+getCustomAssets() | Returns information on all custom assets uploaded to the UI ASSETS pane. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getcustomassets)
 getValue([<span class="tag str"></span>](types)&nbsp;id) | Obtains the value between elements tags, like: `<Text>ValueToGet</Text>` | [<span class="ret str"></span>](types) | [<span class="i"></span>](#getvalue)
 <a class="anchor" id="getxml"></a>getXml() | Returns the run-time UI's XML in string format. | [<span class="ret str"></span>](types) |
 getXmlTable() | Returns the run-time UI's XML formatted as a Lua table. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getxmltable)
 hide([<span class="tag str"></span>](types)&nbsp;id) | Hides the given UI element. Unlike the "active" attribute, hide triggers animations. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#hide)
 setAttribute([<span class="tag str"></span>](types)&nbsp;id, [<span class="tag str"></span>](types)&nbsp;attribute, [<span class="tag var"></span>](types)&nbsp;value) | Sets the value of a specified attribute of a UI element. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setattribute)
 setAttributes([<span class="tag str"></span>](types)&nbsp;id, [<span class="tag tab"></span>](types)&nbsp;data) | Updates the value of the supplied attributes of a UI element. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setattributes)
+setCustomAssets([<span class="tag tab"></span>](types)&nbsp;assets) | Sets the UI ASSETS (like custom images) for global or an Object. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setcustomassets)
 setValue([<span class="tag str"></span>](types)&nbsp;id, [<span class="tag str"></span>](types)&nbsp;value) | Updates the value between elements tags, like: `<Text>ValueChanged</Text>` | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setvalue)
 setXml([<span class="tag str"></span>](types)&nbsp;xml) | Replaces the run-time UI with the XML string. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setxml)
 setXmlTable([<span class="tag tab"></span>](types)&nbsp;data) | Replaces the run-time UI with an XML string which is generated from a table of data. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setxmltable)
@@ -89,6 +91,28 @@ self.UI.getAttribute("testElement", "fontSize")
         * [<span class="tag str"></span>](types) **color**: The hex used for the color element's value.
 
     **IMPORTANT**: This return table is an example of one you may get back from using it on a RawImage element type. The attribute keys you get back and their values will depend on the element you use the function on as well as the attributes you, the user, have assigned to it.
+
+---
+
+
+###getCustomAssets()
+
+[<span class="ret tab"></span>](types)&nbsp;Returns information on all custom assets uploaded to the UI ASSETS pane.
+
+!!!info "Return table"
+    * [<span class="tag tab"></span>](types) **table**: An unnamed table that contains sub-tables. Each sub-table represents one asset.
+        * [<span class="tag str"></span>](types) **name**: The name of the image element
+        * [<span class="tag str"></span>](types) **url**: The URL/file location of the asset's source.
+
+``` Lua
+function onLoad()
+    local assets = UI.getCustomAssets()
+    log(assets)
+end
+```
+
+
+
 
 ---
 
@@ -219,6 +243,36 @@ attributeTable = {
     color = "#000000"
 }
 self.UI.setAttributes("exampleText", attributeTable)
+```
+
+---
+
+
+###setCustomAssets(...)
+
+[<span class="ret boo"></span>](types)&nbsp;Sets the UI ASSETS (like custom images) for Global or an Object. Passing nothing as a parameter results in the clearing of the UI Assets.
+
+!!!warning "This function will overwrite any currently existing assets in Custom UI Assets, not add to them."
+
+!!!info "setCustomAssets(table)"
+    * [<span class="tag tab"></span>](types) **table**: An unnamed table that contains sub-tables. Each sub-table represents one asset.
+        * [<span class="tag str"></span>](types) **name**: The name of the image element
+        * [<span class="tag str"></span>](types) **url**: The URL/file location of the asset's source.
+
+``` Lua
+function onLoad()
+    local assets = {
+        {
+            name = "Image 1",
+            url  = "http://placehold.it/120x120&text=image1"
+        },
+        {
+            name = "Image 2",
+            url  = "http://placehold.it/120x120&text=image2"
+        },
+    }
+    UI.setCustomAssets(assets)
+end
 ```
 
 ---
