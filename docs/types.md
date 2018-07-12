@@ -73,7 +73,7 @@ self.setColorTint({50/255, 83/255, 199/255})
 
 ####Strings
 
-As of v10.8, you are able to use a String in place of a color table! Using a [Player Color](player-color) will automatically fill in that value. It works with any of the 12 color names, as they are written on the [Player Color](player-color) page.
+You are also able to use a String in place of a color table. Using a [Player Color](player-color) will automatically fill in that value. It works with any of the 12 color names, as they are written on the [Player Color](player-color) page.
 
 Example: `printToAll("Test", "Green")`
 
