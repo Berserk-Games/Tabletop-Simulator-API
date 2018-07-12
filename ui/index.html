@@ -1401,6 +1401,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getcustomassets" title="getCustomAssets()" class="md-nav__link">
+    getCustomAssets()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getvalue" title="getValue(...)" class="md-nav__link">
     getValue(...)
   </a>
@@ -1431,6 +1438,13 @@
           <li class="md-nav__item">
   <a href="#setattributes" title="setAttributes(...)" class="md-nav__link">
     setAttributes(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcustomassets" title="setCustomAssets(...)" class="md-nav__link">
+    setCustomAssets(...)
   </a>
   
 </li>
@@ -1923,6 +1937,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getcustomassets" title="getCustomAssets()" class="md-nav__link">
+    getCustomAssets()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getvalue" title="getValue(...)" class="md-nav__link">
     getValue(...)
   </a>
@@ -1953,6 +1974,13 @@
           <li class="md-nav__item">
   <a href="#setattributes" title="setAttributes(...)" class="md-nav__link">
     setAttributes(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcustomassets" title="setCustomAssets(...)" class="md-nav__link">
+    setCustomAssets(...)
   </a>
   
 </li>
@@ -2074,6 +2102,12 @@ Example of calling a function targeted at an Object UI:
 <td><a href="#getattributes"><span class="i"></span></a></td>
 </tr>
 <tr>
+<td>getCustomAssets()</td>
+<td>Returns information on all custom assets uploaded to the UI ASSETS pane.</td>
+<td><a href="../types"><span class="ret tab"></span></a></td>
+<td><a href="#getcustomassets"><span class="i"></span></a></td>
+</tr>
+<tr>
 <td>getValue(<a href="../types"><span class="tag str"></span></a>&nbsp;id)</td>
 <td>Obtains the value between elements tags, like: <code class="codehilite"><span class="nt">&lt;Text&gt;</span>ValueToGet<span class="nt">&lt;/Text&gt;</span></code></td>
 <td><a href="../types"><span class="ret str"></span></a></td>
@@ -2108,6 +2142,12 @@ Example of calling a function targeted at an Object UI:
 <td>Updates the value of the supplied attributes of a UI element.</td>
 <td><a href="../types"><span class="ret boo"></span></a></td>
 <td><a href="#setattributes"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>setCustomAssets(<a href="../types"><span class="tag tab"></span></a>&nbsp;assets)</td>
+<td>Sets the UI ASSETS (like custom images) for global or an Object.</td>
+<td><a href="../types"><span class="ret boo"></span></a></td>
+<td><a href="#setcustomassets"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>setValue(<a href="../types"><span class="tag str"></span></a>&nbsp;id, <a href="../types"><span class="tag str"></span></a>&nbsp;value)</td>
@@ -2169,6 +2209,25 @@ Example of calling a function targeted at an Object UI:
 </ul>
 <p><strong>IMPORTANT</strong>: This return table is an example of one you may get back from using it on a RawImage element type. The attribute keys you get back and their values will depend on the element you use the function on as well as the attributes you, the user, have assigned to it.</p>
 </div>
+<hr />
+<h3 id="getcustomassets">getCustomAssets()<a class="headerlink" href="#getcustomassets" title="Permanent link"> </a></h3>
+<p><a href="../types"><span class="ret tab"></span></a>&nbsp;Returns information on all custom assets uploaded to the UI ASSETS pane.</p>
+<div class="admonition info">
+<p class="admonition-title">Return table</p>
+<ul>
+<li><a href="../types"><span class="tag tab"></span></a> <strong>table</strong>: An unnamed table that contains sub-tables. Each sub-table represents one asset.<ul>
+<li><a href="../types"><span class="tag str"></span></a> <strong>name</strong>: The name of the image element</li>
+<li><a href="../types"><span class="tag str"></span></a> <strong>url</strong>: The URL/file location of the asset's source.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">assets</span> <span class="o">=</span> <span class="n">UI</span><span class="p">.</span><span class="n">getCustomAssets</span><span class="p">()</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">assets</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
 <hr />
 <h3 id="getvalue">getValue(...)<a class="headerlink" href="#getvalue" title="Permanent link"> </a></h3>
 <p><a href="../types"><span class="ret str"></span></a>&nbsp;Obtains the value between elements tags, like: <code class="codehilite"><span class="nt">&lt;Text&gt;</span>ValueObtained<span class="nt">&lt;/Text&gt;</span></code></p>
@@ -2281,6 +2340,37 @@ Example of calling a function targeted at an Object UI:
     <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#000000&quot;</span>
 <span class="p">}</span>
 <span class="n">self</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">setAttributes</span><span class="p">(</span><span class="s2">&quot;exampleText&quot;</span><span class="p">,</span> <span class="n">attributeTable</span><span class="p">)</span>
+</pre></div>
+
+<hr />
+<h3 id="setcustomassets">setCustomAssets(...)<a class="headerlink" href="#setcustomassets" title="Permanent link"> </a></h3>
+<p><a href="../types"><span class="ret boo"></span></a>&nbsp;Sets the UI ASSETS (like custom images) for Global or an Object. Passing nothing as a parameter results in the clearing of the UI Assets.</p>
+<div class="admonition warning">
+<p class="admonition-title">This function will overwrite any currently existing assets in Custom UI Assets, not add to them.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">setCustomAssets(table)</p>
+<ul>
+<li><a href="../types"><span class="tag tab"></span></a> <strong>table</strong>: An unnamed table that contains sub-tables. Each sub-table represents one asset.<ul>
+<li><a href="../types"><span class="tag str"></span></a> <strong>name</strong>: The name of the image element</li>
+<li><a href="../types"><span class="tag str"></span></a> <strong>url</strong>: The URL/file location of the asset's source.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">assets</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Image 1&quot;</span><span class="p">,</span>
+            <span class="n">url</span>  <span class="o">=</span> <span class="s2">&quot;http://placehold.it/120x120&amp;text=image1&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Image 2&quot;</span><span class="p">,</span>
+            <span class="n">url</span>  <span class="o">=</span> <span class="s2">&quot;http://placehold.it/120x120&amp;text=image2&quot;</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+    <span class="n">UI</span><span class="p">.</span><span class="n">setCustomAssets</span><span class="p">(</span><span class="n">assets</span><span class="p">)</span>
+<span class="kr">end</span>
 </pre></div>
 
 <hr />
