@@ -9,6 +9,7 @@
     border-radius:5px;
     position: relative;
     margin: 0px 1px;
+    bottom: 2px;
 
     word-break: normal;
 
@@ -154,6 +155,18 @@
 .pla:after {
     content: "player";
 }
+
+/*Function*/
+.fun {
+    color: #FFFFFF;
+    background-color: #DE4816;
+}
+.fun:after {
+    content: "func";
+}
+
+
+
 
 /*XML stuff*/
 
