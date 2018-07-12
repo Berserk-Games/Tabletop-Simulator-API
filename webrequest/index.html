@@ -1950,17 +1950,17 @@
 </thead>
 <tbody>
 <tr>
-<td>get(<a href="../types"><span class="tag str"></span></a>&nbsp;url, <a href="../types"><span class="tag obj"></span></a>&nbsp;callback_owner, <a href="../types"><span class="tag str"></span></a>&nbsp;callback)</td>
+<td>get(<a href="../types"><span class="tag str"></span></a>&nbsp;url, <a href="../types#function"><span class="tag fun"></span></a>&nbsp;callback_function)</td>
 <td>Get data from the current URL.</td>
 <td align="right"><a href="#get"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>post(<a href="../types"><span class="tag str"></span></a>&nbsp;url,  <a href="../types"><span class="tag tab"></span></a>&nbsp;form, <a href="../types"><span class="tag obj"></span></a>&nbsp;callback_owner, <a href="../types"><span class="tag str"></span></a>&nbsp;callback)</td>
+<td>post(<a href="../types"><span class="tag str"></span></a>&nbsp;url,  <a href="../types"><span class="tag tab"></span></a>&nbsp;form, <a href="../types#function"><span class="tag fun"></span></a>&nbsp;callback_function)</td>
 <td>Post the form to the URL.</td>
 <td align="right"><a href="#post"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>put(<a href="../types"><span class="tag str"></span></a>&nbsp;url,  <a href="../types"><span class="tag str"></span></a>&nbsp;data, <a href="../types"><span class="tag obj"></span></a>&nbsp;callback_owner, <a href="../types"><span class="tag str"></span></a>&nbsp;callback)</td>
+<td>put(<a href="../types"><span class="tag str"></span></a>&nbsp;url,  <a href="../types"><span class="tag str"></span></a>&nbsp;data, <a href="../types#function"><span class="tag fun"></span></a>&nbsp;callback_function)</td>
 <td>Post the data to the URL.</td>
 <td align="right"><a href="#put"><span class="i"></span></a></td>
 </tr>
@@ -1971,19 +1971,18 @@
 <h3 id="get">get(...)<a class="headerlink" href="#get" title="Permanent link"> </a></h3>
 <p>Get data from the current URL.</p>
 <div class="admonition info">
-<p class="admonition-title">get(url, callback_owner, callback)</p>
+<p class="admonition-title">get(url, callback_function)</p>
 <ul>
 <li><a href="../types"><span class="tag str"></span></a> <strong>url</strong>: The url to pull data from.</li>
-<li><a href="../types"><span class="tag obj"></span></a> <strong>callback_owner</strong>: The Object that the callback function will be called on.<ul>
-<li><span class="critic comment">Global, self or any Object reference are all valid targets.</span></li>
+<li><a href="../types#function"><span class="tag fun"></span></a> <strong>callback_function</strong>: The function that will be triggered<ul>
+<li><span class="critic comment">Optional, but you will get no data back from the get if it isn't used.</span></li>
 </ul>
 </li>
-<li><a href="../types"><span class="tag str"></span></a> <strong>callback</strong>: The name of the function to be called.</li>
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Web Request Called&quot;</span><span class="p">)</span>
-    <span class="n">WebRequest</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://www.google.com&quot;</span><span class="p">,</span> <span class="n">Global</span><span class="p">,</span> <span class="s2">&quot;webRequestCallback&quot;</span><span class="p">)</span>
+    <span class="n">WebRequest</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://www.google.com&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="n">webRequestCallback</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="kr">end</span><span class="p">)</span>
 <span class="kr">end</span>
 
 <span class="kr">function</span> <span class="nf">webRequestCallback</span><span class="p">(</span><span class="n">webReturn</span><span class="p">)</span>
@@ -1996,30 +1995,28 @@
 <h3 id="post">post(...)<a class="headerlink" href="#post" title="Permanent link"> </a></h3>
 <p>Post the form to the URL.</p>
 <div class="admonition info">
-<p class="admonition-title">post(url, form, callback_owner, callback)</p>
+<p class="admonition-title">post(url, form, callback_function)</p>
 <ul>
 <li><a href="../types"><span class="tag str"></span></a> <strong>url</strong>: The url to pull post to.</li>
 <li><a href="../types"><span class="tag tab"></span></a> <strong>form</strong>: The form of data to post.    </li>
-<li><a href="../types"><span class="tag obj"></span></a> <strong>callback_owner</strong>: The Object that the callback function will be called on.<ul>
-<li><span class="critic comment">Global, self or any Object reference are all valid targets.</span></li>
+<li><a href="../types#function"><span class="tag fun"></span></a> <strong>callback_function</strong>: The function that will be triggered<ul>
+<li><span class="critic comment">Optional, but you will get no data back from the get if it isn't used.</span></li>
 </ul>
 </li>
-<li><a href="../types"><span class="tag str"></span></a> <strong>callback</strong>: The name of the function to be called.</li>
 </ul>
 </div>
 <hr />
 <h3 id="put">put(...)<a class="headerlink" href="#put" title="Permanent link"> </a></h3>
 <p>Post the data to the URL.</p>
 <div class="admonition info">
-<p class="admonition-title">put(url, data, callback_owner, callback)</p>
+<p class="admonition-title">put(url, data, callback_function)</p>
 <ul>
 <li><a href="../types"><span class="tag str"></span></a> <strong>url</strong>: The url to pull post to.</li>
 <li><a href="../types"><span class="tag str"></span></a> <strong>data</strong>: The data string to post.    </li>
-<li><a href="../types"><span class="tag obj"></span></a> <strong>callback_owner</strong>: The Object that the callback function will be called on.<ul>
-<li><span class="critic comment">Global, self or any Object reference are all valid targets.</span></li>
+<li><a href="../types#function"><span class="tag fun"></span></a> <strong>callback_function</strong>: The function that will be triggered<ul>
+<li><span class="critic comment">Optional, but you will get no data back from the get if it isn't used.</span></li>
 </ul>
 </li>
-<li><a href="../types"><span class="tag str"></span></a> <strong>callback</strong>: The name of the function to be called.</li>
 </ul>
 </div>
                 
