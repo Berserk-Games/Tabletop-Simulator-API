@@ -165,6 +165,8 @@ columnSpan | __ | int | `1`
 dontUseTableCellBackground | If set to true, then this cell will ignore the tables' *cellBackgroundImage* and values, allowing you to override those values for this cell. | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
 overrideGlobalCellPadding | If set to true, then this cell will ignore the tables' *cellPadding* value, allowing you to set unique cell padding for this cell. | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
 padding | 	Padding values to use for this cell if *overrideGlobalCellPadding* is set to true. | float(left) float(right) float(top) float(bottom) | `0 0 0 0`
+childForceExpandWidth |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
+childForceExpandHeight |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
 
 ---
 
