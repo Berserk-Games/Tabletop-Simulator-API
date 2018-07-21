@@ -5,13 +5,13 @@ You can access the in-game Lua Editor by clicking on **Scripting** on the top ba
 
 The advantage of this method is it requires no additional setup. However it lacks many features included in some of the other options.
 
-<img src="http://i.imgur.com/V1LfMY8.png"></img><br>
+![Overview](/img/overview1.png)
 
 
 ### Official Atom Plugin
 The preferred method of writing Lua scripts is using our Official Plugin for the Atom Text Editor. It has all of the functionality of the in-game editor plus line numbers, syntax highlighting, autocomplete, and a modern look. [Click here for setup instructions.](atom)
 
-<img src="http://i.imgur.com/MI2t10L.png" /><br>
+![Aton Plugin](/img/overview2.png)
 
 
 ### External Editor API
@@ -48,4 +48,4 @@ TableIterators | The table iterators: next, ipairs, and pairs.
 * [BlackJack](http://steamcommunity.com/sharedfiles/filedetails/?id=620967608)
 * [Chess Clock](http://steamcommunity.com/sharedfiles/filedetails/?id=659350499)
 * [Roulette](http://steamcommunity.com/sharedfiles/filedetails/?id=659349425)
-* [Interactable](http://steamcommunity.com/sharedfiles/filedetails/?id=737574536) 
+* [Interactable](http://steamcommunity.com/sharedfiles/filedetails/?id=737574536)
