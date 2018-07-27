@@ -48,7 +48,7 @@ parameters = {
 	body = "Body text example.",
 	color = "Grey"
 }
-addNotebookTab(parameters)
+Notes.addNotebookTab(parameters)
 ```
 
 ---
@@ -75,7 +75,7 @@ params = {
 	body = "This tab was edited via script.",
 	color = "Grey"
 }
-editNotebookTab(params)
+Notes.editNotebookTab(params)
 ```
 
 ---
@@ -87,7 +87,7 @@ editNotebookTab(params)
 
 ``` Lua
 --Example Usage
-tabInfo = getNotebookTabs()
+tabInfo = Notes.getNotebookTabs()
 ```
 ``` Lua
 --Example Returned Table
@@ -109,7 +109,7 @@ tabInfo = getNotebookTabs()
 	* [<span class="tag int"></span>](types) **index**: Index for the tab to remove.
 
 ``` Lua
-removeNotebookTab(0)
+Notes.removeNotebookTab(0)
 ```
 
 ---
@@ -129,7 +129,7 @@ removeNotebookTab(0)
 	* [<span class="tag str"></span>](types) **notes**: What to place into the notes area.
 
 ``` Lua
-setNotes("This appears in the notes section")
+Notes.setNotes("This appears in the notes section")
 ```
 
 ---
