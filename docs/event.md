@@ -415,7 +415,7 @@ Called when a [Player](player) disconnects from a game.
 
 
 ###onPlayerTurn(...)
-Called at the end of a player's turn when using the in-game turn system.
+Called at the start of a player's turn when using the in-game turn system.
 
 !!!info "onPlayerTurn(player_color)"
 	* [<span class="tag str"></span>](types)&nbsp;**player_color**: [Player Color](player-color) of the player who's turn is starting.
