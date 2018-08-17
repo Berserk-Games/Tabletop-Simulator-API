@@ -837,22 +837,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#getsnappoints" title="getSnapPoints()" class="md-nav__link">
-    getSnapPoints()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#paste" title="paste(...)" class="md-nav__link">
     paste(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setsnappoints" title="setSnapPoints(...)" class="md-nav__link">
-    setSnapPoints(...)
   </a>
   
 </li>
@@ -2018,22 +2004,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#getsnappoints" title="getSnapPoints()" class="md-nav__link">
-    getSnapPoints()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#paste" title="paste(...)" class="md-nav__link">
     paste(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setsnappoints" title="setSnapPoints(...)" class="md-nav__link">
-    setSnapPoints(...)
   </a>
   
 </li>
@@ -2159,7 +2131,8 @@
                 
                   <h1>Base</h1>
                 
-                <p>These are a loose collection of functions which can be used to perform a variety of actions within Tabletop Simulator. Some of them are used in almost every script.</p>
+                <p>These are a loose collection of functions which can be used to perform a variety of actions within Tabletop Simulator.</p>
+<p>These functions can utilize in-game Objects, but none of them can be enacted on in-game Objects. They all deal with the game space.</p>
 <h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link"> </a></h2>
 <h3 id="global-functions">Global Functions<a class="headerlink" href="#global-functions" title="Permanent link"> </a></h3>
 <p>General functions which work within any script.</p>
@@ -2173,18 +2146,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a class="anchor" id="clearpixelpaint"></a>clearPixelPaint()</td>
-<td>Remove pixel paint from the instance.</td>
-<td><a href="../types"><span class="ret boo"></span></a></td>
-<td></td>
-</tr>
-<tr>
-<td><a class="anchor" id="clearvectorpaint"></a>clearVectorPaint()</td>
-<td>Remove vector paint from the instance.</td>
-<td><a href="../types"><span class="ret boo"></span></a></td>
-<td></td>
-</tr>
 <tr>
 <td>copy(<a href="../types"><span class="tag tab"></span></a>&nbsp;object_list)</td>
 <td>Copy a list of Objects to the clipboard. Works with <a href="#paste">paste(...)</a>.</td>
@@ -2222,12 +2183,6 @@
 <td></td>
 </tr>
 <tr>
-<td>getSnapPoints()</td>
-<td>Returns a table of sub-tables, each sub-table representing one snap point.</td>
-<td><a href="../types"><span class="ret tab"></span></a></td>
-<td><a href="#getsnappoints"><span class="i"></span></a></td>
-</tr>
-<tr>
 <td>paste(<a href="../types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
 <td>Pastes Objects in-game that were copied to the in-game clipboard. Works with <a href="#copy">copy(...)</a>.</td>
 <td><a href="../types"><span class="ret tab"></span></a></td>
@@ -2238,12 +2193,6 @@
 <td>Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game.</td>
 <td><a href="../types"><span class="ret boo"></span></a></td>
 <td></td>
-</tr>
-<tr>
-<td>setSnapPoints(<a href="../types"><span class="tag str"></span></a>&nbsp;parameters)</td>
-<td>Spawns snap points from a list of parameters.</td>
-<td><a href="../types"><span class="ret boo"></span></a></td>
-<td><a href="#setsnappoints"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>spawnObject(<a href="../types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
@@ -2377,44 +2326,6 @@
 </ul>
 </div>
 <hr />
-<h4 id="getsnappoints">getSnapPoints()<a class="headerlink" href="#getsnappoints" title="Permanent link"> </a></h4>
-<p><a href="../types"><span class="ret tab"></span></a>&nbsp;Returns a table of sub-tables, each sub-table representing one snap point. You can also use this as an <a href="../object">Object</a> function. This function will NOT return information on snap points attached to Objects unless you use it on the Object. See an example on <a href="../object#getsnappoints">its entry</a> under the Object page.</p>
-<div class="admonition info">
-<p class="admonition-title">Sub-table contents</p>
-<ul>
-<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>position</strong>: Position of the snap point.<ul>
-<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
-</ul>
-</li>
-<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>rotation</strong>: Rotation of the snap point.<ul>
-<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
-</ul>
-</li>
-<li><a href="../types"><span class="tag boo"></span></a> <strong>rotation_snap</strong>: If the snap point is a "rotation" snap point.<ul>
-<li><span class="critic comment">Optional, defaults to false.</span></li>
-</ul>
-</li>
-</ul>
-</div>
-<p>Example:
-<div class="codehilite"><pre><span></span><span class="n">snapPointList</span> <span class="o">=</span> <span class="n">getSnapPoints</span><span class="p">()</span>
-<span class="n">log</span><span class="p">(</span><span class="n">snapPointsList</span><span class="p">)</span>
-</pre></div></p>
-<p>Returned table:
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="p">{</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span>
-        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
-        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span>
-        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
-        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">true</span>
-    <span class="p">},</span>
-<span class="p">}</span>
-</pre></div></p>
-<hr />
 <h4 id="paste">paste(...)<a class="headerlink" href="#paste" title="Permanent link"> </a></h4>
 <p><a href="../types"><span class="ret obj"></span></a>&nbsp;Pastes Objects in-game that were copied to the in-game clipboard. Works with <a href="#copy">copy(...)</a>.</p>
 <div class="admonition info">
@@ -2433,46 +2344,6 @@
 </li>
 </ul>
 </div>
-<hr />
-<h4 id="setsnappoints">setSnapPoints(...)<a class="headerlink" href="#setsnappoints" title="Permanent link"> </a></h4>
-<p><a href="../types"><span class="ret boo"></span></a>&nbsp;Spawns snap points from a list of parameters. You can also use this as an <a href="../object">Object</a> function. This function will NOT attach snap points to Objects unless you use it on the Object. See an example on <a href="../object#setsnappoints">its entry</a> under the Object page.</p>
-<div class="admonition info">
-<p class="admonition-title">setSnapPoints(parameters)</p>
-<ul>
-<li><a href="../types"><span class="tag str"></span></a> <strong>parameters</strong>: A table containing numerically indexed sub-tables.<ul>
-<li><a href="../types"><span class="tag str"></span></a> <strong>sub-table</strong>:<ul>
-<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>position</strong>: Position of the snap point.<ul>
-<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
-</ul>
-</li>
-<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>rotation</strong>: Rotation of the snap point.<ul>
-<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
-</ul>
-</li>
-<li><a href="../types"><span class="tag boo"></span></a> <strong>rotation_snap</strong>: If the snap point is a "rotation" snap point.<ul>
-<li><span class="critic comment">Optional, defaults to false.</span></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="n">setSnapPoints</span><span class="p">({</span>
-    <span class="p">{</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span>
-        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
-        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span>
-        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
-        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">true</span>
-    <span class="p">},</span>
-<span class="p">})</span>
-</pre></div>
-
 <hr />
 <h4 id="spawnobject">spawnObject(...)<a class="headerlink" href="#spawnobject" title="Permanent link"> </a></h4>
 <p><a href="../types"><span class="ret obj"></span></a>&nbsp;Spawn an Object. View the <a href="../spawnableobjects">Spawnable Objects</a> page for Objects that can be spawned.</p>

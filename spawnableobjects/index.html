@@ -1339,6 +1339,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#custom-deck" title="Custom Deck" class="md-nav__link">
+    Custom Deck
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#custom-dice" title="Custom Dice" class="md-nav__link">
     Custom Dice
   </a>
@@ -2005,6 +2012,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#custom-deck" title="Custom Deck" class="md-nav__link">
+    Custom Deck
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#custom-dice" title="Custom Dice" class="md-nav__link">
     Custom Dice
   </a>
@@ -2065,7 +2079,7 @@
                 
                   <h1>Spawnable Objects</h1>
                 
-                <p>Objects can be spawned by any script using the <a href="../base#spawnobject">spawnObject()</a> function. These are the <code class="codehilite">type</code> Strings used to designate the type of Object to spawn. </p>
+                <p>Objects can be spawned by any script using the <a href="../base#spawnobject">spawnObject()</a> function. These are the <code class="codehilite">type</code> Strings used to designate the type of Object to spawn.</p>
 <h2 id="built-in-game-objects">Built-in Game Objects<a class="headerlink" href="#built-in-game-objects" title="Permanent link"> </a></h2>
 <h3 id="boards">Boards<a class="headerlink" href="#boards" title="Permanent link"> </a></h3>
 <ul>
@@ -2276,6 +2290,44 @@
 <ul>
 <li><a href="../types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
 <li><a href="../types"><span class="tag str"></span></a> <strong>image</strong>: The path/url for the board.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="custom-deck">Custom Deck<a class="headerlink" href="#custom-deck" title="Permanent link"> </a></h3>
+<ul>
+<li>DeckCustom</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Custom Parameters</p>
+<ul>
+<li><a href="../types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
+<li><a href="../types"><span class="tag str"></span></a> <strong>face</strong>: The path/url of the face cardsheet.</li>
+<li><a href="../types"><span class="tag str"></span></a> <strong>back</strong>: The path/url of the back cardsheet or card back.</li>
+<li><a href="../types"><span class="tag boo"></span></a> <strong>unique_back</strong>: If each card has a unique card back (via a cardsheet).<ul>
+<li><span class="critic comment">Optional, defaults to false.</span></li>
+</ul>
+</li>
+<li><a href="../types"><span class="tag int"></span></a> <strong>width</strong>: The number of columns on the cardsheet.<ul>
+<li><span class="critic comment">Optional, defaults to 10.</span></li>
+</ul>
+</li>
+<li><a href="../types"><span class="tag int"></span></a> <strong>height</strong>: The number of rows on the cardsheet.<ul>
+<li><span class="critic comment">Optional, defaults to 7.</span></li>
+</ul>
+</li>
+<li><a href="../types"><span class="tag int"></span></a> <strong>number</strong>: The number of cards on the cardsheet.<ul>
+<li><span class="critic comment">Optional, defaults to 52.</span></li>
+</ul>
+</li>
+<li><a href="../types"><span class="tag boo"></span></a> <strong>sideways</strong>: If the cards are horizontal instead of vertical.<ul>
+<li><span class="critic comment">Optional, defaults to false.</span></li>
+</ul>
+</li>
+<li><a href="../types"><span class="tag boo"></span></a> <strong>back_is_hidden</strong>: If cards have a special face that shows up when hidden in a hand zone.<ul>
+<li><span class="critic comment">Optional, defaults to false.</span></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

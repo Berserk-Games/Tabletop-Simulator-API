@@ -818,6 +818,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onobjectentercontainer" title="onObjectEnterContainer(...)" class="md-nav__link">
+    onObjectEnterContainer(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onobjectleavescriptingzone" title="onObjectLeaveScriptingZone(...)" class="md-nav__link">
     onObjectLeaveScriptingZone(...)
   </a>
@@ -2151,6 +2158,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onobjectentercontainer" title="onObjectEnterContainer(...)" class="md-nav__link">
+    onObjectEnterContainer(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onobjectleavescriptingzone" title="onObjectLeaveScriptingZone(...)" class="md-nav__link">
     onObjectLeaveScriptingZone(...)
   </a>
@@ -2435,6 +2449,11 @@
 <td><a href="#onobjectenterscriptingzone"><span class="i"></span></a></td>
 </tr>
 <tr>
+<td>onObjectEnterContainer(<a href="../types"><span class="tag obj"></span></a>&nbsp;container, <a href="../types"><span class="tag obj"></span></a>&nbsp;enter_object)</td>
+<td>Called when any object enters any container. Includes decks</td>
+<td><a href="#onobjectentercontainer"><span class="i"></span></a></td>
+</tr>
+<tr>
 <td>onObjectLeaveScriptingZone(<a href="../types"><span class="tag obj"></span></a>&nbsp;zone, <a href="../types"><span class="tag obj"></span></a>&nbsp;enter_object)</td>
 <td>Called when any object leaves any scripting zone.</td>
 <td><a href="#onobjectleavescriptingzone"><span class="i"></span></a></td>
@@ -2708,6 +2727,22 @@
 </div>
 <div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectEnterScriptingZone</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">getGUID</span><span class="p">())</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onobjectentercontainer">onObjectEnterContainer(...)<a class="headerlink" href="#onobjectentercontainer" title="Permanent link"> </a></h3>
+<p>Called when any object enters any container. Includes Objects entering decks.</p>
+<div class="admonition info">
+<p class="admonition-title">onObjectEnterContainer(container, enter_object)</p>
+<ul>
+<li><a href="../types"><span class="tag obj"></span></a>&nbsp;<strong>container</strong>: Container the object left.</li>
+<li><a href="../types"><span class="tag obj"></span></a>&nbsp;<strong>enter_object</strong>: Object that left the container.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectEnterContainer</span><span class="p">(</span><span class="n">bag</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">bag</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 <span class="kr">end</span>
 </pre></div>
 

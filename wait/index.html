@@ -1921,7 +1921,7 @@
 <td><a href="#stop"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>time(<a href="../types#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="../types"><span class="tag flo"></span></a>&nbsp;time)</td>
+<td>time(<a href="../types#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="../types"><span class="tag flo"></span></a>&nbsp;time, <a href="../types"><span class="tag int"></span></a>&nbsp;repetitions)</td>
 <td>Activates a function after a set amount of time has passed.</td>
 <td><a href="../types"><span class="ret int"></span></a></td>
 <td><a href="#time"><span class="i"></span></a></td>
@@ -2045,7 +2045,7 @@
 
 <hr />
 <h3 id="time">time(...)<a class="headerlink" href="#time" title="Permanent link"> </a></h3>
-<p><a href="../types"><span class="ret int"></span></a>&nbsp;Activates a function after a set amount of time has passed.</p>
+<p><a href="../types"><span class="ret int"></span></a>&nbsp;Activates a function after a set amount of time has passes.</p>
 <blockquote>
 <p>The returned value is an ID which can be used with <a href="#stop">stop</a> to cancel the function at any time.</p>
 </blockquote>
@@ -2054,11 +2054,16 @@
 <ul>
 <li><a href="../types#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to activate once the amount of time has passed.</li>
 <li><a href="../types"><span class="tag flo"></span></a> <strong>time</strong>: The amount of time before the function is triggered.</li>
+<li><a href="../types"><span class="tag int"></span></a> <strong>repetitions</strong>: Number of times the timer will be repeated.<ul>
+<li><span class="critic comment">Optional, defaults to 0.</span></li>
+<li><span class="critic comment">Using -1 causes it to loop indefinitely unless stopped.</span></li>
+</ul>
+</li>
 </ul>
 </div>
 <p>Example (basic usage):
 <div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One&quot;</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="o">||</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
 
     <span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="n">saySomething</span><span class="p">(</span><span class="s2">&quot;Two&quot;</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
@@ -2071,21 +2076,6 @@
 
 <span class="kr">function</span> <span class="nf">sayThree</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Three&quot;</span><span class="p">)</span>
-<span class="kr">end</span>
-</pre></div></p>
-<p>Example (creating a loop that triggers once a second)
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="n">countIt</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">repeatLoop</span><span class="p">()</span>
-<span class="kr">end</span>
-
-<span class="kr">function</span> <span class="nf">repeatLoop</span><span class="p">()</span>
-    <span class="c1">--Insert code you want repeated here</span>
-    <span class="n">countIt</span> <span class="o">=</span> <span class="n">countIt</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">countIt</span><span class="p">)</span>
-
-    <span class="c1">--Activate a timer to re-start this function</span>
-    <span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="n">repeatLoop</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="kr">end</span>
 </pre></div></p>
 <hr />
