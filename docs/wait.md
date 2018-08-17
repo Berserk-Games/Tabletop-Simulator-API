@@ -12,7 +12,7 @@ Function Name | Description | Return | &nbsp;
 condition([<span class="tag fun"></span>](types#function)&nbsp;toRunFunc, [<span class="tag fun"></span>](types#function)&nbsp;conditionFunc, [<span class="tag flo"></span>](types)&nbsp;timeout, [<span class="tag fun"></span>](types#function)&nbsp;timeoutFunc) | Activates a function when a given function returns `true` or activates a different function if a timeout occurs. | [<span class="ret int"></span>](types) | [<span class="i"></span>](#condition)
 frames([<span class="tag fun"></span>](types#function)&nbsp;toRunFunc, [<span class="tag int"></span>](types)&nbsp;frameCount) | Activates a function after a set number of frames. | [<span class="ret int"></span>](types) | [<span class="i"></span>](#frames)
 stop([<span class="tag int"></span>](types)&nbsp;id) | Stops a currently running Wait function. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#stop)
-time([<span class="tag fun"></span>](types#function)&nbsp;toRunFunc, [<span class="tag flo"></span>](types)&nbsp;time) | Activates a function after a set amount of time has passed. | [<span class="ret int"></span>](types) | [<span class="i"></span>](#time)
+time([<span class="tag fun"></span>](types#function)&nbsp;toRunFunc, [<span class="tag flo"></span>](types)&nbsp;time, [<span class="tag int"></span>](types)&nbsp;repetitions) | Activates a function after a set amount of time has passed. | [<span class="ret int"></span>](types) | [<span class="i"></span>](#time)
 
 ---
 
@@ -136,18 +136,21 @@ end
 
 
 ###time(...)
-[<span class="ret int"></span>](types)&nbsp;Activates a function after a set amount of time has passed.
+[<span class="ret int"></span>](types)&nbsp;Activates a function after a set amount of time has passes.
 
 > The returned value is an ID which can be used with [stop](#stop) to cancel the function at any time.
 
 !!!info "time(toRunFunc, time)"
     * [<span class="tag fun"></span>](types#function) **toRunFunc**: The function to activate once the amount of time has passed.
     * [<span class="tag flo"></span>](types) **time**: The amount of time before the function is triggered.
+    * [<span class="tag int"></span>](types) **repetitions**: Number of times the timer will be repeated.
+        * {>>Optional, defaults to 0.<<}
+        * {>>Using -1 causes it to loop indefinitely unless stopped.<<}
 
 Example (basic usage):
 ``` Lua
 function onLoad()
-	Wait.time(function() print("One") end, 1)
+	Wait.time(|| print("One"), 1)
 
 	Wait.time(function() saySomething("Two") end, 2)
 
@@ -160,23 +163,6 @@ end
 
 function sayThree()
     print("Three")
-end
-```
-
-Example (creating a loop that triggers once a second)
-``` Lua
-function onLoad()
-    countIt = 0
-    repeatLoop()
-end
-
-function repeatLoop()
-    --Insert code you want repeated here
-    countIt = countIt + 1
-    print(countIt)
-
-    --Activate a timer to re-start this function
-    Wait.time(repeatLoop, 1)
 end
 ```
 

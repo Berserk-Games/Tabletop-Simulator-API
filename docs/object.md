@@ -21,7 +21,9 @@ Variable | Description | Type
 <a class="anchor" id="grid_projection"></a>grid_projection | If grid lines can appear on the Object if visible grids are turned on. | [<span class="tag boo"></span>](types)
 <a class="anchor" id="guid"></a>guid | The 6 character unique Object identifier within Tabletop Simulator. It is assigned correctly once the `spawning` member variable becomes false. | [<span class="tag str"></span>](types)
 <a class="anchor" id="held_by_color"></a>held_by_color | The Color of the Player that is holding the object. | [<span class="tag str"></span>](types)
+<a class="anchor" id="hide_when_face_down"></a>hide_when_face_down | Hide the Object when face-down as if it were in a hand zone. The face is the "top" of the Object, the direction of its positive Y coordinate. Cards/decks default to `true`. | [<span class="tag boo"></span>](types)
 <a class="anchor" id="interactable"></a>interactable | If an object can be interacted with by Players. Other object will still be able to interact with it. | [<span class="tag boo"></span>](types)
+<a class="anchor" id="is_face_down"></a>is_face_down | If an Object is roughly face-down (like with cards). The face is the "top" of the Object, the direction of its positive Y coordinate. Read only.  | [<span class="tag boo"></span>](types)
 <a class="anchor" id="loading_custom"></a>loading_custom | If the Object's custom elements (images/models/etc) are loading. Read only. | [<span class="tag boo"></span>](types)
 <a class="anchor" id="mass"></a>mass | Mass. [Unity rigidbody property](https://docs.unity3d.com/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types)
 <a class="anchor" id="name"></a>name | The Object's name. Read only, use `setName("")` to write to it. | [<span class="tag str"></span>](types)
@@ -36,6 +38,7 @@ Variable | Description | Type
 <a class="anchor" id="use_gravity"></a>use_gravity | If gravity affects this object. | [<span class="tag boo"></span>](types)
 <a class="anchor" id="use_grid"></a>use_grid | If snapping to grid is enabled or not. | [<span class="tag boo"></span>](types)
 <a class="anchor" id="use_hands"></a>use_hands | If this object can be held in a hand zone. | [<span class="tag boo"></span>](types)
+<a class="anchor" id="use_rotation_value_flip"></a>use_rotation_value_flip | Switches the axis an Object rotates around when flipped. | [<span class="tag boo"></span>](types)
 <a class="anchor" id="use_snap_points"></a>use_snap_points | If snap points are used or ignored. | [<span class="tag boo"></span>](types)
 
 These member variables are classes of their own, and have their own member variables. Each one is for a special type of Object.
@@ -127,18 +130,16 @@ getCustomObject() | Returns a Table with the Custom Object information of a Cust
 <a class="anchor" id="getguid"></a>getGUID() | String of the Object's unique identifier. | [<span class="ret str"></span>](types) |
 <a class="anchor" id="getjson"></a>getJSON() | Returns a serialization of the JSON string which represents this item. Works with [spawnObjectJSON()](base#spawnobjectjson). | [<span class="ret str"></span>](types) |
 <a class="anchor" id="getlock"></a>getLock() | If the Object is locked. | [<span class="ret boo"></span>](types) |
-<a class="anchor" id="getluascript"></a>getLuaScript() | Get a Lua script as a string. | [<span class="ret str"></span>](types) |
 <a class="anchor" id="getname"></a>getName() | Name, also shows as part of Object's tooltip. | [<span class="ret str"></span>](types) |
 getObjects() | Returns a Table of Objects in the script zone/bag/deck. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getobjects)
 <a class="anchor" id="getquantity"></a>getQuantity() | How many objects are in the stack. Returns -1 if the Object is not a stack. | [<span class="ret int"></span>](types) |
 getRotationValue() | Returns the current rotationValue. Rotation values are used to give value to different rotations (like dice). | [<span class="ret var"></span>](types) | [<span class="i"></span>](#getrotationvalue)
 getRotationValues() | Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice). | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getrotationvalues)
-getSnapPoints() | Returns a table of sub-tables, each sub-table representing one snap point. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getsnappoints)
 <a class="anchor" id="getstateid"></a>getStateId() | Current [state](http://berserk-games.com/knowledgebase/creating-states/) ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1. | [<span class="ret int"></span>](types) |
 getStates() | Returns a Table of information on the [states](http://berserk-games.com/knowledgebase/creating-states/) of an Object. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getstates)
-<a class="anchor" id="gettable"></a>getTable([<span class="tag str"></span>](types)&nbsp;func_name) | Data value of a variable in another Object's script. Can only return a table. | [<span class="ret tab"></span>](types) |
 getValue() | Object value. What the value represents depends on what type of Object this function is used on. | [<span class="ret int"></span>](types) | [<span class="i"></span>](#getvalue)
-<a class="anchor" id="getvar"></a>getVar([<span class="tag str"></span>](types)&nbsp;func_name) | Data value of a variable in another Object's script. Cannot return a table. | [<span class="ret var"></span>](types) |
+
+
 
 
 
@@ -151,14 +152,12 @@ Function Name | Description | Return | &nbsp;
 setCustomObject([<span class="tag tab"></span>](types)&nbsp;parameters) | Sets a custom Object's properties. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setcustomobject)
 <a class="anchor" id="setdescription"></a>setDescription([<span class="tag str"></span>](types)&nbsp;description) | Sets a description for an Object. Shows in tooltip after delay. | [<span class="ret boo"></span>](types)
 <a class="anchor" id="setlock"></a>setLock([<span class="tag boo"></span>](types)&nbsp;lock) | Sets if an object is locked in place. | [<span class="ret boo"></span>](types) |
-<a class="anchor" id="setluascript"></a>setLuaScript([<span class="tag str"></span>](types)&nbsp;script) | Input a string as an Object's Lua script. Generally only used after spawning a new Object. | [<span class="ret boo"></span>](types) |
 <a class="anchor" id="setname"></a>setName([<span class="tag str"></span>](types)&nbsp;name) | Sets a name for an Object. Shows in tooltip. | [<span class="ret boo"></span>](types)
 setRotationValues([<span class="tag tab"></span>](types)&nbsp;rotation_values) | Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setrotationvalues)
-setSnapPoints([<span class="tag str"></span>](types)&nbsp;parameters) | Spawns snap points from a list of parameters. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setsnappoints)
 <a class="anchor" id="setstate"></a>setState([<span class="tag int"></span>](types)&nbsp;state_id) | Sets [state](http://berserk-games.com/knowledgebase/creating-states/) of an Object. State ids (indexes) start at 1. | [<span class="ret obj"></span>](types) |
-<a class="anchor" id="settable"></a>setTable([<span class="tag str"></span>](types)&nbsp;func_name, [<span class="tag tab"></span>](types)&nbsp;data) | Creates/updates a variable in another Object's script. Only used for tables. | [<span class="ret boo"></span>](types) |
 setValue([<span class="tag var"></span>](types)&nbsp;value) | Sets an Int as the value. What the value represents depends on what type of Object it is. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setvalue)
-<a class="anchor" id="setvar"></a>setVar([<span class="tag str"></span>](types)&nbsp;func_name, [<span class="tag var"></span>](types)&nbsp;data) | Creates/updates a variable in another Object's script. Cannot set a table. | [<span class="ret boo"></span>](types) |
+
+
 
 
 
@@ -167,18 +166,18 @@ These functions perform general actions on objects.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-call([<span class="tag str"></span>](types)&nbsp;func_name, [<span class="tag tab"></span>](types)&nbsp;func_params) | Used to call a Lua function on this Object. | [<span class="ret var"></span>](types) | [<span class="i"></span>](#call)
 <a class="anchor" id="flip"></a>flip() | Flip Object over. | [<span class="ret boo"></span>](types) |
 clone([<span class="tag tab"></span>](types)&nbsp;parameters) | Copy/Paste this Object, returning a reference to the new Object. | [<span class="ret obj"></span>](types) | [<span class="i"></span>](#clone)
 cut([<span class="tag int"></span>](types)&nbsp;count) | Cuts (splits) a deck at the given card count. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#cut)
 deal([<span class="tag int"></span>](types)&nbsp;number, [<span class="tag str"></span>](types)&nbsp;player_color, [<span class="tag int"></span>](types)&nbsp;index) | Deals Objects. Will deal from decks/bags/stacks/individual items. | [<span class="ret obj"></span>](types) | [<span class="i"></span>](#deal)
 dealToColorWithOffset([<span class="tag vec"></span>](types#vector)&nbsp;offset, [<span class="tag boo"></span>](types)&nbsp;flip, [<span class="tag str"></span>](types)&nbsp;player_color) | Deals from a deck to a position relative to the hand zone. | [<span class="ret obj"></span>](types) | [<span class="i"></span>](#dealtocolorwithoffset)
 <a class="anchor" id="destruct"></a>destruct() | Destroys Object. Allows for `self.destruct()`. | [<span class="ret boo"></span>](types) |
+<a class="anchor" id="drop"></a>drop() | Forces an Object, if held by a player, to be dropped. | [<span class="ret boo"></span>](types) |
 <a class="anchor" id="highlighton"></a>highlightOn([<span class="tag col"></span>](types#color)&nbsp;color, [<span class="tag flo"></span>](types)&nbsp;duration) | Creates a highlight around an Object. | [<span class="ret boo"></span>](types) |
 <a class="anchor" id="highlightoff"></a>highlightOff([<span class="tag col"></span>](types#color)&nbsp;color) | Removes a highlight from around an Object. | [<span class="ret boo"></span>](types) |
 jointTo([<span class="tag obj"></span>](types)&nbsp;object, [<span class="tag tab"></span>](types)&nbsp;parameters) | Joints objects together, in the same way the Joint tool does. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#jointto)
 putObject([<span class="tag obj"></span>](types)&nbsp;put_object) | Places an object into a container (chip stacks/bags/decks). | [<span class="ret obj"></span>](types) | [<span class="i"></span>](#putobject)
-<a class="anchor" id="randomize"></a>randomize() | Shuffles deck/bag, rolls dice/coin, lifts other objects into the air. Same as pressing `R` by default. | [<span class="ret boo"></span>](types) |
+<a class="anchor" id="randomize"></a>randomize([<span class="tag str"></span>](types)&nbsp;color) | Shuffles deck/bag, rolls dice/coin, lifts other objects into the air. Same as pressing `R` by default. If the optional parameter `color` is used, this function will trigger `onObjectRandomized()`, passing that player color. | [<span class="ret boo"></span>](types) |
 reload() | Returns Object reference of itself after it respawns itself. | [<span class="ret obj"></span>](types) | [<span class="i"></span>](#reload)
 <a class="anchor" id="reset"></a>reset() | Resets this Object. Resetting a Deck brings all the Cards back into it. Resetting a Bag clears its contents (works for both Loot and Infinite Bags). | [<span class="ret boo"></span>](types) |
 <a class="anchor" id="roll"></a>roll() | Rolls dice/coins. | [<span class="ret boo"></span>](types) |
@@ -186,6 +185,55 @@ reload() | Returns Object reference of itself after it respawns itself. | [<span
 <a class="anchor" id="shufflestates"></a>shuffleStates() | Returns an Object reference to a new [state](http://berserk-games.com/knowledgebase/creating-states/) after randomly selecting and changing to one. | [<span class="ret obj"></span>](types) |
 split([<span class="tag int"></span>](types)&nbsp;piles) | Splits a deck, as evenly as possible, into a number of piles. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#split)
 takeObject([<span class="tag tab"></span>](types)&nbsp;parameters) | Returns an Object reference of Object taken from a container (bag/deck/chip stack) and placed into the world. | [<span class="ret obj"></span>](types) | [<span class="i"></span>](#takeobject)
+
+
+
+
+
+
+
+
+
+
+
+
+
+###Hide Functions
+These functions can hide Objects, similar to how hand zones or hidden zones do.
+
+Function Name | Description | Return | &nbsp;
+-- | -- | -- | --
+setHiddenFrom([<span class="tag tab"></span>](types)&nbsp;players) | Hides the Object from the specified players, as if it were in a hand zone. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#sethiddenfrom)
+setInvisibleTo([<span class="tag tab"></span>](types)&nbsp;players) | Hides the Object from the specified players, as if it were in a hidden zone. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setinvisibleto)
+attachHider([<span class="tag str"></span>](types)&nbsp;id, [<span class="tag boo"></span>](types)&nbsp;hidden, [<span class="tag tab"></span>](types)&nbsp;players) | A more advanced version of `setHiddenFrom(...)`. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#attachhider)
+attachInvisibleHider([<span class="tag str"></span>](types)&nbsp;id, [<span class="tag boo"></span>](types)&nbsp;hidden, [<span class="tag tab"></span>](types)&nbsp;players) | A more advanced version of `setInvisibleTo(...)`. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#attachinvisiblehider)
+
+
+
+###Global Function
+The functions can be used on Objects, but can also be used on the game world using `Global`.
+
+!!!important "Examples of Using Global and Object"
+	* `self.getSnapPoints()` gets snap points attached to that Object.
+	* `Global.getSnapPoints()` gets snap points not attached to any specific Object but instead are attached to the game world.
+
+
+
+
+Function Name | Description | Return | &nbsp;
+-- | -- | -- | --
+call([<span class="tag str"></span>](types)&nbsp;func_name, [<span class="tag tab"></span>](types)&nbsp;func_params) | Used to call a Lua function on another entity. | [<span class="ret var"></span>](types) | [<span class="i"></span>](#call)
+<a class="anchor" id="getluascript"></a>getLuaScript() | Get a Lua script as a string from the entity. | [<span class="ret str"></span>](types) |
+getSnapPoints() | Returns a table of sub-tables, each sub-table representing one snap point. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getsnappoints)
+<a class="anchor" id="gettable"></a>getTable([<span class="tag str"></span>](types)&nbsp;func_name) | Data value of a variable in another Object's script. Can only return a table. | [<span class="ret tab"></span>](types) |
+<a class="anchor" id="getvar"></a>getVar([<span class="tag str"></span>](types)&nbsp;func_name) | Data value of a variable in another entity's script. Cannot return a table. | [<span class="ret var"></span>](types) |
+<a class="anchor" id="getvectorlines"></a>getVectorLines() | Returns Table of data representing the current Vector Lines on this entity. See [setVectorLines](#setvectorlines) for table format.| [<span class="ret tab"></span>](types) |
+<a class="anchor" id="setluascript"></a>setLuaScript([<span class="tag str"></span>](types)&nbsp;script) | Input a string as an entity's Lua script. Generally only used after spawning a new Object. | [<span class="ret boo"></span>](types) |
+setSnapPoints([<span class="tag tab"></span>](types)&nbsp;parameters) | Spawns snap points from a list of parameters. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setsnappoints)
+<a class="anchor" id="settable"></a>setTable([<span class="tag str"></span>](types)&nbsp;func_name, [<span class="tag tab"></span>](types)&nbsp;data) | Creates/updates a variable in another entity's script. Only used for tables. | [<span class="ret boo"></span>](types) |
+<a class="anchor" id="setvar"></a>setVar([<span class="tag str"></span>](types)&nbsp;func_name, [<span class="tag var"></span>](types)&nbsp;data) | Creates/updates a variable in another entity's script. Cannot set a table. | [<span class="ret boo"></span>](types) |
+setVectorLines([<span class="tag tab"></span>](types)&nbsp;parameters) | Spawns Vector Lines from a list of parameters on this entity. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setvectorlines)
+
 
 ---
 
@@ -763,43 +811,32 @@ If an Object is inside of a container, it does not exist in-game. As a result, y
 		}
 		```
 
-	!!!info "Bag"
+	!!!info "Bag or Deck"
 		Returns a Table of sub-Tables, each sub-Table containing data on 1 bagged item. Indexes start at 0.
 
-		* [<span class="tag str"></span>](types) **name**: Name of the Object.
-		* [<span class="tag str"></span>](types) **guid**: GUID of the Object.
-		* [<span class="tag int"></span>](types) **index**: Index of the Object, represents the Object's place in the bag.
+		* [<span class="tag str"></span>](types) **name**: Name of the item.
+		* [<span class="tag str"></span>](types) **description**: Description of the item.
+		* [<span class="tag str"></span>](types) **guid**: GUID of the item.
+		* [<span class="tag int"></span>](types) **index**: Index of the item, represents the item's order in the container.
+		* [<span class="tag str"></span>](types) **lua_script**: Any Lua scripting saved on the item.
+		* [<span class="tag str"></span>](types) **lua_script_state**: Any JSON save data on this item.
+		* {>>nickname: A duplicate of the "name" field.<<}
+			* {>>This is for backwards compatibility purposes only.<<}
 
 		``` Lua
 		{
 			{
-				name  = "Object Name",
-				guid  = "AAA111",
-				index = 0,
+				name             = "Object Name",
+				description      = "Object Description",
+				guid             = "AAA111",
+				index            = 0,
+				lua_script       = "Any Lua Script On This Object",
+				lua_script_state = "Any JSON Save Data On This Object"
 			},
 		}
 		```
 
-	!!!info "Deck"
-		Returns a Table of sub-Tables, each sub-Table containing data on 1 card. Indexes start at 0.
 
-		* [<span class="tag str"></span>](types) **nickname**: Name of the card.
-		* [<span class="tag str"></span>](types) **description**: Description of the card.
-		* [<span class="tag str"></span>](types) **guid**: GUID of the card.
-		* [<span class="tag int"></span>](types) **index**: Index of the card, represents the card's order in the deck.
-		* [<span class="tag str"></span>](types) **lua_script**: Any Lua scripting saved on the card.
-
-		``` Lua
-		{
-			{
-				nickname    = "Object Name",
-				description = "Object Descripotion",
-				guid        = "AAA111",
-				index       = 0,
-				lua_script  = "Any Lua Script On This Card",
-			},
-		}
-		```
 
 This function is often used with [takeObject(...)](#takeobject) to remove objects from containers.
 
@@ -836,6 +873,7 @@ You can manually assign rotation values to objects using the Rotation Value Gizm
 	The returned Table contains sub-Tables, each sub-Table containing these 2 key/value pairs.
 
 	* [<span class="tag var"></span>](types) **value**: What value is associated with a given rotation. Often a String or Int.
+		* {>>Starting a value with a # will cause it not to show in the Object's tooltip.<<}
 	* [<span class="tag vec"></span>](types#vector) **rotation**: Rotation of the Object that best represents the given value pointing up.
 
 ``` Lua
@@ -849,65 +887,44 @@ You can manually assign rotation values to objects using the Rotation Value Gizm
 ---
 
 
-####getSnapPoints()
-
-[<span class="ret tab"></span>](types)&nbsp;Returns a table of sub-tables, each sub-table representing one snap point. You can also use this as a [Global Base](base) function. This function will only return information on snap points attached to Objects unless you use it without an Object. See an example on [its entry](base#getsnappoints) under the Base page.
-
-!!!info "Sub-table contents"
-	* [<span class="tag vec"></span>](types#vector) **position**: Position of the snap point. The position is relative to the Object's center (a local position).
-		* {>>Optional, defaults to {0,0,0}.<<}
-	* [<span class="tag vec"></span>](types#vector) **rotation**: Rotation of the snap point. The rotation is relative to the Object's rotation (a local rotation).
-		* {>>Optional, defaults to {0,0,0}.<<}
-	* [<span class="tag boo"></span>](types) **rotation_snap**: If the snap point is a "rotation" snap point.
-		* {>>Optional, defaults to false.<<}
-
-
-Example:
-```Lua
-snapPointList = self.getSnapPoints()
-log(snapPointsList)
-```
-
-Returned table:
-```Lua
-{
-	{
-		position = {2,2,2},
-	    rotation = {0,90,0},
-	    rotation_snap = false
-	},
-	{
-		position = {5,2,5},
-	    rotation = {0,0,0},
-	    rotation_snap = true
-	},
-}
-```
-
----
 
 
 ####getStates()
 
 [<span class="ret tab"></span>](types)&nbsp;Returns a Table of information on the [states](http://berserk-games.com/knowledgebase/creating-states/) of an Object. Stated Objects have ids (indexes) starting with 1.
 
+!!!tip "The returned table will **NOT** include data on the current state."
+
 !!!info "Return Table"
-	* [<span class="tag str"></span>](types)&nbsp;**name**: Name of the Object.
-	* [<span class="tag str"></span>](types)&nbsp;**guid**: GUID of the Object.
-	* [<span class="tag int"></span>](types)&nbsp;**id**: ID (index) of the state.
+	Returns a table of sub-tables. Each sub-table represents one other state.
+
+	* [<span class="tag str"></span>](types) **name**: Name of the item.
+	* [<span class="tag str"></span>](types) **description**: Description of the item.
+	* [<span class="tag str"></span>](types) **guid**: GUID of the item.
+	* [<span class="tag int"></span>](types) **id**: Index of the item, represents the item's order in the states.
+	* [<span class="tag str"></span>](types) **lua_script**: Any Lua scripting saved on the item.
+	* [<span class="tag str"></span>](types) **lua_script_state**: Any JSON save data on this item.
+	* {>>nickname: A duplicate of the "name" field.<<}
+		* {>>This is for backwards compatibility purposes only.<<}
 
 ``` Lua
 -- Example returned Table
 {
 	{
-		name = "First State",
-		guid = "AAA111",
-		id   = 1,
+		name             = "First State",
+		description      = "",
+		guid             = "AAA111",
+		id               = 1,
+		lua_script       = "",
+		lua_script_state = "",
 	},
 	{
-		name = "Second State",
-		guid = "BBB222",
-		id   = 2,
+		name             = "Second State",
+		description      = "",
+		guid             = "BBB222",
+		id               = 2,
+		lua_script       = "",
+		lua_script_state = "",
 	},
 }
 ```
@@ -961,6 +978,7 @@ obj.setCustomObject(params)
 !!!info "setRotationValues(rotation_values)"
 	* [<span class="tag tab"></span>](types)&nbsp;**rotation_values**: A Table containing Tables with the following values. 1 sub-Table per "face".
 		* [<span class="tag var"></span>](types)&nbsp;**rotation_values.value**: What value is associated with a given rotation. Often a String or Int.
+			* {>>Starting a value with a # will cause it not to show in the Object's tooltip.<<}
 		* [<span class="tag vec"></span>](types#vector)&nbsp;**rotation_values.rotation**: The rotation Vector of the Object that best represents the given value pointing up.
 
 ``` Lua
@@ -975,37 +993,6 @@ self.setRotationValues(rotation_values)
 ---
 
 
-####setSnapPoints(...)
-
-[<span class="ret boo"></span>](types)&nbsp;Spawns snap points from a list of parameters. You can also use this as a [Global Base](base) function. This function will only attach snap points to Objects unless you use it without an Object. See an example on [its entry](base#setsnappoints) under the Base page.
-
-!!!info "setSnapPoints(parameters)"
-	* [<span class="tag str"></span>](types) **parameters**: A table containing numerically indexed sub-tables.
-		* [<span class="tag str"></span>](types) **sub-table**:
-			* [<span class="tag vec"></span>](types#vector) **position**: Position of the snap point. This is relative to the Object's position (local).
-				* {>>Optional, defaults to {0,0,0}.<<}
-			* [<span class="tag vec"></span>](types#vector) **rotation**: Rotation of the snap point. This is relative to the Object's rotation (local).
-				* {>>Optional, defaults to {0,0,0}.<<}
-			* [<span class="tag boo"></span>](types) **rotation_snap**: If the snap point is a "rotation" snap point.
-				* {>>Optional, defaults to false.<<}
-
-
-```Lua
-self.setSnapPoints({
-	{
-		position = {2,2,2},
-	    rotation = {0,90,0},
-	    rotation_snap = false
-	},
-	{
-		position = {5,2,5},
-	    rotation = {0,0,0},
-	    rotation_snap = true
-	},
-})
-```
-
----
 
 
 
@@ -1024,38 +1011,17 @@ Tablet | Set String for the current URL.
 ---
 
 
+
+
+
+
+
+
+
+
+
+
 ###Action Function Details
-
-####call(...)
-
-[<span class="ret var"></span>](types)&nbsp;Used to call a Lua function on this Object. This is used to remotely call functions in other scripts, either in Global or Object scripts. `Global` is the "Object" to use to call a function in the Global script.
-
-*Var is only returned if the function called has a `return`. Otherwise return is `nil`. See example.*
-
-!!!info "call(func_name, func_params)"
-	* [<span class="tag str"></span>](types) **func_name**: Function name you want to activate.
-	* [<span class="tag tab"></span>](types) **func_params**: A Table containing any data you want to pass to that function.
-		* {>>Optional, will not be sent by default.<<}
-
-``` Lua
--- Call, used from an Object script
-params = {
-	msg   = "Hello world!",
-	color = {r=0.2, g=1, b=0.2},
-}
--- Success would be set to true by the return value in the function
-success = Global.call("testFunc", params)
-```
-``` Lua
--- Function in Global
-function testFunc(params)
-	broadcastToAll(params.msg, params.color)
-	return true
-end
-```
-
----
-
 
 
 ####clone(...)
@@ -1307,3 +1273,279 @@ end
 
 ???tip "Tip for using index to pull Object"
 	When you take an Object from the container, all higher indexes are reduced by 1 instantly. If you pull more than once Object at once by their index, you must account for this index changing.
+
+---
+
+
+
+
+
+###Hide Function Details
+
+####setHiddenFrom(...)
+
+[<span class="ret boo"></span>](types)&nbsp;Hides the Object from the specified players, as if it were in a hand zone.
+
+Using an empty table will cause the Object to remove the hiding effect.
+
+!!!info "setHiddenFrom(players)"
+	* [<span class="tag tab"></span>](types) **players**: A table containing colors to hide the Object from.
+		* [<span class="tag str"></span>](types) **(color_name)**: Strings of the color name of each player.
+
+``` Lua
+function onLoad()
+    self.setHiddenFrom({"Blue", "White"})
+end
+```
+
+!!!tip
+	Just like Objects in a hand zone, the player/s the object is hidden from can still interact/move the hidden Object. It still exists to them, but is shown as a question mark or as a hidden card.
+
+---
+
+
+
+####setInvisibleTo(...)
+
+[<span class="ret boo"></span>](types)&nbsp;Hides the Object from the specified players, as if it were in a hidden zone.
+
+Using an empty table will cause the Object to remove the hiding effect.
+
+!!!info "setInvisibleTo(players)"
+	* [<span class="tag tab"></span>](types) **players**: A table containing colors to hide the Object from.
+		* [<span class="tag str"></span>](types) **(color_name)**: Strings of the color name of each player.
+
+``` Lua
+function onLoad()
+    self.setInvisibleTo({"Blue", "White"})
+end
+```
+
+!!!tip
+	Just like Objects in a hidden zone, the player/s the object is hidden from can still interact/move the hidden Object. It still exists to them, just invisibly so.
+
+---
+
+
+####attachHider(...)
+
+[<span class="ret boo"></span>](types)&nbsp;A more advanced version of `setHiddenFrom(...)`, this function is also used to hide objects as if they were in a hand zone. It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.
+
+This function is slightly more complicated to use for basic hiding, but allows for much easier hiding in complex situations.
+
+!!!info "attachHider(id, hidden, players)"
+	* [<span class="tag str"></span>](types) **id**: The unique name for this hiding effect.
+		* {>>Tip: You can use descriptive tag names like "fog" or "blindness"<<}
+	* [<span class="tag boo"></span>](types) **hidden**: If the hiding effect is enabled or not.
+	* [<span class="tag tab"></span>](types) **players**: A table containing colors to hide the Object from.
+		* {>>Optional, an empty table (or no table) hides for everyone.<<}
+		* [<span class="tag str"></span>](types) **(color_name)**: Strings of the color name of each player.
+
+``` Lua
+function onLoad()
+    --Enable hide
+    self.attachHider("hide", true, {"Blue", "White"})
+    --Disable hide
+    --self.attachHider("hide", false, {"Blue", "White"})
+end
+```
+
+!!!tip
+	Just like Objects in a hand zone, the player/s the object is hidden from can still interact/move the hidden Object. It still exists to them, but is shown as a question mark or as a hidden card.
+
+---
+
+
+####attachInvisibleHider(...)
+
+[<span class="ret boo"></span>](types)&nbsp;A more advanced version of `setInvisibleTo(...)`, this function is also used to hide objects as if they were in a hidden zone. It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.
+
+This function is slightly more complicated to use for basic hiding, but allows for much easier hiding in complex situations.
+
+!!!info "attachInvisibleHider(id, hidden, players)"
+	* [<span class="tag str"></span>](types) **id**: The unique name for this hiding effect.
+		* {>>Tip: You can use descriptive tag names like "fog" or "blindness"<<}
+	* [<span class="tag boo"></span>](types) **hidden**: If the hiding effect is enabled or not.
+	* [<span class="tag tab"></span>](types) **players**: A table containing colors to hide the Object from.
+		* {>>Optional, an empty table (or no table) hides for everyone.<<}
+		* [<span class="tag str"></span>](types) **(color_name)**: Strings of the color name of each player.
+
+``` Lua
+function onLoad()
+    --Enable hide
+    self.attachInvisibleHider("hide", true, {"Blue", "White"})
+    --Disable hide
+    --self.attachInvisibleHider("hide", false, {"Blue", "White"})
+end
+```
+
+!!!tip
+	Just like Objects in a hidden zone, the player/s the object is hidden from can still interact/move the hidden Object. It still exists to them, just invisibly so.
+
+---
+
+
+
+
+
+
+
+
+
+---
+
+
+###Global Function Details
+
+####call(...)
+
+[<span class="ret var"></span>](types)&nbsp;Used to call a Lua function on another entity.
+
+*Var is only returned if the function called has a `return`. Otherwise return is `nil`. See example.*
+
+> This function can also be used directly on the game world using Global.
+
+!!!info "call(func_name, func_params)"
+	* [<span class="tag str"></span>](types) **func_name**: Function name you want to activate.
+	* [<span class="tag tab"></span>](types) **func_params**: A Table containing any data you want to pass to that function.
+		* {>>Optional, will not be sent by default.<<}
+
+``` Lua
+-- Call, used from an entity's script
+params = {
+	msg   = "Hello world!",
+	color = {r=0.2, g=1, b=0.2},
+}
+-- Success would be set to true by the return value in the function
+success = Global.call("testFunc", params)
+```
+``` Lua
+-- Function in Global
+function testFunc(params)
+	broadcastToAll(params.msg, params.color)
+	return true
+end
+```
+
+---
+
+
+
+####getSnapPoints()
+
+[<span class="ret tab"></span>](types)&nbsp;Returns a table of sub-tables, each sub-table representing one snap point.
+
+> This function can also be used directly on the game world using Global.
+
+!!!info "Sub-table contents"
+	* [<span class="tag vec"></span>](types#vector) **position**: Position of the snap point. The position is relative to the entity's center (a local position).
+		* {>>Optional, defaults to {0,0,0}.<<}
+	* [<span class="tag vec"></span>](types#vector) **rotation**: Rotation of the snap point. The rotation is relative to the entity's rotation (a local rotation).
+		* {>>Optional, defaults to {0,0,0}.<<}
+	* [<span class="tag boo"></span>](types) **rotation_snap**: If the snap point is a "rotation" snap point.
+		* {>>Optional, defaults to false.<<}
+
+
+Example:
+```Lua
+function onLoad()
+	snapPointList = Global.getSnapPoints()
+	log(snapPointsList)
+end
+```
+
+Returned table:
+```Lua
+{
+	{
+		position = {2,2,2},
+	    rotation = {0,90,0},
+	    rotation_snap = false
+	},
+	{
+		position = {5,2,5},
+	    rotation = {0,0,0},
+	    rotation_snap = true
+	},
+}
+```
+
+---
+
+
+
+
+####setSnapPoints(...)
+
+[<span class="ret boo"></span>](types)&nbsp;Spawns snap points from a list of parameters.
+
+> This function can also be used on the game world itself using Global.
+
+!!!info "setSnapPoints(parameters)"
+	* [<span class="tag str"></span>](types) **parameters**: A table containing numerically indexed sub-tables.
+		* [<span class="tag str"></span>](types) **sub-table**:
+			* [<span class="tag vec"></span>](types#vector) **position**: Position of the snap point. This is relative to the entity's position (local).
+				* {>>Optional, defaults to {0,0,0}.<<}
+			* [<span class="tag vec"></span>](types#vector) **rotation**: Rotation of the snap point. This is relative to the entity's rotation (local).
+				* {>>Optional, defaults to {0,0,0}.<<}
+			* [<span class="tag boo"></span>](types) **rotation_snap**: If the snap point is a "rotation" snap point.
+				* {>>Optional, defaults to false.<<}
+
+
+```Lua
+self.setSnapPoints({
+	{
+		position = {2,2,2},
+	    rotation = {0,90,0},
+	    rotation_snap = false
+	},
+	{
+		position = {5,2,5},
+	    rotation = {0,0,0},
+	    rotation_snap = true
+	},
+})
+```
+
+---
+
+
+
+####setVectorLines(...)
+
+[<span class="ret boo"></span>](types)&nbsp;Spawns Vector Lines from a list of parameters.
+
+> This function can also be used on the game world itself using Global.
+
+!!!info "setVectorLines(parameters)"
+	* [<span class="tag tab"></span>](types) **parameters**: The table containing each "line's" data. Each contiguous line has its own sub-table.
+		* [<span class="tag tab"></span>](types) **points**: Table containing [Vector positions](types#vector) for each "point" on the line.
+		* [<span class="tag col"></span>](types#color) **color**: Color the line will be.
+			* {>>Optional, defaults to {1,1,1}.<<}
+		* [<span class="tag flo"></span>](types) **thickness**: How thick the line is (in Unity units).
+			* {>>Optional, defaults to default line size (0.1).<<}
+		* [<span class="tag vec"></span>](types#vector) **rotation**: Rotation Vector for the line to be angled.
+			* {>>Optional, defaults to {0,0,0}.<<}
+
+``` Lua
+function onLoad()
+	--Make an X above the middle of the table
+    Global.setVectorLines({
+		{
+			points    = { {5,1,5}, {-5,1,-5} },
+			color     = {1,1,1},
+			thickness = 0.5,
+			rotation  = {0,0,0},
+		},
+		{
+			points    = { {-5,1,5}, {5,1,-5} },
+			color     = {0,0,0},
+			thickness = 0.5,
+			rotation  = {0,0,0},
+		},
+	})
+end
+```
+
+
+---

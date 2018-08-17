@@ -1,4 +1,4 @@
-Objects can be spawned by any script using the [spawnObject()](base#spawnobject) function. These are the `type` Strings used to designate the type of Object to spawn. 
+Objects can be spawned by any script using the [spawnObject()](base#spawnobject) function. These are the `type` Strings used to designate the type of Object to spawn.
 
 ##Built-in Game Objects
 
@@ -196,6 +196,32 @@ You can also use setCustomObject along with [reload()](object#reload) to modify 
 !!!info "Custom Parameters"
     * [<span class="tag tab"></span>](types) **parameters**: A Table of parameters which determine the properties of the Object.
         * [<span class="tag str"></span>](types) **image**: The path/url for the board.
+
+
+
+
+
+###Custom Deck
+
+* DeckCustom
+
+!!!info "Custom Parameters"
+    * [<span class="tag tab"></span>](types) **parameters**: A Table of parameters which determine the properties of the Object.
+        * [<span class="tag str"></span>](types) **face**: The path/url of the face cardsheet.
+        * [<span class="tag str"></span>](types) **back**: The path/url of the back cardsheet or card back.
+        * [<span class="tag boo"></span>](types) **unique_back**: If each card has a unique card back (via a cardsheet).
+            * {>>Optional, defaults to false.<<}
+        * [<span class="tag int"></span>](types) **width**: The number of columns on the cardsheet.
+            * {>>Optional, defaults to 10.<<}
+        * [<span class="tag int"></span>](types) **height**: The number of rows on the cardsheet.
+            * {>>Optional, defaults to 7.<<}
+        * [<span class="tag int"></span>](types) **number**: The number of cards on the cardsheet.
+            * {>>Optional, defaults to 52.<<}
+        * [<span class="tag boo"></span>](types) **sideways**: If the cards are horizontal instead of vertical.
+            * {>>Optional, defaults to false.<<}
+        * [<span class="tag boo"></span>](types) **back_is_hidden**: If cards have a special face that shows up when hidden in a hand zone.
+            * {>>Optional, defaults to false.<<}
+
 
 
 

@@ -16,6 +16,7 @@ onLoad([<span class="tag str"></span>](types)&nbsp;save_state) | Called when a g
 onObjectDestroy([<span class="tag obj"></span>](types)&nbsp;dying_object) | Called whenever any object is destroyed. | [<span class="i"></span>](#onobjectdestroy)
 onObjectDrop([<span class="tag str"></span>](types)&nbsp;player_color, [<span class="tag obj"></span>](types)&nbsp;dropped_object) | Called whenever any object is dropped by a player. | [<span class="i"></span>](#onobjectdrop)
 onObjectEnterScriptingZone([<span class="tag obj"></span>](types)&nbsp;zone, [<span class="tag obj"></span>](types)&nbsp;enter_object) | Called when any object enters any scripting zone. | [<span class="i"></span>](#onobjectenterscriptingzone)
+onObjectEnterContainer([<span class="tag obj"></span>](types)&nbsp;container, [<span class="tag obj"></span>](types)&nbsp;enter_object) | Called when any object enters any container. Includes decks | [<span class="i"></span>](#onobjectentercontainer)
 onObjectLeaveScriptingZone([<span class="tag obj"></span>](types)&nbsp;zone, [<span class="tag obj"></span>](types)&nbsp;enter_object) | Called when any object leaves any scripting zone. | [<span class="i"></span>](#onobjectleavescriptingzone)
 onObjectLeaveContainer([<span class="tag obj"></span>](types)&nbsp;container, [<span class="tag obj"></span>](types)&nbsp;leave_object) | Called when any object leaves any container. | [<span class="i"></span>](#onobjectleavecontainer)
 onObjectLoopingEffect([<span class="tag obj"></span>](types)&nbsp;loop_object, [<span class="tag int"></span>](types)&nbsp;index) | Called whenever the looping effect of an [AssetBundle](assetbundle) is activated. | [<span class="i"></span>](#onobjectloopingeffect)
@@ -210,6 +211,25 @@ end
 ```
 
 ---
+
+
+###onObjectEnterContainer(...)
+
+Called when any object enters any container. Includes Objects entering decks.
+
+!!!info "onObjectEnterContainer(container, enter_object)"
+	* [<span class="tag obj"></span>](types)&nbsp;**container**: Container the object left.
+	* [<span class="tag obj"></span>](types)&nbsp;**enter_object**: Object that left the container.
+
+``` Lua
+function onObjectEnterContainer(bag, obj)
+	print(bag)
+	print(obj)
+end
+```
+
+---
+
 
 
 ###onObjectLeaveScriptingZone(...)

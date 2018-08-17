@@ -1,6 +1,46 @@
 This is an ongoing list of scripting changes that have been implemented to scripting and Custom UI side of Tabletop Simulator.
 
 
+######08/17/18 - v10.9
+
+!!!info ""
+    * Lua:
+        * Updates to the new Wait class
+            * Added repetitions to Wait.time to better emulate Timer. Wait.time(func, time, number_repetitions).
+                * Using -1 will cause infinite repetitions
+            * Improvements to stop() so it should work more as expected.
+        * Returns from getObject and getStates improved to a common standard, includes:
+            * Name and Nickname
+            * Description
+            * Lua Script and Lua Script State
+        * New Object functions:
+            * `obj.drop()` causes the item, if held by a player, to be dropped.
+            * `setHiddenFrom(players)` Hides objects from a specific player/players. Uses "hand zone" hiding.
+            * `setInvisibleTo(players)` Hides objects from a specific player/players. Uses "hidden zone" hiding.
+            * `attachHider(...)` and `attachInvisibleHider(...)` are more advanced version of setHiddenFrom and setInvisibleTo, there to help handle complex situations easily.
+        * Old Object Functions (with new features!)
+            * `setRotationValues()` now allows you to start a name/value with a # and it won't display the value in the tooltip.
+            * `randomize(color)` Now an optional string can be added so that onObjectRandomized will trigger, indicating that player color triggered it.
+        * New base function:
+            * `get/setVectorLines()` Allows for lines to be placed via scripting using the new vector line tools`
+        * New Spawnable object: Custom Decks!
+            * Technically this was added before, but now it works and is documented!
+            * Spawn using spawnObject then set it using setCustomObject
+        * Clarifications to the Object class
+            * Some functions, let setSnapPoints or call, work on both Object and Global.
+            * To highlight which Object functions can be directed at the game world, they have been broken out on the Object page into a "Global Functions" section.
+        * New Object member Variables
+            * `use_rotation_value_flip` can be used to modify which direction objects flip.
+            * `is_face_down` determines if an object's "face" is pointed down (like with cards). The face is the direction that faces the positive Y value.
+            * `hide_when_face_down` hides an Object when it is face-down. Objects are hidden like if in a hidden zone. The face is the direction that faces the positive Y value.
+        * New Event
+            * `onObjectEnterContainer` has long been a requested event, and it is now available!
+
+
+
+
+
+
 ######7/9/18 - v10.8
 
 !!!info ""

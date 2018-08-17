@@ -1,4 +1,6 @@
-﻿These are a loose collection of functions which can be used to perform a variety of actions within Tabletop Simulator. Some of them are used in almost every script.
+﻿These are a loose collection of functions which can be used to perform a variety of actions within Tabletop Simulator.
+
+These functions can utilize in-game Objects, but none of them can be enacted on in-game Objects. They all deal with the game space.
 
 ##Function Summary
 
@@ -7,22 +9,19 @@ General functions which work within any script.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-<a class="anchor" id="clearpixelpaint"></a>clearPixelPaint() | Remove pixel paint from the instance. | [<span class="ret boo"></span>](types) |
-<a class="anchor" id="clearvectorpaint"></a>clearVectorPaint() | Remove vector paint from the instance. | [<span class="ret boo"></span>](types) |
 copy([<span class="tag tab"></span>](types)&nbsp;object_list) | Copy a list of Objects to the clipboard. Works with [paste(...)](#paste). | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#copy)
 destroyObject([<span class="tag obj"></span>](types)&nbsp;obj) | Destory an Object. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#destroyobject)
 <a class="anchor" id="fliptable"></a>flipTable() | Flip the table. | [<span class="ret boo"></span>](types) |
 <a class="anchor" id="getallobjects"></a>getAllObjects() | Returns Table of all spawned [Objects](object) in the game. | [<span class="ret tab"></span>](types) |
 getObjectFromGUID([<span class="tag str"></span>](types)&nbsp;guid) | Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist. | [<span class="ret obj"></span>](types) | [<span class="i"></span>](#getobjectfromguid)
 <a class="anchor" id="getseatedplayers"></a>getSeatedPlayers() | Returns Table of the [Player Colors](player-color) strings of seated players. | [<span class="ret tab"></span>](types) |
-getSnapPoints() | Returns a table of sub-tables, each sub-table representing one snap point. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getsnappoints)
 paste([<span class="tag tab"></span>](types)&nbsp;parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#paste)
 <a class="anchor" id="setlookingforplayers"></a>setLookingForPlayers([<span class="tag boo"></span>](types)&nbsp;lfp) | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](types) |
-setSnapPoints([<span class="tag str"></span>](types)&nbsp;parameters) | Spawns snap points from a list of parameters. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setsnappoints)
 spawnObject([<span class="tag tab"></span>](types)&nbsp;parameters) | Spawns an Object. View the [Spawnable Object](spawnableobjects) page for Objects that can be spawned. | [<span class="ret obj"></span>](types) | [<span class="i"></span>](#spawnobject)
 spawnObjectJSON([<span class="tag tab"></span>](types)&nbsp;parameters) | Spawns an Object using a JSON string. Works with [getJSON()](object#getjson). | [<span class="ret obj"></span>](types) | [<span class="i"></span>](#spawnobjectjson)
 startLuaCoroutine([<span class="tag obj"></span>](types)&nbsp;function_owner, [<span class="tag str"></span>](types)&nbsp;function_name) | Start a coroutine. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#startluacoroutine)
 stringColorToRGB([<span class="tag str"></span>](types)&nbsp;player_color) | Converts a [Player Color](player-color) string into a Color Table for tinting. | [<span class="ret col"></span>](types#color) | [<span class="i"></span>](#stringcolortorgb)
+
 
 ###Message Functions
 Functions which handle sending and displaying data.
@@ -88,42 +87,6 @@ copy(object_list)
 ---
 
 
-####getSnapPoints()
-
-[<span class="ret tab"></span>](types)&nbsp;Returns a table of sub-tables, each sub-table representing one snap point. You can also use this as an [Object](object) function. This function will NOT return information on snap points attached to Objects unless you use it on the Object. See an example on [its entry](object#getsnappoints) under the Object page.
-
-!!!info "Sub-table contents"
-	* [<span class="tag vec"></span>](types#vector) **position**: Position of the snap point.
-		* {>>Optional, defaults to {0,0,0}.<<}
-	* [<span class="tag vec"></span>](types#vector) **rotation**: Rotation of the snap point.
-		* {>>Optional, defaults to {0,0,0}.<<}
-	* [<span class="tag boo"></span>](types) **rotation_snap**: If the snap point is a "rotation" snap point.
-		* {>>Optional, defaults to false.<<}
-
-
-Example:
-```Lua
-snapPointList = getSnapPoints()
-log(snapPointsList)
-```
-
-Returned table:
-```Lua
-{
-	{
-		position = {2,2,2},
-	    rotation = {0,90,0},
-	    rotation_snap = false
-	},
-	{
-		position = {5,2,5},
-	    rotation = {0,0,0},
-	    rotation_snap = true
-	},
-}
-```
-
----
 
 
 ####paste(...)
@@ -137,40 +100,6 @@ Returned table:
 		* [<span class="tag boo"></span>](types) **parameters.snap_to_grid**: If snap-to-grid is active on the spawned item/s.
 			* {>>Optional, defaults to false (off).<<}
 
----
-
-
-
-
-####setSnapPoints(...)
-
-[<span class="ret boo"></span>](types)&nbsp;Spawns snap points from a list of parameters. You can also use this as an [Object](object) function. This function will NOT attach snap points to Objects unless you use it on the Object. See an example on [its entry](object#setsnappoints) under the Object page.
-
-!!!info "setSnapPoints(parameters)"
-	* [<span class="tag str"></span>](types) **parameters**: A table containing numerically indexed sub-tables.
-		* [<span class="tag str"></span>](types) **sub-table**:
-			* [<span class="tag vec"></span>](types#vector) **position**: Position of the snap point.
-				* {>>Optional, defaults to {0,0,0}.<<}
-			* [<span class="tag vec"></span>](types#vector) **rotation**: Rotation of the snap point.
-				* {>>Optional, defaults to {0,0,0}.<<}
-			* [<span class="tag boo"></span>](types) **rotation_snap**: If the snap point is a "rotation" snap point.
-				* {>>Optional, defaults to false.<<}
-
-
-```Lua
-setSnapPoints({
-	{
-		position = {2,2,2},
-	    rotation = {0,90,0},
-	    rotation_snap = false
-	},
-	{
-		position = {5,2,5},
-	    rotation = {0,0,0},
-	    rotation_snap = true
-	},
-})
-```
 
 ---
 
@@ -326,6 +255,25 @@ printToAll("Blue message", stringColorToRGB("Blue"))
 ```
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ###Message Function Details
