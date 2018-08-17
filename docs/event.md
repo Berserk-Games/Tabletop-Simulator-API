@@ -218,8 +218,8 @@ end
 Called when any object enters any container. Includes Objects entering decks.
 
 !!!info "onObjectEnterContainer(container, enter_object)"
-	* [<span class="tag obj"></span>](types)&nbsp;**container**: Container the object left.
-	* [<span class="tag obj"></span>](types)&nbsp;**enter_object**: Object that left the container.
+	* [<span class="tag obj"></span>](types)&nbsp;**container**: Container the Object entered.
+	* [<span class="tag obj"></span>](types)&nbsp;**enter_object**: Object that entered the container.
 
 ``` Lua
 function onObjectEnterContainer(bag, obj)
