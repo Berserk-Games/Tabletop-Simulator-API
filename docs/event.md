@@ -9,7 +9,7 @@ These are functions which are triggered by an event taking place in-game. They w
 
 Function Name | Description | &nbsp;
 -- | -- | --
-onChat([<span class="tag str"></span>](types)&nbsp;message, [<span class="tag pla"></span>](types)&nbsp;sender) | Called when a chat message is sent in game chat. | [<span class="i"></span>](#onchat)
+[<span class="tag boo"></span>](types)&nbsp;onChat([<span class="tag str"></span>](types)&nbsp;message, [<span class="tag pla"></span>](types)&nbsp;sender) | Called when a chat message is sent in game chat. | [<span class="i"></span>](#onchat)
 onExternalMessage([<span class="tag tab"></span>](types)&nbsp;data) | Called when an external script editor (like [Atom](atom)) sends a message back to the game. Used for custom editor functionality. | [<span class="i"></span>](#onexternalmessage)
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [<span class="i"></span>](#onfixedupdate)
 onLoad([<span class="tag str"></span>](types)&nbsp;save_state) | Called when a game save is finished loading every Object. It is where most setup code will go. | [<span class="i"></span>](#onload)
@@ -31,7 +31,7 @@ onPlayerChangeColor([<span class="tag str"></span>](types)&nbsp;player_color) | 
 onPlayerConnect([<span class="tag pla"></span>](types)&nbsp;person) | Called when a [Player](player) connects to a game. | [<span class="i"></span>](#onplayerconnect)
 onPlayerDisconnect([<span class="tag pla"></span>](types)&nbsp;person) | Called when a [Player](player) disconnects from a game. | [<span class="i"></span>](#onplayerdisconnect)
 onPlayerTurn([<span class="tag str"></span>](types)&nbsp;player_color) | Called at the start of a player's turn when using the in-game turn system. | [<span class="i"></span>](#onplayerturn)
-onSave() | Called whenever your game is saved. | [<span class="i"></span>](#onsave)
+[<span class="tag str"></span>](types)&nbsp;onSave() | Called whenever your game is saved. | [<span class="i"></span>](#onsave)
 onScriptingButtonDown([<span class="tag int"></span>](types)&nbsp;index, [<span class="tag str"></span>](types)&nbsp;player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttondown)
 onScriptingButtonUp([<span class="tag int"></span>](types)&nbsp;index, [<span class="tag str"></span>](types)&nbsp;player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttonup)
 onUpdate() | Called **every frame**. | [<span class="i"></span>](#onupdate)
@@ -84,6 +84,7 @@ This function is called when a message is sent through the in-game chat. It does
 !!!info "onChat(message, sender)"
 	* [<span class="tag str"></span>](types)&nbsp;**message**: Chat message which triggered the function.
 	* [<span class="tag pla"></span>](types)&nbsp;**sender**: Player which sent the chat message.
+	* Returns [<span class="tag boo"></span>](types)
 
 ``` Lua
 function onChat(message, player)
@@ -451,7 +452,10 @@ end
 
 ###onSave()
 
-Called whenever your game is saved, either manually or by auto-save. It is used to allow information to persist through saving/loading. It allows you to place information into a table that is written into the save file. It works on Global information and can also be used to save information onto an Object.
+Called whenever your game is saved, either manually or by auto-save. The string you return will be persisted to the save file, for future consumption by `onLoad()`. It works on Global information and can also be used to save information onto an Object.
+
+!!!info "onSave()"
+	* Returns [<span class="tag str"></span>](types)
 
 !!!important
 	When using `onSave()`, information is saved into the save file you are using. Using *Save & Apply* does NOT cause it to record data, only overwriting your save will update what information `onSave()` is trying to record.
@@ -463,8 +467,7 @@ Called whenever your game is saved, either manually or by auto-save. It is used 
 data_table = {answer=42}
 
 function onSave()
-	saved_data = JSON.encode(data_table)
-	self.script_state = saved_data
+	return JSON.encode(data_table)
 end
 ```
 
