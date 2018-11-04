@@ -22,6 +22,7 @@ Variable | Description | Type
 <a class="anchor" id="guid"></a>guid | The 6 character unique Object identifier within Tabletop Simulator. It is assigned correctly once the `spawning` member variable becomes false. | [<span class="tag str"></span>](types)
 <a class="anchor" id="held_by_color"></a>held_by_color | The Color of the Player that is holding the object. | [<span class="tag str"></span>](types)
 <a class="anchor" id="hide_when_face_down"></a>hide_when_face_down | Hide the Object when face-down as if it were in a hand zone. The face is the "top" of the Object, the direction of its positive Y coordinate. Cards/decks default to `true`. | [<span class="tag boo"></span>](types)
+<a class="anchor" id="ignore_fog_of_war"></a>ignore_fog_of_war | Makes the object not be hidden by [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone). | [<span class="tag boo"></span>](types)
 <a class="anchor" id="interactable"></a>interactable | If an object can be interacted with by Players. Other object will still be able to interact with it. | [<span class="tag boo"></span>](types)
 <a class="anchor" id="is_face_down"></a>is_face_down | If an Object is roughly face-down (like with cards). The face is the "top" of the Object, the direction of its positive Y coordinate. Read only.  | [<span class="tag boo"></span>](types)
 <a class="anchor" id="loading_custom"></a>loading_custom | If the Object's custom elements (images/models/etc) are loading. Read only. | [<span class="tag boo"></span>](types)
@@ -127,6 +128,7 @@ Function Name | Description | Return | &nbsp;
 <a class="anchor" id="getcolortint"></a>getColorTint() | Color tint. | [<span class="ret col"></span>](types#color) |
 getCustomObject() | Returns a Table with the Custom Object information of a Custom Object. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getcustomobject)
 <a class="anchor" id="getdescription"></a>getDescription() | Description, also shows as part of Object's tooltip. | [<span class="ret str"></span>](types)
+getFogOfWarReveal() | Settings impacting [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone) being revealed. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getfogofwarreveal)
 <a class="anchor" id="getguid"></a>getGUID() | String of the Object's unique identifier. | [<span class="ret str"></span>](types) |
 <a class="anchor" id="getjson"></a>getJSON() | Returns a serialization of the JSON string which represents this item. Works with [spawnObjectJSON()](base#spawnobjectjson). | [<span class="ret str"></span>](types) |
 <a class="anchor" id="getlock"></a>getLock() | If the Object is locked. | [<span class="ret boo"></span>](types) |
@@ -151,6 +153,7 @@ Function Name | Description | Return | &nbsp;
 <a class="anchor" id="setcolortint"></a>setColorTint([<span class="tag col"></span>](types#color)&nbsp;Color) | Sets the Color tint. | [<span class="ret boo"></span>](types) |
 setCustomObject([<span class="tag tab"></span>](types)&nbsp;parameters) | Sets a custom Object's properties. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setcustomobject)
 <a class="anchor" id="setdescription"></a>setDescription([<span class="tag str"></span>](types)&nbsp;description) | Sets a description for an Object. Shows in tooltip after delay. | [<span class="ret boo"></span>](types)
+setFogOfWarReveal([<span class="tag tab"></span>](types)&nbsp;fog_settings) | Establish the settings and enable/disable an Object's revealing of [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone). | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setfogofwarreveal)
 <a class="anchor" id="setlock"></a>setLock([<span class="tag boo"></span>](types)&nbsp;lock) | Sets if an object is locked in place. | [<span class="ret boo"></span>](types) |
 <a class="anchor" id="setname"></a>setName([<span class="tag str"></span>](types)&nbsp;name) | Sets a name for an Object. Shows in tooltip. | [<span class="ret boo"></span>](types)
 setRotationValues([<span class="tag tab"></span>](types)&nbsp;rotation_values) | Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setrotationvalues)
@@ -774,6 +777,28 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 ---
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ###Get Function Details
 
 
@@ -792,6 +817,28 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 ```
 
 ---
+
+
+####getFogOfWarReveal()
+
+[<span class="ret tab"></span>](types)&nbsp;Settings impacting [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone) being revealed. In the example returned table, these are the default values of any object.
+
+!!!note "Color Selection"
+	"Black" and "All" are synonymous for Fog of War. Either means that all players can see the revealed area when `reveal = true`.
+
+
+``` Lua
+-- Example returned Table for a custom token
+{
+	reveal = false,
+	color = 'All',
+	range = 5
+}
+```
+
+
+---
+
 
 
 ####getObjects()
@@ -853,11 +900,6 @@ The returned value will either be a number or a string, depending on the value t
 local value = self.getRotationValue()
 print(value)
 ```
-
-
-
-
-
 
 
 ---
@@ -948,6 +990,28 @@ Tablet | Returns String of the current URL.
 ---
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ###Set Function Details
 
 ####setCustomObject(...)
@@ -967,6 +1031,37 @@ params = {
 }
 obj.setCustomObject(params)
 ```
+
+---
+
+
+
+####setFogOfWarReveal(...)
+
+[<span class="ret boo"></span>](types)&nbsp;Establish the settings and enable/disable an Object's revealing of [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone).
+
+!!!info "setFogOfWarReveal(fog_setting)"
+	* [<span class="tag tab"></span>](types)&nbsp;**fog_setting**: A Table containing information on if/how this Object should reveal Fog of War.
+		* [<span class="tag boo"></span>](types)&nbsp;**reveal**: Can the Object currently
+			* {>>If this is not used, the current setting for this Object is kept.<<}
+		* [<span class="tag str"></span>](types#vector)&nbsp;**color**: The rotation Vector of the Object that best represents the given value pointing up.
+			* {>>If this is not used, the current setting for this Object is kept.<<}
+			* {>>"Black" means "visible to all players."<<}
+			* {>>"All" means "visible to all players."<<}
+		* [<span class="tag flo"></span>](types#vector)&nbsp;**range**: How far from the Object the reveal effect reaches (radius, inches).
+			* {>>If this is not used, the current setting for this Object is kept.<<}
+
+``` Lua
+-- Example of enabling reveal for all players at 3 units of radius.
+params = {
+	reveal = true,
+	color  = "Black",
+	range  = 3,
+}
+self.setFogOfWarReveal(params)
+```
+
+
 
 ---
 
@@ -1009,6 +1104,18 @@ Hidden Zone | Set String for the Player [Color](color) of the zone.
 Tablet | Set String for the current URL.
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -145,19 +145,21 @@ Objects can be spawned by any script using the [spawnObject()](base#spawnobject)
 * ScriptingTrigger
     * A Scripting Zone, a zone used for scripting
 * FogOfWarTrigger
-    * A [Hidden Zone](http://berserk-games.com/knowledgebase/hidden-zones-2/)
+    * A [Hidden Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#hidden-zone)
+* FogOfWar
+    * A [Fog of War Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone)
 
 ###Other
 
 * 3DText
-    * The text that the [Text Tool](http://berserk-games.com/knowledgebase/1958/) spawns.
+    * The text that the [Text Tool](https://kb.tabletopsimulator.com/game-tools/text-tool/) spawns.
 
 ---
 
 
 
 ##Custom Game Objects
-You can also spawn [custom Objects](http://berserk-games.com/knowledgebase_category/custom-content/) and then provide the custom content for them after spawning them by calling [setCustomObject()](object#setcustomobject). *(See setCustomObject for usage)*
+You can also spawn [custom Objects](https://kb.tabletopsimulator.com/custom-content/about-custom-objects/) and then provide the custom content for them after spawning them by calling [setCustomObject()](object#setcustomobject). {>>See setCustomObject for usage<<}
 
 You can also use setCustomObject along with [reload()](object#reload) to modify an existing custom Object.
 

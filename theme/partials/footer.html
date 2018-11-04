@@ -22,5 +22,31 @@
 
 {% import "partials/language.html" as lang with context %}
 
-<!--This is empty because it is killing the default footer-->
-<!--Do not remove.-->
+<!-- Application footer -->
+<footer class="md-footer">
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+        <!-- Copyright and theme information -->
+        <div class="md-footer-copyright">
+          {% if config.copyright %}
+            <div class="md-footer-copyright__highlight">
+              {{ config.copyright }}
+            </div>
+          {% endif %}
+          powered by
+          <a href="https://www.mkdocs.org">MkDocs</a>
+          and
+          <a href="https://squidfunk.github.io/mkdocs-material/">
+            Material for MkDocs</a>
+        </div>
+
+      <!-- Social links -->
+      {% block social %}
+        {% include "partials/social.html" %}
+      {% endblock %}
+    </div>
+  </div>
+</footer>

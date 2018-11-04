@@ -1,6 +1,29 @@
-Physics, a static global class, allows access to casts and gravity. Physics casts are a way to detect Objects. You call these functions like this: `Physics.getGravity()`.
+Physics, a static global class, allows access to casts and gravity. Physics casts are a way to detect Objects. You call these functions like this: `Physics.getGravity()`. This class also allows you to access elements of the environment.
 
 For more information on physics casts in Unity, [refer to the Unity documentation](https://docs.unity3d.com/ScriptReference/Physics.html) under BoxCast/RayCast/SphereCast.
+
+
+
+##Member Variable Summary
+
+###Member Variables
+These are variables that affect elements of the environment. It allows you to both read and write values.
+
+Read example: `print(Physics.play_area)` Write Example = `Physics.play_area = 0.5`
+
+Variable | Description | Type
+-- | -- | :--
+<a class="anchor" id="play_area"></a>play_area | The play area being used (ie. how far from middle you can get). Values from 0 - 1. Default is 0.5 | [<span class="tag flo"></span>](types) <a class="anchor" id="angular_drag"></a>
+
+
+---
+
+
+
+
+
+
+
 
 ##Function Summary
 

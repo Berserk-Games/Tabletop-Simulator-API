@@ -1,6 +1,26 @@
 This is an ongoing list of scripting changes that have been implemented to scripting and Custom UI side of Tabletop Simulator.
 
 
+
+
+
+
+
+######11/06/18 - v11.0
+
+!!!info ""
+    * Lua:
+        * Fog of War API elements added
+            * `object.getFogOfWarReveal()` and `object.setFogOfWarReveal(table)` to access an Object's ability to reveal Fog of War.
+            * `object.ignore_fog_of_war` member variable added (prevents object from being hidden)
+        * Play Area
+            * Change player area  with `Physics.play_area`
+    * API Improvements
+        * Knowledge Base link added to left nav bar.
+        * Minor visual improvements
+        * Footer returns
+
+
 ######08/17/18 - v10.9
 
 !!!info ""

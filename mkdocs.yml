@@ -40,6 +40,18 @@ markdown_extensions:
 repo_name: 'GitHub Source'
 repo_url: 'https://github.com/Berserk-Games/Tabletop-Simulator-API'
 
+
+extra:
+  social:
+    - type: 'reddit'
+      link: 'https://www.reddit.com/r/tabletopsimulator/'
+    - type: 'twitter'
+      link: 'https://twitter.com/tabletopsim'
+    - type: 'facebook'
+      link: 'https://www.facebook.com/tabletopsimulator'
+    - type: 'youtube'
+      link: 'https://www.youtube.com/user/berserkgames'
+
 pages:
   - Getting Started:
     - Introduction: index.md
