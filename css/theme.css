@@ -105,3 +105,18 @@ disabled due to lack of need currently, but works*/
 .md-typeset hr {
     border-bottom: .1rem solid rgba(0,0,0,.26);
 }
+
+.custom-line {
+    border:0;
+    height:0;
+    border-top:1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+.custom-link {
+    color:#f4641d;
+    position:relative;
+    left:1.3rem;
+    top:-0.5rem;
+}

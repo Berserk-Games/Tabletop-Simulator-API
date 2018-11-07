@@ -206,15 +206,43 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
+                    <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Main navigation -->
+<nav class="md-nav md-nav--primary" data-md-level="0">
+
+  <!-- Site title -->
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
     <span class="md-nav__button md-logo">
       
-        <img src="../img/TSIcon.png" width="24" height="24">
+        <img src="../img/TSIcon.png"
+            width="48" height="48" />
       
     </span>
     Tabletop Simulator API
   </label>
+
+  <!-- Repository containing source -->
   
     <div class="md-nav__source">
       
@@ -238,6 +266,8 @@
 
     </div>
   
+
+  <!-- Render item list -->
   <ul class="md-nav__list" data-md-scrollfix>
     
       
@@ -1117,6 +1147,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getfogofwarreveal" title="getFogOfWarReveal()" class="md-nav__link">
+    getFogOfWarReveal()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getobjects" title="getObjects()" class="md-nav__link">
     getObjects()
   </a>
@@ -1167,6 +1204,13 @@
           <li class="md-nav__item">
   <a href="#setcustomobject" title="setCustomObject(...)" class="md-nav__link">
     setCustomObject(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setfogofwarreveal" title="setFogOfWarReveal(...)" class="md-nav__link">
+    setFogOfWarReveal(...)
   </a>
   
 </li>
@@ -2293,6 +2337,13 @@
 
     
   </ul>
+
+  <!-- Link to TTS API -->
+  <hr class="custom-line" style="position:relative; top:-1rem;">
+
+  <!--style="color:grey;position:absolute;left:18px;top:-2px" href="https://api.tabletopsimulator.com/">Go To API</a>-->
+  <a href="https://kb.tabletopsimulator.com/" class="custom-link">Go To Knowledge Base &#8617</a>
+
 </nav>
                   </div>
                 </div>
@@ -2616,6 +2667,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getfogofwarreveal" title="getFogOfWarReveal()" class="md-nav__link">
+    getFogOfWarReveal()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getobjects" title="getObjects()" class="md-nav__link">
     getObjects()
   </a>
@@ -2666,6 +2724,13 @@
           <li class="md-nav__item">
   <a href="#setcustomobject" title="setCustomObject(...)" class="md-nav__link">
     setCustomObject(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setfogofwarreveal" title="setFogOfWarReveal(...)" class="md-nav__link">
+    setFogOfWarReveal(...)
   </a>
   
 </li>
@@ -2935,6 +3000,11 @@
 <tr>
 <td><a class="anchor" id="hide_when_face_down"></a>hide_when_face_down</td>
 <td>Hide the Object when face-down as if it were in a hand zone. The face is the "top" of the Object, the direction of its positive Y coordinate. Cards/decks default to <code class="codehilite">true</code>.</td>
+<td align="left"><a href="../types"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="ignore_fog_of_war"></a>ignore_fog_of_war</td>
+<td>Makes the object not be hidden by <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a>.</td>
 <td align="left"><a href="../types"><span class="tag boo"></span></a></td>
 </tr>
 <tr>
@@ -3335,6 +3405,12 @@
 <td></td>
 </tr>
 <tr>
+<td>getFogOfWarReveal()</td>
+<td>Settings impacting <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a> being revealed.</td>
+<td><a href="../types"><span class="ret tab"></span></a></td>
+<td><a href="#getfogofwarreveal"><span class="i"></span></a></td>
+</tr>
+<tr>
 <td><a class="anchor" id="getguid"></a>getGUID()</td>
 <td>String of the Object's unique identifier.</td>
 <td><a href="../types"><span class="ret str"></span></a></td>
@@ -3431,6 +3507,12 @@
 <td>Sets a description for an Object. Shows in tooltip after delay.</td>
 <td><a href="../types"><span class="ret boo"></span></a></td>
 <td></td>
+</tr>
+<tr>
+<td>setFogOfWarReveal(<a href="../types"><span class="tag tab"></span></a>&nbsp;fog_settings)</td>
+<td>Establish the settings and enable/disable an Object's revealing of <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a>.</td>
+<td><a href="../types"><span class="ret boo"></span></a></td>
+<td><a href="#setfogofwarreveal"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td><a class="anchor" id="setlock"></a>setLock(<a href="../types"><span class="tag boo"></span></a>&nbsp;lock)</td>
@@ -4275,6 +4357,21 @@
 </pre></div>
 
 <hr />
+<h4 id="getfogofwarreveal">getFogOfWarReveal()<a class="headerlink" href="#getfogofwarreveal" title="Permanent link"> </a></h4>
+<p><a href="../types"><span class="ret tab"></span></a>&nbsp;Settings impacting <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a> being revealed. In the example returned table, these are the default values of any object.</p>
+<div class="admonition note">
+<p class="admonition-title">Color Selection</p>
+<p>"Black" and "All" are synonymous for Fog of War. Either means that all players can see the revealed area when <code class="codehilite">reveal = true</code>.</p>
+</div>
+<div class="codehilite"><pre><span></span><span class="c1">-- Example returned Table for a custom token</span>
+<span class="p">{</span>
+    <span class="n">reveal</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;All&#39;</span><span class="p">,</span>
+    <span class="n">range</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="p">}</span>
+</pre></div>
+
+<hr />
 <h4 id="getobjects">getObjects()<a class="headerlink" href="#getobjects" title="Permanent link"> </a></h4>
 <p><a href="../types"><span class="ret tab"></span></a>&nbsp;Returns a Table of objects in the script zone/bag/deck. What it returns varies depending on the type of Object it is used on.</p>
 <p>If an Object is inside of a container, it does not exist in-game. As a result, you only get data on each Object, not an Object reference.</p>
@@ -4446,6 +4543,40 @@
     <span class="n">stackable</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
 <span class="p">}</span>
 <span class="n">obj</span><span class="p">.</span><span class="n">setCustomObject</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+
+<hr />
+<h4 id="setfogofwarreveal">setFogOfWarReveal(...)<a class="headerlink" href="#setfogofwarreveal" title="Permanent link"> </a></h4>
+<p><a href="../types"><span class="ret boo"></span></a>&nbsp;Establish the settings and enable/disable an Object's revealing of <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">setFogOfWarReveal(fog_setting)</p>
+<ul>
+<li><a href="../types"><span class="tag tab"></span></a>&nbsp;<strong>fog_setting</strong>: A Table containing information on if/how this Object should reveal Fog of War.<ul>
+<li><a href="../types"><span class="tag boo"></span></a>&nbsp;<strong>reveal</strong>: Can the Object currently<ul>
+<li><span class="critic comment">If this is not used, the current setting for this Object is kept.</span></li>
+</ul>
+</li>
+<li><a href="../types#vector"><span class="tag str"></span></a>&nbsp;<strong>color</strong>: The rotation Vector of the Object that best represents the given value pointing up.<ul>
+<li><span class="critic comment">If this is not used, the current setting for this Object is kept.</span></li>
+<li><span class="critic comment">&quot;Black&quot; means &quot;visible to all players.&quot;</span></li>
+<li><span class="critic comment">&quot;All&quot; means &quot;visible to all players.&quot;</span></li>
+</ul>
+</li>
+<li><a href="../types#vector"><span class="tag flo"></span></a>&nbsp;<strong>range</strong>: How far from the Object the reveal effect reaches (radius, inches).<ul>
+<li><span class="critic comment">If this is not used, the current setting for this Object is kept.</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="c1">-- Example of enabling reveal for all players at 3 units of radius.</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">reveal</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">color</span>  <span class="o">=</span> <span class="s2">&quot;Black&quot;</span><span class="p">,</span>
+    <span class="n">range</span>  <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">self</span><span class="p">.</span><span class="n">setFogOfWarReveal</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
 </pre></div>
 
 <hr />
@@ -5069,8 +5200,44 @@
 
 
 
-<!--This is empty because it is killing the default footer-->
-<!--Do not remove.-->
+<!-- Application footer -->
+<footer class="md-footer">
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+        <!-- Copyright and theme information -->
+        <div class="md-footer-copyright">
+          
+          powered by
+          <a href="https://www.mkdocs.org">MkDocs</a>
+          and
+          <a href="https://squidfunk.github.io/mkdocs-material/">
+            Material for MkDocs</a>
+        </div>
+
+      <!-- Social links -->
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://twitter.com/tabletopsim" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.facebook.com/tabletopsimulator" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://www.youtube.com/user/berserkgames" class="md-footer-social__link fa fa-youtube"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
       
     </div>
     

@@ -103,7 +103,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#function-summary" tabindex="1" class="md-skip">
+      <a href="#member-variable-summary" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -206,15 +206,43 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
+                    <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Main navigation -->
+<nav class="md-nav md-nav--primary" data-md-level="0">
+
+  <!-- Site title -->
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
     <span class="md-nav__button md-logo">
       
-        <img src="../img/TSIcon.png" width="24" height="24">
+        <img src="../img/TSIcon.png"
+            width="48" height="48" />
       
     </span>
     Tabletop Simulator API
   </label>
+
+  <!-- Repository containing source -->
   
     <div class="md-nav__source">
       
@@ -238,6 +266,8 @@
 
     </div>
   
+
+  <!-- Render item list -->
   <ul class="md-nav__list" data-md-scrollfix>
     
       
@@ -1085,6 +1115,26 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#member-variable-summary" title="Member Variable Summary" class="md-nav__link">
+    Member Variable Summary
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#member-variables" title="Member Variables" class="md-nav__link">
+    Member Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#function-summary" title="Function Summary" class="md-nav__link">
     Function Summary
   </a>
@@ -1791,6 +1841,13 @@
 
     
   </ul>
+
+  <!-- Link to TTS API -->
+  <hr class="custom-line" style="position:relative; top:-1rem;">
+
+  <!--style="color:grey;position:absolute;left:18px;top:-2px" href="https://api.tabletopsimulator.com/">Go To API</a>-->
+  <a href="https://kb.tabletopsimulator.com/" class="custom-link">Go To Knowledge Base &#8617</a>
+
 </nav>
                   </div>
                 </div>
@@ -1807,6 +1864,26 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#member-variable-summary" title="Member Variable Summary" class="md-nav__link">
+    Member Variable Summary
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#member-variables" title="Member Variables" class="md-nav__link">
+    Member Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#function-summary" title="Function Summary" class="md-nav__link">
@@ -1869,8 +1946,29 @@
                 
                   <h1>Physics</h1>
                 
-                <p>Physics, a static global class, allows access to casts and gravity. Physics casts are a way to detect Objects. You call these functions like this: <code class="codehilite">Physics.getGravity()</code>.</p>
+                <p>Physics, a static global class, allows access to casts and gravity. Physics casts are a way to detect Objects. You call these functions like this: <code class="codehilite">Physics.getGravity()</code>. This class also allows you to access elements of the environment.</p>
 <p>For more information on physics casts in Unity, <a href="https://docs.unity3d.com/ScriptReference/Physics.html">refer to the Unity documentation</a> under BoxCast/RayCast/SphereCast.</p>
+<h2 id="member-variable-summary">Member Variable Summary<a class="headerlink" href="#member-variable-summary" title="Permanent link"> </a></h2>
+<h3 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link"> </a></h3>
+<p>These are variables that affect elements of the environment. It allows you to both read and write values.</p>
+<p>Read example: <code class="codehilite">print(Physics.play_area)</code> Write Example = <code class="codehilite">Physics.play_area = 0.5</code></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="anchor" id="play_area"></a>play_area</td>
+<td>The play area being used (ie. how far from middle you can get). Values from 0 - 1. Default is 0.5</td>
+<td align="left"><a href="../types"><span class="tag flo"></span></a> <a class="anchor" id="angular_drag"></a></td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link"> </a></h2>
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link"> </a></h3>
 <table>
@@ -2051,8 +2149,44 @@
 
 
 
-<!--This is empty because it is killing the default footer-->
-<!--Do not remove.-->
+<!-- Application footer -->
+<footer class="md-footer">
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+        <!-- Copyright and theme information -->
+        <div class="md-footer-copyright">
+          
+          powered by
+          <a href="https://www.mkdocs.org">MkDocs</a>
+          and
+          <a href="https://squidfunk.github.io/mkdocs-material/">
+            Material for MkDocs</a>
+        </div>
+
+      <!-- Social links -->
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://twitter.com/tabletopsim" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.facebook.com/tabletopsimulator" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://www.youtube.com/user/berserkgames" class="md-footer-social__link fa fa-youtube"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
       
     </div>
     
