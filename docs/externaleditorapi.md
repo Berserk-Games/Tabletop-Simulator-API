@@ -76,6 +76,52 @@ TTS sends all Lua error messages to Atom to be displayed in Atom's console *(ctr
 }
 ```
 
+
+###Custom messages
+
+A `messageID` of *4* is used to send a custom message from TTS to the attached editor.  This is done in Lua by calling `sendExternalMessage` with the table of data you wish to send.  It is up to the editor how it uses this information (usually this message is used when the editor itself has sent code to be executed by TTS, which will send something back. i.e. this is mainly of use for people developing editor plugins).
+
+```JSON
+{
+    "messageID": 4,
+    "customMessage": {"foo": "Hello", "bar": "World"}
+}
+```
+
+
+
+###Return messages
+
+When the editor sends Lua code to TTS using the `Execute Lua Code` message (detailed below), if that code returns a value it will be sent back to the editor using message ID *5*.
+
+```JSON
+{
+    "messageID": 5,
+    "returnValue": true
+}
+```
+
+
+
+###Game Saved
+
+Whenever the player saves the game in TTS, a save game notification is sent to any attached editor using message ID *6*.
+
+
+
+###Object Created
+
+Whenever the player creates an object in TTS a notification is sent to any attached editor using message ID *7*.
+
+```JSON
+{
+    "messageID": 7,
+    "guid": "abcdef"
+}
+```
+
+
+
 ##Tabletop Simulator as the Server
 
 The following describes messages that TTS listens for and handles.
@@ -86,7 +132,7 @@ The following describes messages that TTS listens for and handles.
 
 ###Get Lua Scripts
 
-TTS listens for a JSON message with an ID of 0, and responds by sending a JSON message containing scripts and UI XML. 
+TTS listens for a JSON message with an ID of 0, and responds by sending a JSON message containing scripts and UI XML.
 
 ```JSON
 {
@@ -149,7 +195,7 @@ TTS listens for a JSON message with an ID of 3 containing an object guid and lua
 ```
 
 To execute Lua code for an object in the game that object must have an associated script in TTS. Otherwise the TTS scripting engine will fail with an error "function \<executeScript\>: Object reference not set to an instance of an object". Once the in-game editor shows a script associated with an object then TTS will be able to execute Lua code sent via JSON message for that object.
-    
+
 ```JSON
 {
     "messageID": 3,
@@ -157,5 +203,3 @@ To execute Lua code for an object in the game that object must have an associate
     "script":"self.setPosition({0,10,0}"
 }
 ```
-
-
