@@ -131,6 +131,7 @@ getCustomObject() | Returns a Table with the Custom Object information of a Cust
 getFogOfWarReveal() | Settings impacting [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone) being revealed. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getfogofwarreveal)
 <a class="anchor" id="getguid"></a>getGUID() | String of the Object's unique identifier. | [<span class="ret str"></span>](types) |
 <a class="anchor" id="getjson"></a>getJSON() | Returns a serialization of the JSON string which represents this item. Works with [spawnObjectJSON()](base#spawnobjectjson). | [<span class="ret str"></span>](types) |
+getJoints() | Returns information on any joints attached to this object. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getjoints)
 <a class="anchor" id="getlock"></a>getLock() | If the Object is locked. | [<span class="ret boo"></span>](types) |
 <a class="anchor" id="getname"></a>getName() | Name, also shows as part of Object's tooltip. | [<span class="ret str"></span>](types) |
 getObjects() | Returns a Table of Objects in the script zone/bag/deck. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getobjects)
@@ -225,12 +226,15 @@ The functions can be used on Objects, but can also be used on the game world usi
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
+addDecal([<span class="tag tab"></span>](types)&nbsp;parameters) | Add a Decal onto an object or the game world. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#adddecal)
 call([<span class="tag str"></span>](types)&nbsp;func_name, [<span class="tag tab"></span>](types)&nbsp;func_params) | Used to call a Lua function on another entity. | [<span class="ret var"></span>](types) | [<span class="i"></span>](#call)
+getDecals() | Returns information on all decals attached to this object or the world. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getdecals)
 <a class="anchor" id="getluascript"></a>getLuaScript() | Get a Lua script as a string from the entity. | [<span class="ret str"></span>](types) |
 getSnapPoints() | Returns a table of sub-tables, each sub-table representing one snap point. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getsnappoints)
 <a class="anchor" id="gettable"></a>getTable([<span class="tag str"></span>](types)&nbsp;func_name) | Data value of a variable in another Object's script. Can only return a table. | [<span class="ret tab"></span>](types) |
 <a class="anchor" id="getvar"></a>getVar([<span class="tag str"></span>](types)&nbsp;func_name) | Data value of a variable in another entity's script. Cannot return a table. | [<span class="ret var"></span>](types) |
 <a class="anchor" id="getvectorlines"></a>getVectorLines() | Returns Table of data representing the current Vector Lines on this entity. See [setVectorLines](#setvectorlines) for table format.| [<span class="ret tab"></span>](types) |
+setDecals([<span class="tag tab"></span>](types)&nbsp;parameters) | Sets which decals are on an object. This removes other decals already present, and can remove all decals as well. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setdecals)
 <a class="anchor" id="setluascript"></a>setLuaScript([<span class="tag str"></span>](types)&nbsp;script) | Input a string as an entity's Lua script. Generally only used after spawning a new Object. | [<span class="ret boo"></span>](types) |
 setSnapPoints([<span class="tag tab"></span>](types)&nbsp;parameters) | Spawns snap points from a list of parameters. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setsnappoints)
 <a class="anchor" id="settable"></a>setTable([<span class="tag str"></span>](types)&nbsp;func_name, [<span class="tag tab"></span>](types)&nbsp;data) | Creates/updates a variable in another entity's script. Only used for tables. | [<span class="ret boo"></span>](types) |
@@ -794,11 +798,6 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 
 
 
-
-
-
-
-
 ###Get Function Details
 
 
@@ -815,6 +814,9 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 	stackable = false,
 }
 ```
+
+!!!tip "Jigsaw Puzzles"
+	If you use getCustomObject() on a puzzle piece, it will also return `desired_position`, which is its position if the puzzle is "solved". You can use this to determine where to put the piece.
 
 ---
 
@@ -836,6 +838,61 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 }
 ```
 
+---
+
+
+####getJoints()
+[<span class="ret tab"></span>](types)&nbsp;Returns information on any joints attached to this object. This information included the GUID of the other objects attached via the joints.
+
+This function returns a table of sub-tables, each sub-table representing one joint.
+
+Example of a return table of an object with 2 joints:
+``` Lua
+{
+	{
+		type              = "Spring",
+		joint_object_guid = "555555",
+		collision         = false,
+		break_force       = 1000,
+		break_torgue      = 1000,
+		axis              = {0,0,0},
+		anchor            = {0,0,0},
+		connector_anchor  = {0,0,0},
+		motor_force       = 0,
+		motor_velocity    = 0,
+		motor_free_spin   = false,
+		spring            = 50,
+		damper            = 0.1
+		max_distance      = 10
+		min_distance      = 0
+	},
+	{
+		type              = "Spring",
+		joint_object_guid = "888888",
+		collision         = false,
+		break_force       = 1000,
+		break_torgue      = 1000,
+		axis              = {0,0,0},
+		anchor            = {0,0,0},
+		connector_anchor  = {0,0,0},
+		motor_force       = 0,
+		motor_velocity    = 0,
+		motor_free_spin   = false,
+		spring            = 50,
+		damper            = 0.1
+		max_distance      = 10
+		min_distance      = 0
+	},
+}
+```
+
+Example of printing the first sub-table's information:
+``` Lua
+local jointsInfo = self.getJoints()
+for k, v in pairs(jointsInfo[1]) do
+	print(k, ":  ", v)
+end
+```
 
 ---
 
@@ -1499,10 +1556,49 @@ end
 
 
 
+
+
+
+
+
+
 ---
 
 
 ###Global Function Details
+
+####addDecal(...)
+
+[<span class="ret boo"></span>](types)&nbsp;Add a Decal onto an object or the game world.
+
+!!!tip "Relative Vectors"
+	When using this function, the vector parameters (position, rotation) are relative to what the decal is being placed on. For example, if you put a decal at `{0,0,0}` on Global, it will attach to the center of the game room. If you do the same to an object, it will place the decal on the origin point of the object.
+
+!!!info "addDecal(parameters)"
+	* [<span class="tag tab"></span>](types) **parameters**: A Table of parameters used to determine how the function will act.
+		* [<span class="tag str"></span>](types) **parameters.name**: The name of the decal being placed.
+		* [<span class="tag str"></span>](types) **parameters.url**: The file path or URL for the image to be displayed.
+		* [<span class="tag vec"></span>](types#vector) **parameters.position**: A Vector of the position to place Object.
+		* [<span class="tag vec"></span>](types#vector) **parameters.rotation**: A Vector of the rotation of the Object.
+		* [<span class="tag flo"></span>](types) **parameters.scale**: How the image is scaled.
+			* {>>1 is normal scale, 0.5 would be half sized, 2 would be twice as large, etc.<<}
+
+``` Lua
+function onLoad()
+	local params = {
+		name     = "API Icon",
+		url      = "https://api.tabletopsimulator.com/img/TSIcon.png",
+		position = {0, 5, 0},
+		rotation = {90, 0, 0},
+		scale    = 5
+	}
+	Global.addDecal(params)
+end
+```
+
+
+---
+
 
 ####call(...)
 
@@ -1536,6 +1632,48 @@ end
 
 ---
 
+####getDecals()
+
+[<span class="ret tab"></span>](types)&nbsp;Returns a table of sub-tables, each sub-table representing one decal.
+
+!!!info "Sub-table elements"
+
+	* [<span class="tag str"></span>](types) **parameters.name**: The name of the decal being placed.
+	* [<span class="tag str"></span>](types) **parameters.url**: The file path or URL for the image to be displayed.
+	* [<span class="tag vec"></span>](types#vector) **parameters.position**: A Vector of the position to place Object.
+	* [<span class="tag vec"></span>](types#vector) **parameters.rotation**: A Vector of the rotation of the Object.
+	* [<span class="tag flo"></span>](types) **parameters.scale**: How the image is scaled.
+		* {>>1 is normal scale, 0.5 would be half sized, 2 would be twice as large, etc.<<}
+
+Example returned table:
+``` Lua
+-- If this object had 2 of the same decal on it
+decalTable = self.getDecals()
+
+--[[ This is what the table would look like
+{
+	{
+		name     = "API Icon",
+		url      = "https://api.tabletopsimulator.com/img/TSIcon.png",
+		position = {0, 5, 0},
+		rotation = {90, 0, 0},
+		scale    = 5
+	},
+	{
+		name     = "API Icon",
+		url      = "https://api.tabletopsimulator.com/img/TSIcon.png",
+		position = {0, 5, 0},
+		rotation = {90, 0, 0},
+		scale    = 5
+	},
+}
+]]--
+
+-- Accessing the name of of the second entry would look like this
+print(decalTable[2].name)
+```
+
+---
 
 
 ####getSnapPoints()
@@ -1579,7 +1717,49 @@ Returned table:
 
 ---
 
+####setDecals(...)
 
+[<span class="ret boo"></span>](types)&nbsp;Sets which decals are on an object. This removes other decals already present, and can remove all decals as well.
+
+!!!tip "Removing decals"
+	Using this function with an empty table will remove all decals from Global or the object it is used on.
+	`Global.setDecals({})`
+
+!!!info "setDecals(parameters)"
+	* [<span class="tag tab"></span>](types) **parameters**: The main table, which will contain all of the sub-tables.
+		* [<span class="tag tab"></span>](types) **subtable**: The sub-table containing each individual decal's information. The sub-tables are unnamed.
+			* [<span class="tag str"></span>](types) **parameters.subtable.name**: The name of the decal being placed.
+			* [<span class="tag str"></span>](types) **parameters.subtable.url**: The file path or URL for the image to be displayed.
+			* [<span class="tag vec"></span>](types#vector) **parameters.subtable.position**: A Vector of the position to place Object.
+			* [<span class="tag vec"></span>](types#vector) **parameters.subtable.rotation**: A Vector of the rotation of the Object.
+			* [<span class="tag flo"></span>](types) **parameters.subtable.scale**: How the image is scaled.
+				* {>>1 is normal scale, 0.5 would be half sized, 2 would be twice as large, etc.<<}
+
+``` Lua
+function onLoad()
+    local parameters = {
+        {
+			name     = "API Icon",
+			url      = "https://api.tabletopsimulator.com/img/TSIcon.png",
+			position = {-2, 5, 0},
+			rotation = {90, 0, 0},
+			scale    = 5,
+		},
+        {
+			name     = "API Icon",
+			url      = "https://api.tabletopsimulator.com/img/TSIcon.png",
+			position = {2, 5, 0},
+			rotation = {90, 0, 0},
+			scale    = 5,
+		},
+	}
+
+	Global.setDecals(parameters)
+end
+```
+
+
+---
 
 
 ####setSnapPoints(...)

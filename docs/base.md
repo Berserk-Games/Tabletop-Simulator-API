@@ -15,6 +15,7 @@ destroyObject([<span class="tag obj"></span>](types)&nbsp;obj) | Destory an Obje
 <a class="anchor" id="getallobjects"></a>getAllObjects() | Returns Table of all spawned [Objects](object) in the game. | [<span class="ret tab"></span>](types) |
 getObjectFromGUID([<span class="tag str"></span>](types)&nbsp;guid) | Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist. | [<span class="ret obj"></span>](types) | [<span class="i"></span>](#getobjectfromguid)
 <a class="anchor" id="getseatedplayers"></a>getSeatedPlayers() | Returns Table of the [Player Colors](player-color) strings of seated players. | [<span class="ret tab"></span>](types) |
+group([<span class="tag tab"></span>](types)&nbsp;objects) | Groups objects together, like how the `G` key does for players. | [<span class="ret obj"></span>](types) | [<span class="i"></span>](#group)
 paste([<span class="tag tab"></span>](types)&nbsp;parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#paste)
 <a class="anchor" id="setlookingforplayers"></a>setLookingForPlayers([<span class="tag boo"></span>](types)&nbsp;lfp) | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](types) |
 spawnObject([<span class="tag tab"></span>](types)&nbsp;parameters) | Spawns an Object. View the [Spawnable Object](spawnableobjects) page for Objects that can be spawned. | [<span class="ret obj"></span>](types) | [<span class="i"></span>](#spawnobject)
@@ -86,8 +87,31 @@ copy(object_list)
 
 ---
 
+####group(...)
+
+[<span class="ret obj"></span>](types)&nbsp;Groups objects together, like how the `G` key does for players. It returns an object reference to the deck/stack formed.
+
+Not all objects CAN be grouped. If the G key won't work on them, neither will this function.
 
 
+!!!info "group(objects)"
+	* [<span class="tag tab"></span>](types) **objects**: A list of objects to be grouped together.
+
+``` Lua
+function onLoad()
+    local objList = {
+        getObjectFromGUID("b80a72"),
+        getObjectFromGUID("a333b4"),
+        getObjectFromGUID("c9f9d3"),
+    }
+    group(objList)
+end
+```
+
+
+
+
+---
 
 ####paste(...)
 
@@ -316,7 +340,7 @@ broadcastToColor(msg, color, rgb)
 
 ####log(...)
 
-[<span class="ret boo"></span>](types)&nbsp;Print information to the log. The log is a separate chat window which is visible to all players in the instance.
+[<span class="ret boo"></span>](types)&nbsp;Print information to the log. The log is a separate chat window in which you can also enter console commands. It is only visible to the host.
 
 If a table is used for "element", the log will automatically display the key/value contents of it.
 
@@ -329,7 +353,7 @@ If a table is used for "element", the log will automatically display the key/val
 
 
 ``` Lua
-log(getAllObjects(), "table", "All Objects:")
+log(getAllObjects(), "All Objects:", "table")
 ```
 
 ---
