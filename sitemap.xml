@@ -146,6 +146,12 @@
     </url>
         
     <url>
+     <loc>/time/</loc>
+     <lastmod>2019-02-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/turns/</loc>
      <lastmod>2019-02-28</lastmod>
      <changefreq>daily</changefreq>

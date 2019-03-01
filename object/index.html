@@ -1140,6 +1140,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#getcomponentvar" title="getComponentVar(...)" class="md-nav__link">
+    getComponentVar(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getcustomobject" title="getCustomObject()" class="md-nav__link">
     getCustomObject()
   </a>
@@ -1207,6 +1214,13 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setcomponentvar" title="setComponentVar(...)" class="md-nav__link">
+    setComponentVar(...)
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#setcustomobject" title="setCustomObject(...)" class="md-nav__link">
@@ -1902,6 +1916,45 @@
     <a href="../texttool/" title="TextTool"
         class="md-nav__link">
       TextTool
+    </a>
+  </li>
+
+        
+          
+          
+          <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to level -->
+
+
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-nav__item">
+    <a href="../time/" title="Time"
+        class="md-nav__link">
+      Time
     </a>
   </li>
 
@@ -2688,6 +2741,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#getcomponentvar" title="getComponentVar(...)" class="md-nav__link">
+    getComponentVar(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getcustomobject" title="getCustomObject()" class="md-nav__link">
     getCustomObject()
   </a>
@@ -2755,6 +2815,13 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setcomponentvar" title="setComponentVar(...)" class="md-nav__link">
+    setComponentVar(...)
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#setcustomobject" title="setCustomObject(...)" class="md-nav__link">
@@ -3449,6 +3516,12 @@
 <td></td>
 </tr>
 <tr>
+<td>getComponentVar(<a href="../types"><span class="tag str"></span></a>&nbsp;componentName, <a href="../types"><span class="tag str"></span></a>&nbsp;varName)</td>
+<td>Get the current value of a component of an object.</td>
+<td><a href="../types"><span class="ret var"></span></a></td>
+<td><a href="#getcomponentvar"><span class="i"></span></a></td>
+</tr>
+<tr>
 <td>getCustomObject()</td>
 <td>Returns a Table with the Custom Object information of a Custom Object.</td>
 <td><a href="../types"><span class="ret tab"></span></a></td>
@@ -3557,6 +3630,12 @@
 <td>Sets the Color tint.</td>
 <td><a href="../types"><span class="ret boo"></span></a></td>
 <td></td>
+</tr>
+<tr>
+<td>setComponentVar(<a href="../types"><span class="tag str"></span></a>&nbsp;componentName, <a href="../types"><span class="tag str"></span></a>&nbsp;varName, <a href="../types"><span class="tag var"></span></a>&nbsp;value)</td>
+<td>Set the current value of a component of an object.</td>
+<td><a href="../types"><span class="ret boo"></span></a></td>
+<td><a href="#setcomponentvar"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>setCustomObject(<a href="../types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
@@ -4425,6 +4504,16 @@
 </div>
 <hr />
 <h3 id="get-function-details">Get Function Details<a class="headerlink" href="#get-function-details" title="Permanent link"> </a></h3>
+<h4 id="getcomponentvar">getComponentVar(...)<a class="headerlink" href="#getcomponentvar" title="Permanent link"> </a></h4>
+<p><a href="../types"><span class="ret var"></span></a>&nbsp;Get the current value of a component of an object. A component is a Unity term for certain aspects added to a game object, like "Light" or "BoxCollider". This works on standard game objects, but can be used to greater effect on AssetBundles.</p>
+<div class="admonition info">
+<p class="admonition-title">getComponentVar(componentName, varName)</p>
+<ul>
+<li><a href="../types"><span class="tag str"></span></a> <strong>componentName</strong>: The name of the component on the Object.</li>
+<li><a href="../types"><span class="tag str"></span></a> <strong>varName</strong>: The name of the variable which modifies the component.</li>
+</ul>
+</div>
+<hr />
 <h4 id="getcustomobject">getCustomObject()<a class="headerlink" href="#getcustomobject" title="Permanent link"> </a></h4>
 <p><a href="../types"><span class="ret tab"></span></a>&nbsp;Returns a Table with the Custom Object information of a Custom Object. See the <a href="../spawnableobjects">Spawnable Objects</a> page for the kind of information returned.</p>
 <div class="codehilite"><pre><span></span><span class="c1">-- Example returned Table for a custom token</span>
@@ -4661,6 +4750,17 @@
 </table>
 <hr />
 <h3 id="set-function-details">Set Function Details<a class="headerlink" href="#set-function-details" title="Permanent link"> </a></h3>
+<h4 id="setcomponentvar">setComponentVar(...)<a class="headerlink" href="#setcomponentvar" title="Permanent link"> </a></h4>
+<p><a href="../types"><span class="ret boo"></span></a>&nbsp;Set the current value of a component of an object. A component is a Unity term for certain aspects added to a game object, like "Light" or "BoxCollider". This works on standard game objects, but can be used to greater effect on AssetBundles.</p>
+<div class="admonition info">
+<p class="admonition-title">setComponentVar(componentName, varName, value)</p>
+<ul>
+<li><a href="../types"><span class="tag str"></span></a> <strong>componentName</strong>: The name of the component on the Object.</li>
+<li><a href="../types"><span class="tag str"></span></a> <strong>varName</strong>: The name of the variable which modifies the component.</li>
+<li><a href="../types"><span class="tag var"></span></a> <strong>value</strong>: The value to give the variable.</li>
+</ul>
+</div>
+<hr />
 <h4 id="setcustomobject">setCustomObject(...)<a class="headerlink" href="#setcustomobject" title="Permanent link"> </a></h4>
 <p><a href="../types"><span class="ret boo"></span></a>&nbsp;Sets a custom Object's properties. It can be used after <a href="../base#spawnobject">spawnObject</a> or on an already existing custom Object. If used on an already existing custom Object, you must use <a href="#reload">reload</a> on the object after setCustomObject for the changes to be displayed.</p>
 <div class="admonition info">
