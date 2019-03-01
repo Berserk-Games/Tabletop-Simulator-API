@@ -1,4 +1,4 @@
-Player, a static global class, allows control over in-game players and their [hand zones](http://berserk-games.com/knowledgebase/hands/). 
+Player, a static global class, allows control over in-game players and their [hand zones](http://berserk-games.com/knowledgebase/hands/).
 
 Example Usage: `Player["White"].seated` or `Player["Green"].mute()`
 
@@ -42,6 +42,7 @@ getHandTransform([<span class="tag int"></span>](types)&nbsp;hand_index) | Retur
 <a class="anchor" id="kick"></a>kick() | Kicks Player out of the room. | [<span class="ret boo"></span>](types)
 lookAt([<span class="tag tab"></span>](types)&nbsp;parameters) | Moves a Player's camera, forcing 3'rd person camera mode. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#lookat)
 <a class="anchor" id="mute"></a>mute() | Mutes or unmutes Player, preventing/allowing voice chat. | [<span class="ret boo"></span>](types)
+<a class="anchor" id="pingtable"></a>pingTable([<span class="tag vec"></span>](types#vector)&nbsp;position) | Emulates the player using the ping tool at the given position (tapping Tab). | [<span class="ret boo"></span>](types)
 print([<span class="tag str"></span>](types)&nbsp;message, [<span class="tag col"></span>](types#color)&nbsp;message_color) | Prints a message into the Player's game chat. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#print)
 <a class="anchor" id="promote"></a>promote() | Promotes/demotes a Player. Promoted players have access to most host privileges. | [<span class="ret boo"></span>](types) |
 setHandTransform([<span class="tag tab"></span>](types)&nbsp;parameters, [<span class="tag int"></span>](types)&nbsp;hand_index) | Sets transform elements of a hand zone. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#sethandtransform)

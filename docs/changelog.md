@@ -2,6 +2,18 @@ This is an ongoing list of scripting changes that have been implemented to scrip
 
 
 
+######11/06/18 - v11.1
+
+!!!info ""
+    * Lua:
+        * Added group(table). This allows you to group a table of objects, in the same way the "G" key would for a player! It returns a list of the grouped objects.
+        * Added addDecal(table), getDecals(), and setDecals(table). Now scripting can add decals into the game world.
+        * Added object.getJoints().
+        * When a table of parameters for a joint is returned, it now includes joint_object_guid. This is the GUID for the object which is attached by the joint.
+        * Added desired_position to the list of parameters returned by .getCustomObject() when it is used on a Jigsaw Puzzle piece. This parameter is the "solved" position for the piece.
+        * New Time class added, used to easily fetch information like os.time(), but also other informations like time passed since last frame, total frames passed, etc.
+        pingTable(vector) added to the Player class. Now a script can emulate a player pinging.
+        * Added setComponentVar(componentName, varName, value) and getComponentVar(componentName, varName) as an object function. This allows you to access components that you have made part of your AssetBundle via scripting. For example, changing lights or colliders on the fly. These functions will also work on the components of default objects like "Collider" and "Light".
 
 
 

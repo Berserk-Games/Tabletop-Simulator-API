@@ -78,6 +78,7 @@ pages:
     - RPGFigurine: rpgfigurine.md
     - Spawnable Objects: spawnableobjects.md
     - TextTool: texttool.md
+    - Time: time.md
     - Turns: turns.md
     - UI: ui.md
     - Wait: wait.md
