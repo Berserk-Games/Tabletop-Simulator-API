@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../img/Icon-Dice.png">
-      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
+      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.6.6">
     
     
       
@@ -40,14 +40,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.ba0fd1a6.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.78aab2dc.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
-      
-      
-        
-        
-        <meta name="theme-color" content="#3f51b5">
       
     
     
@@ -59,8 +54,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
-    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
       <link rel="stylesheet" href="../css/theme.css">
     
@@ -84,7 +79,7 @@
         
         
           <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="__github">
+    viewBox="0 0 416 448" id="github">
   <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
         8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
         18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
@@ -104,9 +99,9 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
       <a href="#member-variable-summary" tabindex="1" class="md-skip">
         Skip to content
@@ -124,7 +119,7 @@
         </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
@@ -143,14 +138,14 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
             
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
+  <label class="md-search__overlay" for="search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
+      <label class="md-icon md-search__icon" for="search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
       </button>
@@ -183,7 +178,7 @@
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
+          <use xlink:href="#github" width="24" height="24"></use>
         </svg>
       </div>
     
@@ -260,7 +255,7 @@
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
+          <use xlink:href="#github" width="24" height="24"></use>
         </svg>
       </div>
     
@@ -843,7 +838,7 @@
   
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -1159,6 +1154,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getjoints" title="getJoints()" class="md-nav__link">
+    getJoints()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getobjects" title="getObjects()" class="md-nav__link">
     getObjects()
   </a>
@@ -1365,6 +1367,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#adddecal" title="addDecal(...)" class="md-nav__link">
+    addDecal(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#call" title="call(...)" class="md-nav__link">
     call(...)
   </a>
@@ -1372,8 +1381,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getdecals" title="getDecals()" class="md-nav__link">
+    getDecals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getsnappoints" title="getSnapPoints()" class="md-nav__link">
     getSnapPoints()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdecals" title="setDecals(...)" class="md-nav__link">
+    setDecals(...)
   </a>
   
 </li>
@@ -2363,7 +2386,7 @@
   
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -2679,6 +2702,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getjoints" title="getJoints()" class="md-nav__link">
+    getJoints()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getobjects" title="getObjects()" class="md-nav__link">
     getObjects()
   </a>
@@ -2885,6 +2915,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#adddecal" title="addDecal(...)" class="md-nav__link">
+    addDecal(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#call" title="call(...)" class="md-nav__link">
     call(...)
   </a>
@@ -2892,8 +2929,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getdecals" title="getDecals()" class="md-nav__link">
+    getDecals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getsnappoints" title="getSnapPoints()" class="md-nav__link">
     getSnapPoints()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdecals" title="setDecals(...)" class="md-nav__link">
+    setDecals(...)
   </a>
   
 </li>
@@ -3428,6 +3479,12 @@
 <td></td>
 </tr>
 <tr>
+<td>getJoints()</td>
+<td>Returns information on any joints attached to this object.</td>
+<td><a href="../types"><span class="ret tab"></span></a></td>
+<td><a href="#getjoints"><span class="i"></span></a></td>
+</tr>
+<tr>
 <td><a class="anchor" id="getlock"></a>getLock()</td>
 <td>If the Object is locked.</td>
 <td><a href="../types"><span class="ret boo"></span></a></td>
@@ -3737,10 +3794,22 @@
 </thead>
 <tbody>
 <tr>
+<td>addDecal(<a href="../types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>Add a Decal onto an object or the game world.</td>
+<td><a href="../types"><span class="ret boo"></span></a></td>
+<td><a href="#adddecal"><span class="i"></span></a></td>
+</tr>
+<tr>
 <td>call(<a href="../types"><span class="tag str"></span></a>&nbsp;func_name, <a href="../types"><span class="tag tab"></span></a>&nbsp;func_params)</td>
 <td>Used to call a Lua function on another entity.</td>
 <td><a href="../types"><span class="ret var"></span></a></td>
 <td><a href="#call"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getDecals()</td>
+<td>Returns information on all decals attached to this object or the world.</td>
+<td><a href="../types"><span class="ret tab"></span></a></td>
+<td><a href="#getdecals"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td><a class="anchor" id="getluascript"></a>getLuaScript()</td>
@@ -3771,6 +3840,12 @@
 <td>Returns Table of data representing the current Vector Lines on this entity. See <a href="#setvectorlines">setVectorLines</a> for table format.</td>
 <td><a href="../types"><span class="ret tab"></span></a></td>
 <td></td>
+</tr>
+<tr>
+<td>setDecals(<a href="../types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>Sets which decals are on an object. This removes other decals already present, and can remove all decals as well.</td>
+<td><a href="../types"><span class="ret boo"></span></a></td>
+<td><a href="#setdecals"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td><a class="anchor" id="setluascript"></a>setLuaScript(<a href="../types"><span class="tag str"></span></a>&nbsp;script)</td>
@@ -4361,6 +4436,10 @@
 <span class="p">}</span>
 </pre></div>
 
+<div class="admonition tip">
+<p class="admonition-title">Jigsaw Puzzles</p>
+<p>If you use getCustomObject() on a puzzle piece, it will also return <code class="codehilite">desired_position</code>, which is its position if the puzzle is "solved". You can use this to determine where to put the piece.</p>
+</div>
 <hr />
 <h4 id="getfogofwarreveal">getFogOfWarReveal()<a class="headerlink" href="#getfogofwarreveal" title="Permanent link"> </a></h4>
 <p><a href="../types"><span class="ret tab"></span></a>&nbsp;Settings impacting <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a> being revealed. In the example returned table, these are the default values of any object.</p>
@@ -4376,6 +4455,54 @@
 <span class="p">}</span>
 </pre></div>
 
+<hr />
+<h4 id="getjoints">getJoints()<a class="headerlink" href="#getjoints" title="Permanent link"> </a></h4>
+<p><a href="../types"><span class="ret tab"></span></a>&nbsp;Returns information on any joints attached to this object. This information included the GUID of the other objects attached via the joints.</p>
+<p>This function returns a table of sub-tables, each sub-table representing one joint.</p>
+<p>Example of a return table of an object with 2 joints:
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="p">{</span>
+        <span class="nb">type</span>              <span class="o">=</span> <span class="s2">&quot;Spring&quot;</span><span class="p">,</span>
+        <span class="n">joint_object_guid</span> <span class="o">=</span> <span class="s2">&quot;555555&quot;</span><span class="p">,</span>
+        <span class="n">collision</span>         <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="n">break_force</span>       <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="n">break_torgue</span>      <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="n">axis</span>              <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">anchor</span>            <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">connector_anchor</span>  <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">motor_force</span>       <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">motor_velocity</span>    <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">motor_free_spin</span>   <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="n">spring</span>            <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="n">damper</span>            <span class="o">=</span> <span class="mf">0.1</span>
+        <span class="n">max_distance</span>      <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">min_distance</span>      <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nb">type</span>              <span class="o">=</span> <span class="s2">&quot;Spring&quot;</span><span class="p">,</span>
+        <span class="n">joint_object_guid</span> <span class="o">=</span> <span class="s2">&quot;888888&quot;</span><span class="p">,</span>
+        <span class="n">collision</span>         <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="n">break_force</span>       <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="n">break_torgue</span>      <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="n">axis</span>              <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">anchor</span>            <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">connector_anchor</span>  <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">motor_force</span>       <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">motor_velocity</span>    <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">motor_free_spin</span>   <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="n">spring</span>            <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="n">damper</span>            <span class="o">=</span> <span class="mf">0.1</span>
+        <span class="n">max_distance</span>      <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">min_distance</span>      <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div></p>
+<p>Example of printing the first sub-table's information:
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">jointsInfo</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getJoints</span><span class="p">()</span>
+<span class="kr">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">jointsInfo</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="kr">do</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s2">&quot;:  &quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div></p>
 <hr />
 <h4 id="getobjects">getObjects()<a class="headerlink" href="#getobjects" title="Permanent link"> </a></h4>
 <p><a href="../types"><span class="ret tab"></span></a>&nbsp;Returns a Table of objects in the script zone/bag/deck. What it returns varies depending on the type of Object it is used on.</p>
@@ -5006,6 +5133,41 @@
 <hr />
 <hr />
 <h3 id="global-function-details">Global Function Details<a class="headerlink" href="#global-function-details" title="Permanent link"> </a></h3>
+<h4 id="adddecal">addDecal(...)<a class="headerlink" href="#adddecal" title="Permanent link"> </a></h4>
+<p><a href="../types"><span class="ret boo"></span></a>&nbsp;Add a Decal onto an object or the game world.</p>
+<div class="admonition tip">
+<p class="admonition-title">Relative Vectors</p>
+<p>When using this function, the vector parameters (position, rotation) are relative to what the decal is being placed on. For example, if you put a decal at <code class="codehilite">{0,0,0}</code> on Global, it will attach to the center of the game room. If you do the same to an object, it will place the decal on the origin point of the object.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">addDecal(parameters)</p>
+<ul>
+<li><a href="../types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to determine how the function will act.<ul>
+<li><a href="../types"><span class="tag str"></span></a> <strong>parameters.name</strong>: The name of the decal being placed.</li>
+<li><a href="../types"><span class="tag str"></span></a> <strong>parameters.url</strong>: The file path or URL for the image to be displayed.</li>
+<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: A Vector of the position to place Object.</li>
+<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: A Vector of the rotation of the Object.</li>
+<li><a href="../types"><span class="tag flo"></span></a> <strong>parameters.scale</strong>: How the image is scaled.<ul>
+<li><span class="critic comment">1 is normal scale, 0.5 would be half sized, 2 would be twice as large, etc.</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">name</span>     <span class="o">=</span> <span class="s2">&quot;API Icon&quot;</span><span class="p">,</span>
+        <span class="n">url</span>      <span class="o">=</span> <span class="s2">&quot;https://api.tabletopsimulator.com/img/TSIcon.png&quot;</span><span class="p">,</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+        <span class="n">scale</span>    <span class="o">=</span> <span class="mi">5</span>
+    <span class="p">}</span>
+    <span class="n">Global</span><span class="p">.</span><span class="n">addDecal</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
 <h4 id="call">call(...)<a class="headerlink" href="#call" title="Permanent link"> </a></h4>
 <p><a href="../types"><span class="ret var"></span></a>&nbsp;Used to call a Lua function on another entity.</p>
 <p><em>Var is only returned if the function called has a <code class="codehilite">return</code>. Otherwise return is <code class="codehilite">nil</code>. See example.</em></p>
@@ -5035,6 +5197,48 @@
     <span class="n">broadcastToAll</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">msg</span><span class="p">,</span> <span class="n">params</span><span class="p">.</span><span class="n">color</span><span class="p">)</span>
     <span class="kr">return</span> <span class="kc">true</span>
 <span class="kr">end</span>
+</pre></div></p>
+<hr />
+<h4 id="getdecals">getDecals()<a class="headerlink" href="#getdecals" title="Permanent link"> </a></h4>
+<p><a href="../types"><span class="ret tab"></span></a>&nbsp;Returns a table of sub-tables, each sub-table representing one decal.</p>
+<div class="admonition info">
+<p class="admonition-title">Sub-table elements</p>
+<ul>
+<li><a href="../types"><span class="tag str"></span></a> <strong>parameters.name</strong>: The name of the decal being placed.</li>
+<li><a href="../types"><span class="tag str"></span></a> <strong>parameters.url</strong>: The file path or URL for the image to be displayed.</li>
+<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: A Vector of the position to place Object.</li>
+<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: A Vector of the rotation of the Object.</li>
+<li><a href="../types"><span class="tag flo"></span></a> <strong>parameters.scale</strong>: How the image is scaled.<ul>
+<li><span class="critic comment">1 is normal scale, 0.5 would be half sized, 2 would be twice as large, etc.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Example returned table:
+<div class="codehilite"><pre><span></span><span class="c1">-- If this object had 2 of the same decal on it</span>
+<span class="n">decalTable</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getDecals</span><span class="p">()</span>
+
+<span class="cm">--[[ This is what the table would look like</span>
+<span class="cm">{</span>
+<span class="cm">    {</span>
+<span class="cm">        name     = &quot;API Icon&quot;,</span>
+<span class="cm">        url      = &quot;https://api.tabletopsimulator.com/img/TSIcon.png&quot;,</span>
+<span class="cm">        position = {0, 5, 0},</span>
+<span class="cm">        rotation = {90, 0, 0},</span>
+<span class="cm">        scale    = 5</span>
+<span class="cm">    },</span>
+<span class="cm">    {</span>
+<span class="cm">        name     = &quot;API Icon&quot;,</span>
+<span class="cm">        url      = &quot;https://api.tabletopsimulator.com/img/TSIcon.png&quot;,</span>
+<span class="cm">        position = {0, 5, 0},</span>
+<span class="cm">        rotation = {90, 0, 0},</span>
+<span class="cm">        scale    = 5</span>
+<span class="cm">    },</span>
+<span class="cm">}</span>
+<span class="cm">]]</span><span class="c1">--</span>
+
+<span class="c1">-- Accessing the name of of the second entry would look like this</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">decalTable</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">name</span><span class="p">)</span>
 </pre></div></p>
 <hr />
 <h4 id="getsnappoints">getSnapPoints()<a class="headerlink" href="#getsnappoints" title="Permanent link"> </a></h4>
@@ -5079,6 +5283,55 @@
     <span class="p">},</span>
 <span class="p">}</span>
 </pre></div></p>
+<hr />
+<h4 id="setdecals">setDecals(...)<a class="headerlink" href="#setdecals" title="Permanent link"> </a></h4>
+<p><a href="../types"><span class="ret boo"></span></a>&nbsp;Sets which decals are on an object. This removes other decals already present, and can remove all decals as well.</p>
+<div class="admonition tip">
+<p class="admonition-title">Removing decals</p>
+<p>Using this function with an empty table will remove all decals from Global or the object it is used on.
+<code class="codehilite">Global.setDecals({})</code></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">setDecals(parameters)</p>
+<ul>
+<li><a href="../types"><span class="tag tab"></span></a> <strong>parameters</strong>: The main table, which will contain all of the sub-tables.<ul>
+<li><a href="../types"><span class="tag tab"></span></a> <strong>subtable</strong>: The sub-table containing each individual decal's information. The sub-tables are unnamed.<ul>
+<li><a href="../types"><span class="tag str"></span></a> <strong>parameters.subtable.name</strong>: The name of the decal being placed.</li>
+<li><a href="../types"><span class="tag str"></span></a> <strong>parameters.subtable.url</strong>: The file path or URL for the image to be displayed.</li>
+<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.subtable.position</strong>: A Vector of the position to place Object.</li>
+<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.subtable.rotation</strong>: A Vector of the rotation of the Object.</li>
+<li><a href="../types"><span class="tag flo"></span></a> <strong>parameters.subtable.scale</strong>: How the image is scaled.<ul>
+<li><span class="critic comment">1 is normal scale, 0.5 would be half sized, 2 would be twice as large, etc.</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span>
+            <span class="n">name</span>     <span class="o">=</span> <span class="s2">&quot;API Icon&quot;</span><span class="p">,</span>
+            <span class="n">url</span>      <span class="o">=</span> <span class="s2">&quot;https://api.tabletopsimulator.com/img/TSIcon.png&quot;</span><span class="p">,</span>
+            <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+            <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+            <span class="n">scale</span>    <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="n">name</span>     <span class="o">=</span> <span class="s2">&quot;API Icon&quot;</span><span class="p">,</span>
+            <span class="n">url</span>      <span class="o">=</span> <span class="s2">&quot;https://api.tabletopsimulator.com/img/TSIcon.png&quot;</span><span class="p">,</span>
+            <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+            <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+            <span class="n">scale</span>    <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+
+    <span class="n">Global</span><span class="p">.</span><span class="n">setDecals</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
 <hr />
 <h4 id="setsnappoints">setSnapPoints(...)<a class="headerlink" href="#setsnappoints" title="Permanent link"> </a></h4>
 <p><a href="../types"><span class="ret boo"></span></a>&nbsp;Spawns snap points from a list of parameters.</p>
@@ -5175,8 +5428,6 @@
               
               
                 
-
-
               
             </article>
           </div>
@@ -5228,7 +5479,8 @@
       
         
   <div class="md-footer-social">
-    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
       <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>
     
@@ -5247,9 +5499,9 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.a59e2a89.js"></script>
+      <script src="../assets/javascripts/application.02434462.js"></script>
       
-      <script>app.initialize({version:"0.17.5",url:{base:".."}})</script>
+      <script>app.initialize({version:"0.17.1",url:{base:".."}})</script>
       
     
     
