@@ -1140,13 +1140,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#getcomponentvar" title="getComponentVar(...)" class="md-nav__link">
-    getComponentVar(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#getcustomobject" title="getCustomObject()" class="md-nav__link">
     getCustomObject()
   </a>
@@ -1214,13 +1207,6 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setcomponentvar" title="setComponentVar(...)" class="md-nav__link">
-    setComponentVar(...)
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#setcustomobject" title="setCustomObject(...)" class="md-nav__link">
@@ -2741,13 +2727,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#getcomponentvar" title="getComponentVar(...)" class="md-nav__link">
-    getComponentVar(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#getcustomobject" title="getCustomObject()" class="md-nav__link">
     getCustomObject()
   </a>
@@ -2815,13 +2794,6 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setcomponentvar" title="setComponentVar(...)" class="md-nav__link">
-    setComponentVar(...)
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#setcustomobject" title="setCustomObject(...)" class="md-nav__link">
@@ -3516,12 +3488,6 @@
 <td></td>
 </tr>
 <tr>
-<td>getComponentVar(<a href="../types"><span class="tag str"></span></a>&nbsp;componentName, <a href="../types"><span class="tag str"></span></a>&nbsp;varName)</td>
-<td>Get the current value of a component of an object.</td>
-<td><a href="../types"><span class="ret var"></span></a></td>
-<td><a href="#getcomponentvar"><span class="i"></span></a></td>
-</tr>
-<tr>
 <td>getCustomObject()</td>
 <td>Returns a Table with the Custom Object information of a Custom Object.</td>
 <td><a href="../types"><span class="ret tab"></span></a></td>
@@ -3630,12 +3596,6 @@
 <td>Sets the Color tint.</td>
 <td><a href="../types"><span class="ret boo"></span></a></td>
 <td></td>
-</tr>
-<tr>
-<td>setComponentVar(<a href="../types"><span class="tag str"></span></a>&nbsp;componentName, <a href="../types"><span class="tag str"></span></a>&nbsp;varName, <a href="../types"><span class="tag var"></span></a>&nbsp;value)</td>
-<td>Set the current value of a component of an object.</td>
-<td><a href="../types"><span class="ret boo"></span></a></td>
-<td><a href="#setcomponentvar"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>setCustomObject(<a href="../types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
@@ -4504,16 +4464,6 @@
 </div>
 <hr />
 <h3 id="get-function-details">Get Function Details<a class="headerlink" href="#get-function-details" title="Permanent link"> </a></h3>
-<h4 id="getcomponentvar">getComponentVar(...)<a class="headerlink" href="#getcomponentvar" title="Permanent link"> </a></h4>
-<p><a href="../types"><span class="ret var"></span></a>&nbsp;Get the current value of a component of an object. A component is a Unity term for certain aspects added to a game object, like "Light" or "BoxCollider". This works on standard game objects, but can be used to greater effect on AssetBundles.</p>
-<div class="admonition info">
-<p class="admonition-title">getComponentVar(componentName, varName)</p>
-<ul>
-<li><a href="../types"><span class="tag str"></span></a> <strong>componentName</strong>: The name of the component on the Object.</li>
-<li><a href="../types"><span class="tag str"></span></a> <strong>varName</strong>: The name of the variable which modifies the component.</li>
-</ul>
-</div>
-<hr />
 <h4 id="getcustomobject">getCustomObject()<a class="headerlink" href="#getcustomobject" title="Permanent link"> </a></h4>
 <p><a href="../types"><span class="ret tab"></span></a>&nbsp;Returns a Table with the Custom Object information of a Custom Object. See the <a href="../spawnableobjects">Spawnable Objects</a> page for the kind of information returned.</p>
 <div class="codehilite"><pre><span></span><span class="c1">-- Example returned Table for a custom token</span>
@@ -4750,17 +4700,6 @@
 </table>
 <hr />
 <h3 id="set-function-details">Set Function Details<a class="headerlink" href="#set-function-details" title="Permanent link"> </a></h3>
-<h4 id="setcomponentvar">setComponentVar(...)<a class="headerlink" href="#setcomponentvar" title="Permanent link"> </a></h4>
-<p><a href="../types"><span class="ret boo"></span></a>&nbsp;Set the current value of a component of an object. A component is a Unity term for certain aspects added to a game object, like "Light" or "BoxCollider". This works on standard game objects, but can be used to greater effect on AssetBundles.</p>
-<div class="admonition info">
-<p class="admonition-title">setComponentVar(componentName, varName, value)</p>
-<ul>
-<li><a href="../types"><span class="tag str"></span></a> <strong>componentName</strong>: The name of the component on the Object.</li>
-<li><a href="../types"><span class="tag str"></span></a> <strong>varName</strong>: The name of the variable which modifies the component.</li>
-<li><a href="../types"><span class="tag var"></span></a> <strong>value</strong>: The value to give the variable.</li>
-</ul>
-</div>
-<hr />
 <h4 id="setcustomobject">setCustomObject(...)<a class="headerlink" href="#setcustomobject" title="Permanent link"> </a></h4>
 <p><a href="../types"><span class="ret boo"></span></a>&nbsp;Sets a custom Object's properties. It can be used after <a href="../base#spawnobject">spawnObject</a> or on an already existing custom Object. If used on an already existing custom Object, you must use <a href="#reload">reload</a> on the object after setCustomObject for the changes to be displayed.</p>
 <div class="admonition info">
@@ -5245,9 +5184,9 @@
 <li><a href="../types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to determine how the function will act.<ul>
 <li><a href="../types"><span class="tag str"></span></a> <strong>parameters.name</strong>: The name of the decal being placed.</li>
 <li><a href="../types"><span class="tag str"></span></a> <strong>parameters.url</strong>: The file path or URL for the image to be displayed.</li>
-<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: A Vector of the position to place Object.</li>
-<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: A Vector of the rotation of the Object.</li>
-<li><a href="../types"><span class="tag flo"></span></a> <strong>parameters.scale</strong>: How the image is scaled.<ul>
+<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to place Object.</li>
+<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the Object.</li>
+<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: How the image is scaled.<ul>
 <li><span class="critic comment">1 is normal scale, 0.5 would be half sized, 2 would be twice as large, etc.</span></li>
 </ul>
 </li>
@@ -5261,7 +5200,7 @@
         <span class="n">url</span>      <span class="o">=</span> <span class="s2">&quot;https://api.tabletopsimulator.com/img/TSIcon.png&quot;</span><span class="p">,</span>
         <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
         <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
-        <span class="n">scale</span>    <span class="o">=</span> <span class="mi">5</span>
+        <span class="n">scale</span>    <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span>
     <span class="p">}</span>
     <span class="n">Global</span><span class="p">.</span><span class="n">addDecal</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
 <span class="kr">end</span>
@@ -5306,9 +5245,9 @@
 <ul>
 <li><a href="../types"><span class="tag str"></span></a> <strong>parameters.name</strong>: The name of the decal being placed.</li>
 <li><a href="../types"><span class="tag str"></span></a> <strong>parameters.url</strong>: The file path or URL for the image to be displayed.</li>
-<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: A Vector of the position to place Object.</li>
-<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: A Vector of the rotation of the Object.</li>
-<li><a href="../types"><span class="tag flo"></span></a> <strong>parameters.scale</strong>: How the image is scaled.<ul>
+<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to place Object.</li>
+<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the Object.</li>
+<li><a href="../types#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: How the image is scaled.<ul>
 <li><span class="critic comment">1 is normal scale, 0.5 would be half sized, 2 would be twice as large, etc.</span></li>
 </ul>
 </li>
@@ -5325,14 +5264,14 @@
 <span class="cm">        url      = &quot;https://api.tabletopsimulator.com/img/TSIcon.png&quot;,</span>
 <span class="cm">        position = {0, 5, 0},</span>
 <span class="cm">        rotation = {90, 0, 0},</span>
-<span class="cm">        scale    = 5</span>
+<span class="cm">        scale    = {5, 5, 5}</span>
 <span class="cm">    },</span>
 <span class="cm">    {</span>
 <span class="cm">        name     = &quot;API Icon&quot;,</span>
 <span class="cm">        url      = &quot;https://api.tabletopsimulator.com/img/TSIcon.png&quot;,</span>
 <span class="cm">        position = {0, 5, 0},</span>
 <span class="cm">        rotation = {90, 0, 0},</span>
-<span class="cm">        scale    = 5</span>
+<span class="cm">        scale    = {5, 5, 5}</span>
 <span class="cm">    },</span>
 <span class="cm">}</span>
 <span class="cm">]]</span><span class="c1">--</span>
