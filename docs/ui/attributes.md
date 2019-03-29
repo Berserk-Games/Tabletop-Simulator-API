@@ -1,6 +1,6 @@
 boundaryAs mentioned in the [Introduction](xml/introUI), attributes are modifiers that can be applied to elements. They can be applied to individual elements or to whole groups of them.
 
-!!!important 
+!!!important
     They consists of two parts, a **tag** and a **value**. ***The value is always in quotation marks.***
 
 ##Attribute types
@@ -35,7 +35,7 @@ id | Used by Lua scripting to identify an element within the XML. | string | (no
 visibility | What colors are able to see the element. See below for additional details. | string | (visible to all)
 
 ####Visibility Targets
-The visibility attribute allows for only certain people or groups to see an element. Hiding an element will hide its children as well. 
+The visibility attribute allows for only certain people or groups to see an element. Hiding an element will hide its children as well.
 
 #####Visible To All Players
 Not using the visibility attribute (or setting it to an empty string) does not limit the visibility of the element.
@@ -71,7 +71,7 @@ verticalOverflow | | <ul><li>Truncate</li><li>Overflow</li></ul> | `Truncate`
 
 
 ###Image Attributes
-Applies to elements with an image component. The string that `image`s all take is the **NAME THE IMAGE WAS GIVEN WHEN YOU PUT IT IN THE IN-GAME ASSET MANAGER**. 
+Applies to elements with an image component. The string that `image`s all take is the **NAME THE IMAGE WAS GIVEN WHEN YOU PUT IT IN THE IN-GAME ASSET MANAGER**.
 
 Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
@@ -97,12 +97,12 @@ These will only apply to elements within a layout group.
 Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 ignoreLayout | Should this element ignore its parent layout group? | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
-minWidth | 	Minimum width for this element. | float | 
-minHeight | 	Minimum height for this element. | float | 
-preferredWidth | Preferred width for this element. | float | 
-preferredHeight | Preferred height for this element. | float | 
-flexibleWidth | Should the width of this element be flexible? | <ul><li>1</li><li>0</li></ul> | 
-flexibleHeight | Should the height of this element be flexible? | <ul><li>1</li><li>0</li></ul> | 
+minWidth | 	Minimum width for this element. | float |
+minHeight | 	Minimum height for this element. | float |
+preferredWidth | Preferred width for this element. | float |
+preferredHeight | Preferred height for this element. | float |
+flexibleWidth | Should the width of this element be flexible? | <ul><li>1</li><li>0</li></ul> |
+flexibleHeight | Should the height of this element be flexible? | <ul><li>1</li><li>0</li></ul> |
 
 
 ###Position/Size Attributes (Basic)
@@ -112,6 +112,7 @@ rectAlignment | Defines this elements position within its parent. Only applies t
 width | Defines the width of this element. | float (fixed width) or a Percentage value | `100%`
 height | Defines the height of this element. | float (fixed width) or a Percentage value | `100%`
 offsetXY | Defines an offset to the position of this element, e.g. a value of `-32 0` will cause this element to be 32 pixels to the left of where it would otherwise be. | float (x) float (y) | `0 0`
+contentSizeFitter | Decides how this element will expand to fit content size | Vertical, Horizontal, Both, None | `None`
 
 
 ###Position/Size Attributes (Adv)
@@ -119,15 +120,15 @@ These provide deeper access to Unity's [RectTransform](https://docs.unity3d.com/
 
 Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
-anchorMin |  | float(x) float(y) | 
-anchorMax |  | float(x) float(y) | 
-sizeDelta |  | float(x) float(y) | 
-pivot |  | float(x) float(y) | 
-position |  | float(x) float(y) float(z) | 
+anchorMin |  | float(x) float(y) |
+anchorMax |  | float(x) float(y) |
+sizeDelta |  | float(x) float(y) |
+pivot |  | float(x) float(y) |
+position |  | float(x) float(y) float(z) |
 rotation |  | float(x) float(y) float(z) | 
-scale |  | float(x) float(y) | 
-offsetMin |  | float(left) float(bottom) | 
-offsetMax |  | float(left) float(bottom) | 
+scale |  | float(x) float(y) |
+offsetMin |  | float(left) float(bottom) |
+offsetMax |  | float(left) float(bottom) |
 
 
 ###Dragging Attributes
@@ -158,26 +159,26 @@ Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 tooltip | Tooltip text. | string | *(none)*
 tooltipBorderColor | Color of the tooltips border. | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
 tooltipBackgroundColor | Color of the tooltips background | [<span class="tag xmlco"></span>](attributes#attribute-types) | `rgba(0,0,0,0.62)`
-tooltipTextColor | Color of the text within this tooltip | [<span class="tag xmlco"></span>](attributes#attribute-types) | 
+tooltipTextColor | Color of the text within this tooltip | [<span class="tag xmlco"></span>](attributes#attribute-types) |
 tooltipPosition | Position of this tooltip in relation to the element. | <ul><li>Above</li><li>Below</li><li>Left</li><li>Right</li></ul> | `Right`
-tooltipBorderImage | This attribute allows you to override the default image used for the tooltips border. | string | 
-tooltipBackgroundImage | This attribute allows you to override the default image used for the tooltips background. | string | 
-tooltipOffset | This attribute allows you to modify the distance this tooltip will appear from the element. | float | 
+tooltipBorderImage | This attribute allows you to override the default image used for the tooltips border. | string |
+tooltipBackgroundImage | This attribute allows you to override the default image used for the tooltips background. | string |
+tooltipOffset | This attribute allows you to modify the distance this tooltip will appear from the element. | float |
 
 ###Event Attributes
 Allows Lua scripting events to be triggered by any element, through a variety of interactions. See the [Input Elements](inputelements) page for how to interact with Lua scripting.
 
 Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
-onClick | Clicking on the element. | string | 
-onMouseEnter | Pointer entering the boundary of the element. | string | 
-onMouseExit | Pointer leaving the boundary of the element. | string | 
-onDrag | Element drag event. | string | 
-onBeginDrag | Element beginning to be dragged. | string | 
-onEndDrag | Element being release from its drag. | string | 
-onMouseDown | Mouse click action. | string | 
-onMouseUp | Mouse click finishing action. | string | 
-onSubmit |  | string | 
+onClick | Clicking on the element. | string |
+onMouseEnter | Pointer entering the boundary of the element. | string |
+onMouseExit | Pointer leaving the boundary of the element. | string |
+onDrag | Element drag event. | string |
+onBeginDrag | Element beginning to be dragged. | string |
+onEndDrag | Element being release from its drag. | string |
+onMouseDown | Mouse click action. | string |
+onMouseUp | Mouse click finishing action. | string |
+onSubmit |  | string |
 
 
 
@@ -209,20 +210,20 @@ This is how you would assign attributes to a single element.
 ####Many Attributes
 
 ```xml
-<Button 
-    height="100" 
+<Button
+    height="100"
     width="200"
     color="blue"
     onClick="test"
     allowDragging="true"
     rectAlignment="MiddleRight"
-    tooltip="Test Tooltip" 
+    tooltip="Test Tooltip"
     tooltipPosition="Above"
-    fontSize="32" 
+    fontSize="32"
     textColor="#ff0000"
 >Hello
 </Button>
 ```
 
 
---- 
+---
