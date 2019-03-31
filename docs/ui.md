@@ -286,7 +286,7 @@ end
     * [<span class="tag str"></span>](types) **value**: The value to put between the element tags.
 
 ``` Lua
-UI.setAttribute("testElement", "New Text To Display")
+UI.setValue("testElement", "New Text To Display")
 ```
 
 
