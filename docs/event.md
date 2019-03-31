@@ -451,7 +451,7 @@ end
 
 ###onSave()
 
-Called whenever your game is saved, either manually or by auto-save. It is used to allow information to persist through saving/loading. It allows you to place information into a table that is written into the save file. It works on Global information and can also be used to save information onto an Object.
+This is called whenever the game saves, either manually or by auto-save. This will work in both a Global script, and an Object script. It is used to allow information to persist through saving/loading, for example, to let your script remember its data previously after hitting the Undo or Redo button. By placing script information into a Lua table, then encoding that data into [JSON](event#json), you are able to save information about the script's current state onto the script's parent, in the form of a string. You can also return a string value in this function to stash it.
 
 !!!important
 	When using `onSave()`, information is saved into the save file you are using. Using *Save & Apply* does NOT cause it to record data, only overwriting your save will update what information `onSave()` is trying to record.
@@ -464,11 +464,11 @@ data_table = {answer=42}
 
 function onSave()
 	saved_data = JSON.encode(data_table)
-	self.script_state = saved_data
+	return saved_data
 end
 ```
 
-Check the [`onLoad()`](#onload) section for how to load the information you record into your save file.
+Check the [`onLoad()`](#onload) section for how to load that stored JSON information into your script.
 
 ---
 
