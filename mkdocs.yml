@@ -68,6 +68,7 @@ pages:
     - Object: object.md
     - AssetBundle: assetbundle.md
     - Clock: clock.md
+    - Component: component.md
     - Counter: counter.md
     - JSON: json.md
     - Lighting: lighting.md

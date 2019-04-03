@@ -1,8 +1,13 @@
 This is an ongoing list of scripting changes that have been implemented to scripting and Custom UI side of Tabletop Simulator.
 
 
+######4/3/19 - v11.2
+!!!info ""
+    * Lua:
+        * Added access to Components and Children of Unity objects. All details on this process are outlined on the new Component page.
 
-######11/06/18 - v11.1
+
+######2/05/19 - v11.1
 
 !!!info ""
     * Lua:
