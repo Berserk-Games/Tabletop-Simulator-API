@@ -126,7 +126,6 @@ These functions obtain information from an object.
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 <a class="anchor" id="getcolortint"></a>getColorTint() | Color tint. | [<span class="ret col"></span>](types#color) |
-getComponentVar([<span class="tag str"></span>](types)&nbsp;componentName, [<span class="tag str"></span>](types)&nbsp;varName) | Get the current value of a component of an object. | [<span class="ret var"></span>](types) | [<span class="i"></span>](#getcomponentvar)
 getCustomObject() | Returns a Table with the Custom Object information of a Custom Object. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getcustomobject)
 <a class="anchor" id="getdescription"></a>getDescription() | Description, also shows as part of Object's tooltip. | [<span class="ret str"></span>](types)
 getFogOfWarReveal() | Settings impacting [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone) being revealed. | [<span class="ret tab"></span>](types) | [<span class="i"></span>](#getfogofwarreveal)
@@ -153,7 +152,6 @@ These functions apply action to an object. They take some property in order to w
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 <a class="anchor" id="setcolortint"></a>setColorTint([<span class="tag col"></span>](types#color)&nbsp;Color) | Sets the Color tint. | [<span class="ret boo"></span>](types) |
-setComponentVar([<span class="tag str"></span>](types)&nbsp;componentName, [<span class="tag str"></span>](types)&nbsp;varName, [<span class="tag var"></span>](types)&nbsp;value) | Set the current value of a component of an object. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setcomponentvar)
 setCustomObject([<span class="tag tab"></span>](types)&nbsp;parameters) | Sets a custom Object's properties. | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setcustomobject)
 <a class="anchor" id="setdescription"></a>setDescription([<span class="tag str"></span>](types)&nbsp;description) | Sets a description for an Object. Shows in tooltip after delay. | [<span class="ret boo"></span>](types)
 setFogOfWarReveal([<span class="tag tab"></span>](types)&nbsp;fog_settings) | Establish the settings and enable/disable an Object's revealing of [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone). | [<span class="ret boo"></span>](types) | [<span class="i"></span>](#setfogofwarreveal)
@@ -802,18 +800,11 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 
 ###Get Function Details
 
-####getComponentVar(...)
-[<span class="ret var"></span>](types)&nbsp;Get the current value of a component of an object. A component is a Unity term for certain aspects added to a game object, like "Light" or "BoxCollider". This works on standard game objects, but can be used to greater effect on AssetBundles.
-
-!!!info "getComponentVar(componentName, varName)"
-	* [<span class="tag str"></span>](types) **componentName**: The name of the component on the Object.
-	* [<span class="tag str"></span>](types) **varName**: The name of the variable which modifies the component.
 
 
 
 
 
----
 
 ####getCustomObject()
 
@@ -1085,19 +1076,7 @@ Tablet | Returns String of the current URL.
 
 ###Set Function Details
 
-####setComponentVar(...)
-[<span class="ret boo"></span>](types)&nbsp;Set the current value of a component of an object. A component is a Unity term for certain aspects added to a game object, like "Light" or "BoxCollider". This works on standard game objects, but can be used to greater effect on AssetBundles.
 
-!!!info "setComponentVar(componentName, varName, value)"
-	* [<span class="tag str"></span>](types) **componentName**: The name of the component on the Object.
-	* [<span class="tag str"></span>](types) **varName**: The name of the variable which modifies the component.
-	* [<span class="tag var"></span>](types) **value**: The value to give the variable.
-
-
-
-
-
----
 
 ####setCustomObject(...)
 
@@ -1606,9 +1585,9 @@ end
 	* [<span class="tag tab"></span>](types) **parameters**: A Table of parameters used to determine how the function will act.
 		* [<span class="tag str"></span>](types) **parameters.name**: The name of the decal being placed.
 		* [<span class="tag str"></span>](types) **parameters.url**: The file path or URL for the image to be displayed.
-		* [<span class="tag vec"></span>](types#vector) **parameters.position**: A Vector of the position to place Object.
-		* [<span class="tag vec"></span>](types#vector) **parameters.rotation**: A Vector of the rotation of the Object.
-		* [<span class="tag flo"></span>](types) **parameters.scale**: How the image is scaled.
+		* [<span class="tag vec"></span>](types#vector) **parameters.position**: Position to place Object.
+		* [<span class="tag vec"></span>](types#vector) **parameters.rotation**: Rotation of the Object.
+		* [<span class="tag vec"></span>](types#vector) **parameters.scale**: How the image is scaled.
 			* {>>1 is normal scale, 0.5 would be half sized, 2 would be twice as large, etc.<<}
 
 ``` Lua
@@ -1618,7 +1597,7 @@ function onLoad()
 		url      = "https://api.tabletopsimulator.com/img/TSIcon.png",
 		position = {0, 5, 0},
 		rotation = {90, 0, 0},
-		scale    = 5
+		scale    = {1, 1, 1},
 	}
 	Global.addDecal(params)
 end
@@ -1668,9 +1647,9 @@ end
 
 	* [<span class="tag str"></span>](types) **parameters.name**: The name of the decal being placed.
 	* [<span class="tag str"></span>](types) **parameters.url**: The file path or URL for the image to be displayed.
-	* [<span class="tag vec"></span>](types#vector) **parameters.position**: A Vector of the position to place Object.
-	* [<span class="tag vec"></span>](types#vector) **parameters.rotation**: A Vector of the rotation of the Object.
-	* [<span class="tag flo"></span>](types) **parameters.scale**: How the image is scaled.
+	* [<span class="tag vec"></span>](types#vector) **parameters.position**: Position to place Object.
+	* [<span class="tag vec"></span>](types#vector) **parameters.rotation**: Rotation of the Object.
+	* [<span class="tag vec"></span>](types#vector) **parameters.scale**: How the image is scaled.
 		* {>>1 is normal scale, 0.5 would be half sized, 2 would be twice as large, etc.<<}
 
 Example returned table:
@@ -1685,14 +1664,14 @@ decalTable = self.getDecals()
 		url      = "https://api.tabletopsimulator.com/img/TSIcon.png",
 		position = {0, 5, 0},
 		rotation = {90, 0, 0},
-		scale    = 5
+		scale    = {5, 5, 5}
 	},
 	{
 		name     = "API Icon",
 		url      = "https://api.tabletopsimulator.com/img/TSIcon.png",
 		position = {0, 5, 0},
 		rotation = {90, 0, 0},
-		scale    = 5
+		scale    = {5, 5, 5}
 	},
 }
 ]]--
