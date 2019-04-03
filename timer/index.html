@@ -36,7 +36,7 @@
     
     
       
-        <title>Base - Tabletop Simulator API</title>
+        <title>Timer - Tabletop Simulator API</title>
       
     
     
@@ -134,7 +134,7 @@
                 Tabletop Simulator API
               </span>
               <span class="md-header-nav__topic">
-                Base
+                Timer
               </span>
             
           
@@ -589,17 +589,15 @@
 <!-- Determine class according to level -->
 
 
-  
-
 
 <!-- Main navigation item with nested items -->
 
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
 
     <!-- Active checkbox expands items contained within nested section -->
     
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2"
-          type="checkbox" id="nav-2" checked />
+          type="checkbox" id="nav-2" />
     
 
     <!-- Expand active pages -->
@@ -757,231 +755,15 @@
 <!-- Determine class according to level -->
 
 
-  
-
 
 <!-- Main navigation item with nested items -->
 
-  <li class="md-nav__item md-nav__item--active">
-    
-
-    <!-- Active checkbox expands items contained within nested section -->
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc"
-        type="checkbox" id="__toc" />
-
-    <!-- Hack: see partials/toc.html for more information -->
-    
-
-    <!-- Render table of contents, if not empty -->
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Base
-      </label>
-    
-    <a href="./" title="Base"
-        class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../base/" title="Base"
+        class="md-nav__link">
       Base
     </a>
-
-    <!-- Show table of contents -->
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#function-summary" title="Function Summary" class="md-nav__link">
-    Function Summary
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#global-functions" title="Global Functions" class="md-nav__link">
-    Global Functions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#message-functions" title="Message Functions" class="md-nav__link">
-    Message Functions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#function-details" title="Function Details" class="md-nav__link">
-    Function Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#global-function-details" title="Global Function details" class="md-nav__link">
-    Global Function details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#copy" title="copy(...)" class="md-nav__link">
-    copy(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#destroyobject" title="destroyObject(...)" class="md-nav__link">
-    destroyObject(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getobjectfromguid" title="getObjectFromGUID(...)" class="md-nav__link">
-    getObjectFromGUID(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#group" title="group(...)" class="md-nav__link">
-    group(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#paste" title="paste(...)" class="md-nav__link">
-    paste(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spawnobject" title="spawnObject(...)" class="md-nav__link">
-    spawnObject(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spawnobjectjson" title="spawnObjectJSON(...)" class="md-nav__link">
-    spawnObjectJSON(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#startluacoroutine" title="startLuaCoroutine(...)" class="md-nav__link">
-    startLuaCoroutine(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stringcolortorgb" title="stringColorToRGB(...)" class="md-nav__link">
-    stringColorToRGB(...)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#message-function-details" title="Message Function Details" class="md-nav__link">
-    Message Function Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#broadcasttoall" title="broadcastToAll(...)" class="md-nav__link">
-    broadcastToAll(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#broadcasttocolor" title="broadcastToColor(...)" class="md-nav__link">
-    broadcastToColor(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#log" title="log(...)" class="md-nav__link">
-    log(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logstyle" title="logStyle(...)" class="md-nav__link">
-    logStyle(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#print" title="print(...)" class="md-nav__link">
-    print(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#printtoall" title="printToAll(...)" class="md-nav__link">
-    printToAll(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#printtocolor" title="printToColor(...)" class="md-nav__link">
-    printToColor(...)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
-
-<!-- Main navigation item -->
 
         
           
@@ -1992,26 +1774,6 @@
     Function Summary
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#global-functions" title="Global Functions" class="md-nav__link">
-    Global Functions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#message-functions" title="Message Functions" class="md-nav__link">
-    Message Functions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -2023,140 +1785,16 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#global-function-details" title="Global Function details" class="md-nav__link">
-    Global Function details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#copy" title="copy(...)" class="md-nav__link">
-    copy(...)
+  <a href="#create" title="create(...)" class="md-nav__link">
+    create(...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#destroyobject" title="destroyObject(...)" class="md-nav__link">
-    destroyObject(...)
+  <a href="#destroy" title="destroy(...)" class="md-nav__link">
+    destroy(...)
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getobjectfromguid" title="getObjectFromGUID(...)" class="md-nav__link">
-    getObjectFromGUID(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#group" title="group(...)" class="md-nav__link">
-    group(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#paste" title="paste(...)" class="md-nav__link">
-    paste(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spawnobject" title="spawnObject(...)" class="md-nav__link">
-    spawnObject(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spawnobjectjson" title="spawnObjectJSON(...)" class="md-nav__link">
-    spawnObjectJSON(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#startluacoroutine" title="startLuaCoroutine(...)" class="md-nav__link">
-    startLuaCoroutine(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stringcolortorgb" title="stringColorToRGB(...)" class="md-nav__link">
-    stringColorToRGB(...)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#message-function-details" title="Message Function Details" class="md-nav__link">
-    Message Function Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#broadcasttoall" title="broadcastToAll(...)" class="md-nav__link">
-    broadcastToAll(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#broadcasttocolor" title="broadcastToColor(...)" class="md-nav__link">
-    broadcastToColor(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#log" title="log(...)" class="md-nav__link">
-    log(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logstyle" title="logStyle(...)" class="md-nav__link">
-    logStyle(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#print" title="print(...)" class="md-nav__link">
-    print(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#printtoall" title="printToAll(...)" class="md-nav__link">
-    printToAll(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#printtocolor" title="printToColor(...)" class="md-nav__link">
-    printToColor(...)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2181,538 +1819,105 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/base.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/timer.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Base</h1>
+                  <h1>Timer</h1>
                 
-                <p>These are a loose collection of functions which can be used to perform a variety of actions within Tabletop Simulator.</p>
-<p>These functions can utilize in-game Objects, but none of them can be enacted on in-game Objects. They all deal with the game space.</p>
+                <p>Timer is a static global class which provides methods for executing other functions after a delay and/or repeatedly. Each Timer is tracked by a unique "identifier" string. </p>
+<blockquote>
+<p>Example Usage: <code class="codehilite">Timer.destroy(...)</code></p>
+</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Important Tip</p>
+<p>The "identifiers" are shared between Global and all Object scripts, so each Timer must have a unique name.</p>
+</div>
 <h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link"> </a></h2>
-<h3 id="global-functions">Global Functions<a class="headerlink" href="#global-functions" title="Permanent link"> </a></h3>
-<p>General functions which work within any script.</p>
 <table>
 <thead>
 <tr>
 <th>Function Name</th>
 <th>Description</th>
 <th>Return</th>
-<th>&nbsp;</th>
+<th align="right">&nbsp;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>copy(<a href="types"><span class="tag tab"></span></a>&nbsp;object_list)</td>
-<td>Copy a list of Objects to the clipboard. Works with <a href="#paste">paste(...)</a>.</td>
+<td>create(<a href="types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>Creates a Timer. It will auto-delete once its repetitions have been completed.</td>
 <td><a href="types"><span class="ret boo"></span></a></td>
-<td><a href="#copy"><span class="i"></span></a></td>
+<td align="right"><a href="#create"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>destroyObject(<a href="types"><span class="tag obj"></span></a>&nbsp;obj)</td>
-<td>Destory an Object.</td>
+<td>destroy(<a href="types"><span class="tag str"></span></a>&nbsp;identifier)</td>
+<td>Destroys a Timer.</td>
 <td><a href="types"><span class="ret boo"></span></a></td>
-<td><a href="#destroyobject"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td><a class="anchor" id="fliptable"></a>flipTable()</td>
-<td>Flip the table.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
-<td></td>
-</tr>
-<tr>
-<td><a class="anchor" id="getallobjects"></a>getAllObjects()</td>
-<td>Returns Table of all spawned <a href="object">Objects</a> in the game.</td>
-<td><a href="types"><span class="ret tab"></span></a></td>
-<td></td>
-</tr>
-<tr>
-<td>getObjectFromGUID(<a href="types"><span class="tag str"></span></a>&nbsp;guid)</td>
-<td>Returns Object by its GUID. Will return <code class="codehilite">nil</code> if this GUID doesn't currently exist.</td>
-<td><a href="types"><span class="ret obj"></span></a></td>
-<td><a href="#getobjectfromguid"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td><a class="anchor" id="getseatedplayers"></a>getSeatedPlayers()</td>
-<td>Returns Table of the <a href="player-color">Player Colors</a> strings of seated players.</td>
-<td><a href="types"><span class="ret tab"></span></a></td>
-<td></td>
-</tr>
-<tr>
-<td>group(<a href="types"><span class="tag tab"></span></a>&nbsp;objects)</td>
-<td>Groups objects together, like how the <code class="codehilite">G</code> key does for players.</td>
-<td><a href="types"><span class="ret obj"></span></a></td>
-<td><a href="#group"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td>paste(<a href="types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
-<td>Pastes Objects in-game that were copied to the in-game clipboard. Works with <a href="#copy">copy(...)</a>.</td>
-<td><a href="types"><span class="ret tab"></span></a></td>
-<td><a href="#paste"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td><a class="anchor" id="setlookingforplayers"></a>setLookingForPlayers(<a href="types"><span class="tag boo"></span></a>&nbsp;lfp)</td>
-<td>Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
-<td></td>
-</tr>
-<tr>
-<td>spawnObject(<a href="types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
-<td>Spawns an Object. View the <a href="spawnableobjects">Spawnable Object</a> page for Objects that can be spawned.</td>
-<td><a href="types"><span class="ret obj"></span></a></td>
-<td><a href="#spawnobject"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td>spawnObjectJSON(<a href="types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
-<td>Spawns an Object using a JSON string. Works with <a href="object#getjson">getJSON()</a>.</td>
-<td><a href="types"><span class="ret obj"></span></a></td>
-<td><a href="#spawnobjectjson"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td>startLuaCoroutine(<a href="types"><span class="tag obj"></span></a>&nbsp;function_owner, <a href="types"><span class="tag str"></span></a>&nbsp;function_name)</td>
-<td>Start a coroutine.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
-<td><a href="#startluacoroutine"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td>stringColorToRGB(<a href="types"><span class="tag str"></span></a>&nbsp;player_color)</td>
-<td>Converts a <a href="player-color">Player Color</a> string into a Color Table for tinting.</td>
-<td><a href="types#color"><span class="ret col"></span></a></td>
-<td><a href="#stringcolortorgb"><span class="i"></span></a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="message-functions">Message Functions<a class="headerlink" href="#message-functions" title="Permanent link"> </a></h3>
-<p>Functions which handle sending and displaying data.</p>
-<table>
-<thead>
-<tr>
-<th>Function Name</th>
-<th>Description</th>
-<th>Return</th>
-<th>&nbsp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>broadcastToAll(<a href="types"><span class="tag str"></span></a>&nbsp;message, <a href="types#color"><span class="tag col"></span></a>&nbsp;message_tint)</td>
-<td>Print an on-screen message to all Players, as well as their in-game chat.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
-<td><a href="#broadcasttoall"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td>broadcastToColor(<a href="types"><span class="tag str"></span></a>&nbsp;message, <a href="types"><span class="tag str"></span></a>&nbsp;player_color, <a href="types#color"><span class="tag col"></span></a>&nbsp;message_tint)</td>
-<td>Print an on-screen message to a specified Player, as well as their in-game chat.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
-<td><a href="#broadcasttocolor"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td>log(<a href="types"><span class="tag var"></span></a>&nbsp;element, <a href="types"><span class="tag str"></span></a>&nbsp;label, <a href="types"><span class="tag str"></span></a>&nbsp;tag)</td>
-<td>Print information to the log tab. (Shortcut: ~)</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
-<td><a href="#log"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td>logStyle(<a href="types"><span class="tag str"></span></a>&nbsp;tag, <a href="types#color"><span class="tag col"></span></a>&nbsp;tint, <a href="types"><span class="tag str"></span></a>&nbsp;prefix, <a href="types"><span class="tag str"></span></a>&nbsp;postfix)</td>
-<td>Set style options for the specified tag type for the log.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
-<td><a href="#logstyle"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td>print(<a href="types"><span class="tag str"></span></a>&nbsp;message)</td>
-<td>Prints a string into chat that only the host is able to see. Used for debugging scripts.</td>
-<td><a href="types"><span class="ret nil"></span></a></td>
-<td><a href="#print"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td>printToAll(<a href="types"><span class="tag str"></span></a>&nbsp;message, <a href="types#color"><span class="tag col"></span></a>&nbsp;message_tint)</td>
-<td>Print a message into the chat of all connected players.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
-<td><a href="#printtoall"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td>printToColor(<a href="types"><span class="tag str"></span></a>&nbsp;message, <a href="types"><span class="tag str"></span></a>&nbsp;player_color, <a href="types#color"><span class="tag col"></span></a>&nbsp;message_tint)</td>
-<td>Print a message to a specific <a href="player-color">Player Color</a>.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
-<td><a href="#printtocolor"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td><a class="anchor" id="sendexternalmessage"></a>sendExternalMessage(<a href="types"><span class="tag tab"></span></a>&nbsp;data)</td>
-<td>Send a table to your external script editor, most likely Atom. This is for custom editor functionality.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
-<td></td>
+<td align="right"><a href="#destroy"><span class="i"></span></a></td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link"> </a></h2>
-<h3 id="global-function-details">Global Function details<a class="headerlink" href="#global-function-details" title="Permanent link"> </a></h3>
-<h4 id="copy">copy(...)<a class="headerlink" href="#copy" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret boo"></span></a>&nbsp;Copying a list of Objects the clipboard. Works with <a href="#paste">paste(...)</a>.</p>
+<h3 id="create">create(...)<a class="headerlink" href="#create" title="Permanent link"> </a></h3>
+<p><a href="types"><span class="ret boo"></span></a>&nbsp;Creates a Timer. It will auto-delete once its repetitions have been completed.</p>
 <div class="admonition info">
-<p class="admonition-title">copy(object_list)</p>
+<p class="admonition-title">create(parameters)</p>
 <ul>
-<li><a href="types"><span class="tag tab"></span></a> <strong>object_list</strong>: A Table of in-game objects to be copied.<ul>
-<li><span class="critic comment">This is similar to highlighting the objects in-game and copying them.</span></li>
+<li><a href="types"><span class="tag_tab"></span></a> <strong>parameters</strong>: A Table containing the information used to start the Timer.<ul>
+<li><a href="types"><span class="tag str"></span></a> <strong>identifier</strong>: Timer's name, used to destroy it. Must be unique within all other scripts.</li>
+<li><a href="types"><span class="tag str"></span></a> <strong>function_name</strong>: Name of function to trigger when time is reached.</li>
+<li><a href="types"><span class="tag obj"></span></a> <strong>function_owner</strong>: Where the function from function_name exists.<ul>
+<li><span class="critic comment">Optional, defaults to the calling Object.</span></li>
+</ul>
+</li>
+<li><a href="types"><span class="tag tab"></span></a> <strong>parameters</strong>: Table containing any data that will be passed to the function.<ul>
+<li><span class="critic comment">Optional, will not be used by default.</span></li>
+</ul>
+</li>
+<li><a href="types"><span class="tag flo"></span></a> <strong>delay</strong>: Length of time before the function is triggered.<ul>
+<li><span class="critic comment">Optional, defaults to 0.</span></li>
+<li><span class="critic comment">0 results in a delay of 1 frame before the triggered function activates.</span></li>
+</ul>
+</li>
+<li><a href="types"><span class="tag int"></span></a> <strong>repetitions</strong>: Number of times the countdown repeats.<ul>
+<li><span class="critic comment">Optional, defaults to 1.</span></li>
+<li><span class="critic comment">Use 0 for infinite repetitions.</span></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="n">object_list</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;######&quot;</span><span class="p">),</span>
-    <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;######&quot;</span><span class="p">),</span>
-<span class="p">}</span>
-<span class="n">copy</span><span class="p">(</span><span class="n">object_list</span><span class="p">)</span>
-</pre></div>
-
-<hr />
-<h4 id="destroyobject">destroyObject(...)<a class="headerlink" href="#destroyobject" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret boo"></span></a>&nbsp;Destroy an Object.</p>
-<div class="admonition info">
-<p class="admonition-title">destroyObject(obj)</p>
-<ul>
-<li><a href="types"><span class="tag obj"></span></a> <strong>obj</strong>: The Object you wish to delete from the instance.</li>
-</ul>
-</div>
-<hr />
-<h4 id="getobjectfromguid">getObjectFromGUID(...)<a class="headerlink" href="#getobjectfromguid" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret obj"></span></a>&nbsp;Returns Object by its GUID. Will return <code class="codehilite">nil</code> if this GUID doesn't currently exist.</p>
-<div class="admonition info">
-<p class="admonition-title">getObjectFromGUID(guid)</p>
-<ul>
-<li><a href="types"><span class="tag str"></span></a> <strong>guid</strong>: GUID of the Object to get a reference of.<ul>
-<li><span class="critic comment">GUID can be obtained by right clicking an object and going to Scripting.</span></li>
-<li><span class="critic comment">In a script, it can be obtained from any Object by using .getGUID().</span></li>
-</ul>
 </li>
-</ul>
-</div>
-<hr />
-<h4 id="group">group(...)<a class="headerlink" href="#group" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret obj"></span></a>&nbsp;Groups objects together, like how the <code class="codehilite">G</code> key does for players. It returns an object reference to the deck/stack formed.</p>
-<p>Not all objects CAN be grouped. If the G key won't work on them, neither will this function.</p>
-<div class="admonition info">
-<p class="admonition-title">group(objects)</p>
-<ul>
-<li><a href="types"><span class="tag tab"></span></a> <strong>objects</strong>: A list of objects to be grouped together.</li>
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="kd">local</span> <span class="n">objList</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;b80a72&quot;</span><span class="p">),</span>
-        <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;a333b4&quot;</span><span class="p">),</span>
-        <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;c9f9d3&quot;</span><span class="p">),</span>
-    <span class="p">}</span>
-    <span class="n">group</span><span class="p">(</span><span class="n">objList</span><span class="p">)</span>
+    <span class="n">dataTable</span> <span class="o">=</span> <span class="p">{</span><span class="n">welcome</span><span class="o">=</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">}</span>
+    <span class="n">Timer</span><span class="p">.</span><span class="n">create</span><span class="p">({</span>
+        <span class="n">identifier</span>     <span class="o">=</span> <span class="s2">&quot;A Unique Name&quot;</span><span class="p">,</span>
+        <span class="n">function_name</span>  <span class="o">=</span> <span class="s2">&quot;fiveAfterOne&quot;</span><span class="p">,</span>
+        <span class="n">parameters</span>     <span class="o">=</span> <span class="n">dataTable</span><span class="p">,</span>
+        <span class="n">delay</span>          <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">repetitions</span>    <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nf">fiveAfterOne</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">welcome</span><span class="p">)</span>
 <span class="kr">end</span>
 </pre></div>
 
-<hr />
-<h4 id="paste">paste(...)<a class="headerlink" href="#paste" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret obj"></span></a>&nbsp;Pastes Objects in-game that were copied to the in-game clipboard. Works with <a href="#copy">copy(...)</a>.</p>
-<div class="admonition info">
-<p class="admonition-title">paste(parameters)</p>
-<ul>
-<li><a href="types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table containing instructions of where to spawn the Objects.<ul>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position of the first object to paste.<ul>
-<li><span class="critic comment">Optional, defaults to {0, 3, 0}.</span></li>
-</ul>
-</li>
-<li><a href="types"><span class="tag boo"></span></a> <strong>parameters.snap_to_grid</strong>: If snap-to-grid is active on the spawned item/s.<ul>
-<li><span class="critic comment">Optional, defaults to false (off).</span></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<hr />
-<h4 id="spawnobject">spawnObject(...)<a class="headerlink" href="#spawnobject" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret obj"></span></a>&nbsp;Spawn an Object. View the <a href="spawnableobjects">Spawnable Objects</a> page for Objects that can be spawned.</p>
-<p>If you are spawning a <strong>custom Object</strong>, you should call <a href="object#setcustomobject">setCustomObject</a> immediately after spawnObject to set its custom properties.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. You can also add a delay after spawning using a <a href="wait">Wait</a> function.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">spawnObject(parameters)</p>
-<ul>
-<li><a href="types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to determine how spawnObject will act.<ul>
-<li><a href="types"><span class="tag str"></span></a> <strong>parameters.type</strong>: <a href="spawnableobjects">Spawnable Object</a> type.</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to place Object.<ul>
-<li><span class="critic comment">Optional, defaults to {x=0, y=3, z=0}.</span></li>
-</ul>
-</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the Object.<ul>
-<li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}</span></li>
-</ul>
-</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the Object.<ul>
-<li><span class="critic comment">Optional, defaults to {x=1, y=1, z=1}</span></li>
-</ul>
-</li>
-<li><a href="types"><span class="tag boo"></span></a> <strong>parameters.sound</strong>: If the spawned Object noise is played.<ul>
-<li><span class="critic comment">Optional, defaults to true.</span></li>
-</ul>
-</li>
-<li><a href="types"><span class="tag boo"></span></a> <strong>parameters.snap_to_grid</strong>: If snap-to-grid is active on the Object.<ul>
-<li><span class="critic comment">Optional, defaults to false.</span></li>
-</ul>
-</li>
-<li><a href="types#function"><span class="tag fun"></span></a> <strong>parameters.callback_function</strong>: The function to activate after the Object has finished spawning into the scene.<ul>
-<li><span class="critic comment">Optional, defaults to not being used.</span></li>
-<li><span class="critic comment">A reference to the object spawned is always passed to callback_function. See the example for how to access it.</span></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="n">futureName</span> <span class="o">=</span> <span class="s2">&quot;Spawned By Script!&quot;</span>
-    <span class="n">spawnParams</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;rpg_BEAR&quot;</span><span class="p">,</span>
-        <span class="n">position</span>          <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">5</span><span class="p">},</span>
-        <span class="n">rotation</span>          <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">},</span>
-        <span class="n">scale</span>             <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">},</span>
-        <span class="n">sound</span>             <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="n">snap_to_grid</span>      <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="n">callback_function</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="n">spawn_callback</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;Bear&quot;</span><span class="p">,</span> <span class="s2">&quot;Green&quot;</span><span class="p">)</span> <span class="kr">end</span>
-    <span class="p">}</span>
-    <span class="n">spawnObject</span><span class="p">(</span><span class="n">spawnParams</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="kr">function</span> <span class="nf">spawn_callback</span><span class="p">(</span><span class="n">object_spawned</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
-    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setColorTint</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
-<span class="kr">end</span>
-</pre></div>
-
-<hr />
-<h4 id="spawnobjectjson">spawnObjectJSON(...)<a class="headerlink" href="#spawnobjectjson" title="Permanent link"> </a></h4>
-<p>Spawns an Object using a JSON string. Works with <a href="object#getjson">getJSON()</a>. It works just like spawnObject, but instead of a <code class="codehilite">type</code>, you supply a <code class="codehilite">json</code> string. The other parameters will overwrite those in the JSON.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. You can also add a delay after spawning using a <a href="wait">Wait</a> function.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">spawnObjectJSON(parameters)</p>
-<ul>
-<li><a href="types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to determine how spawnObjectJSON will act.<ul>
-<li><a href="types"><span class="tag str"></span></a> <strong>parameters.json</strong>: <a href="object#getjson">getJSON()</a> string.</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to place Object.<ul>
-<li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
-</ul>
-</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the Object.<ul>
-<li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
-</ul>
-</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the Object.<ul>
-<li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
-</ul>
-</li>
-<li><a href="types"><span class="tag boo"></span></a> <strong>parameters.sound</strong>: If the spawned Object noise is played.<ul>
-<li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
-</ul>
-</li>
-<li><a href="types"><span class="tag boo"></span></a> <strong>parameters.snap_to_grid</strong>: If snap-to-grid is active on the Object.<ul>
-<li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
-</ul>
-</li>
-<li><a href="types#function"><span class="tag fun"></span></a> <strong>parameters.callback_function</strong>: The function to activate after the Object has finished spawning into the scene.<ul>
-<li><span class="critic comment">Optional, defaults to not being used.</span></li>
-<li><span class="critic comment">A reference to the object spawned is always passed to callback_function. See the example for how to access it.</span></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="n">futureName</span> <span class="o">=</span> <span class="s2">&quot;Spawned By Script!&quot;</span>
-    <span class="n">spawnParams</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">json</span>              <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getJSON</span><span class="p">(),</span>
-        <span class="n">position</span>          <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">5</span><span class="p">},</span>
-        <span class="n">rotation</span>          <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">},</span>
-        <span class="n">scale</span>             <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">},</span>
-        <span class="n">sound</span>             <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="n">snap_to_grid</span>      <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="n">callback_function</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="n">spawn_callback</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">futureName</span><span class="p">,</span> <span class="s2">&quot;Red&quot;</span><span class="p">)</span> <span class="kr">end</span>
-        <span class="c1">--alternative format:</span>
-        <span class="c1">--callback_function = |obj| spawn_callback(obj, futureName, &quot;Red&quot;)</span>
-    <span class="p">}</span>
-    <span class="n">spawnObject</span><span class="p">(</span><span class="n">spawnParams</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="kr">function</span> <span class="nf">spawn_callback</span><span class="p">(</span><span class="n">object_spawned</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
-    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setColorTint</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
-<span class="kr">end</span>
-</pre></div>
-
-<hr />
-<h4 id="startluacoroutine">startLuaCoroutine(...)<a class="headerlink" href="#startluacoroutine" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret obj"></span></a>&nbsp;Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the next frame of the game using <code class="codehilite">coroutine.yield(0)</code>.</p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>You MUST return a 1 at the end of any coroutine or it will throw an error.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">startLuaCoroutine(function_owner, function_name)</p>
-<ul>
-<li><a href="types"><span class="tag obj"></span></a> <strong>function_owner</strong>: The Object that the function being called is on. Global is a valid target.</li>
-<li><a href="types"><span class="tag str"></span></a> <strong>function_name</strong>: Name of the function being called as a coroutine.</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="n">startLuaCoroutine</span><span class="p">(</span><span class="n">Global</span><span class="p">,</span> <span class="s2">&quot;print_coroutine&quot;</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="c1">-- Prints a message, waits 250 frames, prints another message</span>
-<span class="kr">function</span> <span class="nf">print_coroutine</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Routine has Started&quot;</span><span class="p">)</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="kr">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">250</span> <span class="kr">do</span>
-        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="nb">coroutine.yield</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="kr">end</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Routine has Finished&quot;</span><span class="p">)</span>
-
-    <span class="kr">return</span> <span class="mi">1</span>
-<span class="kr">end</span>
-</pre></div>
-
-<hr />
-<h4 id="stringcolortorgb">stringColorToRGB(...)<a class="headerlink" href="#stringcolortorgb" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret tab"></span></a>&nbsp;Converts a <a href="player-color">Player Color</a> string into a Color Table for tinting.</p>
-<div class="admonition info">
-<p class="admonition-title">stringColorToRGB(player_color)</p>
-<ul>
-<li><a href="types"><span class="tag str"></span></a> <strong>player_color</strong> A String of a <a href="player-color">Player Color</a>.</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="n">printToAll</span><span class="p">(</span><span class="s2">&quot;Blue message&quot;</span><span class="p">,</span> <span class="n">stringColorToRGB</span><span class="p">(</span><span class="s2">&quot;Blue&quot;</span><span class="p">))</span>
-</pre></div>
-
-<hr />
-<h3 id="message-function-details">Message Function Details<a class="headerlink" href="#message-function-details" title="Permanent link"> </a></h3>
-<h4 id="broadcasttoall">broadcastToAll(...)<a class="headerlink" href="#broadcasttoall" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret boo"></span></a>&nbsp;Print an on-screen message to all Players.</p>
-<div class="admonition info">
-<p class="admonition-title">broadcastToAll(message, message_tint)</p>
-<ul>
-<li><a href="types"><span class="tag str"></span></a> <strong>message</strong>: Message to display on-screen.</li>
-<li><a href="types#color"><span class="tag col"></span></a> <strong>message_tint</strong>: A Table containing the RGB color tint for the text.</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Hello all.&quot;</span>
-<span class="n">rgb</span> <span class="o">=</span> <span class="p">{</span><span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">}</span>
-<span class="n">broadcastToAll</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">rgb</span><span class="p">)</span>
-</pre></div>
-
-<hr />
-<h4 id="broadcasttocolor">broadcastToColor(...)<a class="headerlink" href="#broadcasttocolor" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret boo"></span></a>&nbsp;Print an on-screen message to a specified Player and their in-game chat.</p>
-<div class="admonition info">
-<p class="admonition-title">broadcastToColor(message, <a href="player">player_color</a>, message_tint)</p>
-<ul>
-<li><a href="types"><span class="tag str"></span></a> <strong>message</strong>: Message to display on-screen.</li>
-<li><a href="types"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="player-color">Player Color</a> to receive the message.</li>
-<li><a href="types#color"><span class="tag col"></span></a> <strong>message_tint</strong>: RGB color tint for the text.</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Hello White.&quot;</span>
-<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;White&quot;</span>
-<span class="n">rgb</span> <span class="o">=</span> <span class="p">{</span><span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">}</span>
-<span class="n">broadcastToColor</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">rgb</span><span class="p">)</span>
-</pre></div>
-
-<hr />
-<h4 id="log">log(...)<a class="headerlink" href="#log" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret boo"></span></a>&nbsp;Print information to the log. The log is a separate chat window in which you can also enter console commands. It is only visible to the host.</p>
-<p>If a table is used for "element", the log will automatically display the key/value contents of it.</p>
-<div class="admonition info">
-<p class="admonition-title">log(element, label, tag)</p>
-<ul>
-<li><a href="types"><span class="tag var"></span></a> <strong>element</strong>: The information you want placed into the log.</li>
-<li><a href="types"><span class="tag str"></span></a> <strong>label</strong>: Text to be placed before the Var element is printed to the log.<ul>
-<li><span class="critic comment">Optional, defaults to an empty String. Empty Strings are not displayed.</span></li>
-</ul>
-</li>
-<li><a href="types"><span class="tag str"></span></a> <strong>tag</strong>: Name that is usable to categorize log entries. (See: <a href="logstyle">logStyle</a>)<ul>
-<li><span class="critic comment">Optional, defaults to an empty String. Empty Strings are not displayed.</span></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="n">log</span><span class="p">(</span><span class="n">getAllObjects</span><span class="p">(),</span> <span class="s2">&quot;All Objects:&quot;</span><span class="p">,</span> <span class="s2">&quot;table&quot;</span><span class="p">)</span>
-</pre></div>
-
-<hr />
-<h4 id="logstyle">logStyle(...)<a class="headerlink" href="#logstyle" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret boo"></span></a>&nbsp;Set style options for the specified tag type for the log. This can also be set in the system console with the "log_style_tag" command.</p>
-<div class="admonition info">
-<p class="admonition-title">logStyle(tag, tint, prefix, postfix)</p>
-<ul>
-<li><a href="types"><span class="tag str"></span></a> <strong>tag</strong>: A String of the log's tag.</li>
-<li><a href="types#color"><span class="tag col"></span></a> <strong>tint</strong>: RGB value to tint the log entry's text.<ul>
-<li><span class="critic comment">String color will also work. Example: &quot;Red&quot;</span></li>
-</ul>
-</li>
-<li><a href="types"><span class="tag str"></span></a> <strong>prefix</strong>: Text to place before this type of log entry.<ul>
-<li><span class="critic comment">Optional, defaults to an empty String. Empty Strings are not displayed.</span></li>
-</ul>
-</li>
-<li><a href="types"><span class="tag str"></span></a> <strong>postfix</strong>: Text to place after this type of log entry.<ul>
-<li><span class="critic comment">Optional, defaults to an empty String. Empty Strings are not displayed.</span></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="n">logStyle</span><span class="p">(</span><span class="s2">&quot;players&quot;</span><span class="p">,</span> <span class="p">{</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">},</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;End List&quot;</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">(</span><span class="n">getSeatedPlayers</span><span class="p">(),</span> <span class="s2">&quot;players&quot;</span><span class="p">)</span>
-<span class="kr">end</span>
-</pre></div>
-
-<hr />
-<h4 id="print">print(...)<a class="headerlink" href="#print" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret nil"></span></a>&nbsp;Print a string into chat that only the host is able to see. Used for debugging scripts.</p>
-<div class="admonition info">
-<p class="admonition-title">print(message)</p>
-<ul>
-<li><a href="types"><span class="tag tab"></span></a> <strong>message</strong>: Text to print into the chat log.</li>
-</ul>
+<p>If your timer is on an Object, a good way to establish a unique identifier for it is to use the item's GUID!</p>
 </div>
 <hr />
-<h4 id="printtoall">printToAll(...)<a class="headerlink" href="#printtoall" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret boo"></span></a>&nbsp;Print a message into the in-game chat of all connected players.</p>
+<h3 id="destroy">destroy(...)<a class="headerlink" href="#destroy" title="Permanent link"> </a></h3>
+<p><a href="types"><span class="ret boo"></span></a>&nbsp;Destroys a Timer. A timer, if it completes its number of repetitions, will automatically destroy itself.</p>
 <div class="admonition info">
-<p class="admonition-title">printToAll(message, message_tint)</p>
+<p class="admonition-title">destroy(identifier)</p>
 <ul>
-<li><a href="types"><span class="tag tab"></span></a> <strong>message</strong>: Message to place into players' in-game chats.</li>
-<li><a href="types#color"><span class="tag col"></span></a> <strong>message_tint</strong>: RGB values for the text's color tint.</li>
+<li><a href="types"><span class="tag str"></span></a> <strong>identifier</strong>: The unique identifier for the timer you want to destroy.</li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="n">printToAll</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">})</span>
-</pre></div>
-
-<hr />
-<h4 id="printtocolor">printToColor(...)<a class="headerlink" href="#printtocolor" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret boo"></span></a>&nbsp;Print a message to the in-game chat of a specific player.</p>
-<div class="admonition info">
-<p class="admonition-title">printToColor(message, <a href="player-color">player_color</a>, message_tint)</p>
-<ul>
-<li><a href="types"><span class="tag str"></span></a> <strong>message</strong>: Message to place into the player's in-game chat.</li>
-<li><a href="types"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="player-color">Player Color</a> of the player that will receive the message.</li>
-<li><a href="types#color"><span class="tag col"></span></a> <strong>message_tint</strong>: RGB values for the text's color tint.</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="n">printToColor</span><span class="p">(</span><span class="s2">&quot;Hello Red.&quot;</span><span class="p">,</span> <span class="s2">&quot;Red&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">})</span>
-</pre></div>
-
-<hr />
                 
                   
                 
