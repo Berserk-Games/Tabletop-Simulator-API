@@ -26,10 +26,8 @@
   {% set class = "md-nav__item md-nav__item--active" %}
 {% endif %}
 
-
 <!-- Main navigation item with nested items -->
 {% if nav_item.children %}
-  <hr style=" border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
   <li class="{{ class }} md-nav__item--nested">
 
     <!-- Active checkbox expands items contained within nested section -->
@@ -70,7 +68,7 @@
 
     <!-- Active checkbox expands items contained within nested section -->
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc"
-        type="checkbox" id="toc" />
+        type="checkbox" id="__toc" />
 
     <!-- Hack: see partials/toc.html for more information -->
     {% if toc_ | first is defined and "\x3ch1 id=" in page.content %}
@@ -79,11 +77,11 @@
 
     <!-- Render table of contents, if not empty -->
     {% if toc_ | first is defined %}
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         {{ nav_item.title }}
       </label>
     {% endif %}
-    <a href="{{ nav_item.url }}" title="{{ nav_item.title }}"
+    <a href="{{ nav_item.url | url }}" title="{{ nav_item.title }}"
         class="md-nav__link md-nav__link--active">
       {{ nav_item.title }}
     </a>
@@ -97,7 +95,7 @@
 <!-- Main navigation item -->
 {% else %}
   <li class="{{ class }}">
-    <a href="{{ nav_item.url }}" title="{{ nav_item.title }}"
+    <a href="{{ nav_item.url | url }}" title="{{ nav_item.title }}"
         class="md-nav__link">
       {{ nav_item.title }}
     </a>
