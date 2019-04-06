@@ -42,8 +42,7 @@ function onLoad()
 	local blockComp = self.getComponent("AudioSource")
 	-- Mute it
 	blockComp.set("mute", true)
-	-- Watch the block fall through the world and vanish
-	-- The system deletes it once it falls too far
+	-- Now it makes no sound when impacting anything.
 end
 ```
 
