@@ -4,15 +4,15 @@ Type refers to the type of information being used. You do not need to declare a 
 
 Tag | Type | Description | Example
 -- | -- | -- | --
-[<span class="tag nil"></span>](types)&nbsp;| nil | No value. | `#!lua nil`
-[<span class="tag int"></span>](types)&nbsp;| int | Non-decimal value. | `#!lua 5`
-[<span class="tag flo"></span>](types)&nbsp;| float | Non-exact decimal value. | `#!lua 2.032`
-[<span class="tag boo"></span>](types)&nbsp;| bool | `true` or `false` value. | `#!lua true`
-[<span class="tag str"></span>](types)&nbsp;| string | A series of characters. | `#!lua "Hello."`
-[<span class="tag tab"></span>](types)&nbsp;| table | A container with keys and values. | `#!lua {["key"]="value", true, 5}`
-[<span class="tag obj"></span>](types)&nbsp;| object | An in-game physical Object. Sometimes Global. | `#!lua Global or self`
-[<span class="tag pla"></span>](types)&nbsp;| player | An in-game Player. | `#!lua Player["White"]`
-[<span class="tag var"></span>](types)&nbsp;| variable | A combination of other types. |
+[<span class="tag nil"></span>](/types)&nbsp;| nil | No value. | `#!lua nil`
+[<span class="tag int"></span>](/types)&nbsp;| int | Non-decimal value. | `#!lua 5`
+[<span class="tag flo"></span>](/types)&nbsp;| float | Non-exact decimal value. | `#!lua 2.032`
+[<span class="tag boo"></span>](/types)&nbsp;| bool | `true` or `false` value. | `#!lua true`
+[<span class="tag str"></span>](/types)&nbsp;| string | A series of characters. | `#!lua "Hello."`
+[<span class="tag tab"></span>](/types)&nbsp;| table | A container with keys and values. | `#!lua {["key"]="value", true, 5}`
+[<span class="tag obj"></span>](/types)&nbsp;| object | An in-game physical Object. Sometimes Global. | `#!lua Global or self`
+[<span class="tag pla"></span>](/types)&nbsp;| player | An in-game Player. | `#!lua Player["White"]`
+[<span class="tag var"></span>](/types)&nbsp;| variable | A combination of other types. |
 
 You will also see tags for Color, Vector, and Function. See below for more info.
 
