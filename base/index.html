@@ -2314,7 +2314,7 @@
 <tr>
 <td>stringColorToRGB(<a href="/types"><span class="tag str"></span></a>&nbsp;player_color)</td>
 <td>Converts a <a href="player-color">Player Color</a> string into a Color Table for tinting.</td>
-<td><a href="types#color"><span class="ret col"></span></a></td>
+<td><a href="/types#color"><span class="ret col"></span></a></td>
 <td><a href="#stringcolortorgb"><span class="i"></span></a></td>
 </tr>
 </tbody>
@@ -2332,13 +2332,13 @@
 </thead>
 <tbody>
 <tr>
-<td>broadcastToAll(<a href="/types"><span class="tag str"></span></a>&nbsp;message, <a href="types#color"><span class="tag col"></span></a>&nbsp;message_tint)</td>
+<td>broadcastToAll(<a href="/types"><span class="tag str"></span></a>&nbsp;message, <a href="/types#color"><span class="tag col"></span></a>&nbsp;message_tint)</td>
 <td>Print an on-screen message to all Players, as well as their in-game chat.</td>
 <td><a href="/types"><span class="ret boo"></span></a></td>
 <td><a href="#broadcasttoall"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>broadcastToColor(<a href="/types"><span class="tag str"></span></a>&nbsp;message, <a href="/types"><span class="tag str"></span></a>&nbsp;player_color, <a href="types#color"><span class="tag col"></span></a>&nbsp;message_tint)</td>
+<td>broadcastToColor(<a href="/types"><span class="tag str"></span></a>&nbsp;message, <a href="/types"><span class="tag str"></span></a>&nbsp;player_color, <a href="/types#color"><span class="tag col"></span></a>&nbsp;message_tint)</td>
 <td>Print an on-screen message to a specified Player, as well as their in-game chat.</td>
 <td><a href="/types"><span class="ret boo"></span></a></td>
 <td><a href="#broadcasttocolor"><span class="i"></span></a></td>
@@ -2350,7 +2350,7 @@
 <td><a href="#log"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>logStyle(<a href="/types"><span class="tag str"></span></a>&nbsp;tag, <a href="types#color"><span class="tag col"></span></a>&nbsp;tint, <a href="/types"><span class="tag str"></span></a>&nbsp;prefix, <a href="/types"><span class="tag str"></span></a>&nbsp;postfix)</td>
+<td>logStyle(<a href="/types"><span class="tag str"></span></a>&nbsp;tag, <a href="/types#color"><span class="tag col"></span></a>&nbsp;tint, <a href="/types"><span class="tag str"></span></a>&nbsp;prefix, <a href="/types"><span class="tag str"></span></a>&nbsp;postfix)</td>
 <td>Set style options for the specified tag type for the log.</td>
 <td><a href="/types"><span class="ret boo"></span></a></td>
 <td><a href="#logstyle"><span class="i"></span></a></td>
@@ -2362,13 +2362,13 @@
 <td><a href="#print"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>printToAll(<a href="/types"><span class="tag str"></span></a>&nbsp;message, <a href="types#color"><span class="tag col"></span></a>&nbsp;message_tint)</td>
+<td>printToAll(<a href="/types"><span class="tag str"></span></a>&nbsp;message, <a href="/types#color"><span class="tag col"></span></a>&nbsp;message_tint)</td>
 <td>Print a message into the chat of all connected players.</td>
 <td><a href="/types"><span class="ret boo"></span></a></td>
 <td><a href="#printtoall"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>printToColor(<a href="/types"><span class="tag str"></span></a>&nbsp;message, <a href="/types"><span class="tag str"></span></a>&nbsp;player_color, <a href="types#color"><span class="tag col"></span></a>&nbsp;message_tint)</td>
+<td>printToColor(<a href="/types"><span class="tag str"></span></a>&nbsp;message, <a href="/types"><span class="tag str"></span></a>&nbsp;player_color, <a href="/types#color"><span class="tag col"></span></a>&nbsp;message_tint)</td>
 <td>Print a message to a specific <a href="player-color">Player Color</a>.</td>
 <td><a href="/types"><span class="ret boo"></span></a></td>
 <td><a href="#printtocolor"><span class="i"></span></a></td>
@@ -2451,7 +2451,7 @@
 <p class="admonition-title">paste(parameters)</p>
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table containing instructions of where to spawn the Objects.<ul>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position of the first object to paste.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position of the first object to paste.<ul>
 <li><span class="critic comment">Optional, defaults to {0, 3, 0}.</span></li>
 </ul>
 </li>
@@ -2476,15 +2476,15 @@
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to determine how spawnObject will act.<ul>
 <li><a href="/types"><span class="tag str"></span></a> <strong>parameters.type</strong>: <a href="spawnableobjects">Spawnable Object</a> type.</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to place Object.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to place Object.<ul>
 <li><span class="critic comment">Optional, defaults to {x=0, y=3, z=0}.</span></li>
 </ul>
 </li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the Object.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the Object.<ul>
 <li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}</span></li>
 </ul>
 </li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the Object.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the Object.<ul>
 <li><span class="critic comment">Optional, defaults to {x=1, y=1, z=1}</span></li>
 </ul>
 </li>
@@ -2496,7 +2496,7 @@
 <li><span class="critic comment">Optional, defaults to false.</span></li>
 </ul>
 </li>
-<li><a href="types#function"><span class="tag fun"></span></a> <strong>parameters.callback_function</strong>: The function to activate after the Object has finished spawning into the scene.<ul>
+<li><a href="/types#function"><span class="tag fun"></span></a> <strong>parameters.callback_function</strong>: The function to activate after the Object has finished spawning into the scene.<ul>
 <li><span class="critic comment">Optional, defaults to not being used.</span></li>
 <li><span class="critic comment">A reference to the object spawned is always passed to callback_function. See the example for how to access it.</span></li>
 </ul>
@@ -2537,15 +2537,15 @@
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to determine how spawnObjectJSON will act.<ul>
 <li><a href="/types"><span class="tag str"></span></a> <strong>parameters.json</strong>: <a href="object#getjson">getJSON()</a> string.</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to place Object.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to place Object.<ul>
 <li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
 </ul>
 </li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the Object.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the Object.<ul>
 <li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
 </ul>
 </li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the Object.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the Object.<ul>
 <li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
 </ul>
 </li>
@@ -2557,7 +2557,7 @@
 <li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
 </ul>
 </li>
-<li><a href="types#function"><span class="tag fun"></span></a> <strong>parameters.callback_function</strong>: The function to activate after the Object has finished spawning into the scene.<ul>
+<li><a href="/types#function"><span class="tag fun"></span></a> <strong>parameters.callback_function</strong>: The function to activate after the Object has finished spawning into the scene.<ul>
 <li><span class="critic comment">Optional, defaults to not being used.</span></li>
 <li><span class="critic comment">A reference to the object spawned is always passed to callback_function. See the example for how to access it.</span></li>
 </ul>
@@ -2641,7 +2641,7 @@
 <p class="admonition-title">broadcastToAll(message, message_tint)</p>
 <ul>
 <li><a href="/types"><span class="tag str"></span></a> <strong>message</strong>: Message to display on-screen.</li>
-<li><a href="types#color"><span class="tag col"></span></a> <strong>message_tint</strong>: A Table containing the RGB color tint for the text.</li>
+<li><a href="/types#color"><span class="tag col"></span></a> <strong>message_tint</strong>: A Table containing the RGB color tint for the text.</li>
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Hello all.&quot;</span>
@@ -2657,7 +2657,7 @@
 <ul>
 <li><a href="/types"><span class="tag str"></span></a> <strong>message</strong>: Message to display on-screen.</li>
 <li><a href="/types"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="player-color">Player Color</a> to receive the message.</li>
-<li><a href="types#color"><span class="tag col"></span></a> <strong>message_tint</strong>: RGB color tint for the text.</li>
+<li><a href="/types#color"><span class="tag col"></span></a> <strong>message_tint</strong>: RGB color tint for the text.</li>
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Hello White.&quot;</span>
@@ -2694,7 +2694,7 @@
 <p class="admonition-title">logStyle(tag, tint, prefix, postfix)</p>
 <ul>
 <li><a href="/types"><span class="tag str"></span></a> <strong>tag</strong>: A String of the log's tag.</li>
-<li><a href="types#color"><span class="tag col"></span></a> <strong>tint</strong>: RGB value to tint the log entry's text.<ul>
+<li><a href="/types#color"><span class="tag col"></span></a> <strong>tint</strong>: RGB value to tint the log entry's text.<ul>
 <li><span class="critic comment">String color will also work. Example: &quot;Red&quot;</span></li>
 </ul>
 </li>
@@ -2730,7 +2730,7 @@
 <p class="admonition-title">printToAll(message, message_tint)</p>
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a> <strong>message</strong>: Message to place into players' in-game chats.</li>
-<li><a href="types#color"><span class="tag col"></span></a> <strong>message_tint</strong>: RGB values for the text's color tint.</li>
+<li><a href="/types#color"><span class="tag col"></span></a> <strong>message_tint</strong>: RGB values for the text's color tint.</li>
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="n">printToAll</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">})</span>
@@ -2744,7 +2744,7 @@
 <ul>
 <li><a href="/types"><span class="tag str"></span></a> <strong>message</strong>: Message to place into the player's in-game chat.</li>
 <li><a href="/types"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="player-color">Player Color</a> of the player that will receive the message.</li>
-<li><a href="types#color"><span class="tag col"></span></a> <strong>message_tint</strong>: RGB values for the text's color tint.</li>
+<li><a href="/types#color"><span class="tag col"></span></a> <strong>message_tint</strong>: RGB values for the text's color tint.</li>
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="n">printToColor</span><span class="p">(</span><span class="s2">&quot;Hello Red.&quot;</span><span class="p">,</span> <span class="s2">&quot;Red&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">})</span>

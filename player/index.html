@@ -2283,13 +2283,13 @@
 <tr>
 <td><a class="anchor" id="getpointerposition"></a>getPointerPosition()</td>
 <td>Player's pointer coordinates.</td>
-<td><a href="types#vector"><span class="ret vec"></span></a></td>
+<td><a href="/types#vector"><span class="ret vec"></span></a></td>
 <td></td>
 </tr>
 <tr>
 <td><a class="anchor" id="getpointerrotation"></a>getPointerRotation()</td>
 <td>Player's pointer rotation.</td>
-<td><a href="types#vector"><span class="ret vec"></span></a></td>
+<td><a href="/types#vector"><span class="ret vec"></span></a></td>
 <td></td>
 </tr>
 <tr>
@@ -2317,13 +2317,13 @@
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="pingtable"></a>pingTable(<a href="types#vector"><span class="tag vec"></span></a>&nbsp;position)</td>
+<td><a class="anchor" id="pingtable"></a>pingTable(<a href="/types#vector"><span class="tag vec"></span></a>&nbsp;position)</td>
 <td>Emulates the player using the ping tool at the given position (tapping Tab).</td>
 <td><a href="/types"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>print(<a href="/types"><span class="tag str"></span></a>&nbsp;message, <a href="types#color"><span class="tag col"></span></a>&nbsp;message_color)</td>
+<td>print(<a href="/types"><span class="tag str"></span></a>&nbsp;message, <a href="/types#color"><span class="tag col"></span></a>&nbsp;message_color)</td>
 <td>Prints a message into the Player's game chat.</td>
 <td><a href="/types"><span class="ret boo"></span></a></td>
 <td><a href="#print"><span class="i"></span></a></td>
@@ -2390,7 +2390,7 @@
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table with parameters which guide the function.<ul>
 <li><a href="/types"><span class="tag obj"></span></a> <strong>parameters.object</strong>: The Object to attach the camera to.</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.offset</strong>: A Vector to offset the camera by.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.offset</strong>: A Vector to offset the camera by.<ul>
 <li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}.</span></li>
 </ul>
 </li>
@@ -2408,7 +2408,7 @@
 <p class="admonition-title">broadcast(message, message_color)</p>
 <ul>
 <li><a href="/types"><span class="tag str"></span></a> <strong>message</strong>: The message to be displayed.</li>
-<li><a href="types#color"><span class="tag col"></span></a> <strong>message_color</strong>: Tint of the message text.<ul>
+<li><a href="/types#color"><span class="tag col"></span></a> <strong>message_color</strong>: Tint of the message text.<ul>
 <li><span class="critic comment">Optional, defaults to {r=1, g=1, b=1}.</span></li>
 </ul>
 </li>
@@ -2458,12 +2458,12 @@
 <p class="admonition-title">Return Data Table</p>
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a> <strong>data</strong>: The Table the data is returned in.<ul>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>data.position</strong>: Position of the hand zone.</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>data.rotation</strong>: Rotation of the hand zone.</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>data.scale</strong>: Scale of the hand zone.</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>data.forward</strong>: Forward direction of the hand zone.</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>data.right</strong>: Right direction of the hand zone.</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>data.up</strong>: Up direction of the hand zone.</li>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>data.position</strong>: Position of the hand zone.</li>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>data.rotation</strong>: Rotation of the hand zone.</li>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>data.scale</strong>: Scale of the hand zone.</li>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>data.forward</strong>: Forward direction of the hand zone.</li>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>data.right</strong>: Right direction of the hand zone.</li>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>data.up</strong>: Up direction of the hand zone.</li>
 </ul>
 </li>
 </ul>
@@ -2479,7 +2479,7 @@
 <p class="admonition-title">lookAt(parameters)</p>
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of controlling parameters to point the player camera.<ul>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to center the camera on.</li>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to center the camera on.</li>
 <li><a href="/types"><span class="tag flo"></span></a> <strong>parameters.pitch</strong>: Pitch angle of the camera. 0 to 90.<ul>
 <li><span class="critic comment">Optional, defaults to 0.</span></li>
 </ul>
@@ -2512,7 +2512,7 @@
 <p class="admonition-title">print(message, message_color)</p>
 <ul>
 <li><a href="/types"><span class="tag str"></span></a> <strong>message</strong>: The text to be displayed.</li>
-<li><a href="types#color"><span class="tag col"></span></a> <strong>message_color</strong>: Color for the message text to be tinted.<ul>
+<li><a href="/types#color"><span class="tag col"></span></a> <strong>message_color</strong>: Color for the message text to be tinted.<ul>
 <li><span class="critic comment">Optional, defaults to {r=1, g=1, b=1}.</span></li>
 </ul>
 </li>
@@ -2525,15 +2525,15 @@
 <p class="admonition-title">setHandTransform(parameters, hand_index)</p>
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: The Table of data to transform the hand zone with.<ul>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position of the hand zone.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position of the hand zone.<ul>
 <li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}.</span></li>
 </ul>
 </li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the hand zone.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the hand zone.<ul>
 <li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}.</span></li>
 </ul>
 </li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the hand zone.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the hand zone.<ul>
 <li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}.</span></li>
 </ul>
 </li>

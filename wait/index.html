@@ -1982,13 +1982,13 @@
 </thead>
 <tbody>
 <tr>
-<td>condition(<a href="types#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="types#function"><span class="tag fun"></span></a>&nbsp;conditionFunc, <a href="/types"><span class="tag flo"></span></a>&nbsp;timeout, <a href="types#function"><span class="tag fun"></span></a>&nbsp;timeoutFunc)</td>
+<td>condition(<a href="/types#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="/types#function"><span class="tag fun"></span></a>&nbsp;conditionFunc, <a href="/types"><span class="tag flo"></span></a>&nbsp;timeout, <a href="/types#function"><span class="tag fun"></span></a>&nbsp;timeoutFunc)</td>
 <td>Activates a function when a given function returns <code class="codehilite">true</code> or activates a different function if a timeout occurs.</td>
 <td><a href="/types"><span class="ret int"></span></a></td>
 <td><a href="#condition"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>frames(<a href="types#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="/types"><span class="tag int"></span></a>&nbsp;frameCount)</td>
+<td>frames(<a href="/types#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="/types"><span class="tag int"></span></a>&nbsp;frameCount)</td>
 <td>Activates a function after a set number of frames.</td>
 <td><a href="/types"><span class="ret int"></span></a></td>
 <td><a href="#frames"><span class="i"></span></a></td>
@@ -2000,7 +2000,7 @@
 <td><a href="#stop"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>time(<a href="types#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="/types"><span class="tag flo"></span></a>&nbsp;time, <a href="/types"><span class="tag int"></span></a>&nbsp;repetitions)</td>
+<td>time(<a href="/types#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="/types"><span class="tag flo"></span></a>&nbsp;time, <a href="/types"><span class="tag int"></span></a>&nbsp;repetitions)</td>
 <td>Activates a function after a set amount of time has passed.</td>
 <td><a href="/types"><span class="ret int"></span></a></td>
 <td><a href="#time"><span class="i"></span></a></td>
@@ -2017,13 +2017,13 @@
 <div class="admonition info">
 <p class="admonition-title">condition(toRunFunc, conditionFunc, timeout, timeoutFunc)</p>
 <ul>
-<li><a href="types#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to activate once the condition is met.</li>
-<li><a href="types#function"><span class="tag fun"></span></a> <strong>conditionFunc</strong>: The function that is watched until it returns <code class="codehilite">true</code>.</li>
+<li><a href="/types#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to activate once the condition is met.</li>
+<li><a href="/types#function"><span class="tag fun"></span></a> <strong>conditionFunc</strong>: The function that is watched until it returns <code class="codehilite">true</code>.</li>
 <li><a href="/types"><span class="tag flo"></span></a> <strong>timeout</strong>: The amount of time, in seconds, before this function gives up checking the condition function.<ul>
 <li><span class="critic comment">Optional, defaults to never timing out.</span></li>
 </ul>
 </li>
-<li><a href="types#function"><span class="tag fun"></span></a> <strong>timeoutFunc</strong>: The function that that triggers if the timeout amount is met.<ul>
+<li><a href="/types#function"><span class="tag fun"></span></a> <strong>timeoutFunc</strong>: The function that that triggers if the timeout amount is met.<ul>
 <li><span class="critic comment">Optional, defaults to no function being triggered if a timeout happens.</span></li>
 </ul>
 </li>
@@ -2081,7 +2081,7 @@
 <div class="admonition info">
 <p class="admonition-title">frames(toRunFunc, frameCount)</p>
 <ul>
-<li><a href="types#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to activate once the condition is met.</li>
+<li><a href="/types#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to activate once the condition is met.</li>
 <li><a href="/types"><span class="tag int"></span></a> <strong>frameCount</strong>: The number of frames to wait before activating the above function.</li>
 </ul>
 </div>
@@ -2131,7 +2131,7 @@
 <div class="admonition info">
 <p class="admonition-title">time(toRunFunc, time)</p>
 <ul>
-<li><a href="types#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to activate once the amount of time has passed.</li>
+<li><a href="/types#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to activate once the amount of time has passed.</li>
 <li><a href="/types"><span class="tag flo"></span></a> <strong>time</strong>: The amount of time before the function is triggered.</li>
 <li><a href="/types"><span class="tag int"></span></a> <strong>repetitions</strong>: Number of times the timer will be repeated.<ul>
 <li><span class="critic comment">Optional, defaults to 0.</span></li>

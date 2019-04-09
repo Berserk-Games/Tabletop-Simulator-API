@@ -2032,11 +2032,11 @@
 <tr>
 <td><a class="anchor" id="getgravity"></a>getGravity()</td>
 <td>Returns directional Vector of the direction gravity is pulling.</td>
-<td><a href="types#vector"><span class="ret vec"></span></a></td>
+<td><a href="/types#vector"><span class="ret vec"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="setgravity"></a>setGravity(<a href="types#vector"><span class="tag vec"></span></a>&nbsp;direction)</td>
+<td><a class="anchor" id="setgravity"></a>setGravity(<a href="/types#vector"><span class="tag vec"></span></a>&nbsp;direction)</td>
 <td>Sets the direction gravity gravity pulls.</td>
 <td><a href="/types"><span class="ret boo"></span></a></td>
 <td></td>
@@ -2078,11 +2078,11 @@
 <p class="admonition-title">cast(parameters)</p>
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to guide the function.<ul>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.origin</strong>: Position of the starting point.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.origin</strong>: Position of the starting point.<ul>
 <li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}.</span></li>
 </ul>
 </li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.direction</strong>: A direction for the cast to move in.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.direction</strong>: A direction for the cast to move in.<ul>
 <li><span class="critic comment">Optional, but cast is motionless without a direction.</span></li>
 </ul>
 </li>
@@ -2090,11 +2090,11 @@
 <li><span class="critic comment">Optional, defaults to 1.</span></li>
 </ul>
 </li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.size</strong>: Size of the cast shape. Sphere/Box only.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.size</strong>: Size of the cast shape. Sphere/Box only.<ul>
 <li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}.</span></li>
 </ul>
 </li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.orientation</strong>: Rotation of the cast shape. Box only.<ul>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>parameters.orientation</strong>: Rotation of the cast shape. Box only.<ul>
 <li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}.</span></li>
 </ul>
 </li>
@@ -2114,8 +2114,8 @@
 <p class="admonition-title">Returned Table of Hit Objects</p>
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a> <strong>table</strong>: A numerically indexed Table, one entry for each hit Object. Entries are in the order of being hit.<ul>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>table.point</strong>: Position the cast impacted the Object.</li>
-<li><a href="types#vector"><span class="tag vec"></span></a> <strong>table.normal</strong>: The surface normal of the impact point.</li>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>table.point</strong>: Position the cast impacted the Object.</li>
+<li><a href="/types#vector"><span class="tag vec"></span></a> <strong>table.normal</strong>: The surface normal of the impact point.</li>
 <li><a href="/types"><span class="tag flo"></span></a> <strong>table.distance</strong>: Distance between cast origin and impact point.</li>
 <li><a href="/types"><span class="tag obj"></span></a> <strong>table.hit_object</strong>: An Object reference to the Object hit by the cast.</li>
 </ul>
