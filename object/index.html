@@ -3039,8 +3039,8 @@
                 <p>The Object class represents any entity within tabletop simulator. Once you have a reference to an object in you're script you can call functions on it directly. Example: <code class="codehilite">obj.getPosition(...)</code>. You can get a reference to an object multiple ways;</p>
 <ul>
 <li>Using the <code class="codehilite">self</code> property if your script is on an Object and referring to that Object.</li>
-<li>Using <a href="base#getobjectfromguid"><code class="codehilite">getObjectFromGUID(...)</code></a> with the object's GUID (found by right clicking it with the pointer).</li>
-<li>Getting it as a return from another function, like with <a href="base#spawnobject"><code class="codehilite">spawnObject(...)</code></a>.</li>
+<li>Using <a href="/base#getobjectfromguid"><code class="codehilite">getObjectFromGUID(...)</code></a> with the object's GUID (found by right clicking it with the pointer).</li>
+<li>Getting it as a return from another function, like with <a href="/base#spawnobject"><code class="codehilite">spawnObject(...)</code></a>.</li>
 </ul>
 <h2 id="member-variable-summary">Member Variable Summary<a class="headerlink" href="#member-variable-summary" title="Permanent link"> </a></h2>
 <h3 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link"> </a></h3>
@@ -3142,7 +3142,7 @@
 </tr>
 <tr>
 <td><a class="anchor" id="script_state"></a>script_state</td>
-<td>The saved data on the object. See <a href="event#onsave">onSave()</a>.</td>
+<td>The saved data on the object. See <a href="/event#onsave">onSave()</a>.</td>
 <td align="left"><a href="/types"><span class="tag str"></span></a></td>
 </tr>
 <tr>
@@ -3208,23 +3208,23 @@
 <tbody>
 <tr>
 <td><a class="anchor" id="assetbundle"></a>AssetBundle</td>
-<td>An <a href="assetbundle">AssetBundle</a>, which is a type of custom object made in Unity.</td>
+<td>An <a href="/assetbundle">AssetBundle</a>, which is a type of custom object made in Unity.</td>
 </tr>
 <tr>
 <td><a class="anchor" id="clock"></a>Clock</td>
-<td>A <a href="clock">Clock</a>, which is the in-game digital clock.</td>
+<td>A <a href="/clock">Clock</a>, which is the in-game digital clock.</td>
 </tr>
 <tr>
 <td><a class="anchor" id="counter"></a>Counter</td>
-<td>A <a href="counter">Counter</a>, which is the in-game digital counter.</td>
+<td>A <a href="/counter">Counter</a>, which is the in-game digital counter.</td>
 </tr>
 <tr>
 <td><a class="anchor" id="rpgfigurine"></a>RPGFigurine</td>
-<td>An <a href="rpgfigurine">RPGFigurine</a>, which is an in-game animated figurine.</td>
+<td>An <a href="/rpgfigurine">RPGFigurine</a>, which is an in-game animated figurine.</td>
 </tr>
 <tr>
 <td><a class="anchor" id="texttool"></a>TextTool</td>
-<td>A <a href="texttool">TextTool</a>, which is an in-game text display system.</td>
+<td>A <a href="/texttool">TextTool</a>, which is an in-game text display system.</td>
 </tr>
 </tbody>
 </table>
@@ -3471,7 +3471,7 @@
 </tbody>
 </table>
 <h4 id="custom-ui">Custom UI<a class="headerlink" href="#custom-ui" title="Permanent link"> </a></h4>
-<p>Custom UI gives you a wide variety of element types, not just buttons and inputs, to place onto an Object. It is an extension of the UI class, and details on its use can be found <a href="ui">on the UI page</a>.</p>
+<p>Custom UI gives you a wide variety of element types, not just buttons and inputs, to place onto an Object. It is an extension of the UI class, and details on its use can be found <a href="/ui">on the UI page</a>.</p>
 <h3 id="get-functions">Get Functions<a class="headerlink" href="#get-functions" title="Permanent link"> </a></h3>
 <p>These functions obtain information from an object.</p>
 <table>
@@ -3516,7 +3516,7 @@
 </tr>
 <tr>
 <td><a class="anchor" id="getjson"></a>getJSON()</td>
-<td>Returns a serialization of the JSON string which represents this item. Works with <a href="base#spawnobjectjson">spawnObjectJSON()</a>.</td>
+<td>Returns a serialization of the JSON string which represents this item. Works with <a href="/base#spawnobjectjson">spawnObjectJSON()</a>.</td>
 <td><a href="/types"><span class="ret str"></span></a></td>
 <td></td>
 </tr>
@@ -3564,13 +3564,13 @@
 </tr>
 <tr>
 <td><a class="anchor" id="getstateid"></a>getStateId()</td>
-<td>Current <a href="http://berserk-games.com/knowledgebase/creating-states/">state</a> ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1.</td>
+<td>Current <a href="https://kb.tabletopsimulator.com/host-guides/creating-states/">state</a> ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1.</td>
 <td><a href="/types"><span class="ret int"></span></a></td>
 <td></td>
 </tr>
 <tr>
 <td>getStates()</td>
-<td>Returns a Table of information on the <a href="http://berserk-games.com/knowledgebase/creating-states/">states</a> of an Object.</td>
+<td>Returns a Table of information on the <a href="https://kb.tabletopsimulator.com/host-guides/creating-states/">states</a> of an Object.</td>
 <td><a href="/types"><span class="ret tab"></span></a></td>
 <td><a href="#getstates"><span class="i"></span></a></td>
 </tr>
@@ -3638,7 +3638,7 @@
 </tr>
 <tr>
 <td><a class="anchor" id="setstate"></a>setState(<a href="/types"><span class="tag int"></span></a>&nbsp;state_id)</td>
-<td>Sets <a href="http://berserk-games.com/knowledgebase/creating-states/">state</a> of an Object. State ids (indexes) start at 1.</td>
+<td>Sets <a href="https://kb.tabletopsimulator.com/host-guides/creating-states/">state</a> of an Object. State ids (indexes) start at 1.</td>
 <td><a href="/types"><span class="ret obj"></span></a></td>
 <td></td>
 </tr>
@@ -4206,7 +4206,7 @@
 <p><em>The click function which is activated by clicking this button has its own parameters it is passed automatically.</em></p>
 <ul>
 <li><a href="/types"><span class="tag obj"></span></a> <strong>obj</strong>: The Object the button is attached to.</li>
-<li><a href="/types"><span class="tag str"></span></a> <strong>player_clicker_color</strong>: <a href="player-color">Player Color</a> of the player that pressed the button.</li>
+<li><a href="/types"><span class="tag str"></span></a> <strong>player_clicker_color</strong>: <a href="/player-color">Player Color</a> of the player that pressed the button.</li>
 <li><a href="/types"><span class="tag boo"></span></a> <strong>alt_click</strong>: True if a button other than left-click was used to click the button.</li>
 </ul>
 </div>
@@ -4329,7 +4329,7 @@
 <p><em>The click function which is activated by editing the text in this input has its own parameters it is passed automatically.</em></p>
 <ul>
 <li><a href="/types"><span class="tag obj"></span></a> <strong>obj</strong>: The Object the input is attached to.</li>
-<li><a href="/types"><span class="tag str"></span></a> <strong>player_clicker_color</strong>: <a href="player-color">Player Color</a> of the player that has selected/edited the input.</li>
+<li><a href="/types"><span class="tag str"></span></a> <strong>player_clicker_color</strong>: <a href="/player-color">Player Color</a> of the player that has selected/edited the input.</li>
 <li><a href="/types"><span class="tag str"></span></a> <strong>input_value</strong>: Text currently in the input.</li>
 <li><a href="/types"><span class="tag boo"></span></a> <strong>selected</strong>: If the value box is still being edited or not.</li>
 </ul>
@@ -4468,7 +4468,7 @@
 <hr />
 <h3 id="get-function-details">Get Function Details<a class="headerlink" href="#get-function-details" title="Permanent link"> </a></h3>
 <h4 id="getcustomobject">getCustomObject()<a class="headerlink" href="#getcustomobject" title="Permanent link"> </a></h4>
-<p><a href="/types"><span class="ret tab"></span></a>&nbsp;Returns a Table with the Custom Object information of a Custom Object. See the <a href="spawnableobjects">Spawnable Objects</a> page for the kind of information returned.</p>
+<p><a href="/types"><span class="ret tab"></span></a>&nbsp;Returns a Table with the Custom Object information of a Custom Object. See the <a href="/spawnableobjects">Spawnable Objects</a> page for the kind of information returned.</p>
 <div class="codehilite"><pre><span></span><span class="c1">-- Example returned Table for a custom token</span>
 <span class="p">{</span>
     <span class="n">image</span> <span class="o">=</span> <span class="s2">&quot;SOME URL HERE&quot;</span><span class="p">,</span>
@@ -4602,7 +4602,7 @@
 <hr />
 <h4 id="getrotationvalues">getRotationValues()<a class="headerlink" href="#getrotationvalues" title="Permanent link"> </a></h4>
 <p><a href="/types"><span class="ret tab"></span></a>&nbsp;Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice) based on which side is pointed "up". It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.</p>
-<p>You can manually assign rotation values to objects using the Rotation Value Gizmo tool (in the left side Gizmo menu) or using <a href="setrotationvalues">setRotationValues(...)</a>.</p>
+<p>You can manually assign rotation values to objects using the Rotation Value Gizmo tool (in the left side Gizmo menu) or using <a href="#setrotationvalues">setRotationValues(...)</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">Return Table</p>
 <p>The returned Table contains sub-Tables, each sub-Table containing these 2 key/value pairs.</p>
@@ -4623,7 +4623,7 @@
 
 <hr />
 <h4 id="getstates">getStates()<a class="headerlink" href="#getstates" title="Permanent link"> </a></h4>
-<p><a href="/types"><span class="ret tab"></span></a>&nbsp;Returns a Table of information on the <a href="http://berserk-games.com/knowledgebase/creating-states/">states</a> of an Object. Stated Objects have ids (indexes) starting with 1.</p>
+<p><a href="/types"><span class="ret tab"></span></a>&nbsp;Returns a Table of information on the <a href="https://kb.tabletopsimulator.com/host-guides/creating-states/">states</a> of an Object. Stated Objects have ids (indexes) starting with 1.</p>
 <div class="admonition tip">
 <p class="admonition-title">The returned table will <strong>NOT</strong> include data on the current state.</p>
 </div>
@@ -4689,7 +4689,7 @@
 </tr>
 <tr>
 <td>Hidden Zone</td>
-<td>Returns String of the Player <a href="color">Color</a> of the zone.</td>
+<td>Returns String of the Player <a href="/player-color">Color</a> of the zone.</td>
 </tr>
 <tr>
 <td>Poker Chip</td>
@@ -4704,10 +4704,10 @@
 <hr />
 <h3 id="set-function-details">Set Function Details<a class="headerlink" href="#set-function-details" title="Permanent link"> </a></h3>
 <h4 id="setcustomobject">setCustomObject(...)<a class="headerlink" href="#setcustomobject" title="Permanent link"> </a></h4>
-<p><a href="/types"><span class="ret boo"></span></a>&nbsp;Sets a custom Object's properties. It can be used after <a href="base#spawnobject">spawnObject</a> or on an already existing custom Object. If used on an already existing custom Object, you must use <a href="#reload">reload</a> on the object after setCustomObject for the changes to be displayed.</p>
+<p><a href="/types"><span class="ret boo"></span></a>&nbsp;Sets a custom Object's properties. It can be used after <a href="/base#spawnobject">spawnObject</a> or on an already existing custom Object. If used on an already existing custom Object, you must use <a href="#reload">reload</a> on the object after setCustomObject for the changes to be displayed.</p>
 <div class="admonition info">
 <p class="admonition-title">setCustomObject(parameters)</p>
-<p>The Table of parameters varies, depending on which type of custom Object it is. See the <a href="spawnableobjects">Spawnable Object</a> page for the parameters needed.</p>
+<p>The Table of parameters varies, depending on which type of custom Object it is. See the <a href="/spawnableobjects">Spawnable Object</a> page for the parameters needed.</p>
 </div>
 <div class="codehilite"><pre><span></span><span class="c1">-- Example of a custom token</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
@@ -4870,7 +4870,7 @@
 <p class="admonition-title">deal(number, player_color, index)</p>
 <ul>
 <li><a href="/types"><span class="tag int"></span></a> <strong>number</strong>: How many to deal.</li>
-<li><a href="/types"><span class="tag str"></span></a> <strong>player_color</strong>: The <a href="player-color">Player Color</a> to deal to.<ul>
+<li><a href="/types"><span class="tag str"></span></a> <strong>player_color</strong>: The <a href="/player-color">Player Color</a> to deal to.<ul>
 <li><span class="critic comment">Optional, defaults to an empty string. If not supplied, it will attempt to deal to all seated players.</span></li>
 </ul>
 </li>
@@ -4888,7 +4888,7 @@
 <ul>
 <li><a href="/types#vector"><span class="tag vec"></span></a> <strong>offset</strong>: The x/y/z offset to deal to around the given hand zone.</li>
 <li><a href="/types"><span class="tag boo"></span></a> <strong>flip</strong>: If the card is flipped over when dealt.</li>
-<li><a href="/types"><span class="tag str"></span></a> <strong>player_color</strong>: Hand zone <a href="player-color">Player Color</a> to offset dealing to.</li>
+<li><a href="/types"><span class="tag str"></span></a> <strong>player_color</strong>: Hand zone <a href="/player-color">Player Color</a> to offset dealing to.</li>
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="c1">-- Example of dealing 2 cards in front of the White player, face up.</span>
@@ -5427,7 +5427,7 @@
 <p class="admonition-title">setVectorLines(parameters)</p>
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: The table containing each "line's" data. Each contiguous line has its own sub-table.<ul>
-<li><a href="/types"><span class="tag tab"></span></a> <strong>points</strong>: Table containing <a href="types#vector">Vector positions</a> for each "point" on the line.</li>
+<li><a href="/types"><span class="tag tab"></span></a> <strong>points</strong>: Table containing <a href="/types#vector">Vector positions</a> for each "point" on the line.</li>
 <li><a href="/types#color"><span class="tag col"></span></a> <strong>color</strong>: Color the line will be.<ul>
 <li><span class="critic comment">Optional, defaults to {1,1,1}.</span></li>
 </ul>
