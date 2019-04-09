@@ -1862,7 +1862,7 @@
                 
                   <h1>Timer</h1>
                 
-                <p>Timer is a static global class which provides methods for executing other functions after a delay and/or repeatedly. Each Timer is tracked by a unique "identifier" string. </p>
+                <p>Timer is a static global class which provides methods for executing other functions after a delay and/or repeatedly. Each Timer is tracked by a unique "identifier" string.</p>
 <blockquote>
 <p>Example Usage: <code class="codehilite">Timer.destroy(...)</code></p>
 </blockquote>
@@ -1882,15 +1882,15 @@
 </thead>
 <tbody>
 <tr>
-<td>create(<a href="types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>create(<a href="/types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
 <td>Creates a Timer. It will auto-delete once its repetitions have been completed.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
+<td><a href="/types"><span class="ret boo"></span></a></td>
 <td align="right"><a href="#create"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>destroy(<a href="types"><span class="tag str"></span></a>&nbsp;identifier)</td>
+<td>destroy(<a href="/types"><span class="tag str"></span></a>&nbsp;identifier)</td>
 <td>Destroys a Timer.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
+<td><a href="/types"><span class="ret boo"></span></a></td>
 <td align="right"><a href="#destroy"><span class="i"></span></a></td>
 </tr>
 </tbody>
@@ -1898,27 +1898,27 @@
 <hr />
 <h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link"> </a></h2>
 <h3 id="create">create(...)<a class="headerlink" href="#create" title="Permanent link"> </a></h3>
-<p><a href="types"><span class="ret boo"></span></a>&nbsp;Creates a Timer. It will auto-delete once its repetitions have been completed.</p>
+<p><a href="/types"><span class="ret boo"></span></a>&nbsp;Creates a Timer. It will auto-delete once its repetitions have been completed.</p>
 <div class="admonition info">
 <p class="admonition-title">create(parameters)</p>
 <ul>
-<li><a href="types"><span class="tag_tab"></span></a> <strong>parameters</strong>: A Table containing the information used to start the Timer.<ul>
-<li><a href="types"><span class="tag str"></span></a> <strong>identifier</strong>: Timer's name, used to destroy it. Must be unique within all other scripts.</li>
-<li><a href="types"><span class="tag str"></span></a> <strong>function_name</strong>: Name of function to trigger when time is reached.</li>
-<li><a href="types"><span class="tag obj"></span></a> <strong>function_owner</strong>: Where the function from function_name exists.<ul>
+<li><a href="/types"><span class="tag_tab"></span></a> <strong>parameters</strong>: A Table containing the information used to start the Timer.<ul>
+<li><a href="/types"><span class="tag str"></span></a> <strong>identifier</strong>: Timer's name, used to destroy it. Must be unique within all other scripts.</li>
+<li><a href="/types"><span class="tag str"></span></a> <strong>function_name</strong>: Name of function to trigger when time is reached.</li>
+<li><a href="/types"><span class="tag obj"></span></a> <strong>function_owner</strong>: Where the function from function_name exists.<ul>
 <li><span class="critic comment">Optional, defaults to the calling Object.</span></li>
 </ul>
 </li>
-<li><a href="types"><span class="tag tab"></span></a> <strong>parameters</strong>: Table containing any data that will be passed to the function.<ul>
+<li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: Table containing any data that will be passed to the function.<ul>
 <li><span class="critic comment">Optional, will not be used by default.</span></li>
 </ul>
 </li>
-<li><a href="types"><span class="tag flo"></span></a> <strong>delay</strong>: Length of time before the function is triggered.<ul>
+<li><a href="/types"><span class="tag flo"></span></a> <strong>delay</strong>: Length of time before the function is triggered.<ul>
 <li><span class="critic comment">Optional, defaults to 0.</span></li>
 <li><span class="critic comment">0 results in a delay of 1 frame before the triggered function activates.</span></li>
 </ul>
 </li>
-<li><a href="types"><span class="tag int"></span></a> <strong>repetitions</strong>: Number of times the countdown repeats.<ul>
+<li><a href="/types"><span class="tag int"></span></a> <strong>repetitions</strong>: Number of times the countdown repeats.<ul>
 <li><span class="critic comment">Optional, defaults to 1.</span></li>
 <li><span class="critic comment">Use 0 for infinite repetitions.</span></li>
 </ul>
@@ -1949,11 +1949,11 @@
 </div>
 <hr />
 <h3 id="destroy">destroy(...)<a class="headerlink" href="#destroy" title="Permanent link"> </a></h3>
-<p><a href="types"><span class="ret boo"></span></a>&nbsp;Destroys a Timer. A timer, if it completes its number of repetitions, will automatically destroy itself.</p>
+<p><a href="/types"><span class="ret boo"></span></a>&nbsp;Destroys a Timer. A timer, if it completes its number of repetitions, will automatically destroy itself.</p>
 <div class="admonition info">
 <p class="admonition-title">destroy(identifier)</p>
 <ul>
-<li><a href="types"><span class="tag str"></span></a> <strong>identifier</strong>: The unique identifier for the timer you want to destroy.</li>
+<li><a href="/types"><span class="tag str"></span></a> <strong>identifier</strong>: The unique identifier for the timer you want to destroy.</li>
 </ul>
 </div>
                 

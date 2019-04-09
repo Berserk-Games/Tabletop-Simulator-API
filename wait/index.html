@@ -1982,27 +1982,27 @@
 </thead>
 <tbody>
 <tr>
-<td>condition(<a href="types#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="types#function"><span class="tag fun"></span></a>&nbsp;conditionFunc, <a href="types"><span class="tag flo"></span></a>&nbsp;timeout, <a href="types#function"><span class="tag fun"></span></a>&nbsp;timeoutFunc)</td>
+<td>condition(<a href="types#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="types#function"><span class="tag fun"></span></a>&nbsp;conditionFunc, <a href="/types"><span class="tag flo"></span></a>&nbsp;timeout, <a href="types#function"><span class="tag fun"></span></a>&nbsp;timeoutFunc)</td>
 <td>Activates a function when a given function returns <code class="codehilite">true</code> or activates a different function if a timeout occurs.</td>
-<td><a href="types"><span class="ret int"></span></a></td>
+<td><a href="/types"><span class="ret int"></span></a></td>
 <td><a href="#condition"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>frames(<a href="types#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="types"><span class="tag int"></span></a>&nbsp;frameCount)</td>
+<td>frames(<a href="types#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="/types"><span class="tag int"></span></a>&nbsp;frameCount)</td>
 <td>Activates a function after a set number of frames.</td>
-<td><a href="types"><span class="ret int"></span></a></td>
+<td><a href="/types"><span class="ret int"></span></a></td>
 <td><a href="#frames"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>stop(<a href="types"><span class="tag int"></span></a>&nbsp;id)</td>
+<td>stop(<a href="/types"><span class="tag int"></span></a>&nbsp;id)</td>
 <td>Stops a currently running Wait function.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
+<td><a href="/types"><span class="ret boo"></span></a></td>
 <td><a href="#stop"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>time(<a href="types#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="types"><span class="tag flo"></span></a>&nbsp;time, <a href="types"><span class="tag int"></span></a>&nbsp;repetitions)</td>
+<td>time(<a href="types#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="/types"><span class="tag flo"></span></a>&nbsp;time, <a href="/types"><span class="tag int"></span></a>&nbsp;repetitions)</td>
 <td>Activates a function after a set amount of time has passed.</td>
-<td><a href="types"><span class="ret int"></span></a></td>
+<td><a href="/types"><span class="ret int"></span></a></td>
 <td><a href="#time"><span class="i"></span></a></td>
 </tr>
 </tbody>
@@ -2010,7 +2010,7 @@
 <hr />
 <h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link"> </a></h2>
 <h3 id="condition">condition(...)<a class="headerlink" href="#condition" title="Permanent link"> </a></h3>
-<p><a href="types"><span class="ret int"></span></a>&nbsp;Activates a function when a given function returns <code class="codehilite">true</code> or activates a different function if a timeout occurs.</p>
+<p><a href="/types"><span class="ret int"></span></a>&nbsp;Activates a function when a given function returns <code class="codehilite">true</code> or activates a different function if a timeout occurs.</p>
 <blockquote>
 <p>The returned value is an ID which can be used with <a href="#stop">stop</a> to cancel the function at any time.</p>
 </blockquote>
@@ -2019,7 +2019,7 @@
 <ul>
 <li><a href="types#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to activate once the condition is met.</li>
 <li><a href="types#function"><span class="tag fun"></span></a> <strong>conditionFunc</strong>: The function that is watched until it returns <code class="codehilite">true</code>.</li>
-<li><a href="types"><span class="tag flo"></span></a> <strong>timeout</strong>: The amount of time, in seconds, before this function gives up checking the condition function.<ul>
+<li><a href="/types"><span class="tag flo"></span></a> <strong>timeout</strong>: The amount of time, in seconds, before this function gives up checking the condition function.<ul>
 <li><span class="critic comment">Optional, defaults to never timing out.</span></li>
 </ul>
 </li>
@@ -2074,7 +2074,7 @@
 </pre></div></p>
 <hr />
 <h3 id="frames">frames(...)<a class="headerlink" href="#frames" title="Permanent link"> </a></h3>
-<p><a href="types"><span class="ret int"></span></a>&nbsp;Activates a function after a set number of frames. The amount of time this takes is based off the Host's FPS. The higher their FPS, the faster this will trigger.</p>
+<p><a href="/types"><span class="ret int"></span></a>&nbsp;Activates a function after a set number of frames. The amount of time this takes is based off the Host's FPS. The higher their FPS, the faster this will trigger.</p>
 <blockquote>
 <p>The returned value is an ID which can be used with <a href="#stop">stop</a> to cancel the function at any time.</p>
 </blockquote>
@@ -2082,7 +2082,7 @@
 <p class="admonition-title">frames(toRunFunc, frameCount)</p>
 <ul>
 <li><a href="types#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to activate once the condition is met.</li>
-<li><a href="types"><span class="tag int"></span></a> <strong>frameCount</strong>: The number of frames to wait before activating the above function.</li>
+<li><a href="/types"><span class="tag int"></span></a> <strong>frameCount</strong>: The number of frames to wait before activating the above function.</li>
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
@@ -2107,11 +2107,11 @@
 
 <hr />
 <h3 id="stop">stop(...)<a class="headerlink" href="#stop" title="Permanent link"> </a></h3>
-<p><a href="types"><span class="ret boo"></span></a>&nbsp;Stops a currently running Wait function. The only way to obtain these ID numbers is to get them from the return value of a Wait function.</p>
+<p><a href="/types"><span class="ret boo"></span></a>&nbsp;Stops a currently running Wait function. The only way to obtain these ID numbers is to get them from the return value of a Wait function.</p>
 <div class="admonition info">
 <p class="admonition-title">stop(id)</p>
 <ul>
-<li><a href="types"><span class="tag int"></span></a> <strong>id</strong>: The index number assigned by the game to every Wait function (besides stop).</li>
+<li><a href="/types"><span class="tag int"></span></a> <strong>id</strong>: The index number assigned by the game to every Wait function (besides stop).</li>
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
@@ -2124,7 +2124,7 @@
 
 <hr />
 <h3 id="time">time(...)<a class="headerlink" href="#time" title="Permanent link"> </a></h3>
-<p><a href="types"><span class="ret int"></span></a>&nbsp;Activates a function after a set amount of time has passes.</p>
+<p><a href="/types"><span class="ret int"></span></a>&nbsp;Activates a function after a set amount of time has passes.</p>
 <blockquote>
 <p>The returned value is an ID which can be used with <a href="#stop">stop</a> to cancel the function at any time.</p>
 </blockquote>
@@ -2132,8 +2132,8 @@
 <p class="admonition-title">time(toRunFunc, time)</p>
 <ul>
 <li><a href="types#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to activate once the amount of time has passed.</li>
-<li><a href="types"><span class="tag flo"></span></a> <strong>time</strong>: The amount of time before the function is triggered.</li>
-<li><a href="types"><span class="tag int"></span></a> <strong>repetitions</strong>: Number of times the timer will be repeated.<ul>
+<li><a href="/types"><span class="tag flo"></span></a> <strong>time</strong>: The amount of time before the function is triggered.</li>
+<li><a href="/types"><span class="tag int"></span></a> <strong>repetitions</strong>: Number of times the timer will be repeated.<ul>
 <li><span class="critic comment">Optional, defaults to 0.</span></li>
 <li><span class="critic comment">Using -1 causes it to loop indefinitely unless stopped.</span></li>
 </ul>

@@ -2006,7 +2006,7 @@
 <tr>
 <td><a class="anchor" id="play_area"></a>play_area</td>
 <td>The play area being used (ie. how far from middle you can get). Values from 0 - 1. Default is 0.5</td>
-<td align="left"><a href="types"><span class="tag flo"></span></a> <a class="anchor" id="angular_drag"></a></td>
+<td align="left"><a href="/types"><span class="tag flo"></span></a> <a class="anchor" id="angular_drag"></a></td>
 </tr>
 </tbody>
 </table>
@@ -2024,9 +2024,9 @@
 </thead>
 <tbody>
 <tr>
-<td>cast(<a href="types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>cast(<a href="/types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
 <td>Returns Table containing information on hit Objects.</td>
-<td><a href="types"><span class="ret tab"></span></a></td>
+<td><a href="/types"><span class="ret tab"></span></a></td>
 <td><a href="#cast"><span class="i"></span></a></td>
 </tr>
 <tr>
@@ -2038,7 +2038,7 @@
 <tr>
 <td><a class="anchor" id="setgravity"></a>setGravity(<a href="types#vector"><span class="tag vec"></span></a>&nbsp;direction)</td>
 <td>Sets the direction gravity gravity pulls.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
+<td><a href="/types"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 </tbody>
@@ -2046,7 +2046,7 @@
 <hr />
 <h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link"> </a></h2>
 <h3 id="cast">cast(...)<a class="headerlink" href="#cast" title="Permanent link"> </a></h3>
-<p><a href="types"><span class="ret tab"></span></a>&nbsp;Returns Table containing information on hit Objects. There are three kinds of casts:</p>
+<p><a href="/types"><span class="ret tab"></span></a>&nbsp;Returns Table containing information on hit Objects. There are three kinds of casts:</p>
 <table>
 <thead>
 <tr>
@@ -2077,7 +2077,7 @@
 <div class="admonition info">
 <p class="admonition-title">cast(parameters)</p>
 <ul>
-<li><a href="types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to guide the function.<ul>
+<li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to guide the function.<ul>
 <li><a href="types#vector"><span class="tag vec"></span></a> <strong>parameters.origin</strong>: Position of the starting point.<ul>
 <li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}.</span></li>
 </ul>
@@ -2086,7 +2086,7 @@
 <li><span class="critic comment">Optional, but cast is motionless without a direction.</span></li>
 </ul>
 </li>
-<li><a href="types"><span class="tag int"></span></a> <strong>parameters.type</strong>: The type of cast. <span class="critic comment">1 = Ray, 2 = Sphere, 3= Box</span><ul>
+<li><a href="/types"><span class="tag int"></span></a> <strong>parameters.type</strong>: The type of cast. <span class="critic comment">1 = Ray, 2 = Sphere, 3= Box</span><ul>
 <li><span class="critic comment">Optional, defaults to 1.</span></li>
 </ul>
 </li>
@@ -2098,11 +2098,11 @@
 <li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}.</span></li>
 </ul>
 </li>
-<li><a href="types"><span class="tag flo"></span></a> <strong>parameters.max_distance</strong>: How far the cast will travel.<ul>
+<li><a href="/types"><span class="tag flo"></span></a> <strong>parameters.max_distance</strong>: How far the cast will travel.<ul>
 <li><span class="critic comment">Optional, defaults to infinity. Won't move without direction.</span></li>
 </ul>
 </li>
-<li><a href="types"><span class="tag boo"></span></a> <strong>parameters.debug</strong>: If the cast is visualized for the user.<ul>
+<li><a href="/types"><span class="tag boo"></span></a> <strong>parameters.debug</strong>: If the cast is visualized for the user.<ul>
 <li><span class="critic comment">Optional, defaults to false.</span></li>
 </ul>
 </li>
@@ -2113,11 +2113,11 @@
 <div class="admonition info">
 <p class="admonition-title">Returned Table of Hit Objects</p>
 <ul>
-<li><a href="types"><span class="tag tab"></span></a> <strong>table</strong>: A numerically indexed Table, one entry for each hit Object. Entries are in the order of being hit.<ul>
+<li><a href="/types"><span class="tag tab"></span></a> <strong>table</strong>: A numerically indexed Table, one entry for each hit Object. Entries are in the order of being hit.<ul>
 <li><a href="types#vector"><span class="tag vec"></span></a> <strong>table.point</strong>: Position the cast impacted the Object.</li>
 <li><a href="types#vector"><span class="tag vec"></span></a> <strong>table.normal</strong>: The surface normal of the impact point.</li>
-<li><a href="types"><span class="tag flo"></span></a> <strong>table.distance</strong>: Distance between cast origin and impact point.</li>
-<li><a href="types"><span class="tag obj"></span></a> <strong>table.hit_object</strong>: An Object reference to the Object hit by the cast.</li>
+<li><a href="/types"><span class="tag flo"></span></a> <strong>table.distance</strong>: Distance between cast origin and impact point.</li>
+<li><a href="/types"><span class="tag obj"></span></a> <strong>table.hit_object</strong>: An Object reference to the Object hit by the cast.</li>
 </ul>
 </li>
 </ul>

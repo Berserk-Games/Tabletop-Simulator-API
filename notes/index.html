@@ -2086,27 +2086,27 @@
 </thead>
 <tbody>
 <tr>
-<td>addNotebookTab(<a href="types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>addNotebookTab(<a href="/types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
 <td>Adds a notebook tab, returning its index.</td>
-<td><a href="types"><span class="ret int"></span></a></td>
+<td><a href="/types"><span class="ret int"></span></a></td>
 <td><a href="#addnotebooktab"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>editNotebookTab(<a href="types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>editNotebookTab(<a href="/types"><span class="tag tab"></span></a>&nbsp;parameters)</td>
 <td>Edit an existing Tab in the notebook.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
+<td><a href="/types"><span class="ret boo"></span></a></td>
 <td><a href="#editnotebooktab"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>getNotebookTabs()</td>
 <td>Returns Table containing data on all tabs in the notebook.</td>
-<td><a href="types"><span class="ret tab"></span></a></td>
+<td><a href="/types"><span class="ret tab"></span></a></td>
 <td><a href="#getnotebooktabs"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>removeNotebookTab(<a href="types"><span class="tag int"></span></a>&nbsp;index)</td>
+<td>removeNotebookTab(<a href="/types"><span class="tag int"></span></a>&nbsp;index)</td>
 <td>Remove a notebook tab.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
+<td><a href="/types"><span class="ret boo"></span></a></td>
 <td><a href="#removenotebooktab"><span class="i"></span></a></td>
 </tr>
 </tbody>
@@ -2126,13 +2126,13 @@
 <tr>
 <td><a class="anchor" id="getnotes"></a>getNotes()</td>
 <td>Returns the contents of the on-screen notes section.</td>
-<td><a href="types"><span class="ret str"></span></a></td>
+<td><a href="/types"><span class="ret str"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>setNotes(<a href="types"><span class="tag str"></span></a>&nbsp;notes)</td>
+<td>setNotes(<a href="/types"><span class="tag str"></span></a>&nbsp;notes)</td>
 <td>Replace the text in the notes window with the string.</td>
-<td><a href="types"><span class="ret boo"></span></a></td>
+<td><a href="/types"><span class="ret boo"></span></a></td>
 <td><a href="#setnotes"><span class="i"></span></a></td>
 </tr>
 </tbody>
@@ -2141,17 +2141,17 @@
 <h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link"> </a></h2>
 <h3 id="notebook-function-details">Notebook Function Details<a class="headerlink" href="#notebook-function-details" title="Permanent link"> </a></h3>
 <h4 id="addnotebooktab">addNotebookTab(...)<a class="headerlink" href="#addnotebooktab" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret int"></span></a>&nbsp;Add a new notebook tab. If it failed to create a new tab, a -1 is returned instead. Indexes for notebook tabs begin at 0.</p>
+<p><a href="/types"><span class="ret int"></span></a>&nbsp;Add a new notebook tab. If it failed to create a new tab, a -1 is returned instead. Indexes for notebook tabs begin at 0.</p>
 <div class="admonition info">
 <p class="admonition-title">addNotebookTab(parameters)</p>
 <ul>
-<li><a href="types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table containing spawning parameters.<ul>
-<li><a href="types"><span class="tag str"></span></a> <strong>parameters.title</strong>: Title for the new tab.</li>
-<li><a href="types"><span class="tag str"></span></a> <strong>parameters.body</strong>: Text to place into the body of the new tab.<ul>
+<li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table containing spawning parameters.<ul>
+<li><a href="/types"><span class="tag str"></span></a> <strong>parameters.title</strong>: Title for the new tab.</li>
+<li><a href="/types"><span class="tag str"></span></a> <strong>parameters.body</strong>: Text to place into the body of the new tab.<ul>
 <li><span class="critic comment">Optional, defaults to an empty string</span></li>
 </ul>
 </li>
-<li><a href="types"><span class="tag str"></span></a> <strong>parameters.color</strong>: <a href="player">Player Color</a> for the new tab's color.<ul>
+<li><a href="/types"><span class="tag str"></span></a> <strong>parameters.color</strong>: <a href="player">Player Color</a> for the new tab's color.<ul>
 <li><span class="critic comment">Optional, defaults to &quot;Grey&quot;</span></li>
 </ul>
 </li>
@@ -2169,21 +2169,21 @@
 
 <hr />
 <h4 id="editnotebooktab">editNotebookTab(...)<a class="headerlink" href="#editnotebooktab" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret boo"></span></a>&nbsp;Edit an existing Tab in the notebook. Indexes for notebook tabs begin at 0.</p>
+<p><a href="/types"><span class="ret boo"></span></a>&nbsp;Edit an existing Tab in the notebook. Indexes for notebook tabs begin at 0.</p>
 <div class="admonition info">
 <p class="admonition-title">editNotebookTab(parameters)</p>
 <ul>
-<li><a href="types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table containing instructions for the notebook edit.<ul>
-<li><a href="types"><span class="tag int"></span></a> <strong>parameters.index</strong>: Index number for the tab.</li>
-<li><a href="types"><span class="tag str"></span></a> <strong>parameters.title</strong>: Title for the tab.<ul>
+<li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table containing instructions for the notebook edit.<ul>
+<li><a href="/types"><span class="tag int"></span></a> <strong>parameters.index</strong>: Index number for the tab.</li>
+<li><a href="/types"><span class="tag str"></span></a> <strong>parameters.title</strong>: Title for the tab.<ul>
 <li><span class="critic comment">Optional, defaults to the current title of the tab begin edited.</span></li>
 </ul>
 </li>
-<li><a href="types"><span class="tag str"></span></a> <strong>parameters.body</strong>: Text for the body for the tab.<ul>
+<li><a href="/types"><span class="tag str"></span></a> <strong>parameters.body</strong>: Text for the body for the tab.<ul>
 <li><span class="critic comment">Optional, defaults to the current body of the tab begin edited.</span></li>
 </ul>
 </li>
-<li><a href="types"><span class="tag str"></span></a> <strong>parameters.color</strong>: <a href="player-color">Player Color</a> for who the tab belongs to.<ul>
+<li><a href="/types"><span class="tag str"></span></a> <strong>parameters.color</strong>: <a href="player-color">Player Color</a> for who the tab belongs to.<ul>
 <li><span class="critic comment">Optional, defaults to the current color of the tab begin edited.</span></li>
 </ul>
 </li>
@@ -2202,7 +2202,7 @@
 
 <hr />
 <h4 id="getnotebooktabs">getNotebookTabs()<a class="headerlink" href="#getnotebooktabs" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret tab"></span></a>&nbsp;Returns a Table containing data on all tabs in the notebook. Indexes for notebook tabs begin at 0.</p>
+<p><a href="/types"><span class="ret tab"></span></a>&nbsp;Returns a Table containing data on all tabs in the notebook. Indexes for notebook tabs begin at 0.</p>
 <p><div class="codehilite"><pre><span></span><span class="c1">--Example Usage</span>
 <span class="n">tabInfo</span> <span class="o">=</span> <span class="n">Notes</span><span class="p">.</span><span class="n">getNotebookTabs</span><span class="p">()</span>
 </pre></div>
@@ -2215,11 +2215,11 @@
 </pre></div></p>
 <hr />
 <h4 id="removenotebooktab">removeNotebookTab(...)<a class="headerlink" href="#removenotebooktab" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret boo"></span></a>&nbsp;Remove a notebook tab. Notebook tab indexes begin at 0.</p>
+<p><a href="/types"><span class="ret boo"></span></a>&nbsp;Remove a notebook tab. Notebook tab indexes begin at 0.</p>
 <div class="admonition info">
 <p class="admonition-title">removeNotebookTab(index)</p>
 <ul>
-<li><a href="types"><span class="tag int"></span></a> <strong>index</strong>: Index for the tab to remove.</li>
+<li><a href="/types"><span class="tag int"></span></a> <strong>index</strong>: Index for the tab to remove.</li>
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="n">Notes</span><span class="p">.</span><span class="n">removeNotebookTab</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -2228,11 +2228,11 @@
 <hr />
 <h3 id="notes-function-details">Notes Function Details<a class="headerlink" href="#notes-function-details" title="Permanent link"> </a></h3>
 <h4 id="setnotes">setNotes(...)<a class="headerlink" href="#setnotes" title="Permanent link"> </a></h4>
-<p><a href="types"><span class="ret boo"></span></a>&nbsp;Replace the text in the notes window with the string. The notes is an area which displays text in the lower-left corner of the screen.</p>
+<p><a href="/types"><span class="ret boo"></span></a>&nbsp;Replace the text in the notes window with the string. The notes is an area which displays text in the lower-left corner of the screen.</p>
 <div class="admonition info">
 <p class="admonition-title">setNotes(notes)</p>
 <ul>
-<li><a href="types"><span class="tag str"></span></a> <strong>notes</strong>: What to place into the notes area.</li>
+<li><a href="/types"><span class="tag str"></span></a> <strong>notes</strong>: What to place into the notes area.</li>
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="n">Notes</span><span class="p">.</span><span class="n">setNotes</span><span class="p">(</span><span class="s2">&quot;This appears in the notes section&quot;</span><span class="p">)</span>
