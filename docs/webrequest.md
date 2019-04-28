@@ -4,7 +4,7 @@ The static global WebRequest class allows you to interact with the web via get, 
 
 ##Member Variables
 
-Like [Object member variables](object#member-variables), WebRequests have their own member variables.
+Like [Object member variables](/object#member-variables), WebRequests have their own member variables.
 
 A WebRequest is returned as part of a function, and these member variables are how your access its information.
 

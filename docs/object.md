@@ -1058,8 +1058,8 @@ You can manually assign rotation values to objects using the Rotation Value Gizm
 
 Object | Value
 -- | --
-[Clock](clock) | Returns Int of stopwatch/timer current time *(in seconds)*.
-[Counter](clock) | Returns Int of counter value.
+[Clock](/clock) | Returns Int of stopwatch/timer current time *(in seconds)*.
+[Counter](/clock) | Returns Int of counter value.
 Rotation Value | Returns Int of the face-up value. For objects with rotation values set using [setRotationValues](#setrotationvalues) this is an index into the table of rotation values.
 Hidden Zone | Returns String of the Player [Color](/player-color) of the zone.
 Poker Chip | Returns Int of the face value. {>>Does not work on custom chips.<<}
@@ -1177,10 +1177,10 @@ self.setRotationValues(rotation_values)
 
 Object | Value
 -- | --
-[Clock](clock) | Set Int for stopwatch/timer current time *(in seconds)*.
-[Counter](clock) | Set Int for counter value.
+[Clock](/clock) | Set Int for stopwatch/timer current time *(in seconds)*.
+[Counter](/clock) | Set Int for counter value.
 Rotation Value | Set Int for the face-up value. For objects with rotation values set with [setRotationValues](#setrotationvalues) this is an index into the table of rotation values.
-Hidden Zone | Set String for the Player [Color](color) of the zone.
+Hidden Zone | Set String for the Player [Color](/player-color) of the zone.
 Tablet | Set String for the current URL.
 
 ---
@@ -1416,7 +1416,7 @@ newDecks[4].deal(1)
 [<span class="ret obj"></span>](/types)&nbsp;Takes an object from a container (bag/deck/chip stack) and places it in the world.
 
 !!!tip
-	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. It is also possible to add a delay using a [Wait](wait) function instead.
+	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. It is also possible to add a delay using a [Wait](/wait) function instead.
 
 !!!info "takeObject(parameters)"
 	* [<span class="tag tab"></span>](/types) **parameters**: A Table of parameters used to determine how takeObject will act.

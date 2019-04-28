@@ -9,7 +9,7 @@ The advantage of this method is it requires no additional setup. However it lack
 
 
 ### Official Atom Plugin
-The preferred method of writing Lua scripts is using our Official Plugin for the Atom Text Editor. It has all of the functionality of the in-game editor plus line numbers, syntax highlighting, autocomplete, and a modern look. [Click here for setup instructions.](atom)
+The preferred method of writing Lua scripts is using our Official Plugin for the Atom Text Editor. It has all of the functionality of the in-game editor plus line numbers, syntax highlighting, autocomplete, and a modern look. [Click here for setup instructions.](/atom)
 
 ![Aton Plugin](/img/overview2.png)
 

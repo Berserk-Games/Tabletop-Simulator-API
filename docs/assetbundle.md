@@ -1,4 +1,4 @@
-AssetBundle is a special [Object](object) type that has access to [custom AssetBundle](http://berserk-games.com/knowledgebase/assetbundles/) related functions like looping and trigger effects.
+AssetBundle is a special [Object](/object) type that has access to [custom AssetBundle](http://berserk-games.com/knowledgebase/assetbundles/) related functions like looping and trigger effects.
 
 Example Usage: `self.AssetBundle.getLoopingEffects()`
 

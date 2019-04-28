@@ -12,16 +12,16 @@ Function Name | Description | Return | &nbsp;
 copy([<span class="tag tab"></span>](/types)&nbsp;object_list) | Copy a list of Objects to the clipboard. Works with [paste(...)](#paste). | [<span class="ret boo"></span>](/types) | [<span class="i"></span>](#copy)
 destroyObject([<span class="tag obj"></span>](/types)&nbsp;obj) | Destory an Object. | [<span class="ret boo"></span>](/types) | [<span class="i"></span>](#destroyobject)
 <a class="anchor" id="fliptable"></a>flipTable() | Flip the table. | [<span class="ret boo"></span>](/types) |
-<a class="anchor" id="getallobjects"></a>getAllObjects() | Returns Table of all spawned [Objects](object) in the game. | [<span class="ret tab"></span>](/types) |
+<a class="anchor" id="getallobjects"></a>getAllObjects() | Returns Table of all spawned [Objects](/object) in the game. | [<span class="ret tab"></span>](/types) |
 getObjectFromGUID([<span class="tag str"></span>](/types)&nbsp;guid) | Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist. | [<span class="ret obj"></span>](/types) | [<span class="i"></span>](#getobjectfromguid)
-<a class="anchor" id="getseatedplayers"></a>getSeatedPlayers() | Returns Table of the [Player Colors](player-color) strings of seated players. | [<span class="ret tab"></span>](/types) |
+<a class="anchor" id="getseatedplayers"></a>getSeatedPlayers() | Returns Table of the [Player Colors](/player-color) strings of seated players. | [<span class="ret tab"></span>](/types) |
 group([<span class="tag tab"></span>](/types)&nbsp;objects) | Groups objects together, like how the `G` key does for players. | [<span class="ret obj"></span>](/types) | [<span class="i"></span>](#group)
 paste([<span class="tag tab"></span>](/types)&nbsp;parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](/types) | [<span class="i"></span>](#paste)
 <a class="anchor" id="setlookingforplayers"></a>setLookingForPlayers([<span class="tag boo"></span>](/types)&nbsp;lfp) | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](/types) |
 spawnObject([<span class="tag tab"></span>](/types)&nbsp;parameters) | Spawns an Object. View the [Spawnable Object](/spawnableobjects) page for Objects that can be spawned. | [<span class="ret obj"></span>](/types) | [<span class="i"></span>](#spawnobject)
-spawnObjectJSON([<span class="tag tab"></span>](/types)&nbsp;parameters) | Spawns an Object using a JSON string. Works with [getJSON()](object#getjson). | [<span class="ret obj"></span>](/types) | [<span class="i"></span>](#spawnobjectjson)
+spawnObjectJSON([<span class="tag tab"></span>](/types)&nbsp;parameters) | Spawns an Object using a JSON string. Works with [getJSON()](/object#getjson). | [<span class="ret obj"></span>](/types) | [<span class="i"></span>](#spawnobjectjson)
 startLuaCoroutine([<span class="tag obj"></span>](/types)&nbsp;function_owner, [<span class="tag str"></span>](/types)&nbsp;function_name) | Start a coroutine. | [<span class="ret boo"></span>](/types) | [<span class="i"></span>](#startluacoroutine)
-stringColorToRGB([<span class="tag str"></span>](/types)&nbsp;player_color) | Converts a [Player Color](player-color) string into a Color Table for tinting. | [<span class="ret col"></span>](/types#color) | [<span class="i"></span>](#stringcolortorgb)
+stringColorToRGB([<span class="tag str"></span>](/types)&nbsp;player_color) | Converts a [Player Color](/player-color) string into a Color Table for tinting. | [<span class="ret col"></span>](/types#color) | [<span class="i"></span>](#stringcolortorgb)
 
 
 ###Message Functions
@@ -35,7 +35,7 @@ log([<span class="tag var"></span>](/types)&nbsp;element, [<span class="tag str"
 logStyle([<span class="tag str"></span>](/types)&nbsp;tag, [<span class="tag col"></span>](/types#color)&nbsp;tint, [<span class="tag str"></span>](/types)&nbsp;prefix, [<span class="tag str"></span>](/types)&nbsp;postfix) | Set style options for the specified tag type for the log. | [<span class="ret boo"></span>](/types) | [<span class="i"></span>](#logstyle)
 print([<span class="tag str"></span>](/types)&nbsp;message) | Prints a string into chat that only the host is able to see. Used for debugging scripts. | [<span class="ret nil"></span>](/types) | [<span class="i"></span>](#print)
 printToAll([<span class="tag str"></span>](/types)&nbsp;message, [<span class="tag col"></span>](/types#color)&nbsp;message_tint) | Print a message into the chat of all connected players. | [<span class="ret boo"></span>](/types) | [<span class="i"></span>](#printtoall)
-printToColor([<span class="tag str"></span>](/types)&nbsp;message, [<span class="tag str"></span>](/types)&nbsp;player_color, [<span class="tag col"></span>](/types#color)&nbsp;message_tint) | Print a message to a specific [Player Color](player-color). | [<span class="ret boo"></span>](/types) | [<span class="i"></span>](#printtocolor)
+printToColor([<span class="tag str"></span>](/types)&nbsp;message, [<span class="tag str"></span>](/types)&nbsp;player_color, [<span class="tag col"></span>](/types#color)&nbsp;message_tint) | Print a message to a specific [Player Color](/player-color). | [<span class="ret boo"></span>](/types) | [<span class="i"></span>](#printtocolor)
 <a class="anchor" id="sendexternalmessage"></a>sendExternalMessage([<span class="tag tab"></span>](/types)&nbsp;data) | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](/types) |
 
 
@@ -132,10 +132,10 @@ end
 
 [<span class="ret obj"></span>](/types)&nbsp;Spawn an Object. View the [Spawnable Objects](/spawnableobjects) page for Objects that can be spawned.
 
-If you are spawning a **custom Object**, you should call [setCustomObject](object#setcustomobject) immediately after spawnObject to set its custom properties.
+If you are spawning a **custom Object**, you should call [setCustomObject](/object#setcustomobject) immediately after spawnObject to set its custom properties.
 
 !!!tip
-	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. You can also add a delay after spawning using a [Wait](wait) function.
+	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. You can also add a delay after spawning using a [Wait](/wait) function.
 
 !!!info "spawnObject(parameters)"
 	* [<span class="tag tab"></span>](/types) **parameters**: A Table of parameters used to determine how spawnObject will act.
@@ -183,14 +183,14 @@ end
 
 ####spawnObjectJSON(...)
 
-Spawns an Object using a JSON string. Works with [getJSON()](object#getjson). It works just like spawnObject, but instead of a `type`, you supply a `json` string. The other parameters will overwrite those in the JSON.
+Spawns an Object using a JSON string. Works with [getJSON()](/object#getjson). It works just like spawnObject, but instead of a `type`, you supply a `json` string. The other parameters will overwrite those in the JSON.
 
 !!!tip
-	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. You can also add a delay after spawning using a [Wait](wait) function.
+	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. You can also add a delay after spawning using a [Wait](/wait) function.
 
 !!!info "spawnObjectJSON(parameters)"
 	* [<span class="tag tab"></span>](/types) **parameters**: A Table of parameters used to determine how spawnObjectJSON will act.
-		* [<span class="tag str"></span>](/types) **parameters.json**: [getJSON()](object#getjson) string.
+		* [<span class="tag str"></span>](/types) **parameters.json**: [getJSON()](/object#getjson) string.
 		* [<span class="tag vec"></span>](/types#vector) **parameters.position**: Position to place Object.
 			* {>>Optional, defaults to JSON's value.<<}
 		* [<span class="tag vec"></span>](/types#vector) **parameters.rotation**: Rotation of the Object.
@@ -269,10 +269,10 @@ end
 
 ####stringColorToRGB(...)
 
-[<span class="ret tab"></span>](/types)&nbsp;Converts a [Player Color](player-color) string into a Color Table for tinting.
+[<span class="ret tab"></span>](/types)&nbsp;Converts a [Player Color](/player-color) string into a Color Table for tinting.
 
 !!!info "stringColorToRGB(player_color)"
-	* [<span class="tag str"></span>](/types) **player_color** A String of a [Player Color](player-color).
+	* [<span class="tag str"></span>](/types) **player_color** A String of a [Player Color](/player-color).
 
 ``` Lua
 printToAll("Blue message", stringColorToRGB("Blue"))
@@ -323,9 +323,9 @@ broadcastToAll(msg, rgb)
 
 [<span class="ret boo"></span>](/types)&nbsp;Print an on-screen message to a specified Player and their in-game chat.
 
-!!!info "broadcastToColor(message, [player_color](player), message_tint)"
+!!!info "broadcastToColor(message, [player_color](/player), message_tint)"
 	* [<span class="tag str"></span>](/types) **message**: Message to display on-screen.
-	* [<span class="tag str"></span>](/types) **player_color**: [Player Color](player-color) to receive the message.
+	* [<span class="tag str"></span>](/types) **player_color**: [Player Color](/player-color) to receive the message.
 	* [<span class="tag col"></span>](/types#color) **message_tint**: RGB color tint for the text.
 
 ``` Lua
@@ -348,7 +348,7 @@ If a table is used for "element", the log will automatically display the key/val
 	* [<span class="tag var"></span>](/types) **element**: The information you want placed into the log.
 	* [<span class="tag str"></span>](/types) **label**: Text to be placed before the Var element is printed to the log.
 		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
-	* [<span class="tag str"></span>](/types) **tag**: Name that is usable to categorize log entries. (See: [logStyle](logstyle))
+	* [<span class="tag str"></span>](/types) **tag**: Name that is usable to categorize log entries. (See: [logStyle](#logstyle))
 		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
 
 
@@ -412,9 +412,9 @@ printToAll("Hello World!", {r=1,g=0,b=0})
 
 [<span class="ret boo"></span>](/types)&nbsp;Print a message to the in-game chat of a specific player.
 
-!!!info "printToColor(message, [player_color](player-color), message_tint)"
+!!!info "printToColor(message, [player_color](/player-color), message_tint)"
 	* [<span class="tag str"></span>](/types) **message**: Message to place into the player's in-game chat.
-	* [<span class="tag str"></span>](/types) **player_color**: [Player Color](player-color) of the player that will receive the message.
+	* [<span class="tag str"></span>](/types) **player_color**: [Player Color](/player-color) of the player that will receive the message.
 	* [<span class="tag col"></span>](/types#color) **message_tint**: RGB values for the text's color tint.
 
 ``` Lua

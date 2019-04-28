@@ -5,7 +5,7 @@ Example Usage: `Player["White"].seated` or `Player["Green"].mute()`
 
 ##Member Variables
 
-Like [Object member variables](object#member-variables), Player has its own member variables.
+Like [Object member variables](/object#member-variables), Player has its own member variables.
 
 Variable | Description | Type
 -- | -- | :--

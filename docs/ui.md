@@ -1,9 +1,9 @@
 UI, a static global class AND an Object class. It is the method to interact with custom UI elements. It allows you to read/write attributes of elements defined in the XML of the UI. It also allows you to receive information from various inputs (like buttons) on-screen and on objects.
 
 !!!attention
-    This class allows for the **manipulation** of UI **at runtime**. It does **NOT** modify or fetch **the original XML** in the editor, but rather what is displayed as it continues to run during a game. Just like with Lua, you can only get/set dynamic values during runtime. You can use [onSave](event#onsave) and [onLoad](event#onload) to record any data you want to persist through save/load/undo.
+    This class allows for the **manipulation** of UI **at runtime**. It does **NOT** modify or fetch **the original XML** in the editor, but rather what is displayed as it continues to run during a game. Just like with Lua, you can only get/set dynamic values during runtime. You can use [onSave](/event#onsave) and [onLoad](/event#onload) to record any data you want to persist through save/load/undo.
 
-    For more information on how to build UI elements within XML, view the [UI API](ui/introUI.md).
+    For more information on how to build UI elements within XML, view the [UI API](/ui/introUI).
 
 
 ##Global and Object
@@ -17,7 +17,7 @@ UI can either be placed on the screen by using the **Global UI** or placed on an
 
 ##Inputs
 
-[Input Elements](ui/inputelements) are able to trigger a function. By default, Global UI will trigger a function in Global and Object UI will trigger a function in the Object's script.  To change the target script for an input, [view more details here](ui/inputelements#targeting-triggers).
+[Input Elements](/ui/inputelements) are able to trigger a function. By default, Global UI will trigger a function in Global and Object UI will trigger a function in the Object's script.  To change the target script for an input, [view more details here](/ui/inputelements#targeting-triggers).
 
 When creating the input element in XML, you will select the name of the function it activates. Regardless of its name, it always will pass parameters
 

@@ -4,7 +4,7 @@ For more information on lighting in Unity, [refer to the Unity documentation](ht
 
 ##Member Variables
 
-Like [Object member variables](object#member-variables), Lighting has its own member variables. They are all numbers, and have specific valid ranges.
+Like [Object member variables](/object#member-variables), Lighting has its own member variables. They are all numbers, and have specific valid ranges.
 
 Variable | Description | Type
 -- | -- | :--

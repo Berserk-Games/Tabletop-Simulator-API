@@ -73,7 +73,7 @@ self.setColorTint({50/255, 83/255, 199/255})
 
 ####Strings
 
-You are also able to use a String in place of a color table. Using a [Player Color](player-color) will automatically fill in that value. It works with any of the 12 color names, as they are written on the [Player Color](player-color) page.
+You are also able to use a String in place of a color table. Using a [Player Color](/player-color) will automatically fill in that value. It works with any of the 12 color names, as they are written on the [Player Color](/player-color) page.
 
 Example: `printToAll("Test", "Green")`
 
@@ -137,7 +137,7 @@ World | The center of the instance is `{x=0, y=0, z=0}`. That is usually near th
 Local | The center of the Object's model is `{x=0, y=0, z=0}`. The center of an Object is determined by the model's creator.
 
 ???tip "Conversion Between World/Local"
-     [positionToWorld(...)](object#positiontoworld) and [positionToLocal(...)](object#positiontolocal) can be used to convert between the two types.
+     [positionToWorld(...)](/object#positiontoworld) and [positionToLocal(...)](/object#positiontolocal) can be used to convert between the two types.
 
 #####Rotation
 
@@ -184,7 +184,7 @@ end
 
 ####Example
 
-As an example, here is [Wait.frames(...)](wait#frames) used 3 times. It waits a set number of frames and then activates a given function:
+As an example, here is [Wait.frames(...)](/wait#frames) used 3 times. It waits a set number of frames and then activates a given function:
 
 ``` Lua
 function onLoad()

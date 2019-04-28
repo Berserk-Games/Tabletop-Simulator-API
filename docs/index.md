@@ -13,4 +13,4 @@ You are able to follow the links on the left side of the page for available tool
 
 
 ## Writing Lua Scripts
-The Lua code is written via our in-game code editor or via our [Official Plugin for the Atom Text Editor](atom). Lua scripts are stored in the .json file of the save game as a plain text string. There is no need for an external internet host for Lua scripts, everything is self-contained in your game’s save file. Workshop uploads work the same way.
+The Lua code is written via our in-game code editor or via our [Official Plugin for the Atom Text Editor](/atom). Lua scripts are stored in the .json file of the save game as a plain text string. There is no need for an external internet host for Lua scripts, everything is self-contained in your game’s save file. Workshop uploads work the same way.

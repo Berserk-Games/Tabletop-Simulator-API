@@ -1,4 +1,4 @@
-This page describes how our [Official Atom Plugin](atom) API works so that you can write your own plugin for your text editor of choice if Atom does not suit your needs.
+This page describes how our [Official Atom Plugin](/atom) API works so that you can write your own plugin for your text editor of choice if Atom does not suit your needs.
 
 Communication between the editor and TTS occurs via two localhost TCP connections: one where TTS listens for messages and one where the editor listens for messages. All communication messages are JSON.
 
@@ -171,7 +171,7 @@ After TTS reloads the game, it then also sends a message with an ID of 1 back to
 
 ###Custom Message
 
-TTS listens for a JSON message with an ID of 2 containing a custom message to be forwarded to the [`onExternalMessage`](event#onexternalmessage) event handler in the currently loaded game.
+TTS listens for a JSON message with an ID of 2 containing a custom message to be forwarded to the [`onExternalMessage`](/event#onexternalmessage) event handler in the currently loaded game.
 
 ```JSON
 {

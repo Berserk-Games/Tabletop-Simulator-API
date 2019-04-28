@@ -1,4 +1,4 @@
-Objects can be spawned by any script using the [spawnObject()](base#spawnobject) function. These are the `type` Strings used to designate the type of Object to spawn.
+Objects can be spawned by any script using the [spawnObject()](/base#spawnobject) function. These are the `type` Strings used to designate the type of Object to spawn.
 
 ##Built-in Game Objects
 
@@ -159,9 +159,9 @@ Objects can be spawned by any script using the [spawnObject()](base#spawnobject)
 
 
 ##Custom Game Objects
-You can also spawn [custom Objects](https://kb.tabletopsimulator.com/custom-content/about-custom-objects/) and then provide the custom content for them after spawning them by calling [setCustomObject()](object#setcustomobject). {>>See setCustomObject for usage<<}
+You can also spawn [custom Objects](https://kb.tabletopsimulator.com/custom-content/about-custom-objects/) and then provide the custom content for them after spawning them by calling [setCustomObject()](/object#setcustomobject). {>>See setCustomObject for usage<<}
 
-You can also use setCustomObject along with [reload()](object#reload) to modify an existing custom Object.
+You can also use setCustomObject along with [reload()](/object#reload) to modify an existing custom Object.
 
 ###Custom AssetBundle
 
@@ -289,7 +289,7 @@ You can also use setCustomObject along with [reload()](object#reload) to modify 
                 * **3**: Cardboard
         * [<span class="tag flo"></span>](/types) **specular_intensity**: The specular intensity.
             * {>>Optional, defaults to 0.1.<<}
-        * [<span class="tag tab"></span>](/types) **specular_color**: The specular [Color](types#color).
+        * [<span class="tag tab"></span>](/types) **specular_color**: The specular [Color](/types#color).
             * {>>Optional, defaults to {r=1, g=1, b=1}.<<}
         * [<span class="tag flo"></span>](/types) **specular_sharpness**: The specular sharpness.
             * {>>Optional, defaults to 3.<<}

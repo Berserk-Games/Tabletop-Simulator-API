@@ -3,7 +3,7 @@ The Wait class is a static global class which deals with triggering a specified 
 Example usage: `Wait.frames(functionName, 60)`
 
 !!!tip
-    This is the first Class to use functions as parameters. To help, detailed examples are included for each usage. For more details, you can check out the [Function section](types#function) of the Introduction page.
+    This is the first Class to use functions as parameters. To help, detailed examples are included for each usage. For more details, you can check out the [Function section](/types#function) of the Introduction page.
 
 ##Function Summary
 

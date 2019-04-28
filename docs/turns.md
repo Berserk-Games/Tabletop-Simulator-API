@@ -4,7 +4,7 @@ Example usage: `Turns.reverse_order = true`.
 
 ##Member Variables
 
-Like [Object member variables](object#member-variables), Turns has its own member variables.
+Like [Object member variables](/object#member-variables), Turns has its own member variables.
 
 Variable | Description | Type
 -- | -- | :--
