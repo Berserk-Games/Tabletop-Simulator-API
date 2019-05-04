@@ -1021,8 +1021,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#onobjecttryenter" title="onObjectTryEnter(...)" class="md-nav__link">
-    onObjectTryEnter(...)
+  <a href="#filterobjectenter" title="filterObjectEnter(...)" class="md-nav__link">
+    filterObjectEnter(...)
   </a>
   
 </li>
@@ -2425,8 +2425,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#onobjecttryenter" title="onObjectTryEnter(...)" class="md-nav__link">
-    onObjectTryEnter(...)
+  <a href="#filterobjectenter" title="filterObjectEnter(...)" class="md-nav__link">
+    filterObjectEnter(...)
   </a>
   
 </li>
@@ -2650,6 +2650,11 @@
 </thead>
 <tbody>
 <tr>
+<td>filterObjectEnter(<a href="/types"><span class="tag obj"></span></a>&nbsp;obj)</td>
+<td>Called when an object attempts to enter this object. The object is prevented from entering unless "true" is returned.</td>
+<td><a href="#filterobjectenter"><span class="i"></span></a></td>
+</tr>
+<tr>
 <td>onCollisionEnter(<a href="/types"><span class="tag tab"></span></a>&nbsp;collision_info)</td>
 <td>Called when an Object starts colliding with the Object the function is on.</td>
 <td><a href="#oncollisionenter"><span class="i"></span></a></td>
@@ -2673,11 +2678,6 @@
 <td>onDrop(<a href="/types"><span class="tag str"></span></a>&nbsp;player_color)</td>
 <td>Called when a player releases an Object after picking it up.</td>
 <td><a href="#ondrop"><span class="i"></span></a></td>
-</tr>
-<tr>
-<td>onObjectTryEnter(<a href="/types"><span class="tag obj"></span></a>&nbsp;obj)</td>
-<td>Called when an object attempts to enter this object, like with a deck or stack. Returning false in the function denies the entry of the object.</td>
-<td><a href="#onobjecttryenter"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>onPeek(<a href="/types"><span class="tag str"></span></a>&nbsp;player)</td>
@@ -3205,17 +3205,17 @@
 </pre></div>
 
 <hr />
-<h3 id="onobjecttryenter">onObjectTryEnter(...)<a class="headerlink" href="#onobjecttryenter" title="Permanent link"> </a></h3>
-<p>Called when an object attempts to enter this object, like with a deck or stack. Returning false in the function denies the entry of the object.</p>
+<h3 id="filterobjectenter">filterObjectEnter(...)<a class="headerlink" href="#filterobjectenter" title="Permanent link"> </a></h3>
+<p>Called when an object attempts to enter this object. The object is prevented from entering unless "true" is returned.</p>
 <div class="admonition info">
-<p class="admonition-title">onObjectTryEnter(obj)</p>
+<p class="admonition-title">filterObjectEnter(obj)</p>
 <ul>
 <li><a href="/types"><span class="tag obj"></span></a>&nbsp;<strong>obj</strong>: The object that has tried to enter the object this script is attached to.</li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectTryEnter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">filterObjectEnter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span> <span class="c1">-- Print entering object&#39;s name</span>
-    <span class="kr">return</span> <span class="kc">false</span> <span class="c1">-- Prevents object from entering and ends this function</span>
+    <span class="kr">return</span> <span class="kc">true</span> <span class="c1">-- Allows object to enter.</span>
 <span class="kr">end</span>
 </pre></div>
 
