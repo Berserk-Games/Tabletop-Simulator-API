@@ -27,7 +27,6 @@ onObjectSearchEnd([<span class="tag obj"></span>](/types)&nbsp;obj, [<span class
 onObjectSearchStart([<span class="tag obj"></span>](/types)&nbsp;obj, [<span class="tag str"></span>](/types)&nbsp;player_color) | Called when a search is started on any container. | [<span class="i"></span>](#onobjectsearchstart)
 onObjectSpawn([<span class="tag obj"></span>](/types)&nbsp;spawn_object) | Called when any Object is spawned/created. | [<span class="i"></span>](#onobjectspawn)
 onObjectTriggerEffect([<span class="tag obj"></span>](/types)&nbsp;trigger_object, [<span class="tag int"></span>](/types)&nbsp;index) | Called whenever the trigger effect of an [AssetBundle](assetbundle) is activated. | [<span class="i"></span>](#onobjecttriggereffect)
-onObjectTryEnter([<span class="tag obj"></span>](/types)&nbsp;obj) | Called when an object attempts to enter this object, like with a deck or stack. Returning false in the function denies the entry of the object. | [<span class="i"></span>](#onobjecttryenter)
 onPlayerChangeColor([<span class="tag str"></span>](/types)&nbsp;player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [<span class="i"></span>](#onplayerchangecolor)
 onPlayerConnect([<span class="tag pla"></span>](/types)&nbsp;person) | Called when a [Player](player) connects to a game. | [<span class="i"></span>](#onplayerconnect)
 onPlayerDisconnect([<span class="tag pla"></span>](/types)&nbsp;person) | Called when a [Player](player) disconnects from a game. | [<span class="i"></span>](#onplayerdisconnect)
@@ -56,6 +55,7 @@ onCollisionExit([<span class="tag tab"></span>](/types)&nbsp;collision_info) | C
 onCollisionStay([<span class="tag tab"></span>](/types)&nbsp;collision_info) | Called **every frame** that an Object is colliding with the Object this function is on. | [<span class="i"></span>](#oncollisionstay)
 onDestroy() | Called when an Object it is on is destroyed. | [<span class="i"></span>](#ondestroy)
 onDrop([<span class="tag str"></span>](/types)&nbsp;player_color) | Called when a player releases an Object after picking it up. | [<span class="i"></span>](#ondrop)
+onObjectTryEnter([<span class="tag obj"></span>](/types)&nbsp;obj) | Called when an object attempts to enter this object, like with a deck or stack. Returning false in the function denies the entry of the object. | [<span class="i"></span>](#onobjecttryenter)
 onPeek([<span class="tag str"></span>](/types)&nbsp;player) | Called when a player using peek to look under this Object. | [<span class="i"></span>](#onpeek)
 onPickUp([<span class="tag str"></span>](/types)&nbsp;player_color) | Called when a player picks up an Object. | [<span class="i"></span>](#onpickup)
 onRandomize([<span class="tag str"></span>](/types)&nbsp;player_color) | Called when this Object is randomized. Like when shuffling a deck or shaking dice. | [<span class="i"></span>](#onrandomize)
@@ -398,23 +398,6 @@ end
 
 ---
 
-###onObjectTryEnter(...)
-
-Called when an object attempts to enter this object, like with a deck or stack. Returning false in the function denies the entry of the object.
-
-!!!info "onObjectTryEnter(obj)"
-	* [<span class="tag obj"></span>](/types)&nbsp;**obj**: The object that has tried to enter the object this script is attached to.
-
-``` Lua
-function onObjectTryEnter(obj)
-	print(obj.getName()) -- Print entering object's name
-	return false -- Prevents object from entering and ends this function
-end
-```
-
-
----
-
 
 
 
@@ -670,6 +653,22 @@ end
 ---
 
 
+###onObjectTryEnter(...)
+
+Called when an object attempts to enter this object, like with a deck or stack. Returning false in the function denies the entry of the object.
+
+!!!info "onObjectTryEnter(obj)"
+	* [<span class="tag obj"></span>](/types)&nbsp;**obj**: The object that has tried to enter the object this script is attached to.
+
+``` Lua
+function onObjectTryEnter(obj)
+	print(obj.getName()) -- Print entering object's name
+	return false -- Prevents object from entering and ends this function
+end
+```
+
+
+---
 
 ###onPeek(...)
 
