@@ -50,12 +50,12 @@ These are functions which are triggered by an event taking place in-game. They o
 
 Function Name | Description | &nbsp;
 -- | -- | --
+filterObjectEnter([<span class="tag obj"></span>](/types)&nbsp;obj) | Called when an object attempts to enter this object. The object is prevented from entering unless "true" is returned. | [<span class="i"></span>](#filterobjectenter)
 onCollisionEnter([<span class="tag tab"></span>](/types)&nbsp;collision_info) | Called when an Object starts colliding with the Object the function is on. | [<span class="i"></span>](#oncollisionenter)
 onCollisionExit([<span class="tag tab"></span>](/types)&nbsp;collision_info) | Called when an Object stops colliding with the Object the function is on. | [<span class="i"></span>](#oncollisionexit)
 onCollisionStay([<span class="tag tab"></span>](/types)&nbsp;collision_info) | Called **every frame** that an Object is colliding with the Object this function is on. | [<span class="i"></span>](#oncollisionstay)
 onDestroy() | Called when an Object it is on is destroyed. | [<span class="i"></span>](#ondestroy)
 onDrop([<span class="tag str"></span>](/types)&nbsp;player_color) | Called when a player releases an Object after picking it up. | [<span class="i"></span>](#ondrop)
-onObjectTryEnter([<span class="tag obj"></span>](/types)&nbsp;obj) | Called when an object attempts to enter this object, like with a deck or stack. Returning false in the function denies the entry of the object. | [<span class="i"></span>](#onobjecttryenter)
 onPeek([<span class="tag str"></span>](/types)&nbsp;player) | Called when a player using peek to look under this Object. | [<span class="i"></span>](#onpeek)
 onPickUp([<span class="tag str"></span>](/types)&nbsp;player_color) | Called when a player picks up an Object. | [<span class="i"></span>](#onpickup)
 onRandomize([<span class="tag str"></span>](/types)&nbsp;player_color) | Called when this Object is randomized. Like when shuffling a deck or shaking dice. | [<span class="i"></span>](#onrandomize)
@@ -653,17 +653,17 @@ end
 ---
 
 
-###onObjectTryEnter(...)
+###filterObjectEnter(...)
 
-Called when an object attempts to enter this object, like with a deck or stack. Returning false in the function denies the entry of the object.
+Called when an object attempts to enter this object. The object is prevented from entering unless "true" is returned.
 
-!!!info "onObjectTryEnter(obj)"
+!!!info "filterObjectEnter(obj)"
 	* [<span class="tag obj"></span>](/types)&nbsp;**obj**: The object that has tried to enter the object this script is attached to.
 
 ``` Lua
-function onObjectTryEnter(obj)
+function filterObjectEnter(obj)
 	print(obj.getName()) -- Print entering object's name
-	return false -- Prevents object from entering and ends this function
+	return true -- Allows object to enter.
 end
 ```
 
