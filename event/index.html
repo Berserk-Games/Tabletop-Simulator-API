@@ -917,6 +917,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onobjecttryenter" title="onObjectTryEnter(...)" class="md-nav__link">
+    onObjectTryEnter(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onplayerchangecolor" title="onPlayerChangeColor(...)" class="md-nav__link">
     onPlayerChangeColor(...)
   </a>
@@ -2314,6 +2321,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onobjecttryenter" title="onObjectTryEnter(...)" class="md-nav__link">
+    onObjectTryEnter(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onplayerchangecolor" title="onPlayerChangeColor(...)" class="md-nav__link">
     onPlayerChangeColor(...)
   </a>
@@ -2581,6 +2595,11 @@
 <td>onObjectTriggerEffect(<a href="/types"><span class="tag obj"></span></a>&nbsp;trigger_object, <a href="/types"><span class="tag int"></span></a>&nbsp;index)</td>
 <td>Called whenever the trigger effect of an <a href="assetbundle">AssetBundle</a> is activated.</td>
 <td><a href="#onobjecttriggereffect"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>onObjectTryEnter(<a href="/types"><span class="tag obj"></span></a>&nbsp;obj)</td>
+<td>Called when an object attempts to enter this object, like with a deck or stack. Returning false in the function denies the entry of the object.</td>
+<td><a href="#onobjecttryenter"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>onPlayerChangeColor(<a href="/types"><span class="tag str"></span></a>&nbsp;player_color)</td>
@@ -2962,6 +2981,21 @@
 </div>
 <div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectTriggerEffect</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop &quot;</span> <span class="o">..</span> <span class="n">index</span> <span class="o">..</span> <span class="s2">&quot; activated.&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
+<h3 id="onobjecttryenter">onObjectTryEnter(...)<a class="headerlink" href="#onobjecttryenter" title="Permanent link"> </a></h3>
+<p>Called when an object attempts to enter this object, like with a deck or stack. Returning false in the function denies the entry of the object.</p>
+<div class="admonition info">
+<p class="admonition-title">onObjectTryEnter(obj)</p>
+<ul>
+<li><a href="/types"><span class="tag obj"></span></a>&nbsp;<strong>obj</strong>: The object that has tried to enter the object this script is attached to.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectTryEnter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span> <span class="c1">-- Print entering object&#39;s name</span>
+    <span class="kr">return</span> <span class="kc">false</span> <span class="c1">-- Prevents object from entering and ends this function</span>
 <span class="kr">end</span>
 </pre></div>
 

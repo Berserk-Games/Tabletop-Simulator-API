@@ -2296,6 +2296,12 @@
 <td>(none)</td>
 </tr>
 <tr>
+<td>isDropReceiver</td>
+<td>Determine if an object triggers onElementDropped.</td>
+<td>bool</td>
+<td>false</td>
+</tr>
+<tr>
 <td>visibility</td>
 <td>What colors are able to see the element. See below for additional details.</td>
 <td>string</td>
@@ -2304,7 +2310,7 @@
 </tbody>
 </table>
 <h4 id="visibility-targets">Visibility Targets<a class="headerlink" href="#visibility-targets" title="Permanent link"> </a></h4>
-<p>The visibility attribute allows for only certain people or groups to see an element. Hiding an element will hide its children as well. </p>
+<p>The visibility attribute allows for only certain people or groups to see an element. Hiding an element will hide its children as well.</p>
 <h5 id="visible-to-all-players">Visible To All Players<a class="headerlink" href="#visible-to-all-players" title="Permanent link"> </a></h5>
 <p>Not using the visibility attribute (or setting it to an empty string) does not limit the visibility of the element.</p>
 <h5 id="visiblity-selection">Visiblity Selection<a class="headerlink" href="#visiblity-selection" title="Permanent link"> </a></h5>
@@ -2392,7 +2398,7 @@
 </tbody>
 </table>
 <h3 id="image-attributes">Image Attributes<a class="headerlink" href="#image-attributes" title="Permanent link"> </a></h3>
-<p>Applies to elements with an image component. The string that <code class="codehilite">image</code>s all take is the <strong>NAME THE IMAGE WAS GIVEN WHEN YOU PUT IT IN THE IN-GAME ASSET MANAGER</strong>. </p>
+<p>Applies to elements with an image component. The string that <code class="codehilite">image</code>s all take is the <strong>NAME THE IMAGE WAS GIVEN WHEN YOU PUT IT IN THE IN-GAME ASSET MANAGER</strong>.</p>
 <table>
 <thead>
 <tr>
@@ -2836,8 +2842,18 @@
 <td>string</td>
 <td></td>
 </tr>
+<tr>
+<td>onElementDropped</td>
+<td>An element needs isDropReceiver for this to trigger</td>
+<td>string</td>
+<td></td>
+</tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>onClick, onMouseEnter, onMouseExit, onMouseDown and onMouseUp all pass the click button. The values are -1 LMB, -2RMB, -3 MMB, 0 touch single, 1 double touche, 2 triple touch.</p>
+</div>
 <hr />
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link"> </a></h2>
 <h3 id="single-element-attributes">Single Element Attributes<a class="headerlink" href="#single-element-attributes" title="Permanent link"> </a></h3>
@@ -2851,16 +2867,16 @@
 </pre></div>
 
 <h4 id="many-attributes">Many Attributes<a class="headerlink" href="#many-attributes" title="Permanent link"> </a></h4>
-<div class="codehilite"><pre><span></span><span class="nt">&lt;Button</span> 
-    <span class="na">height=</span><span class="s">&quot;100&quot;</span> 
+<div class="codehilite"><pre><span></span><span class="nt">&lt;Button</span>
+    <span class="na">height=</span><span class="s">&quot;100&quot;</span>
     <span class="na">width=</span><span class="s">&quot;200&quot;</span>
     <span class="na">color=</span><span class="s">&quot;blue&quot;</span>
     <span class="na">onClick=</span><span class="s">&quot;test&quot;</span>
     <span class="na">allowDragging=</span><span class="s">&quot;true&quot;</span>
     <span class="na">rectAlignment=</span><span class="s">&quot;MiddleRight&quot;</span>
-    <span class="na">tooltip=</span><span class="s">&quot;Test Tooltip&quot;</span> 
+    <span class="na">tooltip=</span><span class="s">&quot;Test Tooltip&quot;</span>
     <span class="na">tooltipPosition=</span><span class="s">&quot;Above&quot;</span>
-    <span class="na">fontSize=</span><span class="s">&quot;32&quot;</span> 
+    <span class="na">fontSize=</span><span class="s">&quot;32&quot;</span>
     <span class="na">textColor=</span><span class="s">&quot;#ff0000&quot;</span>
 <span class="nt">&gt;</span>Hello
 <span class="nt">&lt;/Button&gt;</span>
