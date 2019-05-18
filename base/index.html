@@ -1,217 +1,4 @@
-
-
-
-
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      
-      
-      
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../img/Icon-Dice.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
-    
-    
-      
-        <title>Base - Tabletop Simulator API</title>
-      
-    
-    
-      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
-      
-      
-        
-        
-        <meta name="theme-color" content="#3f51b5">
-      
-    
-    
-      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
-    
-    
-      
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
-      
-    
-    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
-    
-      <link rel="stylesheet" href="../css/theme.css">
-    
-      <link rel="stylesheet" href="../css/table.css">
-    
-      <link rel="stylesheet" href="../css/type_icons.css">
-    
-      <link rel="stylesheet" href="../css/i_icons.css">
-    
-      <link rel="stylesheet" href="../css/player_color_table.css">
-    
-    
-  </head>
-  
-    
-    
-    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
-  
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="__github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
-        
-      </defs>
-    </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="../#function-summary" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="Tabletop Simulator API" class="md-header-nav__button md-logo">
-          
-            <img src="../img/TSIcon.png" width="24" height="24">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            
-              <span class="md-header-nav__topic">
-                Tabletop Simulator API
-              </span>
-              <span class="md-header-nav__topic">
-                Base
-              </span>
-            
-          
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-          
-        
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-
-  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub Source
-    </div>
-  </a>
-
-          </div>
-        </div>
-      
-    </div>
-  </nav>
-</header>
-    
-    <div class="md-container">
-      
-        
-      
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
-          
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <!--
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../img/Icon-Dice.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.0"><title>Base - Tabletop Simulator API</title><link rel="stylesheet" href="../assets/stylesheets/application.4031d38b.css"><link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css"><meta name="theme-color" content="#3f51b5"><script src="../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=swap"><style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../assets/fonts/material-icons.css"><link rel="stylesheet" href="../css/theme.css"><link rel="stylesheet" href="../css/table.css"><link rel="stylesheet" href="../css/type_icons.css"><link rel="stylesheet" href="../css/i_icons.css"><link rel="stylesheet" href="../css/player_color_table.css"></head><body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#function-summary" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href=".." title="Tabletop Simulator API" class="md-header-nav__button md-logo"><img src="../img/TSIcon.png" width="24" height="24"></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">Tabletop Simulator API</span><span class="md-header-nav__topic">Base</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">GitHub Source</div></a></div></div></div></nav></header><div class="md-container"><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><!--
   Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -250,25 +37,7 @@
   <!-- Repository containing source -->
   
     <div class="md-nav__source">
-      
-
-
-  
-
-
-  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub Source
-    </div>
-  </a>
-
+      <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">GitHub Source</div></a>
     </div>
   
 
@@ -823,199 +592,7 @@
 
     <!-- Show table of contents -->
     
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#function-summary" title="Function Summary" class="md-nav__link">
-    Function Summary
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#global-functions" title="Global Functions" class="md-nav__link">
-    Global Functions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#message-functions" title="Message Functions" class="md-nav__link">
-    Message Functions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#function-details" title="Function Details" class="md-nav__link">
-    Function Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#global-function-details" title="Global Function details" class="md-nav__link">
-    Global Function details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#copy" title="copy(...)" class="md-nav__link">
-    copy(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#destroyobject" title="destroyObject(...)" class="md-nav__link">
-    destroyObject(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getobjectfromguid" title="getObjectFromGUID(...)" class="md-nav__link">
-    getObjectFromGUID(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#group" title="group(...)" class="md-nav__link">
-    group(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#paste" title="paste(...)" class="md-nav__link">
-    paste(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spawnobject" title="spawnObject(...)" class="md-nav__link">
-    spawnObject(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spawnobjectjson" title="spawnObjectJSON(...)" class="md-nav__link">
-    spawnObjectJSON(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#startluacoroutine" title="startLuaCoroutine(...)" class="md-nav__link">
-    startLuaCoroutine(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stringcolortorgb" title="stringColorToRGB(...)" class="md-nav__link">
-    stringColorToRGB(...)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#message-function-details" title="Message Function Details" class="md-nav__link">
-    Message Function Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#broadcasttoall" title="broadcastToAll(...)" class="md-nav__link">
-    broadcastToAll(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#broadcasttocolor" title="broadcastToColor(...)" class="md-nav__link">
-    broadcastToColor(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#log" title="log(...)" class="md-nav__link">
-    log(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logstyle" title="logStyle(...)" class="md-nav__link">
-    logStyle(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#print" title="print(...)" class="md-nav__link">
-    print(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#printtoall" title="printToAll(...)" class="md-nav__link">
-    printToAll(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#printtocolor" title="printToColor(...)" class="md-nav__link">
-    printToColor(...)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
+      <nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#function-summary" title="Function Summary" class="md-nav__link">Function Summary</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#global-functions" title="Global Functions" class="md-nav__link">Global Functions</a></li><li class="md-nav__item"><a href="#message-functions" title="Message Functions" class="md-nav__link">Message Functions</a></li></ul></nav></li><li class="md-nav__item"><a href="#function-details" title="Function Details" class="md-nav__link">Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#global-function-details" title="Global Function details" class="md-nav__link">Global Function details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#copy" title="copy(...)" class="md-nav__link">copy(...)</a></li><li class="md-nav__item"><a href="#destroyobject" title="destroyObject(...)" class="md-nav__link">destroyObject(...)</a></li><li class="md-nav__item"><a href="#getobjectfromguid" title="getObjectFromGUID(...)" class="md-nav__link">getObjectFromGUID(...)</a></li><li class="md-nav__item"><a href="#group" title="group(...)" class="md-nav__link">group(...)</a></li><li class="md-nav__item"><a href="#paste" title="paste(...)" class="md-nav__link">paste(...)</a></li><li class="md-nav__item"><a href="#spawnobject" title="spawnObject(...)" class="md-nav__link">spawnObject(...)</a></li><li class="md-nav__item"><a href="#spawnobjectjson" title="spawnObjectJSON(...)" class="md-nav__link">spawnObjectJSON(...)</a></li><li class="md-nav__item"><a href="#startluacoroutine" title="startLuaCoroutine(...)" class="md-nav__link">startLuaCoroutine(...)</a></li><li class="md-nav__item"><a href="#stringcolortorgb" title="stringColorToRGB(...)" class="md-nav__link">stringColorToRGB(...)</a></li></ul></nav></li><li class="md-nav__item"><a href="#message-function-details" title="Message Function Details" class="md-nav__link">Message Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#broadcasttoall" title="broadcastToAll(...)" class="md-nav__link">broadcastToAll(...)</a></li><li class="md-nav__item"><a href="#broadcasttocolor" title="broadcastToColor(...)" class="md-nav__link">broadcastToColor(...)</a></li><li class="md-nav__item"><a href="#log" title="log(...)" class="md-nav__link">log(...)</a></li><li class="md-nav__item"><a href="#logstyle" title="logStyle(...)" class="md-nav__link">logStyle(...)</a></li><li class="md-nav__item"><a href="#print" title="print(...)" class="md-nav__link">print(...)</a></li><li class="md-nav__item"><a href="#printtoall" title="printToAll(...)" class="md-nav__link">printToAll(...)</a></li><li class="md-nav__item"><a href="#printtocolor" title="printToColor(...)" class="md-nav__link">printToColor(...)</a></li></ul></nav></li></ul></nav></li></ul></nav>
     
   </li>
 
@@ -2046,223 +1623,7 @@
   <!--style="color:grey;position:absolute;left:18px;top:-2px" href="https://api.tabletopsimulator.com/">Go To API</a>-->
   <a href="https://kb.tabletopsimulator.com/" class="custom-link">Go To Knowledge Base &#8617</a>
 
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#function-summary" title="Function Summary" class="md-nav__link">
-    Function Summary
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#global-functions" title="Global Functions" class="md-nav__link">
-    Global Functions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#message-functions" title="Message Functions" class="md-nav__link">
-    Message Functions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#function-details" title="Function Details" class="md-nav__link">
-    Function Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#global-function-details" title="Global Function details" class="md-nav__link">
-    Global Function details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#copy" title="copy(...)" class="md-nav__link">
-    copy(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#destroyobject" title="destroyObject(...)" class="md-nav__link">
-    destroyObject(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getobjectfromguid" title="getObjectFromGUID(...)" class="md-nav__link">
-    getObjectFromGUID(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#group" title="group(...)" class="md-nav__link">
-    group(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#paste" title="paste(...)" class="md-nav__link">
-    paste(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spawnobject" title="spawnObject(...)" class="md-nav__link">
-    spawnObject(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spawnobjectjson" title="spawnObjectJSON(...)" class="md-nav__link">
-    spawnObjectJSON(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#startluacoroutine" title="startLuaCoroutine(...)" class="md-nav__link">
-    startLuaCoroutine(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stringcolortorgb" title="stringColorToRGB(...)" class="md-nav__link">
-    stringColorToRGB(...)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#message-function-details" title="Message Function Details" class="md-nav__link">
-    Message Function Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#broadcasttoall" title="broadcastToAll(...)" class="md-nav__link">
-    broadcastToAll(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#broadcasttocolor" title="broadcastToColor(...)" class="md-nav__link">
-    broadcastToColor(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#log" title="log(...)" class="md-nav__link">
-    log(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logstyle" title="logStyle(...)" class="md-nav__link">
-    logStyle(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#print" title="print(...)" class="md-nav__link">
-    print(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#printtoall" title="printToAll(...)" class="md-nav__link">
-    printToAll(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#printtocolor" title="printToColor(...)" class="md-nav__link">
-    printToColor(...)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/base.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
-                
-                
-                  <h1>Base</h1>
-                
-                <p>These are a loose collection of functions which can be used to perform a variety of actions within Tabletop Simulator.</p>
+</nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#function-summary" title="Function Summary" class="md-nav__link">Function Summary</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#global-functions" title="Global Functions" class="md-nav__link">Global Functions</a></li><li class="md-nav__item"><a href="#message-functions" title="Message Functions" class="md-nav__link">Message Functions</a></li></ul></nav></li><li class="md-nav__item"><a href="#function-details" title="Function Details" class="md-nav__link">Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#global-function-details" title="Global Function details" class="md-nav__link">Global Function details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#copy" title="copy(...)" class="md-nav__link">copy(...)</a></li><li class="md-nav__item"><a href="#destroyobject" title="destroyObject(...)" class="md-nav__link">destroyObject(...)</a></li><li class="md-nav__item"><a href="#getobjectfromguid" title="getObjectFromGUID(...)" class="md-nav__link">getObjectFromGUID(...)</a></li><li class="md-nav__item"><a href="#group" title="group(...)" class="md-nav__link">group(...)</a></li><li class="md-nav__item"><a href="#paste" title="paste(...)" class="md-nav__link">paste(...)</a></li><li class="md-nav__item"><a href="#spawnobject" title="spawnObject(...)" class="md-nav__link">spawnObject(...)</a></li><li class="md-nav__item"><a href="#spawnobjectjson" title="spawnObjectJSON(...)" class="md-nav__link">spawnObjectJSON(...)</a></li><li class="md-nav__item"><a href="#startluacoroutine" title="startLuaCoroutine(...)" class="md-nav__link">startLuaCoroutine(...)</a></li><li class="md-nav__item"><a href="#stringcolortorgb" title="stringColorToRGB(...)" class="md-nav__link">stringColorToRGB(...)</a></li></ul></nav></li><li class="md-nav__item"><a href="#message-function-details" title="Message Function Details" class="md-nav__link">Message Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#broadcasttoall" title="broadcastToAll(...)" class="md-nav__link">broadcastToAll(...)</a></li><li class="md-nav__item"><a href="#broadcasttocolor" title="broadcastToColor(...)" class="md-nav__link">broadcastToColor(...)</a></li><li class="md-nav__item"><a href="#log" title="log(...)" class="md-nav__link">log(...)</a></li><li class="md-nav__item"><a href="#logstyle" title="logStyle(...)" class="md-nav__link">logStyle(...)</a></li><li class="md-nav__item"><a href="#print" title="print(...)" class="md-nav__link">print(...)</a></li><li class="md-nav__item"><a href="#printtoall" title="printToAll(...)" class="md-nav__link">printToAll(...)</a></li><li class="md-nav__item"><a href="#printtocolor" title="printToColor(...)" class="md-nav__link">printToColor(...)</a></li></ul></nav></li></ul></nav></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/base.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a><h1>Base</h1><p>These are a loose collection of functions which can be used to perform a variety of actions within Tabletop Simulator.</p>
 <p>These functions can utilize in-game Objects, but none of them can be enacted on in-game Objects. They all deal with the game space.</p>
 <h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link"> </a></h2>
 <h3 id="global-functions">Global Functions<a class="headerlink" href="#global-functions" title="Permanent link"> </a></h3>
@@ -2303,7 +1664,7 @@
 </tr>
 <tr>
 <td>getObjectFromGUID(<a href="/types"><span class="tag str"></span></a>&nbsp;guid)</td>
-<td>Returns Object by its GUID. Will return <code class="codehilite">nil</code> if this GUID doesn't currently exist.</td>
+<td>Returns Object by its GUID. Will return <code class="codehilite"><span class="n">nil</span></code> if this GUID doesn't currently exist.</td>
 <td><a href="/types"><span class="ret obj"></span></a></td>
 <td><a href="#getobjectfromguid"><span class="i"></span></a></td>
 </tr>
@@ -2315,7 +1676,7 @@
 </tr>
 <tr>
 <td>group(<a href="/types"><span class="tag tab"></span></a>&nbsp;objects)</td>
-<td>Groups objects together, like how the <code class="codehilite">G</code> key does for players.</td>
+<td>Groups objects together, like how the <code class="codehilite"><span class="k">G</span></code> key does for players.</td>
 <td><a href="/types"><span class="ret obj"></span></a></td>
 <td><a href="#group"><span class="i"></span></a></td>
 </tr>
@@ -2451,7 +1812,7 @@
 </div>
 <hr />
 <h4 id="getobjectfromguid">getObjectFromGUID(...)<a class="headerlink" href="#getobjectfromguid" title="Permanent link"> </a></h4>
-<p><a href="/types"><span class="ret obj"></span></a>&nbsp;Returns Object by its GUID. Will return <code class="codehilite">nil</code> if this GUID doesn't currently exist.</p>
+<p><a href="/types"><span class="ret obj"></span></a>&nbsp;Returns Object by its GUID. Will return <code class="codehilite"><span class="n">nil</span></code> if this GUID doesn't currently exist.</p>
 <div class="admonition info">
 <p class="admonition-title">getObjectFromGUID(guid)</p>
 <ul>
@@ -2464,7 +1825,7 @@
 </div>
 <hr />
 <h4 id="group">group(...)<a class="headerlink" href="#group" title="Permanent link"> </a></h4>
-<p><a href="/types"><span class="ret obj"></span></a>&nbsp;Groups objects together, like how the <code class="codehilite">G</code> key does for players. It returns an object reference to the deck/stack formed.</p>
+<p><a href="/types"><span class="ret obj"></span></a>&nbsp;Groups objects together, like how the <code class="codehilite"><span class="k">G</span></code> key does for players. It returns an object reference to the deck/stack formed.</p>
 <p>Not all objects CAN be grouped. If the G key won't work on them, neither will this function.</p>
 <div class="admonition info">
 <p class="admonition-title">group(objects)</p>
@@ -2565,7 +1926,7 @@
 
 <hr />
 <h4 id="spawnobjectjson">spawnObjectJSON(...)<a class="headerlink" href="#spawnobjectjson" title="Permanent link"> </a></h4>
-<p>Spawns an Object using a JSON string. Works with <a href="object#getjson">getJSON()</a>. It works just like spawnObject, but instead of a <code class="codehilite">type</code>, you supply a <code class="codehilite">json</code> string. The other parameters will overwrite those in the JSON.</p>
+<p>Spawns an Object using a JSON string. Works with <a href="object#getjson">getJSON()</a>. It works just like spawnObject, but instead of a <code class="codehilite"><span class="k">type</span></code>, you supply a <code class="codehilite"><span class="n">json</span></code> string. The other parameters will overwrite those in the JSON.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. You can also add a delay after spawning using a <a href="wait">Wait</a> function.</p>
@@ -2628,7 +1989,7 @@
 
 <hr />
 <h4 id="startluacoroutine">startLuaCoroutine(...)<a class="headerlink" href="#startluacoroutine" title="Permanent link"> </a></h4>
-<p><a href="/types"><span class="ret obj"></span></a>&nbsp;Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the next frame of the game using <code class="codehilite">coroutine.yield(0)</code>.</p>
+<p><a href="/types"><span class="ret obj"></span></a>&nbsp;Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the next frame of the game using <code class="codehilite"><span class="n">coroutine</span><span class="p">.</span><span class="n">yield</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></code>.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>You MUST return a 1 at the end of any coroutine or it will throw an error.</p>
@@ -2788,22 +2149,7 @@
 <div class="codehilite"><pre><span></span><span class="n">printToColor</span><span class="p">(</span><span class="s2">&quot;Hello Red.&quot;</span><span class="p">,</span> <span class="s2">&quot;Red&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">})</span>
 </pre></div>
 
-<hr />
-                
-                  
-                
-              
-              
-                
-
-
-              
-            </article>
-          </div>
-        </div>
-      </main>
-      
-        <!--
+<hr /></article></div></div></main><!--
   Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -2846,34 +2192,8 @@
 
       <!-- Social links -->
       
-        
-  <div class="md-footer-social">
-    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
-    
-      <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>
-    
-      <a href="https://twitter.com/tabletopsim" class="md-footer-social__link fa fa-twitter"></a>
-    
-      <a href="https://www.facebook.com/tabletopsimulator" class="md-footer-social__link fa fa-facebook"></a>
-    
-      <a href="https://www.youtube.com/user/berserkgames" class="md-footer-social__link fa fa-youtube"></a>
-    
-  </div>
-
+        <div class="md-footer-social"><link rel="stylesheet" href="../assets/fonts/font-awesome.css"> <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>  <a href="https://twitter.com/tabletopsim" class="md-footer-social__link fa fa-twitter"></a>  <a href="https://www.facebook.com/tabletopsimulator" class="md-footer-social__link fa fa-facebook"></a>  <a href="https://www.youtube.com/user/berserkgames" class="md-footer-social__link fa fa-youtube"></a> </div>
       
     </div>
   </div>
-</footer>
-      
-    </div>
-    
-      <script src="../assets/javascripts/application.583bbe55.js"></script>
-      
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
-      
-    
-    
-      
-    
-  </body>
-</html>
+</footer></div><script src="../assets/javascripts/application.b260a35d.js"></script><script>app.initialize({version:"1.0.4",url:{base:".."}})</script></body></html>

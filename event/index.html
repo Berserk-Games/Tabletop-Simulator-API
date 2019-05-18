@@ -1,217 +1,4 @@
-
-
-
-
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      
-      
-      
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../img/Icon-Dice.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
-    
-    
-      
-        <title>Event - Tabletop Simulator API</title>
-      
-    
-    
-      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
-      
-      
-        
-        
-        <meta name="theme-color" content="#3f51b5">
-      
-    
-    
-      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
-    
-    
-      
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
-      
-    
-    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
-    
-      <link rel="stylesheet" href="../css/theme.css">
-    
-      <link rel="stylesheet" href="../css/table.css">
-    
-      <link rel="stylesheet" href="../css/type_icons.css">
-    
-      <link rel="stylesheet" href="../css/i_icons.css">
-    
-      <link rel="stylesheet" href="../css/player_color_table.css">
-    
-    
-  </head>
-  
-    
-    
-    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
-  
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="__github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
-        
-      </defs>
-    </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="../#function-summary" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="Tabletop Simulator API" class="md-header-nav__button md-logo">
-          
-            <img src="../img/TSIcon.png" width="24" height="24">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            
-              <span class="md-header-nav__topic">
-                Tabletop Simulator API
-              </span>
-              <span class="md-header-nav__topic">
-                Event
-              </span>
-            
-          
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-          
-        
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-
-  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub Source
-    </div>
-  </a>
-
-          </div>
-        </div>
-      
-    </div>
-  </nav>
-</header>
-    
-    <div class="md-container">
-      
-        
-      
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
-          
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <!--
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../img/Icon-Dice.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.0"><title>Event - Tabletop Simulator API</title><link rel="stylesheet" href="../assets/stylesheets/application.4031d38b.css"><link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css"><meta name="theme-color" content="#3f51b5"><script src="../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=swap"><style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../assets/fonts/material-icons.css"><link rel="stylesheet" href="../css/theme.css"><link rel="stylesheet" href="../css/table.css"><link rel="stylesheet" href="../css/type_icons.css"><link rel="stylesheet" href="../css/i_icons.css"><link rel="stylesheet" href="../css/player_color_table.css"></head><body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#function-summary" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href=".." title="Tabletop Simulator API" class="md-header-nav__button md-logo"><img src="../img/TSIcon.png" width="24" height="24"></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">Tabletop Simulator API</span><span class="md-header-nav__topic">Event</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">GitHub Source</div></a></div></div></div></nav></header><div class="md-container"><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><!--
   Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -250,25 +37,7 @@
   <!-- Repository containing source -->
   
     <div class="md-nav__source">
-      
-
-
-  
-
-
-  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub Source
-    </div>
-  </a>
-
+      <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">GitHub Source</div></a>
     </div>
   
 
@@ -785,333 +554,7 @@
 
     <!-- Show table of contents -->
     
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#function-summary" title="Function Summary" class="md-nav__link">
-    Function Summary
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#default-events-global-object" title="Default Events (Global &amp; Object)" class="md-nav__link">
-    Default Events (Global &amp; Object)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#default-events-object-only" title="Default Events (Object Only)" class="md-nav__link">
-    Default Events (Object Only)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#function-details-global-object" title="Function Details (Global &amp; Object)" class="md-nav__link">
-    Function Details (Global &amp; Object)
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#onchat" title="onChat(...)" class="md-nav__link">
-    onChat(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onexternalmessage" title="onExternalMessage(...)" class="md-nav__link">
-    onExternalMessage(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onfixedupdate" title="onFixedUpdate()" class="md-nav__link">
-    onFixedUpdate()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onload" title="onLoad(...)" class="md-nav__link">
-    onLoad(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectdestroy" title="onObjectDestroy(...)" class="md-nav__link">
-    onObjectDestroy(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectdrop" title="onObjectDrop(...)" class="md-nav__link">
-    onObjectDrop(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectenterscriptingzone" title="onObjectEnterScriptingZone(...)" class="md-nav__link">
-    onObjectEnterScriptingZone(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectentercontainer" title="onObjectEnterContainer(...)" class="md-nav__link">
-    onObjectEnterContainer(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectleavescriptingzone" title="onObjectLeaveScriptingZone(...)" class="md-nav__link">
-    onObjectLeaveScriptingZone(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectleavecontainer" title="onObjectLeaveContainer(...)" class="md-nav__link">
-    onObjectLeaveContainer(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectloopingeffect" title="onObjectLoopingEffect(...)" class="md-nav__link">
-    onObjectLoopingEffect(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectpeek" title="onObjectPeek(...)" class="md-nav__link">
-    onObjectPeek(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectpickup" title="onObjectPickUp(...)" class="md-nav__link">
-    onObjectPickUp(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectrandomize" title="onObjectRandomize(...)" class="md-nav__link">
-    onObjectRandomize(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectsearchend" title="onObjectSearchEnd(...)" class="md-nav__link">
-    onObjectSearchEnd(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectsearchstart" title="onObjectSearchStart(...)" class="md-nav__link">
-    onObjectSearchStart(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectspawn" title="onObjectSpawn(...)" class="md-nav__link">
-    onObjectSpawn(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjecttriggereffect" title="onObjectTriggerEffect(...)" class="md-nav__link">
-    onObjectTriggerEffect(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onplayerchangecolor" title="onPlayerChangeColor(...)" class="md-nav__link">
-    onPlayerChangeColor(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onplayerconnect" title="onPlayerConnect(...)" class="md-nav__link">
-    onPlayerConnect(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onplayerdisconnect" title="onPlayerDisconnect(...)" class="md-nav__link">
-    onPlayerDisconnect(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onplayerturn" title="onPlayerTurn(...)" class="md-nav__link">
-    onPlayerTurn(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onsave" title="onSave()" class="md-nav__link">
-    onSave()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onscriptingbuttondown" title="onScriptingButtonDown(...)" class="md-nav__link">
-    onScriptingButtonDown(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onscriptingbuttonup" title="onScriptingButtonUp(...)" class="md-nav__link">
-    onScriptingButtonUp(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onupdate" title="onUpdate()" class="md-nav__link">
-    onUpdate()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#function-details-object-only" title="Function Details (Object only)" class="md-nav__link">
-    Function Details (Object only)
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#oncollisionenter" title="onCollisionEnter(...)" class="md-nav__link">
-    onCollisionEnter(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#oncollisionexit" title="onCollisionExit(...)" class="md-nav__link">
-    onCollisionExit(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#oncollisionstay" title="onCollisionStay(...)" class="md-nav__link">
-    onCollisionStay(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ondestroy" title="onDestroy()" class="md-nav__link">
-    onDestroy()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ondrop" title="onDrop(...)" class="md-nav__link">
-    onDrop(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filterobjectenter" title="filterObjectEnter(...)" class="md-nav__link">
-    filterObjectEnter(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onpeek" title="onPeek(...)" class="md-nav__link">
-    onPeek(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onpickup" title="onPickUp(...)" class="md-nav__link">
-    onPickUp(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onrandomize" title="onRandomize(...)" class="md-nav__link">
-    onRandomize(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onsearchend" title="onSearchEnd(...)" class="md-nav__link">
-    onSearchEnd(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onsearchstart" title="onSearchStart(...)" class="md-nav__link">
-    onSearchStart(...)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
+      <nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#function-summary" title="Function Summary" class="md-nav__link">Function Summary</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#default-events-global-object" title="Default Events (Global &amp; Object)" class="md-nav__link">Default Events (Global &amp; Object)</a></li><li class="md-nav__item"><a href="#default-events-object-only" title="Default Events (Object Only)" class="md-nav__link">Default Events (Object Only)</a></li></ul></nav></li><li class="md-nav__item"><a href="#function-details-global-object" title="Function Details (Global &amp; Object)" class="md-nav__link">Function Details (Global &amp; Object)</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#onchat" title="onChat(...)" class="md-nav__link">onChat(...)</a></li><li class="md-nav__item"><a href="#onexternalmessage" title="onExternalMessage(...)" class="md-nav__link">onExternalMessage(...)</a></li><li class="md-nav__item"><a href="#onfixedupdate" title="onFixedUpdate()" class="md-nav__link">onFixedUpdate()</a></li><li class="md-nav__item"><a href="#onload" title="onLoad(...)" class="md-nav__link">onLoad(...)</a></li><li class="md-nav__item"><a href="#onobjectdestroy" title="onObjectDestroy(...)" class="md-nav__link">onObjectDestroy(...)</a></li><li class="md-nav__item"><a href="#onobjectdrop" title="onObjectDrop(...)" class="md-nav__link">onObjectDrop(...)</a></li><li class="md-nav__item"><a href="#onobjectenterscriptingzone" title="onObjectEnterScriptingZone(...)" class="md-nav__link">onObjectEnterScriptingZone(...)</a></li><li class="md-nav__item"><a href="#onobjectentercontainer" title="onObjectEnterContainer(...)" class="md-nav__link">onObjectEnterContainer(...)</a></li><li class="md-nav__item"><a href="#onobjectleavescriptingzone" title="onObjectLeaveScriptingZone(...)" class="md-nav__link">onObjectLeaveScriptingZone(...)</a></li><li class="md-nav__item"><a href="#onobjectleavecontainer" title="onObjectLeaveContainer(...)" class="md-nav__link">onObjectLeaveContainer(...)</a></li><li class="md-nav__item"><a href="#onobjectloopingeffect" title="onObjectLoopingEffect(...)" class="md-nav__link">onObjectLoopingEffect(...)</a></li><li class="md-nav__item"><a href="#onobjectpeek" title="onObjectPeek(...)" class="md-nav__link">onObjectPeek(...)</a></li><li class="md-nav__item"><a href="#onobjectpickup" title="onObjectPickUp(...)" class="md-nav__link">onObjectPickUp(...)</a></li><li class="md-nav__item"><a href="#onobjectrandomize" title="onObjectRandomize(...)" class="md-nav__link">onObjectRandomize(...)</a></li><li class="md-nav__item"><a href="#onobjectsearchend" title="onObjectSearchEnd(...)" class="md-nav__link">onObjectSearchEnd(...)</a></li><li class="md-nav__item"><a href="#onobjectsearchstart" title="onObjectSearchStart(...)" class="md-nav__link">onObjectSearchStart(...)</a></li><li class="md-nav__item"><a href="#onobjectspawn" title="onObjectSpawn(...)" class="md-nav__link">onObjectSpawn(...)</a></li><li class="md-nav__item"><a href="#onobjecttriggereffect" title="onObjectTriggerEffect(...)" class="md-nav__link">onObjectTriggerEffect(...)</a></li><li class="md-nav__item"><a href="#onplayerchangecolor" title="onPlayerChangeColor(...)" class="md-nav__link">onPlayerChangeColor(...)</a></li><li class="md-nav__item"><a href="#onplayerconnect" title="onPlayerConnect(...)" class="md-nav__link">onPlayerConnect(...)</a></li><li class="md-nav__item"><a href="#onplayerdisconnect" title="onPlayerDisconnect(...)" class="md-nav__link">onPlayerDisconnect(...)</a></li><li class="md-nav__item"><a href="#onplayerturn" title="onPlayerTurn(...)" class="md-nav__link">onPlayerTurn(...)</a></li><li class="md-nav__item"><a href="#onsave" title="onSave()" class="md-nav__link">onSave()</a></li><li class="md-nav__item"><a href="#onscriptingbuttondown" title="onScriptingButtonDown(...)" class="md-nav__link">onScriptingButtonDown(...)</a></li><li class="md-nav__item"><a href="#onscriptingbuttonup" title="onScriptingButtonUp(...)" class="md-nav__link">onScriptingButtonUp(...)</a></li><li class="md-nav__item"><a href="#onupdate" title="onUpdate()" class="md-nav__link">onUpdate()</a></li></ul></nav></li><li class="md-nav__item"><a href="#function-details-object-only" title="Function Details (Object only)" class="md-nav__link">Function Details (Object only)</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#oncollisionenter" title="onCollisionEnter(...)" class="md-nav__link">onCollisionEnter(...)</a></li><li class="md-nav__item"><a href="#oncollisionexit" title="onCollisionExit(...)" class="md-nav__link">onCollisionExit(...)</a></li><li class="md-nav__item"><a href="#oncollisionstay" title="onCollisionStay(...)" class="md-nav__link">onCollisionStay(...)</a></li><li class="md-nav__item"><a href="#ondestroy" title="onDestroy()" class="md-nav__link">onDestroy()</a></li><li class="md-nav__item"><a href="#ondrop" title="onDrop(...)" class="md-nav__link">onDrop(...)</a></li><li class="md-nav__item"><a href="#filterobjectenter" title="filterObjectEnter(...)" class="md-nav__link">filterObjectEnter(...)</a></li><li class="md-nav__item"><a href="#onpeek" title="onPeek(...)" class="md-nav__link">onPeek(...)</a></li><li class="md-nav__item"><a href="#onpickup" title="onPickUp(...)" class="md-nav__link">onPickUp(...)</a></li><li class="md-nav__item"><a href="#onrandomize" title="onRandomize(...)" class="md-nav__link">onRandomize(...)</a></li><li class="md-nav__item"><a href="#onsearchend" title="onSearchEnd(...)" class="md-nav__link">onSearchEnd(...)</a></li><li class="md-nav__item"><a href="#onsearchstart" title="onSearchStart(...)" class="md-nav__link">onSearchStart(...)</a></li></ul></nav></li></ul></nav>
     
   </li>
 
@@ -2180,357 +1623,7 @@
   <!--style="color:grey;position:absolute;left:18px;top:-2px" href="https://api.tabletopsimulator.com/">Go To API</a>-->
   <a href="https://kb.tabletopsimulator.com/" class="custom-link">Go To Knowledge Base &#8617</a>
 
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#function-summary" title="Function Summary" class="md-nav__link">
-    Function Summary
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#default-events-global-object" title="Default Events (Global &amp; Object)" class="md-nav__link">
-    Default Events (Global &amp; Object)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#default-events-object-only" title="Default Events (Object Only)" class="md-nav__link">
-    Default Events (Object Only)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#function-details-global-object" title="Function Details (Global &amp; Object)" class="md-nav__link">
-    Function Details (Global &amp; Object)
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#onchat" title="onChat(...)" class="md-nav__link">
-    onChat(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onexternalmessage" title="onExternalMessage(...)" class="md-nav__link">
-    onExternalMessage(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onfixedupdate" title="onFixedUpdate()" class="md-nav__link">
-    onFixedUpdate()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onload" title="onLoad(...)" class="md-nav__link">
-    onLoad(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectdestroy" title="onObjectDestroy(...)" class="md-nav__link">
-    onObjectDestroy(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectdrop" title="onObjectDrop(...)" class="md-nav__link">
-    onObjectDrop(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectenterscriptingzone" title="onObjectEnterScriptingZone(...)" class="md-nav__link">
-    onObjectEnterScriptingZone(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectentercontainer" title="onObjectEnterContainer(...)" class="md-nav__link">
-    onObjectEnterContainer(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectleavescriptingzone" title="onObjectLeaveScriptingZone(...)" class="md-nav__link">
-    onObjectLeaveScriptingZone(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectleavecontainer" title="onObjectLeaveContainer(...)" class="md-nav__link">
-    onObjectLeaveContainer(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectloopingeffect" title="onObjectLoopingEffect(...)" class="md-nav__link">
-    onObjectLoopingEffect(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectpeek" title="onObjectPeek(...)" class="md-nav__link">
-    onObjectPeek(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectpickup" title="onObjectPickUp(...)" class="md-nav__link">
-    onObjectPickUp(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectrandomize" title="onObjectRandomize(...)" class="md-nav__link">
-    onObjectRandomize(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectsearchend" title="onObjectSearchEnd(...)" class="md-nav__link">
-    onObjectSearchEnd(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectsearchstart" title="onObjectSearchStart(...)" class="md-nav__link">
-    onObjectSearchStart(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjectspawn" title="onObjectSpawn(...)" class="md-nav__link">
-    onObjectSpawn(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onobjecttriggereffect" title="onObjectTriggerEffect(...)" class="md-nav__link">
-    onObjectTriggerEffect(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onplayerchangecolor" title="onPlayerChangeColor(...)" class="md-nav__link">
-    onPlayerChangeColor(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onplayerconnect" title="onPlayerConnect(...)" class="md-nav__link">
-    onPlayerConnect(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onplayerdisconnect" title="onPlayerDisconnect(...)" class="md-nav__link">
-    onPlayerDisconnect(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onplayerturn" title="onPlayerTurn(...)" class="md-nav__link">
-    onPlayerTurn(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onsave" title="onSave()" class="md-nav__link">
-    onSave()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onscriptingbuttondown" title="onScriptingButtonDown(...)" class="md-nav__link">
-    onScriptingButtonDown(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onscriptingbuttonup" title="onScriptingButtonUp(...)" class="md-nav__link">
-    onScriptingButtonUp(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onupdate" title="onUpdate()" class="md-nav__link">
-    onUpdate()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#function-details-object-only" title="Function Details (Object only)" class="md-nav__link">
-    Function Details (Object only)
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#oncollisionenter" title="onCollisionEnter(...)" class="md-nav__link">
-    onCollisionEnter(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#oncollisionexit" title="onCollisionExit(...)" class="md-nav__link">
-    onCollisionExit(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#oncollisionstay" title="onCollisionStay(...)" class="md-nav__link">
-    onCollisionStay(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ondestroy" title="onDestroy()" class="md-nav__link">
-    onDestroy()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ondrop" title="onDrop(...)" class="md-nav__link">
-    onDrop(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filterobjectenter" title="filterObjectEnter(...)" class="md-nav__link">
-    filterObjectEnter(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onpeek" title="onPeek(...)" class="md-nav__link">
-    onPeek(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onpickup" title="onPickUp(...)" class="md-nav__link">
-    onPickUp(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onrandomize" title="onRandomize(...)" class="md-nav__link">
-    onRandomize(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onsearchend" title="onSearchEnd(...)" class="md-nav__link">
-    onSearchEnd(...)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onsearchstart" title="onSearchStart(...)" class="md-nav__link">
-    onSearchStart(...)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/event.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
-                
-                
-                  <h1>Event</h1>
-                
-                <p>Events are functions which are activated by Tabletop Simulator when something takes place in-game. It is possible to use all of them within scripts on Objects, and most will also work in Global scripts.</p>
+</nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#function-summary" title="Function Summary" class="md-nav__link">Function Summary</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#default-events-global-object" title="Default Events (Global &amp; Object)" class="md-nav__link">Default Events (Global &amp; Object)</a></li><li class="md-nav__item"><a href="#default-events-object-only" title="Default Events (Object Only)" class="md-nav__link">Default Events (Object Only)</a></li></ul></nav></li><li class="md-nav__item"><a href="#function-details-global-object" title="Function Details (Global &amp; Object)" class="md-nav__link">Function Details (Global &amp; Object)</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#onchat" title="onChat(...)" class="md-nav__link">onChat(...)</a></li><li class="md-nav__item"><a href="#onexternalmessage" title="onExternalMessage(...)" class="md-nav__link">onExternalMessage(...)</a></li><li class="md-nav__item"><a href="#onfixedupdate" title="onFixedUpdate()" class="md-nav__link">onFixedUpdate()</a></li><li class="md-nav__item"><a href="#onload" title="onLoad(...)" class="md-nav__link">onLoad(...)</a></li><li class="md-nav__item"><a href="#onobjectdestroy" title="onObjectDestroy(...)" class="md-nav__link">onObjectDestroy(...)</a></li><li class="md-nav__item"><a href="#onobjectdrop" title="onObjectDrop(...)" class="md-nav__link">onObjectDrop(...)</a></li><li class="md-nav__item"><a href="#onobjectenterscriptingzone" title="onObjectEnterScriptingZone(...)" class="md-nav__link">onObjectEnterScriptingZone(...)</a></li><li class="md-nav__item"><a href="#onobjectentercontainer" title="onObjectEnterContainer(...)" class="md-nav__link">onObjectEnterContainer(...)</a></li><li class="md-nav__item"><a href="#onobjectleavescriptingzone" title="onObjectLeaveScriptingZone(...)" class="md-nav__link">onObjectLeaveScriptingZone(...)</a></li><li class="md-nav__item"><a href="#onobjectleavecontainer" title="onObjectLeaveContainer(...)" class="md-nav__link">onObjectLeaveContainer(...)</a></li><li class="md-nav__item"><a href="#onobjectloopingeffect" title="onObjectLoopingEffect(...)" class="md-nav__link">onObjectLoopingEffect(...)</a></li><li class="md-nav__item"><a href="#onobjectpeek" title="onObjectPeek(...)" class="md-nav__link">onObjectPeek(...)</a></li><li class="md-nav__item"><a href="#onobjectpickup" title="onObjectPickUp(...)" class="md-nav__link">onObjectPickUp(...)</a></li><li class="md-nav__item"><a href="#onobjectrandomize" title="onObjectRandomize(...)" class="md-nav__link">onObjectRandomize(...)</a></li><li class="md-nav__item"><a href="#onobjectsearchend" title="onObjectSearchEnd(...)" class="md-nav__link">onObjectSearchEnd(...)</a></li><li class="md-nav__item"><a href="#onobjectsearchstart" title="onObjectSearchStart(...)" class="md-nav__link">onObjectSearchStart(...)</a></li><li class="md-nav__item"><a href="#onobjectspawn" title="onObjectSpawn(...)" class="md-nav__link">onObjectSpawn(...)</a></li><li class="md-nav__item"><a href="#onobjecttriggereffect" title="onObjectTriggerEffect(...)" class="md-nav__link">onObjectTriggerEffect(...)</a></li><li class="md-nav__item"><a href="#onplayerchangecolor" title="onPlayerChangeColor(...)" class="md-nav__link">onPlayerChangeColor(...)</a></li><li class="md-nav__item"><a href="#onplayerconnect" title="onPlayerConnect(...)" class="md-nav__link">onPlayerConnect(...)</a></li><li class="md-nav__item"><a href="#onplayerdisconnect" title="onPlayerDisconnect(...)" class="md-nav__link">onPlayerDisconnect(...)</a></li><li class="md-nav__item"><a href="#onplayerturn" title="onPlayerTurn(...)" class="md-nav__link">onPlayerTurn(...)</a></li><li class="md-nav__item"><a href="#onsave" title="onSave()" class="md-nav__link">onSave()</a></li><li class="md-nav__item"><a href="#onscriptingbuttondown" title="onScriptingButtonDown(...)" class="md-nav__link">onScriptingButtonDown(...)</a></li><li class="md-nav__item"><a href="#onscriptingbuttonup" title="onScriptingButtonUp(...)" class="md-nav__link">onScriptingButtonUp(...)</a></li><li class="md-nav__item"><a href="#onupdate" title="onUpdate()" class="md-nav__link">onUpdate()</a></li></ul></nav></li><li class="md-nav__item"><a href="#function-details-object-only" title="Function Details (Object only)" class="md-nav__link">Function Details (Object only)</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#oncollisionenter" title="onCollisionEnter(...)" class="md-nav__link">onCollisionEnter(...)</a></li><li class="md-nav__item"><a href="#oncollisionexit" title="onCollisionExit(...)" class="md-nav__link">onCollisionExit(...)</a></li><li class="md-nav__item"><a href="#oncollisionstay" title="onCollisionStay(...)" class="md-nav__link">onCollisionStay(...)</a></li><li class="md-nav__item"><a href="#ondestroy" title="onDestroy()" class="md-nav__link">onDestroy()</a></li><li class="md-nav__item"><a href="#ondrop" title="onDrop(...)" class="md-nav__link">onDrop(...)</a></li><li class="md-nav__item"><a href="#filterobjectenter" title="filterObjectEnter(...)" class="md-nav__link">filterObjectEnter(...)</a></li><li class="md-nav__item"><a href="#onpeek" title="onPeek(...)" class="md-nav__link">onPeek(...)</a></li><li class="md-nav__item"><a href="#onpickup" title="onPickUp(...)" class="md-nav__link">onPickUp(...)</a></li><li class="md-nav__item"><a href="#onrandomize" title="onRandomize(...)" class="md-nav__link">onRandomize(...)</a></li><li class="md-nav__item"><a href="#onsearchend" title="onSearchEnd(...)" class="md-nav__link">onSearchEnd(...)</a></li><li class="md-nav__item"><a href="#onsearchstart" title="onSearchStart(...)" class="md-nav__link">onSearchStart(...)</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/event.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a><h1>Event</h1><p>Events are functions which are activated by Tabletop Simulator when something takes place in-game. It is possible to use all of them within scripts on Objects, and most will also work in Global scripts.</p>
 <p>Many contain parameters which can be used to utilize additional information related to the event.</p>
 <h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link"> </a></h2>
 <h3 id="default-events-global-object">Default Events (Global &amp; Object)<a class="headerlink" href="#default-events-global-object" title="Permanent link"> </a></h3>
@@ -2636,7 +1729,7 @@
 </tr>
 <tr>
 <td>onPlayerChangeColor(<a href="/types"><span class="tag str"></span></a>&nbsp;player_color)</td>
-<td>Called when a player changes color or selects it for the first time. It also returns <code class="codehilite">&quot;Grey&quot;</code> if they disconnect.</td>
+<td>Called when a player changes color or selects it for the first time. It also returns <code class="codehilite"><span class="ss">&quot;Grey&quot;</span></code> if they disconnect.</td>
 <td><a href="#onplayerchangecolor"><span class="i"></span></a></td>
 </tr>
 <tr>
@@ -2822,9 +1915,11 @@
     <span class="kr">end</span>
 <span class="kr">end</span>
 </pre></div>
-</details><hr />
+
+</details>
+<hr />
 <h3 id="onobjectdestroy">onObjectDestroy(...)<a class="headerlink" href="#onobjectdestroy" title="Permanent link"> </a></h3>
-<p>Called whenever any object is destroyed. The dying Object has 1 frame left to live. This event fires immediately before the dying Object’s <code class="codehilite">onDestroy()</code> but their lifetime is the same final frame.</p>
+<p>Called whenever any object is destroyed. The dying Object has 1 frame left to live. This event fires immediately before the dying Object’s <code class="codehilite"><span class="n">onDestroy</span><span class="p">()</span></code> but their lifetime is the same final frame.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectDestroy(dying_object)</p>
 <ul>
@@ -3024,7 +2119,7 @@
 
 <hr />
 <h3 id="onplayerchangecolor">onPlayerChangeColor(...)<a class="headerlink" href="#onplayerchangecolor" title="Permanent link"> </a></h3>
-<p>Called when a player changes color or selects it for the first time. It also returns <code class="codehilite">&quot;Grey&quot;</code> if they disconnect.</p>
+<p>Called when a player changes color or selects it for the first time. It also returns <code class="codehilite"><span class="ss">&quot;Grey&quot;</span></code> if they disconnect.</p>
 <div class="admonition info">
 <p class="admonition-title">onPlayerChangeColor(player_color)</p>
 <ul>
@@ -3073,11 +2168,11 @@
 <p>This is called whenever the game saves, either manually or by auto-save. This will work in both a Global script, and an Object script. It is used to allow information to persist through saving/loading, for example, to let your script remember its data previously after hitting the Undo or Redo button. By placing script information into a Lua table, then encoding that data into <a href="event#json">JSON</a>, you are able to save information about the script's current state onto the script's parent, in the form of a string. You can also return a string value in this function to stash it.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>When using <code class="codehilite">onSave()</code>, information is saved into the save file you are using. Using <em>Save &amp; Apply</em> does NOT cause it to record data, only overwriting your save will update what information <code class="codehilite">onSave()</code> is trying to record.</p>
+<p>When using <code class="codehilite"><span class="n">onSave</span><span class="p">()</span></code>, information is saved into the save file you are using. Using <em>Save &amp; Apply</em> does NOT cause it to record data, only overwriting your save will update what information <code class="codehilite"><span class="n">onSave</span><span class="p">()</span></code> is trying to record.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>You can save almost any data in a table using this function, but Object references <strong>DO NOT</strong> persist. If you need to record an Object using <code class="codehilite">onSave()</code>, record its GUID instead.</p>
+<p>You can save almost any data in a table using this function, but Object references <strong>DO NOT</strong> persist. If you need to record an Object using <code class="codehilite"><span class="n">onSave</span><span class="p">()</span></code>, record its GUID instead.</p>
 </div>
 <div class="codehilite"><pre><span></span><span class="n">data_table</span> <span class="o">=</span> <span class="p">{</span><span class="n">answer</span><span class="o">=</span><span class="mi">42</span><span class="p">}</span>
 
@@ -3087,7 +2182,7 @@
 <span class="kr">end</span>
 </pre></div>
 
-<p>Check the <a href="#onload"><code class="codehilite">onLoad()</code></a> section for how to load that stored JSON information into your script.</p>
+<p>Check the <a href="#onload"><code class="codehilite"><span class="n">onLoad</span><span class="p">()</span></code></a> section for how to load that stored JSON information into your script.</p>
 <hr />
 <h3 id="onscriptingbuttondown">onScriptingButtonDown(...)<a class="headerlink" href="#onscriptingbuttondown" title="Permanent link"> </a></h3>
 <p>Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10.</p>
@@ -3139,7 +2234,7 @@
 <p class="admonition-title">onCollisionEnter(collision_info)</p>
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a>&nbsp;<strong>collision_info</strong>: A Table containing data on colliding object.<ul>
-<li><a href="/types"><span class="tag obj"></span></a>&nbsp;<strong>collision_info.<em>collision_object</em></strong>: Object coming into contact with <code class="codehilite">self</code>.</li>
+<li><a href="/types"><span class="tag obj"></span></a>&nbsp;<strong>collision_info.<em>collision_object</em></strong>: Object coming into contact with <code class="codehilite"><span class="k">self</span></code>.</li>
 <li><a href="/types"><span class="tag tab"></span></a>&nbsp;<strong>collision_info.<em>contact_points</em></strong>: Sub-table full of the Vectors where contact took place.</li>
 <li><a href="/types#vector"><span class="tag vec"></span></a> <strong>collision_info.<em>relative_velocity</em></strong>: Direction and magnitude at the time of collision.</li>
 </ul>
@@ -3167,7 +2262,7 @@
 <p class="admonition-title">onCollisionExit(collision_info)</p>
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a>&nbsp;<strong>collision_info</strong>: A Table containing data on colliding object.<ul>
-<li><a href="/types"><span class="tag obj"></span></a>&nbsp;<strong>collision_info.<em>collision_object</em></strong>: Object leaving contact with <code class="codehilite">self</code>.</li>
+<li><a href="/types"><span class="tag obj"></span></a>&nbsp;<strong>collision_info.<em>collision_object</em></strong>: Object leaving contact with <code class="codehilite"><span class="k">self</span></code>.</li>
 <li><a href="/types"><span class="tag tab"></span></a>&nbsp;<strong>collision_info.<em>contact_points</em></strong>: Sub-table full of the Vectors where contact last broke off.</li>
 <li><a href="/types#vector"><span class="tag vec"></span></a> <strong>collision_info.<em>relative_velocity</em></strong>: Direction and magnitude of the departing Object.</li>
 </ul>
@@ -3199,7 +2294,7 @@
 <p class="admonition-title">onCollisionExit(collision_info)</p>
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a>&nbsp;<strong>collision_info</strong>: A Table containing data on colliding object.<ul>
-<li><a href="/types"><span class="tag obj"></span></a>&nbsp;<strong>collision_info.<em>collision_object</em></strong>: Object coming into contact with <code class="codehilite">self</code>.</li>
+<li><a href="/types"><span class="tag obj"></span></a>&nbsp;<strong>collision_info.<em>collision_object</em></strong>: Object coming into contact with <code class="codehilite"><span class="k">self</span></code>.</li>
 <li><a href="/types"><span class="tag tab"></span></a>&nbsp;<strong>collision_info.<em>contact_points</em></strong>: Sub-table full of the Vectors where contact is taking place.</li>
 <li><a href="/types#vector"><span class="tag vec"></span></a> <strong>collision_info.<em>relative_velocity</em></strong>: Direction and magnitude of the Object, currently.</li>
 </ul>
@@ -3222,7 +2317,7 @@
 </pre></div></p>
 <hr />
 <h3 id="ondestroy">onDestroy()<a class="headerlink" href="#ondestroy" title="Permanent link"> </a></h3>
-<p>This function is called when an <a href="object">Object</a> it is on is destroyed. When <code class="codehilite">onDestroy()</code> is called, the Object has one frame left to live but its recommended to avoid using it as a reference here. This event fires immediately after <a href="#onobjectdestroy">onObjectDestroy()</a> but their lifetime is the same final frame. Does not work in Global.</p>
+<p>This function is called when an <a href="object">Object</a> it is on is destroyed. When <code class="codehilite"><span class="n">onDestroy</span><span class="p">()</span></code> is called, the Object has one frame left to live but its recommended to avoid using it as a reference here. This event fires immediately after <a href="#onobjectdestroy">onObjectDestroy()</a> but their lifetime is the same final frame. Does not work in Global.</p>
 <div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onDestroy</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This object was destroyed!&quot;</span><span class="p">)</span>
 <span class="kr">end</span>
@@ -3317,22 +2412,7 @@
 <li><a href="/types"><span class="tag str"></span></a>&nbsp;<strong>player_color</strong>: <a href="player-color">Player Color</a> of the Player.</li>
 </ul>
 </div>
-<hr />
-                
-                  
-                
-              
-              
-                
-
-
-              
-            </article>
-          </div>
-        </div>
-      </main>
-      
-        <!--
+<hr /></article></div></div></main><!--
   Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -3375,34 +2455,8 @@
 
       <!-- Social links -->
       
-        
-  <div class="md-footer-social">
-    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
-    
-      <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>
-    
-      <a href="https://twitter.com/tabletopsim" class="md-footer-social__link fa fa-twitter"></a>
-    
-      <a href="https://www.facebook.com/tabletopsimulator" class="md-footer-social__link fa fa-facebook"></a>
-    
-      <a href="https://www.youtube.com/user/berserkgames" class="md-footer-social__link fa fa-youtube"></a>
-    
-  </div>
-
+        <div class="md-footer-social"><link rel="stylesheet" href="../assets/fonts/font-awesome.css"> <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>  <a href="https://twitter.com/tabletopsim" class="md-footer-social__link fa fa-twitter"></a>  <a href="https://www.facebook.com/tabletopsimulator" class="md-footer-social__link fa fa-facebook"></a>  <a href="https://www.youtube.com/user/berserkgames" class="md-footer-social__link fa fa-youtube"></a> </div>
       
     </div>
   </div>
-</footer>
-      
-    </div>
-    
-      <script src="../assets/javascripts/application.583bbe55.js"></script>
-      
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
-      
-    
-    
-      
-    
-  </body>
-</html>
+</footer></div><script src="../assets/javascripts/application.b260a35d.js"></script><script>app.initialize({version:"1.0.4",url:{base:".."}})</script></body></html>

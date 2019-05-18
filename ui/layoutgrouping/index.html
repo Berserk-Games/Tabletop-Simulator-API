@@ -1,217 +1,4 @@
-
-
-
-
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      
-      
-      
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../../img/Icon-Dice.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
-    
-    
-      
-        <title>Layout/Grouping - Tabletop Simulator API</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
-      
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
-      
-      
-        
-        
-        <meta name="theme-color" content="#3f51b5">
-      
-    
-    
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
-    
-    
-      
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
-      
-    
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
-    
-      <link rel="stylesheet" href="../../css/theme.css">
-    
-      <link rel="stylesheet" href="../../css/table.css">
-    
-      <link rel="stylesheet" href="../../css/type_icons.css">
-    
-      <link rel="stylesheet" href="../../css/i_icons.css">
-    
-      <link rel="stylesheet" href="../../css/player_color_table.css">
-    
-    
-  </head>
-  
-    
-    
-    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
-  
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="__github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
-        
-      </defs>
-    </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="../../#element-summary" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="Tabletop Simulator API" class="md-header-nav__button md-logo">
-          
-            <img src="../../img/TSIcon.png" width="24" height="24">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            
-              <span class="md-header-nav__topic">
-                Tabletop Simulator API
-              </span>
-              <span class="md-header-nav__topic">
-                Layout/Grouping
-              </span>
-            
-          
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-          
-        
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-
-  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub Source
-    </div>
-  </a>
-
-          </div>
-        </div>
-      
-    </div>
-  </nav>
-</header>
-    
-    <div class="md-container">
-      
-        
-      
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
-          
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <!--
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../../img/Icon-Dice.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.0"><title>Layout/Grouping - Tabletop Simulator API</title><link rel="stylesheet" href="../../assets/stylesheets/application.4031d38b.css"><link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css"><meta name="theme-color" content="#3f51b5"><script src="../../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=swap"><style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../../assets/fonts/material-icons.css"><link rel="stylesheet" href="../../css/theme.css"><link rel="stylesheet" href="../../css/table.css"><link rel="stylesheet" href="../../css/type_icons.css"><link rel="stylesheet" href="../../css/i_icons.css"><link rel="stylesheet" href="../../css/player_color_table.css"></head><body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#element-summary" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href="../.." title="Tabletop Simulator API" class="md-header-nav__button md-logo"><img src="../../img/TSIcon.png" width="24" height="24"></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">Tabletop Simulator API</span><span class="md-header-nav__topic">Layout/Grouping</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">GitHub Source</div></a></div></div></div></nav></header><div class="md-container"><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><!--
   Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -250,25 +37,7 @@
   <!-- Repository containing source -->
   
     <div class="md-nav__source">
-      
-
-
-  
-
-
-  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub Source
-    </div>
-  </a>
-
+      <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">GitHub Source</div></a>
     </div>
   
 
@@ -1794,156 +1563,7 @@
 
     <!-- Show table of contents -->
     
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#element-summary" title="Element Summary" class="md-nav__link">
-    Element Summary
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#layout-summary" title="Layout Summary" class="md-nav__link">
-    Layout Summary
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scroll-view-summary" title="Scroll View Summary" class="md-nav__link">
-    Scroll View Summary
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#layout-element-details" title="Layout Element Details" class="md-nav__link">
-    Layout Element Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#layout-details" title="Layout Details" class="md-nav__link">
-    Layout Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#panel" title="Panel" class="md-nav__link">
-    Panel
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#horizontallayout" title="HorizontalLayout" class="md-nav__link">
-    HorizontalLayout
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verticallayout" title="VerticalLayout" class="md-nav__link">
-    VerticalLayout
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gridlayout" title="GridLayout" class="md-nav__link">
-    GridLayout
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tablelayout" title="TableLayout" class="md-nav__link">
-    TableLayout
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#row" title="Row" class="md-nav__link">
-    Row
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell" title="Cell" class="md-nav__link">
-    Cell
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scroll-view-details" title="Scroll View Details" class="md-nav__link">
-    Scroll View Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#horizontalscrollview" title="HorizontalScrollView" class="md-nav__link">
-    HorizontalScrollView
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verticalscrollview" title="VerticalScrollView" class="md-nav__link">
-    VerticalScrollView
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
+      <nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#element-summary" title="Element Summary" class="md-nav__link">Element Summary</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#layout-summary" title="Layout Summary" class="md-nav__link">Layout Summary</a></li><li class="md-nav__item"><a href="#scroll-view-summary" title="Scroll View Summary" class="md-nav__link">Scroll View Summary</a></li></ul></nav></li><li class="md-nav__item"><a href="#layout-element-details" title="Layout Element Details" class="md-nav__link">Layout Element Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#layout-details" title="Layout Details" class="md-nav__link">Layout Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#panel" title="Panel" class="md-nav__link">Panel</a></li><li class="md-nav__item"><a href="#horizontallayout" title="HorizontalLayout" class="md-nav__link">HorizontalLayout</a></li><li class="md-nav__item"><a href="#verticallayout" title="VerticalLayout" class="md-nav__link">VerticalLayout</a></li><li class="md-nav__item"><a href="#gridlayout" title="GridLayout" class="md-nav__link">GridLayout</a></li><li class="md-nav__item"><a href="#tablelayout" title="TableLayout" class="md-nav__link">TableLayout</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#row" title="Row" class="md-nav__link">Row</a></li><li class="md-nav__item"><a href="#cell" title="Cell" class="md-nav__link">Cell</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#scroll-view-details" title="Scroll View Details" class="md-nav__link">Scroll View Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#horizontalscrollview" title="HorizontalScrollView" class="md-nav__link">HorizontalScrollView</a></li><li class="md-nav__item"><a href="#verticalscrollview" title="VerticalScrollView" class="md-nav__link">VerticalScrollView</a></li></ul></nav></li></ul></nav></li></ul></nav>
     
   </li>
 
@@ -2003,180 +1623,7 @@
   <!--style="color:grey;position:absolute;left:18px;top:-2px" href="https://api.tabletopsimulator.com/">Go To API</a>-->
   <a href="https://kb.tabletopsimulator.com/" class="custom-link">Go To Knowledge Base &#8617</a>
 
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#element-summary" title="Element Summary" class="md-nav__link">
-    Element Summary
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#layout-summary" title="Layout Summary" class="md-nav__link">
-    Layout Summary
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scroll-view-summary" title="Scroll View Summary" class="md-nav__link">
-    Scroll View Summary
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#layout-element-details" title="Layout Element Details" class="md-nav__link">
-    Layout Element Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#layout-details" title="Layout Details" class="md-nav__link">
-    Layout Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#panel" title="Panel" class="md-nav__link">
-    Panel
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#horizontallayout" title="HorizontalLayout" class="md-nav__link">
-    HorizontalLayout
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verticallayout" title="VerticalLayout" class="md-nav__link">
-    VerticalLayout
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gridlayout" title="GridLayout" class="md-nav__link">
-    GridLayout
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tablelayout" title="TableLayout" class="md-nav__link">
-    TableLayout
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#row" title="Row" class="md-nav__link">
-    Row
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cell" title="Cell" class="md-nav__link">
-    Cell
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scroll-view-details" title="Scroll View Details" class="md-nav__link">
-    Scroll View Details
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#horizontalscrollview" title="HorizontalScrollView" class="md-nav__link">
-    HorizontalScrollView
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verticalscrollview" title="VerticalScrollView" class="md-nav__link">
-    VerticalScrollView
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/ui/layoutgrouping.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
-                
-                
-                  <h1>Layout/Grouping</h1>
-                
-                <p>By nesting elements within layouts/groupings, you are able to easily group elements together in-game. It allows for adjusting/moving them together, uniform padding and additional visual flair possibilities.</p>
+</nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#element-summary" title="Element Summary" class="md-nav__link">Element Summary</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#layout-summary" title="Layout Summary" class="md-nav__link">Layout Summary</a></li><li class="md-nav__item"><a href="#scroll-view-summary" title="Scroll View Summary" class="md-nav__link">Scroll View Summary</a></li></ul></nav></li><li class="md-nav__item"><a href="#layout-element-details" title="Layout Element Details" class="md-nav__link">Layout Element Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#layout-details" title="Layout Details" class="md-nav__link">Layout Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#panel" title="Panel" class="md-nav__link">Panel</a></li><li class="md-nav__item"><a href="#horizontallayout" title="HorizontalLayout" class="md-nav__link">HorizontalLayout</a></li><li class="md-nav__item"><a href="#verticallayout" title="VerticalLayout" class="md-nav__link">VerticalLayout</a></li><li class="md-nav__item"><a href="#gridlayout" title="GridLayout" class="md-nav__link">GridLayout</a></li><li class="md-nav__item"><a href="#tablelayout" title="TableLayout" class="md-nav__link">TableLayout</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#row" title="Row" class="md-nav__link">Row</a></li><li class="md-nav__item"><a href="#cell" title="Cell" class="md-nav__link">Cell</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#scroll-view-details" title="Scroll View Details" class="md-nav__link">Scroll View Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#horizontalscrollview" title="HorizontalScrollView" class="md-nav__link">HorizontalScrollView</a></li><li class="md-nav__item"><a href="#verticalscrollview" title="VerticalScrollView" class="md-nav__link">VerticalScrollView</a></li></ul></nav></li></ul></nav></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/ui/layoutgrouping.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a><h1>Layout/Grouping</h1><p>By nesting elements within layouts/groupings, you are able to easily group elements together in-game. It allows for adjusting/moving them together, uniform padding and additional visual flair possibilities.</p>
 <p>Each layout element has its own attributes specific to its type. Additionally, elements within a layout are subject to common <a href="attributes#layout-element-attributes">common layout element attributes</a>.</p>
 <h2 id="element-summary">Element Summary<a class="headerlink" href="#element-summary" title="Permanent link"> </a></h2>
 <h3 id="layout-summary">Layout Summary<a class="headerlink" href="#layout-summary" title="Permanent link"> </a></h3>
@@ -2293,31 +1740,31 @@
 <td>padding</td>
 <td></td>
 <td>float(left) float(right) float(top) float(bottom)</td>
-<td><code class="codehilite">0 0 0 0</code></td>
+<td><code class="codehilite"><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span></code></td>
 </tr>
 <tr>
 <td>spacing</td>
 <td>Spacing between child elements.</td>
 <td>float</td>
-<td><code class="codehilite">0</code></td>
+<td><code class="codehilite"><span class="mi">0</span></code></td>
 </tr>
 <tr>
 <td>childAlignment</td>
 <td></td>
 <td><ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul></td>
-<td><code class="codehilite">UpperLeft</code></td>
+<td><code class="codehilite"><span class="n">UpperLeft</span></code></td>
 </tr>
 <tr>
 <td>childForceExpandWidth</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">true</code></td>
+<td><code class="codehilite"><span class="k">true</span></code></td>
 </tr>
 <tr>
 <td>childForceExpandHeight</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">true</code></td>
+<td><code class="codehilite"><span class="k">true</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -2345,31 +1792,31 @@
 <td>padding</td>
 <td></td>
 <td>float(left) float(right) float(top) float(bottom)</td>
-<td><code class="codehilite">0 0 0 0</code></td>
+<td><code class="codehilite"><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span></code></td>
 </tr>
 <tr>
 <td>spacing</td>
 <td>Spacing between child elements.</td>
 <td>float</td>
-<td><code class="codehilite">0</code></td>
+<td><code class="codehilite"><span class="mi">0</span></code></td>
 </tr>
 <tr>
 <td>childAlignment</td>
 <td></td>
 <td><ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul></td>
-<td><code class="codehilite">UpperLeft</code></td>
+<td><code class="codehilite"><span class="n">UpperLeft</span></code></td>
 </tr>
 <tr>
 <td>childForceExpandWidth</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">true</code></td>
+<td><code class="codehilite"><span class="k">true</span></code></td>
 </tr>
 <tr>
 <td>childForceExpandHeight</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">true</code></td>
+<td><code class="codehilite"><span class="k">true</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -2397,49 +1844,49 @@
 <td>padding</td>
 <td></td>
 <td>float(left) float(right) float(top) float(bottom)</td>
-<td><code class="codehilite">0 0 0 0</code></td>
+<td><code class="codehilite"><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span></code></td>
 </tr>
 <tr>
 <td>spacing</td>
 <td>Spacing between child elements</td>
 <td>float(x) float(y)</td>
-<td><code class="codehilite">0 0</code></td>
+<td><code class="codehilite"><span class="mi">0</span> <span class="mi">0</span></code></td>
 </tr>
 <tr>
 <td>cellSize</td>
 <td></td>
 <td>float(x) float(y)</td>
-<td><code class="codehilite">100 100</code></td>
+<td><code class="codehilite"><span class="mi">100</span> <span class="mi">100</span></code></td>
 </tr>
 <tr>
 <td>startCorner</td>
 <td></td>
 <td><ul><li>UpperLeft</li><li>UpperRight</li><li>LowerLeft</li><li>LowerRight</li></ul></td>
-<td><code class="codehilite">UpperLeft</code></td>
+<td><code class="codehilite"><span class="n">UpperLeft</span></code></td>
 </tr>
 <tr>
 <td>startAxis</td>
 <td></td>
 <td><ul><li>Horizontal</li><li>Vertical</li></ul></td>
-<td><code class="codehilite">Horizontal</code></td>
+<td><code class="codehilite"><span class="n">Horizontal</span></code></td>
 </tr>
 <tr>
 <td>childAlignment</td>
 <td></td>
 <td><ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul></td>
-<td><code class="codehilite">UpperLeft</code></td>
+<td><code class="codehilite"><span class="n">UpperLeft</span></code></td>
 </tr>
 <tr>
 <td>constraint</td>
 <td></td>
 <td><ul><li>Flexible</li><li>FixedColumnCount</li><li>FixedRowCount</li></ul></td>
-<td><code class="codehilite">Flexible</code></td>
+<td><code class="codehilite"><span class="n">Flexible</span></code></td>
 </tr>
 <tr>
 <td>constraintCount</td>
 <td></td>
 <td>integer</td>
-<td><code class="codehilite">2</code></td>
+<td><code class="codehilite"><span class="mi">2</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -2467,13 +1914,13 @@
 <td>padding</td>
 <td></td>
 <td>float(left) float(right) float(top) float(bottom)</td>
-<td><code class="codehilite">0 0 0 0</code></td>
+<td><code class="codehilite"><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span></code></td>
 </tr>
 <tr>
 <td>cellSpacing</td>
 <td>Spacing between each cell.</td>
 <td>float</td>
-<td><code class="codehilite">0</code></td>
+<td><code class="codehilite"><span class="mi">0</span></code></td>
 </tr>
 <tr>
 <td>columnWidths</td>
@@ -2485,31 +1932,31 @@
 <td>automaticallyAddColumns</td>
 <td>If more cells are added to a row than are accounted for by columnWidths, should this TableLayout automatically add one or more new auto-sized entries (0) to columnWidths?</td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">true</code></td>
+<td><code class="codehilite"><span class="k">true</span></code></td>
 </tr>
 <tr>
 <td>automaticallyRemoveEmptyColumns</td>
 <td>If there are more entries in columnWidths than there are cells in any row, should this TableLayout automatically remove entries from columnWidths until their are no 'empty' columns?</td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">true</code></td>
+<td><code class="codehilite"><span class="k">true</span></code></td>
 </tr>
 <tr>
 <td>autoCalculateHeight</td>
 <td>If set to true, then the height of this TableLayout will automatically be calculated as the sum of each rows preferredHeight value. This option cannot be used without explicitly sized rows.</td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">false</code></td>
+<td><code class="codehilite"><span class="k">false</span></code></td>
 </tr>
 <tr>
 <td>useGlobalCellPadding</td>
 <td>If set to true, then all cells will use this TableLayout's cellPadding value.</td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">true</code></td>
+<td><code class="codehilite"><span class="k">true</span></code></td>
 </tr>
 <tr>
 <td>cellPadding</td>
 <td>Padding for each cell.</td>
 <td>float(left) float(right) float(top) float(bottom)</td>
-<td><code class="codehilite">0 0 0 0</code></td>
+<td><code class="codehilite"><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span></code></td>
 </tr>
 <tr>
 <td>cellBackgroundImage</td>
@@ -2521,7 +1968,7 @@
 <td>cellBackgroundColor</td>
 <td>Color for each cells background.</td>
 <td><a href="attributes#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><code class="codehilite">rgba(1,1,1,0.4)</code></td>
+<td><code class="codehilite"><span class="n">rgba</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">4</span><span class="p">)</span></code></td>
 </tr>
 <tr>
 <td>rowBackgroundImage</td>
@@ -2533,7 +1980,7 @@
 <td>rowBackgroundColor</td>
 <td>Color to use for each rows background.</td>
 <td><a href="attributes#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><code class="codehilite">clear</code></td>
+<td><code class="codehilite"><span class="n">clear</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -2567,13 +2014,13 @@
 <td>preferredHeight</td>
 <td>Sets the height for this row. Use a value of '0' to specify that this row should be auto-sized.</td>
 <td>float</td>
-<td><code class="codehilite">0</code></td>
+<td><code class="codehilite"><span class="mi">0</span></code></td>
 </tr>
 <tr>
 <td>dontUseTableRowBackground</td>
 <td>If set to true, then this row will ignore the tables' <em>rowBackgroundImage</em> and <em>rowBackgroundColor</em> values, allowing you to override those values for this row.</td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">false</code></td>
+<td><code class="codehilite"><span class="k">false</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -2593,37 +2040,37 @@
 <td>columnSpan</td>
 <td>__</td>
 <td>int</td>
-<td><code class="codehilite">1</code></td>
+<td><code class="codehilite"><span class="mi">1</span></code></td>
 </tr>
 <tr>
 <td>dontUseTableCellBackground</td>
 <td>If set to true, then this cell will ignore the tables' <em>cellBackgroundImage</em> and values, allowing you to override those values for this cell.</td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">false</code></td>
+<td><code class="codehilite"><span class="k">false</span></code></td>
 </tr>
 <tr>
 <td>overrideGlobalCellPadding</td>
 <td>If set to true, then this cell will ignore the tables' <em>cellPadding</em> value, allowing you to set unique cell padding for this cell.</td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">false</code></td>
+<td><code class="codehilite"><span class="k">false</span></code></td>
 </tr>
 <tr>
 <td>padding</td>
 <td>Padding values to use for this cell if <em>overrideGlobalCellPadding</em> is set to true.</td>
 <td>float(left) float(right) float(top) float(bottom)</td>
-<td><code class="codehilite">0 0 0 0</code></td>
+<td><code class="codehilite"><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span></code></td>
 </tr>
 <tr>
 <td>childForceExpandWidth</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">true</code></td>
+<td><code class="codehilite"><span class="k">true</span></code></td>
 </tr>
 <tr>
 <td>childForceExpandHeight</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">true</code></td>
+<td><code class="codehilite"><span class="k">true</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -2652,49 +2099,49 @@
 <td>horizontal</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">true</code></td>
+<td><code class="codehilite"><span class="k">true</span></code></td>
 </tr>
 <tr>
 <td>vertical</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">false</code></td>
+<td><code class="codehilite"><span class="k">false</span></code></td>
 </tr>
 <tr>
 <td>movementType</td>
 <td></td>
 <td><ul><li>Unrestricted</li><li>Elastic</li><li>Clamped</li></ul></td>
-<td><code class="codehilite">Clamped</code></td>
+<td><code class="codehilite"><span class="n">Clamped</span></code></td>
 </tr>
 <tr>
 <td>elasticity</td>
 <td></td>
 <td>float</td>
-<td><code class="codehilite">0.1</code></td>
+<td><code class="codehilite"><span class="mi">0</span><span class="p">.</span><span class="mi">1</span></code></td>
 </tr>
 <tr>
 <td>inertia</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">true</code></td>
+<td><code class="codehilite"><span class="k">true</span></code></td>
 </tr>
 <tr>
 <td>decelerationRate</td>
 <td></td>
 <td>float</td>
-<td><code class="codehilite">0.135</code></td>
+<td><code class="codehilite"><span class="mi">0</span><span class="p">.</span><span class="mi">135</span></code></td>
 </tr>
 <tr>
 <td>scrollSensitivity</td>
 <td></td>
 <td>float</td>
-<td><code class="codehilite">1</code></td>
+<td><code class="codehilite"><span class="mi">1</span></code></td>
 </tr>
 <tr>
 <td>horizontalScrollbarVisibility</td>
 <td></td>
 <td><ul><li>Permanent</li><li>AutoHide</li><li>AutoHideAndExpandViewport</li></ul></td>
-<td><code class="codehilite">AutoHide</code></td>
+<td><code class="codehilite"><span class="n">AutoHide</span></code></td>
 </tr>
 <tr>
 <td>verticalScrollbarVisibility</td>
@@ -2706,19 +2153,19 @@
 <td>noScrollbars</td>
 <td>If set to true, then this scroll view will have no visible scrollbars.</td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">false</code></td>
+<td><code class="codehilite"><span class="k">false</span></code></td>
 </tr>
 <tr>
 <td>scrollbarBackgroundColor</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><code class="codehilite">#FFFFFF</code></td>
+<td><code class="codehilite"><span class="o">#</span><span class="n">FFFFFF</span></code></td>
 </tr>
 <tr>
 <td>scrollbarColors</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag xmlcb"></span></a></td>
-<td><code class="codehilite">#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)</code></td>
+<td><code class="codehilite"><span class="o">#</span><span class="n">FFFFFF</span><span class="o">|#</span><span class="n">FFFFFF</span><span class="o">|#</span><span class="n">C8C8C8</span><span class="o">|</span><span class="n">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">78</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">78</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">78</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span></code></td>
 </tr>
 <tr>
 <td>scrollbarImage</td>
@@ -2770,43 +2217,43 @@
 <td>horizontal</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">false</code></td>
+<td><code class="codehilite"><span class="k">false</span></code></td>
 </tr>
 <tr>
 <td>vertical</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">true</code></td>
+<td><code class="codehilite"><span class="k">true</span></code></td>
 </tr>
 <tr>
 <td>movementType</td>
 <td></td>
 <td><ul><li>Unrestricted</li><li>Elastic</li><li>Clamped</li></ul></td>
-<td><code class="codehilite">Clamped</code></td>
+<td><code class="codehilite"><span class="n">Clamped</span></code></td>
 </tr>
 <tr>
 <td>elasticity</td>
 <td></td>
 <td>float</td>
-<td><code class="codehilite">0.1</code></td>
+<td><code class="codehilite"><span class="mi">0</span><span class="p">.</span><span class="mi">1</span></code></td>
 </tr>
 <tr>
 <td>inertia</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">true</code></td>
+<td><code class="codehilite"><span class="k">true</span></code></td>
 </tr>
 <tr>
 <td>decelerationRate</td>
 <td></td>
 <td>float</td>
-<td><code class="codehilite">0.135</code></td>
+<td><code class="codehilite"><span class="mi">0</span><span class="p">.</span><span class="mi">135</span></code></td>
 </tr>
 <tr>
 <td>scrollSensitivity</td>
 <td></td>
 <td>float</td>
-<td><code class="codehilite">1</code></td>
+<td><code class="codehilite"><span class="mi">1</span></code></td>
 </tr>
 <tr>
 <td>horizontalScrollbarVisibility</td>
@@ -2818,25 +2265,25 @@
 <td>verticalScrollbarVisibility</td>
 <td></td>
 <td><ul><li>Permanent</li><li>AutoHide</li><li>AutoHideAndExpandViewport</li></ul></td>
-<td><code class="codehilite">AutoHide</code></td>
+<td><code class="codehilite"><span class="n">AutoHide</span></code></td>
 </tr>
 <tr>
 <td>noScrollbars</td>
 <td>If set to true, then this scroll view will have no visible scrollbars.</td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite">false</code></td>
+<td><code class="codehilite"><span class="k">false</span></code></td>
 </tr>
 <tr>
 <td>scrollbarBackgroundColor</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><code class="codehilite">#FFFFFF</code></td>
+<td><code class="codehilite"><span class="o">#</span><span class="n">FFFFFF</span></code></td>
 </tr>
 <tr>
 <td>scrollbarColors</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag xmlcb"></span></a></td>
-<td><code class="codehilite">#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)</code></td>
+<td><code class="codehilite"><span class="o">#</span><span class="n">FFFFFF</span><span class="o">|#</span><span class="n">FFFFFF</span><span class="o">|#</span><span class="n">C8C8C8</span><span class="o">|</span><span class="n">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">78</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">78</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">78</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span></code></td>
 </tr>
 <tr>
 <td>scrollbarImage</td>
@@ -2864,22 +2311,7 @@
 <span class="nt">&lt;/VerticalScrollView&gt;</span>
 </pre></div>
 
-<hr />
-                
-                  
-                
-              
-              
-                
-
-
-              
-            </article>
-          </div>
-        </div>
-      </main>
-      
-        <!--
+<hr /></article></div></div></main><!--
   Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -2922,34 +2354,8 @@
 
       <!-- Social links -->
       
-        
-  <div class="md-footer-social">
-    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
-    
-      <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>
-    
-      <a href="https://twitter.com/tabletopsim" class="md-footer-social__link fa fa-twitter"></a>
-    
-      <a href="https://www.facebook.com/tabletopsimulator" class="md-footer-social__link fa fa-facebook"></a>
-    
-      <a href="https://www.youtube.com/user/berserkgames" class="md-footer-social__link fa fa-youtube"></a>
-    
-  </div>
-
+        <div class="md-footer-social"><link rel="stylesheet" href="../../assets/fonts/font-awesome.css"> <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>  <a href="https://twitter.com/tabletopsim" class="md-footer-social__link fa fa-twitter"></a>  <a href="https://www.facebook.com/tabletopsimulator" class="md-footer-social__link fa fa-facebook"></a>  <a href="https://www.youtube.com/user/berserkgames" class="md-footer-social__link fa fa-youtube"></a> </div>
       
     </div>
   </div>
-</footer>
-      
-    </div>
-    
-      <script src="../../assets/javascripts/application.583bbe55.js"></script>
-      
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
-      
-    
-    
-      
-    
-  </body>
-</html>
+</footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script></body></html>
