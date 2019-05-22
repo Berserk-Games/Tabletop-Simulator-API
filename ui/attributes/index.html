@@ -1,4 +1,217 @@
-<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../../img/Icon-Dice.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.0"><title>Attributes - Tabletop Simulator API</title><link rel="stylesheet" href="../../assets/stylesheets/application.4031d38b.css"><link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css"><meta name="theme-color" content="#3f51b5"><script src="../../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=swap"><style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../../assets/fonts/material-icons.css"><link rel="stylesheet" href="../../css/theme.css"><link rel="stylesheet" href="../../css/table.css"><link rel="stylesheet" href="../../css/type_icons.css"><link rel="stylesheet" href="../../css/i_icons.css"><link rel="stylesheet" href="../../css/player_color_table.css"></head><body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#attribute-types" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href="../.." title="Tabletop Simulator API" class="md-header-nav__button md-logo"><img src="../../img/TSIcon.png" width="24" height="24"></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">Tabletop Simulator API</span><span class="md-header-nav__topic">Attributes</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">GitHub Source</div></a></div></div></div></nav></header><div class="md-container"><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><!--
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/Icon-Dice.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Attributes - Tabletop Simulator API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../css/theme.css">
+    
+      <link rel="stylesheet" href="../../css/table.css">
+    
+      <link rel="stylesheet" href="../../css/type_icons.css">
+    
+      <link rel="stylesheet" href="../../css/i_icons.css">
+    
+      <link rel="stylesheet" href="../../css/player_color_table.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#attribute-types" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Tabletop Simulator API" class="md-header-nav__button md-logo">
+          
+            <img src="../../img/TSIcon.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Tabletop Simulator API
+              </span>
+              <span class="md-header-nav__topic">
+                Attributes
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub Source
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!--
   Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,7 +250,25 @@
   <!-- Repository containing source -->
   
     <div class="md-nav__source">
-      <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">GitHub Source</div></a>
+      
+
+
+  
+
+
+  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub Source
+    </div>
+  </a>
+
     </div>
   
 
@@ -1449,7 +1680,205 @@
 
     <!-- Show table of contents -->
     
-      <nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#attribute-types" title="Attribute types" class="md-nav__link">Attribute types</a></li><li class="md-nav__item"><a href="#common-attributes" title="Common Attributes" class="md-nav__link">Common Attributes</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#general-attributes" title="General Attributes" class="md-nav__link">General Attributes</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#visibility-targets" title="Visibility Targets" class="md-nav__link">Visibility Targets</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#visible-to-all-players" title="Visible To All Players" class="md-nav__link">Visible To All Players</a></li><li class="md-nav__item"><a href="#visiblity-selection" title="Visiblity Selection" class="md-nav__link">Visiblity Selection</a></li><li class="md-nav__item"><a href="#combining-groups" title="Combining Groups" class="md-nav__link">Combining Groups</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#text-attributes" title="Text Attributes" class="md-nav__link">Text Attributes</a></li><li class="md-nav__item"><a href="#image-attributes" title="Image Attributes" class="md-nav__link">Image Attributes</a></li><li class="md-nav__item"><a href="#appearance-attributes" title="Appearance Attributes" class="md-nav__link">Appearance Attributes</a></li><li class="md-nav__item"><a href="#layout-element-attributes" title="Layout Element Attributes" class="md-nav__link">Layout Element Attributes</a></li><li class="md-nav__item"><a href="#positionsize-attributes-basic" title="Position/Size Attributes (Basic)" class="md-nav__link">Position/Size Attributes (Basic)</a></li><li class="md-nav__item"><a href="#positionsize-attributes-adv" title="Position/Size Attributes (Adv)" class="md-nav__link">Position/Size Attributes (Adv)</a></li><li class="md-nav__item"><a href="#dragging-attributes" title="Dragging Attributes" class="md-nav__link">Dragging Attributes</a></li><li class="md-nav__item"><a href="#animation-attributes" title="Animation Attributes" class="md-nav__link">Animation Attributes</a></li><li class="md-nav__item"><a href="#tooltip-attributes" title="Tooltip Attributes" class="md-nav__link">Tooltip Attributes</a></li><li class="md-nav__item"><a href="#event-attributes" title="Event Attributes" class="md-nav__link">Event Attributes</a></li></ul></nav></li><li class="md-nav__item"><a href="#usage" title="Usage" class="md-nav__link">Usage</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#single-element-attributes" title="Single Element Attributes" class="md-nav__link">Single Element Attributes</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#one-attribute" title="One Attribute" class="md-nav__link">One Attribute</a></li><li class="md-nav__item"><a href="#multiple-attributes" title="Multiple Attributes" class="md-nav__link">Multiple Attributes</a></li><li class="md-nav__item"><a href="#many-attributes" title="Many Attributes" class="md-nav__link">Many Attributes</a></li></ul></nav></li></ul></nav></li></ul></nav>
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attribute-types" title="Attribute types" class="md-nav__link">
+    Attribute types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-attributes" title="Common Attributes" class="md-nav__link">
+    Common Attributes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-attributes" title="General Attributes" class="md-nav__link">
+    General Attributes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visibility-targets" title="Visibility Targets" class="md-nav__link">
+    Visibility Targets
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visible-to-all-players" title="Visible To All Players" class="md-nav__link">
+    Visible To All Players
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visiblity-selection" title="Visiblity Selection" class="md-nav__link">
+    Visiblity Selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-groups" title="Combining Groups" class="md-nav__link">
+    Combining Groups
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-attributes" title="Text Attributes" class="md-nav__link">
+    Text Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-attributes" title="Image Attributes" class="md-nav__link">
+    Image Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appearance-attributes" title="Appearance Attributes" class="md-nav__link">
+    Appearance Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout-element-attributes" title="Layout Element Attributes" class="md-nav__link">
+    Layout Element Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsize-attributes-basic" title="Position/Size Attributes (Basic)" class="md-nav__link">
+    Position/Size Attributes (Basic)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsize-attributes-adv" title="Position/Size Attributes (Adv)" class="md-nav__link">
+    Position/Size Attributes (Adv)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dragging-attributes" title="Dragging Attributes" class="md-nav__link">
+    Dragging Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animation-attributes" title="Animation Attributes" class="md-nav__link">
+    Animation Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tooltip-attributes" title="Tooltip Attributes" class="md-nav__link">
+    Tooltip Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-attributes" title="Event Attributes" class="md-nav__link">
+    Event Attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-element-attributes" title="Single Element Attributes" class="md-nav__link">
+    Single Element Attributes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-attribute" title="One Attribute" class="md-nav__link">
+    One Attribute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-attributes" title="Multiple Attributes" class="md-nav__link">
+    Multiple Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#many-attributes" title="Many Attributes" class="md-nav__link">
+    Many Attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1623,7 +2052,229 @@
   <!--style="color:grey;position:absolute;left:18px;top:-2px" href="https://api.tabletopsimulator.com/">Go To API</a>-->
   <a href="https://kb.tabletopsimulator.com/" class="custom-link">Go To Knowledge Base &#8617</a>
 
-</nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#attribute-types" title="Attribute types" class="md-nav__link">Attribute types</a></li><li class="md-nav__item"><a href="#common-attributes" title="Common Attributes" class="md-nav__link">Common Attributes</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#general-attributes" title="General Attributes" class="md-nav__link">General Attributes</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#visibility-targets" title="Visibility Targets" class="md-nav__link">Visibility Targets</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#visible-to-all-players" title="Visible To All Players" class="md-nav__link">Visible To All Players</a></li><li class="md-nav__item"><a href="#visiblity-selection" title="Visiblity Selection" class="md-nav__link">Visiblity Selection</a></li><li class="md-nav__item"><a href="#combining-groups" title="Combining Groups" class="md-nav__link">Combining Groups</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#text-attributes" title="Text Attributes" class="md-nav__link">Text Attributes</a></li><li class="md-nav__item"><a href="#image-attributes" title="Image Attributes" class="md-nav__link">Image Attributes</a></li><li class="md-nav__item"><a href="#appearance-attributes" title="Appearance Attributes" class="md-nav__link">Appearance Attributes</a></li><li class="md-nav__item"><a href="#layout-element-attributes" title="Layout Element Attributes" class="md-nav__link">Layout Element Attributes</a></li><li class="md-nav__item"><a href="#positionsize-attributes-basic" title="Position/Size Attributes (Basic)" class="md-nav__link">Position/Size Attributes (Basic)</a></li><li class="md-nav__item"><a href="#positionsize-attributes-adv" title="Position/Size Attributes (Adv)" class="md-nav__link">Position/Size Attributes (Adv)</a></li><li class="md-nav__item"><a href="#dragging-attributes" title="Dragging Attributes" class="md-nav__link">Dragging Attributes</a></li><li class="md-nav__item"><a href="#animation-attributes" title="Animation Attributes" class="md-nav__link">Animation Attributes</a></li><li class="md-nav__item"><a href="#tooltip-attributes" title="Tooltip Attributes" class="md-nav__link">Tooltip Attributes</a></li><li class="md-nav__item"><a href="#event-attributes" title="Event Attributes" class="md-nav__link">Event Attributes</a></li></ul></nav></li><li class="md-nav__item"><a href="#usage" title="Usage" class="md-nav__link">Usage</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#single-element-attributes" title="Single Element Attributes" class="md-nav__link">Single Element Attributes</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#one-attribute" title="One Attribute" class="md-nav__link">One Attribute</a></li><li class="md-nav__item"><a href="#multiple-attributes" title="Multiple Attributes" class="md-nav__link">Multiple Attributes</a></li><li class="md-nav__item"><a href="#many-attributes" title="Many Attributes" class="md-nav__link">Many Attributes</a></li></ul></nav></li></ul></nav></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/ui/attributes.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a><h1>Attributes</h1><p>boundaryAs mentioned in the <a href="xml/introUI">Introduction</a>, attributes are modifiers that can be applied to elements. They can be applied to individual elements or to whole groups of them.</p>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attribute-types" title="Attribute types" class="md-nav__link">
+    Attribute types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-attributes" title="Common Attributes" class="md-nav__link">
+    Common Attributes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-attributes" title="General Attributes" class="md-nav__link">
+    General Attributes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visibility-targets" title="Visibility Targets" class="md-nav__link">
+    Visibility Targets
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visible-to-all-players" title="Visible To All Players" class="md-nav__link">
+    Visible To All Players
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visiblity-selection" title="Visiblity Selection" class="md-nav__link">
+    Visiblity Selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-groups" title="Combining Groups" class="md-nav__link">
+    Combining Groups
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-attributes" title="Text Attributes" class="md-nav__link">
+    Text Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-attributes" title="Image Attributes" class="md-nav__link">
+    Image Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appearance-attributes" title="Appearance Attributes" class="md-nav__link">
+    Appearance Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout-element-attributes" title="Layout Element Attributes" class="md-nav__link">
+    Layout Element Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsize-attributes-basic" title="Position/Size Attributes (Basic)" class="md-nav__link">
+    Position/Size Attributes (Basic)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positionsize-attributes-adv" title="Position/Size Attributes (Adv)" class="md-nav__link">
+    Position/Size Attributes (Adv)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dragging-attributes" title="Dragging Attributes" class="md-nav__link">
+    Dragging Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animation-attributes" title="Animation Attributes" class="md-nav__link">
+    Animation Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tooltip-attributes" title="Tooltip Attributes" class="md-nav__link">
+    Tooltip Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-attributes" title="Event Attributes" class="md-nav__link">
+    Event Attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-element-attributes" title="Single Element Attributes" class="md-nav__link">
+    Single Element Attributes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-attribute" title="One Attribute" class="md-nav__link">
+    One Attribute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-attributes" title="Multiple Attributes" class="md-nav__link">
+    Multiple Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#many-attributes" title="Many Attributes" class="md-nav__link">
+    Many Attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/ui/attributes.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Attributes</h1>
+                
+                <p>boundaryAs mentioned in the <a href="xml/introUI">Introduction</a>, attributes are modifiers that can be applied to elements. They can be applied to individual elements or to whole groups of them.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>They consists of two parts, a <strong>tag</strong> and a <strong>value</strong>. <strong><em>The value is always in quotation marks.</em></strong></p>
@@ -1632,21 +2283,21 @@
 <p>For XML, most of the attribute types are self-explanatory, like string or float (See Lua Scripting section for details on those). However XML has some unique types.</p>
 <ul>
 <li><span class="tag xmlco"></span><ul>
-<li><strong>HTML 6 Char Hex</strong>: <code class="codehilite"><span class="o">#</span><span class="n">FFFFFF</span></code> <span class="critic comment">(white 100% opacity)</span></li>
-<li><strong>8 Char Hex</strong>: <code class="codehilite"><span class="o">#</span><span class="n">FFFFFFCC</span></code> <span class="critic comment">(white 80% opacity)</span></li>
-<li><strong>RGB Color</strong>: <code class="codehilite"><span class="n">rgb</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span></code> <span class="critic comment">(white 100% opacity)</span></li>
-<li><strong>RGBA Color</strong>: <code class="codehilite"><span class="n">rgba</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">)</span></code> <span class="critic comment">(white 80% opacity)</span></li>
-<li><strong>Player Color</strong>: <code class="codehilite"><span class="n">White</span></code> <span class="critic comment">(white 100% opacity)</span></li>
+<li><strong>HTML 6 Char Hex</strong>: <code class="codehilite">#FFFFFF</code> <span class="critic comment">(white 100% opacity)</span></li>
+<li><strong>8 Char Hex</strong>: <code class="codehilite">#FFFFFFCC</code> <span class="critic comment">(white 80% opacity)</span></li>
+<li><strong>RGB Color</strong>: <code class="codehilite">rgb(1,1,1)</code> <span class="critic comment">(white 100% opacity)</span></li>
+<li><strong>RGBA Color</strong>: <code class="codehilite">rgba(1,1,1,0.8)</code> <span class="critic comment">(white 80% opacity)</span></li>
+<li><strong>Player Color</strong>: <code class="codehilite">White</code> <span class="critic comment">(white 100% opacity)</span></li>
 </ul>
 </li>
 <li><span class="tag xmlcb"></span><ul>
 <li>Color block values are used to specify the colors for elements such as buttons and input fields.</li>
-<li>Format: <strong>(normalColor|highlightedColor|pressedColor|disabledColor)</strong> where each color is formatted as above, e.g. <code class="codehilite"><span class="o">#</span><span class="n">FFFFFF</span><span class="o">|</span><span class="n">White</span><span class="o">|#</span><span class="n">C8C8C8</span><span class="o">|</span><span class="n">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">78</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">78</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">78</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span></code></li>
+<li>Format: <strong>(normalColor|highlightedColor|pressedColor|disabledColor)</strong> where each color is formatted as above, e.g. <code class="codehilite">#FFFFFF|White|#C8C8C8|rgba(0.78,0.78,0.78,0.5)</code></li>
 </ul>
 </li>
 <li><span class="tag boo"></span><ul>
-<li><strong>True</strong>: <code class="codehilite"><span class="mi">1</span></code> or <code class="codehilite"><span class="k">true</span></code></li>
-<li><strong>False</strong>: <code class="codehilite"><span class="mi">0</span></code> or <code class="codehilite"><span class="k">false</span></code></li>
+<li><strong>True</strong>: <code class="codehilite">1</code> or <code class="codehilite">true</code></li>
+<li><strong>False</strong>: <code class="codehilite">0</code> or <code class="codehilite">false</code></li>
 </ul>
 </li>
 </ul>
@@ -1668,7 +2319,7 @@
 <td>active</td>
 <td>Specifies whether or not this element is active. This can be used to hide/show elements via scripting. Triggering this via script will not trigger animations.</td>
 <td>bool</td>
-<td><code class="codehilite"><span class="k">true</span></code></td>
+<td><code class="codehilite">true</code></td>
 </tr>
 <tr>
 <td>class</td>
@@ -1702,14 +2353,14 @@
 <p>Not using the visibility attribute (or setting it to an empty string) does not limit the visibility of the element.</p>
 <h5 id="visiblity-selection">Visiblity Selection<a class="headerlink" href="#visiblity-selection" title="Permanent link"> </a></h5>
 <ul>
-<li><code class="codehilite"><span class="k">Host</span></code>:  Only visible to the game host.</li>
-<li><code class="codehilite"><span class="k">Admin</span></code>: Only visible to the host and any promoted player.</li>
-<li><code class="codehilite"><span class="n">Red</span></code>: Only visible to the player in that seat color. (Works with all valid <a href="/player-color">color names</a>)</li>
-<li><code class="codehilite"><span class="n">Clubs</span></code>: Only visible to members of that player group. (Works with all valid <a href="/player#team">team names</a>)</li>
+<li><code class="codehilite">Host</code>:  Only visible to the game host.</li>
+<li><code class="codehilite">Admin</code>: Only visible to the host and any promoted player.</li>
+<li><code class="codehilite">Red</code>: Only visible to the player in that seat color. (Works with all valid <a href="/player-color">color names</a>)</li>
+<li><code class="codehilite">Clubs</code>: Only visible to members of that player group. (Works with all valid <a href="/player#team">team names</a>)</li>
 </ul>
 <h5 id="combining-groups">Combining Groups<a class="headerlink" href="#combining-groups" title="Permanent link"> </a></h5>
-<p>You are able to list multiple color names in a single string by placing a vertical line <code class="codehilite"><span class="o">|</span></code> between valid entries.</p>
-<p>Example: <code class="codehilite"><span class="ss">&quot;Red|Blue|Host&quot;</span></code> would be visible to the red seat, blue seat and the host of the server.</p>
+<p>You are able to list multiple color names in a single string by placing a vertical line <code class="codehilite">|</code> between valid entries.</p>
+<p>Example: <code class="codehilite">&quot;Red|Blue|Host&quot;</code> would be visible to the red seat, blue seat and the host of the server.</p>
 <h3 id="text-attributes">Text Attributes<a class="headerlink" href="#text-attributes" title="Permanent link"> </a></h3>
 <p>Many, but not all, elements have a text attribute.</p>
 <table>
@@ -1738,54 +2389,54 @@
 <td>color</td>
 <td></td>
 <td><a href="attributes#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><code class="codehilite"><span class="o">#</span><span class="mi">323232</span></code></td>
+<td><code class="codehilite">#323232</code></td>
 </tr>
 <tr>
 <td>fontStyle</td>
 <td></td>
 <td><ul><li>Normal</li><li>Bold</li><li>Italic</li><li>BoldItalic</li></ul></td>
-<td><code class="codehilite"><span class="n">Normal</span></code></td>
+<td><code class="codehilite">Normal</code></td>
 </tr>
 <tr>
 <td>fontSize</td>
 <td></td>
 <td>float</td>
-<td><code class="codehilite"><span class="mi">14</span></code></td>
+<td><code class="codehilite">14</code></td>
 </tr>
 <tr>
 <td>resizeTextForBestFit</td>
 <td>Resize text to fit?</td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite"><span class="k">false</span></code></td>
+<td><code class="codehilite">false</code></td>
 </tr>
 <tr>
 <td>resizeTextMinSize</td>
 <td>Minimum font size</td>
 <td>float</td>
-<td><code class="codehilite"><span class="mi">10</span></code></td>
+<td><code class="codehilite">10</code></td>
 </tr>
 <tr>
 <td>resizeTextMaxSize</td>
 <td>Maximum font size</td>
 <td>float</td>
-<td><code class="codehilite"><span class="mi">40</span></code></td>
+<td><code class="codehilite">40</code></td>
 </tr>
 <tr>
 <td>horizontalOverflow</td>
 <td></td>
 <td><ul><li>Wrap</li><li>Overflow</li></ul></td>
-<td><code class="codehilite"><span class="n">Overflow</span></code></td>
+<td><code class="codehilite">Overflow</code></td>
 </tr>
 <tr>
 <td>verticalOverflow</td>
 <td></td>
 <td><ul><li>Truncate</li><li>Overflow</li></ul></td>
-<td><code class="codehilite"><span class="k">Truncate</span></code></td>
+<td><code class="codehilite">Truncate</code></td>
 </tr>
 </tbody>
 </table>
 <h3 id="image-attributes">Image Attributes<a class="headerlink" href="#image-attributes" title="Permanent link"> </a></h3>
-<p>Applies to elements with an image component. The string that <code class="codehilite"><span class="n">image</span></code>s all take is the <strong>NAME THE IMAGE WAS GIVEN WHEN YOU PUT IT IN THE IN-GAME ASSET MANAGER</strong>.</p>
+<p>Applies to elements with an image component. The string that <code class="codehilite">image</code>s all take is the <strong>NAME THE IMAGE WAS GIVEN WHEN YOU PUT IT IN THE IN-GAME ASSET MANAGER</strong>.</p>
 <table>
 <thead>
 <tr>
@@ -1812,7 +2463,7 @@
 <td>color</td>
 <td>Color for this element's image</td>
 <td><a href="attributes#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><code class="codehilite"><span class="n">clear</span></code> or <code class="codehilite"><span class="o">#</span><span class="n">FFFFFF</span></code></td>
+<td><code class="codehilite">clear</code> or <code class="codehilite">#FFFFFF</code></td>
 </tr>
 <tr>
 <td>type</td>
@@ -1824,7 +2475,7 @@
 <td>raycastTarget</td>
 <td>If the element blocks clicks.</td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite"><span class="k">true</span></code></td>
+<td><code class="codehilite">true</code></td>
 </tr>
 </tbody>
 </table>
@@ -1849,7 +2500,7 @@
 <td>shadowDistance</td>
 <td>Defines the distance of the shadow for this element.</td>
 <td>float(x) float(y)</td>
-<td><code class="codehilite"><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span></code></td>
+<td><code class="codehilite">1 -1</code></td>
 </tr>
 <tr>
 <td>outline</td>
@@ -1861,7 +2512,7 @@
 <td>outlineSize</td>
 <td>Defines the size of this elements outline.</td>
 <td>float(x) float(y)</td>
-<td><code class="codehilite"><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span></code></td>
+<td><code class="codehilite">1 -1</code></td>
 </tr>
 </tbody>
 </table>
@@ -1881,7 +2532,7 @@
 <td>ignoreLayout</td>
 <td>Should this element ignore its parent layout group?</td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite"><span class="k">false</span></code></td>
+<td><code class="codehilite">false</code></td>
 </tr>
 <tr>
 <td>minWidth</td>
@@ -1936,25 +2587,25 @@
 <td>rectAlignment</td>
 <td>Defines this elements position within its parent. Only applies to elements not contained within layout groups.</td>
 <td>UpperLeft, UpperCenter, UpperRight, MiddleLeft, MiddleCenter, MiddleRight, LowerLeft, LowerCenter, LowerRight</td>
-<td><code class="codehilite"><span class="n">MiddleCenter</span></code></td>
+<td><code class="codehilite">MiddleCenter</code></td>
 </tr>
 <tr>
 <td>width</td>
 <td>Defines the width of this element.</td>
 <td>float (fixed width) or a Percentage value</td>
-<td><code class="codehilite"><span class="mi">100</span><span class="o">%</span></code></td>
+<td><code class="codehilite">100%</code></td>
 </tr>
 <tr>
 <td>height</td>
 <td>Defines the height of this element.</td>
 <td>float (fixed width) or a Percentage value</td>
-<td><code class="codehilite"><span class="mi">100</span><span class="o">%</span></code></td>
+<td><code class="codehilite">100%</code></td>
 </tr>
 <tr>
 <td>offsetXY</td>
-<td>Defines an offset to the position of this element, e.g. a value of <code class="codehilite"><span class="o">-</span><span class="mi">32</span> <span class="mi">0</span></code> will cause this element to be 32 pixels to the left of where it would otherwise be.</td>
+<td>Defines an offset to the position of this element, e.g. a value of <code class="codehilite">-32 0</code> will cause this element to be 32 pixels to the left of where it would otherwise be.</td>
 <td>float (x) float (y)</td>
-<td><code class="codehilite"><span class="mi">0</span> <span class="mi">0</span></code></td>
+<td><code class="codehilite">0 0</code></td>
 </tr>
 </tbody>
 </table>
@@ -2042,19 +2693,19 @@
 <td>allowDragging</td>
 <td>Allow this element to be dragged? <br><span class="critic comment">Does not work on child elements of layout groups)</span></td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite"><span class="k">false</span></code></td>
+<td><code class="codehilite">false</code></td>
 </tr>
 <tr>
 <td>restrictDraggingToParentBounds</td>
 <td>Prevent this element from being dragged outside of its parent?</td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite"><span class="k">true</span></code></td>
+<td><code class="codehilite">true</code></td>
 </tr>
 <tr>
 <td>returnToOriginalPositionWhenReleased</td>
 <td>If this is set to true, then the element will return to its original position when it is released.</td>
 <td><a href="attributes#attribute-types"><span class="tag boo"></span></a></td>
-<td><code class="codehilite"><span class="k">true</span></code></td>
+<td><code class="codehilite">true</code></td>
 </tr>
 </tbody>
 </table>
@@ -2073,31 +2724,31 @@
 <td>showAnimation</td>
 <td></td>
 <td><ul><li>None</li><li>Grow</li><li>FadeIn</li><li>SlideIn_Left</li><li>SlideIn_Right</li><li>SlideIn_Top</li><li>SlideIn_Bottom</li></ul></td>
-<td><code class="codehilite"><span class="k">None</span></code></td>
+<td><code class="codehilite">None</code></td>
 </tr>
 <tr>
 <td>hideAnimation</td>
 <td></td>
 <td><ul><li>None</li><li>Shrink</li><li>FadeOut</li><li>SlideOut_Left</li><li>SlideOut_Right</li><li>SlideOut_Top</li><li>SlideOut_Bottom</li></ul></td>
-<td><code class="codehilite"><span class="k">None</span></code></td>
+<td><code class="codehilite">None</code></td>
 </tr>
 <tr>
 <td>showAnimationDelay</td>
 <td>Adds a short delay before playing this element's show animation.</td>
 <td>float</td>
-<td><code class="codehilite"><span class="mi">0</span></code></td>
+<td><code class="codehilite">0</code></td>
 </tr>
 <tr>
 <td>hideAnimationDelay</td>
 <td>Adds a short delay before playing this element's hide animation.</td>
 <td>float</td>
-<td><code class="codehilite"><span class="mi">0</span></code></td>
+<td><code class="codehilite">0</code></td>
 </tr>
 <tr>
 <td>animationDuration</td>
 <td>Specifies how long show/hide animations should take to play.</td>
 <td>float</td>
-<td><code class="codehilite"><span class="mi">0</span><span class="p">.</span><span class="mi">25</span></code></td>
+<td><code class="codehilite">0.25</code></td>
 </tr>
 </tbody>
 </table>
@@ -2123,13 +2774,13 @@
 <td>tooltipBorderColor</td>
 <td>Color of the tooltips border.</td>
 <td><a href="attributes#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><code class="codehilite"><span class="o">#</span><span class="n">FFFFFF</span></code></td>
+<td><code class="codehilite">#FFFFFF</code></td>
 </tr>
 <tr>
 <td>tooltipBackgroundColor</td>
 <td>Color of the tooltips background</td>
 <td><a href="attributes#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><code class="codehilite"><span class="n">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">62</span><span class="p">)</span></code></td>
+<td><code class="codehilite">rgba(0,0,0,0.62)</code></td>
 </tr>
 <tr>
 <td>tooltipTextColor</td>
@@ -2141,7 +2792,7 @@
 <td>tooltipPosition</td>
 <td>Position of this tooltip in relation to the element.</td>
 <td><ul><li>Above</li><li>Below</li><li>Left</li><li>Right</li></ul></td>
-<td><code class="codehilite"><span class="k">Right</span></code></td>
+<td><code class="codehilite">Right</code></td>
 </tr>
 <tr>
 <td>tooltipBorderImage</td>
@@ -2269,7 +2920,22 @@
 <span class="nt">&lt;/Button&gt;</span>
 </pre></div>
 
-<hr /></article></div></div></main><!--
+<hr />
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        <!--
   Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -2312,8 +2978,34 @@
 
       <!-- Social links -->
       
-        <div class="md-footer-social"><link rel="stylesheet" href="../../assets/fonts/font-awesome.css"> <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>  <a href="https://twitter.com/tabletopsim" class="md-footer-social__link fa fa-twitter"></a>  <a href="https://www.facebook.com/tabletopsimulator" class="md-footer-social__link fa fa-facebook"></a>  <a href="https://www.youtube.com/user/berserkgames" class="md-footer-social__link fa fa-youtube"></a> </div>
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://twitter.com/tabletopsim" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.facebook.com/tabletopsimulator" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://www.youtube.com/user/berserkgames" class="md-footer-social__link fa fa-youtube"></a>
+    
+  </div>
+
       
     </div>
   </div>
-</footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script></body></html>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

@@ -1,4 +1,217 @@
-<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../img/Icon-Dice.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.0"><title>Object - Tabletop Simulator API</title><link rel="stylesheet" href="../assets/stylesheets/application.4031d38b.css"><link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css"><meta name="theme-color" content="#3f51b5"><script src="../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=swap"><style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../assets/fonts/material-icons.css"><link rel="stylesheet" href="../css/theme.css"><link rel="stylesheet" href="../css/table.css"><link rel="stylesheet" href="../css/type_icons.css"><link rel="stylesheet" href="../css/i_icons.css"><link rel="stylesheet" href="../css/player_color_table.css"></head><body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#member-variable-summary" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href=".." title="Tabletop Simulator API" class="md-header-nav__button md-logo"><img src="../img/TSIcon.png" width="24" height="24"></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">Tabletop Simulator API</span><span class="md-header-nav__topic">Object</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">GitHub Source</div></a></div></div></div></nav></header><div class="md-container"><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><!--
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/Icon-Dice.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Object - Tabletop Simulator API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../css/theme.css">
+    
+      <link rel="stylesheet" href="../css/table.css">
+    
+      <link rel="stylesheet" href="../css/type_icons.css">
+    
+      <link rel="stylesheet" href="../css/i_icons.css">
+    
+      <link rel="stylesheet" href="../css/player_color_table.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../#member-variable-summary" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Tabletop Simulator API" class="md-header-nav__button md-logo">
+          
+            <img src="../img/TSIcon.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Tabletop Simulator API
+              </span>
+              <span class="md-header-nav__topic">
+                Object
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub Source
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!--
   Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,7 +250,25 @@
   <!-- Repository containing source -->
   
     <div class="md-nav__source">
-      <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">GitHub Source</div></a>
+      
+
+
+  
+
+
+  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub Source
+    </div>
+  </a>
+
     </div>
   
 
@@ -630,7 +861,605 @@
 
     <!-- Show table of contents -->
     
-      <nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#member-variable-summary" title="Member Variable Summary" class="md-nav__link">Member Variable Summary</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#member-variables" title="Member Variables" class="md-nav__link">Member Variables</a></li></ul></nav></li><li class="md-nav__item"><a href="#function-summary" title="Function Summary" class="md-nav__link">Function Summary</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#transform-functions" title="Transform Functions" class="md-nav__link">Transform Functions</a></li><li class="md-nav__item"><a href="#ui-functions" title="UI Functions" class="md-nav__link">UI Functions</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#classic-ui" title="Classic UI" class="md-nav__link">Classic UI</a></li><li class="md-nav__item"><a href="#custom-ui" title="Custom UI" class="md-nav__link">Custom UI</a></li></ul></nav></li><li class="md-nav__item"><a href="#get-functions" title="Get Functions" class="md-nav__link">Get Functions</a></li><li class="md-nav__item"><a href="#set-functions" title="Set Functions" class="md-nav__link">Set Functions</a></li><li class="md-nav__item"><a href="#action-function" title="Action Function" class="md-nav__link">Action Function</a></li><li class="md-nav__item"><a href="#hide-functions" title="Hide Functions" class="md-nav__link">Hide Functions</a></li><li class="md-nav__item"><a href="#global-function" title="Global Function" class="md-nav__link">Global Function</a></li></ul></nav></li><li class="md-nav__item"><a href="#function-details" title="Function Details" class="md-nav__link">Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#transform-function-details" title="Transform Function Details" class="md-nav__link">Transform Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#addforce" title="addForce(...)" class="md-nav__link">addForce(...)</a></li><li class="md-nav__item"><a href="#addtorque" title="addTorque(...)" class="md-nav__link">addTorque(...)</a></li><li class="md-nav__item"><a href="#getbounds" title="getBounds()" class="md-nav__link">getBounds()</a></li><li class="md-nav__item"><a href="#getboundsnormalized" title="getBoundsNormalized()" class="md-nav__link">getBoundsNormalized()</a></li><li class="md-nav__item"><a href="#getscale" title="getScale()" class="md-nav__link">getScale()</a></li><li class="md-nav__item"><a href="#gettransformforward" title="getTransformForward()" class="md-nav__link">getTransformForward()</a></li><li class="md-nav__item"><a href="#gettransformright" title="getTransformRight()" class="md-nav__link">getTransformRight()</a></li><li class="md-nav__item"><a href="#gettransformup" title="getTransformUp()" class="md-nav__link">getTransformUp()</a></li><li class="md-nav__item"><a href="#positiontolocal" title="positionToLocal(...)" class="md-nav__link">positionToLocal(...)</a></li><li class="md-nav__item"><a href="#positiontoworld" title="positionToWorld(...)" class="md-nav__link">positionToWorld(...)</a></li><li class="md-nav__item"><a href="#rotate" title="rotate(...)" class="md-nav__link">rotate(...)</a></li><li class="md-nav__item"><a href="#scale" title="scale(...)" class="md-nav__link">scale(...)</a></li><li class="md-nav__item"><a href="#setpositionsmooth" title="setPositionSmooth(...)" class="md-nav__link">setPositionSmooth(...)</a></li><li class="md-nav__item"><a href="#setrotationsmooth" title="setRotationSmooth(...)" class="md-nav__link">setRotationSmooth(...)</a></li></ul></nav></li><li class="md-nav__item"><a href="#ui-function-details" title="UI Function Details" class="md-nav__link">UI Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#createbutton" title="createButton(...)" class="md-nav__link">createButton(...)</a></li><li class="md-nav__item"><a href="#createinput" title="createInput(...)" class="md-nav__link">createInput(...)</a></li><li class="md-nav__item"><a href="#editbutton" title="editButton(...)" class="md-nav__link">editButton(...)</a></li><li class="md-nav__item"><a href="#editinput" title="editInput(...)" class="md-nav__link">editInput(...)</a></li><li class="md-nav__item"><a href="#getbuttons" title="getButtons()" class="md-nav__link">getButtons()</a></li><li class="md-nav__item"><a href="#getinputs" title="getInputs()" class="md-nav__link">getInputs()</a></li><li class="md-nav__item"><a href="#removebutton" title="removeButton(...)" class="md-nav__link">removeButton(...)</a></li><li class="md-nav__item"><a href="#removeinput" title="removeInput(...)" class="md-nav__link">removeInput(...)</a></li></ul></nav></li><li class="md-nav__item"><a href="#get-function-details" title="Get Function Details" class="md-nav__link">Get Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#getcustomobject" title="getCustomObject()" class="md-nav__link">getCustomObject()</a></li><li class="md-nav__item"><a href="#getfogofwarreveal" title="getFogOfWarReveal()" class="md-nav__link">getFogOfWarReveal()</a></li><li class="md-nav__item"><a href="#getjoints" title="getJoints()" class="md-nav__link">getJoints()</a></li><li class="md-nav__item"><a href="#getobjects" title="getObjects()" class="md-nav__link">getObjects()</a></li><li class="md-nav__item"><a href="#getrotationvalue" title="getRotationValue()" class="md-nav__link">getRotationValue()</a></li><li class="md-nav__item"><a href="#getrotationvalues" title="getRotationValues()" class="md-nav__link">getRotationValues()</a></li><li class="md-nav__item"><a href="#getstates" title="getStates()" class="md-nav__link">getStates()</a></li><li class="md-nav__item"><a href="#getvalue" title="getValue()" class="md-nav__link">getValue()</a></li></ul></nav></li><li class="md-nav__item"><a href="#set-function-details" title="Set Function Details" class="md-nav__link">Set Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#setcustomobject" title="setCustomObject(...)" class="md-nav__link">setCustomObject(...)</a></li><li class="md-nav__item"><a href="#setfogofwarreveal" title="setFogOfWarReveal(...)" class="md-nav__link">setFogOfWarReveal(...)</a></li><li class="md-nav__item"><a href="#setrotationvalues" title="setRotationValues(...)" class="md-nav__link">setRotationValues(...)</a></li><li class="md-nav__item"><a href="#setvalue" title="setValue(...)" class="md-nav__link">setValue(...)</a></li></ul></nav></li><li class="md-nav__item"><a href="#action-function-details" title="Action Function Details" class="md-nav__link">Action Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#clone" title="clone(...)" class="md-nav__link">clone(...)</a></li><li class="md-nav__item"><a href="#cut" title="cut(...)" class="md-nav__link">cut(...)</a></li><li class="md-nav__item"><a href="#deal" title="deal(...)" class="md-nav__link">deal(...)</a></li><li class="md-nav__item"><a href="#dealtocolorwithoffset" title="dealToColorWithOffset(...)" class="md-nav__link">dealToColorWithOffset(...)</a></li><li class="md-nav__item"><a href="#jointto" title="jointTo(...)" class="md-nav__link">jointTo(...)</a></li><li class="md-nav__item"><a href="#putobject" title="putObject(...)" class="md-nav__link">putObject(...)</a></li><li class="md-nav__item"><a href="#reload" title="reload()" class="md-nav__link">reload()</a></li><li class="md-nav__item"><a href="#split" title="split(...)" class="md-nav__link">split(...)</a></li><li class="md-nav__item"><a href="#takeobject" title="takeObject(...)" class="md-nav__link">takeObject(...)</a></li></ul></nav></li><li class="md-nav__item"><a href="#hide-function-details" title="Hide Function Details" class="md-nav__link">Hide Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#sethiddenfrom" title="setHiddenFrom(...)" class="md-nav__link">setHiddenFrom(...)</a></li><li class="md-nav__item"><a href="#setinvisibleto" title="setInvisibleTo(...)" class="md-nav__link">setInvisibleTo(...)</a></li><li class="md-nav__item"><a href="#attachhider" title="attachHider(...)" class="md-nav__link">attachHider(...)</a></li><li class="md-nav__item"><a href="#attachinvisiblehider" title="attachInvisibleHider(...)" class="md-nav__link">attachInvisibleHider(...)</a></li></ul></nav></li><li class="md-nav__item"><a href="#global-function-details" title="Global Function Details" class="md-nav__link">Global Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#adddecal" title="addDecal(...)" class="md-nav__link">addDecal(...)</a></li><li class="md-nav__item"><a href="#call" title="call(...)" class="md-nav__link">call(...)</a></li><li class="md-nav__item"><a href="#getdecals" title="getDecals()" class="md-nav__link">getDecals()</a></li><li class="md-nav__item"><a href="#getsnappoints" title="getSnapPoints()" class="md-nav__link">getSnapPoints()</a></li><li class="md-nav__item"><a href="#setdecals" title="setDecals(...)" class="md-nav__link">setDecals(...)</a></li><li class="md-nav__item"><a href="#setsnappoints" title="setSnapPoints(...)" class="md-nav__link">setSnapPoints(...)</a></li><li class="md-nav__item"><a href="#setvectorlines" title="setVectorLines(...)" class="md-nav__link">setVectorLines(...)</a></li></ul></nav></li></ul></nav></li></ul></nav>
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#member-variable-summary" title="Member Variable Summary" class="md-nav__link">
+    Member Variable Summary
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#member-variables" title="Member Variables" class="md-nav__link">
+    Member Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-summary" title="Function Summary" class="md-nav__link">
+    Function Summary
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transform-functions" title="Transform Functions" class="md-nav__link">
+    Transform Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui-functions" title="UI Functions" class="md-nav__link">
+    UI Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classic-ui" title="Classic UI" class="md-nav__link">
+    Classic UI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-ui" title="Custom UI" class="md-nav__link">
+    Custom UI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-functions" title="Get Functions" class="md-nav__link">
+    Get Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-functions" title="Set Functions" class="md-nav__link">
+    Set Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-function" title="Action Function" class="md-nav__link">
+    Action Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-functions" title="Hide Functions" class="md-nav__link">
+    Hide Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-function" title="Global Function" class="md-nav__link">
+    Global Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-details" title="Function Details" class="md-nav__link">
+    Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transform-function-details" title="Transform Function Details" class="md-nav__link">
+    Transform Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addforce" title="addForce(...)" class="md-nav__link">
+    addForce(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addtorque" title="addTorque(...)" class="md-nav__link">
+    addTorque(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbounds" title="getBounds()" class="md-nav__link">
+    getBounds()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getboundsnormalized" title="getBoundsNormalized()" class="md-nav__link">
+    getBoundsNormalized()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getscale" title="getScale()" class="md-nav__link">
+    getScale()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettransformforward" title="getTransformForward()" class="md-nav__link">
+    getTransformForward()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettransformright" title="getTransformRight()" class="md-nav__link">
+    getTransformRight()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettransformup" title="getTransformUp()" class="md-nav__link">
+    getTransformUp()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positiontolocal" title="positionToLocal(...)" class="md-nav__link">
+    positionToLocal(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positiontoworld" title="positionToWorld(...)" class="md-nav__link">
+    positionToWorld(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotate" title="rotate(...)" class="md-nav__link">
+    rotate(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale" title="scale(...)" class="md-nav__link">
+    scale(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpositionsmooth" title="setPositionSmooth(...)" class="md-nav__link">
+    setPositionSmooth(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrotationsmooth" title="setRotationSmooth(...)" class="md-nav__link">
+    setRotationSmooth(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui-function-details" title="UI Function Details" class="md-nav__link">
+    UI Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createbutton" title="createButton(...)" class="md-nav__link">
+    createButton(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createinput" title="createInput(...)" class="md-nav__link">
+    createInput(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editbutton" title="editButton(...)" class="md-nav__link">
+    editButton(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editinput" title="editInput(...)" class="md-nav__link">
+    editInput(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttons" title="getButtons()" class="md-nav__link">
+    getButtons()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputs" title="getInputs()" class="md-nav__link">
+    getInputs()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removebutton" title="removeButton(...)" class="md-nav__link">
+    removeButton(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removeinput" title="removeInput(...)" class="md-nav__link">
+    removeInput(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-function-details" title="Get Function Details" class="md-nav__link">
+    Get Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getcustomobject" title="getCustomObject()" class="md-nav__link">
+    getCustomObject()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfogofwarreveal" title="getFogOfWarReveal()" class="md-nav__link">
+    getFogOfWarReveal()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getjoints" title="getJoints()" class="md-nav__link">
+    getJoints()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getobjects" title="getObjects()" class="md-nav__link">
+    getObjects()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrotationvalue" title="getRotationValue()" class="md-nav__link">
+    getRotationValue()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrotationvalues" title="getRotationValues()" class="md-nav__link">
+    getRotationValues()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstates" title="getStates()" class="md-nav__link">
+    getStates()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvalue" title="getValue()" class="md-nav__link">
+    getValue()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-function-details" title="Set Function Details" class="md-nav__link">
+    Set Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setcustomobject" title="setCustomObject(...)" class="md-nav__link">
+    setCustomObject(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setfogofwarreveal" title="setFogOfWarReveal(...)" class="md-nav__link">
+    setFogOfWarReveal(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrotationvalues" title="setRotationValues(...)" class="md-nav__link">
+    setRotationValues(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvalue" title="setValue(...)" class="md-nav__link">
+    setValue(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-function-details" title="Action Function Details" class="md-nav__link">
+    Action Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clone" title="clone(...)" class="md-nav__link">
+    clone(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cut" title="cut(...)" class="md-nav__link">
+    cut(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deal" title="deal(...)" class="md-nav__link">
+    deal(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dealtocolorwithoffset" title="dealToColorWithOffset(...)" class="md-nav__link">
+    dealToColorWithOffset(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jointto" title="jointTo(...)" class="md-nav__link">
+    jointTo(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#putobject" title="putObject(...)" class="md-nav__link">
+    putObject(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reload" title="reload()" class="md-nav__link">
+    reload()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split" title="split(...)" class="md-nav__link">
+    split(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#takeobject" title="takeObject(...)" class="md-nav__link">
+    takeObject(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-function-details" title="Hide Function Details" class="md-nav__link">
+    Hide Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sethiddenfrom" title="setHiddenFrom(...)" class="md-nav__link">
+    setHiddenFrom(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setinvisibleto" title="setInvisibleTo(...)" class="md-nav__link">
+    setInvisibleTo(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attachhider" title="attachHider(...)" class="md-nav__link">
+    attachHider(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attachinvisiblehider" title="attachInvisibleHider(...)" class="md-nav__link">
+    attachInvisibleHider(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-function-details" title="Global Function Details" class="md-nav__link">
+    Global Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adddecal" title="addDecal(...)" class="md-nav__link">
+    addDecal(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call" title="call(...)" class="md-nav__link">
+    call(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdecals" title="getDecals()" class="md-nav__link">
+    getDecals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsnappoints" title="getSnapPoints()" class="md-nav__link">
+    getSnapPoints()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdecals" title="setDecals(...)" class="md-nav__link">
+    setDecals(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsnappoints" title="setSnapPoints(...)" class="md-nav__link">
+    setSnapPoints(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvectorlines" title="setVectorLines(...)" class="md-nav__link">
+    setVectorLines(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1623,16 +2452,638 @@
   <!--style="color:grey;position:absolute;left:18px;top:-2px" href="https://api.tabletopsimulator.com/">Go To API</a>-->
   <a href="https://kb.tabletopsimulator.com/" class="custom-link">Go To Knowledge Base &#8617</a>
 
-</nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#member-variable-summary" title="Member Variable Summary" class="md-nav__link">Member Variable Summary</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#member-variables" title="Member Variables" class="md-nav__link">Member Variables</a></li></ul></nav></li><li class="md-nav__item"><a href="#function-summary" title="Function Summary" class="md-nav__link">Function Summary</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#transform-functions" title="Transform Functions" class="md-nav__link">Transform Functions</a></li><li class="md-nav__item"><a href="#ui-functions" title="UI Functions" class="md-nav__link">UI Functions</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#classic-ui" title="Classic UI" class="md-nav__link">Classic UI</a></li><li class="md-nav__item"><a href="#custom-ui" title="Custom UI" class="md-nav__link">Custom UI</a></li></ul></nav></li><li class="md-nav__item"><a href="#get-functions" title="Get Functions" class="md-nav__link">Get Functions</a></li><li class="md-nav__item"><a href="#set-functions" title="Set Functions" class="md-nav__link">Set Functions</a></li><li class="md-nav__item"><a href="#action-function" title="Action Function" class="md-nav__link">Action Function</a></li><li class="md-nav__item"><a href="#hide-functions" title="Hide Functions" class="md-nav__link">Hide Functions</a></li><li class="md-nav__item"><a href="#global-function" title="Global Function" class="md-nav__link">Global Function</a></li></ul></nav></li><li class="md-nav__item"><a href="#function-details" title="Function Details" class="md-nav__link">Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#transform-function-details" title="Transform Function Details" class="md-nav__link">Transform Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#addforce" title="addForce(...)" class="md-nav__link">addForce(...)</a></li><li class="md-nav__item"><a href="#addtorque" title="addTorque(...)" class="md-nav__link">addTorque(...)</a></li><li class="md-nav__item"><a href="#getbounds" title="getBounds()" class="md-nav__link">getBounds()</a></li><li class="md-nav__item"><a href="#getboundsnormalized" title="getBoundsNormalized()" class="md-nav__link">getBoundsNormalized()</a></li><li class="md-nav__item"><a href="#getscale" title="getScale()" class="md-nav__link">getScale()</a></li><li class="md-nav__item"><a href="#gettransformforward" title="getTransformForward()" class="md-nav__link">getTransformForward()</a></li><li class="md-nav__item"><a href="#gettransformright" title="getTransformRight()" class="md-nav__link">getTransformRight()</a></li><li class="md-nav__item"><a href="#gettransformup" title="getTransformUp()" class="md-nav__link">getTransformUp()</a></li><li class="md-nav__item"><a href="#positiontolocal" title="positionToLocal(...)" class="md-nav__link">positionToLocal(...)</a></li><li class="md-nav__item"><a href="#positiontoworld" title="positionToWorld(...)" class="md-nav__link">positionToWorld(...)</a></li><li class="md-nav__item"><a href="#rotate" title="rotate(...)" class="md-nav__link">rotate(...)</a></li><li class="md-nav__item"><a href="#scale" title="scale(...)" class="md-nav__link">scale(...)</a></li><li class="md-nav__item"><a href="#setpositionsmooth" title="setPositionSmooth(...)" class="md-nav__link">setPositionSmooth(...)</a></li><li class="md-nav__item"><a href="#setrotationsmooth" title="setRotationSmooth(...)" class="md-nav__link">setRotationSmooth(...)</a></li></ul></nav></li><li class="md-nav__item"><a href="#ui-function-details" title="UI Function Details" class="md-nav__link">UI Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#createbutton" title="createButton(...)" class="md-nav__link">createButton(...)</a></li><li class="md-nav__item"><a href="#createinput" title="createInput(...)" class="md-nav__link">createInput(...)</a></li><li class="md-nav__item"><a href="#editbutton" title="editButton(...)" class="md-nav__link">editButton(...)</a></li><li class="md-nav__item"><a href="#editinput" title="editInput(...)" class="md-nav__link">editInput(...)</a></li><li class="md-nav__item"><a href="#getbuttons" title="getButtons()" class="md-nav__link">getButtons()</a></li><li class="md-nav__item"><a href="#getinputs" title="getInputs()" class="md-nav__link">getInputs()</a></li><li class="md-nav__item"><a href="#removebutton" title="removeButton(...)" class="md-nav__link">removeButton(...)</a></li><li class="md-nav__item"><a href="#removeinput" title="removeInput(...)" class="md-nav__link">removeInput(...)</a></li></ul></nav></li><li class="md-nav__item"><a href="#get-function-details" title="Get Function Details" class="md-nav__link">Get Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#getcustomobject" title="getCustomObject()" class="md-nav__link">getCustomObject()</a></li><li class="md-nav__item"><a href="#getfogofwarreveal" title="getFogOfWarReveal()" class="md-nav__link">getFogOfWarReveal()</a></li><li class="md-nav__item"><a href="#getjoints" title="getJoints()" class="md-nav__link">getJoints()</a></li><li class="md-nav__item"><a href="#getobjects" title="getObjects()" class="md-nav__link">getObjects()</a></li><li class="md-nav__item"><a href="#getrotationvalue" title="getRotationValue()" class="md-nav__link">getRotationValue()</a></li><li class="md-nav__item"><a href="#getrotationvalues" title="getRotationValues()" class="md-nav__link">getRotationValues()</a></li><li class="md-nav__item"><a href="#getstates" title="getStates()" class="md-nav__link">getStates()</a></li><li class="md-nav__item"><a href="#getvalue" title="getValue()" class="md-nav__link">getValue()</a></li></ul></nav></li><li class="md-nav__item"><a href="#set-function-details" title="Set Function Details" class="md-nav__link">Set Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#setcustomobject" title="setCustomObject(...)" class="md-nav__link">setCustomObject(...)</a></li><li class="md-nav__item"><a href="#setfogofwarreveal" title="setFogOfWarReveal(...)" class="md-nav__link">setFogOfWarReveal(...)</a></li><li class="md-nav__item"><a href="#setrotationvalues" title="setRotationValues(...)" class="md-nav__link">setRotationValues(...)</a></li><li class="md-nav__item"><a href="#setvalue" title="setValue(...)" class="md-nav__link">setValue(...)</a></li></ul></nav></li><li class="md-nav__item"><a href="#action-function-details" title="Action Function Details" class="md-nav__link">Action Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#clone" title="clone(...)" class="md-nav__link">clone(...)</a></li><li class="md-nav__item"><a href="#cut" title="cut(...)" class="md-nav__link">cut(...)</a></li><li class="md-nav__item"><a href="#deal" title="deal(...)" class="md-nav__link">deal(...)</a></li><li class="md-nav__item"><a href="#dealtocolorwithoffset" title="dealToColorWithOffset(...)" class="md-nav__link">dealToColorWithOffset(...)</a></li><li class="md-nav__item"><a href="#jointto" title="jointTo(...)" class="md-nav__link">jointTo(...)</a></li><li class="md-nav__item"><a href="#putobject" title="putObject(...)" class="md-nav__link">putObject(...)</a></li><li class="md-nav__item"><a href="#reload" title="reload()" class="md-nav__link">reload()</a></li><li class="md-nav__item"><a href="#split" title="split(...)" class="md-nav__link">split(...)</a></li><li class="md-nav__item"><a href="#takeobject" title="takeObject(...)" class="md-nav__link">takeObject(...)</a></li></ul></nav></li><li class="md-nav__item"><a href="#hide-function-details" title="Hide Function Details" class="md-nav__link">Hide Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#sethiddenfrom" title="setHiddenFrom(...)" class="md-nav__link">setHiddenFrom(...)</a></li><li class="md-nav__item"><a href="#setinvisibleto" title="setInvisibleTo(...)" class="md-nav__link">setInvisibleTo(...)</a></li><li class="md-nav__item"><a href="#attachhider" title="attachHider(...)" class="md-nav__link">attachHider(...)</a></li><li class="md-nav__item"><a href="#attachinvisiblehider" title="attachInvisibleHider(...)" class="md-nav__link">attachInvisibleHider(...)</a></li></ul></nav></li><li class="md-nav__item"><a href="#global-function-details" title="Global Function Details" class="md-nav__link">Global Function Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#adddecal" title="addDecal(...)" class="md-nav__link">addDecal(...)</a></li><li class="md-nav__item"><a href="#call" title="call(...)" class="md-nav__link">call(...)</a></li><li class="md-nav__item"><a href="#getdecals" title="getDecals()" class="md-nav__link">getDecals()</a></li><li class="md-nav__item"><a href="#getsnappoints" title="getSnapPoints()" class="md-nav__link">getSnapPoints()</a></li><li class="md-nav__item"><a href="#setdecals" title="setDecals(...)" class="md-nav__link">setDecals(...)</a></li><li class="md-nav__item"><a href="#setsnappoints" title="setSnapPoints(...)" class="md-nav__link">setSnapPoints(...)</a></li><li class="md-nav__item"><a href="#setvectorlines" title="setVectorLines(...)" class="md-nav__link">setVectorLines(...)</a></li></ul></nav></li></ul></nav></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/object.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a><h1>Object</h1><p>The Object class represents any entity within tabletop simulator. Once you have a reference to an object in you're script you can call functions on it directly. Example: <code class="codehilite"><span class="n">obj</span><span class="p">.</span><span class="n">getPosition</span><span class="p">(...)</span></code>. You can get a reference to an object multiple ways;</p>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#member-variable-summary" title="Member Variable Summary" class="md-nav__link">
+    Member Variable Summary
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#member-variables" title="Member Variables" class="md-nav__link">
+    Member Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-summary" title="Function Summary" class="md-nav__link">
+    Function Summary
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transform-functions" title="Transform Functions" class="md-nav__link">
+    Transform Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui-functions" title="UI Functions" class="md-nav__link">
+    UI Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classic-ui" title="Classic UI" class="md-nav__link">
+    Classic UI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-ui" title="Custom UI" class="md-nav__link">
+    Custom UI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-functions" title="Get Functions" class="md-nav__link">
+    Get Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-functions" title="Set Functions" class="md-nav__link">
+    Set Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-function" title="Action Function" class="md-nav__link">
+    Action Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-functions" title="Hide Functions" class="md-nav__link">
+    Hide Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-function" title="Global Function" class="md-nav__link">
+    Global Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-details" title="Function Details" class="md-nav__link">
+    Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transform-function-details" title="Transform Function Details" class="md-nav__link">
+    Transform Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addforce" title="addForce(...)" class="md-nav__link">
+    addForce(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addtorque" title="addTorque(...)" class="md-nav__link">
+    addTorque(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbounds" title="getBounds()" class="md-nav__link">
+    getBounds()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getboundsnormalized" title="getBoundsNormalized()" class="md-nav__link">
+    getBoundsNormalized()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getscale" title="getScale()" class="md-nav__link">
+    getScale()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettransformforward" title="getTransformForward()" class="md-nav__link">
+    getTransformForward()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettransformright" title="getTransformRight()" class="md-nav__link">
+    getTransformRight()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettransformup" title="getTransformUp()" class="md-nav__link">
+    getTransformUp()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positiontolocal" title="positionToLocal(...)" class="md-nav__link">
+    positionToLocal(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positiontoworld" title="positionToWorld(...)" class="md-nav__link">
+    positionToWorld(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotate" title="rotate(...)" class="md-nav__link">
+    rotate(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale" title="scale(...)" class="md-nav__link">
+    scale(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpositionsmooth" title="setPositionSmooth(...)" class="md-nav__link">
+    setPositionSmooth(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrotationsmooth" title="setRotationSmooth(...)" class="md-nav__link">
+    setRotationSmooth(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui-function-details" title="UI Function Details" class="md-nav__link">
+    UI Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createbutton" title="createButton(...)" class="md-nav__link">
+    createButton(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createinput" title="createInput(...)" class="md-nav__link">
+    createInput(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editbutton" title="editButton(...)" class="md-nav__link">
+    editButton(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editinput" title="editInput(...)" class="md-nav__link">
+    editInput(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttons" title="getButtons()" class="md-nav__link">
+    getButtons()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputs" title="getInputs()" class="md-nav__link">
+    getInputs()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removebutton" title="removeButton(...)" class="md-nav__link">
+    removeButton(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removeinput" title="removeInput(...)" class="md-nav__link">
+    removeInput(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-function-details" title="Get Function Details" class="md-nav__link">
+    Get Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getcustomobject" title="getCustomObject()" class="md-nav__link">
+    getCustomObject()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfogofwarreveal" title="getFogOfWarReveal()" class="md-nav__link">
+    getFogOfWarReveal()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getjoints" title="getJoints()" class="md-nav__link">
+    getJoints()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getobjects" title="getObjects()" class="md-nav__link">
+    getObjects()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrotationvalue" title="getRotationValue()" class="md-nav__link">
+    getRotationValue()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrotationvalues" title="getRotationValues()" class="md-nav__link">
+    getRotationValues()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstates" title="getStates()" class="md-nav__link">
+    getStates()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvalue" title="getValue()" class="md-nav__link">
+    getValue()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-function-details" title="Set Function Details" class="md-nav__link">
+    Set Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setcustomobject" title="setCustomObject(...)" class="md-nav__link">
+    setCustomObject(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setfogofwarreveal" title="setFogOfWarReveal(...)" class="md-nav__link">
+    setFogOfWarReveal(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrotationvalues" title="setRotationValues(...)" class="md-nav__link">
+    setRotationValues(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvalue" title="setValue(...)" class="md-nav__link">
+    setValue(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-function-details" title="Action Function Details" class="md-nav__link">
+    Action Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clone" title="clone(...)" class="md-nav__link">
+    clone(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cut" title="cut(...)" class="md-nav__link">
+    cut(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deal" title="deal(...)" class="md-nav__link">
+    deal(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dealtocolorwithoffset" title="dealToColorWithOffset(...)" class="md-nav__link">
+    dealToColorWithOffset(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jointto" title="jointTo(...)" class="md-nav__link">
+    jointTo(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#putobject" title="putObject(...)" class="md-nav__link">
+    putObject(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reload" title="reload()" class="md-nav__link">
+    reload()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split" title="split(...)" class="md-nav__link">
+    split(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#takeobject" title="takeObject(...)" class="md-nav__link">
+    takeObject(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-function-details" title="Hide Function Details" class="md-nav__link">
+    Hide Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sethiddenfrom" title="setHiddenFrom(...)" class="md-nav__link">
+    setHiddenFrom(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setinvisibleto" title="setInvisibleTo(...)" class="md-nav__link">
+    setInvisibleTo(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attachhider" title="attachHider(...)" class="md-nav__link">
+    attachHider(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attachinvisiblehider" title="attachInvisibleHider(...)" class="md-nav__link">
+    attachInvisibleHider(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-function-details" title="Global Function Details" class="md-nav__link">
+    Global Function Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adddecal" title="addDecal(...)" class="md-nav__link">
+    addDecal(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call" title="call(...)" class="md-nav__link">
+    call(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdecals" title="getDecals()" class="md-nav__link">
+    getDecals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsnappoints" title="getSnapPoints()" class="md-nav__link">
+    getSnapPoints()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdecals" title="setDecals(...)" class="md-nav__link">
+    setDecals(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsnappoints" title="setSnapPoints(...)" class="md-nav__link">
+    setSnapPoints(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvectorlines" title="setVectorLines(...)" class="md-nav__link">
+    setVectorLines(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/object.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Object</h1>
+                
+                <p>The Object class represents any entity within tabletop simulator. Once you have a reference to an object in you're script you can call functions on it directly. Example: <code class="codehilite">obj.getPosition(...)</code>. You can get a reference to an object multiple ways;</p>
 <ul>
-<li>Using the <code class="codehilite"><span class="k">self</span></code> property if your script is on an Object and referring to that Object.</li>
-<li>Using <a href="/base#getobjectfromguid"><code class="codehilite"><span class="n">getObjectFromGUID</span><span class="p">(...)</span></code></a> with the object's GUID (found by right clicking it with the pointer).</li>
-<li>Getting it as a return from another function, like with <a href="/base#spawnobject"><code class="codehilite"><span class="n">spawnObject</span><span class="p">(...)</span></code></a>.</li>
+<li>Using the <code class="codehilite">self</code> property if your script is on an Object and referring to that Object.</li>
+<li>Using <a href="/base#getobjectfromguid"><code class="codehilite">getObjectFromGUID(...)</code></a> with the object's GUID (found by right clicking it with the pointer).</li>
+<li>Getting it as a return from another function, like with <a href="/base#spawnobject"><code class="codehilite">spawnObject(...)</code></a>.</li>
 </ul>
 <h2 id="member-variable-summary">Member Variable Summary<a class="headerlink" href="#member-variable-summary" title="Permanent link"> </a></h2>
 <h3 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link"> </a></h3>
 <p>These are variables that objects share. They allow for direct access to an Object's property information without a helping function. Some are read-only.</p>
-<p>Read Example = <code class="codehilite"><span class="n">isResting</span> <span class="o">=</span> <span class="k">self</span><span class="p">.</span><span class="n">resting</span></code> Write Example = <code class="codehilite"><span class="k">self</span><span class="p">.</span><span class="n">resting</span> <span class="o">=</span> <span class="k">true</span></code></p>
+<p>Read Example = <code class="codehilite">isResting = self.resting</code> Write Example = <code class="codehilite">self.resting = true</code></p>
 <table>
 <thead>
 <tr>
@@ -1674,7 +3125,7 @@
 </tr>
 <tr>
 <td><a class="anchor" id="guid"></a>guid</td>
-<td>The 6 character unique Object identifier within Tabletop Simulator. It is assigned correctly once the <code class="codehilite"><span class="n">spawning</span></code> member variable becomes false.</td>
+<td>The 6 character unique Object identifier within Tabletop Simulator. It is assigned correctly once the <code class="codehilite">spawning</code> member variable becomes false.</td>
 <td align="left"><a href="/types"><span class="tag str"></span></a></td>
 </tr>
 <tr>
@@ -1684,7 +3135,7 @@
 </tr>
 <tr>
 <td><a class="anchor" id="hide_when_face_down"></a>hide_when_face_down</td>
-<td>Hide the Object when face-down as if it were in a hand zone. The face is the "top" of the Object, the direction of its positive Y coordinate. Cards/decks default to <code class="codehilite"><span class="k">true</span></code>.</td>
+<td>Hide the Object when face-down as if it were in a hand zone. The face is the "top" of the Object, the direction of its positive Y coordinate. Cards/decks default to <code class="codehilite">true</code>.</td>
 <td align="left"><a href="/types"><span class="tag boo"></span></a></td>
 </tr>
 <tr>
@@ -1714,7 +3165,7 @@
 </tr>
 <tr>
 <td><a class="anchor" id="name"></a>name</td>
-<td>The Object's name. Read only, use <code class="codehilite"><span class="n">setName</span><span class="p">(</span><span class="ss">&quot;&quot;</span><span class="p">)</span></code> to write to it.</td>
+<td>The Object's name. Read only, use <code class="codehilite">setName(&quot;&quot;)</code> to write to it.</td>
 <td align="left"><a href="/types"><span class="tag str"></span></a></td>
 </tr>
 <tr>
@@ -2281,7 +3732,7 @@
 </tr>
 <tr>
 <td><a class="anchor" id="destruct"></a>destruct()</td>
-<td>Destroys Object. Allows for <code class="codehilite"><span class="k">self</span><span class="p">.</span><span class="n">destruct</span><span class="p">()</span></code>.</td>
+<td>Destroys Object. Allows for <code class="codehilite">self.destruct()</code>.</td>
 <td><a href="/types"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
@@ -2317,7 +3768,7 @@
 </tr>
 <tr>
 <td><a class="anchor" id="randomize"></a>randomize(<a href="/types"><span class="tag str"></span></a>&nbsp;color)</td>
-<td>Shuffles deck/bag, rolls dice/coin, lifts other objects into the air. Same as pressing <code class="codehilite"><span class="n">R</span></code> by default. If the optional parameter <code class="codehilite"><span class="n">color</span></code> is used, this function will trigger <code class="codehilite"><span class="n">onObjectRandomized</span><span class="p">()</span></code>, passing that player color.</td>
+<td>Shuffles deck/bag, rolls dice/coin, lifts other objects into the air. Same as pressing <code class="codehilite">R</code> by default. If the optional parameter <code class="codehilite">color</code> is used, this function will trigger <code class="codehilite">onObjectRandomized()</code>, passing that player color.</td>
 <td><a href="/types"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
@@ -2391,25 +3842,25 @@
 </tr>
 <tr>
 <td>attachHider(<a href="/types"><span class="tag str"></span></a>&nbsp;id, <a href="/types"><span class="tag boo"></span></a>&nbsp;hidden, <a href="/types"><span class="tag tab"></span></a>&nbsp;players)</td>
-<td>A more advanced version of <code class="codehilite"><span class="n">setHiddenFrom</span><span class="p">(...)</span></code>.</td>
+<td>A more advanced version of <code class="codehilite">setHiddenFrom(...)</code>.</td>
 <td><a href="/types"><span class="ret boo"></span></a></td>
 <td><a href="#attachhider"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>attachInvisibleHider(<a href="/types"><span class="tag str"></span></a>&nbsp;id, <a href="/types"><span class="tag boo"></span></a>&nbsp;hidden, <a href="/types"><span class="tag tab"></span></a>&nbsp;players)</td>
-<td>A more advanced version of <code class="codehilite"><span class="n">setInvisibleTo</span><span class="p">(...)</span></code>.</td>
+<td>A more advanced version of <code class="codehilite">setInvisibleTo(...)</code>.</td>
 <td><a href="/types"><span class="ret boo"></span></a></td>
 <td><a href="#attachinvisiblehider"><span class="i"></span></a></td>
 </tr>
 </tbody>
 </table>
 <h3 id="global-function">Global Function<a class="headerlink" href="#global-function" title="Permanent link"> </a></h3>
-<p>The functions can be used on Objects, but can also be used on the game world using <code class="codehilite"><span class="k">Global</span></code>.</p>
+<p>The functions can be used on Objects, but can also be used on the game world using <code class="codehilite">Global</code>.</p>
 <div class="admonition important">
 <p class="admonition-title">Examples of Using Global and Object</p>
 <ul>
-<li><code class="codehilite"><span class="k">self</span><span class="p">.</span><span class="n">getSnapPoints</span><span class="p">()</span></code> gets snap points attached to that Object.</li>
-<li><code class="codehilite"><span class="k">Global</span><span class="p">.</span><span class="n">getSnapPoints</span><span class="p">()</span></code> gets snap points not attached to any specific Object but instead are attached to the game world.</li>
+<li><code class="codehilite">self.getSnapPoints()</code> gets snap points attached to that Object.</li>
+<li><code class="codehilite">Global.getSnapPoints()</code> gets snap points not attached to any specific Object but instead are attached to the game world.</li>
 </ul>
 </div>
 <table>
@@ -2727,17 +4178,7 @@
 <h3 id="ui-function-details">UI Function Details<a class="headerlink" href="#ui-function-details" title="Permanent link"> </a></h3>
 <h4 id="createbutton">createButton(...)<a class="headerlink" href="#createbutton" title="Permanent link"> </a></h4>
 <p><a href="/types"><span class="ret boo"></span></a>&nbsp;Creates a scripted button attached to the Object. Scripted buttons are buttons that can be clicked while in-game that trigger a function in a script.</p>
-<details class="tip"><summary>Button Tips</summary><ul>
-<li>Buttons can not be clicked from their back side.</li>
-<li>Buttons can not be clicked if there is another object between the pointer and the button. This does not include the Object the button is attached to.</li>
-<li>Buttons are placed relative to the Object they are attached to.</li>
-<li>The maximum font size is capped at 1000.</li>
-<li>The minimum width/height is 60. Any lower number (besides 0) will appear to be 60. This prevents visual glitches involving the corner rounding.</li>
-<li>A button width/height of 0 will cause the button not to be drawn, but its label will be. This can be a way to attach text to an Object.</li>
-<li>You cannot assign an index to a button. It is given one automatically.</li>
-</ul>
-</details>
-<div class="admonition info">
+<details class="tip"><summary>Button Tips</summary><ul><li>Buttons can not be clicked from their back side.</li><li>Buttons can not be clicked if there is another object between the pointer and the button. This does not include the Object the button is attached to.</li><li>Buttons are placed relative to the Object they are attached to.</li><li>The maximum font size is capped at 1000.</li><li>The minimum width/height is 60. Any lower number (besides 0) will appear to be 60. This prevents visual glitches involving the corner rounding.</li><li>A button width/height of 0 will cause the button not to be drawn, but its label will be. This can be a way to attach text to an Object.</li><li>You cannot assign an index to a button. It is given one automatically.</li></ul></details><div class="admonition info">
 <p class="admonition-title">createButton(parameters)</p>
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table containing the information used to spawn the button.<ul>
@@ -2833,22 +4274,12 @@
 
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
-<p>Button scale currently distorts button height and width if the button is rotated at anything besides <code class="codehilite"><span class="err">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="err">}</span></code>.</p>
+<p>Button scale currently distorts button height and width if the button is rotated at anything besides <code class="codehilite">{0,0,0}</code>.</p>
 </div>
 <hr />
 <h4 id="createinput">createInput(...)<a class="headerlink" href="#createinput" title="Permanent link"> </a></h4>
 <p><a href="/types"><span class="ret boo"></span></a>&nbsp;Creates a scripted input attached to the Object. Scripted inputs are boxes you can click inside of in-game to input/edit text. Every letter typed triggers the function. The bool that is returned as part of the input_function allows you to determine when a player has finished editing the input.</p>
-<details class="tip"><summary>Input Tips</summary><ul>
-<li>Inputs can not be clicked from their back side.</li>
-<li>Inputs can not be clicked if there is another object between the pointer and the inputs. This does not include the Object the input is attached to.</li>
-<li>Inputs are placed relative to the Object they are attached to.</li>
-<li>The maximum font size is capped at 1000.</li>
-<li>The minimum width/height is 60. Any lower number (besides 0) will appear to be 60. This prevents visual glitches involving the corner rounding.</li>
-<li>Font that does not fit in the input window's width/height does NOT display. To know how much height you need for each line, the formula is <code class="codehilite"><span class="p">(</span><span class="n">font_size</span> <span class="o">*</span> <span class="o">#</span> <span class="k">of</span> <span class="n">lines</span><span class="p">)</span> <span class="o">+</span> <span class="mi">23</span></code>. In other words, multiply how many lines of text you want to display by your font_size and add 23. That is your height value.</li>
-<li>You cannot assign an index to an input. It is given one automatically.</li>
-</ul>
-</details>
-<div class="admonition info">
+<details class="tip"><summary>Input Tips</summary><ul><li>Inputs can not be clicked from their back side.</li><li>Inputs can not be clicked if there is another object between the pointer and the inputs. This does not include the Object the input is attached to.</li><li>Inputs are placed relative to the Object they are attached to.</li><li>The maximum font size is capped at 1000.</li><li>The minimum width/height is 60. Any lower number (besides 0) will appear to be 60. This prevents visual glitches involving the corner rounding.</li><li>Font that does not fit in the input window's width/height does NOT display. To know how much height you need for each line, the formula is <code class="codehilite">(font_size * # of lines) + 23</code>. In other words, multiply how many lines of text you want to display by your font_size and add 23. That is your height value.</li><li>You cannot assign an index to an input. It is given one automatically.</li></ul></details><div class="admonition info">
 <p class="admonition-title">createInput(parameters)</p>
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table containing the information used to spawn the input.<ul>
@@ -2997,7 +4428,7 @@
 <p><a href="/types"><span class="ret boo"></span></a>&nbsp;Modify an existing input. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited input's element to remain. Indexes start at 0. The first input on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.</p>
 <div class="admonition info">
 <p class="admonition-title">editInput(parameters)</p>
-<p><em>All fields besides <code class="codehilite"><span class="k">index</span></code> are optional. If not used, the element will default to the element's current setting.</em></p>
+<p><em>All fields besides <code class="codehilite">index</code> are optional. If not used, the element will default to the element's current setting.</em></p>
 <ul>
 <li><a href="/types"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table containing the information used to spawn the input.<ul>
 <li><a href="/types"><span class="tag int"></span></a> <strong>parameters.index</strong>: Index of the input you want to edit.</li>
@@ -3087,14 +4518,14 @@
 
 <div class="admonition tip">
 <p class="admonition-title">Jigsaw Puzzles</p>
-<p>If you use getCustomObject() on a puzzle piece, it will also return <code class="codehilite"><span class="n">desired_position</span></code>, which is its position if the puzzle is "solved". You can use this to determine where to put the piece.</p>
+<p>If you use getCustomObject() on a puzzle piece, it will also return <code class="codehilite">desired_position</code>, which is its position if the puzzle is "solved". You can use this to determine where to put the piece.</p>
 </div>
 <hr />
 <h4 id="getfogofwarreveal">getFogOfWarReveal()<a class="headerlink" href="#getfogofwarreveal" title="Permanent link"> </a></h4>
 <p><a href="/types"><span class="ret tab"></span></a>&nbsp;Settings impacting <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a> being revealed. In the example returned table, these are the default values of any object.</p>
 <div class="admonition note">
 <p class="admonition-title">Color Selection</p>
-<p>"Black" and "All" are synonymous for Fog of War. Either means that all players can see the revealed area when <code class="codehilite"><span class="n">reveal</span> <span class="o">=</span> <span class="k">true</span></code>.</p>
+<p>"Black" and "All" are synonymous for Fog of War. Either means that all players can see the revealed area when <code class="codehilite">reveal = true</code>.</p>
 </div>
 <div class="codehilite"><pre><span></span><span class="c1">-- Example returned Table for a custom token</span>
 <span class="p">{</span>
@@ -3472,7 +4903,7 @@
 </pre></div>
 
 <h4 id="deal">deal(...)<a class="headerlink" href="#deal" title="Permanent link"> </a></h4>
-<p><a href="/types"><span class="ret boo"></span></a>&nbsp;Deals Objects to hand zones. Will deal from decks/bags/stacks as well as individual items. If dealing an individual item to a hand zone, it is a good idea to make sure that its <a href="#member-variables">Member Variable</a> for <code class="codehilite"><span class="n">use_hands</span></code> is <code class="codehilite"><span class="k">true</span></code>.</p>
+<p><a href="/types"><span class="ret boo"></span></a>&nbsp;Deals Objects to hand zones. Will deal from decks/bags/stacks as well as individual items. If dealing an individual item to a hand zone, it is a good idea to make sure that its <a href="#member-variables">Member Variable</a> for <code class="codehilite">use_hands</code> is <code class="codehilite">true</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">deal(number, player_color, index)</p>
 <ul>
@@ -3672,11 +5103,7 @@
 <span class="kr">end</span>
 </pre></div>
 
-<details class="tip"><summary>Tip for using GUID to pull Object</summary><p>When getting the GUIDs of objects in a container, it is possible items can have the same GUID while in a container. This is because only once two items try to exist at the same time is one of them given a new GUID, and Objects in a container do not currently exist. Removing all Objects from the container at once will force all of them to be given unique GUIDs.</p>
-</details>
-<details class="tip"><summary>Tip for using index to pull Object</summary><p>When you take an Object from the container, all higher indexes are reduced by 1 instantly. If you pull more than once Object at once by their index, you must account for this index changing.</p>
-</details>
-<hr />
+<details class="tip"><summary>Tip for using GUID to pull Object</summary><p>When getting the GUIDs of objects in a container, it is possible items can have the same GUID while in a container. This is because only once two items try to exist at the same time is one of them given a new GUID, and Objects in a container do not currently exist. Removing all Objects from the container at once will force all of them to be given unique GUIDs.</p></details><details class="tip"><summary>Tip for using index to pull Object</summary><p>When you take an Object from the container, all higher indexes are reduced by 1 instantly. If you pull more than once Object at once by their index, you must account for this index changing.</p></details><hr />
 <h3 id="hide-function-details">Hide Function Details<a class="headerlink" href="#hide-function-details" title="Permanent link"> </a></h3>
 <h4 id="sethiddenfrom">setHiddenFrom(...)<a class="headerlink" href="#sethiddenfrom" title="Permanent link"> </a></h4>
 <p><a href="/types"><span class="ret boo"></span></a>&nbsp;Hides the Object from the specified players, as if it were in a hand zone.</p>
@@ -3723,7 +5150,7 @@
 </div>
 <hr />
 <h4 id="attachhider">attachHider(...)<a class="headerlink" href="#attachhider" title="Permanent link"> </a></h4>
-<p><a href="/types"><span class="ret boo"></span></a>&nbsp;A more advanced version of <code class="codehilite"><span class="n">setHiddenFrom</span><span class="p">(...)</span></code>, this function is also used to hide objects as if they were in a hand zone. It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.</p>
+<p><a href="/types"><span class="ret boo"></span></a>&nbsp;A more advanced version of <code class="codehilite">setHiddenFrom(...)</code>, this function is also used to hide objects as if they were in a hand zone. It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.</p>
 <p>This function is slightly more complicated to use for basic hiding, but allows for much easier hiding in complex situations.</p>
 <div class="admonition info">
 <p class="admonition-title">attachHider(id, hidden, players)</p>
@@ -3754,7 +5181,7 @@
 </div>
 <hr />
 <h4 id="attachinvisiblehider">attachInvisibleHider(...)<a class="headerlink" href="#attachinvisiblehider" title="Permanent link"> </a></h4>
-<p><a href="/types"><span class="ret boo"></span></a>&nbsp;A more advanced version of <code class="codehilite"><span class="n">setInvisibleTo</span><span class="p">(...)</span></code>, this function is also used to hide objects as if they were in a hidden zone. It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.</p>
+<p><a href="/types"><span class="ret boo"></span></a>&nbsp;A more advanced version of <code class="codehilite">setInvisibleTo(...)</code>, this function is also used to hide objects as if they were in a hidden zone. It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.</p>
 <p>This function is slightly more complicated to use for basic hiding, but allows for much easier hiding in complex situations.</p>
 <div class="admonition info">
 <p class="admonition-title">attachInvisibleHider(id, hidden, players)</p>
@@ -3790,7 +5217,7 @@
 <p><a href="/types"><span class="ret boo"></span></a>&nbsp;Add a Decal onto an object or the game world.</p>
 <div class="admonition tip">
 <p class="admonition-title">Relative Vectors</p>
-<p>When using this function, the vector parameters (position, rotation) are relative to what the decal is being placed on. For example, if you put a decal at <code class="codehilite"><span class="err">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="err">}</span></code> on Global, it will attach to the center of the game room. If you do the same to an object, it will place the decal on the origin point of the object.</p>
+<p>When using this function, the vector parameters (position, rotation) are relative to what the decal is being placed on. For example, if you put a decal at <code class="codehilite">{0,0,0}</code> on Global, it will attach to the center of the game room. If you do the same to an object, it will place the decal on the origin point of the object.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">addDecal(parameters)</p>
@@ -3823,7 +5250,7 @@
 <hr />
 <h4 id="call">call(...)<a class="headerlink" href="#call" title="Permanent link"> </a></h4>
 <p><a href="/types"><span class="ret var"></span></a>&nbsp;Used to call a Lua function on another entity.</p>
-<p><em>Var is only returned if the function called has a <code class="codehilite"><span class="k">return</span></code>. Otherwise return is <code class="codehilite"><span class="n">nil</span></code>. See example.</em></p>
+<p><em>Var is only returned if the function called has a <code class="codehilite">return</code>. Otherwise return is <code class="codehilite">nil</code>. See example.</em></p>
 <blockquote>
 <p>This function can also be used directly on the game world using Global.</p>
 </blockquote>
@@ -3942,7 +5369,7 @@
 <div class="admonition tip">
 <p class="admonition-title">Removing decals</p>
 <p>Using this function with an empty table will remove all decals from Global or the object it is used on.
-<code class="codehilite"><span class="k">Global</span><span class="p">.</span><span class="n">setDecals</span><span class="p">(</span><span class="err">{}</span><span class="p">)</span></code></p>
+<code class="codehilite">Global.setDecals({})</code></p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">setDecals(parameters)</p>
@@ -4074,7 +5501,22 @@
 <span class="kr">end</span>
 </pre></div>
 
-<hr /></article></div></div></main><!--
+<hr />
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        <!--
   Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -4117,8 +5559,34 @@
 
       <!-- Social links -->
       
-        <div class="md-footer-social"><link rel="stylesheet" href="../assets/fonts/font-awesome.css"> <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>  <a href="https://twitter.com/tabletopsim" class="md-footer-social__link fa fa-twitter"></a>  <a href="https://www.facebook.com/tabletopsimulator" class="md-footer-social__link fa fa-facebook"></a>  <a href="https://www.youtube.com/user/berserkgames" class="md-footer-social__link fa fa-youtube"></a> </div>
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://twitter.com/tabletopsim" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.facebook.com/tabletopsimulator" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://www.youtube.com/user/berserkgames" class="md-footer-social__link fa fa-youtube"></a>
+    
+  </div>
+
       
     </div>
   </div>
-</footer></div><script src="../assets/javascripts/application.b260a35d.js"></script><script>app.initialize({version:"1.0.4",url:{base:".."}})</script></body></html>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

@@ -1,4 +1,217 @@
-<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../img/Icon-Dice.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.0"><title>Types - Tabletop Simulator API</title><link rel="stylesheet" href="../assets/stylesheets/application.4031d38b.css"><link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css"><meta name="theme-color" content="#3f51b5"><script src="../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=swap"><style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../assets/fonts/material-icons.css"><link rel="stylesheet" href="../css/theme.css"><link rel="stylesheet" href="../css/table.css"><link rel="stylesheet" href="../css/type_icons.css"><link rel="stylesheet" href="../css/i_icons.css"><link rel="stylesheet" href="../css/player_color_table.css"></head><body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#common-standards" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href=".." title="Tabletop Simulator API" class="md-header-nav__button md-logo"><img src="../img/TSIcon.png" width="24" height="24"></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">Tabletop Simulator API</span><span class="md-header-nav__topic">Types</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">GitHub Source</div></a></div></div></div></nav></header><div class="md-container"><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><!--
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/Icon-Dice.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Types - Tabletop Simulator API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../css/theme.css">
+    
+      <link rel="stylesheet" href="../css/table.css">
+    
+      <link rel="stylesheet" href="../css/type_icons.css">
+    
+      <link rel="stylesheet" href="../css/i_icons.css">
+    
+      <link rel="stylesheet" href="../css/player_color_table.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../#common-standards" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Tabletop Simulator API" class="md-header-nav__button md-logo">
+          
+            <img src="../img/TSIcon.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Tabletop Simulator API
+              </span>
+              <span class="md-header-nav__topic">
+                Types
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub Source
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!--
   Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,7 +250,25 @@
   <!-- Repository containing source -->
   
     <div class="md-nav__source">
-      <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">GitHub Source</div></a>
+      
+
+
+  
+
+
+  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub Source
+    </div>
+  </a>
+
     </div>
   
 
@@ -516,7 +747,204 @@
 
     <!-- Show table of contents -->
     
-      <nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#common-standards" title="Common Standards" class="md-nav__link">Common Standards</a></li><li class="md-nav__item"><a href="#special-standards" title="Special Standards" class="md-nav__link">Special Standards</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#color" title="Color" class="md-nav__link">Color</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#keys" title="Keys" class="md-nav__link">Keys</a></li><li class="md-nav__item"><a href="#mixed-keys" title="Mixed Keys" class="md-nav__link">Mixed Keys</a></li><li class="md-nav__item"><a href="#value" title="Value" class="md-nav__link">Value</a></li><li class="md-nav__item"><a href="#strings" title="Strings" class="md-nav__link">Strings</a></li></ul></nav></li><li class="md-nav__item"><a href="#vector" title="Vector" class="md-nav__link">Vector</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#keys_1" title="Keys" class="md-nav__link">Keys</a></li><li class="md-nav__item"><a href="#mixed-keys_1" title="Mixed Keys" class="md-nav__link">Mixed Keys</a></li><li class="md-nav__item"><a href="#value-range" title="Value Range" class="md-nav__link">Value Range</a></li><li class="md-nav__item"><a href="#type-details" title="Type Details" class="md-nav__link">Type Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#position" title="Position" class="md-nav__link">Position</a></li><li class="md-nav__item"><a href="#rotation" title="Rotation" class="md-nav__link">Rotation</a></li><li class="md-nav__item"><a href="#direction" title="Direction" class="md-nav__link">Direction</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#function" title="Function" class="md-nav__link">Function</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#usage" title="Usage" class="md-nav__link">Usage</a></li><li class="md-nav__item"><a href="#example" title="Example" class="md-nav__link">Example</a></li><li class="md-nav__item"><a href="#lambda-style-expressions" title="Lambda-Style Expressions" class="md-nav__link">Lambda-Style Expressions</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#important-tips" title="Important Tips" class="md-nav__link">Important Tips</a></li><li class="md-nav__item"><a href="#lambda-style-example" title="Lambda-Style Example" class="md-nav__link">Lambda-Style Example</a></li></ul></nav></li></ul></nav></li></ul></nav></li></ul></nav>
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-standards" title="Common Standards" class="md-nav__link">
+    Common Standards
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-standards" title="Special Standards" class="md-nav__link">
+    Special Standards
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color" title="Color" class="md-nav__link">
+    Color
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keys" title="Keys" class="md-nav__link">
+    Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-keys" title="Mixed Keys" class="md-nav__link">
+    Mixed Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value" title="Value" class="md-nav__link">
+    Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" title="Strings" class="md-nav__link">
+    Strings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector" title="Vector" class="md-nav__link">
+    Vector
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keys_1" title="Keys" class="md-nav__link">
+    Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-keys_1" title="Mixed Keys" class="md-nav__link">
+    Mixed Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-range" title="Value Range" class="md-nav__link">
+    Value Range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-details" title="Type Details" class="md-nav__link">
+    Type Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#position" title="Position" class="md-nav__link">
+    Position
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation" title="Rotation" class="md-nav__link">
+    Rotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direction" title="Direction" class="md-nav__link">
+    Direction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function" title="Function" class="md-nav__link">
+    Function
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda-style-expressions" title="Lambda-Style Expressions" class="md-nav__link">
+    Lambda-Style Expressions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-tips" title="Important Tips" class="md-nav__link">
+    Important Tips
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda-style-example" title="Lambda-Style Example" class="md-nav__link">
+    Lambda-Style Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1623,7 +2051,228 @@
   <!--style="color:grey;position:absolute;left:18px;top:-2px" href="https://api.tabletopsimulator.com/">Go To API</a>-->
   <a href="https://kb.tabletopsimulator.com/" class="custom-link">Go To Knowledge Base &#8617</a>
 
-</nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#common-standards" title="Common Standards" class="md-nav__link">Common Standards</a></li><li class="md-nav__item"><a href="#special-standards" title="Special Standards" class="md-nav__link">Special Standards</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#color" title="Color" class="md-nav__link">Color</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#keys" title="Keys" class="md-nav__link">Keys</a></li><li class="md-nav__item"><a href="#mixed-keys" title="Mixed Keys" class="md-nav__link">Mixed Keys</a></li><li class="md-nav__item"><a href="#value" title="Value" class="md-nav__link">Value</a></li><li class="md-nav__item"><a href="#strings" title="Strings" class="md-nav__link">Strings</a></li></ul></nav></li><li class="md-nav__item"><a href="#vector" title="Vector" class="md-nav__link">Vector</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#keys_1" title="Keys" class="md-nav__link">Keys</a></li><li class="md-nav__item"><a href="#mixed-keys_1" title="Mixed Keys" class="md-nav__link">Mixed Keys</a></li><li class="md-nav__item"><a href="#value-range" title="Value Range" class="md-nav__link">Value Range</a></li><li class="md-nav__item"><a href="#type-details" title="Type Details" class="md-nav__link">Type Details</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#position" title="Position" class="md-nav__link">Position</a></li><li class="md-nav__item"><a href="#rotation" title="Rotation" class="md-nav__link">Rotation</a></li><li class="md-nav__item"><a href="#direction" title="Direction" class="md-nav__link">Direction</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item"><a href="#function" title="Function" class="md-nav__link">Function</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#usage" title="Usage" class="md-nav__link">Usage</a></li><li class="md-nav__item"><a href="#example" title="Example" class="md-nav__link">Example</a></li><li class="md-nav__item"><a href="#lambda-style-expressions" title="Lambda-Style Expressions" class="md-nav__link">Lambda-Style Expressions</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#important-tips" title="Important Tips" class="md-nav__link">Important Tips</a></li><li class="md-nav__item"><a href="#lambda-style-example" title="Lambda-Style Example" class="md-nav__link">Lambda-Style Example</a></li></ul></nav></li></ul></nav></li></ul></nav></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/types.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a><h1>Types</h1><p>Type refers to the type of information being used. You do not need to declare a type in Lua, but in this API you will see them indicated. This is only so you know what kind of information is required in a given variable/parameter. This API utilizes the following types.</p>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-standards" title="Common Standards" class="md-nav__link">
+    Common Standards
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-standards" title="Special Standards" class="md-nav__link">
+    Special Standards
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color" title="Color" class="md-nav__link">
+    Color
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keys" title="Keys" class="md-nav__link">
+    Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-keys" title="Mixed Keys" class="md-nav__link">
+    Mixed Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value" title="Value" class="md-nav__link">
+    Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" title="Strings" class="md-nav__link">
+    Strings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector" title="Vector" class="md-nav__link">
+    Vector
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keys_1" title="Keys" class="md-nav__link">
+    Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-keys_1" title="Mixed Keys" class="md-nav__link">
+    Mixed Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-range" title="Value Range" class="md-nav__link">
+    Value Range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-details" title="Type Details" class="md-nav__link">
+    Type Details
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#position" title="Position" class="md-nav__link">
+    Position
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation" title="Rotation" class="md-nav__link">
+    Rotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direction" title="Direction" class="md-nav__link">
+    Direction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function" title="Function" class="md-nav__link">
+    Function
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda-style-expressions" title="Lambda-Style Expressions" class="md-nav__link">
+    Lambda-Style Expressions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-tips" title="Important Tips" class="md-nav__link">
+    Important Tips
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda-style-example" title="Lambda-Style Example" class="md-nav__link">
+    Lambda-Style Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/types.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Types</h1>
+                
+                <p>Type refers to the type of information being used. You do not need to declare a type in Lua, but in this API you will see them indicated. This is only so you know what kind of information is required in a given variable/parameter. This API utilizes the following types.</p>
 <h2 id="common-standards">Common Standards<a class="headerlink" href="#common-standards" title="Permanent link"> </a></h2>
 <table>
 <thead>
@@ -1656,7 +2305,7 @@
 <tr>
 <td><a href="/types"><span class="tag boo"></span></a>&nbsp;</td>
 <td>bool</td>
-<td><code class="codehilite"><span class="k">true</span></code> or <code class="codehilite"><span class="k">false</span></code> value.</td>
+<td><code class="codehilite">true</code> or <code class="codehilite">false</code> value.</td>
 <td><code class="codehilite"><span class="kc">true</span></code></td>
 </tr>
 <tr>
@@ -1702,7 +2351,7 @@
 <h3 id="color">Color<a class="headerlink" href="#color" title="Permanent link"> </a></h3>
 <p><span class="tag col"></span> Color is a type of Table that is used to define RGB values for tinting.</p>
 <h4 id="keys">Keys<a class="headerlink" href="#keys" title="Permanent link"> </a></h4>
-<p>The Table will contain the keys <code class="codehilite"><span class="n">r</span></code>, <code class="codehilite"><span class="k">g</span></code>, <code class="codehilite"><span class="n">b</span></code>, <code class="codehilite"><span class="n">a</span></code> and/or <code class="codehilite"><span class="mi">1</span></code>, <code class="codehilite"><span class="mi">2</span></code>, <code class="codehilite"><span class="mi">3</span></code>, <code class="codehilite"><span class="mi">4</span></code>. The letter and numeric keys are duplicates of each other, and each represents a color or transparency.</p>
+<p>The Table will contain the keys <code class="codehilite">r</code>, <code class="codehilite">g</code>, <code class="codehilite">b</code>, <code class="codehilite">a</code> and/or <code class="codehilite">1</code>, <code class="codehilite">2</code>, <code class="codehilite">3</code>, <code class="codehilite">4</code>. The letter and numeric keys are duplicates of each other, and each represents a color or transparency.</p>
 <table>
 <thead>
 <tr>
@@ -1740,7 +2389,7 @@
     <span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div></p>
-<p>Notice it does not contain the <code class="codehilite"><span class="n">a</span></code> or <code class="codehilite"><span class="mi">4</span></code> keys. This is because currently only scripted buttons and scripted inputs utilize the alpha channel (transparency).</p>
+<p>Notice it does not contain the <code class="codehilite">a</code> or <code class="codehilite">4</code> keys. This is because currently only scripted buttons and scripted inputs utilize the alpha channel (transparency).</p>
 <h4 id="mixed-keys">Mixed Keys<a class="headerlink" href="#mixed-keys" title="Permanent link"> </a></h4>
 <p>Only one type of key, number or letter, is required. If both a are present in a Table, the numeric key is ignored and only the <strong>letter key</strong> is used.</p>
 <div class="codehilite"><pre><span></span><span class="c1">--Valid Table for red</span>
@@ -1758,12 +2407,12 @@
 </pre></div></p>
 <h4 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link"> </a></h4>
 <p>You are also able to use a String in place of a color table. Using a <a href="player-color">Player Color</a> will automatically fill in that value. It works with any of the 12 color names, as they are written on the <a href="player-color">Player Color</a> page.</p>
-<p>Example: <code class="codehilite"><span class="n">printToAll</span><span class="p">(</span><span class="ss">&quot;Test&quot;</span><span class="p">,</span> <span class="ss">&quot;Green&quot;</span><span class="p">)</span></code></p>
+<p>Example: <code class="codehilite">printToAll(&quot;Test&quot;, &quot;Green&quot;)</code></p>
 <hr />
 <h3 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link"> </a></h3>
 <p><span class="tag vec"></span> Vector is a type of Table that is used to define a position, rotation or direction.</p>
 <h4 id="keys_1">Keys<a class="headerlink" href="#keys_1" title="Permanent link"> </a></h4>
-<p>The Table will contain the keys <code class="codehilite"><span class="n">x</span></code>, <code class="codehilite"><span class="n">y</span></code>, <code class="codehilite"><span class="n">z</span></code> and/or <code class="codehilite"><span class="mi">1</span></code>, <code class="codehilite"><span class="mi">2</span></code>, <code class="codehilite"><span class="mi">3</span></code>. The letter and numeric keys are duplicates of each other.</p>
+<p>The Table will contain the keys <code class="codehilite">x</code>, <code class="codehilite">y</code>, <code class="codehilite">z</code> and/or <code class="codehilite">1</code>, <code class="codehilite">2</code>, <code class="codehilite">3</code>. The letter and numeric keys are duplicates of each other.</p>
 <table>
 <thead>
 <tr>
@@ -1843,17 +2492,15 @@
 <tbody>
 <tr>
 <td>World</td>
-<td>The center of the instance is <code class="codehilite"><span class="err">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="err">}</span></code>. That is usually near the tabletop's center.</td>
+<td>The center of the instance is <code class="codehilite">{x=0, y=0, z=0}</code>. That is usually near the tabletop's center.</td>
 </tr>
 <tr>
 <td>Local</td>
-<td>The center of the Object's model is <code class="codehilite"><span class="err">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="err">}</span></code>. The center of an Object is determined by the model's creator.</td>
+<td>The center of the Object's model is <code class="codehilite">{x=0, y=0, z=0}</code>. The center of an Object is determined by the model's creator.</td>
 </tr>
 </tbody>
 </table>
-<details class="tip"><summary>Conversion Between World/Local</summary><p><a href="object#positiontoworld">positionToWorld(...)</a> and <a href="object#positiontolocal">positionToLocal(...)</a> can be used to convert between the two types.</p>
-</details>
-<h5 id="rotation">Rotation<a class="headerlink" href="#rotation" title="Permanent link"> </a></h5>
+<details class="tip"><summary>Conversion Between World/Local</summary><p><a href="object#positiontoworld">positionToWorld(...)</a> and <a href="object#positiontolocal">positionToLocal(...)</a> can be used to convert between the two types.</p></details><h5 id="rotation">Rotation<a class="headerlink" href="#rotation" title="Permanent link"> </a></h5>
 <p>X is pitch (nodding your head), Y is yaw (shaking you head), Z is roll (tilting your head).</p>
 <h5 id="direction">Direction<a class="headerlink" href="#direction" title="Permanent link"> </a></h5>
 <p>X is right/left, Y is up/down, Z is forward/back.</p>
@@ -1908,12 +2555,12 @@ Instead, make the print the result of a function running:
 
 <hr />
 <h4 id="lambda-style-expressions">Lambda-Style Expressions<a class="headerlink" href="#lambda-style-expressions" title="Permanent link"> </a></h4>
-<p>You are able to replace <code class="codehilite"><span class="k">function</span><span class="p">()</span></code> and <code class="codehilite"><span class="k">end</span></code> with <code class="codehilite"><span class="o">||</span></code>, allowing for much shorter functions.</p>
+<p>You are able to replace <code class="codehilite">function()</code> and <code class="codehilite">end</code> with <code class="codehilite">||</code>, allowing for much shorter functions.</p>
 <h5 id="important-tips">Important Tips<a class="headerlink" href="#important-tips" title="Permanent link"> </a></h5>
-<p>You create a <code class="codehilite"><span class="o">|</span></code>, on a standard keyboard, by holding shift and pressing the key above enter (backslash).</p>
-<p><code class="codehilite"><span class="o">||</span></code> only work for one line. So if you intend to use a multi-line function, lambda-style will not be an option.</p>
-<p>When using <code class="codehilite"><span class="o">||</span></code> for a conditional function with <code class="codehilite"><span class="k">Wait</span>.<span class="nv">condition</span><span class="ss">(</span><span class="nv">returnFunc</span>, <span class="nv">conditionalFunc</span><span class="ss">)</span></code>, you do not need to include return.</p>
-<p>If a parameter is passed to the return function, like with <code class="codehilite"><span class="n">callback_function</span></code> from <code class="codehilite"><span class="n">spawnObject</span><span class="p">(...)</span></code>, you can put a variable between the <code class="codehilite"><span class="o">||</span></code> characters to represent it. See the next section for an example.</p>
+<p>You create a <code class="codehilite">|</code>, on a standard keyboard, by holding shift and pressing the key above enter (backslash).</p>
+<p><code class="codehilite">||</code> only work for one line. So if you intend to use a multi-line function, lambda-style will not be an option.</p>
+<p>When using <code class="codehilite">||</code> for a conditional function with <code class="codehilite">Wait.condition(returnFunc, conditionalFunc)</code>, you do not need to include return.</p>
+<p>If a parameter is passed to the return function, like with <code class="codehilite">callback_function</code> from <code class="codehilite">spawnObject(...)</code>, you can put a variable between the <code class="codehilite">||</code> characters to represent it. See the next section for an example.</p>
 <h5 id="lambda-style-example">Lambda-Style Example<a class="headerlink" href="#lambda-style-example" title="Permanent link"> </a></h5>
 <p>Without Lambda-style:
 <div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
@@ -1965,7 +2612,22 @@ Instead, make the print the result of a function running:
     <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="kr">end</span>
 </pre></div></p>
-<hr /></article></div></div></main><!--
+<hr />
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        <!--
   Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -2008,8 +2670,34 @@ Instead, make the print the result of a function running:
 
       <!-- Social links -->
       
-        <div class="md-footer-social"><link rel="stylesheet" href="../assets/fonts/font-awesome.css"> <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>  <a href="https://twitter.com/tabletopsim" class="md-footer-social__link fa fa-twitter"></a>  <a href="https://www.facebook.com/tabletopsimulator" class="md-footer-social__link fa fa-facebook"></a>  <a href="https://www.youtube.com/user/berserkgames" class="md-footer-social__link fa fa-youtube"></a> </div>
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://www.reddit.com/r/tabletopsimulator/" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://twitter.com/tabletopsim" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.facebook.com/tabletopsimulator" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://www.youtube.com/user/berserkgames" class="md-footer-social__link fa fa-youtube"></a>
+    
+  </div>
+
       
     </div>
   </div>
-</footer></div><script src="../assets/javascripts/application.b260a35d.js"></script><script>app.initialize({version:"1.0.4",url:{base:".."}})</script></body></html>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
