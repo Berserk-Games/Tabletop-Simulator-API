@@ -73,6 +73,7 @@ pages:
     - Counter: counter.md
     - JSON: json.md
     - Lighting: lighting.md
+    - Music Player: musicplayer.md
     - Notes: notes.md
     - Physics: physics.md
     - Player: player.md
