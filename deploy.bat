@@ -1,1 +1,1 @@
-mkdocs gh-deploy
+mkdocs gh-deploy || @echo: & @echo Did you remember to `pipenv shell` first?
