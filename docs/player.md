@@ -45,6 +45,7 @@ lookAt([<span class="tag tab"></span>](/types)&nbsp;parameters) | Moves a Player
 <a class="anchor" id="pingtable"></a>pingTable([<span class="tag vec"></span>](/types#vector)&nbsp;position) | Emulates the player using the ping tool at the given position (tapping Tab). | [<span class="ret boo"></span>](/types)
 print([<span class="tag str"></span>](/types)&nbsp;message, [<span class="tag col"></span>](/types#color)&nbsp;message_color) | Prints a message into the Player's game chat. | [<span class="ret boo"></span>](/types) | [<span class="i"></span>](#print)
 <a class="anchor" id="promote"></a>promote() | Promotes/demotes a Player. Promoted players have access to most host privileges. | [<span class="ret boo"></span>](/types) |
+setCameraMode([<span class="tag str"></span>](/types)&nbsp;camera_mode) | Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown". | [<span class="ret boo"></span>](/types) | [<span class="i"></span>](#setcameramode)
 setHandTransform([<span class="tag tab"></span>](/types)&nbsp;parameters, [<span class="tag int"></span>](/types)&nbsp;hand_index) | Sets transform elements of a hand zone. | [<span class="ret boo"></span>](/types) | [<span class="i"></span>](#sethandtransform)
 
 
@@ -211,6 +212,20 @@ params = {
     scale    = {x=2, y=2, z=2},
 }
 Player["White"].setHandTransform(params, 2)
+```
+
+---
+
+
+####setCameraMode(...)
+
+[<span class="ret boo"></span>](/types)&nbsp;Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown". 
+
+!!!info "changeColor(camera_mode)"
+    * [<span class="tag str"></span>](/types) **camera_mode**: The Camera Mode to set the Player's Camera to.
+
+``` Lua
+Player["White"].setCameraMode("FirstPerson")
 ```
 
 ---
