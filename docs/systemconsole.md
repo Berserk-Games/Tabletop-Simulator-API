@@ -1,3 +1,5 @@
+1:10 - 1:55
+
 
 The system console gives you a direct way to interact with Tabletop Simulator's settings.  It can be used to automate repetitive actions, and customise your TTS experience.
 
@@ -11,7 +13,7 @@ The console accepts basic text input.  Additionally, you may hit `up arrow` and 
 
 You interact with the system console by typing commands into it.  When you hit enter the command will be perform its action, and then output its results to the console.
 
-There is a subset of the commands which have an additional property; these are called `variables`, and each one stores a value (in addition to behaving like regular commands).  Typically these are used for the settings which govern TTS behaviour.  For example, the `color` command is a variable; it holds the seat color you currently occupy.  Typing it without any parameters will make it output its current value, while typing it with a parameter will let you set it; you could type `color red` to switch to the red seat, for instance.  You may also create your own variables with the `store_number`, `store_toggle`, and `store_text` commands; these are especially useful when writing scripts.
+There is a subset of the commands which have an additional property; these are called `variables`, and each one stores a value (in addition to behaving like regular commands).  Typically these are used for the settings which govern TTS behaviour.  For example, the `color` command is a variable; it holds the seat color you currently occupy.  Typing it without any parameters will make it output its current value, while typing it with a parameter will let you set it; you could type `color red` to switch to the red seat, for instance.  You may also create your own variables with the `store_number`, `store_toggle`, and `store_text` commands (or if you are familiar with programming, their aliases: `float`, `bool`, and `string`); these are especially useful when writing scripts.
 
 A lot of variables are toggles: they can be either `OFF` or `ON`.  For these you can set them in an additional way; by prefixing with `+`, `-`, or `!`.  `+` will turn it on, `-` will turn it off, and `!` will toggle it, changing it to the opposite of its current value.  For example: `+measure_in_metric` will set `measure_in_metric` to `ON`, and `!measure_logging` when `measure_logging` is `ON` will set it to `OFF` (and vice-versa).
 
@@ -26,18 +28,18 @@ There are three commands which are extremely valuable when getting to know the c
 You may specify a prefix when using these to have them filter to only commands which begin with it; for example you could type `variables spectator` to see the value of all commands which deal with the spectator window.
 Additionally, if you ask for `help` on a specific command it will give you a detailed description of how to use it.
 
-You may insert variables into commands by enclosing them in `<<` and `>>`.  For example, typing `hovered` will display the GUID of the object your pointer is hovering over; `spectator_camera_target <<hovered>>` will set the spectator camera target with it.
+You may insert variables into commands by enclosing them in `{` and `}`.  For example, typing `hovered` will display the GUID of the object your pointer is hovering over; `spectator_camera_target {hovered}` will set the spectator camera target with it.
 
 If you start a command with the `@` symbol then it will be silenced; it will not output anything to the console.
 
 
 ## Scripts
 
-The `exec` command will execute a series of commands separated either by `;` or by being on seperate lines.  Alternatively, you may use the `-v` parameter to execute a text variable as a script.  For example, `exec -v bootexec` will execute the commands in the `bootexec` variable.  You may also pass `exec` a `-q` parameter to make it execute in quiet mode (commands being executed are not echoed to the console, but their output is).
+The `exec` command will execute a series of commands separated either by `;` or by being on separate lines.  Alternatively, you may use the `-v` parameter to execute a text variable as a script.  For example, `exec -v bootexec` will execute the commands in the `bootexec` variable (there is also a `run` alias, which performs `exec -v`, so `run bootexec` will do the same thing).  You may also pass `exec` a `-q` parameter to make it execute in quiet mode (commands being executed are not echoed to the console, but their output is).
 
-There are two special variables: `autoexec` and `bootexec`; these are text variables which load the contents of those two files - `autoexec.cfg` and `bootexec.cfg`, respectively - in your TTS user folder (`C:\Users\<username>\Documents\My Games\Tabletop Simulator`).
+There are two special variables: `autoexec` and `bootexec`; these are text variables which load the contents of those two files - `autoexec.cfg` and `bootexec.cfg`, respectively - in your TTS user folder (typically `C:\Users\<username>\Documents\My Games\Tabletop Simulator`).
 
-`autoexec` will be executed every time you start a game within TTS, while `bootexec` is only executed once, when TTS first starts up.  Note that the game resets every time you go back to the main menu, so if you want to affect any settings / add bindings / etc you need to do it in `autoexec`
+`autoexec` will be executed every time you arrive at the main menu in TTS, while `bootexec` is only executed once, when TTS first starts up.  Note that the game resets every time you go back to the main menu, so if you want to affect any settings / add bindings / etc you need to do it in `autoexec`
 
 Example `bootexec`:
 ``` bash
@@ -70,13 +72,12 @@ bind +right_control @+cam_follow_player
 bind -right_control @-cam_follow_player
 
 # make semicolon look at object under pointer
-# need to start line with > to stop <hovered> being evaluated,
-# and exec to make it evaluate when activated
->bind semicolon exec cam_look_at <hovered>
+# need to add additional { } so hovered isn't evaluated immediately
+bind semicolon cam_look_at {{hovered}}
 
 # make period toggle object tracking, and comma set tracked object
 bind period !cam_tracking
->bind comma exec cam_target <hovered>
+bind comma cam_target {{hovered}}
 
 # make right shift cycle through first 3 camera positions
 alias next_camera add cam_load_zero 1 3
@@ -95,7 +96,19 @@ ui_button 3 600 -60 cam_load 3
 * `@@` - Two `@` in a row silences the remainder of the script; each command will behave as if it had a `@` before it.  `@@` again will disable this effect.
 * `#` - At the start of a line is used for comments; the line will be ignored.
 * `:` - At the start of a line is used to specify a label, which may be skipped to with the `skip` command.
-* `<` and `>` - These will be expanded by `exec` into `<<` and `>>`; this is so that you can set up aliases and bindings which refer to variables, without them being replaced at the point the script executes.  To suppress this behaviour, start the line with `>`.  You can see this used in the above `autoexec` in order to insert the `hovered` variable.
+* `{` and `}` - If you surround a variable with these then it will be evaluated during the script execution; you may add additional braces to delay execution.  Whenever a command being executed has braces in its parameters it will strip one layer off, and only evaluate at the point there are only one set.  You can see this used in the above `autoexec` in order to insert the `hovered` variable.  Another example; say you wanted a binding which could add a binding to another key.  We add this line to the `autoexec`:
+``` bash
+bind right_shift bind right_control spectator_camera_target {{{hovered}}}
+```
+The `autoexec` is executed the same as if it was passed to `exec`; so the command which is run is:
+``` bash
+bind right_shift bind right_control spectator_camera_target {{hovered}}
+```
+When you hit right shift, it executes the second bind command as this:
+``` bash
+bind right_control spectator_camera_target {hovered}
+```
+Then, when you hit right control while hovering over the object, the hovered object will be evaulated and passed to `spectator_camera_target`.
 
 
 The `skip` command can be used inside a script to jump forward to a label.  It may not be used to jump backwards.  You may give it an optional `variable` and then further optional `comparison` and `value` parameters: if you do it will only skip if the variable is non-zero, or the result of the comparison is true.
@@ -153,10 +166,10 @@ bind y @exec -v smart_chat
 
 store_text echo_guid_script
   skip :held grabbed
-  >exec echo <hovered>
+  echo {{hovered}}
   exit
 :held
-  >exec echo <grabbed>
+  echo {{grabbed}}
 end echo_guid_script
 
 alias echo_guid exec -q -v echo_guid_script
@@ -167,13 +180,17 @@ bind KeypadEnter echo_guid
 
 As noted above, `help`, `commands`, and `variables` will let you find out everything you can do with the system console.  Having said that, here is a selection of some of the more useful commands available:
 
+
 * `add`, `subtract`, and `multiply` will let you do simple arithmetic on a variable.  `add` is useful for cycling a modal variable (it has an optional third parameter which sets a modulus), while `subtract` subtracts the variable *from* the value, so is useful for ping-ponging between two numbers.
 * `alias` will create a new name for another command, while retaining any parameters you type in. Good for making shorter names for commands you use a lot.  Use with `store_text` and `exec` to make your own commands from scripts.  Can also be used to attach commands to each value of a toggle variable, which will run when the variable is set to that value.  Finally, if there are a bunch of commands which share a prefix which you want to make short versions of you can use `*` to do so (e.g. `alias cam_* spectator_camera_*`)
+* `append` will append text to a text variable.  If you only provide the variable parameter, without text, it will append the last entered command. This is useful for adding commands to `autoexec`; you can try the command out in the console until you get it correct, before appending it to the script.
 * `bind`, `unbind` control attaching commands to keypresses.  You may use `+` and `-` before the keycode to specify if you want it to trigger on *press* or *release*, respectively. [(list of Unity keycodes)](https://docs.unity3d.com/ScriptReference/KeyCode.html)
 * `broadcast` will broadcast the provided message.
 * `chat_font_size` sets the size of the font in the chat / console window.
 * `clear` will clear a text variable.
 * `color` reports/sets your player color.
+* `component_examine` lets you specify a component, which can then be examined with the `examine_position` and `examine_rotation` variables.  If you specify a color then that seat's primary hand zone will be examined instead.
+* `component_move`, `component_rotate`, `component_position`, `component_rotation` let you apply movements to components.  The first two add the specified vector to the components current position/rotation, while the second two set it to the specified vector in world space.  You may use`'-'` in place of a vector axis to indicate that axis is to be left alone.
 * `console_hotkey_lock` When enabled, locks whichever key is bound to toggling the system console, so that hitting it always toggles the console (this makes the key untypeable in text input boxes).
 * `default_host_name` and `default_password` set those values.
 * `dice_roll_height_multiplier` sets how high dice go when randomized.
@@ -183,12 +200,14 @@ As noted above, `help`, `commands`, and `variables` will let you find out everyt
 * `echo` displays its parameters in the system console.
 * `edit` allow you to edit a text variable with the in-game GUI (you may also do this by passing the variable the `-e` parameter, e.g. `autoexec -e`)
 * `escape` will display a text variable in the console, and will  escape all the formatting characters (i.e. all the `[` and `]` characters).
+* `eval` sets a numeric variable by evaluating a formula.  Most arithmetic operators and functions are provided.
 * `find` finds a component on the table.
 * `grabbed`, `hovered` output the GUID of the component you are interacting with.
 * `highlight` a component.
 * `host_game` creates a table; you can specify single player, multiplayer, or hotseat.
 * `host_name` and `host_password` set those values for current game.
 * `last` is a special variable which holds the value returned from the most recent command.
+* `lua` executes lua code as if run by the current mod.
 * `mirror_all` will mirror all text displayed in every other chat tab into the system console.  This means you can always be in the system console without missing any messages.
 * `quiet_mode` will, when enabled, stop command names being echoed in the console.  Unlike silencing commands with `@`, this will still display the commands' output.
 * `reset` will reset a persistent variable to its default value.
@@ -196,7 +215,8 @@ As noted above, `help`, `commands`, and `variables` will let you find out everyt
 * `status` will display some key information about the current game. 
 * `stats_monitor` will display some graphs/info which update in real time.
 * `team` reports/sets your team.
-* `ui_button` will add a button to the screen which performs a command when clicked.
+* `ui_anchor` lets you set the position on the screen which custom UI components are placed relative to. It defaults to 0,0 which is the center of the screen.
+* `ui_button` / `ui_label` / `ui_toggle` will add custom UI components to the screen which will, respectively, perform a command when clicked / display some text / be attached to a toggle variable.
 * `ui_dialog_input` will display the text entry UI, and store the typed text in `last`.
 * `ui_games_click` will click on a button on the game select UI, if it is open.  
 * `ui_games_hide` will hide the game select UI without clicking on anything.
@@ -213,6 +233,7 @@ Commands are named with their topic first, so commands which affect the same par
 * `log_` commands control formatting of lua `log` calls.
 * `mirror_` commands govern mirroring text from other tabs into the system console.
 * `mod_` commands control various performance settings when loading mods.
+* `music_` commands let you control the in-game music player.
 * `say_` commands let you output messages to the chat channels.
 * `spectator_` commands control the spectator view.
 * `timestamp_` commands let you add timestamps to the chat channels / console.
