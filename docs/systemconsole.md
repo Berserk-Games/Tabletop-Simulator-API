@@ -1,6 +1,3 @@
-1:10 - 1:55
-
-
 The system console gives you a direct way to interact with Tabletop Simulator's settings.  It can be used to automate repetitive actions, and customise your TTS experience.
 
 
@@ -111,6 +108,8 @@ bind right_control spectator_camera_target {hovered}
 Then, when you hit right control while hovering over the object, the hovered object will be evaulated and passed to `spectator_camera_target`.
 
 
+### Script commands
+
 The `skip` command can be used inside a script to jump forward to a label.  It may not be used to jump backwards.  You may give it an optional `variable` and then further optional `comparison` and `value` parameters: if you do it will only skip if the variable is non-zero, or the result of the comparison is true.
 
 Finally, the `exit` command will cause the script to stop executing.
@@ -174,6 +173,43 @@ end echo_guid_script
 
 alias echo_guid exec -q -v echo_guid_script
 bind KeypadEnter echo_guid
+
+
+## Create key to Tap/Untap card (turn 90 degreees / set upright)
+#  Use seat hand zone rotation to work out orientation.
+
+string guid ""
+float facing
+float y
+bool untapped
+
+string tap_script
+  # use "" so if not hovering variable will be cleared
+  guid "{{hovered}}"
+  skip :ok guid
+  exit
+:ok
+  # Find hand zone facing. It faces the player, so spin it 180.
+  component_examine {{color}}
+  eval facing (examine_rotation.y - 180) % 360
+  # Is card currently tapped?
+  component_examine {{guid}}
+  eval y examine_rotation.y % 360
+  eval untapped !((y - 90 < facing + 10 && y - 90 > facing - 10) || (y + 270 < facing + 10 && y + 270 > facing - 10))
+  # Bump card up a bit into the air (0.5 along Y axis).
+  component_move {{guid}} -f - 0.5 -
+  skip :tap untapped
+:untap
+  # Set rotation to player facing. Use `-` on X and Z axis so they are unaffected.
+  component_rotation {{guid}} -f - {{facing}} -
+  exit
+:tap
+  eval y facing + 90
+  component_rotation {{guid}} -f - {{y}} -
+end tap_script
+
+bind Mouse4 @run tap_script
+
 ```
 
 ## Some useful commands
@@ -200,7 +236,7 @@ As noted above, `help`, `commands`, and `variables` will let you find out everyt
 * `echo` displays its parameters in the system console.
 * `edit` allow you to edit a text variable with the in-game GUI (you may also do this by passing the variable the `-e` parameter, e.g. `autoexec -e`)
 * `escape` will display a text variable in the console, and will  escape all the formatting characters (i.e. all the `[` and `]` characters).
-* `eval` sets a numeric variable by evaluating a formula.  Most arithmetic operators and functions are provided.
+* `eval` sets a variable by evaluating a formula.  Most arithmetic operators and functions are provided.  You may also refer to vector axes, i.e. `examine_rotation.y`.
 * `find` finds a component on the table.
 * `grabbed`, `hovered` output the GUID of the component you are interacting with.
 * `highlight` a component.
