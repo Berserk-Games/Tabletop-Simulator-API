@@ -611,6 +611,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#script-commands" title="Script commands" class="md-nav__link">
+    Script commands
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1955,6 +1962,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#script-commands" title="Script commands" class="md-nav__link">
+    Script commands
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1993,7 +2007,7 @@
 <p>The console accepts basic text input.  Additionally, you may hit <code class="codehilite">up arrow</code> and <code class="codehilite">down arrow</code> to cycle back and forth through the command history, and <code class="codehilite">tab</code> to autocomplete your current command (if more than one command is possible from your current prefix then hit it a couple of times to list all matching commands).  Hitting the <code class="codehilite">`</code> key will activate the console.  Hitting it again will type the character; if you would rather it deactivated the console input as well as activating it, then you can make it do that by entering this command: <code class="codehilite">+console_hotkey_lock</code></p>
 <h2 id="commands-variables">Commands &amp; Variables<a class="headerlink" href="#commands-variables" title="Permanent link"> </a></h2>
 <p>You interact with the system console by typing commands into it.  When you hit enter the command will be perform its action, and then output its results to the console.</p>
-<p>There is a subset of the commands which have an additional property; these are called <code class="codehilite">variables</code>, and each one stores a value (in addition to behaving like regular commands).  Typically these are used for the settings which govern TTS behaviour.  For example, the <code class="codehilite">color</code> command is a variable; it holds the seat color you currently occupy.  Typing it without any parameters will make it output its current value, while typing it with a parameter will let you set it; you could type <code class="codehilite">color red</code> to switch to the red seat, for instance.  You may also create your own variables with the <code class="codehilite">store_number</code>, <code class="codehilite">store_toggle</code>, and <code class="codehilite">store_text</code> commands; these are especially useful when writing scripts.</p>
+<p>There is a subset of the commands which have an additional property; these are called <code class="codehilite">variables</code>, and each one stores a value (in addition to behaving like regular commands).  Typically these are used for the settings which govern TTS behaviour.  For example, the <code class="codehilite">color</code> command is a variable; it holds the seat color you currently occupy.  Typing it without any parameters will make it output its current value, while typing it with a parameter will let you set it; you could type <code class="codehilite">color red</code> to switch to the red seat, for instance.  You may also create your own variables with the <code class="codehilite">store_number</code>, <code class="codehilite">store_toggle</code>, and <code class="codehilite">store_text</code> commands (or if you are familiar with programming, their aliases: <code class="codehilite">float</code>, <code class="codehilite">bool</code>, and <code class="codehilite">string</code>); these are especially useful when writing scripts.</p>
 <p>A lot of variables are toggles: they can be either <code class="codehilite">OFF</code> or <code class="codehilite">ON</code>.  For these you can set them in an additional way; by prefixing with <code class="codehilite">+</code>, <code class="codehilite">-</code>, or <code class="codehilite">!</code>.  <code class="codehilite">+</code> will turn it on, <code class="codehilite">-</code> will turn it off, and <code class="codehilite">!</code> will toggle it, changing it to the opposite of its current value.  For example: <code class="codehilite">+measure_in_metric</code> will set <code class="codehilite">measure_in_metric</code> to <code class="codehilite">ON</code>, and <code class="codehilite"><span class="sx">!measure_logging</span></code> when <code class="codehilite">measure_logging</code> is <code class="codehilite">ON</code> will set it to <code class="codehilite">OFF</code> (and vice-versa).</p>
 <p>Note that some variables are <code class="codehilite">persistent</code> - this means that they will remember their value even after you close the game.</p>
 <p>There are three commands which are extremely valuable when getting to know the console, these are:</p>
@@ -2004,12 +2018,12 @@
 </ul>
 <p>You may specify a prefix when using these to have them filter to only commands which begin with it; for example you could type <code class="codehilite">variables spectator</code> to see the value of all commands which deal with the spectator window.
 Additionally, if you ask for <code class="codehilite">help</code> on a specific command it will give you a detailed description of how to use it.</p>
-<p>You may insert variables into commands by enclosing them in <code class="codehilite">&lt;&lt;</code> and <code class="codehilite">&gt;&gt;</code>.  For example, typing <code class="codehilite">hovered</code> will display the GUID of the object your pointer is hovering over; <code class="codehilite">spectator_camera_target &lt;&lt;hovered&gt;&gt;</code> will set the spectator camera target with it.</p>
+<p>You may insert variables into commands by enclosing them in <code class="codehilite">{</code> and <code class="codehilite">}</code>.  For example, typing <code class="codehilite">hovered</code> will display the GUID of the object your pointer is hovering over; <code class="codehilite">spectator_camera_target {hovered}</code> will set the spectator camera target with it.</p>
 <p>If you start a command with the <code class="codehilite">@</code> symbol then it will be silenced; it will not output anything to the console.</p>
 <h2 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link"> </a></h2>
-<p>The <code class="codehilite">exec</code> command will execute a series of commands separated either by <code class="codehilite">;</code> or by being on seperate lines.  Alternatively, you may use the <code class="codehilite">-v</code> parameter to execute a text variable as a script.  For example, <code class="codehilite">exec -v bootexec</code> will execute the commands in the <code class="codehilite">bootexec</code> variable.  You may also pass <code class="codehilite">exec</code> a <code class="codehilite">-q</code> parameter to make it execute in quiet mode (commands being executed are not echoed to the console, but their output is).</p>
-<p>There are two special variables: <code class="codehilite">autoexec</code> and <code class="codehilite">bootexec</code>; these are text variables which load the contents of those two files - <code class="codehilite">autoexec.cfg</code> and <code class="codehilite">bootexec.cfg</code>, respectively - in your TTS user folder (<code class="codehilite">C:\Users\&lt;username&gt;\Documents\My Games\Tabletop Simulator</code>).</p>
-<p><code class="codehilite">autoexec</code> will be executed every time you start a game within TTS, while <code class="codehilite">bootexec</code> is only executed once, when TTS first starts up.  Note that the game resets every time you go back to the main menu, so if you want to affect any settings / add bindings / etc you need to do it in <code class="codehilite">autoexec</code></p>
+<p>The <code class="codehilite">exec</code> command will execute a series of commands separated either by <code class="codehilite">;</code> or by being on separate lines.  Alternatively, you may use the <code class="codehilite">-v</code> parameter to execute a text variable as a script.  For example, <code class="codehilite">exec -v bootexec</code> will execute the commands in the <code class="codehilite">bootexec</code> variable (there is also a <code class="codehilite">run</code> alias, which performs <code class="codehilite">exec -v</code>, so <code class="codehilite">run bootexec</code> will do the same thing).  You may also pass <code class="codehilite">exec</code> a <code class="codehilite">-q</code> parameter to make it execute in quiet mode (commands being executed are not echoed to the console, but their output is).</p>
+<p>There are two special variables: <code class="codehilite">autoexec</code> and <code class="codehilite">bootexec</code>; these are text variables which load the contents of those two files - <code class="codehilite">autoexec.cfg</code> and <code class="codehilite">bootexec.cfg</code>, respectively - in your TTS user folder (typically <code class="codehilite">C:\Users\&lt;username&gt;\Documents\My Games\Tabletop Simulator</code>).</p>
+<p><code class="codehilite">autoexec</code> will be executed every time you arrive at the main menu in TTS, while <code class="codehilite">bootexec</code> is only executed once, when TTS first starts up.  Note that the game resets every time you go back to the main menu, so if you want to affect any settings / add bindings / etc you need to do it in <code class="codehilite">autoexec</code></p>
 <p>Example <code class="codehilite">bootexec</code>:
 <div class="codehilite"><pre><span></span><span class="c1"># Host a game for 8 players using default server name and password</span>
 host_game <span class="m">8</span>
@@ -2038,13 +2052,12 @@ chat_tab_system
 <span class="nb">bind</span> -right_control @-cam_follow_player
 
 <span class="c1"># make semicolon look at object under pointer</span>
-<span class="c1"># need to start line with &gt; to stop &lt;hovered&gt; being evaluated,</span>
-<span class="c1"># and exec to make it evaluate when activated</span>
-&gt;bind semicolon <span class="nb">exec</span> cam_look_at &lt;hovered&gt;
+<span class="c1"># need to add additional { } so hovered isn&#39;t evaluated immediately</span>
+<span class="nb">bind</span> semicolon cam_look_at <span class="o">{{</span>hovered<span class="o">}}</span>
 
 <span class="c1"># make period toggle object tracking, and comma set tracked object</span>
 <span class="nb">bind</span> period !cam_tracking
-&gt;bind comma <span class="nb">exec</span> cam_target &lt;hovered&gt;
+<span class="nb">bind</span> comma cam_target <span class="o">{{</span>hovered<span class="o">}}</span>
 
 <span class="c1"># make right shift cycle through first 3 camera positions</span>
 <span class="nb">alias</span> next_camera add cam_load_zero <span class="m">1</span> <span class="m">3</span>
@@ -2061,8 +2074,18 @@ ui_button <span class="m">3</span> <span class="m">600</span> -60 cam_load <span
 <li><code class="codehilite">@@</code> - Two <code class="codehilite">@</code> in a row silences the remainder of the script; each command will behave as if it had a <code class="codehilite">@</code> before it.  <code class="codehilite">@@</code> again will disable this effect.</li>
 <li><code class="codehilite">#</code> - At the start of a line is used for comments; the line will be ignored.</li>
 <li><code class="codehilite">:</code> - At the start of a line is used to specify a label, which may be skipped to with the <code class="codehilite">skip</code> command.</li>
-<li><code class="codehilite">&lt;</code> and <code class="codehilite">&gt;</code> - These will be expanded by <code class="codehilite">exec</code> into <code class="codehilite">&lt;&lt;</code> and <code class="codehilite">&gt;&gt;</code>; this is so that you can set up aliases and bindings which refer to variables, without them being replaced at the point the script executes.  To suppress this behaviour, start the line with <code class="codehilite">&gt;</code>.  You can see this used in the above <code class="codehilite">autoexec</code> in order to insert the <code class="codehilite">hovered</code> variable.</li>
+<li><code class="codehilite">{</code> and <code class="codehilite">}</code> - If you surround a variable with these then it will be evaluated during the script execution; you may add additional braces to delay execution.  Whenever a command being executed has braces in its parameters it will strip one layer off, and only evaluate at the point there are only one set.  You can see this used in the above <code class="codehilite">autoexec</code> in order to insert the <code class="codehilite">hovered</code> variable.  Another example; say you wanted a binding which could add a binding to another key.  We add this line to the <code class="codehilite">autoexec</code>:
+<div class="codehilite"><pre><span></span><span class="nb">bind</span> right_shift <span class="nb">bind</span> right_control spectator_camera_target <span class="o">{{{</span>hovered<span class="o">}}}</span>
+</pre></div>
+The <code class="codehilite">autoexec</code> is executed the same as if it was passed to <code class="codehilite">exec</code>; so the command which is run is:
+<div class="codehilite"><pre><span></span><span class="nb">bind</span> right_shift <span class="nb">bind</span> right_control spectator_camera_target <span class="o">{{</span>hovered<span class="o">}}</span>
+</pre></div>
+When you hit right shift, it executes the second bind command as this:
+<div class="codehilite"><pre><span></span><span class="nb">bind</span> right_control spectator_camera_target <span class="o">{</span>hovered<span class="o">}</span>
+</pre></div>
+Then, when you hit right control while hovering over the object, the hovered object will be evaulated and passed to <code class="codehilite">spectator_camera_target</code>.</li>
 </ul>
+<h3 id="script-commands">Script commands<a class="headerlink" href="#script-commands" title="Permanent link"> </a></h3>
 <p>The <code class="codehilite">skip</code> command can be used inside a script to jump forward to a label.  It may not be used to jump backwards.  You may give it an optional <code class="codehilite">variable</code> and then further optional <code class="codehilite">comparison</code> and <code class="codehilite">value</code> parameters: if you do it will only skip if the variable is non-zero, or the result of the comparison is true.</p>
 <p>Finally, the <code class="codehilite">exit</code> command will cause the script to stop executing.</p>
 <p>Example <code class="codehilite">autoexec</code>:
@@ -2115,25 +2138,64 @@ end smart_chat
 
 store_text echo_guid_script
   skip :held grabbed
-  &gt;exec <span class="nb">echo</span> &lt;hovered&gt;
+  <span class="nb">echo</span> <span class="o">{{</span>hovered<span class="o">}}</span>
   <span class="nb">exit</span>
 :held
-  &gt;exec <span class="nb">echo</span> &lt;grabbed&gt;
+  <span class="nb">echo</span> <span class="o">{{</span>grabbed<span class="o">}}</span>
 end echo_guid_script
 
 <span class="nb">alias</span> echo_guid <span class="nb">exec</span> -q -v echo_guid_script
 <span class="nb">bind</span> KeypadEnter echo_guid
+
+
+<span class="c1">## Create key to Tap/Untap card (turn 90 degreees / set upright)</span>
+<span class="c1">#  Use seat hand zone rotation to work out orientation.</span>
+
+string guid <span class="s2">&quot;&quot;</span>
+float facing
+float y
+bool untapped
+
+string tap_script
+  <span class="c1"># use &quot;&quot; so if not hovering variable will be cleared</span>
+  guid <span class="s2">&quot;{{hovered}}&quot;</span>
+  skip :ok guid
+  <span class="nb">exit</span>
+:ok
+  <span class="c1"># Find hand zone facing. It faces the player, so spin it 180.</span>
+  component_examine <span class="o">{{</span>color<span class="o">}}</span>
+  <span class="nb">eval</span> facing <span class="o">(</span>examine_rotation.y - <span class="m">180</span><span class="o">)</span> % <span class="m">360</span>
+  <span class="c1"># Is card currently tapped?</span>
+  component_examine <span class="o">{{</span>guid<span class="o">}}</span>
+  <span class="nb">eval</span> y examine_rotation.y % <span class="m">360</span>
+  <span class="nb">eval</span> untapped !<span class="o">((</span>y - <span class="m">90</span> &lt; facing + <span class="m">10</span> <span class="o">&amp;&amp;</span> y - <span class="m">90</span> &gt; facing - <span class="m">10</span><span class="o">)</span> <span class="o">||</span> <span class="o">(</span>y + <span class="m">270</span> &lt; facing + <span class="m">10</span> <span class="o">&amp;&amp;</span> y + <span class="m">270</span> &gt; facing - <span class="m">10</span><span class="o">))</span>
+  <span class="c1"># Bump card up a bit into the air (0.5 along Y axis).</span>
+  component_move <span class="o">{{</span>guid<span class="o">}}</span> -f - <span class="m">0</span>.5 -
+  skip :tap untapped
+:untap
+  <span class="c1"># Set rotation to player facing. Use `-` on X and Z axis so they are unaffected.</span>
+  component_rotation <span class="o">{{</span>guid<span class="o">}}</span> -f - <span class="o">{{</span>facing<span class="o">}}</span> -
+  <span class="nb">exit</span>
+:tap
+  <span class="nb">eval</span> y facing + <span class="m">90</span>
+  component_rotation <span class="o">{{</span>guid<span class="o">}}</span> -f - <span class="o">{{</span>y<span class="o">}}</span> -
+end tap_script
+
+<span class="nb">bind</span> Mouse4 @run tap_script
 </pre></div></p>
 <h2 id="some-useful-commands">Some useful commands<a class="headerlink" href="#some-useful-commands" title="Permanent link"> </a></h2>
 <p>As noted above, <code class="codehilite">help</code>, <code class="codehilite">commands</code>, and <code class="codehilite">variables</code> will let you find out everything you can do with the system console.  Having said that, here is a selection of some of the more useful commands available:</p>
 <ul>
 <li><code class="codehilite">add</code>, <code class="codehilite">subtract</code>, and <code class="codehilite">multiply</code> will let you do simple arithmetic on a variable.  <code class="codehilite">add</code> is useful for cycling a modal variable (it has an optional third parameter which sets a modulus), while <code class="codehilite">subtract</code> subtracts the variable <em>from</em> the value, so is useful for ping-ponging between two numbers.</li>
 <li><code class="codehilite">alias</code> will create a new name for another command, while retaining any parameters you type in. Good for making shorter names for commands you use a lot.  Use with <code class="codehilite">store_text</code> and <code class="codehilite">exec</code> to make your own commands from scripts.  Can also be used to attach commands to each value of a toggle variable, which will run when the variable is set to that value.  Finally, if there are a bunch of commands which share a prefix which you want to make short versions of you can use <code class="codehilite">*</code> to do so (e.g. <code class="codehilite">alias cam_* spectator_camera_*</code>)</li>
+<li><code class="codehilite">append</code> will append text to a text variable.  If you only provide the variable parameter, without text, it will append the last entered command. This is useful for adding commands to <code class="codehilite">autoexec</code>; you can try the command out in the console until you get it correct, before appending it to the script.</li>
 <li><code class="codehilite">bind</code>, <code class="codehilite">unbind</code> control attaching commands to keypresses.  You may use <code class="codehilite">+</code> and <code class="codehilite">-</code> before the keycode to specify if you want it to trigger on <em>press</em> or <em>release</em>, respectively. <a href="https://docs.unity3d.com/ScriptReference/KeyCode.html">(list of Unity keycodes)</a></li>
 <li><code class="codehilite">broadcast</code> will broadcast the provided message.</li>
 <li><code class="codehilite">chat_font_size</code> sets the size of the font in the chat / console window.</li>
 <li><code class="codehilite">clear</code> will clear a text variable.</li>
 <li><code class="codehilite">color</code> reports/sets your player color.</li>
+<li><code class="codehilite">component_examine</code> lets you specify a component, which can then be examined with the <code class="codehilite">examine_position</code> and <code class="codehilite">examine_rotation</code> variables.  If you specify a color then that seat's primary hand zone will be examined instead.</li>
+<li><code class="codehilite">component_move</code>, <code class="codehilite">component_rotate</code>, <code class="codehilite">component_position</code>, <code class="codehilite">component_rotation</code> let you apply movements to components.  The first two add the specified vector to the components current position/rotation, while the second two set it to the specified vector in world space.  You may use<code class="codehilite">&#39;-&#39;</code> in place of a vector axis to indicate that axis is to be left alone.</li>
 <li><code class="codehilite">console_hotkey_lock</code> When enabled, locks whichever key is bound to toggling the system console, so that hitting it always toggles the console (this makes the key untypeable in text input boxes).</li>
 <li><code class="codehilite">default_host_name</code> and <code class="codehilite">default_password</code> set those values.</li>
 <li><code class="codehilite">dice_roll_height_multiplier</code> sets how high dice go when randomized.</li>
@@ -2143,12 +2205,14 @@ end echo_guid_script
 <li><code class="codehilite">echo</code> displays its parameters in the system console.</li>
 <li><code class="codehilite">edit</code> allow you to edit a text variable with the in-game GUI (you may also do this by passing the variable the <code class="codehilite">-e</code> parameter, e.g. <code class="codehilite">autoexec -e</code>)</li>
 <li><code class="codehilite">escape</code> will display a text variable in the console, and will  escape all the formatting characters (i.e. all the <code class="codehilite">[</code> and <code class="codehilite">]</code> characters).</li>
+<li><code class="codehilite">eval</code> sets a variable by evaluating a formula.  Most arithmetic operators and functions are provided.  You may also refer to vector axes, i.e. <code class="codehilite">examine_rotation.y</code>.</li>
 <li><code class="codehilite">find</code> finds a component on the table.</li>
 <li><code class="codehilite">grabbed</code>, <code class="codehilite">hovered</code> output the GUID of the component you are interacting with.</li>
 <li><code class="codehilite">highlight</code> a component.</li>
 <li><code class="codehilite">host_game</code> creates a table; you can specify single player, multiplayer, or hotseat.</li>
 <li><code class="codehilite">host_name</code> and <code class="codehilite">host_password</code> set those values for current game.</li>
 <li><code class="codehilite">last</code> is a special variable which holds the value returned from the most recent command.</li>
+<li><code class="codehilite">lua</code> executes lua code as if run by the current mod.</li>
 <li><code class="codehilite">mirror_all</code> will mirror all text displayed in every other chat tab into the system console.  This means you can always be in the system console without missing any messages.</li>
 <li><code class="codehilite">quiet_mode</code> will, when enabled, stop command names being echoed in the console.  Unlike silencing commands with <code class="codehilite">@</code>, this will still display the commands' output.</li>
 <li><code class="codehilite">reset</code> will reset a persistent variable to its default value.</li>
@@ -2156,7 +2220,8 @@ end echo_guid_script
 <li><code class="codehilite">status</code> will display some key information about the current game. </li>
 <li><code class="codehilite">stats_monitor</code> will display some graphs/info which update in real time.</li>
 <li><code class="codehilite">team</code> reports/sets your team.</li>
-<li><code class="codehilite">ui_button</code> will add a button to the screen which performs a command when clicked.</li>
+<li><code class="codehilite">ui_anchor</code> lets you set the position on the screen which custom UI components are placed relative to. It defaults to 0,0 which is the center of the screen.</li>
+<li><code class="codehilite">ui_button</code> / <code class="codehilite">ui_label</code> / <code class="codehilite">ui_toggle</code> will add custom UI components to the screen which will, respectively, perform a command when clicked / display some text / be attached to a toggle variable.</li>
 <li><code class="codehilite">ui_dialog_input</code> will display the text entry UI, and store the typed text in <code class="codehilite">last</code>.</li>
 <li><code class="codehilite">ui_games_click</code> will click on a button on the game select UI, if it is open.  </li>
 <li><code class="codehilite">ui_games_hide</code> will hide the game select UI without clicking on anything.</li>
@@ -2172,6 +2237,7 @@ end echo_guid_script
 <li><code class="codehilite">log_</code> commands control formatting of lua <code class="codehilite">log</code> calls.</li>
 <li><code class="codehilite">mirror_</code> commands govern mirroring text from other tabs into the system console.</li>
 <li><code class="codehilite">mod_</code> commands control various performance settings when loading mods.</li>
+<li><code class="codehilite">music_</code> commands let you control the in-game music player.</li>
 <li><code class="codehilite">say_</code> commands let you output messages to the chat channels.</li>
 <li><code class="codehilite">spectator_</code> commands control the spectator view.</li>
 <li><code class="codehilite">timestamp_</code> commands let you add timestamps to the chat channels / console.</li>
