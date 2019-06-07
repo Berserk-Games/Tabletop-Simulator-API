@@ -220,7 +220,10 @@ As noted above, `help`, `commands`, and `variables` will let you find out everyt
 
 
 * `add`, `subtract`, and `multiply` will let you do simple arithmetic on a variable.  `add` is useful for cycling a modal variable (it has an optional third parameter which sets a modulus), while `subtract` subtracts the variable *from* the value, so is useful for ping-ponging between two numbers.
-* `alias` will create a new name for another command, while retaining any parameters you type in. Good for making shorter names for commands you use a lot.  Use with `store_text` and `exec` to make your own commands from scripts.  Can also be used to attach commands to each value of a toggle variable, which will run when the variable is set to that value.  Finally, if there are a bunch of commands which share a prefix which you want to make short versions of you can use `*` to do so (e.g. `alias cam_* spectator_camera_*`)
+* `alias` is overloaded with several functions:
+  * Its basic use is to create a new name for another command, while retaining any parameters you type in. Good for making shorter names for commands you use a lot.  Use with `store_text` and `exec` to make your own commands from scripts.
+  * It can also be used to attach commands to each value of a toggle variable, which will run when the variable is set to that value.  You can see this in the example script above, with the `private_room` variable.
+  * Finally, if there are a collection of commands sharing a prefix which you want to make short versions of you can use `*` to do so (e.g. `alias cam_* spectator_camera_*`)
 * `append` will append text to a text variable.  If you only provide the variable parameter, without text, it will append the last entered command. This is useful for adding commands to `autoexec`; you can try the command out in the console until you get it correct, before appending it to the script.
 * `bind`, `unbind` control attaching commands to keypresses.  You may use `+` and `-` before the keycode to specify if you want it to trigger on *press* or *release*, respectively. [(list of Unity keycodes)](https://docs.unity3d.com/ScriptReference/KeyCode.html)
 * `broadcast` will broadcast the provided message.
