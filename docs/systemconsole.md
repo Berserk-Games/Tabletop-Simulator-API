@@ -97,15 +97,15 @@ ui_button 3 600 -60 cam_load 3
 ``` bash
 bind right_shift bind right_control spectator_camera_target {{{hovered}}}
 ```
-When the `autoexec` is executed the first layer of braces will be removed, so the command bound to `right_shift` will be:
+When the `autoexec` is executed and the first `bind` is called, the first layer of braces will be removed, so the command bound to right shift will be:
 ``` bash
 bind right_control spectator_camera_target {{hovered}}
 ```
-Then when you hit right shift, it will resolve so that the command bound to `right_control` is:
+Then when you hit right shift, it will resolve so that the command bound to right control is:
 ``` bash
-bind right_control spectator_camera_target {hovered}
+spectator_camera_target {hovered}
 ```
-Then, when you hit right control while hovering over the object, the hovered object will be evaulated and passed to `spectator_camera_target`.
+Now when you hit right control while hovering over the object, the hovered object will be evaulated and passed to `spectator_camera_target`.
 
 
 ### Script commands
