@@ -60,6 +60,7 @@ pages:
     - External Editor API: externaleditorapi.md
     - Learning Lua: learninglua.md
     - System Console: systemconsole.md
+    - Virtual Reality: vr.md
     - Changelog: changelog.md
   - Scripting API:
     - Introduction: intro.md
