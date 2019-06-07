@@ -97,11 +97,11 @@ ui_button 3 600 -60 cam_load 3
 ``` bash
 bind right_shift bind right_control spectator_camera_target {{{hovered}}}
 ```
-The `autoexec` is executed the same as if it was passed to `exec`; so the command which is run is:
+When the `autoexec` is executed the first layer of braces will be removed, so the command bound to `right_shift` will be:
 ``` bash
-bind right_shift bind right_control spectator_camera_target {{hovered}}
+bind right_control spectator_camera_target {{hovered}}
 ```
-When you hit right shift, it executes the second bind command as this:
+Then when you hit right shift, it will resolve so that the command bound to `right_control` is:
 ``` bash
 bind right_control spectator_camera_target {hovered}
 ```
