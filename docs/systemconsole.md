@@ -93,7 +93,7 @@ ui_button 3 600 -60 cam_load 3
 * `@@` - Two `@` in a row silences the remainder of the script; each command will behave as if it had a `@` before it.  `@@` again will disable this effect.
 * `#` - At the start of a line is used for comments; the line will be ignored.
 * `:` - At the start of a line is used to specify a label, which may be skipped to with the `skip` command.
-* `{` and `}` - If you surround a variable with these then it will be evaluated during the script execution; you may add additional braces to delay execution.  Whenever a command being executed has braces in its parameters it will strip one layer off, and only evaluate at the point there are only one set.  You can see this used in the above `autoexec` in order to insert the `hovered` variable.  Another example; say you wanted a binding which could add a binding to another key.  We add this line to the `autoexec`:
+* `{` and `}` - If you surround a variable with these then it will be evaluated during the script execution; you may add additional braces to delay evaluation.  Whenever a command being executed has braces in its parameters it will either strip one layer off (if there is more than one), or evaluate the enclosed variable (if there is only one layer); e.g. `{{hovered}}` will become `{hovered}`, whereas `{hovered}` will become the component currently under the mouse pointer.  You can see this used in the above `autoexec`.  Another example; say you wanted a binding which could add a binding to another key.  We add this line to the `autoexec`:
 ``` bash
 bind right_shift bind right_control spectator_camera_target {{{hovered}}}
 ```
@@ -111,6 +111,8 @@ Then, when you hit right control while hovering over the object, the hovered obj
 ### Script commands
 
 The `skip` command can be used inside a script to jump forward to a label.  It may not be used to jump backwards.  You may give it an optional `variable` and then further optional `comparison` and `value` parameters: if you do it will only skip if the variable is non-zero, or the result of the comparison is true.
+
+The `wait` command will pause the script for the specified number of seconds.  It will always wait at least one frame, so `wait 0` will do just that.  This can be useful in `bootexec` and `autoexec`, as some game systems may take a couple of frames to intialize; if your commands do not appear to work then try putting them at the end of the script, after a `wait`.
 
 Finally, the `exit` command will cause the script to stop executing.
 
@@ -226,7 +228,7 @@ As noted above, `help`, `commands`, and `variables` will let you find out everyt
 * `clear` will clear a text variable.
 * `color` reports/sets your player color.
 * `component_examine` lets you specify a component, which can then be examined with the `examine_position` and `examine_rotation` variables.  If you specify a color then that seat's primary hand zone will be examined instead.
-* `component_move`, `component_rotate`, `component_position`, `component_rotation` let you apply movements to components.  The first two add the specified vector to the components current position/rotation, while the second two set it to the specified vector in world space.  You may use`'-'` in place of a vector axis to indicate that axis is to be left alone.
+* `component_move`, `component_rotate`, `component_position`, `component_rotation` let you apply movements to components.  The first two add the specified vector to the component's current position/rotation, while the second two set it to the specified vector in world space.  You may use`'-'` in place of a vector axis to indicate that axis is to be left alone.
 * `console_hotkey_lock` When enabled, locks whichever key is bound to toggling the system console, so that hitting it always toggles the console (this makes the key untypeable in text input boxes).
 * `default_host_name` and `default_password` set those values.
 * `dice_roll_height_multiplier` sets how high dice go when randomized.
