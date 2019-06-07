@@ -2226,10 +2226,12 @@ end tap_script
 <p>As noted above, <code class="codehilite">help</code>, <code class="codehilite">commands</code>, and <code class="codehilite">variables</code> will let you find out everything you can do with the system console.  Having said that, here is a selection of some of the more useful commands available:</p>
 <ul>
 <li><code class="codehilite">add</code>, <code class="codehilite">subtract</code>, and <code class="codehilite">multiply</code> will let you do simple arithmetic on a variable.  <code class="codehilite">add</code> is useful for cycling a modal variable (it has an optional third parameter which sets a modulus), while <code class="codehilite">subtract</code> subtracts the variable <em>from</em> the value, so is useful for ping-ponging between two numbers.</li>
-<li><code class="codehilite">alias</code> is overloaded with several functions:</li>
+<li><code class="codehilite">alias</code> is overloaded with several functions:<ul>
 <li>Its basic use is to create a new name for another command, while retaining any parameters you type in. Good for making shorter names for commands you use a lot.  Use with <code class="codehilite">store_text</code> and <code class="codehilite">exec</code> to make your own commands from scripts.</li>
 <li>It can also be used to attach commands to each value of a toggle variable, which will run when the variable is set to that value.  You can see this in the example script above, with the <code class="codehilite">private_room</code> variable.</li>
 <li>Finally, if there are a collection of commands sharing a prefix which you want to make short versions of you can use <code class="codehilite">*</code> to do so (e.g. <code class="codehilite">alias cam_* spectator_camera_*</code>)</li>
+</ul>
+</li>
 <li><code class="codehilite">append</code> will append text to a text variable.  If you only provide the variable parameter, without text, it will append the last entered command. This is useful for adding commands to <code class="codehilite">autoexec</code>; you can try the command out in the console until you get it correct, before appending it to the script.</li>
 <li><code class="codehilite">bind</code>, <code class="codehilite">unbind</code> control attaching commands to keypresses.  You may use <code class="codehilite">+</code> and <code class="codehilite">-</code> before the keycode to specify if you want it to trigger on <em>press</em> or <em>release</em>, respectively. <a href="https://docs.unity3d.com/ScriptReference/KeyCode.html">(list of Unity keycodes)</a></li>
 <li><code class="codehilite">broadcast</code> will broadcast the provided message.</li>
