@@ -2115,13 +2115,13 @@ ui_button <span class="m">3</span> <span class="m">600</span> -60 cam_load <span
 <li><code class="codehilite">{</code> and <code class="codehilite">}</code> - If you surround a variable with these then it will be evaluated during the script execution; you may add additional braces to delay evaluation.  Whenever a command being executed has braces in its parameters it will either strip one layer off (if there is more than one), or evaluate the enclosed variable (if there is only one layer); e.g. <code class="codehilite"><span class="cp">{{</span><span class="nv">hovered</span><span class="cp">}}</span><span class="x"></span></code> will become <code class="codehilite">{hovered}</code>, whereas <code class="codehilite">{hovered}</code> will become the component currently under the mouse pointer.  You can see this used in the above <code class="codehilite">autoexec</code>.  Another example; say you wanted a binding which could add a binding to another key.  We add this line to the <code class="codehilite">autoexec</code>:
 <div class="codehilite"><pre><span></span><span class="nb">bind</span> right_shift <span class="nb">bind</span> right_control spectator_camera_target <span class="o">{{{</span>hovered<span class="o">}}}</span>
 </pre></div>
-When the <code class="codehilite">autoexec</code> is executed the first layer of braces will be removed, so the command bound to <code class="codehilite">right_shift</code> will be:
+When the <code class="codehilite">autoexec</code> is executed and the first <code class="codehilite">bind</code> is called, the first layer of braces will be removed, so the command bound to right shift will be:
 <div class="codehilite"><pre><span></span><span class="nb">bind</span> right_control spectator_camera_target <span class="o">{{</span>hovered<span class="o">}}</span>
 </pre></div>
-Then when you hit right shift, it will resolve so that the command bound to <code class="codehilite">right_control</code> is:
-<div class="codehilite"><pre><span></span><span class="nb">bind</span> right_control spectator_camera_target <span class="o">{</span>hovered<span class="o">}</span>
+Then when you hit right shift, it will resolve so that the command bound to right control is:
+<div class="codehilite"><pre><span></span>spectator_camera_target <span class="o">{</span>hovered<span class="o">}</span>
 </pre></div>
-Then, when you hit right control while hovering over the object, the hovered object will be evaulated and passed to <code class="codehilite">spectator_camera_target</code>.</li>
+Now when you hit right control while hovering over the object, the hovered object will be evaulated and passed to <code class="codehilite">spectator_camera_target</code>.</li>
 </ul>
 <h3 id="script-commands">Script commands<a class="headerlink" href="#script-commands" title="Permanent link"> </a></h3>
 <p>The <code class="codehilite">skip</code> command can be used inside a script to jump forward to a label.  It may not be used to jump backwards.  You may give it an optional <code class="codehilite">variable</code> and then further optional <code class="codehilite">comparison</code> and <code class="codehilite">value</code> parameters: if you do it will only skip if the variable is non-zero, or the result of the comparison is true.</p>
