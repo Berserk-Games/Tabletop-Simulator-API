@@ -151,11 +151,13 @@ TTS listens for a JSON message with an ID of 1 containing an array of the Lua Sc
     "messageID": 1,
     "scriptStates": [
         {
+	    "name": "Global",
             "guid": "-1",
             "script": "...",
             "ui": "..."
         },
         {
+	    "name": "Block Rectangle",
             "guid": "a0b2d5",
             "script": "..."
         },
