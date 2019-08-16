@@ -2131,13 +2131,15 @@ chat_tab_system
 <span class="c1"># need to add additional { } so hovered isn&#39;t evaluated immediately</span>
 <span class="nb">bind</span> semicolon cam_look_at <span class="o">{{</span>hovered<span class="o">}}</span>
 
-<span class="c1"># make period toggle object tracking, and comma set tracked object</span>
-<span class="nb">bind</span> period !cam_tracking
+<span class="c1"># make alt+comma toggle object tracking, and comma set tracked object</span>
+<span class="nb">bind</span> alt+comma !cam_tracking
 <span class="nb">bind</span> comma cam_target <span class="o">{{</span>hovered<span class="o">}}</span>
 
 <span class="c1"># make right shift cycle through first 3 camera positions</span>
 <span class="nb">alias</span> next_camera add cam_load_zero <span class="m">1</span> <span class="m">3</span>
+<span class="nb">alias</span> prev_camera add cam_load_zero -1 <span class="m">3</span>
 <span class="nb">bind</span> right_shift next_camera
+<span class="nb">bind</span> alt+right_shift prev_camera
 
 <span class="c1"># make some buttons to load specific camera positions</span>
 ui_button <span class="m">1</span> <span class="m">600</span>   <span class="m">0</span> cam_load <span class="m">1</span>
@@ -2271,7 +2273,7 @@ end tap_script
 </ul>
 </li>
 <li><code class="codehilite">append</code> will append text to a text variable.  If you only provide the variable parameter, without text, it will append the last entered command. This is useful for adding commands to <code class="codehilite">autoexec</code>; you can try the command out in the console until you get it correct, before appending it to the script.</li>
-<li><code class="codehilite">bind</code>, <code class="codehilite">unbind</code> control attaching commands to keypresses.  You may use <code class="codehilite">+</code> and <code class="codehilite">-</code> before the keycode to specify if you want it to trigger on <em>press</em> or <em>release</em>, respectively. <a href="https://docs.unity3d.com/ScriptReference/KeyCode.html">(list of Unity keycodes)</a></li>
+<li><code class="codehilite">bind</code>, <code class="codehilite">unbind</code> control attaching commands to keypresses.  You may use <code class="codehilite">+</code> and <code class="codehilite">-</code> before the keycode to specify if you want it to trigger on <em>press</em> or <em>release</em>, respectively. You may use key modifiers like <code class="codehilite">ctrl+comma</code> <a href="https://docs.unity3d.com/ScriptReference/KeyCode.html">(list of Unity keycodes)</a></li>
 <li><code class="codehilite">broadcast</code> will broadcast the provided message.</li>
 <li><code class="codehilite">chat_font_size</code> sets the size of the font in the chat / console window.</li>
 <li><code class="codehilite">clear</code> will clear a text variable.</li>
