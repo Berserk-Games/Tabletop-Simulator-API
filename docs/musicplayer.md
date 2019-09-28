@@ -1,6 +1,6 @@
 MusicPlayer, a static global class, is the in-game music player. It allows you to control the music player in the same way that the in-game music player user interface does.
 
-Example usage: `MusicPlayer.repeat = true`.
+Example usage: `MusicPlayer.repeat_track = true`.
 
 ##Member Variables
 
