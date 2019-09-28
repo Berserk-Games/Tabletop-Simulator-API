@@ -2646,7 +2646,7 @@
 <td><a href="#onobjectdestroy"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>onObjectDrop(<a href="/types"><span class="tag str"></span></a>&nbsp;player_color, <a href="/types"><span class="tag obj"></span></a>&nbsp;dropped_object)</td>
+<td>onObjectDrop(<a href="/types"><span class="tag obj"></span></a>&nbsp;dropped_object, <a href="/types"><span class="tag str"></span></a>&nbsp;player_color)</td>
 <td>Called whenever any object is dropped by a player.</td>
 <td><a href="#onobjectdrop"><span class="i"></span></a></td>
 </tr>
@@ -2916,13 +2916,13 @@
 <h3 id="onobjectdrop">onObjectDrop(...)<a class="headerlink" href="#onobjectdrop" title="Permanent link"> </a></h3>
 <p>Called whenever any object is dropped by a player.</p>
 <div class="admonition info">
-<p class="admonition-title">onObjectDrop(player_color, dropped_object)</p>
+<p class="admonition-title">onObjectDrop(dropped_object, player_color)</p>
 <ul>
-<li><a href="/types"><span class="tag str"></span></a>&nbsp;<strong>player_color</strong>: <a href="player-color">Player Color</a> of the Player who dropped the Object.</li>
 <li><a href="/types"><span class="tag obj"></span></a>&nbsp;<strong>dropped_object</strong>: The Object in game which was dropped.</li>
+<li><a href="/types"><span class="tag str"></span></a>&nbsp;<strong>player_color</strong>: <a href="player-color">Player Color</a> of the Player who dropped the Object.</li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectDrop</span><span class="p">(</span><span class="n">colorName</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectDrop</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">colorName</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">colorName</span> <span class="o">..</span> <span class="s2">&quot; dropped &quot;</span> <span class="o">..</span> <span class="n">obj</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span>
 <span class="kr">end</span>
 </pre></div>

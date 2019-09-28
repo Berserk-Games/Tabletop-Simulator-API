@@ -2188,7 +2188,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a class="anchor" id="repeat"></a>repeat</td>
+<td><a class="anchor" id="repeat_track"></a>repeat_track</td>
 <td>If the current audioclip should be repeated.</td>
 <td align="left"><a href="/types"><span class="tag boo"></span></a></td>
 </tr>
@@ -2298,8 +2298,8 @@
 <span class="c1">--Pauses the currently playing audioclip after 1000 frames.</span>
 <span class="kr">function</span> <span class="nf">PauseMusic</span><span class="p">()</span>
   <span class="c1">--Wait 1000 frames</span>
-  <span class="kr">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span> <span class="kr">do</span> 
-    <span class="nb">coroutine.yield</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
+  <span class="kr">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span> <span class="kr">do</span>
+    <span class="nb">coroutine.yield</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
   <span class="kr">end</span>
 
   <span class="c1">--Pause audioclip</span>
@@ -2318,7 +2318,7 @@
 
 <hr />
 <h4 id="skipback">skipBack()<a class="headerlink" href="#skipback" title="Permanent link"> </a></h4>
-<p><a href="/types"><span class="ret boo"></span></a>&nbsp;Skips to the beginning of the audioclip or if the play time is less than 3 seconds to the previous audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false. </p>
+<p><a href="/types"><span class="ret boo"></span></a>&nbsp;Skips to the beginning of the audioclip or if the play time is less than 3 seconds to the previous audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false.</p>
 <div class="codehilite"><pre><span></span><span class="c1">--Example Usage</span>
 <span class="n">MusicPlayer</span><span class="p">.</span><span class="n">skipBack</span><span class="p">()</span>
 </pre></div>
@@ -2346,7 +2346,7 @@
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="c1">--Example Usage</span>
-<span class="n">parameters</span> <span class="o">=</span> 
+<span class="n">parameters</span> <span class="o">=</span>
 <span class="p">{</span>
     <span class="n">url</span><span class="o">=</span><span class="s2">&quot;SOME URL HERE&quot;</span><span class="p">,</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">&quot;SOME TITLE HERE&quot;</span>
@@ -2384,7 +2384,7 @@
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="c1">--Example Usage</span>
-<span class="n">parameters</span> <span class="o">=</span> 
+<span class="n">parameters</span> <span class="o">=</span>
 <span class="p">{</span>
   <span class="p">{</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;SOME URL HERE 1&quot;</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;SOME TITLE HERE 1&quot;</span><span class="p">},</span>
   <span class="p">{</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;SOME URL HERE 2&quot;</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;SOME TITLE HERE 2&quot;</span><span class="p">},</span>
