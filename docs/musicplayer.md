@@ -8,7 +8,7 @@ Like [Object member variables](../object/#member-variables), MusicPlayer has its
 
 Variable | Description | Type
 -- | -- | :--
-<a class="anchor" id="repeat"></a>repeat | If the current audioclip should be repeated.  | [<span class="tag boo"></span>](/types)
+<a class="anchor" id="repeat_track"></a>repeat_track | If the current audioclip should be repeated.  | [<span class="tag boo"></span>](/types)
 <a class="anchor" id="shuffle"></a>shuffle | If the playlist should play shuffled. | [<span class="tag boo"></span>](/types)
 <a class="anchor" id="playlistIndex"></a>playlistIndex | Current index of the playlist. -1 if no playlist audioclip is playing. | [<span class="tag int"></span>](/types)
 <a class="anchor" id="loaded"></a>loaded | If all players loaded the current audioclip. Read only. | [<span class="tag boo"></span>](/types)
@@ -50,10 +50,10 @@ function PlayMusic()
   while MusicPlayer.loaded == false do
       coroutine.yield(0)
   end
-  
+
   --Play audioclip.
   MusicPlayer.play()
-  
+
   return 1
 end
 ```
@@ -71,13 +71,13 @@ startLuaCoroutine(self, "PauseMusic")
 --Pauses the currently playing audioclip after 1000 frames.
 function PauseMusic()
   --Wait 1000 frames
-  for i=1,1000 do 
-    coroutine.yield(0) 
+  for i=1,1000 do
+    coroutine.yield(0)
   end
-  
+
   --Pause audioclip
   MusicPlayer.pause()
-  
+
   return 1
 end
 ```
@@ -97,7 +97,7 @@ MusicPlayer.skipForward()
 
 ####skipBack()
 
-[<span class="ret boo"></span>](/types)&nbsp;Skips to the beginning of the audioclip or if the play time is less than 3 seconds to the previous audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false. 
+[<span class="ret boo"></span>](/types)&nbsp;Skips to the beginning of the audioclip or if the play time is less than 3 seconds to the previous audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false.
 
 ``` Lua
 --Example Usage
@@ -132,7 +132,7 @@ currentAudioclip = MusicPlayer.getCurrentAudioclip()
 
 ``` Lua
 --Example Usage
-parameters = 
+parameters =
 {
 	url="SOME URL HERE",
 	title="SOME TITLE HERE"
@@ -173,7 +173,7 @@ playlist = MusicPlayer.getPlaylist()
 
 ``` Lua
 --Example Usage
-parameters = 
+parameters =
 {
   {url="SOME URL HERE 1",title="SOME TITLE HERE 1"},
   {url="SOME URL HERE 2",title="SOME TITLE HERE 2"},
