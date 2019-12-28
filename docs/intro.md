@@ -52,26 +52,26 @@ Defining class requires further knowledge on object-oriented programming to real
 ####Object Classes
 Associated with in-game Objects.
 
-* [Clock](clock)
-* [Counter](counter)
-* [Object](object)
-* [AssetBundle](assetbundle)
-* [RPGFigurine](rpgfigurine)
-* [TextTool](texttool)
+* [Clock](../clock)
+* [Counter](../counter)
+* [Object](../object)
+* [AssetBundle](../assetbundle)
+* [RPGFigurine](../rpgfigurine)
+* [TextTool](../texttool)
 
 ####Static Classes
 Associated with in-game properties and systems.
 
-* [JSON](json)
-* [Player](player)
-* [WebRequest](webrequest)
-* [Physics](physics)
-* [Lighting](lighting)
-* [Turns](turns)
-* [Notes](notes)
-* [UI](ui)
-* [Wait](wait)
-* [Web Request](webrequest)
+* [JSON](../json)
+* [Player](../player)
+* [WebRequest](../webrequest)
+* [Physics](../physics)
+* [Lighting](../lighting)
+* [Turns](../turns)
+* [Notes](../notes)
+* [UI](../ui)
+* [Wait](../wait)
+* [Web Request](../webrequest)
 
 For more information on what a class is, you can refer to the relevant [Lua Documentation](https://www.lua.org/pil/16.1.html).
 
