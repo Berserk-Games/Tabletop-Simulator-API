@@ -9,6 +9,7 @@ These are functions which are triggered by an event taking place in-game. They w
 
 Function Name | Description | &nbsp;
 -- | -- | --
+filterObjectEnterContainer([<span class="tag obj"></span>](/types)&nbsp;container, [<span class="tag obj"></span>](/types)&nbsp;enter_object) | Called when an object attempts to enter any container. The object is prevented from entering unless "true" is returned. | [<span class="i"></span>](#filterobjectentercontainer)
 onChat([<span class="tag str"></span>](/types)&nbsp;message, [<span class="tag pla"></span>](/types)&nbsp;sender) | Called when a chat message is sent in game chat. | [<span class="i"></span>](#onchat)
 onExternalMessage([<span class="tag tab"></span>](/types)&nbsp;data) | Called when an external script editor (like [Atom](atom)) sends a message back to the game. Used for custom editor functionality. | [<span class="i"></span>](#onexternalmessage)
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [<span class="i"></span>](#onfixedupdate)
