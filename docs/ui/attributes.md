@@ -1,4 +1,4 @@
-boundaryAs mentioned in the [Introduction](xml/introUI), attributes are modifiers that can be applied to elements. They can be applied to individual elements or to whole groups of them.
+As mentioned in the [Introduction](xml/introUI), attributes are modifiers that can be applied to elements. They can be applied to individual elements or to whole groups of them.
 
 !!!important
     They consists of two parts, a **tag** and a **value**. ***The value is always in quotation marks.***
