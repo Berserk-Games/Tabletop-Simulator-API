@@ -3,7 +3,7 @@ In this section, you will find details on all events/classes/functions specific 
 ##Using TTS Documentation
 
 ###Left Column
-This is the top-level list of classes and other information needed when scripting with Lua in Tabletop Simulator. Event, Base and Object are the three pages you will use the most, with the rest referring to niche information you can access as you go. It is a good idea to familiarize yourself with the contents of those three pages in order to have a good high-level understanding of off what scripting is capable of doing.
+This is the top-level list of classes and other information needed when scripting with Lua in Tabletop Simulator. Event, Base and Object are the three pages you will use the most, with the rest referring to niche information you can access as you go. It is a good idea to familiarize yourself with the contents of those three pages in order to have a good high-level understanding of what scripting is capable of doing.
 
 ###Right Column
 The Table of Contents will lay out the contents of the page you are on. It always starts with high-level summary information first and, if needed, detailed information towards the bottom. The <span class="i"></span> next to a summary element will take you directly down to the relevant detailed explanation below.
@@ -20,7 +20,7 @@ Just click the link in the pencil icon in the top-right of an article, or visit 
 ##TTS Terms
 
 ###Object
-On in-game physical Object that currently exists in the scene. If an Object is placed inside of a bag/deck/etc, it stops existing and is no longer in the scene until it is pulled back out.
+An in-game physical Object that currently exists in the scene. If an Object is placed inside of a bag/deck/etc, it stops existing and is no longer in the scene until it is pulled back out.
 
 ###Player
 A person in the game. Each Player is assigned a color, with spectators being "Grey". If you are attempting to identify a Player, you would use the color of the seat they are in to do so.
@@ -29,7 +29,7 @@ A person in the game. Each Player is assigned a color, with spectators being "Gr
 The Global script, which is a script that is not attached to any particular Object. It is always present during a game.
 
 ###Object Script
-A script that is attached to an in-game Objecet, and is saved as part of it. This is similar to any other property like its scale or tint. Some functions ask for an Object reference in order to attempt to run a function on it. In these cases, Global (exactly as written here) is also a valid Object reference.
+A script that is attached to an in-game Object, and is saved as part of it. This is similar to any other property like its scale or tint. Some functions ask for an Object reference in order to attempt to run a function on it. In these cases, Global (exactly as written here) is also a valid Object reference.
 
 ###GUID
 In Tabletop Simulator, a GUID is a unique 6-character [string](types)&nbsp;which can be used to identify in-game [Objects](object). GUIDs are automatically assigned when objects exist within the scene.
@@ -47,7 +47,7 @@ If an object is duplicated, it will sometimes have the same GUID for 1 frame bef
 
 ###Classes
 
-Defining class requires further knowledge on object-oriented programming to really understand. However for the purposes of Tabletop Simulator Lua scripting, you can think of a class as a standard or collection that handles categories of objects.
+Defining classes requires further knowledge of object-oriented programming to really understand. However for the purposes of Tabletop Simulator Lua scripting, you can think of a class as a standard or collection that handles categories of objects.
 
 ####Object Classes
 Associated with in-game Objects.
