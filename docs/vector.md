@@ -40,7 +40,7 @@ end
 
 ##Element access summary
 
-Apart from being able to access elements using x, y, z and 1, 2, 3 keys directly, following methods directly modify vector components.
+In addition to accessing vector components by their numeric indices (1, 2, 3) and textual identifiers (x, y, z), the following methods may also be utilized.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
