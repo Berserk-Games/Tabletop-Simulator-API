@@ -120,6 +120,15 @@
     content: "object";
 }
 
+/*Self*/
+.sel {
+    color: #000000;
+    background-color: #fa983a;
+}
+.sel:after {
+    content: "self";
+}
+
 /*Var*/
 .var {
     color: #000000;

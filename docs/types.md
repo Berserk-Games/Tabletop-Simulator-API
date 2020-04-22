@@ -11,6 +11,7 @@ Tag | Type | Description | Example
 [<span class="tag str"></span>](/types)&nbsp;| string | A series of characters. | `#!lua "Hello."`
 [<span class="tag tab"></span>](/types)&nbsp;| table | A container with keys and values. | `#!lua {["key"]="value", true, 5}`
 [<span class="tag obj"></span>](/types)&nbsp;| object | An in-game physical Object. Sometimes Global. | `#!lua Global or self`
+[<span class="tag sel"></span>](/types)&nbsp;| self | A reference to the current Lua Object. | `#!lua self`
 [<span class="tag pla"></span>](/types)&nbsp;| player | An in-game Player. | `#!lua Player["White"]`
 [<span class="tag var"></span>](/types)&nbsp;| variable | A combination of other types. |
 
