@@ -14,6 +14,9 @@ onChat([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag
 onExternalMessage([<span class="tag tab"></span>](types.md)&nbsp;data) | Called when an external script editor (like [Atom](atom.md)) sends a message back to the game. Used for custom editor functionality. | [<span class="i"></span>](#onexternalmessage)
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [<span class="i"></span>](#onfixedupdate)
 onLoad([<span class="tag str"></span>](types.md)&nbsp;save_state) | Called when a game save is finished loading every Object. It is where most setup code will go. | [<span class="i"></span>](#onload)
+onObjectCollisionEnter([<span class="tag obj"></span>](types.md)&nbsp;registered_object, [<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called when an Object starts colliding with a [collision registered](object.md#registercollisions) Object. | [<span class="i"></span>](#onobjectcollisionenter)
+onObjectCollisionExit([<span class="tag obj"></span>](types.md)&nbsp;registered_object, [<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called when an Object stops colliding with a [collision registered](object.md#registercollisions) Object. | [<span class="i"></span>](#onobjectcollisionexit)
+onObjectCollisionStay([<span class="tag obj"></span>](types.md)&nbsp;registered_object, [<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called **every frame** that an Object is colliding with a [collision registered](object.md#registercollisions) Object. | [<span class="i"></span>](#onobjectcollisionstay)
 onObjectDestroy([<span class="tag obj"></span>](types.md)&nbsp;dying_object) | Called whenever any object is destroyed. | [<span class="i"></span>](#onobjectdestroy)
 onObjectDrop([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag obj"></span>](types.md)&nbsp;dropped_object) | Called whenever any object is dropped by a player. | [<span class="i"></span>](#onobjectdrop)
 onObjectEnterScriptingZone([<span class="tag obj"></span>](types.md)&nbsp;zone, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when any object enters any scripting zone. | [<span class="i"></span>](#onobjectenterscriptingzone)
@@ -164,6 +167,100 @@ end
     ```
 ---
 
+###onObjectCollisionEnter(...)
+
+This function is called when an Object starts colliding with a [collision registered](object.md#registercollisions) Object.
+
+!!!info "onObjectCollisionEnter(registered_object, collision_info)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**registered_object**: The object registered to receive collision events.
+	* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info**: A table containing data about the collision.
+		* [<span class="tag obj"></span>](types.md)&nbsp;**collision_info.*collision_object***: Object coming into contact with `registered_object`.
+		* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info.*contact_points***: Table/array full of contact points, where each 3D point is represented by a (number indexed) table, _not_ a [Vector](vector.md).
+		* [<span class="tag tab"></span>](types.md) **collision_info.*relative_velocity***: Table (number indexed) representation of a 3D vector (but _not_ a [Vector](vector.md)) indicating the direction and magnitude of the collision.
+
+``` Lua
+-- Example Usage
+function onObjectCollisionEnter(registered_object, info)
+	print(tostring(info.collision_object) .. " collided with " .. tostring(object))
+end
+```
+``` Lua
+-- Example collision_info table
+{
+	collision_object = objectReference,
+	contact_points = {
+		{5, 0, -2}
+	},
+	relative_velocity = {0, 20, 0}
+}
+```
+
+---
+
+
+###onObjectCollisionExit(...)
+
+This function is called when an Object stops colliding with a [collision registered](object.md#registercollisions) Object.
+
+!!!info "onObjectCollisionExit(registered_object, collision_info)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**registered_object**: The object registered to receive collision events.
+	* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info**: A table containing data about the collision.
+		* [<span class="tag obj"></span>](types.md)&nbsp;**collision_info.*collision_object***: Object leaving contact with `registered_object`.
+		* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info.*contact_points***: Table/array full of contact points, where each 3D point is represented by a (number indexed) table, _not_ a [Vector](vector.md).
+		* [<span class="tag tab"></span>](types.md) **collision_info.*relative_velocity***: Table (number indexed) representation of a 3D vector (but _not_ a [Vector](vector.md)) indicating the velocity of the object that has moved out of contact.
+
+``` Lua
+-- Example Usage
+function onObjectCollisionExit(registered_object, info)
+	print(tostring(info.collision_object) .. " stopped colliding with " .. tostring(object))
+end
+```
+``` Lua
+-- Example collision_info table
+{
+	collision_object = objectReference,
+	contact_points = {
+		{5, 0, -2}
+	},
+	relative_velocity = {0, 20, 0}
+}
+```
+
+---
+
+
+###onObjectCollisionStay(...)
+
+This function is called **every frame** that an Object is colliding with a [collision registered](object.md#registercollisions) Object.
+
+!!!warning
+	This is a very expensive function and can easily slow/crash your game if misused. Use with caution.
+
+!!!info "onObjectCollisionStay(registered_object, collision_info)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**registered_object**: The object registered to receive collision events.
+    * [<span class="tag tab"></span>](types.md)&nbsp;**collision_info**: A table containing data about the collision.
+		* [<span class="tag obj"></span>](types.md)&nbsp;**collision_info.*collision_object***: Object coming into contact with `registered_object`.
+		* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info.*contact_points***: Table/array full of contact points, where each 3D point is represented by a (number indexed) table, _not_ a [Vector](vector.md).
+		* [<span class="tag tab"></span>](types.md) **collision_info.*relative_velocity***: Table (number indexed) representation of a 3D vector (but _not_ a [Vector](vector.md)) indicating the direction and magnitude of the collision.
+
+``` Lua
+-- Example Usage
+function onObjectCollisionStay(registered_object, info)
+	print(tostring(info.collision_object) .. " still colliding with " .. tostring(object))
+end
+```
+``` Lua
+-- Example collision_info table
+{
+	collision_object = objectReference,
+	contact_points = {
+		{5, 0, -2}
+	},
+	relative_velocity = {0, 20, 0}
+}
+```
+
+---
 
 ###onObjectDestroy(...)
 
@@ -538,25 +635,24 @@ end
 This function is called when an Object starts colliding with the Object the function is on. Does not work in Global.
 
 !!!info "onCollisionEnter(collision_info)"
-	* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info**: A Table containing data on colliding object.
+	* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info**: A table containing data about the collision.
 		* [<span class="tag obj"></span>](types.md)&nbsp;**collision_info.*collision_object***: Object coming into contact with `self`.
-		* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info.*contact_points***: Sub-table full of the Vectors where contact took place.
-		* [<span class="tag vec"></span>](types.md#vector) **collision_info.*relative_velocity***: Direction and magnitude at the time of collision.
-
+		* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info.*contact_points***: Table/array full of contact points, where each 3D point is represented by a (number indexed) table, _not_ a [Vector](vector.md).
+		* [<span class="tag tab"></span>](types.md) **collision_info.*relative_velocity***: Table (number indexed) representation of a 3D vector (but _not_ a [Vector](vector.md)) indicating the direction and magnitude of the collision.
 ``` Lua
 -- Example Usage
 function onCollisionEnter(info)
-	print(info.collision_object)
+	print(tostring(info.collision_object) .. " collided with " .. tostring(self))
 end
 ```
 ``` Lua
--- Example returned table
+-- Example collision_info table
 {
-	collision_object = objectReference
+	collision_object = objectReference,
 	contact_points = {
-		{x=5, y=0, z=-2, 5, 0, -2},
-	}
-	relative_velocity = {x=0, y=20, z=0, 0, 20, 0}
+		{5, 0, -2}
+	},
+	relative_velocity = {0, 20, 0}
 }
 ```
 
@@ -568,25 +664,25 @@ end
 This function is called when an Object stops colliding with the Object the function is on. Does not work in Global.
 
 !!!info "onCollisionExit(collision_info)"
-	* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info**: A Table containing data on colliding object.
+	* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info**: A table containing data about the collision.
 		* [<span class="tag obj"></span>](types.md)&nbsp;**collision_info.*collision_object***: Object leaving contact with `self`.
-		* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info.*contact_points***: Sub-table full of the Vectors where contact last broke off.
-		* [<span class="tag vec"></span>](types.md#vector) **collision_info.*relative_velocity***: Direction and magnitude of the departing Object.
+		* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info.*contact_points***: Table/array full of contact points, where each 3D point is represented by a (number indexed) table, _not_ a [Vector](vector.md).
+		* [<span class="tag tab"></span>](types.md) **collision_info.*relative_velocity***: Table (number indexed) representation of a 3D vector (but _not_ a [Vector](vector.md)) indicating the velocity of the object that has moved out of contact.
 
 ``` Lua
 -- Example Usage
 function onCollisionExit(info)
-	print(info.collision_object)
+	print(tostring(info.collision_object) .. " stopped colliding with " .. tostring(self))
 end
 ```
 ``` Lua
--- Example returned table
+-- Example collision_info table
 {
-	collision_object = objectReference
+	collision_object = objectReference,
 	contact_points = {
-		{x=5, y=0, z=-2, 5, 0, -2},
-	}
-	relative_velocity = {x=0, y=20, z=0, 0, 20, 0}
+		{5, 0, -2}
+	},
+	relative_velocity = {0, 20, 0}
 }
 ```
 
@@ -600,26 +696,26 @@ This function is called **every frame** that an Object is colliding with the Obj
 !!!warning
 	This is a very expensive function and can easily slow/crash your game if misused. Use with caution.
 
-!!!info "onCollisionExit(collision_info)"
-	* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info**: A Table containing data on colliding object.
+!!!info "onCollisionStay(collision_info)"
+	* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info**: A table containing data about the collision.
 		* [<span class="tag obj"></span>](types.md)&nbsp;**collision_info.*collision_object***: Object coming into contact with `self`.
-		* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info.*contact_points***: Sub-table full of the Vectors where contact is taking place.
-		* [<span class="tag vec"></span>](types.md#vector) **collision_info.*relative_velocity***: Direction and magnitude of the Object, currently.
+		* [<span class="tag tab"></span>](types.md)&nbsp;**collision_info.*contact_points***: Table/array full of contact points, where each 3D point is represented by a (number indexed) table, _not_ a [Vector](vector.md).
+		* [<span class="tag tab"></span>](types.md) **collision_info.*relative_velocity***: Table (number indexed) representation of a 3D vector (but _not_ a [Vector](vector.md)) indicating the direction and magnitude of the collision.
 
 ``` Lua
 -- Example Usage
 function onCollisionStay(info)
-	print(info.collision_object)
+	print(tostring(info.collision_object) .. " still colliding with " .. tostring(self))
 end
 ```
 ``` Lua
--- Example returned table
+-- Example collision_info table
 {
-	collision_object = objectReference
+	collision_object = objectReference,
 	contact_points = {
-		{x=5, y=0, z=-2, 5, 0, -2},
-	}
-	relative_velocity = {x=0, y=20, z=0, 0, 20, 0}
+		{5, 0, -2}
+	},
+	relative_velocity = {0, 20, 0}
 }
 ```
 

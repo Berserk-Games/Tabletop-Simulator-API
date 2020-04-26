@@ -182,6 +182,7 @@ dealToColorWithOffset([<span class="tag vec"></span>](types.md#vector)&nbsp;offs
 jointTo([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag tab"></span>](types.md)&nbsp;parameters) | Joints objects together, in the same way the Joint tool does. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#jointto)
 putObject([<span class="tag obj"></span>](types.md)&nbsp;put_object) | Places an object into a container (chip stacks/bags/decks). | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#putobject)
 <a class="anchor" id="randomize"></a>randomize([<span class="tag str"></span>](types.md)&nbsp;color) | Shuffles deck/bag, rolls dice/coin, lifts other objects into the air. Same as pressing `R` by default. If the optional parameter `color` is used, this function will trigger `onObjectRandomized()`, passing that player color. | [<span class="ret boo"></span>](types.md) |
+registerCollisions([<span class="tag boo"></span>](types.md)&nbsp;stay) | Registers this object for Global collision events. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#registercollisions)
 reload() | Returns Object reference of itself after it respawns itself. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#reload)
 <a class="anchor" id="reset"></a>reset() | Resets this Object. Resetting a Deck brings all the Cards back into it. Resetting a Bag clears its contents (works for both Loot and Infinite Bags). | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="roll"></a>roll() | Rolls dice/coins. | [<span class="ret boo"></span>](types.md) |
@@ -189,6 +190,7 @@ reload() | Returns Object reference of itself after it respawns itself. | [<span
 <a class="anchor" id="shufflestates"></a>shuffleStates() | Returns an Object reference to a new [state](http://berserk-games.com/knowledgebase/creating-states/) after randomly selecting and changing to one. | [<span class="ret obj"></span>](types.md) |
 split([<span class="tag int"></span>](types.md)&nbsp;piles) | Splits a deck, as evenly as possible, into a number of piles. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#split)
 takeObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Returns an Object reference of Object taken from a container (bag/deck/chip stack) and placed into the world. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#takeobject)
+unregisterCollisions() | Unregisters this object for Global collision events. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#unregistercollisions)
 
 
 
@@ -1362,6 +1364,17 @@ self.putObject(obj)
 ---
 
 
+####registerCollisions(...)
+
+[<span class="ret boo"></span>](types.md)&nbsp;Registers this object for Global collision events, such as [onObjectCollisionEnter](event.md#onobjectcollisionenter). Always returns `true`.
+
+!!!info "registerCollision(stay)"
+	* [<span class="tag boo"></span>](types.md) **stay**: Whether we should register for [onObjectCollisionStay](event.md#onobjectcollisionstay). Stay events may negatively impact performance, only set this to `true` if absolutely necessary.
+        * {>>Optional, defaults to `false`.<<}
+
+---
+
+
 ####reload()
 
 [<span class="ret obj"></span>](types.md)&nbsp;Returns Object reference of itself after it respawns itself. This function causes the Object to be deleted and respawned instantly to refresh it, so its old Object reference will no longer be valid.
@@ -1460,6 +1473,15 @@ end
 
 ???tip "Tip for using index to pull Object"
 	When you take an Object from the container, all higher indexes are reduced by 1 instantly. If you pull more than once Object at once by their index, you must account for this index changing.
+
+---
+
+
+####unregisterCollisions(...)
+
+[<span class="ret boo"></span>](types.md)&nbsp;Unregisters this object for Global collision events. Returns `true` if the object was previously registered, `false` otherwise.
+
+!!!info "unregisterCollision()"
 
 ---
 
