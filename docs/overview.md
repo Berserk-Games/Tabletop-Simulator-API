@@ -5,13 +5,13 @@ You can access the in-game Lua Editor by clicking on **Scripting** on the top ba
 
 The advantage of this method is it requires no additional setup. However it lacks many features included in some of the other options.
 
-![Overview](/img/overview1.png)
+![Overview](img/overview1.png)
 
 
 ### Official Atom Plugin
-The preferred method of writing Lua scripts is using our Official Plugin for the Atom Text Editor. It has all of the functionality of the in-game editor plus line numbers, syntax highlighting, autocomplete, and a modern look. [Click here for setup instructions.](atom)
+The preferred method of writing Lua scripts is using our Official Plugin for the Atom Text Editor. It has all of the functionality of the in-game editor plus line numbers, syntax highlighting, autocomplete, and a modern look. [Click here for setup instructions.](atom.md)
 
-![Aton Plugin](/img/overview2.png)
+![Aton Plugin](img/overview2.png)
 
 
 ### External Editor API

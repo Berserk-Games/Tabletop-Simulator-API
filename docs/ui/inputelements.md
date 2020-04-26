@@ -1,7 +1,7 @@
 All input elements allow for the XML UI to interact with the Lua scripts in the game instance.
 
 !!!tip
-    Be sure to check out the [**UI section of the Lua Scripting API**](/ui) for how to receive the input from these element types. With Lua scripting, you can even modify the UI elements!
+    Be sure to check out the [**UI section of the Lua Scripting API**](../ui.md) for how to receive the input from these element types. With Lua scripting, you can even modify the UI elements!
 
 ##Targeting Triggers
 When using an attribute that triggers scripting, like onValueChanged or onClick, the UI will target a default location. Global UI targets Global script, Object UI targets the Object's script. This behavior can be overwritten. For example:
@@ -19,7 +19,7 @@ Now when the button is clicked, it will still try to activate `function uiClickF
 ```
 And if this was in an Object's UI, it would direct the function activation to Global instead of that Object.
 
-Remember you can also use the [Id attribute](attributes#general-attributes) to identify which UI element triggered the function.
+Remember you can also use the [Id attribute](attributes.md#general-attributes) to identify which UI element triggered the function.
 
 ---
 
@@ -50,16 +50,16 @@ onValueChanged | Each time the text is changed, a Lua function with this name wi
 onEndEdit | When the input box is deselected, a Lua function with this name will be triggered. | string | *(none)*
 text | The string in the text box, if any. Is the value sent to onValueChanged's or onEndEdit's function. | string | *(none)*
 placeholder | A string that is semi-visible when there is no text in the input. | string | *(none)*
-interactable |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
-colors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
+interactable |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
+colors |  | [<span class="tag xmlcb"></span>](attributes.md#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
 lineType |  | <ul><li>SingleLine</li><li>MultiLineSubmit</li><li>MultiLineNewLine</li></ul> | `SingleLine`
 characterValidation |  | <ul><li>None</li><li>Integer</li><li>Decimal</li><li>Alphanumeric</li><li>Name</li><li>EmailAddress</li></ul> | `None`
 caretBlinkRate |  | float | `0.85`
 caretWidth |  | float | `1`
-caretColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#323232`
-selectionColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `rgba(0.65,0.8,1,0.75)`
-readOnly |  | [<span class="tag boo"></span>](attributes#attribute-types) | false
-textColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#323232`
+caretColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#323232`
+selectionColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `rgba(0.65,0.8,1,0.75)`
+readOnly |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | false
+textColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#323232`
 characterLimit |  | int | `0` (no limit)
 
 Example:
@@ -77,14 +77,14 @@ A button. Is able to send a trigger event.
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 onClick | When clicked, a Lua function with this name will be triggered. | string | *(none)*
-interactable |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
-colors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
-textShadow |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
-textOutline |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
+interactable |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
+colors |  | [<span class="tag xmlcb"></span>](attributes.md#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
+textShadow |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | *(none)*
+textOutline |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | *(none)*
 textAlignment |  | <ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul> | `UpperLeft`
 icon |  | string | *(none)*
 iconWidth |  | float |
-iconColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) |
+iconColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) |
 iconAlignment |  | <ul><li>Left</li><li>Right</li></ul> | `Left`
 padding |  | float float float float | `0 0 0 0`
 transition |  | <ul><li>None</li><li>ColorTint</li><li>SpriteSwap</li><li>Animation</li></ul> | `ColorTint`
@@ -121,10 +121,10 @@ A simple on/off toggle. Is able to send on/off status.
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 onValueChanged | When toggled, a Lua function with this name will be triggered. | string | *(none)*
-interactable |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
-textColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
-colors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
-isOn | If the toggle is "on" or not. Is the value sent to onValueChanged's function. | [<span class="tag boo"></span>](attributes#attribute-types) | false
+interactable |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
+textColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
+colors |  | [<span class="tag xmlcb"></span>](attributes.md#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
+isOn | If the toggle is "on" or not. Is the value sent to onValueChanged's function. | [<span class="tag boo"></span>](attributes.md#attribute-types) | false
 
 Example:
 ```xml
@@ -143,16 +143,16 @@ A toggle, but styled as a button.
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 onValueChanged | When toggled, a Lua function with this name will be triggered. | string | *(none)*
-interactable |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
-textColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
-colors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
-isOn | If the toggle is "on" or not. Is the value sent to onValueChanged's function. | [<span class="tag boo"></span>](attributes#attribute-types) | false
-textShadow |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
-textOutline |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
+interactable |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
+textColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
+colors |  | [<span class="tag xmlcb"></span>](attributes.md#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
+isOn | If the toggle is "on" or not. Is the value sent to onValueChanged's function. | [<span class="tag boo"></span>](attributes.md#attribute-types) | false
+textShadow |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | *(none)*
+textOutline |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | *(none)*
 textAlignment |  | <ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul> | `UpperLeft`
 icon |  | string | *(none)*
 iconWidth |  | float |
-iconColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) |
+iconColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) |
 iconAlignment |  | <ul><li>Left</li><li>Right</li></ul> | `Left`
 padding |  | float float float float | `0 0 0 0`
 
@@ -169,11 +169,11 @@ Allows a group of toggles to act as a radio button, where only 1 of them can be 
 
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
-allowSwitchOff | If this is set to true, then the user may clear their selection from within the ToggleGroup by clicking on the selected Toggle. | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
+allowSwitchOff | If this is set to true, then the user may clear their selection from within the ToggleGroup by clicking on the selected Toggle. | [<span class="tag boo"></span>](attributes.md#attribute-types) | `false`
 toggleBackgroundImage | Sets the default background image to use for nested Toggle elements. | string |
-toggleBackgroundColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
+toggleBackgroundColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#FFFFFF`
 toggleSelectedImage | Sets the default image to use for selected (checked) nested Toggle elements. | string |
-toggleSelectedColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
+toggleSelectedColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#FFFFFF`
 
 ```xml
 <ToggleGroup>
@@ -203,17 +203,17 @@ A value slider. Is able to send Value.
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 onValueChanged | When the slider is moved, a Lua function with this name will be triggered. (rapidly) | string | *(none)*
-interactable |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
-colors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
+interactable |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
+colors |  | [<span class="tag xmlcb"></span>](attributes.md#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
 minValue |  | float | `0`
 maxValue |  | float | `1`
 value | The value currently selected. Is the value sent to onValueChanged's function. | float | `0`
-wholeNumbers |  | [<span class="tag boo"></span>](attributes#attribute-types) | false
+wholeNumbers |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | false
 direction |  | <ul><li>LeftToRight</li><li>RightToLeft</li><li>TopToBottom</li><li>BottomToTop</li></ul> | `LeftToRight`
-backgroundColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
-fillColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
+backgroundColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | *(none)*
+fillColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | *(none)*
 fillImage |  | string |
-handleColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | *(none)*
+handleColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | *(none)*
 handleImage |  | string |
 
 Example:
@@ -233,17 +233,17 @@ Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 onValueChanged | When an option is selected, a Lua function with this name will be triggered. | string | *(none)*
 text | The string in the text box, if any. Is the value sent to onValueChanged's or onEndEdit's function. | string | *(none)*
-interactable |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
-textColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
-itemBackgroundColors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | #FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)
-itemTextColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
-checkColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
+interactable |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
+textColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
+itemBackgroundColors |  | [<span class="tag xmlcb"></span>](attributes.md#attribute-types) | #FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)
+itemTextColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
+checkColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
 checkImage |  | string |
-arrowColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
+arrowColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
 arrowImage |  | string |
-dropdownBackgroundColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#000000`
+dropdownBackgroundColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
 dropdownBackgroundImage |  | string |
-scrollbarColors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) |
+scrollbarColors |  | [<span class="tag xmlcb"></span>](attributes.md#attribute-types) |
 scrollbarImage |  | string |
 itemHeight |  | float |
 

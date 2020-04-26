@@ -9,8 +9,8 @@ Timer is a static global class which provides methods for executing other functi
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-create([<span class="tag tab"></span>](/types)&nbsp;parameters) | Creates a Timer. It will auto-delete once its repetitions have been completed. | [<span class="ret boo"></span>](/types) | [<span class="i"></span>](#create)
-destroy([<span class="tag str"></span>](/types)&nbsp;identifier) | Destroys a Timer. | [<span class="ret boo"></span>](/types) | [<span class="i"></span>](#destroy)
+create([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Creates a Timer. It will auto-delete once its repetitions have been completed. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#create)
+destroy([<span class="tag str"></span>](types.md)&nbsp;identifier) | Destroys a Timer. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#destroy)
 
 ---
 
@@ -19,20 +19,20 @@ destroy([<span class="tag str"></span>](/types)&nbsp;identifier) | Destroys a Ti
 
 ###create(...)
 
-[<span class="ret boo"></span>](/types)&nbsp;Creates a Timer. It will auto-delete once its repetitions have been completed.
+[<span class="ret boo"></span>](types.md)&nbsp;Creates a Timer. It will auto-delete once its repetitions have been completed.
 
 !!!info "create(parameters)"
-    * [<span class="tag_tab"></span>](/types) **parameters**: A Table containing the information used to start the Timer.
-        * [<span class="tag str"></span>](/types) **identifier**: Timer's name, used to destroy it. Must be unique within all other scripts.
-        * [<span class="tag str"></span>](/types) **function_name**: Name of function to trigger when time is reached.
-        * [<span class="tag obj"></span>](/types) **function_owner**: Where the function from function_name exists.
+    * [<span class="tag_tab"></span>](types.md) **parameters**: A Table containing the information used to start the Timer.
+        * [<span class="tag str"></span>](types.md) **identifier**: Timer's name, used to destroy it. Must be unique within all other scripts.
+        * [<span class="tag str"></span>](types.md) **function_name**: Name of function to trigger when time is reached.
+        * [<span class="tag obj"></span>](types.md) **function_owner**: Where the function from function_name exists.
             * {>>Optional, defaults to the calling Object.<<}
-        * [<span class="tag tab"></span>](/types) **parameters**: Table containing any data that will be passed to the function.
+        * [<span class="tag tab"></span>](types.md) **parameters**: Table containing any data that will be passed to the function.
             * {>>Optional, will not be used by default.<<}
-        * [<span class="tag flo"></span>](/types) **delay**: Length of time before the function is triggered.
+        * [<span class="tag flo"></span>](types.md) **delay**: Length of time before the function is triggered.
             * {>>Optional, defaults to 0.<<}
             * {>>0 results in a delay of 1 frame before the triggered function activates.<<}
-        * [<span class="tag int"></span>](/types) **repetitions**: Number of times the countdown repeats.
+        * [<span class="tag int"></span>](types.md) **repetitions**: Number of times the countdown repeats.
             * {>>Optional, defaults to 1.<<}
             * {>>Use 0 for infinite repetitions.<<}
 
@@ -61,7 +61,7 @@ end
 
 ###destroy(...)
 
-[<span class="ret boo"></span>](/types)&nbsp;Destroys a Timer. A timer, if it completes its number of repetitions, will automatically destroy itself.
+[<span class="ret boo"></span>](types.md)&nbsp;Destroys a Timer. A timer, if it completes its number of repetitions, will automatically destroy itself.
 
 !!!info "destroy(identifier)"
-    * [<span class="tag str"></span>](/types) **identifier**: The unique identifier for the timer you want to destroy.
+    * [<span class="tag str"></span>](types.md) **identifier**: The unique identifier for the timer you want to destroy.

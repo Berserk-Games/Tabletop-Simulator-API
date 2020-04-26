@@ -1,6 +1,6 @@
 Each person able to interact with objects in-game is assigned a Player Color to represent them. This is chosen when a Player picks a seat color or is assigned one by the host. Many functions refer to these Players or their hand zones, and it does so via color names. All color names are strings and are case sensitive within functions.
 
-Each color also has an RGB value associated with it. For more information on the RGB Color standard, view the [Color section](types#color).
+Each color also has an RGB value associated with it. For more information on the RGB Color standard, view the [Color section](types.md#color).
 
 <table class="playerColorTable">
 	<thead>

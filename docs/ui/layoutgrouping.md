@@ -1,6 +1,6 @@
 By nesting elements within layouts/groupings, you are able to easily group elements together in-game. It allows for adjusting/moving them together, uniform padding and additional visual flair possibilities.
 
-Each layout element has its own attributes specific to its type. Additionally, elements within a layout are subject to common [common layout element attributes](attributes#layout-element-attributes).
+Each layout element has its own attributes specific to its type. Additionally, elements within a layout are subject to common [common layout element attributes](attributes.md#layout-element-attributes).
 
 ##Element Summary
 
@@ -53,8 +53,8 @@ Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 padding |  | float(left) float(right) float(top) float(bottom) | `0 0 0 0`
 spacing | Spacing between child elements. | float | `0`
 childAlignment |  | <ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul> | `UpperLeft`
-childForceExpandWidth |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
-childForceExpandHeight |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
+childForceExpandWidth |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
+childForceExpandHeight |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
 
 ```xml
 <HorizontalLayout>
@@ -75,8 +75,8 @@ Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 padding |  | float(left) float(right) float(top) float(bottom) | `0 0 0 0`
 spacing | Spacing between child elements. | float | `0`
 childAlignment |  | <ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul> | `UpperLeft`
-childForceExpandWidth |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
-childForceExpandHeight |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
+childForceExpandWidth |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
+childForceExpandHeight |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
 
 ```xml
 <VerticalLayout>
@@ -123,15 +123,15 @@ Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 padding |  | float(left) float(right) float(top) float(bottom) | `0 0 0 0`
 cellSpacing | Spacing between each cell. | float | `0`
 columnWidths | (Optional) Explicitly set the width of each column. Use a value of 0 to auto-size a specific column.	 | float list - e.g. '32 0 0 32' | *(none)*
-automaticallyAddColumns | If more cells are added to a row than are accounted for by columnWidths, should this TableLayout automatically add one or more new auto-sized entries (0) to columnWidths? | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
-automaticallyRemoveEmptyColumns | If there are more entries in columnWidths than there are cells in any row, should this TableLayout automatically remove entries from columnWidths until their are no 'empty' columns? | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
-autoCalculateHeight | If set to true, then the height of this TableLayout will automatically be calculated as the sum of each rows preferredHeight value. This option cannot be used without explicitly sized rows. | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
-useGlobalCellPadding | If set to true, then all cells will use this TableLayout's cellPadding value. | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
+automaticallyAddColumns | If more cells are added to a row than are accounted for by columnWidths, should this TableLayout automatically add one or more new auto-sized entries (0) to columnWidths? | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
+automaticallyRemoveEmptyColumns | If there are more entries in columnWidths than there are cells in any row, should this TableLayout automatically remove entries from columnWidths until their are no 'empty' columns? | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
+autoCalculateHeight | If set to true, then the height of this TableLayout will automatically be calculated as the sum of each rows preferredHeight value. This option cannot be used without explicitly sized rows. | [<span class="tag boo"></span>](attributes.md#attribute-types) | `false`
+useGlobalCellPadding | If set to true, then all cells will use this TableLayout's cellPadding value. | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
 cellPadding | Padding for each cell. | float(left) float(right) float(top) float(bottom) | `0 0 0 0`
 cellBackgroundImage | Image to use as the background for each cell.	| string | 
-cellBackgroundColor | Color for each cells background. | [<span class="tag xmlco"></span>](attributes#attribute-types) | `rgba(1,1,1,0.4)`
+cellBackgroundColor | Color for each cells background. | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `rgba(1,1,1,0.4)`
 rowBackgroundImage | Image to use as the background for each row. | string | 
-rowBackgroundColor | Color to use for each rows background. | [<span class="tag xmlco"></span>](attributes#attribute-types) | `clear`
+rowBackgroundColor | Color to use for each rows background. | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `clear`
 
 ```xml
 <TableLayout>
@@ -154,7 +154,7 @@ A row within a TableLayout.
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 preferredHeight | Sets the height for this row. Use a value of '0' to specify that this row should be auto-sized. | float | `0`
-dontUseTableRowBackground | If set to true, then this row will ignore the tables' *rowBackgroundImage* and *rowBackgroundColor* values, allowing you to override those values for this row. | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
+dontUseTableRowBackground | If set to true, then this row will ignore the tables' *rowBackgroundImage* and *rowBackgroundColor* values, allowing you to override those values for this row. | [<span class="tag boo"></span>](attributes.md#attribute-types) | `false`
 
 #####Cell
 A cell within a TableLayout.
@@ -162,11 +162,11 @@ A cell within a TableLayout.
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 columnSpan | __ | int | `1`
-dontUseTableCellBackground | If set to true, then this cell will ignore the tables' *cellBackgroundImage* and values, allowing you to override those values for this cell. | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
-overrideGlobalCellPadding | If set to true, then this cell will ignore the tables' *cellPadding* value, allowing you to set unique cell padding for this cell. | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
+dontUseTableCellBackground | If set to true, then this cell will ignore the tables' *cellBackgroundImage* and values, allowing you to override those values for this cell. | [<span class="tag boo"></span>](attributes.md#attribute-types) | `false`
+overrideGlobalCellPadding | If set to true, then this cell will ignore the tables' *cellPadding* value, allowing you to set unique cell padding for this cell. | [<span class="tag boo"></span>](attributes.md#attribute-types) | `false`
 padding | 	Padding values to use for this cell if *overrideGlobalCellPadding* is set to true. | float(left) float(right) float(top) float(bottom) | `0 0 0 0`
-childForceExpandWidth |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
-childForceExpandHeight |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
+childForceExpandWidth |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
+childForceExpandHeight |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
 
 ---
 
@@ -174,25 +174,25 @@ childForceExpandHeight |  | [<span class="tag boo"></span>](attributes#attribute
 ###Scroll View Details
 
 ####HorizontalScrollView
-A scrollable horizontal row of elements. This is an [input element](inputelements).
+A scrollable horizontal row of elements. This is an [input element](inputelements.md).
 
 A layout element such as a Panel, HorizontalLayout, GridLayout, or TableLayout can be used to position child elements within the Scroll View.
 
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 onValueChanged | When a selection is made, its name is sent to a function with this name. | string | *(none)*
-horizontal |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
-vertical |  | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
+horizontal |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
+vertical |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `false`
 movementType |  | <ul><li>Unrestricted</li><li>Elastic</li><li>Clamped</li></ul> | `Clamped`
 elasticity |  | float | `0.1`
-inertia |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
+inertia |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
 decelerationRate |  | float | `0.135`
 scrollSensitivity |  | float | `1`
 horizontalScrollbarVisibility |  | <ul><li>Permanent</li><li>AutoHide</li><li>AutoHideAndExpandViewport</li></ul> | `AutoHide`
 verticalScrollbarVisibility |  | <ul><li>Permanent</li><li>AutoHide</li><li>AutoHideAndExpandViewport</li></ul> | *(none)*
-noScrollbars | If set to true, then this scroll view will have no visible scrollbars. | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
-scrollbarBackgroundColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
-scrollbarColors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
+noScrollbars | If set to true, then this scroll view will have no visible scrollbars. | [<span class="tag boo"></span>](attributes.md#attribute-types) | `false`
+scrollbarBackgroundColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#FFFFFF`
+scrollbarColors |  | [<span class="tag xmlcb"></span>](attributes.md#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
 scrollbarImage |  | string | 
 
 ```xml
@@ -219,25 +219,25 @@ scrollbarImage |  | string |
 
 
 ####VerticalScrollView
-A scrollable vertical column of elements. This is an [input element](inputelements).
+A scrollable vertical column of elements. This is an [input element](inputelements.md).
 
 A layout element such as a Panel, HorizontalLayout, GridLayout, or TableLayout can be used to position child elements within the Scroll View.
 
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 onValueChanged | When a selection is made, its name is sent to a function with this name. | string | *(none)*
-horizontal |  | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
-vertical |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
+horizontal |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `false`
+vertical |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
 movementType |  | <ul><li>Unrestricted</li><li>Elastic</li><li>Clamped</li></ul> | `Clamped`
 elasticity |  | float | `0.1`
-inertia |  | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
+inertia |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
 decelerationRate |  | float | `0.135`
 scrollSensitivity |  | float | `1`
 horizontalScrollbarVisibility |  | <ul><li>Permanent</li><li>AutoHide</li><li>AutoHideAndExpandViewport</li></ul> | *(none)*
 verticalScrollbarVisibility |  | <ul><li>Permanent</li><li>AutoHide</li><li>AutoHideAndExpandViewport</li></ul> | `AutoHide`
-noScrollbars | If set to true, then this scroll view will have no visible scrollbars. | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
-scrollbarBackgroundColor |  | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
-scrollbarColors |  | [<span class="tag xmlcb"></span>](attributes#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
+noScrollbars | If set to true, then this scroll view will have no visible scrollbars. | [<span class="tag boo"></span>](attributes.md#attribute-types) | `false`
+scrollbarBackgroundColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#FFFFFF`
+scrollbarColors |  | [<span class="tag xmlcb"></span>](attributes.md#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
 scrollbarImage |  | string | 
 
 ```xml

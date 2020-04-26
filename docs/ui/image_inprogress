@@ -10,7 +10,7 @@ Displays an image from those that were uploaded to the UI assets.
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type / Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 texture | | string | *(none)*
-color | | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
+color | | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#FFFFFF`
 type | Image Type | <ul><li>Simple</li><li>Sliced</li><li>Filled</li><li>Tiled</li></ul> | `Simple`
-raycastTarget | Will the element block clicks? | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
+raycastTarget | Will the element block clicks? | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
 uvRect | Tile image (like within a panel) | offset(x) offset(y) repetitions(x) repetitions(y) | *(none)*

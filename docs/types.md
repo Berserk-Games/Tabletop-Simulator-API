@@ -4,16 +4,15 @@ Type refers to the type of information being used. You do not need to declare a 
 
 Tag | Type | Description | Example
 -- | -- | -- | --
-[<span class="tag nil"></span>](/types)&nbsp;| nil | No value. | `#!lua nil`
-[<span class="tag int"></span>](/types)&nbsp;| int | Non-decimal value. | `#!lua 5`
-[<span class="tag flo"></span>](/types)&nbsp;| float | Non-exact decimal value. | `#!lua 2.032`
-[<span class="tag boo"></span>](/types)&nbsp;| bool | `true` or `false` value. | `#!lua true`
-[<span class="tag str"></span>](/types)&nbsp;| string | A series of characters. | `#!lua "Hello."`
-[<span class="tag tab"></span>](/types)&nbsp;| table | A container with keys and values. | `#!lua {["key"]="value", true, 5}`
-[<span class="tag obj"></span>](/types)&nbsp;| object | An in-game physical Object. Sometimes Global. | `#!lua Global or self`
-[<span class="tag sel"></span>](/types)&nbsp;| self | A reference to the current Lua Object. | `#!lua self`
-[<span class="tag pla"></span>](/types)&nbsp;| player | An in-game Player. | `#!lua Player["White"]`
-[<span class="tag var"></span>](/types)&nbsp;| variable | A combination of other types. |
+[<span class="tag nil"></span>](types.md)&nbsp;| nil | No value. | `#!lua nil`
+[<span class="tag int"></span>](types.md)&nbsp;| int | Non-decimal value. | `#!lua 5`
+[<span class="tag flo"></span>](types.md)&nbsp;| float | Non-exact decimal value. | `#!lua 2.032`
+[<span class="tag boo"></span>](types.md)&nbsp;| bool | `true` or `false` value. | `#!lua true`
+[<span class="tag str"></span>](types.md)&nbsp;| string | A series of characters. | `#!lua "Hello."`
+[<span class="tag tab"></span>](types.md)&nbsp;| table | A container with keys and values. | `#!lua {["key"]="value", true, 5}`
+[<span class="tag obj"></span>](types.md)&nbsp;| object | An in-game physical Object. Sometimes Global. | `#!lua Global or self`
+[<span class="tag pla"></span>](types.md)&nbsp;| player | An in-game Player. | `#!lua Player["White"]`
+[<span class="tag var"></span>](types.md)&nbsp;| variable | A combination of other types. |
 
 You will also see tags for Color, Vector, and Function. See below for more info.
 
@@ -74,7 +73,7 @@ self.setColorTint({50/255, 83/255, 199/255})
 
 ####Strings
 
-You are also able to use a String in place of a color table. Using a [Player Color](player-color) will automatically fill in that value. It works with any of the 12 color names, as they are written on the [Player Color](player-color) page.
+You are also able to use a String in place of a color table. Using a [Player Color](player-color.md) will automatically fill in that value. It works with any of the 12 color names, as they are written on the [Player Color](player-color.md) page.
 
 Example: `printToAll("Test", "Green")`
 
@@ -83,7 +82,7 @@ Example: `printToAll("Test", "Green")`
 ###Vector
 <span class="tag vec"></span> Vector is a type of Object with x, y, and z coordinates that is used to define a position, rotation or direction.
 
-You can use the [Vector](../vector) class to manipulate vectors.
+You can use the [Vector](vector.md) class to manipulate vectors.
 
 Example: `#!lua target = Vector(1, 0, 0) + Vector(0, 2, 0):normalized()`
 
@@ -96,7 +95,7 @@ The Table will contain the keys `x`, `y`, `z` and/or `1`, `2`, `3`. The letter a
  y | 2
  z | 3
 
-As an example, An Object at coordinate X=5, Y=2, Z=-1 would return this [`Vector`](../vector):
+As an example, An Object at coordinate X=5, Y=2, Z=-1 would return this [`Vector`](vector.md):
 ``` Lua
 {
     x=5, y=2, z=-1,
@@ -105,7 +104,7 @@ As an example, An Object at coordinate X=5, Y=2, Z=-1 would return this [`Vector
 
 ####Mixed Keys
 
-Before [`Vector`](../vector) was introduced, coordinate tables contained separate values under 1, 2, 3 and x, y, z keys, with letter keys taking precedence when they were different. This is no longer the case, and using letter and numerical keys is equivalent. However, when iterating over Vector components you have to use `pairs` and only letter keys will be read there.
+Before [`Vector`](vector.md) was introduced, coordinate tables contained separate values under 1, 2, 3 and x, y, z keys, with letter keys taking precedence when they were different. This is no longer the case, and using letter and numerical keys is equivalent. However, when iterating over Vector components you have to use `pairs` and only letter keys will be read there.
 
 ####Value Range
 
@@ -129,7 +128,7 @@ World | The center of the instance is `{x=0, y=0, z=0}`. That is usually near th
 Local | The center of the Object's model is `{x=0, y=0, z=0}`. The center of an Object is determined by the model's creator.
 
 ???tip "Conversion Between World/Local"
-     [positionToWorld(...)](object#positiontoworld) and [positionToLocal(...)](object#positiontolocal) can be used to convert between the two types.
+     [positionToWorld(...)](object.md#positiontoworld) and [positionToLocal(...)](object.md#positiontolocal) can be used to convert between the two types.
 
 #####Rotation
 
@@ -176,7 +175,7 @@ end
 
 ####Example
 
-As an example, here is [Wait.frames(...)](wait#frames) used 3 times. It waits a set number of frames and then activates a given function:
+As an example, here is [Wait.frames(...)](wait.md#frames) used 3 times. It waits a set number of frames and then activates a given function:
 
 ``` Lua
 function onLoad()

@@ -1,5 +1,5 @@
 
-![Logo](/img/atom/logo.png)
+![Logo](img/atom/logo.png)
 
 Atom is a free, open source, and cross-platform text editor created by [GitHub](http://www.github.com/):
 
@@ -27,12 +27,12 @@ This is only a summarized list of features Atom offers. Check out a more complet
 ### Syntax Highlighting
 All standard Lua syntax is highlighted in multiple colors to help with readability.
 
-![Syntax Highlighting](/img/atom/syntax.png)
+![Syntax Highlighting](img/atom/syntax.png)
 
 ### Code Autocompletion
 The entire Tabletop Simulator Lua Scripting API (with the exception of the Player class) has been added to the native Atom autocomplete system. Easily see all of the member variables and functions available to you with their parameters, return type, short description, and a link directly to our Knowledge Base with more information for that variable or function. Functions belonging to the Lua standard library classes such as math, coroutine, or os link directly to the official Lua documentation.
 
-![Code Autocompletion](/img/atom/autocomplete.png)
+![Code Autocompletion](img/atom/autocomplete.png)
 
 ### Tabletop Simulator Interactivity
 The Atom plugin can directly connect to a running instance of Tabletop Simulator to get all of the existing Lua scripts on Objects and to call Save & Play. Both functions can be called directly from the Packages menu or the right click contextual menu. TTS must be running with the game loaded for these functions to work.
@@ -42,8 +42,8 @@ Command | Action Taken
 Get Lua Scripts | Downloads all existing scripts in a loaded Tabletop Simulator game with Atom. You will need to call Get Lua Scripts every time you change to a different game in TTS.
 Save & Play | Saves all Lua files in Atom, uploads them to a loaded Tabletop Simulator game, and reloads the current game (same as Save & Play in the in-game editor).
 
-![Logo](/img/atom/sap1.png)
-![Logo](/img/atom/sap2.png)
+![Logo](img/atom/sap1.png)
+![Logo](img/atom/sap2.png)
 
 > Every time you start up Atom, the cached local `*.lua` files are deleted.
 
@@ -57,7 +57,7 @@ Download and install Atom [from the official website](https://atom.io/).
 3. Type in tabletopsimulator-lua into the search field and press the Enter key or click the Packages button
 4. Click the blue Install button for the tabletopsimulator-lua package
 
-![Installing Atom](/img/atom/install.png)
+![Installing Atom](img/atom/install.png)
 
 ## Setting Up Atom
 
@@ -69,7 +69,7 @@ By default, Tabletop Simulator scripts use a tab width of four spaces. You are n
 3. Scroll down to Tab Length
 4. Set the Tab Length to 4
 
-![Setup](/img/atom/setup.png)
+![Setup](img/atom/setup.png)
 
 ### Tables as Pipe Operators
 To enable tabs showing up as pipe operators "|" as an indent guide:
@@ -79,7 +79,7 @@ To enable tabs showing up as pipe operators "|" as an indent guide:
 3. Scroll down to Show Indent Guide
 4. Check Show Indent Guide
 
-![Tables as Pope Operators](/img/atom/pipes.png)
+![Tables as Pope Operators](img/atom/pipes.png)
 
 ##Updating Atom Plugin
 The plugin will automatically check for updates when Atom is started. If a new update is found, it will update itself. You will have to manually restart Atom for the new version of the plugin to be loaded. You can check Atom's console if it found an update (ctrl + alt + i).

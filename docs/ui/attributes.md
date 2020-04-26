@@ -1,4 +1,4 @@
-As mentioned in the [Introduction](xml/introUI), attributes are modifiers that can be applied to elements. They can be applied to individual elements or to whole groups of them.
+As mentioned in the [Introduction](introUI.md), attributes are modifiers that can be applied to elements. They can be applied to individual elements or to whole groups of them.
 
 !!!important
     They consists of two parts, a **tag** and a **value**. ***The value is always in quotation marks.***
@@ -30,7 +30,7 @@ Elements all share some common attributes which are not repeated under their sep
 Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 active | Specifies whether or not this element is active. This can be used to hide/show elements via scripting. Triggering this via script will not trigger animations. | bool | `true`
-class | This allows you to group elements together by giving them the same class. It is used with [Defaults](defaults). | string | (none)
+class | This allows you to group elements together by giving them the same class. It is used with [Defaults](defaults.md). | string | (none)
 id | Used by Lua scripting to identify an element within the XML. | string | (none)
 isDropReceiver | Determine if an object triggers onElementDropped. | bool | false
 visibility | What colors are able to see the element. See below for additional details. | string | (visible to all)
@@ -44,8 +44,8 @@ Not using the visibility attribute (or setting it to an empty string) does not l
 #####Visiblity Selection
 * `Host`:  Only visible to the game host.
 * `Admin`: Only visible to the host and any promoted player.
-* `Red`: Only visible to the player in that seat color. (Works with all valid [color names](/player-color))
-* `Clubs`: Only visible to members of that player group. (Works with all valid [team names](/player#team))
+* `Red`: Only visible to the player in that seat color. (Works with all valid [color names](../player-color.md))
+* `Clubs`: Only visible to members of that player group. (Works with all valid [team names](../player.md#team))
 
 #####Combining Groups
 You are able to list multiple color names in a single string by placing a vertical line `|` between valid entries.
@@ -61,10 +61,10 @@ Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 -- | -- | -- | --
 text | This can be used to determine the text that appears. It can also be modified externally by the script. | string | *(none)*
 alignment | | <ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul> | MiddleCenter
-color | | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#323232`
+color | | [<span class="tag xmlco"></span>](#attribute-types) | `#323232`
 fontStyle | | <ul><li>Normal</li><li>Bold</li><li>Italic</li><li>BoldItalic</li></ul> | `Normal`
 fontSize | | float | `14`
-resizeTextForBestFit | Resize text to fit? | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
+resizeTextForBestFit | Resize text to fit? | [<span class="tag boo"></span>](#attribute-types) | `false`
 resizeTextMinSize | Minimum font size | float | `10`
 resizeTextMaxSize | Maximum font size | float | `40`
 horizontalOverflow | | <ul><li>Wrap</li><li>Overflow</li></ul> | `Overflow`
@@ -77,18 +77,18 @@ Applies to elements with an image component. The string that `image`s all take i
 Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 image | Name of image (in the asset manager). | string | (*none*)
-preserveAspect | Should the aspect ratio of this image be preserved? | [<span class="tag boo"></span>](attributes#attribute-types) | *(varies)*
-color | Color for this element's image	 | [<span class="tag xmlco"></span>](attributes#attribute-types) | `clear` or `#FFFFFF`
+preserveAspect | Should the aspect ratio of this image be preserved? | [<span class="tag boo"></span>](#attribute-types) | *(varies)*
+color | Color for this element's image	 | [<span class="tag xmlco"></span>](#attribute-types) | `clear` or `#FFFFFF`
 type | Image Type | Simple, Sliced, Filled, Tiled | *(varies)*
-raycastTarget | If the element blocks clicks. | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
+raycastTarget | If the element blocks clicks. | [<span class="tag boo"></span>](#attribute-types) | `true`
 
 
 ###Appearance Attributes
 Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
-shadow | Defines the shadow color of this element. | [<span class="tag xmlco"></span>](attributes#attribute-types) | (none)
+shadow | Defines the shadow color of this element. | [<span class="tag xmlco"></span>](#attribute-types) | (none)
 shadowDistance | Defines the distance of the shadow for this element. | float(x) float(y) | `1 -1`
-outline | Defines the outline color of this element. | [<span class="tag xmlco"></span>](attributes#attribute-types) | (none)
+outline | Defines the outline color of this element. | [<span class="tag xmlco"></span>](#attribute-types) | (none)
 outlineSize | Defines the size of this elements outline. | float(x) float(y) | `1 -1`
 
 
@@ -97,7 +97,7 @@ These will only apply to elements within a layout group.
 
 Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
-ignoreLayout | Should this element ignore its parent layout group? | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
+ignoreLayout | Should this element ignore its parent layout group? | [<span class="tag boo"></span>](#attribute-types) | `false`
 minWidth | 	Minimum width for this element. | float |
 minHeight | 	Minimum height for this element. | float |
 preferredWidth | Preferred width for this element. | float |
@@ -136,9 +136,9 @@ Allow users to move elements by click/dragging.
 
 Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
-allowDragging | Allow this element to be dragged? <br>{>>Does not work on child elements of layout groups)<<} | [<span class="tag boo"></span>](attributes#attribute-types) | `false`
-restrictDraggingToParentBounds | Prevent this element from being dragged outside of its parent? | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
-returnToOriginalPositionWhenReleased | If this is set to true, then the element will return to its original position when it is released. | [<span class="tag boo"></span>](attributes#attribute-types) | `true`
+allowDragging | Allow this element to be dragged? <br>{>>Does not work on child elements of layout groups)<<} | [<span class="tag boo"></span>](#attribute-types) | `false`
+restrictDraggingToParentBounds | Prevent this element from being dragged outside of its parent? | [<span class="tag boo"></span>](#attribute-types) | `true`
+returnToOriginalPositionWhenReleased | If this is set to true, then the element will return to its original position when it is released. | [<span class="tag boo"></span>](#attribute-types) | `true`
 
 
 ###Animation Attributes
@@ -157,16 +157,16 @@ Allow any element to have a tooltip (text that appears when the element is hover
 Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 tooltip | Tooltip text. | string | *(none)*
-tooltipBorderColor | Color of the tooltips border. | [<span class="tag xmlco"></span>](attributes#attribute-types) | `#FFFFFF`
-tooltipBackgroundColor | Color of the tooltips background | [<span class="tag xmlco"></span>](attributes#attribute-types) | `rgba(0,0,0,0.62)`
-tooltipTextColor | Color of the text within this tooltip | [<span class="tag xmlco"></span>](attributes#attribute-types) |
+tooltipBorderColor | Color of the tooltips border. | [<span class="tag xmlco"></span>](#attribute-types) | `#FFFFFF`
+tooltipBackgroundColor | Color of the tooltips background | [<span class="tag xmlco"></span>](#attribute-types) | `rgba(0,0,0,0.62)`
+tooltipTextColor | Color of the text within this tooltip | [<span class="tag xmlco"></span>](#attribute-types) |
 tooltipPosition | Position of this tooltip in relation to the element. | <ul><li>Above</li><li>Below</li><li>Left</li><li>Right</li></ul> | `Right`
 tooltipBorderImage | This attribute allows you to override the default image used for the tooltips border. | string |
 tooltipBackgroundImage | This attribute allows you to override the default image used for the tooltips background. | string |
 tooltipOffset | This attribute allows you to modify the distance this tooltip will appear from the element. | float |
 
 ###Event Attributes
-Allows Lua scripting events to be triggered by any element, through a variety of interactions. See the [Input Elements](inputelements) page for how to interact with Lua scripting.
+Allows Lua scripting events to be triggered by any element, through a variety of interactions. See the [Input Elements](inputelements.md) page for how to interact with Lua scripting.
 
 Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
