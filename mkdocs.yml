@@ -52,7 +52,7 @@ extra:
     - type: 'youtube'
       link: 'https://www.youtube.com/user/berserkgames'
 
-pages:
+nav:
   - Getting Started:
     - Introduction: index.md
     - Overview: overview.md
@@ -84,6 +84,7 @@ pages:
     - Spawnable Objects: spawnableobjects.md
     - TextTool: texttool.md
     - Time: time.md
+    - Timer: timer.md
     - Turns: turns.md
     - UI: ui.md
     - Vector: vector.md
