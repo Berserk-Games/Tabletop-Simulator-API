@@ -70,6 +70,7 @@ pages:
     - Object: object.md
     - AssetBundle: assetbundle.md
     - Clock: clock.md
+    - Color: color.md
     - Component: component.md
     - Counter: counter.md
     - JSON: json.md
