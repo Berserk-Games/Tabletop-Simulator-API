@@ -15,7 +15,7 @@ destroyObject([<span class="tag obj"></span>](types.md)&nbsp;obj) | Destory an O
 <a class="anchor" id="getallobjects"></a>getAllObjects() | Returns Table of all spawned [Objects](object.md) in the game. | [<span class="ret tab"></span>](types.md) |
 getObjectFromGUID([<span class="tag str"></span>](types.md)&nbsp;guid) | Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#getobjectfromguid)
 <a class="anchor" id="getseatedplayers"></a>getSeatedPlayers() | Returns Table of the [Player Colors](player-color.md) strings of seated players. | [<span class="ret tab"></span>](types.md) |
-group([<span class="tag tab"></span>](types.md)&nbsp;objects) | Groups objects together, like how the `G` key does for players. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#group)
+group([<span class="tag tab"></span>](types.md)&nbsp;objects) | Groups objects together, like how the `G` key does for players. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#group)
 paste([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#paste)
 <a class="anchor" id="setlookingforplayers"></a>setLookingForPlayers([<span class="tag boo"></span>](types.md)&nbsp;lfp) | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](types.md) |
 spawnObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spawns an Object. View the [Spawnable Object](spawnableobjects.md) page for Objects that can be spawned. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#spawnobject)
@@ -89,7 +89,7 @@ copy(object_list)
 
 ####group(...)
 
-[<span class="ret obj"></span>](types.md)&nbsp;Groups objects together, like how the `G` key does for players. It returns an object reference to the deck/stack formed.
+[<span class="ret tab"></span>](types.md)&nbsp;Groups objects together, like how the `G` key does for players. It returns a table of object references to any decks/stacks formed.
 
 Not all objects CAN be grouped. If the G key won't work on them, neither will this function.
 
