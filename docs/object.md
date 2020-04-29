@@ -16,6 +16,7 @@ Variable | Description | Type
 <a class="anchor" id="angular_drag"></a>angular_drag | Angular drag. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md) <a class="anchor" id="angular_drag"></a>
 <a class="anchor" id="auto_raise"></a>auto_raise | If an object should be lifted above other objects to avoid collision when held by a player. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="bounciness"></a>bounciness | Bounciness, value of 0-1. [Unity physics material](https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](types.md)
+<a class="anchor" id="drag_selectable"></a>drag_selectable | If this is set, object will never be drag-selected. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="drag"></a>drag | Drag. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md)
 <a class="anchor" id="dynamic_friction"></a>dynamic_friction | Dynamic friction, value of 0-1. [Unity physics material](https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](types.md)
 <a class="anchor" id="grid_projection"></a>grid_projection | If grid lines can appear on the Object if visible grids are turned on. | [<span class="tag boo"></span>](types.md)
@@ -41,12 +42,19 @@ Variable | Description | Type
 <a class="anchor" id="use_hands"></a>use_hands | If this object can be held in a hand zone. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="use_rotation_value_flip"></a>use_rotation_value_flip | Switches the axis an Object rotates around when flipped. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="use_snap_points"></a>use_snap_points | If snap points are used or ignored. | [<span class="tag boo"></span>](types.md)
+<a class="anchor" id="value_flags"></a>value_flags | A bit field, objects with overlapping `value_flag` bits are counted together when selected. | [<span class="tag int"></span>](types.md)
+<a class="anchor" id="value"></a>value | The value of the object for summing up selected objects. Only works if the apropriate bits are set in `obj.value_flags` | [<span class="tag int"></span>](types.md)
+
+!!! bug
+    The `drag_selectable`, `value_flags` and `value` member variables do not persist when the object is reloaded (such as loading a save and entering/exiting containers).
 
 These member variables are classes of their own, and have their own member variables. Each one is for a special type of Object.
 
 Variable Name | Description
 -- | --
 <a class="anchor" id="assetbundle"></a>AssetBundle | An [AssetBundle](assetbundle.md), which is a type of custom object made in Unity.
+<a class="anchor" id="book"></a>Book | A [Book](book.md), which is the in-game Custom PDF object.
+<a class="anchor" id="browser"></a>Browser | A [Browser](browser.md), which is the in-game Tablet object.
 <a class="anchor" id="clock"></a>Clock | A [Clock](clock.md), which is the in-game digital clock.
 <a class="anchor" id="counter"></a>Counter | A [Counter](counter.md), which is the in-game digital counter.
 <a class="anchor" id="rpgfigurine"></a>RPGFigurine | An [RPGFigurine](rpgfigurine.md), which is an in-game animated figurine.
@@ -125,6 +133,7 @@ These functions obtain information from an object.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
+getAttachments() | Returns a table in the same format as [getObjects()](#getobjects) for containers. | [<span class="ret tab"></span>](types.md) |
 <a class="anchor" id="getcolortint"></a>getColorTint() | Color tint. | [<span class="ret col"></span>](types.md#color) |
 getCustomObject() | Returns a Table with the Custom Object information of a Custom Object. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getcustomobject)
 <a class="anchor" id="getdescription"></a>getDescription() | Description, also shows as part of Object's tooltip. | [<span class="ret str"></span>](types.md)
@@ -138,6 +147,7 @@ getObjects() | Returns a Table of Objects in the script zone/bag/deck. | [<span 
 <a class="anchor" id="getquantity"></a>getQuantity() | How many objects are in the stack. Returns -1 if the Object is not a stack. | [<span class="ret int"></span>](types.md) |
 getRotationValue() | Returns the current rotationValue. Rotation values are used to give value to different rotations (like dice). | [<span class="ret var"></span>](types.md) | [<span class="i"></span>](#getrotationvalue)
 getRotationValues() | Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getrotationvalues)
+<a class="anchor" id="getselectingplayers"></a>getSelectingPlayers() | Returns a table of the player colors currently selecting the object. | [<span class="ret tab"></span>](types.md)
 <a class="anchor" id="getstateid"></a>getStateId() | Current [state](https://kb.tabletopsimulator.com/host-guides/creating-states/) ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1. | [<span class="ret int"></span>](types.md) |
 getStates() | Returns a Table of information on the [states](https://kb.tabletopsimulator.com/host-guides/creating-states/) of an Object. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getstates)
 getValue() | Object value. What the value represents depends on what type of Object this function is used on. | [<span class="ret int"></span>](types.md) | [<span class="i"></span>](#getvalue)
@@ -170,7 +180,14 @@ These functions perform general actions on objects.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-<a class="anchor" id="flip"></a>flip() | Flip Object over. | [<span class="ret boo"></span>](types.md) |
+<a class="anchor" id="addattachment"></a>addAttachment([<span class="tag obj"></span>](types.md)&nbsp;Object) | The Object supplied as param is destroyed and becomes a dummy Object child. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="removeattachment"></a>removeAttachment([<span class="tag int"></span>](types.md)&nbsp;index) | Removes a child with the given index. Use [getAttachments()](#getattachments) to find out the index property. | [<span class="ret obj"></span>](types.md)
+<a class="anchor" id="removeattachments"></a>removeAttachments() | Detaches the children of this Object. Returns a table of object references | [<span class="ret tab"></span>](types.md)
+<a class="anchor" id="destroyattachment"></a>destroyAttachment([<span class="tag int"></span>](types.md)&nbsp;index) | Destroys an attachment with the given index. | [<span class="ret bool"></span>](types.md)
+<a class="anchor" id="destroyattachments"></a>destroyAttachments() | Destroys all attachments. | [<span class="ret bool"></span>](types.md)
+<a class="anchor" id="addtoplayerselection"></a>addToPlayerSelection([<span class="tag str"></span>](types.md)&nbsp;player_color) | Adds object to player's selection. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="removefromlayerselection"></a>removeFromPlayerSelection([<span class="tag str"></span>](types.md)&nbsp;player_color) | Removes object from player's selection. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="flip"></a>flip() | Flips Object over. | [<span class="ret boo"></span>](types.md) |
 clone([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Copy/Paste this Object, returning a reference to the new Object. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#clone)
 cut([<span class="tag int"></span>](types.md)&nbsp;count) | Cuts (splits) a deck at the given card count. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#cut)
 deal([<span class="tag int"></span>](types.md)&nbsp;number, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;index) | Deals Objects. Will deal from decks/bags/stacks/individual items. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#deal)
@@ -941,10 +958,11 @@ If an Object is inside of a container, it does not exist in-game. As a result, y
 	!!!info "Bag or Deck"
 		Returns a Table of sub-Tables, each sub-Table containing data on 1 bagged item. Indexes start at 0.
 
+		* [<span class="tag int"></span>](types.md) **index**: Index of the item, represents the item's order in the container.
 		* [<span class="tag str"></span>](types.md) **name**: Name of the item.
 		* [<span class="tag str"></span>](types.md) **description**: Description of the item.
 		* [<span class="tag str"></span>](types.md) **guid**: GUID of the item.
-		* [<span class="tag int"></span>](types.md) **index**: Index of the item, represents the item's order in the container.
+		* [<span class="tag str"></span>](types.md) **gm_notes**: GM Notes on the item.
 		* [<span class="tag str"></span>](types.md) **lua_script**: Any Lua scripting saved on the item.
 		* [<span class="tag str"></span>](types.md) **lua_script_state**: Any JSON save data on this item.
 		* {>>nickname: A duplicate of the "name" field.<<}

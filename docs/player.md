@@ -39,6 +39,7 @@ getHandTransform([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Re
 <a class="anchor" id="getpointerposition"></a>getPointerPosition() | Player's pointer coordinates. | [<span class="ret vec"></span>](types.md#vector)
 <a class="anchor" id="getpointerrotation"></a>getPointerRotation() | Player's pointer rotation. | [<span class="ret vec"></span>](types.md#vector)
 <a class="anchor" id="getselectedobjects"></a>getSelectedObjects() | Objects that the Player has selected with an area selection. | [<span class="ret tab"></span>](types.md)
+<a class="anchor" id="clearselectedobjects"></a>clearSelectedObjects() | Clears a player's current selection. | [<span class="ret boo"></span>](types.md)
 <a class="anchor" id="kick"></a>kick() | Kicks Player out of the room. | [<span class="ret boo"></span>](types.md)
 lookAt([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Moves a Player's camera, forcing 3'rd person camera mode. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#lookat)
 <a class="anchor" id="mute"></a>mute() | Mutes or unmutes Player, preventing/allowing voice chat. | [<span class="ret boo"></span>](types.md)

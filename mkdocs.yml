@@ -69,10 +69,13 @@ nav:
     - Base: base.md
     - Object: object.md
     - AssetBundle: assetbundle.md
+    - Book: book.md
+    - Browser: browser.md
     - Clock: clock.md
     - Color: color.md
     - Component: component.md
     - Counter: counter.md
+    - Grid: grid.md
     - JSON: json.md
     - Lighting: lighting.md
     - Music Player: musicplayer.md

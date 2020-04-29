@@ -24,6 +24,7 @@ onObjectEnterContainer([<span class="tag obj"></span>](types.md)&nbsp;container,
 onObjectLeaveScriptingZone([<span class="tag obj"></span>](types.md)&nbsp;zone, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when any object leaves any scripting zone. | [<span class="i"></span>](#onobjectleavescriptingzone)
 onObjectLeaveContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;leave_object) | Called when any object leaves any container. | [<span class="i"></span>](#onobjectleavecontainer)
 onObjectLoopingEffect([<span class="tag obj"></span>](types.md)&nbsp;loop_object, [<span class="tag int"></span>](types.md)&nbsp;index) | Called whenever the looping effect of an [AssetBundle](assetbundle.md) is activated. | [<span class="i"></span>](#onobjectloopingeffect)
+onObjectPageChange([<span class="tag obj"></span>](types.md)&nbsp;object) | Called when a Custom PDF object changes page. | [<span class="i"></span>](#onobjectpagechange)
 onObjectPeek([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag str"></span>](types.md)&nbsp;player) | Called when a player using peek to look under an Object. | [<span class="i"></span>](#onobjectpeek)
 onObjectPickUp([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag obj"></span>](types.md)&nbsp;picked_up_object) | Called whenever a Player picks up an Object. | [<span class="i"></span>](#onobjectpickup)
 onObjectRandomize([<span class="tag obj"></span>](types.md)&nbsp;randomize_object, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when an Object is randomized. Like when shuffling a deck or shaking dice. | [<span class="i"></span>](#onobjectrandomize)
@@ -60,6 +61,7 @@ onCollisionExit([<span class="tag tab"></span>](types.md)&nbsp;collision_info) |
 onCollisionStay([<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called **every frame** that an Object is colliding with the Object this function is on. | [<span class="i"></span>](#oncollisionstay)
 onDestroy() | Called when an Object it is on is destroyed. | [<span class="i"></span>](#ondestroy)
 onDrop([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player releases an Object after picking it up. | [<span class="i"></span>](#ondrop)
+onPageChange() | Called when a Custom PDF page is changed. | [<span class="i"></span>](#onpagechange)
 onPeek([<span class="tag str"></span>](types.md)&nbsp;player) | Called when a player using peek to look under this Object. | [<span class="i"></span>](#onpeek)
 onPickUp([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player picks up an Object. | [<span class="i"></span>](#onpickup)
 onRandomize([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when this Object is randomized. Like when shuffling a deck or shaking dice. | [<span class="i"></span>](#onrandomize)
@@ -379,6 +381,18 @@ function onObjectLoopingEffect(obj, index)
 	print("Loop " .. index .. " activated.")
 end
 ```
+
+---
+###onObjectPageChange(...)
+
+Called when an object's Custom PDF page is changed.
+
+``` Lua
+function onObjectPageChange(obj)
+	print(obj.getName() .. "changed page to " .. obj.Book.getPage()) -- Print new page.
+end
+```
+
 
 ---
 
@@ -749,6 +763,18 @@ end
 
 ---
 
+###onPageChange()
+
+Called when this object's Custom PDF page is changed.
+
+``` Lua
+function onPageChange()
+	print(self.getName() .. "changed page to " .. self.Book.getPage()) -- Print new page.
+end
+```
+
+
+---
 
 ###filterObjectEnter(...)
 

@@ -87,12 +87,13 @@
     color: #bb0c0d !important;
 }
 
-/*anchor offset*/
-.anchor:before {
-    content:"";
-    display:block;
-    height:130px; /* fixed header height*/
-    margin:-130px 0 0; /* negative fixed header height */
+/*anchor offset, see issue #20*/
+.anchor {
+   content:"";
+   display:block;
+   padding-top: 72px;
+   margin:-72px 0 0; /* negative fixed header height */
+   pointer-events: none;
 }
 
 /*prevent left/right scrollbar
