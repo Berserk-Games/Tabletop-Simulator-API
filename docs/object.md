@@ -28,7 +28,7 @@ Variable | Description | Type
 <a class="anchor" id="is_face_down"></a>is_face_down | If an Object is roughly face-down (like with cards). The face is the "top" of the Object, the direction of its positive Y coordinate. Read only.  | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="loading_custom"></a>loading_custom | If the Object's custom elements (images/models/etc) are loading. Read only. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="mass"></a>mass | Mass. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md)
-<a class="anchor" id="name"></a>name | The Object's name. Read only, use `setName("")` to write to it. | [<span class="tag str"></span>](types.md)
+<a class="anchor" id="name"></a>name | The Object's component name. Read only. | [<span class="tag str"></span>](types.md)
 <a class="anchor" id="resting"></a>resting | If an Object is at rest. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/RigidbodiesOverview.html). | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="script_code"></a>script_code | The Lua Script on the Object. | [<span class="tag str"></span>](types.md)
 <a class="anchor" id="script_state"></a>script_state | The saved data on the object. See [onSave()](event.md#onsave). | [<span class="tag str"></span>](types.md)
