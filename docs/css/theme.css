@@ -87,13 +87,14 @@
     color: #bb0c0d !important;
 }
 
-/*anchor offset, see issue #20*/
+/*anchor offset*/
+
+td {position: relative;}
+
 .anchor {
-   content:"";
-   display:block;
-   padding-top: 72px;
-   margin:-72px 0 0; /* negative fixed header height */
-   pointer-events: none;
+   position: absolute;
+   top: 0px;
+   margin: -48px 0 0; /* negative fixed header height */
 }
 
 /*prevent left/right scrollbar
