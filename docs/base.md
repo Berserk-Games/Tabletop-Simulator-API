@@ -18,7 +18,7 @@ getObjectFromGUID([<span class="tag str"></span>](types.md)&nbsp;guid) | Returns
 group([<span class="tag tab"></span>](types.md)&nbsp;objects) | Groups objects together, like how the `G` key does for players. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#group)
 paste([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#paste)
 <a class="anchor" id="setlookingforplayers"></a>setLookingForPlayers([<span class="tag boo"></span>](types.md)&nbsp;lfp) | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](types.md) |
-spawnObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spawns an Object. View the [Spawnable Object](spawnableobjects.md) page for Objects that can be spawned. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#spawnobject)
+spawnObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spawns an Object. See [Built-in](built-in-object.md) and [Custom](custom-game-objects.md) Spawnable Object pages for further details. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#spawnobject)
 spawnObjectJSON([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spawns an Object using a JSON string. Works with [getJSON()](object.md#getjson). | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#spawnobjectjson)
 startLuaCoroutine([<span class="tag obj"></span>](types.md)&nbsp;function_owner, [<span class="tag str"></span>](types.md)&nbsp;function_name) | Start a coroutine. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#startluacoroutine)
 stringColorToRGB([<span class="tag str"></span>](types.md)&nbsp;player_color) | Converts a [Player Color](player-color.md) string into a Color Table for tinting. | [<span class="ret col"></span>](types.md#color) | [<span class="i"></span>](#stringcolortorgb)
@@ -130,7 +130,7 @@ end
 
 ####spawnObject(...)
 
-[<span class="ret obj"></span>](types.md)&nbsp;Spawn an Object. View the [Spawnable Objects](spawnableobjects.md) page for Objects that can be spawned.
+[<span class="ret obj"></span>](types.md)&nbsp;Spawns an Object. See [Built-in](built-in-object.md) and [Custom](custom-game-objects.md) Spawnable Objects pages for details of specific spawnable objects.
 
 If you are spawning a **custom Object**, you should call [setCustomObject](object.md#setcustomobject) immediately after spawnObject to set its custom properties.
 
@@ -139,7 +139,7 @@ If you are spawning a **custom Object**, you should call [setCustomObject](objec
 
 !!!info "spawnObject(parameters)"
 	* [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters used to determine how spawnObject will act.
-		* [<span class="tag str"></span>](types.md) **parameters.type**: [Spawnable Object](spawnableobjects.md) type.
+		* [<span class="tag str"></span>](types.md) **parameters.type**: [Built-in](built-in-object.md) or [Custom](custom-game-objects.md) Game Object name.
 		* [<span class="tag vec"></span>](types.md#vector) **parameters.position**: Position to place Object.
 			* {>>Optional, defaults to {x=0, y=3, z=0}.<<}
 		* [<span class="tag vec"></span>](types.md#vector) **parameters.rotation**: Rotation of the Object.

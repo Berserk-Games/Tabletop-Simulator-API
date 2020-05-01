@@ -843,7 +843,7 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 
 ####getCustomObject()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table with the Custom Object information of a Custom Object. See the [Spawnable Objects](spawnableobjects.md) page for the kind of information returned.
+[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table with the Custom Object information of a Custom Object. See the [Custom Game Objects](custom-game-objects.md) page for the kind of information returned.
 
 ``` Lua
 -- Example returned Table for a custom token
@@ -1119,7 +1119,7 @@ Tablet | Returns String of the current URL.
 [<span class="ret boo"></span>](types.md)&nbsp;Sets a custom Object's properties. It can be used after [spawnObject](base.md#spawnobject) or on an already existing custom Object. If used on an already existing custom Object, you must use [reload](#reload) on the object after setCustomObject for the changes to be displayed.
 
 !!!info "setCustomObject(parameters)"
-	The Table of parameters varies, depending on which type of custom Object it is. See the [Spawnable Object](spawnableobjects.md) page for the parameters needed.
+	The Table of parameters varies, depending on which type of custom Object it is. See the [Custom Game Objects](custom-game-objects.md) page for the parameters needed.
 
 ``` Lua
 -- Example of a custom token
