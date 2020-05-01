@@ -1367,11 +1367,14 @@ self.jointTo(obj, {
 
 [<span class="ret obj"></span>](types.md)&nbsp;Places an object into a container (chip stacks/bags/decks). If neither Object is a container, but they are able to be combined (like with 2 cards), then they form a deck/stack.
 
-!!!info "putObject(put_object)"
-	* [<span class="tag obj"></span>](types.md) **put_object**: An Object to place into the container.
+!!! info "putObject(put_object)"
+	  * [<span class="tag obj"></span>](types.md) **put_object**: An Object to place into the container.
 
-!!!info "Returned Object"
-	The container is returned as the Object reference. Either this is the container/deck/stack the other Object was placed into, or the deck/stack that was formed by the putObject action.
+!!! info "Returned Object"
+    The container is returned as the Object reference. Either this is the container/deck/stack the other Object was placed into, or the deck/stack that was formed by the putObject action.
+
+!!! info "Putting Cards into Decks"
+    When you call this `putObject()` to put a card into a deck, the card goes into the end of the deck which is closest to it in Y elevation. So, if both the card and the deck are resting on the table, the card will be put at the bottom of the deck. if the card is hovering above the deck, it will be put at the top."
 
 ``` Lua
 -- Example of a script on a bag that places Object into itself
