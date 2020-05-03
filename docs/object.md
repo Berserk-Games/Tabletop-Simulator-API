@@ -183,8 +183,8 @@ Function Name | Description | Return | &nbsp;
 <a class="anchor" id="addattachment"></a>addAttachment([<span class="tag obj"></span>](types.md)&nbsp;Object) | The Object supplied as param is destroyed and becomes a dummy Object child. | [<span class="ret boo"></span>](types.md)
 <a class="anchor" id="removeattachment"></a>removeAttachment([<span class="tag int"></span>](types.md)&nbsp;index) | Removes a child with the given index. Use [getAttachments()](#getattachments) to find out the index property. | [<span class="ret obj"></span>](types.md)
 <a class="anchor" id="removeattachments"></a>removeAttachments() | Detaches the children of this Object. Returns a table of object references | [<span class="ret tab"></span>](types.md)
-<a class="anchor" id="destroyattachment"></a>destroyAttachment([<span class="tag int"></span>](types.md)&nbsp;index) | Destroys an attachment with the given index. | [<span class="ret bool"></span>](types.md)
-<a class="anchor" id="destroyattachments"></a>destroyAttachments() | Destroys all attachments. | [<span class="ret bool"></span>](types.md)
+<a class="anchor" id="destroyattachment"></a>destroyAttachment([<span class="tag int"></span>](types.md)&nbsp;index) | Destroys an attachment with the given index. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="destroyattachments"></a>destroyAttachments() | Destroys all attachments. | [<span class="ret boo"></span>](types.md)
 <a class="anchor" id="addtoplayerselection"></a>addToPlayerSelection([<span class="tag str"></span>](types.md)&nbsp;player_color) | Adds object to player's selection. | [<span class="ret boo"></span>](types.md)
 <a class="anchor" id="removefromlayerselection"></a>removeFromPlayerSelection([<span class="tag str"></span>](types.md)&nbsp;player_color) | Removes object from player's selection. | [<span class="ret boo"></span>](types.md)
 <a class="anchor" id="flip"></a>flip() | Flips Object over. | [<span class="ret boo"></span>](types.md) |
