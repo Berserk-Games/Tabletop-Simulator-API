@@ -37,7 +37,7 @@ getHandTransform([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Re
 <a class="anchor" id="getholdingobjects"></a>getHoldingObjects() | Objects a Player is holding in their hand. | [<span class="ret tab"></span>](types.md)
 <a class="anchor" id="gethoverobject"></a>getHoverObject() | Object that the Player's pointer is hovering over. | [<span class="ret obj"></span>](types.md)
 <a class="anchor" id="getpointerposition"></a>getPointerPosition() | Player's pointer coordinates. | [<span class="ret vec"></span>](types.md#vector)
-<a class="anchor" id="getpointerrotation"></a>getPointerRotation() | Player's pointer rotation. | [<span class="ret vec"></span>](types.md#vector)
+<a class="anchor" id="getpointerrotation"></a>getPointerRotation() | Player's pointer rotation on Y axis. | [<span class="ret float"></span>](types.md)
 <a class="anchor" id="getselectedobjects"></a>getSelectedObjects() | Objects that the Player has selected with an area selection. | [<span class="ret tab"></span>](types.md)
 <a class="anchor" id="clearselectedobjects"></a>clearSelectedObjects() | Clears a player's current selection. | [<span class="ret boo"></span>](types.md)
 <a class="anchor" id="kick"></a>kick() | Kicks Player out of the room. | [<span class="ret boo"></span>](types.md)
