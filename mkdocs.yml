@@ -61,7 +61,7 @@ nav:
     - Learning Lua: learninglua.md
     - System Console: systemconsole.md
     - Virtual Reality: vr.md
-    - Changelog: changelog.md
+    - Patch Notes: https://www.tabletopsimulator.com/news/patch-notes
   - Scripting API:
     - Introduction: intro.md
     - Types: types.md
