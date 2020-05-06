@@ -197,10 +197,6 @@ Spawns an Object using a JSON string. Works with [getJSON()](object.md#getjson).
 			* {>>Optional, defaults to JSON's value.<<}
 		* [<span class="tag vec"></span>](types.md#vector) **parameters.scale**: Scale of the Object.
 			* {>>Optional, defaults to JSON's value.<<}
-		* [<span class="tag boo"></span>](types.md) **parameters.sound**: If the spawned Object noise is played.
-			* {>>Optional, defaults to JSON's value.<<}
-		* [<span class="tag boo"></span>](types.md) **parameters.snap_to_grid**: If snap-to-grid is active on the Object.
-			* {>>Optional, defaults to JSON's value.<<}
 		* [<span class="tag fun"></span>](types.md#function) **parameters.callback_function**: The function to activate after the Object has finished spawning into the scene.
 			* {>>Optional, defaults to not being used.<<}
 			* {>>A reference to the object spawned is always passed to callback_function. See the example for how to access it.<<}
