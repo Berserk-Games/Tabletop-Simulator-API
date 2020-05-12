@@ -89,8 +89,8 @@ The plugin will automatically check for updates when Atom is started. If a new u
 These are just a few basic tips to help get the most out of Atom.
 
 * Print Messages
-	* All print() functions automatically send their messages to Atom's console (ctrl + alt + i).
+	* All print() functions automatically send their messages to Atom's console (ctrl + shift + i).
 * Error Messages
-	* All Lua errors are automatically sent to Atom's console (ctrl + alt + i).
+	* All Lua errors are automatically sent to Atom's console (ctrl + shift + i).
 * Quick Save + Play
 	* Hitting Ctrl + Shift + S will trigger Save & Play.
