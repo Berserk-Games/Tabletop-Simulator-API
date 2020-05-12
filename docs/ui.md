@@ -125,7 +125,7 @@ end
 
 
 ``` Lua
-string = UI.getAttribute("testElement")
+string = UI.getValue("testElement")
 print(string)
 ```
 
