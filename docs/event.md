@@ -15,7 +15,7 @@ onExternalMessage([<span class="tag tab"></span>](/types)&nbsp;data) | Called wh
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [<span class="i"></span>](#onfixedupdate)
 onLoad([<span class="tag str"></span>](/types)&nbsp;save_state) | Called when a game save is finished loading every Object. It is where most setup code will go. | [<span class="i"></span>](#onload)
 onObjectDestroy([<span class="tag obj"></span>](/types)&nbsp;dying_object) | Called whenever any object is destroyed. | [<span class="i"></span>](#onobjectdestroy)
-onObjectDrop([<span class="tag obj"></span>](/types)&nbsp;dropped_object, [<span class="tag str"></span>](/types)&nbsp;player_color) | Called whenever any object is dropped by a player. | [<span class="i"></span>](#onobjectdrop)
+onObjectDrop([<span class="tag str"></span>](/types)&nbsp;player_color, [<span class="tag obj"></span>](/types)&nbsp;dropped_object) | Called whenever any object is dropped by a player. | [<span class="i"></span>](#onobjectdrop)
 onObjectEnterScriptingZone([<span class="tag obj"></span>](/types)&nbsp;zone, [<span class="tag obj"></span>](/types)&nbsp;enter_object) | Called when any object enters any scripting zone. | [<span class="i"></span>](#onobjectenterscriptingzone)
 onObjectEnterContainer([<span class="tag obj"></span>](/types)&nbsp;container, [<span class="tag obj"></span>](/types)&nbsp;enter_object) | Called when any object enters any container. Includes decks | [<span class="i"></span>](#onobjectentercontainer)
 onObjectLeaveScriptingZone([<span class="tag obj"></span>](/types)&nbsp;zone, [<span class="tag obj"></span>](/types)&nbsp;enter_object) | Called when any object leaves any scripting zone. | [<span class="i"></span>](#onobjectleavescriptingzone)
@@ -185,12 +185,12 @@ end
 
 Called whenever any object is dropped by a player.
 
-!!!info "onObjectDrop(dropped_object, player_color)"
+!!!info "onObjectDrop(player_color, dropped_object)"
 	* [<span class="tag obj"></span>](/types)&nbsp;**dropped_object**: The Object in game which was dropped.
 	* [<span class="tag str"></span>](/types)&nbsp;**player_color**: [Player Color](player-color) of the Player who dropped the Object.
 
 ``` Lua
-function onObjectDrop(obj, colorName)
+function onObjectDrop(colorName, obj)
 	print(colorName .. " dropped " .. obj.getName())
 end
 ```
