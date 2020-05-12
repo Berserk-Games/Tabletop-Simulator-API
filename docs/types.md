@@ -141,7 +141,7 @@ Local | The center of the Object's model is `{x=0, y=0, z=0}`. The center of an 
 
 #####Rotation
 
-X is pitch (nodding your head), Y is yaw (shaking you head), Z is roll (tilting your head).
+X is pitch (nodding your head), Y is yaw (shaking your head), Z is roll (tilting your head).
 
 #####Direction
 
