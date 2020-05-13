@@ -1356,7 +1356,7 @@ self.jointTo(obj, {
 	["break_torgue"] = 1000.0,
 	["motor_force"]  = 100.0,
 	["motor_velocity"] = 10.0,
-	["motor_freeSpin"] = true
+	["motor_free_spin"] = true
 })
 ```
 
