@@ -88,11 +88,13 @@
 }
 
 /*anchor offset*/
-.anchor:before {
-    content:"";
-    display:block;
-    height:130px; /* fixed header height*/
-    margin:-130px 0 0; /* negative fixed header height */
+
+td {position: relative;}
+
+.anchor {
+   position: absolute;
+   top: 0px;
+   margin: -48px 0 0; /* negative fixed header height */
 }
 
 /*prevent left/right scrollbar
