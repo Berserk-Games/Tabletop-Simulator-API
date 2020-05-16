@@ -69,20 +69,27 @@ onSearchEnd([<span class="tag str"></span>](types.md)&nbsp;player_color) | Calle
 onSearchStart([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player starts searching this Object. | [<span class="i"></span>](#onsearchstart)
 
 
-
-
-
-
-
-
-
-
-
-
-
 ---
 
 ##Function Details (Global & Object)
+
+###filterObjectEnterContainer(...)
+
+Called when an object attempts to enter a container. The object is prevented from entering unless "true" is returned.
+
+!!!info "filterObjectEnter(container, enter_object)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**container**: The container the Object is trying to enter.
+	* [<span class="tag obj"></span>](types.md)&nbsp;**enter_object**: The Object entering the container.
+
+``` Lua
+function filterObjectEnterContainer(container, enter_object)
+	print(enter_object.getName()) -- Print entering object's name
+	return true -- Allows object to enter.
+end
+```
+
+
+---
 
 ###onChat(...)
 
