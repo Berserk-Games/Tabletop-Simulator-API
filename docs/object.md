@@ -46,7 +46,7 @@ Variable | Description | Type
 <a class="anchor" id="value"></a>value | The value of the object for summing up selected objects. Only works if the apropriate bits are set in `obj.value_flags` | [<span class="tag int"></span>](types.md)
 
 !!! bug
-    The `drag_selectable`, `value_flags` and `value` member variables do not persist when the object is reloaded (such as loading a save and entering/exiting containers).
+    The `value_flags` and `value` member variables do not persist when the object is reloaded (such as loading a save and entering/exiting containers).
 
 These member variables are classes of their own, and have their own member variables. Each one is for a special type of Object.
 
