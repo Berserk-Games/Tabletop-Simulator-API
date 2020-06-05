@@ -35,7 +35,7 @@ onObjectTriggerEffect([<span class="tag obj"></span>](types.md)&nbsp;trigger_obj
 onPlayerChangeColor([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [<span class="i"></span>](#onplayerchangecolor)
 onPlayerConnect([<span class="tag pla"></span>](types.md)&nbsp;person) | Called when a [Player](player.md) connects to a game. | [<span class="i"></span>](#onplayerconnect)
 onPlayerDisconnect([<span class="tag pla"></span>](types.md)&nbsp;person) | Called when a [Player](player.md) disconnects from a game. | [<span class="i"></span>](#onplayerdisconnect)
-onPlayerTurn([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called at the start of a player's turn when using the in-game turn system. | [<span class="i"></span>](#onplayerturn)
+onPlayerTurn([<span class="tag pla"></span>](types.md)&nbsp;person) | Called at the start of a player's turn when using the in-game turn system. | [<span class="i"></span>](#onplayerturn)
 onSave() | Called whenever your game is saved. | [<span class="i"></span>](#onsave)
 onScriptingButtonDown([<span class="tag int"></span>](types.md)&nbsp;index, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttondown)
 onScriptingButtonUp([<span class="tag int"></span>](types.md)&nbsp;index, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttonup)
@@ -540,8 +540,8 @@ end
 
 Called when a [Player](player.md) connects to a game.
 
-!!!info "onPlayerConnect(person)""
-	* [<span class="tag pla"></span>](types.md)&nbsp;**person**: Player reference to who connected.
+!!!info "onPlayerConnect(person)"
+	* [<span class="tag pla"></span>](types.md)&nbsp;**person**: [Player](player.md) reference to who connected.
 
 ---
 
@@ -550,8 +550,8 @@ Called when a [Player](player.md) connects to a game.
 
 Called when a [Player](player.md) disconnects from a game.
 
-!!!info "onPlayerDisconnect(person)""
-	* [<span class="tag pla"></span>](types.md)&nbsp;**person**: Player reference to who disconnected.
+!!!info "onPlayerDisconnect(person)"
+	* [<span class="tag pla"></span>](types.md)&nbsp;**person**: [Player](player.md) reference to who disconnected.
 
 ---
 
@@ -559,12 +559,12 @@ Called when a [Player](player.md) disconnects from a game.
 ###onPlayerTurn(...)
 Called at the start of a player's turn when using the in-game turn system.
 
-!!!info "onPlayerTurn(player_color)"
-	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who's turn is starting.
+!!!info "onPlayerTurn(person)"
+	* [<span class="tag pla"></span>](types.md)&nbsp;**person**: [Player](player.md) who's turn is starting.
 
 ``` Lua
-function onPlayerTurn(color)
-	print(color .. "'s turn starts now.")
+function onPlayerTurn(person)
+	print(person.color .. "'s turn starts now.")
 end
 ```
 
