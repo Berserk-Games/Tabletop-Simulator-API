@@ -133,7 +133,7 @@ These functions obtain information from an object.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-getAttachments() | Returns a table in the same format as [getObjects()](#getobjects) for containers. | [<span class="ret tab"></span>](types.md) |
+<a class="anchor" id="getattachments"></a>getAttachments() | Returns a table in the same format as [getObjects()](#getobjects) for containers. | [<span class="ret tab"></span>](types.md) |
 <a class="anchor" id="getcolortint"></a>getColorTint() | Color tint. | [<span class="ret col"></span>](types.md#color) |
 getCustomObject() | Returns a Table with the Custom Object information of a Custom Object. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getcustomobject)
 <a class="anchor" id="getdescription"></a>getDescription() | Description, also shows as part of Object's tooltip. | [<span class="ret str"></span>](types.md)
