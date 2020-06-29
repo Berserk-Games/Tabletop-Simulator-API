@@ -121,3 +121,7 @@ disabled due to lack of need currently, but works*/
     left:1.3rem;
     top:-0.5rem;
 }
+
+code {
+    white-space: nowrap;
+  }
