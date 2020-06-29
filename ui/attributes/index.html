@@ -2109,46 +2109,6 @@
     General Attributes
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#visibility-targets" title="Visibility Targets" class="md-nav__link">
-    Visibility Targets
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#visible-to-all-players" title="Visible To All Players" class="md-nav__link">
-    Visible To All Players
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#visiblity-selection" title="Visiblity Selection" class="md-nav__link">
-    Visiblity Selection
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#combining-groups" title="Combining Groups" class="md-nav__link">
-    Combining Groups
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -2187,8 +2147,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#positionsize-attributes-adv" title="Position/Size Attributes (Adv)" class="md-nav__link">
-    Position/Size Attributes (Adv)
+  <a href="#positionsize-attributes-advanced" title="Position/Size Attributes (Advanced)" class="md-nav__link">
+    Position/Size Attributes (Advanced)
   </a>
   
 </li>
@@ -2490,46 +2450,6 @@
     General Attributes
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#visibility-targets" title="Visibility Targets" class="md-nav__link">
-    Visibility Targets
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#visible-to-all-players" title="Visible To All Players" class="md-nav__link">
-    Visible To All Players
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#visiblity-selection" title="Visiblity Selection" class="md-nav__link">
-    Visiblity Selection
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#combining-groups" title="Combining Groups" class="md-nav__link">
-    Combining Groups
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -2568,8 +2488,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#positionsize-attributes-adv" title="Position/Size Attributes (Adv)" class="md-nav__link">
-    Position/Size Attributes (Adv)
+  <a href="#positionsize-attributes-advanced" title="Position/Size Attributes (Advanced)" class="md-nav__link">
+    Position/Size Attributes (Advanced)
   </a>
   
 </li>
@@ -2709,128 +2629,121 @@
 <table>
 <thead>
 <tr>
-<th>Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Attribute&nbsp;Name</th>
+<th>Description</th>
+<th>Type&nbsp;/&nbsp;Options</th>
+<th>Default&nbsp;Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>active</td>
-<td>Specifies whether or not this element is active. This can be used to hide/show elements via scripting. Triggering this via script will not trigger animations.</td>
+<td>Specifies whether or not this element and its children are visible and contribute to layout. Modifying this via script will not trigger animations.</td>
 <td>bool</td>
 <td><code class="codehilite">true</code></td>
 </tr>
 <tr>
 <td>class</td>
-<td>This allows you to group elements together by giving them the same class. It is used with <a href="../defaults/">Defaults</a>.</td>
+<td>A list of classes, separated by spaces. An element will inherit attributes from any of its classes defined in <a href="../defaults/">Defaults</a>.</td>
 <td>string</td>
-<td>(none)</td>
+<td><em>(none)</em></td>
 </tr>
 <tr>
 <td>id</td>
-<td>Used by Lua scripting to identify an element within the XML.</td>
+<td>A unique string used to identify the element from Lua scripting.</td>
 <td>string</td>
-<td>(none)</td>
-</tr>
-<tr>
-<td>isDropReceiver</td>
-<td>Determine if an object triggers onElementDropped.</td>
-<td>bool</td>
-<td>false</td>
+<td><em>(none)</em></td>
 </tr>
 <tr>
 <td>visibility</td>
-<td>What colors are able to see the element. See below for additional details.</td>
+<td>A pipe-separated list of visibility targets. An element is always treated as inactive to players not specified here.</td>
 <td>string</td>
-<td>(visible to all)</td>
+<td><em>(visible to all)</em></td>
 </tr>
 </tbody>
 </table>
-<h4 id="visibility-targets">Visibility Targets<a class="headerlink" href="#visibility-targets" title="Permanent link"> </a></h4>
-<p>The visibility attribute allows for only certain people or groups to see an element. Hiding an element will hide its children as well.</p>
-<h5 id="visible-to-all-players">Visible To All Players<a class="headerlink" href="#visible-to-all-players" title="Permanent link"> </a></h5>
-<p>Not using the visibility attribute (or setting it to an empty string) does not limit the visibility of the element.</p>
-<h5 id="visiblity-selection">Visiblity Selection<a class="headerlink" href="#visiblity-selection" title="Permanent link"> </a></h5>
+<div class="admonition note">
+<p class="admonition-title">Visibility Targets</p>
+<p>Targets for the <code class="codehilite">visibility</code> attribute are as follows:</p>
 <ul>
-<li><code class="codehilite">Host</code>:  Only visible to the game host.</li>
-<li><code class="codehilite">Admin</code>: Only visible to the host and any promoted player.</li>
-<li><code class="codehilite">Red</code>: Only visible to the player in that seat color. (Works with all valid <a href="../../player-color/">color names</a>)</li>
-<li><code class="codehilite">Clubs</code>: Only visible to members of that player group. (Works with all valid <a href="../../player/#team">team names</a>)</li>
+<li>The game host: <code class="codehilite">Host</code></li>
+<li>Any promoted player (including the host): <code class="codehilite">Admin</code></li>
+<li>Every <a href="../../player-color/">player color</a>: <code class="codehilite">White</code>, <code class="codehilite">Brown</code>, <code class="codehilite">Red</code>, <code class="codehilite">Orange</code>, <code class="codehilite">Yellow</code>, <code class="codehilite">Green</code>, <code class="codehilite">Teal</code>, <code class="codehilite">Blue</code>, <code class="codehilite">Purple</code>, <code class="codehilite">Pink</code>, <code class="codehilite">Grey</code>, and <code class="codehilite">Black</code></li>
+<li>Every <a href="../../player/#team">team</a>: <code class="codehilite">Clubs</code>, <code class="codehilite">Diamonds</code>, <code class="codehilite">Hearts</code>, <code class="codehilite">Spades</code>, <code class="codehilite">Jokers</code>, and <code class="codehilite">None</code></li>
 </ul>
-<h5 id="combining-groups">Combining Groups<a class="headerlink" href="#combining-groups" title="Permanent link"> </a></h5>
-<p>You are able to list multiple color names in a single string by placing a vertical line <code class="codehilite">|</code> between valid entries.</p>
-<p>Example: <code class="codehilite">&quot;Red|Blue|Host&quot;</code> would be visible to the red seat, blue seat and the host of the server.</p>
+<p>Not setting the visibility attribute (or setting it to an empty string) does not limit the visibility of the element.</p>
+<p>Multiple targets can be listed by separating them with a pipe (<code class="codehilite">|</code>). In this case if <em>any</em> of the targets applies to a player then the element will be active for that player.</p>
+<p>Example: <code class="codehilite">&quot;Red|Blue|Host&quot;</code> would be visible to the red seat, blue seat, and the host of the server.</p>
+</div>
 <h3 id="text-attributes">Text Attributes<a class="headerlink" href="#text-attributes" title="Permanent link"> </a></h3>
 <p>Many, but not all, elements have a text attribute.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Attribute&nbsp;Name</th>
+<th>Description</th>
+<th>Type&nbsp;/&nbsp;Options</th>
+<th>Default&nbsp;Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>text</td>
-<td>This can be used to determine the text that appears. It can also be modified externally by the script.</td>
+<td>Text to be displayed.</td>
 <td>string</td>
 <td><em>(none)</em></td>
 </tr>
 <tr>
 <td>alignment</td>
-<td></td>
+<td>Typographic alignment of the text within its bounding box.</td>
 <td><ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul></td>
-<td>MiddleCenter</td>
+<td><code class="codehilite">MiddleCenter</code></td>
 </tr>
 <tr>
 <td>color</td>
-<td></td>
+<td>Color of the text. Elements that also take an image <code class="codehilite">color</code> use <code class="codehilite">textColor</code> for this.</td>
 <td><a href="#attribute-types"><span class="tag xmlco"></span></a></td>
 <td><code class="codehilite">#323232</code></td>
 </tr>
 <tr>
 <td>fontStyle</td>
-<td></td>
-<td><ul><li>Normal</li><li>Bold</li><li>Italic</li><li>BoldItalic</li></ul></td>
+<td>Typographic emphasis on the text.</td>
+<td><ul><li>Normal</li><li>Bold</li><li>Italic</li><li>BoldAndItalic</li></ul></td>
 <td><code class="codehilite">Normal</code></td>
 </tr>
 <tr>
 <td>fontSize</td>
-<td></td>
+<td>Height of the text in pixels.</td>
 <td>float</td>
 <td><code class="codehilite">14</code></td>
 </tr>
 <tr>
 <td>resizeTextForBestFit</td>
-<td>Resize text to fit?</td>
+<td>If set then <code class="codehilite">fontSize</code> is ignored and the text will be sized to be as large as possible while still fitting within its bounding box.</td>
 <td><a href="#attribute-types"><span class="tag boo"></span></a></td>
 <td><code class="codehilite">false</code></td>
 </tr>
 <tr>
 <td>resizeTextMinSize</td>
-<td>Minimum font size</td>
+<td>When <code class="codehilite">resizeTextForBestFit</code> is set, text will not be sized smaller than this.</td>
 <td>float</td>
 <td><code class="codehilite">10</code></td>
 </tr>
 <tr>
 <td>resizeTextMaxSize</td>
-<td>Maximum font size</td>
+<td>When <code class="codehilite">resizeTextForBestFit</code> is set, text will not be sized larger than this.</td>
 <td>float</td>
 <td><code class="codehilite">40</code></td>
 </tr>
 <tr>
 <td>horizontalOverflow</td>
-<td></td>
+<td>Defines what happens when text extends beyond the left or right edges of its bounding box.</td>
 <td><ul><li>Wrap</li><li>Overflow</li></ul></td>
 <td><code class="codehilite">Overflow</code></td>
 </tr>
 <tr>
 <td>verticalOverflow</td>
-<td></td>
+<td>Defines what happens when text extends beyond the top or bottom edges of its bounding box.</td>
 <td><ul><li>Truncate</li><li>Overflow</li></ul></td>
 <td><code class="codehilite">Truncate</code></td>
 </tr>
@@ -2841,35 +2754,35 @@
 <table>
 <thead>
 <tr>
-<th>Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Attribute&nbsp;Name</th>
+<th>Description</th>
+<th>Type&nbsp;/&nbsp;Options</th>
+<th>Default&nbsp;Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>image</td>
-<td>Name of image (in the asset manager).</td>
+<td>Name of the image in the asset manager.</td>
 <td>string</td>
-<td>(<em>none</em>)</td>
+<td><em>(none)</em></td>
 </tr>
 <tr>
 <td>preserveAspect</td>
-<td>Should the aspect ratio of this image be preserved?</td>
+<td>If set, the image will not stretch beyond its original aspect ratio, potentially leaving gaps around the image.</td>
 <td><a href="#attribute-types"><span class="tag boo"></span></a></td>
 <td><em>(varies)</em></td>
 </tr>
 <tr>
 <td>color</td>
-<td>Color for this element's image</td>
+<td>Color to tint the image, or a flat color to display if no image is given.</td>
 <td><a href="#attribute-types"><span class="tag xmlco"></span></a></td>
 <td><code class="codehilite">clear</code> or <code class="codehilite">#FFFFFF</code></td>
 </tr>
 <tr>
 <td>type</td>
-<td>Image Type</td>
-<td>Simple, Sliced, Filled, Tiled</td>
+<td>Defines how the image is drawn.</td>
+<td><ul><li>Simple</li><li>Sliced</li><li>Filled</li><li>Tiled</li></ul></td>
 <td><em>(varies)</em></td>
 </tr>
 <tr>
@@ -2884,10 +2797,10 @@
 <table>
 <thead>
 <tr>
-<th>Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Attribute&nbsp;Name</th>
+<th>Description</th>
+<th>Type&nbsp;/&nbsp;Options</th>
+<th>Default&nbsp;Value</th>
 </tr>
 </thead>
 <tbody>
@@ -2895,7 +2808,7 @@
 <td>shadow</td>
 <td>Defines the shadow color of this element.</td>
 <td><a href="#attribute-types"><span class="tag xmlco"></span></a></td>
-<td>(none)</td>
+<td><em>(none)</em></td>
 </tr>
 <tr>
 <td>shadowDistance</td>
@@ -2907,7 +2820,7 @@
 <td>outline</td>
 <td>Defines the outline color of this element.</td>
 <td><a href="#attribute-types"><span class="tag xmlco"></span></a></td>
-<td>(none)</td>
+<td><em>(none)</em></td>
 </tr>
 <tr>
 <td>outlineSize</td>
@@ -2922,183 +2835,207 @@
 <table>
 <thead>
 <tr>
-<th>Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Attribute&nbsp;Name</th>
+<th>Description</th>
+<th>Type&nbsp;/&nbsp;Options</th>
+<th>Default&nbsp;Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>ignoreLayout</td>
-<td>Should this element ignore its parent layout group?</td>
+<td>If this element ignores its parent's layout group behavior and treats it as a regular Panel. (This means it would obey regular position/size attributes.)</td>
 <td><a href="#attribute-types"><span class="tag boo"></span></a></td>
 <td><code class="codehilite">false</code></td>
 </tr>
 <tr>
 <td>minWidth</td>
-<td>Minimum width for this element.</td>
+<td>Elements will not be sized thinner than this.</td>
 <td>float</td>
-<td></td>
+<td><em>(varies)</em></td>
 </tr>
 <tr>
 <td>minHeight</td>
-<td>Minimum height for this element.</td>
+<td>Elements will not be sized shorter than this.</td>
 <td>float</td>
-<td></td>
+<td><em>(varies)</em></td>
 </tr>
 <tr>
 <td>preferredWidth</td>
-<td>Preferred width for this element.</td>
+<td>If there is space after <code class="codehilite">minWidth</code>s are sized, then element widths are sized according to this.</td>
 <td>float</td>
-<td></td>
+<td><em>(varies)</em></td>
 </tr>
 <tr>
 <td>preferredHeight</td>
-<td>Preferred height for this element.</td>
+<td>If there is space after <code class="codehilite">minHeight</code>s are sized, then element heights are sized according to this.</td>
 <td>float</td>
-<td></td>
+<td><em>(varies)</em></td>
 </tr>
 <tr>
 <td>flexibleWidth</td>
-<td>Should the width of this element be flexible?</td>
-<td><ul><li>1</li><li>0</li></ul></td>
-<td></td>
+<td>If there is additional space after <code class="codehilite">preferredWidth</code>s are sized, defines how much the element expands to fill the available horizontal space, relative to other elements.</td>
+<td>float</td>
+<td><em>(varies)</em></td>
 </tr>
 <tr>
 <td>flexibleHeight</td>
-<td>Should the height of this element be flexible?</td>
-<td><ul><li>1</li><li>0</li></ul></td>
-<td></td>
+<td>If there is additional space after <code class="codehilite">preferredHeights</code>s are sized, defines how much the element expands to fill the available vertical space, relative to other elements.</td>
+<td>float</td>
+<td><em>(varies)</em></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">On Sizing Elements</p>
+<p>Minimum and preferred sizes are defined in regular units, while the flexible sizes are defined in relative units. If any layout element has flexible size greater than zero, it means that all the available space will be filled out. The relative flexible size values of the siblings determines how big a proportion of the available space each sibling fills out. Most commonly, flexible width and height is set to just 0 or 1.</p>
+</div>
 <h3 id="positionsize-attributes-basic">Position/Size Attributes (Basic)<a class="headerlink" href="#positionsize-attributes-basic" title="Permanent link"> </a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>These attributes do not apply to elements that are direct children of layout groups. To size those elements see <a href="#layout-element-attributes">Layout Element Attributes</a>.</p>
+</div>
 <table>
 <thead>
 <tr>
-<th>Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Attribute&nbsp;Name</th>
+<th>Description</th>
+<th>Type&nbsp;/&nbsp;Options</th>
+<th>Default&nbsp;Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>rectAlignment</td>
-<td>Defines this elements position within its parent. Only applies to elements not contained within layout groups.</td>
-<td>UpperLeft, UpperCenter, UpperRight, MiddleLeft, MiddleCenter, MiddleRight, LowerLeft, LowerCenter, LowerRight</td>
+<td>The element's anchor and pivot point, relative to its parent element.</td>
+<td><ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul></td>
 <td><code class="codehilite">MiddleCenter</code></td>
 </tr>
 <tr>
 <td>width</td>
-<td>Defines the width of this element.</td>
+<td>The width of this element in pixels or as a percentage of the width of its parent.</td>
 <td>float (fixed width) or a Percentage value</td>
 <td><code class="codehilite">100%</code></td>
 </tr>
 <tr>
 <td>height</td>
-<td>Defines the height of this element.</td>
+<td>The height of this element in pixels or as a percentage of the height of its parent.</td>
 <td>float (fixed width) or a Percentage value</td>
 <td><code class="codehilite">100%</code></td>
 </tr>
 <tr>
 <td>offsetXY</td>
-<td>Defines an offset to the position of this element, e.g. a value of <code class="codehilite">-32 0</code> will cause this element to be 32 pixels to the left of where it would otherwise be.</td>
-<td>float (x) float (y)</td>
+<td>An offset to the position of this element, e.g. a value of <code class="codehilite">-32 10</code> will cause this element to be 10 pixels up and 32 pixels to the left of where it would otherwise be.</td>
+<td>float(x) float(y)</td>
 <td><code class="codehilite">0 0</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="positionsize-attributes-adv">Position/Size Attributes (Adv)<a class="headerlink" href="#positionsize-attributes-adv" title="Permanent link"> </a></h3>
+<h3 id="positionsize-attributes-advanced">Position/Size Attributes (Advanced)<a class="headerlink" href="#positionsize-attributes-advanced" title="Permanent link"> </a></h3>
 <p>These provide deeper access to Unity's <a href="https://docs.unity3d.com/ScriptReference/RectTransform.html">RectTransform</a> properties.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Besides <code class="codehilite">rotation</code> and <code class="codehilite">scale</code>, these attributes do not apply to elements that are direct children of layout groups. To size those elements see <a href="#layout-element-attributes">Layout Element Attributes</a>.</p>
+</div>
 <table>
 <thead>
 <tr>
-<th>Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Attribute&nbsp;Name</th>
+<th>Description</th>
+<th>Type&nbsp;/&nbsp;Options</th>
+<th>Default&nbsp;Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>anchorMin</td>
-<td></td>
+<td>The anchor point for the bottom-left corner of the element, where <code class="codehilite">0 0</code> is its parent's bottom-left corner and <code class="codehilite">1 1</code> is its parent's top-right corner.</td>
 <td>float(x) float(y)</td>
-<td></td>
+<td><em>(varies)</em></td>
 </tr>
 <tr>
 <td>anchorMax</td>
-<td></td>
+<td>The anchor point for the top-right corner of the element, where <code class="codehilite">0 0</code> is its parent's bottom-left corner and <code class="codehilite">1 1</code> is its parent's top-right corner.</td>
 <td>float(x) float(y)</td>
-<td></td>
+<td><em>(varies)</em></td>
 </tr>
 <tr>
 <td>sizeDelta</td>
-<td></td>
+<td>An offset to the size of the element, e.g. a value of <code class="codehilite">15 -20</code> will cause this element to be 15 pixels wider and 32 pixels shorter than what it would otherwise be.</td>
 <td>float(x) float(y)</td>
-<td></td>
+<td><em>(varies)</em></td>
 </tr>
 <tr>
 <td>pivot</td>
-<td></td>
+<td>The pivot point this element is positioned, rotated, and scaled around. <code class="codehilite">0 0</code> is the element's bottom-left corner and <code class="codehilite">1 1</code> is its top-right corner.</td>
 <td>float(x) float(y)</td>
-<td></td>
+<td><code class="codehilite">0.5 0.5</code></td>
 </tr>
 <tr>
 <td>position</td>
-<td></td>
+<td>An offset to the position of this element in 3D space. Z moves the element in and out.</td>
 <td>float(x) float(y) float(z)</td>
-<td></td>
+<td><code class="codehilite">0 0 0</code></td>
 </tr>
 <tr>
 <td>rotation</td>
-<td></td>
+<td>Rotates the element in 3D space. X and Y tilt it like a dish, Z turns it like a steering wheel.</td>
 <td>float(x) float(y) float(z)</td>
-<td></td>
+<td><code class="codehilite">0 0 0</code></td>
 </tr>
 <tr>
 <td>scale</td>
-<td></td>
-<td>float(x) float(y)</td>
-<td></td>
+<td>Scales the component around its pivot. Note that this does not add more pixel detail, text with small font and other elements may appear pixelated or blurry. Z does not affect the thickness of the element (it is always flat), but does affect the transforms of its children.</td>
+<td>float(x) float(y) float(z)</td>
+<td><code class="codehilite">1 1 1</code></td>
 </tr>
 <tr>
 <td>offsetMin</td>
-<td></td>
-<td>float(left) float(bottom)</td>
-<td></td>
+<td>An offset in pixels from <code class="codehilite">anchorMin</code> to be used as the bottom-left corner of the element.</td>
+<td>float(x) float(y)</td>
+<td><em>(varies)</em></td>
 </tr>
 <tr>
 <td>offsetMax</td>
-<td></td>
-<td>float(left) float(bottom)</td>
-<td></td>
+<td>An offset in pixels from <code class="codehilite">anchorMax</code> to be used as the top-right corner of the element.</td>
+<td>float(x) float(y)</td>
+<td><em>(varies)</em></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition warning">
+<p class="admonition-title">Mixing Attributes</p>
+<p>Some <a href="#positionsize-attributes-advanced">Advanced Position/Size Attributes</a> affect the same underlying properties as the <a href="#positionsize-attributes-basic">Basic Position/Size Attributes</a> and other Advanced Position/Size Attributes. Using these overlapping attributes on the same element will cause one attribute to be effectively overwritten, and may result in unexpected behaviour.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Elements in 3D Space</p>
+<p>Moving elements in 3D space can achieve parallax and perspective effects, but elements later in the XML will always be drawn on top of elements earlier in the same XML, and will not occlude as other 3d objects would. To avoid any visual glitches, try to make sure unrelated UI elements can't be seen overlapping when viewed from most angles. Global UI has no perspective and is always 2D.</p>
+</div>
 <h3 id="dragging-attributes">Dragging Attributes<a class="headerlink" href="#dragging-attributes" title="Permanent link"> </a></h3>
-<p>Allow users to move elements by click/dragging.</p>
+<p>Allow users to move elements by clicking/dragging.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is currently no reliable way to read the positions of elements, and dragged positions reset when the UI is reloaded.</p>
+</div>
 <table>
 <thead>
 <tr>
-<th>Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Attribute&nbsp;Name</th>
+<th>Description</th>
 <th>Type&nbsp;/&nbsp;Options</th>
-<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Default&nbsp;Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>allowDragging</td>
-<td>Allow this element to be dragged? <br><span class="critic comment">Does not work on child elements of layout groups)</span></td>
+<td>Allows the element to be dragged around. <br><span class="critic comment">Does not work on child elements of layout groups)</span></td>
 <td><a href="#attribute-types"><span class="tag boo"></span></a></td>
 <td><code class="codehilite">false</code></td>
 </tr>
 <tr>
 <td>restrictDraggingToParentBounds</td>
-<td>Prevent this element from being dragged outside of its parent?</td>
+<td>If set, prevents the element from being dragged outside the bounding box of its parent.</td>
 <td><a href="#attribute-types"><span class="tag boo"></span></a></td>
 <td><code class="codehilite">true</code></td>
 </tr>
@@ -3114,40 +3051,40 @@
 <table>
 <thead>
 <tr>
-<th>Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Attribute&nbsp;Name</th>
+<th>Description</th>
+<th>Type&nbsp;/&nbsp;Options</th>
+<th>Default&nbsp;Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>showAnimation</td>
-<td></td>
+<td>Animation to play when <code class="codehilite">show()</code> is called for the element.</td>
 <td><ul><li>None</li><li>Grow</li><li>FadeIn</li><li>SlideIn_Left</li><li>SlideIn_Right</li><li>SlideIn_Top</li><li>SlideIn_Bottom</li></ul></td>
 <td><code class="codehilite">None</code></td>
 </tr>
 <tr>
 <td>hideAnimation</td>
-<td></td>
+<td>Animation to play when <code class="codehilite">hide()</code> is called for the element.</td>
 <td><ul><li>None</li><li>Shrink</li><li>FadeOut</li><li>SlideOut_Left</li><li>SlideOut_Right</li><li>SlideOut_Top</li><li>SlideOut_Bottom</li></ul></td>
 <td><code class="codehilite">None</code></td>
 </tr>
 <tr>
 <td>showAnimationDelay</td>
-<td>Adds a short delay before playing this element's show animation.</td>
+<td>Time in seconds to wait before playing this element's show animation. Useful for staggering the animations of multiple elements.</td>
 <td>float</td>
 <td><code class="codehilite">0</code></td>
 </tr>
 <tr>
 <td>hideAnimationDelay</td>
-<td>Adds a short delay before playing this element's hide animation.</td>
+<td>Time in seconds to wait before playing this element's hide animation. Useful for staggering the animations of multiple elements.</td>
 <td>float</td>
 <td><code class="codehilite">0</code></td>
 </tr>
 <tr>
 <td>animationDuration</td>
-<td>Specifies how long show/hide animations should take to play.</td>
+<td>Time in seconds that show/hide animations take to play.</td>
 <td>float</td>
 <td><code class="codehilite">0.25</code></td>
 </tr>
@@ -3158,36 +3095,48 @@
 <table>
 <thead>
 <tr>
-<th>Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Attribute&nbsp;Name</th>
+<th>Description</th>
+<th>Type&nbsp;/&nbsp;Options</th>
+<th>Default&nbsp;Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>tooltip</td>
-<td>Tooltip text.</td>
+<td>Text to display when the element is hovered over.</td>
 <td>string</td>
 <td><em>(none)</em></td>
 </tr>
 <tr>
 <td>tooltipBorderColor</td>
-<td>Color of the tooltips border.</td>
+<td>Color of the tooltip's border.</td>
 <td><a href="#attribute-types"><span class="tag xmlco"></span></a></td>
 <td><code class="codehilite">#FFFFFF</code></td>
 </tr>
 <tr>
 <td>tooltipBackgroundColor</td>
-<td>Color of the tooltips background</td>
+<td>Color of the tooltip's background.</td>
 <td><a href="#attribute-types"><span class="tag xmlco"></span></a></td>
 <td><code class="codehilite">rgba(0,0,0,0.62)</code></td>
 </tr>
 <tr>
-<td>tooltipTextColor</td>
-<td>Color of the text within this tooltip</td>
-<td><a href="#attribute-types"><span class="tag xmlco"></span></a></td>
+<td>tooltipBorderImage</td>
+<td>Image used for the tooltip's border. See <a href="#image-attributes">Image Attributes</a>.</td>
+<td>string</td>
 <td></td>
+</tr>
+<tr>
+<td>tooltipBackgroundImage</td>
+<td>Image used for the tooltip's background. See <a href="#image-attributes">Image Attributes</a>.</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>tooltipTextColor</td>
+<td>Color of the text within this tooltip.</td>
+<td><a href="#attribute-types"><span class="tag xmlco"></span></a></td>
+<td><code class="codehilite">#FFFFFF</code></td>
 </tr>
 <tr>
 <td>tooltipPosition</td>
@@ -3196,102 +3145,94 @@
 <td><code class="codehilite">Right</code></td>
 </tr>
 <tr>
-<td>tooltipBorderImage</td>
-<td>This attribute allows you to override the default image used for the tooltips border.</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>tooltipBackgroundImage</td>
-<td>This attribute allows you to override the default image used for the tooltips background.</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
 <td>tooltipOffset</td>
-<td>This attribute allows you to modify the distance this tooltip will appear from the element.</td>
+<td>Distance in pixels that this tooltip will appear from the element.</td>
 <td>float</td>
-<td></td>
+<td><code class="codehilite">8</code></td>
 </tr>
 </tbody>
 </table>
 <h3 id="event-attributes">Event Attributes<a class="headerlink" href="#event-attributes" title="Permanent link"> </a></h3>
-<p>Allows Lua scripting events to be triggered by any element, through a variety of interactions. See the <a href="../inputelements/">Input Elements</a> page for how to interact with Lua scripting.</p>
+<p>Allows Lua scripting functions to be triggered by an element, through a variety of interactions. All elements have no events by default, listed below is the default value passed as the 2<sup>nd</sup> parameter to the triggered function.</p>
+<p>See the <a href="../inputelements/">Input Elements</a> page for how to interact with Lua scripting.</p>
 <table>
 <thead>
 <tr>
-<th>Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Attribute&nbsp;Name</th>
+<th>Description</th>
+<th>Type&nbsp;/&nbsp;Options</th>
+<th>Default&nbsp;Argument</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>onClick</td>
-<td>Clicking on the element.</td>
+<td>Called when the mouse is pressed while over the element and then released while still over it.</td>
 <td>string</td>
-<td></td>
+<td>The click button</td>
 </tr>
 <tr>
 <td>onMouseEnter</td>
-<td>Pointer entering the boundary of the element.</td>
+<td>Called when the pointer enters the boundary of the element.</td>
 <td>string</td>
-<td></td>
+<td><code class="codehilite">&quot;-1&quot;</code></td>
 </tr>
 <tr>
 <td>onMouseExit</td>
-<td>Pointer leaving the boundary of the element.</td>
+<td>Called when the pointer leaves the boundary of the element.</td>
 <td>string</td>
-<td></td>
+<td><code class="codehilite">&quot;-1&quot;</code></td>
 </tr>
 <tr>
 <td>onDrag</td>
-<td>Element drag event.</td>
+<td>Called every frame if the element is being dragged and has moved that frame.</td>
 <td>string</td>
-<td></td>
+<td><code class="codehilite">nil</code></td>
 </tr>
 <tr>
 <td>onBeginDrag</td>
-<td>Element beginning to be dragged.</td>
+<td>Called once when the element starts being dragged.</td>
 <td>string</td>
-<td></td>
+<td><code class="codehilite">nil</code></td>
 </tr>
 <tr>
 <td>onEndDrag</td>
-<td>Element being release from its drag.</td>
+<td>Called once when the element stops being dragged and the mouse button is released.</td>
 <td>string</td>
-<td></td>
+<td><code class="codehilite">nil</code></td>
 </tr>
 <tr>
 <td>onMouseDown</td>
-<td>Mouse click action.</td>
+<td>Called when the mouse is pressed while over the element.</td>
 <td>string</td>
-<td></td>
+<td>The click button</td>
 </tr>
 <tr>
 <td>onMouseUp</td>
-<td>Mouse click finishing action.</td>
+<td>Called when the mouse is released, if it had previously been pressed while over the element (no matter where the cursor currently is).</td>
 <td>string</td>
-<td></td>
+<td>The click button</td>
 </tr>
 <tr>
 <td>onSubmit</td>
-<td></td>
+<td>Called when the Enter/Return key is pressed on an <a href="../inputelements/">Input Element</a>.</td>
 <td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>onElementDropped</td>
-<td>An element needs isDropReceiver for this to trigger</td>
-<td>string</td>
-<td></td>
+<td>The value of the input element</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>onClick, onMouseEnter, onMouseExit, onMouseDown and onMouseUp all pass the click button. The values are -1 LMB, -2RMB, -3 MMB, 0 touch single, 1 double touche, 2 triple touch.</p>
+<p><code class="codehilite">onClick</code>, <code class="codehilite">onMouseDown</code> and <code class="codehilite">onMouseUp</code> all pass the click button. They hold digits, but their data type is <strong>string</strong>. The possible values are:</p>
+<ul>
+<li><code class="codehilite">&quot;-1&quot;</code>: Left mouse button</li>
+<li><code class="codehilite">&quot;-2&quot;</code>: Right mouse button</li>
+<li><code class="codehilite">&quot;-3&quot;</code>: Middle mouse button</li>
+<li><code class="codehilite">&quot;1&quot;</code>: Single touch</li>
+<li><code class="codehilite">&quot;2&quot;</code>: Double touch</li>
+<li><code class="codehilite">&quot;3&quot;</code>: Triple touch</li>
+</ul>
+<p><code class="codehilite">onMouseEnter</code> and <code class="codehilite">onMouseExit</code> also pass click buttons, but the value is always <code class="codehilite">&quot;-1&quot;</code>.</p>
 </div>
 <hr />
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link"> </a></h2>
@@ -3320,8 +3261,6 @@
 <span class="nt">&gt;</span>Hello
 <span class="nt">&lt;/Button&gt;</span>
 </pre></div>
-
-<hr />
                 
                   
                 
