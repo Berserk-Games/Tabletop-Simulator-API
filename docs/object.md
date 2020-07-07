@@ -276,7 +276,7 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 [<span class="ret boo"></span>](types.md)&nbsp;Adds force to an object in a directional Vector.
 
 !!!info "addForce(vector, force_type)"
-	* [<span class="tag tab"></span>](types.md) **vector**: A Vector of the direction and magnitude of force.
+	* [<span class="tag vec"></span>](types.md) **vector**: A Vector of the direction and magnitude of force.
     * [<span class="tag int"></span>](types.md) **force_type**: An Int representing the force type to apply. Options below.
 		* {>>Optional, defaults to 3.<<}
         * **1**: Continuous force, uses mass. *(Force)*
