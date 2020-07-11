@@ -394,7 +394,7 @@ end
 [<span class="ret boo"></span>](types.md)&nbsp;Print a message into the in-game chat of all connected players.
 
 !!!info "printToAll(message, message_tint)"
-	* [<span class="tag tab"></span>](types.md) **message**: Message to place into players' in-game chats.
+	* [<span class="tag str"></span>](types.md) **message**: Message to place into players' in-game chats.
 	* [<span class="tag col"></span>](types.md#color) **message_tint**: RGB values for the text's color tint.
 
 ``` Lua
