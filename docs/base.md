@@ -408,7 +408,7 @@ printToAll("Hello World!", {r=1,g=0,b=0})
 
 [<span class="ret boo"></span>](types.md)&nbsp;Print a message to the in-game chat of a specific player.
 
-!!!info "printToColor(message, [player_color](player-color.md), message_tint)"
+!!!info "printToColor(message, player_color, message_tint)"
 	* [<span class="tag str"></span>](types.md) **message**: Message to place into the player's in-game chat.
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player that will receive the message.
 	* [<span class="tag col"></span>](types.md#color) **message_tint**: RGB values for the text's color tint.
