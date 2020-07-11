@@ -115,7 +115,7 @@ end
 
 ####paste(...)
 
-[<span class="ret obj"></span>](types.md)&nbsp;Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy).
+[<span class="ret tab"></span>](types.md)&nbsp;Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy).
 
 !!!info "paste(parameters)"
 	* [<span class="tag tab"></span>](types.md) **parameters**: A Table containing instructions of where to spawn the Objects.
