@@ -540,7 +540,7 @@ end
 
 Called when a [Player](player.md) connects to a game.
 
-!!!info "onPlayerConnect(person)""
+!!!info "onPlayerConnect(person)"
 	* [<span class="tag pla"></span>](types.md)&nbsp;**person**: Player reference to who connected.
 
 ---
@@ -550,7 +550,7 @@ Called when a [Player](player.md) connects to a game.
 
 Called when a [Player](player.md) disconnects from a game.
 
-!!!info "onPlayerDisconnect(person)""
+!!!info "onPlayerDisconnect(person)"
 	* [<span class="tag pla"></span>](types.md)&nbsp;**person**: Player reference to who disconnected.
 
 ---
