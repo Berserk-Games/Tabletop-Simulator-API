@@ -306,7 +306,7 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 
 ####getBounds()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table of Vector information describing the size of an object in Global terms. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Table of Vector information describing the size of an object in Global terms. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
 
 !!!info "Return Table"
 	* [<span class="tag tab"></span>](types.md) **center**: The Vector of the center of the bounding box.
@@ -327,7 +327,7 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 
 ####getBoundsNormalized()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table of Vector information describing the size of an object in Global terms, as if it was rotated to {0,0,0}. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Table of Vector information describing the size of an object in Global terms, as if it was rotated to {0,0,0}. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
 
 !!!info "Return Table"
 	* [<span class="tag tab"></span>](types.md) **center**: The Vector of the center of the bounding box.
@@ -348,14 +348,14 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 
 ####getScale()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector of the current scale. Scale is not an absolute measurement, it is a multiple of the Object's default model size. So {x=2, y=2, z=2} would be a model twice its default size, not 2 units large.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector of the current scale. Scale is not an absolute measurement, it is a multiple of the Object's default model size. So {x=2, y=2, z=2} would be a model twice its default size, not 2 units large.
 
 ---
 
 
 ####getTransformForward()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector of the forward direction of this Object. The direction is relative to how the object is facing.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector of the forward direction of this Object. The direction is relative to how the object is facing.
 
 ``` Lua
 -- Example of moving forward 5 units
@@ -377,7 +377,7 @@ end
 
 ####getTransformRight()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector of the forward direction of this object. The direction is relative to how the object is facing.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector of the forward direction of this object. The direction is relative to how the object is facing.
 
 ``` Lua
 -- Example of moving right 5 units
@@ -399,7 +399,7 @@ end
 
 ####getTransformUp()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector of the up direction of this Object. The direction is relative to how the object is facing.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector of the up direction of this Object. The direction is relative to how the object is facing.
 
 ``` Lua
 -- Example of moving up 5 units
@@ -421,7 +421,7 @@ end
 
 ####positionToLocal(...)
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector after converting a world vector to a local Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector after converting a world vector to a local Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
 
 !!!tip "Object Scale"
 	This function takes the Object's scale into account, as the Object is the key relative point.
@@ -434,7 +434,7 @@ end
 
 ####positionToWorld(...)
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector after converting a local Vector to a world Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector after converting a local Vector to a world Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
 
 !!!tip "Object Scale"
 	This function takes the Object's scale into account, as the Object is the key relative point.
@@ -485,7 +485,7 @@ self.scale(2)
 [<span class="ret boo"></span>](types.md)&nbsp;Moves the Object smoothly to the given Vector.
 
 !!!info "setPositionSmooth(vector, collide, fast)"
-	* [<span class="tag tab"></span>](types.md) **Vector**: A positional Vector.
+	* [<span class="tag vec"></span>](types.md) **vector**: A positional Vector.
 	* [<span class="tag boo"></span>](types.md) **collide**: If the Object will collide with other Objects while moving.
 	* [<span class="tag boo"></span>](types.md) **fast**: If the Object is moved quickly.
 
@@ -497,7 +497,7 @@ self.scale(2)
 [<span class="ret boo"></span>](types.md)&nbsp;Rotates the Object smoothly to the given Vector.
 
 !!!info "setRotationSmooth(vector, collide, fast)"
-	* [<span class="tag tab"></span>](types.md) **Vector**: A rotational Vector.
+	* [<span class="tag vec"></span>](types.md) **vector**: A rotational Vector.
 	* [<span class="tag boo"></span>](types.md) **collide**: If the Object will collide with other Objects while rotating.
 	* [<span class="tag boo"></span>](types.md) **fast**: If the Object is rotated quickly.
 
