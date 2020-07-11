@@ -190,7 +190,7 @@ Function Name | Description | Return | &nbsp;
 <a class="anchor" id="flip"></a>flip() | Flips Object over. | [<span class="ret boo"></span>](types.md) |
 clone([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Copy/Paste this Object, returning a reference to the new Object. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#clone)
 cut([<span class="tag int"></span>](types.md)&nbsp;count) | Cuts (splits) a deck at the given card count. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#cut)
-deal([<span class="tag int"></span>](types.md)&nbsp;number, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;index) | Deals Objects. Will deal from decks/bags/stacks/individual items. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#deal)
+deal([<span class="tag int"></span>](types.md)&nbsp;number, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;index) | Deals Objects. Will deal from decks/bags/stacks/individual items. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#deal)
 dealToColorWithOffset([<span class="tag vec"></span>](types.md#vector)&nbsp;offset, [<span class="tag boo"></span>](types.md)&nbsp;flip, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Deals from a deck to a position relative to the hand zone. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#dealtocolorwithoffset)
 <a class="anchor" id="destruct"></a>destruct() | Destroys Object. Allows for `self.destruct()`. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="drop"></a>drop() | Forces an Object, if held by a player, to be dropped. | [<span class="ret boo"></span>](types.md) |
@@ -1280,7 +1280,7 @@ newDecks[2].deal(1)
 
 ####deal(...)
 
-[<span class="ret obj"></span>](types.md)&nbsp;Deals Objects to hand zones. Will deal from decks/bags/stacks as well as individual items. If dealing an individual item to a hand zone, it is a good idea to make sure that its [Member Variable](#member-variables) for `use_hands` is `true`.
+[<span class="ret boo"></span>](types.md)&nbsp;Deals Objects to hand zones. Will deal from decks/bags/stacks as well as individual items. If dealing an individual item to a hand zone, it is a good idea to make sure that its [Member Variable](#member-variables) for `use_hands` is `true`.
 
 !!!info "deal(number, player_color, index)"
 	* [<span class="tag int"></span>](types.md) **number**: How many to deal.
