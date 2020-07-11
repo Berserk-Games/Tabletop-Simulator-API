@@ -1835,8 +1835,8 @@ end
 > This function can also be used on the game world itself using Global.
 
 !!!info "setSnapPoints(parameters)"
-	* [<span class="tag str"></span>](types.md) **parameters**: A table containing numerically indexed sub-tables.
-		* [<span class="tag str"></span>](types.md) **sub-table**:
+	* [<span class="tag tab"></span>](types.md) **parameters**: A table containing numerically indexed sub-tables.
+		* [<span class="tag tab"></span>](types.md) **sub-table**:
 			* [<span class="tag vec"></span>](types.md#vector) **position**: Position of the snap point. This is relative to the entity's position (local).
 				* {>>Optional, defaults to {0,0,0}.<<}
 			* [<span class="tag vec"></span>](types.md#vector) **rotation**: Rotation of the snap point. This is relative to the entity's rotation (local).
