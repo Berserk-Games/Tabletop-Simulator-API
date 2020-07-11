@@ -1280,7 +1280,7 @@ newDecks[2].deal(1)
 
 ####deal(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Deals Objects to hand zones. Will deal from decks/bags/stacks as well as individual items. If dealing an individual item to a hand zone, it is a good idea to make sure that its [Member Variable](#member-variables) for `use_hands` is `true`.
+[<span class="ret obj"></span>](types.md)&nbsp;Deals Objects to hand zones. Will deal from decks/bags/stacks as well as individual items. If dealing an individual item to a hand zone, it is a good idea to make sure that its [Member Variable](#member-variables) for `use_hands` is `true`.
 
 !!!info "deal(number, player_color, index)"
 	* [<span class="tag int"></span>](types.md) **number**: How many to deal.
