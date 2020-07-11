@@ -62,7 +62,7 @@ onCollisionStay([<span class="tag tab"></span>](types.md)&nbsp;collision_info) |
 onDestroy() | Called when an Object it is on is destroyed. | [<span class="i"></span>](#ondestroy)
 onDrop([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player releases an Object after picking it up. | [<span class="i"></span>](#ondrop)
 onPageChange() | Called when a Custom PDF page is changed. | [<span class="i"></span>](#onpagechange)
-onPeek([<span class="tag str"></span>](types.md)&nbsp;player) | Called when a player using peek to look under this Object. | [<span class="i"></span>](#onpeek)
+onPeek([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player using peek to look under this Object. | [<span class="i"></span>](#onpeek)
 onPickUp([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player picks up an Object. | [<span class="i"></span>](#onpickup)
 onRandomize([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when this Object is randomized. Like when shuffling a deck or shaking dice. | [<span class="i"></span>](#onrandomize)
 onSearchEnd([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player finishes searches this Object. | [<span class="i"></span>](#onsearchend)
@@ -806,8 +806,8 @@ end
 
 Called when a player using peek to look under an Object.
 
-!!!info "onPeek(player)"
-	* [<span class="tag str"></span>](types.md)&nbsp;**player**: Name of the [Player Color](player-color.md) that peeked.
+!!!info "onPeek(player_color)"
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: Name of the [Player Color](player-color.md) that peeked.
 
 
 ``` Lua
