@@ -187,6 +187,19 @@ Player["White"].lookAt({
 ---
 
 
+####setCameraMode(...)
+
+[<span class="ret boo"></span>](types.md)&nbsp;Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown".
+
+!!!info "changeColor(camera_mode)"
+    * [<span class="tag str"></span>](types.md) **camera_mode**: The Camera Mode to set the Player's Camera to.
+
+``` Lua
+Player["White"].setCameraMode("FirstPerson")
+```
+
+---
+
 ####setHandTransform(...)
 
 [<span class="ret boo"></span>](types.md)&nbsp;Sets transform elements of a [hand zone](http://berserk-games.com/knowledgebase/hands/).
@@ -216,21 +229,6 @@ Player["White"].setHandTransform(params, 2)
 ```
 
 ---
-
-
-####setCameraMode(...)
-
-[<span class="ret boo"></span>](types.md)&nbsp;Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown". 
-
-!!!info "changeColor(camera_mode)"
-    * [<span class="tag str"></span>](types.md) **camera_mode**: The Camera Mode to set the Player's Camera to.
-
-``` Lua
-Player["White"].setCameraMode("FirstPerson")
-```
-
----
-
 
 ###Direct Class Function Details
 
