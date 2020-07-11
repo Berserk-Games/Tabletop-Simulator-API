@@ -10,11 +10,14 @@ Tag | Type | Description | Example
 [<span class="tag boo"></span>](types.md)&nbsp;| bool | `true` or `false` value. | `#!lua true`
 [<span class="tag str"></span>](types.md)&nbsp;| string | A series of characters. | `#!lua "Hello."`
 [<span class="tag tab"></span>](types.md)&nbsp;| table | A container with keys and values. | `#!lua {["key"]="value", true, 5}`
+[<span class="tag vec"></span>](types.md)&nbsp;| vector | See section [Vector](#vector) for more info. |
+[<span class="tag col"></span>](types.md)&nbsp;| color | See section [Color](#color) for more info. |
+[<span class="tag fun"></span>](types.md)&nbsp;| function | See section [Function](#function) for more info. |
 [<span class="tag obj"></span>](types.md)&nbsp;| object | An in-game physical Object. Sometimes Global. | `#!lua Global or self`
 [<span class="tag pla"></span>](types.md)&nbsp;| player | An in-game Player. | `#!lua Player["White"]`
 [<span class="tag var"></span>](types.md)&nbsp;| variable | A combination of other types. |
 
-You will also see tags for Color, Vector, and Function. See below for more info.
+See below for more info.
 
 > For more information on a type, you can read below or refer to the relevant [Lua documentation](https://www.lua.org/manual/5.1/manual.html#2.2).
 
