@@ -651,6 +651,24 @@ end
 
 ##Function Details (Object only)
 
+
+###filterObjectEnter(...)
+
+Called when an object attempts to enter this object. The object is prevented from entering unless "true" is returned.
+
+!!!info "filterObjectEnter(obj)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The object that has tried to enter the object this script is attached to.
+
+``` Lua
+function filterObjectEnter(obj)
+	print(obj.getName()) -- Print entering object's name
+	return true -- Allows object to enter.
+end
+```
+
+
+---
+
 ###onCollisionEnter(...)
 
 This function is called when an Object starts colliding with the Object the function is on. Does not work in Global.
@@ -783,22 +801,6 @@ end
 
 ---
 
-###filterObjectEnter(...)
-
-Called when an object attempts to enter this object. The object is prevented from entering unless "true" is returned.
-
-!!!info "filterObjectEnter(obj)"
-	* [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The object that has tried to enter the object this script is attached to.
-
-``` Lua
-function filterObjectEnter(obj)
-	print(obj.getName()) -- Print entering object's name
-	return true -- Allows object to enter.
-end
-```
-
-
----
 
 ###onPeek(...)
 
