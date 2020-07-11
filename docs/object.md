@@ -190,7 +190,7 @@ Function Name | Description | Return | &nbsp;
 <a class="anchor" id="flip"></a>flip() | Flips Object over. | [<span class="ret boo"></span>](types.md) |
 clone([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Copy/Paste this Object, returning a reference to the new Object. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#clone)
 cut([<span class="tag int"></span>](types.md)&nbsp;count) | Cuts (splits) a deck at the given card count. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#cut)
-deal([<span class="tag int"></span>](types.md)&nbsp;number, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;index) | Deals Objects. Will deal from decks/bags/stacks/individual items. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#deal)
+deal([<span class="tag int"></span>](types.md)&nbsp;number, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;index) | Deals Objects. Will deal from decks/bags/stacks/individual items. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#deal)
 dealToColorWithOffset([<span class="tag vec"></span>](types.md#vector)&nbsp;offset, [<span class="tag boo"></span>](types.md)&nbsp;flip, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Deals from a deck to a position relative to the hand zone. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#dealtocolorwithoffset)
 <a class="anchor" id="destruct"></a>destruct() | Destroys Object. Allows for `self.destruct()`. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="drop"></a>drop() | Forces an Object, if held by a player, to be dropped. | [<span class="ret boo"></span>](types.md) |
@@ -276,7 +276,7 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 [<span class="ret boo"></span>](types.md)&nbsp;Adds force to an object in a directional Vector.
 
 !!!info "addForce(vector, force_type)"
-	* [<span class="tag tab"></span>](types.md) **Vector**: A Vector of the direction and magnitude of force.
+	* [<span class="tag vec"></span>](types.md) **vector**: A Vector of the direction and magnitude of force.
     * [<span class="tag int"></span>](types.md) **force_type**: An Int representing the force type to apply. Options below.
 		* {>>Optional, defaults to 3.<<}
         * **1**: Continuous force, uses mass. *(Force)*
@@ -292,8 +292,8 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 [<span class="ret boo"></span>](types.md)&nbsp;Adds torque to an object in a rotational Vector.
 
 !!!info "addTorque(vector, force_type)"
-	* [<span class="tag tab"></span>](types.md) **Vector**: A Vector of the direction and magnitude of rotational force.
-	* [<span class="tag int"></span>](types.md) **Force Type**: An Int representing the force type to apply. Options below.
+	* [<span class="tag vec"></span>](types.md) **vector**: A Vector of the direction and magnitude of rotational force.
+	* [<span class="tag int"></span>](types.md) **force_type**: An Int representing the force type to apply. Options below.
 		* {>>Optional, defaults to 3.<<}
         * **1**: Continuous force, uses mass. *(Force)*
         * **2**: Continuous acceleration, ignores mass. *(Acceleration)*
@@ -306,7 +306,7 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 
 ####getBounds()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table of Vector information describing the size of an object in Global terms. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Table of Vector information describing the size of an object in Global terms. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
 
 !!!info "Return Table"
 	* [<span class="tag tab"></span>](types.md) **center**: The Vector of the center of the bounding box.
@@ -327,7 +327,7 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 
 ####getBoundsNormalized()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table of Vector information describing the size of an object in Global terms, as if it was rotated to {0,0,0}. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Table of Vector information describing the size of an object in Global terms, as if it was rotated to {0,0,0}. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
 
 !!!info "Return Table"
 	* [<span class="tag tab"></span>](types.md) **center**: The Vector of the center of the bounding box.
@@ -348,14 +348,14 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 
 ####getScale()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector of the current scale. Scale is not an absolute measurement, it is a multiple of the Object's default model size. So {x=2, y=2, z=2} would be a model twice its default size, not 2 units large.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector of the current scale. Scale is not an absolute measurement, it is a multiple of the Object's default model size. So {x=2, y=2, z=2} would be a model twice its default size, not 2 units large.
 
 ---
 
 
 ####getTransformForward()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector of the forward direction of this Object. The direction is relative to how the object is facing.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector of the forward direction of this Object. The direction is relative to how the object is facing.
 
 ``` Lua
 -- Example of moving forward 5 units
@@ -377,7 +377,7 @@ end
 
 ####getTransformRight()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector of the forward direction of this object. The direction is relative to how the object is facing.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector of the forward direction of this object. The direction is relative to how the object is facing.
 
 ``` Lua
 -- Example of moving right 5 units
@@ -399,7 +399,7 @@ end
 
 ####getTransformUp()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector of the up direction of this Object. The direction is relative to how the object is facing.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector of the up direction of this Object. The direction is relative to how the object is facing.
 
 ``` Lua
 -- Example of moving up 5 units
@@ -421,7 +421,7 @@ end
 
 ####positionToLocal(...)
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector after converting a world vector to a local Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector after converting a world vector to a local Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
 
 !!!tip "Object Scale"
 	This function takes the Object's scale into account, as the Object is the key relative point.
@@ -434,7 +434,7 @@ end
 
 ####positionToWorld(...)
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector after converting a local Vector to a world Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector after converting a local Vector to a world Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
 
 !!!tip "Object Scale"
 	This function takes the Object's scale into account, as the Object is the key relative point.
@@ -485,7 +485,7 @@ self.scale(2)
 [<span class="ret boo"></span>](types.md)&nbsp;Moves the Object smoothly to the given Vector.
 
 !!!info "setPositionSmooth(vector, collide, fast)"
-	* [<span class="tag tab"></span>](types.md) **Vector**: A positional Vector.
+	* [<span class="tag vec"></span>](types.md) **vector**: A positional Vector.
 	* [<span class="tag boo"></span>](types.md) **collide**: If the Object will collide with other Objects while moving.
 	* [<span class="tag boo"></span>](types.md) **fast**: If the Object is moved quickly.
 
@@ -497,7 +497,7 @@ self.scale(2)
 [<span class="ret boo"></span>](types.md)&nbsp;Rotates the Object smoothly to the given Vector.
 
 !!!info "setRotationSmooth(vector, collide, fast)"
-	* [<span class="tag tab"></span>](types.md) **Vector**: A rotational Vector.
+	* [<span class="tag vec"></span>](types.md) **vector**: A rotational Vector.
 	* [<span class="tag boo"></span>](types.md) **collide**: If the Object will collide with other Objects while rotating.
 	* [<span class="tag boo"></span>](types.md) **fast**: If the Object is rotated quickly.
 
@@ -1140,8 +1140,8 @@ obj.setCustomObject(params)
 
 [<span class="ret boo"></span>](types.md)&nbsp;Establish the settings and enable/disable an Object's revealing of [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone).
 
-!!!info "setFogOfWarReveal(fog_setting)"
-	* [<span class="tag tab"></span>](types.md)&nbsp;**fog_setting**: A Table containing information on if/how this Object should reveal Fog of War.
+!!!info "setFogOfWarReveal(fog_settings)"
+	* [<span class="tag tab"></span>](types.md)&nbsp;**fog_settings**: A Table containing information on if/how this Object should reveal Fog of War.
 		* [<span class="tag boo"></span>](types.md)&nbsp;**reveal**: Can the Object currently
 			* {>>If this is not used, the current setting for this Object is kept.<<}
 		* [<span class="tag str"></span>](types.md#vector)&nbsp;**color**: The rotation Vector of the Object that best represents the given value pointing up.
@@ -1835,8 +1835,8 @@ end
 > This function can also be used on the game world itself using Global.
 
 !!!info "setSnapPoints(parameters)"
-	* [<span class="tag str"></span>](types.md) **parameters**: A table containing numerically indexed sub-tables.
-		* [<span class="tag str"></span>](types.md) **sub-table**:
+	* [<span class="tag tab"></span>](types.md) **parameters**: A table containing numerically indexed sub-tables.
+		* [<span class="tag tab"></span>](types.md) **sub-table**:
 			* [<span class="tag vec"></span>](types.md#vector) **position**: Position of the snap point. This is relative to the entity's position (local).
 				* {>>Optional, defaults to {0,0,0}.<<}
 			* [<span class="tag vec"></span>](types.md#vector) **rotation**: Rotation of the snap point. This is relative to the entity's rotation (local).
