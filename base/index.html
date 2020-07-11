@@ -2824,7 +2824,7 @@
 <h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link"> </a></h2>
 <h3 id="global-function-details">Global Function details<a class="headerlink" href="#global-function-details" title="Permanent link"> </a></h3>
 <h4 id="copy">copy(...)<a class="headerlink" href="#copy" title="Permanent link"> </a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Copying a list of Objects the clipboard. Works with <a href="#paste">paste(...)</a>.</p>
+<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Copy a list of Objects to the clipboard. Works with <a href="#paste">paste(...)</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">copy(object_list)</p>
 <ul>
@@ -2885,7 +2885,7 @@
 
 <hr />
 <h4 id="paste">paste(...)<a class="headerlink" href="#paste" title="Permanent link"> </a></h4>
-<p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Pastes Objects in-game that were copied to the in-game clipboard. Works with <a href="#copy">copy(...)</a>.</p>
+<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Pastes Objects in-game that were copied to the in-game clipboard. Works with <a href="#copy">copy(...)</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">paste(parameters)</p>
 <ul>
@@ -3021,7 +3021,7 @@
 
 <hr />
 <h4 id="startluacoroutine">startLuaCoroutine(...)<a class="headerlink" href="#startluacoroutine" title="Permanent link"> </a></h4>
-<p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the next frame of the game using <code class="codehilite">coroutine.yield(0)</code>.</p>
+<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the next frame of the game using <code class="codehilite">coroutine.yield(0)</code>.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>You MUST return a 1 at the end of any coroutine or it will throw an error.</p>
@@ -3054,7 +3054,7 @@
 
 <hr />
 <h4 id="stringcolortorgb">stringColorToRGB(...)<a class="headerlink" href="#stringcolortorgb" title="Permanent link"> </a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Converts a <a href="../player-color/">Player Color</a> string into a Color Table for tinting.</p>
+<p><a href="../types/"><span class="ret col"></span></a>&nbsp;Converts a <a href="../player-color/">Player Color</a> string into a Color Table for tinting.</p>
 <div class="admonition info">
 <p class="admonition-title">stringColorToRGB(player_color)</p>
 <ul>
@@ -3084,7 +3084,7 @@
 <h4 id="broadcasttocolor">broadcastToColor(...)<a class="headerlink" href="#broadcasttocolor" title="Permanent link"> </a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Print an on-screen message to a specified Player and their in-game chat.</p>
 <div class="admonition info">
-<p class="admonition-title">broadcastToColor(message, <a href="../player/">player_color</a>, message_tint)</p>
+<p class="admonition-title">broadcastToColor(message, player_color, message_tint)</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>message</strong>: Message to display on-screen.</li>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> to receive the message.</li>
@@ -3151,7 +3151,7 @@
 <div class="admonition info">
 <p class="admonition-title">print(message)</p>
 <ul>
-<li><a href="../types/"><span class="tag tab"></span></a> <strong>message</strong>: Text to print into the chat log.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>message</strong>: Text to print into the chat log.</li>
 </ul>
 </div>
 <hr />
@@ -3160,7 +3160,7 @@
 <div class="admonition info">
 <p class="admonition-title">printToAll(message, message_tint)</p>
 <ul>
-<li><a href="../types/"><span class="tag tab"></span></a> <strong>message</strong>: Message to place into players' in-game chats.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>message</strong>: Message to place into players' in-game chats.</li>
 <li><a href="../types/#color"><span class="tag col"></span></a> <strong>message_tint</strong>: RGB values for the text's color tint.</li>
 </ul>
 </div>
@@ -3171,7 +3171,7 @@
 <h4 id="printtocolor">printToColor(...)<a class="headerlink" href="#printtocolor" title="Permanent link"> </a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Print a message to the in-game chat of a specific player.</p>
 <div class="admonition info">
-<p class="admonition-title">printToColor(message, <a href="../player-color/">player_color</a>, message_tint)</p>
+<p class="admonition-title">printToColor(message, player_color, message_tint)</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>message</strong>: Message to place into the player's in-game chat.</li>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player that will receive the message.</li>
