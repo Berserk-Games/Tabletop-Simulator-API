@@ -319,7 +319,7 @@ broadcastToAll(msg, rgb)
 
 [<span class="ret boo"></span>](types.md)&nbsp;Print an on-screen message to a specified Player and their in-game chat.
 
-!!!info "broadcastToColor(message, [player_color](player.md), message_tint)"
+!!!info "broadcastToColor(message, player_color, message_tint)"
 	* [<span class="tag str"></span>](types.md) **message**: Message to display on-screen.
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) to receive the message.
 	* [<span class="tag col"></span>](types.md#color) **message_tint**: RGB color tint for the text.
