@@ -265,7 +265,7 @@ end
 
 ####stringColorToRGB(...)
 
-[<span class="ret tab"></span>](types.md)&nbsp;Converts a [Player Color](player-color.md) string into a Color Table for tinting.
+[<span class="ret col"></span>](types.md)&nbsp;Converts a [Player Color](player-color.md) string into a Color Table for tinting.
 
 !!!info "stringColorToRGB(player_color)"
 	* [<span class="tag str"></span>](types.md) **player_color** A String of a [Player Color](player-color.md).
