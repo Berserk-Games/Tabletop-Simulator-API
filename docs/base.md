@@ -383,7 +383,7 @@ end
 [<span class="ret nil"></span>](types.md)&nbsp;Print a string into chat that only the host is able to see. Used for debugging scripts.
 
 !!!info "print(message)"
-	* [<span class="tag tab"></span>](types.md) **message**: Text to print into the chat log.
+	* [<span class="tag str"></span>](types.md) **message**: Text to print into the chat log.
 
 
 ---
