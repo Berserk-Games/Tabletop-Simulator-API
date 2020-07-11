@@ -231,7 +231,7 @@ end
 
 ####startLuaCoroutine(...)
 
-[<span class="ret obj"></span>](types.md)&nbsp;Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the next frame of the game using `coroutine.yield(0)`.
+[<span class="ret boo"></span>](types.md)&nbsp;Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the next frame of the game using `coroutine.yield(0)`.
 
 !!!Attention
 	You MUST return a 1 at the end of any coroutine or it will throw an error.
