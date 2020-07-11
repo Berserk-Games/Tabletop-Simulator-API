@@ -1140,8 +1140,8 @@ obj.setCustomObject(params)
 
 [<span class="ret boo"></span>](types.md)&nbsp;Establish the settings and enable/disable an Object's revealing of [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone).
 
-!!!info "setFogOfWarReveal(fog_setting)"
-	* [<span class="tag tab"></span>](types.md)&nbsp;**fog_setting**: A Table containing information on if/how this Object should reveal Fog of War.
+!!!info "setFogOfWarReveal(fog_settings)"
+	* [<span class="tag tab"></span>](types.md)&nbsp;**fog_settings**: A Table containing information on if/how this Object should reveal Fog of War.
 		* [<span class="tag boo"></span>](types.md)&nbsp;**reveal**: Can the Object currently
 			* {>>If this is not used, the current setting for this Object is kept.<<}
 		* [<span class="tag str"></span>](types.md#vector)&nbsp;**color**: The rotation Vector of the Object that best represents the given value pointing up.
