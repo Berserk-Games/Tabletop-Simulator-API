@@ -1097,6 +1097,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#filterobjectenter" title="filterObjectEnter(...)" class="md-nav__link">
+    filterObjectEnter(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#oncollisionenter" title="onCollisionEnter(...)" class="md-nav__link">
     onCollisionEnter(...)
   </a>
@@ -1134,13 +1141,6 @@
           <li class="md-nav__item">
   <a href="#onpagechange" title="onPageChange()" class="md-nav__link">
     onPageChange()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filterobjectenter" title="filterObjectEnter(...)" class="md-nav__link">
-    filterObjectEnter(...)
   </a>
   
 </li>
@@ -2906,6 +2906,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#filterobjectenter" title="filterObjectEnter(...)" class="md-nav__link">
+    filterObjectEnter(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#oncollisionenter" title="onCollisionEnter(...)" class="md-nav__link">
     onCollisionEnter(...)
   </a>
@@ -2943,13 +2950,6 @@
           <li class="md-nav__item">
   <a href="#onpagechange" title="onPageChange()" class="md-nav__link">
     onPageChange()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filterobjectenter" title="filterObjectEnter(...)" class="md-nav__link">
-    filterObjectEnter(...)
   </a>
   
 </li>
@@ -3233,7 +3233,7 @@
 <td><a href="#onpagechange"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>onPeek(<a href="../types/"><span class="tag str"></span></a>&nbsp;player)</td>
+<td>onPeek(<a href="../types/"><span class="tag str"></span></a>&nbsp;player_color)</td>
 <td>Called when a player using peek to look under this Object.</td>
 <td><a href="#onpeek"><span class="i"></span></a></td>
 </tr>
@@ -3672,7 +3672,7 @@
 <h3 id="onplayerconnect">onPlayerConnect(...)<a class="headerlink" href="#onplayerconnect" title="Permanent link"> </a></h3>
 <p>Called when a <a href="../player/">Player</a> connects to a game.</p>
 <div class="admonition info">
-<p class="admonition-title">onPlayerConnect(person)"</p>
+<p class="admonition-title">onPlayerConnect(person)</p>
 <ul>
 <li><a href="../types/"><span class="tag pla"></span></a>&nbsp;<strong>person</strong>: Player reference to who connected.</li>
 </ul>
@@ -3681,7 +3681,7 @@
 <h3 id="onplayerdisconnect">onPlayerDisconnect(...)<a class="headerlink" href="#onplayerdisconnect" title="Permanent link"> </a></h3>
 <p>Called when a <a href="../player/">Player</a> disconnects from a game.</p>
 <div class="admonition info">
-<p class="admonition-title">onPlayerDisconnect(person)"</p>
+<p class="admonition-title">onPlayerDisconnect(person)</p>
 <ul>
 <li><a href="../types/"><span class="tag pla"></span></a>&nbsp;<strong>person</strong>: Player reference to who disconnected.</li>
 </ul>
@@ -3765,6 +3765,21 @@
 <hr />
 <hr />
 <h2 id="function-details-object-only">Function Details (Object only)<a class="headerlink" href="#function-details-object-only" title="Permanent link"> </a></h2>
+<h3 id="filterobjectenter">filterObjectEnter(...)<a class="headerlink" href="#filterobjectenter" title="Permanent link"> </a></h3>
+<p>Called when an object attempts to enter this object. The object is prevented from entering unless "true" is returned.</p>
+<div class="admonition info">
+<p class="admonition-title">filterObjectEnter(obj)</p>
+<ul>
+<li><a href="../types/"><span class="tag obj"></span></a>&nbsp;<strong>obj</strong>: The object that has tried to enter the object this script is attached to.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">filterObjectEnter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span> <span class="c1">-- Print entering object&#39;s name</span>
+    <span class="kr">return</span> <span class="kc">true</span> <span class="c1">-- Allows object to enter.</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
 <h3 id="oncollisionenter">onCollisionEnter(...)<a class="headerlink" href="#oncollisionenter" title="Permanent link"> </a></h3>
 <p>This function is called when an Object starts colliding with the Object the function is on. Does not work in Global.</p>
 <div class="admonition info">
@@ -3883,27 +3898,12 @@
 </pre></div>
 
 <hr />
-<h3 id="filterobjectenter">filterObjectEnter(...)<a class="headerlink" href="#filterobjectenter" title="Permanent link"> </a></h3>
-<p>Called when an object attempts to enter this object. The object is prevented from entering unless "true" is returned.</p>
-<div class="admonition info">
-<p class="admonition-title">filterObjectEnter(obj)</p>
-<ul>
-<li><a href="../types/"><span class="tag obj"></span></a>&nbsp;<strong>obj</strong>: The object that has tried to enter the object this script is attached to.</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">filterObjectEnter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span> <span class="c1">-- Print entering object&#39;s name</span>
-    <span class="kr">return</span> <span class="kc">true</span> <span class="c1">-- Allows object to enter.</span>
-<span class="kr">end</span>
-</pre></div>
-
-<hr />
 <h3 id="onpeek">onPeek(...)<a class="headerlink" href="#onpeek" title="Permanent link"> </a></h3>
 <p>Called when a player using peek to look under an Object.</p>
 <div class="admonition info">
-<p class="admonition-title">onPeek(player)</p>
+<p class="admonition-title">onPeek(player_color)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a>&nbsp;<strong>player</strong>: Name of the <a href="../player-color/">Player Color</a> that peeked.</li>
+<li><a href="../types/"><span class="tag str"></span></a>&nbsp;<strong>player_color</strong>: Name of the <a href="../player-color/">Player Color</a> that peeked.</li>
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onPeek</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
