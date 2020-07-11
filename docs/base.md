@@ -48,7 +48,7 @@ printToColor([<span class="tag str"></span>](types.md)&nbsp;message, [<span clas
 
 ####copy(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Copying a list of Objects the clipboard. Works with [paste(...)](#paste).
+[<span class="ret boo"></span>](types.md)&nbsp;Copy a list of Objects to the clipboard. Works with [paste(...)](#paste).
 
 !!!info "copy(object_list)"
 	* [<span class="tag tab"></span>](types.md) **object_list**: A Table of in-game objects to be copied.
