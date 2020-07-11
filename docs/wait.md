@@ -140,7 +140,7 @@ end
 
 > The returned value is an ID which can be used with [stop](#stop) to cancel the function at any time.
 
-!!!info "time(toRunFunc, time)"
+!!!info "time(toRunFunc, time, repetitions)"
     * [<span class="tag fun"></span>](types.md#function) **toRunFunc**: The function to activate once the amount of time has passed.
     * [<span class="tag flo"></span>](types.md) **time**: The amount of time before the function is triggered.
     * [<span class="tag int"></span>](types.md) **repetitions**: Number of times the timer will be repeated.
