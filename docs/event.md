@@ -292,7 +292,7 @@ end
 Called whenever any object is dropped by a player.
 
 !!!info "onObjectDrop(player_color, dropped_object)"
-	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color) of the Player who dropped the Object.
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the Player who dropped the Object.
 	* [<span class="tag obj"></span>](types.md)&nbsp;**dropped_object**: The Object in game which was dropped.
 
 ``` Lua
