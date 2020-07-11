@@ -292,8 +292,8 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 [<span class="ret boo"></span>](types.md)&nbsp;Adds torque to an object in a rotational Vector.
 
 !!!info "addTorque(vector, force_type)"
-	* [<span class="tag tab"></span>](types.md) **Vector**: A Vector of the direction and magnitude of rotational force.
-	* [<span class="tag int"></span>](types.md) **Force Type**: An Int representing the force type to apply. Options below.
+	* [<span class="tag vec"></span>](types.md) **vector**: A Vector of the direction and magnitude of rotational force.
+	* [<span class="tag int"></span>](types.md) **force_type**: An Int representing the force type to apply. Options below.
 		* {>>Optional, defaults to 3.<<}
         * **1**: Continuous force, uses mass. *(Force)*
         * **2**: Continuous acceleration, ignores mass. *(Acceleration)*
