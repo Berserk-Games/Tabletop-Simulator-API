@@ -29,7 +29,7 @@ Variable | Description | Type
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 attachCameraToObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Makes a Player's camera follow an Object. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#attachcameratoobject)
-broadcast([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag str"></span>](types.md)&nbsp;Color) | Print message on Player's screen and their game chat log. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#broadcast)
+broadcast([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag str"></span>](types.md)&nbsp;message_color) | Print message on Player's screen and their game chat log. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#broadcast)
 changeColor([<span class="tag str"></span>](types.md)&nbsp;player_color) | Changes player to this [Player Color](player-color.md). | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#changecolor)
 <a class="anchor" id="gethandcount"></a>getHandCount() | Number of [hand zones](http://berserk-games.com/knowledgebase/hands/) owned by this color. | [<span class="ret int"></span>](types.md)
 getHandObjects([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#gethandobjects)
