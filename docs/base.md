@@ -9,6 +9,7 @@ General functions which work within any script.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
+addContextMenuItem([<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag fun"></span>](types.md)&nbsp;toRunFunc, [<span class="tag boo"></span>](types.md)&nbsp;keep_open, [<span class="tag boo"></span>](types.md)&nbsp;require_table) | Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#addcontextmenuitem)
 copy([<span class="tag tab"></span>](types.md)&nbsp;object_list) | Copy a list of Objects to the clipboard. Works with [paste(...)](#paste). | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#copy)
 destroyObject([<span class="tag obj"></span>](types.md)&nbsp;obj) | Destory an Object. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#destroyobject)
 <a class="anchor" id="fliptable"></a>flipTable() | Flip the table. | [<span class="ret boo"></span>](types.md) |
@@ -46,6 +47,33 @@ printToColor([<span class="tag str"></span>](types.md)&nbsp;message, [<span clas
 
 ###Global Function details
 
+####addContextMenuItem(...)
+
+[<span class="ret boo"></span>](types.md)&nbsp;Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table.
+
+!!!info "addContextMenuItem(label, toRunFunc, keep_open, require_table)"
+	* [<span class="tag str"></span>](types.md) **label**: Label for the menu item.
+	* [<span class="tag fun"></span>](types.md) **toRunFunc**: Execute if menu item is selected.
+        * [<span class="tag str"></span>](types.md) **player_color** [Player Color](player-color.md) who selected the menu item.
+        * [<span class="tag vec"></span>](types.md) **menu_position** Global position of the right-click context menu.
+	* [<span class="tag boo"></span>](types.md) **keep_open**: Keep context menu open after menu
+     item was selected.
+        * {>>Optional, Default: keep_open = false. Close context menu after selection.<<}
+	* [<span class="tag boo"></span>](types.md) **require_table**: Show added menu item when right-clicked on empty space or table.            
+		* {>>Optional, Default: require_table = false. Show when right-clicked on empty space or table <<}
+
+``` Lua
+function onLoad()
+    addContextMenuItem("doStuff", itemAction)
+end
+
+function itemAction(player_color, menu_position)
+    print(player_color)
+end
+```
+
+---
+
 ####copy(...)
 
 [<span class="ret boo"></span>](types.md)&nbsp;Copy a list of Objects to the clipboard. Works with [paste(...)](#paste).
@@ -63,7 +91,6 @@ copy(object_list)
 ```
 
 ---
-
 
 ####destroyObject(...)
 
