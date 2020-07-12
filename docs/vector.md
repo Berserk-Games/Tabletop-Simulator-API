@@ -84,10 +84,10 @@ Vector also allows you to use arithmetic operators to performs basic operations:
 
 Operator | Description | Return | &nbsp;
 -- | -- | -- | --
-[<span class="tag vec"></span>](types.md)&nbsp;one + [<span class="tag vec"></span>](types.md)&nbsp;two | Returns a new Vector that is a sum of `one` and `two` | [<span class="tag vec"></span>](types.md#vector) 
-[<span class="tag vec"></span>](types.md)&nbsp;one - [<span class="tag vec"></span>](types.md)&nbsp;two | Returns a new Vector that is a difference of `one` and `two` | [<span class="tag vec"></span>](types.md#vector) 
-[<span class="tag vec"></span>](types.md)&nbsp;one * [<span class="tag flo"></span>](types.md)&nbsp;factor | Returns a new Vector that is `one` with each component multiplied by the factor. | [<span class="tag vec"></span>](types.md#vector) 
-[<span class="tag vec"></span>](types.md)&nbsp;one == [<span class="tag vec"></span>](types.md)&nbsp;two | Returns a boolean whether `one` and `two` are very similar to each other (less than ~0.03 difference in magnitude) | [<span class="tag boo"></span>](types.md)
+[<span class="tag vec"></span>](types.md)&nbsp;one + [<span class="tag vec"></span>](types.md)&nbsp;two | Returns a new Vector that is a sum of `one` and `two` | [<span class="ret vec"></span>](types.md#vector) 
+[<span class="tag vec"></span>](types.md)&nbsp;one - [<span class="tag vec"></span>](types.md)&nbsp;two | Returns a new Vector that is a difference of `one` and `two` | [<span class="ret vec"></span>](types.md#vector) 
+[<span class="tag vec"></span>](types.md)&nbsp;one * [<span class="tag flo"></span>](types.md)&nbsp;factor | Returns a new Vector that is `one` with each component multiplied by the factor. | [<span class="ret vec"></span>](types.md#vector) 
+[<span class="tag vec"></span>](types.md)&nbsp;one == [<span class="tag vec"></span>](types.md)&nbsp;two | Returns a boolean whether `one` and `two` are very similar to each other (less than ~0.03 difference in magnitude) | [<span class="ret boo"></span>](types.md)
 
 ###Arithmetics examples
 
