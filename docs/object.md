@@ -183,7 +183,8 @@ These functions perform general actions on objects.
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 <a class="anchor" id="addattachment"></a>addAttachment([<span class="tag obj"></span>](types.md)&nbsp;Object) | The Object supplied as param is destroyed and becomes a dummy Object child. | [<span class="ret boo"></span>](types.md)
-addContextMenuItem([<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag fun"></span>](types.md)&nbsp;toRunFunc, [<span class="tag boo"></span>](types.md)&nbsp;keep_open) | Adds a menu item to the objects right-click context menu. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#addcontextmenuitem)
+<a class="anchor" id="fnc_addcontextmenuitem"></a>addContextMenuItem([<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag fun"></span>](types.md)&nbsp;toRunFunc, [<span class="tag boo"></span>](types.md)&nbsp;keep_open) | Adds a menu item to the objects right-click context menu. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#addcontextmenuitem)
+clearContextMenu() | Clears all menu items added by function [addContextMenuItem](#fnc_addcontextmenuitem). | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="removeattachment"></a>removeAttachment([<span class="tag int"></span>](types.md)&nbsp;index) | Removes a child with the given index. Use [getAttachments()](#getattachments) to find out the index property. | [<span class="ret obj"></span>](types.md)
 <a class="anchor" id="removeattachments"></a>removeAttachments() | Detaches the children of this Object. Returns a table of object references | [<span class="ret tab"></span>](types.md)
 <a class="anchor" id="destroyattachment"></a>destroyAttachment([<span class="tag int"></span>](types.md)&nbsp;index) | Destroys an attachment with the given index. | [<span class="ret boo"></span>](types.md)
