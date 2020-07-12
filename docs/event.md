@@ -21,6 +21,7 @@ onObjectDestroy([<span class="tag obj"></span>](types.md)&nbsp;dying_object) | C
 onObjectDrop([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag obj"></span>](types.md)&nbsp;dropped_object) | Called whenever any object is dropped by a player. | [<span class="i"></span>](#onobjectdrop)
 onObjectEnterScriptingZone([<span class="tag obj"></span>](types.md)&nbsp;zone, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when any object enters any scripting zone. | [<span class="i"></span>](#onobjectenterscriptingzone)
 onObjectEnterContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when any object enters any container. Includes decks | [<span class="i"></span>](#onobjectentercontainer)
+onObjectHover([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag obj"></span>](types.md)&nbsp;hovered_object) | Called when a player moves their pointer (cursor) over an object. | [<span class="i"></span>](#onobjecthover)
 onObjectLeaveScriptingZone([<span class="tag obj"></span>](types.md)&nbsp;zone, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when any object leaves any scripting zone. | [<span class="i"></span>](#onobjectleavescriptingzone)
 onObjectLeaveContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;leave_object) | Called when any object leaves any container. | [<span class="i"></span>](#onobjectleavecontainer)
 onObjectLoopingEffect([<span class="tag obj"></span>](types.md)&nbsp;loop_object, [<span class="tag int"></span>](types.md)&nbsp;index) | Called whenever the looping effect of an [AssetBundle](assetbundle.md) is activated. | [<span class="i"></span>](#onobjectloopingeffect)
@@ -321,7 +322,6 @@ end
 
 ---
 
-
 ###onObjectEnterContainer(...)
 
 Called when any object enters any container. Includes Objects entering decks.
@@ -339,6 +339,29 @@ end
 
 ---
 
+###onObjectHover(...)
+
+Called when a player moves their pointer (cursor) over an object.
+
+!!!info "onObjectHover(player_color, hovered_object)"
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who moved the pointer over an object.
+	* [<span class="tag obj"></span>](types.md)&nbsp;**hovered_object**: Object on which the pointer was moved.
+
+!!!important
+    [<span class="tag obj"></span>](types.md)&nbsp;**hovered_object** can be [<span class="tag nil"></span>](types.md)&nbsp;**nil** in some cases. For example if you move the pointer from the object to the table.    
+
+
+
+``` Lua
+function onObjectHover(player_color, hovered_object)
+    if( hovered_object ~= nil ) then
+        print(player_color)
+	    print(hovered_object)
+    end
+end
+```
+
+---
 
 
 ###onObjectLeaveScriptingZone(...)
