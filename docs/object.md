@@ -138,6 +138,7 @@ Function Name | Description | Return | &nbsp;
 getCustomObject() | Returns a Table with the Custom Object information of a Custom Object. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getcustomobject)
 <a class="anchor" id="getdescription"></a>getDescription() | Description, also shows as part of Object's tooltip. | [<span class="ret str"></span>](types.md)
 getFogOfWarReveal() | Settings impacting [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone) being revealed. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getfogofwarreveal)
+<a class="anchor" id="getgmnotes"></a>getGMNotes() | Game Master Notes only visible for [Player Color](player-color.md) Black. | [<span class="ret str"></span>](types.md) |
 <a class="anchor" id="getguid"></a>getGUID() | String of the Object's unique identifier. | [<span class="ret str"></span>](types.md) |
 <a class="anchor" id="getjson"></a>getJSON() | Returns a serialization of the JSON string which represents this item. Works with [spawnObjectJSON()](base.md#spawnobjectjson). | [<span class="ret str"></span>](types.md) |
 getJoints() | Returns information on any joints attached to this object. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getjoints)
@@ -165,6 +166,7 @@ Function Name | Description | Return | &nbsp;
 setCustomObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Sets a custom Object's properties. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setcustomobject)
 <a class="anchor" id="setdescription"></a>setDescription([<span class="tag str"></span>](types.md)&nbsp;description) | Sets a description for an Object. Shows in tooltip after delay. | [<span class="ret boo"></span>](types.md)
 setFogOfWarReveal([<span class="tag tab"></span>](types.md)&nbsp;fog_settings) | Establish the settings and enable/disable an Object's revealing of [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone). | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setfogofwarreveal)
+<a class="anchor" id="setgmnotes"></a>setGMNotes([<span class="tag str"></span>](types.md)&nbsp;notes) | Sets Game Master Notes only visible for [Player Color](player-color.md) Black. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="setlock"></a>setLock([<span class="tag boo"></span>](types.md)&nbsp;lock) | Sets if an object is locked in place. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="setname"></a>setName([<span class="tag str"></span>](types.md)&nbsp;name) | Sets a name for an Object. Shows in tooltip. | [<span class="ret boo"></span>](types.md)
 setRotationValues([<span class="tag tab"></span>](types.md)&nbsp;rotation_values) | Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setrotationvalues)
