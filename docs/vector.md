@@ -125,7 +125,7 @@ vec:normalize() | Makes self-have a magnitude of 1. | [<span class="ret sel"></s
 vec:project([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Make self into projection on another vector. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#project)
 vec:projectOnPlane([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Project self on a plane defined through a normal vector arg. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#projectonplane)
 vec:reflect([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Reflect self over a plane defined through a normal vector arg. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#reflect)
-vec:inverse() | Multiply self-components by -1. | [<span class="ret nil"></span>](types.md) | [<span class="i"></span>](#inverse)
+vec:inverse() | Multiply self-components by -1. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#inverse)
 vec:moveTowards([<span class="tag vec"></span>](types.md)&nbsp;otherVec, [<span class="tag flo"></span>](types.md)&nbsp;num) | Move self towards another vector, but only up to a provided distance limit. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#movetowards)
 vec:rotateTowards([<span class="tag vec"></span>](types.md)&nbsp;target, [<span class="tag flo"></span>](types.md)&nbsp;maxAngle) | Rotate self towards another vector, but only up to a provided angle limit. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#rotatetowards)
 vec:rotateTowardsUnit([<span class="tag vec"></span>](types.md)&nbsp;target, [<span class="tag flo"></span>](types.md)&nbsp;maxAngle) | Same as rotateTowards, but only works correctly if `target` Vector is normalized. Less expensive than `rotateTowards`. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#rotatetowardsunit)
@@ -398,7 +398,7 @@ print(vec) --> Vector: { -3.41, -1.31, 0.79 }
 
 ####inverse()
 
-[<span class="ret nil"></span>](types.md)&nbsp;Multiply self-components by -1.
+[<span class="ret sel"></span>](types.md)&nbsp;Multiply self-components by -1.
 
 ``` Lua
 vec = Vector(1, 2, 3)
