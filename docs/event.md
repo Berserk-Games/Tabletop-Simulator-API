@@ -63,6 +63,7 @@ onCollisionExit([<span class="tag tab"></span>](types.md)&nbsp;collision_info) |
 onCollisionStay([<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called **every frame** that an Object is colliding with the Object this function is on. | [<span class="i"></span>](#oncollisionstay)
 onDestroy() | Called when an Object it is on is destroyed. | [<span class="i"></span>](#ondestroy)
 onDrop([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player releases an Object after picking it up. | [<span class="i"></span>](#ondrop)
+onHover([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player moves their pointer (cursor) over an object. | [<span class="i"></span>](#onhover)
 onPageChange() | Called when a Custom PDF page is changed. | [<span class="i"></span>](#onpagechange)
 onPeek([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player using peek to look under this Object. | [<span class="i"></span>](#onpeek)
 onPickUp([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player picks up an Object. | [<span class="i"></span>](#onpickup)
@@ -826,6 +827,21 @@ This function is called when this [Object](object.md) is dropped. Does not work 
 ``` Lua
 function onDrop(color)
 	print(color)
+end
+```
+
+---
+
+###onHover(...)
+
+Called when a player moves their pointer (cursor) over an object.
+
+!!!info "onHover(player_color)"
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who moved the pointer over an object.
+
+``` Lua
+function onHover(player_color)
+    print(player_color)
 end
 ```
 
