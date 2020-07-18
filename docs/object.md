@@ -249,13 +249,13 @@ addDecal([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Add a Deca
 call([<span class="tag str"></span>](types.md)&nbsp;func_name, [<span class="tag tab"></span>](types.md)&nbsp;func_params) | Used to call a Lua function on another entity. | [<span class="ret var"></span>](types.md) | [<span class="i"></span>](#call)
 getDecals() | Returns information on all decals attached to this object or the world. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getdecals)
 <a class="anchor" id="getluascript"></a>getLuaScript() | Get a Lua script as a string from the entity. | [<span class="ret str"></span>](types.md) |
-getSnapPoints() | Returns a table of sub-tables, each sub-table representing one snap point. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getsnappoints)
+getSnapPoints() | Returns a table of snap points. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getsnappoints)
 <a class="anchor" id="gettable"></a>getTable([<span class="tag str"></span>](types.md)&nbsp;table_name) | Data value of a variable in another Object's script. Can only return a table. | [<span class="ret tab"></span>](types.md) |
 <a class="anchor" id="getvar"></a>getVar([<span class="tag str"></span>](types.md)&nbsp;var_name) | Data value of a variable in another entity's script. Cannot return a table. | [<span class="ret var"></span>](types.md) |
 <a class="anchor" id="getvectorlines"></a>getVectorLines() | Returns Table of data representing the current Vector Lines on this entity. See [setVectorLines](#setvectorlines) for table format.| [<span class="ret tab"></span>](types.md) |
 setDecals([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Sets which decals are on an object. This removes other decals already present, and can remove all decals as well. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setdecals)
 <a class="anchor" id="setluascript"></a>setLuaScript([<span class="tag str"></span>](types.md)&nbsp;script) | Input a string as an entity's Lua script. Generally only used after spawning a new Object. | [<span class="ret boo"></span>](types.md) |
-setSnapPoints([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spawns snap points from a list of parameters. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setsnappoints)
+setSnapPoints([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spawns snap points defined as [Local](types.md#position) from a list of parameters. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setsnappoints)
 <a class="anchor" id="settable"></a>setTable([<span class="tag str"></span>](types.md)&nbsp;func_name, [<span class="tag tab"></span>](types.md)&nbsp;data) | Creates/updates a variable in another entity's script. Only used for tables. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="setvar"></a>setVar([<span class="tag str"></span>](types.md)&nbsp;func_name, [<span class="tag var"></span>](types.md)&nbsp;data) | Creates/updates a variable in another entity's script. Cannot set a table. | [<span class="ret boo"></span>](types.md) |
 setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spawns Vector Lines from a list of parameters on this entity. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setvectorlines)
@@ -1744,18 +1744,21 @@ print(decalTable[2].name)
 
 ####getSnapPoints()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a table of sub-tables, each sub-table representing one snap point.
+[<span class="ret tab"></span>](types.md)&nbsp;Returns a table of snap points.
 
-> This function can also be used directly on the game world using Global.
+> This function can also be used directly on the game world (game table) using Global.
 
-!!!info "Sub-table contents"
-	* [<span class="tag vec"></span>](types.md#vector) **position**: Position of the snap point. The position is relative to the entity's center (a local position).
-		* {>>Optional, defaults to {0,0,0}.<<}
-	* [<span class="tag vec"></span>](types.md#vector) **rotation**: Rotation of the snap point. The rotation is relative to the entity's rotation (a local rotation).
-		* {>>Optional, defaults to {0,0,0}.<<}
-	* [<span class="tag boo"></span>](types.md) **rotation_snap**: If the snap point is a "rotation" snap point.
-		* {>>Optional, defaults to false.<<}
+!!!info "Format of the returned table"
+    * [<span class="tag tab"></span>](types.md) **parameters**: A table containing numerically indexed sub-tables.
+        * [<span class="tag tab"></span>](types.md) **sub-table**:
+            * [<span class="tag vec"></span>](types.md#vector) **position**: [Local Position](types.md#position) of the snap point. The position is relative to the entity's center.
+                * {>>Optional, defaults to {0,0,0}.<<}
+            * [<span class="tag vec"></span>](types.md#vector) **rotation**: Local Rotation of the snap point. The rotation is relative to the entity's rotation.
+                * {>>Optional, defaults to {0,0,0}.<<}
+            * [<span class="tag boo"></span>](types.md) **rotation_snap**: If the snap point is a "rotation" snap point.
+                * {>>Optional, defaults to false.<<}
 
+> The order of the obtained snap points depends on the order at the time of the snap point creation. The index counting is independed for each entity (object, Global) and starts with 1.
 
 Example:
 ```Lua
@@ -1830,16 +1833,16 @@ end
 
 ####setSnapPoints(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Spawns snap points from a list of parameters.
+[<span class="ret boo"></span>](types.md)&nbsp;Spawns snap points defined as [Local](types.md#position) from a list of parameters.
 
-> This function can also be used on the game world itself using Global.
+> This function can also be used on the game world (game table) itself using Global.
 
 !!!info "setSnapPoints(parameters)"
 	* [<span class="tag tab"></span>](types.md) **parameters**: A table containing numerically indexed sub-tables.
 		* [<span class="tag tab"></span>](types.md) **sub-table**:
-			* [<span class="tag vec"></span>](types.md#vector) **position**: Position of the snap point. This is relative to the entity's position (local).
+			* [<span class="tag vec"></span>](types.md#vector) **position**: [Local Position](types.md#position) of the snap point. This is relative to the entity's position.
 				* {>>Optional, defaults to {0,0,0}.<<}
-			* [<span class="tag vec"></span>](types.md#vector) **rotation**: Rotation of the snap point. This is relative to the entity's rotation (local).
+			* [<span class="tag vec"></span>](types.md#vector) **rotation**: Local Rotation of the snap point. This is relative to the entity's rotation.
 				* {>>Optional, defaults to {0,0,0}.<<}
 			* [<span class="tag boo"></span>](types.md) **rotation_snap**: If the snap point is a "rotation" snap point.
 				* {>>Optional, defaults to false.<<}
