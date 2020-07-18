@@ -232,7 +232,6 @@ A dropdown menu. Is able to send the contents of the selection made in it.
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
 onValueChanged | When an option is selected, a Lua function with this name will be triggered. | string | *(none)*
-text | The string in the text box, if any. Is the value sent to onValueChanged's or onEndEdit's function. | string | *(none)*
 interactable |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | `true`
 textColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
 itemBackgroundColors |  | [<span class="tag xmlcb"></span>](attributes.md#attribute-types) | #FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)
