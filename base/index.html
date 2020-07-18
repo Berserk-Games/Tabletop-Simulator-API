@@ -913,6 +913,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#addcontextmenuitem" title="addContextMenuItem(...)" class="md-nav__link">
+    addContextMenuItem(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#copy" title="copy(...)" class="md-nav__link">
     copy(...)
   </a>
@@ -2508,6 +2515,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#addcontextmenuitem" title="addContextMenuItem(...)" class="md-nav__link">
+    addContextMenuItem(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#copy" title="copy(...)" class="md-nav__link">
     copy(...)
   </a>
@@ -2679,6 +2693,18 @@
 </thead>
 <tbody>
 <tr>
+<td><a class="anchor" id="fnc_addcontextmenuitem"></a>addContextMenuItem(<a href="../types/"><span class="tag str"></span></a>&nbsp;label, <a href="../types/"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="../types/"><span class="tag boo"></span></a>&nbsp;keep_open, <a href="../types/"><span class="tag boo"></span></a>&nbsp;require_table)</td>
+<td>Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td><a href="#addcontextmenuitem"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>clearContextMenu()</td>
+<td>Clears all menu items added by function <a href="#fnc_addcontextmenuitem">addContextMenuItem</a>.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
 <td>copy(<a href="../types/"><span class="tag tab"></span></a>&nbsp;object_list)</td>
 <td>Copy a list of Objects to the clipboard. Works with <a href="#paste">paste(...)</a>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
@@ -2823,6 +2849,38 @@
 <hr />
 <h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link"> </a></h2>
 <h3 id="global-function-details">Global Function details<a class="headerlink" href="#global-function-details" title="Permanent link"> </a></h3>
+<h4 id="addcontextmenuitem">addContextMenuItem(...)<a class="headerlink" href="#addcontextmenuitem" title="Permanent link"> </a></h4>
+<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table.</p>
+<div class="admonition info">
+<p class="admonition-title">addContextMenuItem(label, toRunFunc, keep_open, require_table)</p>
+<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>label</strong>: Label for the menu item.</li>
+<li><a href="../types/"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: Execute if menu item is selected.<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong> <a href="../player-color/">Player Color</a> who selected the menu item.</li>
+<li><a href="../types/"><span class="tag vec"></span></a> <strong>menu_position</strong> Global position of the right-click context menu.</li>
+</ul>
+</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>keep_open</strong>: Keep context menu open after menu
+ item was selected.<ul>
+<li><span class="critic comment">Optional, Default: keep_open = false. Close context menu after selection.</span></li>
+</ul>
+</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>require_table</strong>: Show added menu item when right-clicked on empty space or table.            <ul>
+<li><span class="critic comment">Optional, Default: require_table = false. Show when right-clicked on empty space or table </span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="n">addContextMenuItem</span><span class="p">(</span><span class="s2">&quot;doStuff&quot;</span><span class="p">,</span> <span class="n">itemAction</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nf">itemAction</span><span class="p">(</span><span class="n">player_color</span><span class="p">,</span> <span class="n">menu_position</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">player_color</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
 <h4 id="copy">copy(...)<a class="headerlink" href="#copy" title="Permanent link"> </a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Copy a list of Objects to the clipboard. Works with <a href="#paste">paste(...)</a>.</p>
 <div class="admonition info">

@@ -1316,6 +1316,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#addcontextmenuitem" title="addContextMenuItem(...)" class="md-nav__link">
+    addContextMenuItem(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#clone" title="clone(...)" class="md-nav__link">
     clone(...)
   </a>
@@ -3293,6 +3300,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#addcontextmenuitem" title="addContextMenuItem(...)" class="md-nav__link">
+    addContextMenuItem(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#clone" title="clone(...)" class="md-nav__link">
     clone(...)
   </a>
@@ -4009,6 +4023,12 @@
 <td><a href="#getfogofwarreveal"><span class="i"></span></a></td>
 </tr>
 <tr>
+<td><a class="anchor" id="getgmnotes"></a>getGMNotes()</td>
+<td>Game Master Notes only visible for <a href="../player-color/">Player Color</a> Black.</td>
+<td><a href="../types/"><span class="ret str"></span></a></td>
+<td></td>
+</tr>
+<tr>
 <td><a class="anchor" id="getguid"></a>getGUID()</td>
 <td>String of the Object's unique identifier.</td>
 <td><a href="../types/"><span class="ret str"></span></a></td>
@@ -4125,6 +4145,12 @@
 <td><a href="#setfogofwarreveal"><span class="i"></span></a></td>
 </tr>
 <tr>
+<td><a class="anchor" id="setgmnotes"></a>setGMNotes(<a href="../types/"><span class="tag str"></span></a>&nbsp;notes)</td>
+<td>Sets Game Master Notes only visible for <a href="../player-color/">Player Color</a> Black.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
 <td><a class="anchor" id="setlock"></a>setLock(<a href="../types/"><span class="tag boo"></span></a>&nbsp;lock)</td>
 <td>Sets if an object is locked in place.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
@@ -4171,6 +4197,18 @@
 <tr>
 <td><a class="anchor" id="addattachment"></a>addAttachment(<a href="../types/"><span class="tag obj"></span></a>&nbsp;Object)</td>
 <td>The Object supplied as param is destroyed and becomes a dummy Object child.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="anchor" id="fnc_addcontextmenuitem"></a>addContextMenuItem(<a href="../types/"><span class="tag str"></span></a>&nbsp;label, <a href="../types/"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="../types/"><span class="tag boo"></span></a>&nbsp;keep_open)</td>
+<td>Adds a menu item to the objects right-click context menu.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td><a href="#addcontextmenuitem"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>clearContextMenu()</td>
+<td>Clears all menu items added by function <a href="#fnc_addcontextmenuitem">addContextMenuItem</a>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
@@ -5393,6 +5431,33 @@
 </table>
 <hr />
 <h3 id="action-function-details">Action Function Details<a class="headerlink" href="#action-function-details" title="Permanent link"> </a></h3>
+<h4 id="addcontextmenuitem">addContextMenuItem(...)<a class="headerlink" href="#addcontextmenuitem" title="Permanent link"> </a></h4>
+<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Adds a menu item to the objects right-click context menu.</p>
+<div class="admonition info">
+<p class="admonition-title">addContextMenuItem(label, toRunFunc, keep_open)</p>
+<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>label</strong>: Label for the menu item.</li>
+<li><a href="../types/"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: Execute if menu item is selected.<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong> <a href="../player-color/">Player Color</a> who selected the menu item.</li>
+</ul>
+</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>keep_open</strong>: Keep context menu open after menu
+ item was selected.<ul>
+<li><span class="critic comment">Optional, Default: keep_open = false. Close context menu after selection.</span>         </li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="n">addContextMenuItem</span><span class="p">(</span><span class="s2">&quot;doStuff&quot;</span><span class="p">,</span> <span class="n">itemAction</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nf">itemAction</span><span class="p">(</span><span class="n">player_color</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">player_color</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<hr />
 <h4 id="clone">clone(...)<a class="headerlink" href="#clone" title="Permanent link"> </a></h4>
 <p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Copy/Paste this Object.</p>
 <div class="admonition info">
