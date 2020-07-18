@@ -1785,15 +1785,14 @@ print(decalTable[2].name)
 
 [<span class="ret tab"></span>](types.md)&nbsp;Returns a table of sub-tables, each sub-table representing one snap point.
 
-> This function can also be used directly on the game world using Global.
+> This function can also be used directly on the game world (game table) using Global.
 
-!!!info "Sub-table contents"
-	* [<span class="tag vec"></span>](types.md#vector) **position**: Position of the snap point. The position is relative to the entity's center (a local position).
-		* {>>Optional, defaults to {0,0,0}.<<}
-	* [<span class="tag vec"></span>](types.md#vector) **rotation**: Rotation of the snap point. The rotation is relative to the entity's rotation (a local rotation).
-		* {>>Optional, defaults to {0,0,0}.<<}
-	* [<span class="tag boo"></span>](types.md) **rotation_snap**: If the snap point is a "rotation" snap point.
-		* {>>Optional, defaults to false.<<}
+!!!info "Format of the returned table"
+    * [<span class="tag tab"></span>](types.md) **parameters**: A table containing numerically indexed sub-tables.
+        * [<span class="tag tab"></span>](types.md) **sub-table**:
+            * [<span class="tag vec"></span>](types.md#vector) **position**: [Local Position](types.md#position) of the snap point. The position is relative to the entity's center.
+            * [<span class="tag vec"></span>](types.md#vector) **rotation**: Local Rotation of the snap point. The rotation is relative to the entity's rotation.
+            * [<span class="tag boo"></span>](types.md) **rotation_snap**: If the snap point is a "rotation" snap point.
 
 
 Example:
@@ -1871,14 +1870,14 @@ end
 
 [<span class="ret boo"></span>](types.md)&nbsp;Spawns snap points from a list of parameters.
 
-> This function can also be used on the game world itself using Global.
+> This function can also be used on the game world (game table) itself using Global.
 
 !!!info "setSnapPoints(parameters)"
 	* [<span class="tag tab"></span>](types.md) **parameters**: A table containing numerically indexed sub-tables.
 		* [<span class="tag tab"></span>](types.md) **sub-table**:
-			* [<span class="tag vec"></span>](types.md#vector) **position**: Position of the snap point. This is relative to the entity's position (local).
+			* [<span class="tag vec"></span>](types.md#vector) **position**: [Local Position](types.md#position) of the snap point. This is relative to the entity's position.
 				* {>>Optional, defaults to {0,0,0}.<<}
-			* [<span class="tag vec"></span>](types.md#vector) **rotation**: Rotation of the snap point. This is relative to the entity's rotation (local).
+			* [<span class="tag vec"></span>](types.md#vector) **rotation**: Local Rotation of the snap point. This is relative to the entity's rotation.
 				* {>>Optional, defaults to {0,0,0}.<<}
 			* [<span class="tag boo"></span>](types.md) **rotation_snap**: If the snap point is a "rotation" snap point.
 				* {>>Optional, defaults to false.<<}
