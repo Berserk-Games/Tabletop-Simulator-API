@@ -1248,7 +1248,7 @@ Tablet | Set String for the current URL.
 
 ``` Lua
 function onLoad()
-    addContextMenuItem("doStuff", itemAction)
+    self.addContextMenuItem("doStuff", itemAction)
 end
 
 function itemAction(player_color)
