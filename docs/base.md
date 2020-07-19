@@ -25,6 +25,10 @@ spawnObjectJSON([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spa
 startLuaCoroutine([<span class="tag obj"></span>](types.md)&nbsp;function_owner, [<span class="tag str"></span>](types.md)&nbsp;function_name) | Start a coroutine. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#startluacoroutine)
 stringColorToRGB([<span class="tag str"></span>](types.md)&nbsp;player_color) | Converts a [Player Color](player-color.md) string into a Color Table for tinting. | [<span class="ret col"></span>](types.md#color) | [<span class="i"></span>](#stringcolortorgb)
 
+####Hotkey Functions
+Function Name | Description | Return | &nbsp;
+-- | -- | -- | --
+<a class="anchor" id="fnc_addhotkey"></a>addHotkey([<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag fun"></span>](types.md)&nbsp;toRunFunc, [<span class="tag boo"></span>](types.md)&nbsp;trigger_on_key_up) | Adds a bindable Hotkey to the game. User may assign a key to it in Options->Game Keys after the game was created. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#addhotkey)
 
 ###Message Functions
 Functions which handle sending and displaying data.
@@ -290,7 +294,6 @@ end
 
 ---
 
-
 ####stringColorToRGB(...)
 
 [<span class="ret col"></span>](types.md)&nbsp;Converts a [Player Color](player-color.md) string into a Color Table for tinting.
@@ -304,25 +307,45 @@ printToAll("Blue message", stringColorToRGB("Blue"))
 
 ---
 
+####addHotkey(...)
 
+[<span class="ret boo"></span>](types.md)&nbsp;Adds a bindable Hotkey to the game. User may assign a key to it in Options->Game Keys after the game was created.
 
+!!!info "addHotkey(label, toRunFunc, trigger_on_key_up)"
+	* [<span class="tag str"></span>](types.md) **label**: A String for the Hotkey.
+	* [<span class="tag fun"></span>](types.md) **toRunFunc**(player_color, hovered_object, world_position, key_down_up): The function that is executed at the moment the binded key is pressed.
+        * [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) who pressed the Hotkey.
+        * [<span class="tag obj"></span>](types.md) **hovered_object**: The object over which the Player's pointer hovers at the moment. **nil** if there is no object under the Player's pointer.
+        * [<span class="tag vec"></span>](types.md) **world_position**: [Word Position](types.md#position) of the Player's pointer who pressed the Hotkey.
+        * [<span class="tag boo"></span>](types.md) **key_down_up**: Indicates the moment at which the function **toRunFunc** is executed.
+            * **true**: Key is released.
+            * **false**: Key is pressed.
+	* [<span class="tag boo"></span>](types.md) **trigger_on_key_up**: Controls the timing at which the function **toRunFunc** is executed.
+        * {>>Optional, Default: trigger_on_key_up = false.<<}
+        * **true**: Executes the function 2 times. At the moment the key is pressed and released.
+        * **false**: Executes the function 1 time. At the moment the key is pressed.
 
+!!!important
+    * The key binding does not overwrite the key binding under Setting. e.g. if "R" (default: shuffle) is assigned as Hotkey, the Hotkey function and the default shuffle is executed by pressing the key "R".
+    * The added Hotkeys are not persistent, therefore the function addHotkey(...) needs to called each time the game is loaded.
+        * The key assigned by the player remains, if the label is unchanged.
 
+``` Lua
+function onLoad()
+    addHotkey("This is the first Hotkey for the game.", hotkey1)
+    addHotkey("This is the second Hotkey for the game.", hotkey2)
+end
 
+function hotkey1(player_color, hovered_object, world_position, key_down_up)
+    print(player_color)
+end
 
+function hotkey2(player_color, hovered_object, world_position, key_down_up)
+    print(player_color)
+end
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
+---
 
 ###Message Function Details
 
