@@ -29,6 +29,8 @@ stringColorToRGB([<span class="tag str"></span>](types.md)&nbsp;player_color) | 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 <a class="anchor" id="fnc_addhotkey"></a>addHotkey([<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag fun"></span>](types.md)&nbsp;toRunFunc, [<span class="tag boo"></span>](types.md)&nbsp;trigger_on_key_up) | Adds a bindable Hotkey to the game. User may assign a key to it in Options->Game Keys after the game was created. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#addhotkey)
+<a class="anchor" id="fnc_clearhotkeys"></a>clearHotkeys() | Clears all Hotkeys added by [addHotkey](#fnc_addhotkey) | [<span class="ret boo"></span>](types.md) |
+<a class="anchor" id="fnc_showhotkeyconfig"></a>showHotkeyConfig() | Shows the Hotkey configuration window under Options->Game Keys. | [<span class="ret boo"></span>](types.md) |
 
 ###Message Functions
 Functions which handle sending and displaying data.
