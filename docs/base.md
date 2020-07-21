@@ -125,18 +125,35 @@ Not all objects CAN be grouped. If the G key won't work on them, neither will th
 !!!info "group(objects)"
 	* [<span class="tag tab"></span>](types.md) **objects**: A list of objects to be grouped together.
 
+!!!info "Format of the returned table"
+    * [<span class="tag tab"></span>](types.md) **objGroupedList**: A table containing a list of grouped objects, numerically indexed.
+        * {>>Different object typs are grouped independently<<}
+
+    !!!important "Important"
+        Wait at least 1 frame before working with the returned table.
+
 ``` Lua
+-- Example
 function onLoad()
-    local objList = {
-        getObjectFromGUID("b80a72"),
-        getObjectFromGUID("a333b4"),
-        getObjectFromGUID("c9f9d3"),
+    local objects = {
+        -- IMPORTANT: To get the example to work, you need to replace ###### by a real GUID of the object.
+        getObjectFromGUID("######"), -- card
+        getObjectFromGUID("######"), -- card
+        getObjectFromGUID("######"), -- checker
+        getObjectFromGUID("######"), -- checker
     }
-    group(objList)
+    local objGroupedList = group(objects)
+    Wait.frames( function() log(objGroupedList) end, 1 )
 end
+
 ```
-
-
+``` Lua
+-- Possible Output for objGroupedList
+{
+    1: <Deck>
+    2: <CheckerStack>
+}
+```
 
 
 ---
