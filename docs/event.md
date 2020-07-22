@@ -495,8 +495,8 @@ end
 Called when a search is finished on any container.
 
 !!!info "onObjectSearchEnd(obj, player_color)"
-* [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The Object which was searched.
-* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who triggered the function.
+    * [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The Object which was searched.
+    * [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who triggered the function.
 
 ---
 
@@ -506,8 +506,8 @@ Called when a search is finished on any container.
 Called when a search is started on any container.
 
 !!!info "onObjectSearchStart(obj, player_color)"
-* [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The Object which was searched.
-* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who triggered the function.
+    * [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The Object which was searched.
+    * [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who triggered the function.
 
 ---
 
