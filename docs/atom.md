@@ -65,7 +65,7 @@ Download and install Atom [from the official website](https://atom.io/).
 By default, Tabletop Simulator scripts use a tab width of four spaces. You are not required to adhere to this spacing. By default, Atom has a tab width of two spaces. To optionally make Atom default to a tab width of four spaces:
 
 1. Click on File -> Settings
-2. Select the Settings tab in Settings
+2. Select the Editor tab in Settings
 3. Scroll down to Tab Length
 4. Set the Tab Length to 4
 
@@ -75,11 +75,11 @@ By default, Tabletop Simulator scripts use a tab width of four spaces. You are n
 To enable tabs showing up as pipe operators "|" as an indent guide:
 
 1. Click on File -> Settings
-2. Select the Settings tab in Settings
+2. Select the Editor tab in Settings
 3. Scroll down to Show Indent Guide
 4. Check Show Indent Guide
 
-![Tables as Pope Operators](img/atom/pipes.PNG)
+![Tables as Pipe Operators](img/atom/pipes.PNG)
 
 ##Updating Atom Plugin
 The plugin will automatically check for updates when Atom is started. If a new update is found, it will update itself. You will have to manually restart Atom for the new version of the plugin to be loaded. You can check Atom's console if it found an update (ctrl + alt + i).
