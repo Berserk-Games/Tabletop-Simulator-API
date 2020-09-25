@@ -1244,7 +1244,7 @@ Tablet | Set String for the current URL.
         * [<span class="tag str"></span>](types.md) **player_color** [Player Color](player-color.md) who selected the menu item.
 	* [<span class="tag boo"></span>](types.md) **keep_open**: Keep context menu open after menu
      item was selected.
-        * {>>Optional, Default: keep_open = false. Close context menu after selection.<<}         
+        * {>>Optional, Default: keep_open = false. Close context menu after selection.<<}
 
 ``` Lua
 function onLoad()
@@ -1825,7 +1825,7 @@ Returned table:
 			* [<span class="tag str"></span>](types.md) **parameters.subtable.url**: The file path or URL for the image to be displayed.
 			* [<span class="tag vec"></span>](types.md#vector) **parameters.subtable.position**: A Vector of the position to place Object.
 			* [<span class="tag vec"></span>](types.md#vector) **parameters.subtable.rotation**: A Vector of the rotation of the Object.
-			* [<span class="tag flo"></span>](types.md) **parameters.subtable.scale**: How the image is scaled.
+			* [<span class="tag vec"></span>](types.md) **parameters.subtable.scale**: How the image is scaled.
 				* {>>1 is normal scale, 0.5 would be half sized, 2 would be twice as large, etc.<<}
 
 ``` Lua
