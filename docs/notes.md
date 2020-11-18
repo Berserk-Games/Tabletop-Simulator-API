@@ -123,7 +123,7 @@ Notes.removeNotebookTab(0)
 
 ####setNotes(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Replace the text in the notes window with the string. The notes is an area which displays text in the lower-left corner of the screen.
+[<span class="ret boo"></span>](types.md)&nbsp;Replace the text in the notes window with the string. The notes is an area which displays text in the lower-right corner of the screen.
 
 !!!info "setNotes(notes)"
 	* [<span class="tag str"></span>](types.md) **notes**: What to place into the notes area.
