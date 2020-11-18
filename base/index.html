@@ -882,6 +882,19 @@
     Global Functions
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hotkey-functions" title="Hotkey Functions" class="md-nav__link">
+    Hotkey Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -978,6 +991,13 @@
           <li class="md-nav__item">
   <a href="#stringcolortorgb" title="stringColorToRGB(...)" class="md-nav__link">
     stringColorToRGB(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addhotkey" title="addHotkey(...)" class="md-nav__link">
+    addHotkey(...)
   </a>
   
 </li>
@@ -2484,6 +2504,19 @@
     Global Functions
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hotkey-functions" title="Hotkey Functions" class="md-nav__link">
+    Hotkey Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2580,6 +2613,13 @@
           <li class="md-nav__item">
   <a href="#stringcolortorgb" title="stringColorToRGB(...)" class="md-nav__link">
     stringColorToRGB(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addhotkey" title="addHotkey(...)" class="md-nav__link">
+    addHotkey(...)
   </a>
   
 </li>
@@ -2781,6 +2821,37 @@
 <td>Converts a <a href="../player-color/">Player Color</a> string into a Color Table for tinting.</td>
 <td><a href="../types/#color"><span class="ret col"></span></a></td>
 <td><a href="#stringcolortorgb"><span class="i"></span></a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="hotkey-functions">Hotkey Functions<a class="headerlink" href="#hotkey-functions" title="Permanent link"> </a></h4>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Description</th>
+<th>Return</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="anchor" id="fnc_addhotkey"></a>addHotkey(<a href="../types/"><span class="tag str"></span></a>&nbsp;label, <a href="../types/"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="../types/"><span class="tag boo"></span></a>&nbsp;trigger_on_key_up)</td>
+<td>Adds a bindable Hotkey to the game. User may assign a key to it in Options-&gt;Game Keys after the game was created.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td><a href="#addhotkey"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="fnc_clearhotkeys"></a>clearHotkeys()</td>
+<td>Clears all Hotkeys added by <a href="#fnc_addhotkey">addHotkey</a></td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="anchor" id="fnc_showhotkeyconfig"></a>showHotkeyConfig()</td>
+<td>Shows the Hotkey configuration window under Options-&gt;Game Keys.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -3120,6 +3191,56 @@
 </ul>
 </div>
 <div class="codehilite"><pre><span></span><span class="n">printToAll</span><span class="p">(</span><span class="s2">&quot;Blue message&quot;</span><span class="p">,</span> <span class="n">stringColorToRGB</span><span class="p">(</span><span class="s2">&quot;Blue&quot;</span><span class="p">))</span>
+</pre></div>
+
+<hr />
+<h4 id="addhotkey">addHotkey(...)<a class="headerlink" href="#addhotkey" title="Permanent link"> </a></h4>
+<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Adds a bindable Hotkey to the game. User may assign a key to it in Options-&gt;Game Keys after the game was created.</p>
+<div class="admonition info">
+<p class="admonition-title">addHotkey(label, toRunFunc, trigger_on_key_up)</p>
+<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>label</strong>: A String for the Hotkey.</li>
+<li><a href="../types/"><span class="tag fun"></span></a> <strong>toRunFunc</strong>(player_color, hovered_object, world_position, key_down_up): The function that is executed at the moment the binded key is pressed.<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> who pressed the Hotkey.</li>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>hovered_object</strong>: The object over which the Player's pointer hovers at the moment. <strong>nil</strong> if there is no object under the Player's pointer.</li>
+<li><a href="../types/"><span class="tag vec"></span></a> <strong>world_position</strong>: <a href="../types/#position">Word Position</a> of the Player's pointer who pressed the Hotkey.</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>key_down_up</strong>: Indicates the moment at which the function <strong>toRunFunc</strong> is executed.<ul>
+<li><strong>true</strong>: Key is released.</li>
+<li><strong>false</strong>: Key is pressed.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>trigger_on_key_up</strong>: Controls the timing at which the function <strong>toRunFunc</strong> is executed.<ul>
+<li><span class="critic comment">Optional, Default: trigger_on_key_up = false.</span></li>
+<li><strong>true</strong>: Executes the function 2 times. At the moment the key is pressed and released.</li>
+<li><strong>false</strong>: Executes the function 1 time. At the moment the key is pressed.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul>
+<li>The key binding does not overwrite the key binding under Setting. e.g. if "R" (default: shuffle) is assigned as Hotkey, the Hotkey function and the default shuffle is executed by pressing the key "R".</li>
+<li>The added Hotkeys are not persistent, therefore the function addHotkey(...) needs to called each time the game is loaded.<ul>
+<li>The key assigned by the player remains, if the label is unchanged.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="n">addHotkey</span><span class="p">(</span><span class="s2">&quot;This is the first Hotkey for the game.&quot;</span><span class="p">,</span> <span class="n">hotkey1</span><span class="p">)</span>
+    <span class="n">addHotkey</span><span class="p">(</span><span class="s2">&quot;This is the second Hotkey for the game.&quot;</span><span class="p">,</span> <span class="n">hotkey2</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nf">hotkey1</span><span class="p">(</span><span class="n">player_color</span><span class="p">,</span> <span class="n">hovered_object</span><span class="p">,</span> <span class="n">world_position</span><span class="p">,</span> <span class="n">key_down_up</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">player_color</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nf">hotkey2</span><span class="p">(</span><span class="n">player_color</span><span class="p">,</span> <span class="n">hovered_object</span><span class="p">,</span> <span class="n">world_position</span><span class="p">,</span> <span class="n">key_down_up</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">player_color</span><span class="p">)</span>
+<span class="kr">end</span>
 </pre></div>
 
 <hr />
