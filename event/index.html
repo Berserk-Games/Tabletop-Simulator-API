@@ -3222,7 +3222,7 @@
 <td><a href="#onplayerdisconnect"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>onPlayerTurn(<a href="../types/"><span class="tag str"></span></a>&nbsp;player_color)</td>
+<td>onPlayerTurn(<a href="../types/"><span class="tag pla"></span></a>&nbsp;person)</td>
 <td>Called at the start of a player's turn when using the in-game turn system.</td>
 <td><a href="#onplayerturn"><span class="i"></span></a></td>
 </tr>
@@ -3797,7 +3797,7 @@
 <div class="admonition info">
 <p class="admonition-title">onPlayerConnect(person)</p>
 <ul>
-<li><a href="../types/"><span class="tag pla"></span></a>&nbsp;<strong>person</strong>: Player reference to who connected.</li>
+<li><a href="../types/"><span class="tag pla"></span></a>&nbsp;<strong>person</strong>: <a href="../player/">Player</a> reference to who connected.</li>
 </ul>
 </div>
 <hr />
@@ -3806,20 +3806,20 @@
 <div class="admonition info">
 <p class="admonition-title">onPlayerDisconnect(person)</p>
 <ul>
-<li><a href="../types/"><span class="tag pla"></span></a>&nbsp;<strong>person</strong>: Player reference to who disconnected.</li>
+<li><a href="../types/"><span class="tag pla"></span></a>&nbsp;<strong>person</strong>: <a href="../player/">Player</a> reference to who disconnected.</li>
 </ul>
 </div>
 <hr />
 <h3 id="onplayerturn">onPlayerTurn(...)<a class="headerlink" href="#onplayerturn" title="Permanent link"> </a></h3>
 <p>Called at the start of a player's turn when using the in-game turn system.</p>
 <div class="admonition info">
-<p class="admonition-title">onPlayerTurn(player_color)</p>
+<p class="admonition-title">onPlayerTurn(person)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a>&nbsp;<strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who's turn is starting.</li>
+<li><a href="../types/"><span class="tag pla"></span></a>&nbsp;<strong>person</strong>: <a href="../player/">Player</a> who's turn is starting.</li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onPlayerTurn</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">color</span> <span class="o">..</span> <span class="s2">&quot;&#39;s turn starts now.&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onPlayerTurn</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">.</span><span class="n">color</span> <span class="o">..</span> <span class="s2">&quot;&#39;s turn starts now.&quot;</span><span class="p">)</span>
 <span class="kr">end</span>
 </pre></div>
 
