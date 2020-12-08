@@ -57,6 +57,24 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
         * [<span class="tag boo"></span>](types.md) **back_is_hidden**: If cards have a special face that shows up when hidden in a hand zone.
             * {>>Optional, defaults to false.<<}
 
+##Custom Card
+
+* CardCustom
+
+!!!info "Custom Parameters"
+    * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
+        * [<span class="tag int"></span>](types.md) **type**: An Int representing the Card's shape.
+            * {>>Optional, defaults to 0.<<}
+                * **0**: Rectangle (Rounded)
+                * **1**: Rectangle
+                * **2**: Hex (Rounded)
+                * **3**: Hex
+                * **4**: Circle
+        * [<span class="tag str"></span>](types.md) **face**: The path/url of the face image.
+        * [<span class="tag str"></span>](types.md) **back**: The path/url of the back image.
+        * [<span class="tag boo"></span>](types.md) **sideways**: If the cards are horizontal instead of vertical.
+            * {>>Optional, defaults to false.<<}
+
 ##Custom Dice
 
 * Custom_Dice
