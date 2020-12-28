@@ -29,7 +29,7 @@ destroy([<span class="tag str"></span>](types.md)&nbsp;identifier) | Destroys a 
             * {>>Optional, defaults to the calling Object.<<}
         * [<span class="tag tab"></span>](types.md) **parameters**: Table containing any data that will be passed to the function.
             * {>>Optional, will not be used by default.<<}
-        * [<span class="tag flo"></span>](types.md) **delay**: Length of time before the function is triggered.
+        * [<span class="tag flo"></span>](types.md) **delay**: Length of time in seconds before the function is triggered.
             * {>>Optional, defaults to 0.<<}
             * {>>0 results in a delay of 1 frame before the triggered function activates.<<}
         * [<span class="tag int"></span>](types.md) **repetitions**: Number of times the countdown repeats.
