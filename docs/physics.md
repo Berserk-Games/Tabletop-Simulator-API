@@ -78,7 +78,7 @@ It draws the imaginary cast, then moves the rap/box/sphere along that path insta
             * {>>Optional, defaults to false.<<}
 
 !!!info "Returned Table of Hit Objects"
-    * [<span class="tag tab"></span>](types.md) **table**: A numerically indexed Table, one entry for each hit Object. Entries are in the order of being hit.
+    * [<span class="tag tab"></span>](types.md) **table**: A numerically indexed Table, one entry for each hit Object. Entries are in undefined order.
         * [<span class="tag vec"></span>](types.md#vector) **table.point**: Position the cast impacted the Object.
         * [<span class="tag vec"></span>](types.md#vector) **table.normal**: The surface normal of the impact point.
         * [<span class="tag flo"></span>](types.md) **table.distance**: Distance between cast origin and impact point.
