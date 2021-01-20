@@ -21,6 +21,7 @@ group([<span class="tag tab"></span>](types.md)&nbsp;objects) | Groups objects t
 paste([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#paste)
 <a class="anchor" id="setlookingforplayers"></a>setLookingForPlayers([<span class="tag boo"></span>](types.md)&nbsp;lfp) | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](types.md) |
 spawnObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spawns an Object. See [Built-in](built-in-object.md) and [Custom](custom-game-objects.md) Spawnable Object pages for further details. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#spawnobject)
+spawnObjectData([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spawns an Object using a data table. Works with [getData()](object.md#getdata). | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#spawnobjectdata)
 spawnObjectJSON([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spawns an Object using a JSON string. Works with [getJSON()](object.md#getjson). | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#spawnobjectjson)
 startLuaCoroutine([<span class="tag obj"></span>](types.md)&nbsp;function_owner, [<span class="tag str"></span>](types.md)&nbsp;function_name) | Start a coroutine. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#startluacoroutine)
 stringColorToRGB([<span class="tag str"></span>](types.md)&nbsp;player_color) | Converts a [Player Color](player-color.md) string into a Color Table for tinting. | [<span class="ret col"></span>](types.md#color) | [<span class="i"></span>](#stringcolortorgb)
@@ -213,6 +214,46 @@ end
 ---
 
 
+####spawnObjectData(...)
+
+Spawns an Object using a data table. Works with [getData()](object.md#getdata). It works just like spawnObject, but instead of a `type`, you supply a `data` table. The other parameters will overwrite those in the Data.
+
+!!!info "spawnObjectData(parameters)"
+	* [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters used to determine how spawnObjectData will act.
+		* [<span class="tag tab"></span>](types.md) **parameters.data**: [getData()](object.md#getdata) table.
+		* [<span class="tag vec"></span>](types.md#vector) **parameters.position**: Position to place Object.
+			* {>>Optional, defaults to data table's value.<<}
+		* [<span class="tag vec"></span>](types.md#vector) **parameters.rotation**: Rotation of the Object.
+			* {>>Optional, defaults to data table's value.<<}
+		* [<span class="tag vec"></span>](types.md#vector) **parameters.scale**: Scale of the Object.
+			* {>>Optional, defaults to data table's value.<<}
+		* [<span class="tag fun"></span>](types.md#function) **parameters.callback_function**: The function to activate after the Object has finished spawning into the scene.
+			* {>>Optional, defaults to not being used.<<}
+			* {>>A reference to the object spawned is always passed to callback_function. See the example for how to access it.<<}
+
+``` Lua
+local futureName = "Spawned By Script!"
+spawnParams = {
+    data              = self.getData(),
+    position          = {x=0, y=3, z=-5},
+    rotation          = {x=0, y=90, z=0},
+    scale             = {x=2, y=2, z=2},
+    callback_function = function(obj) spawn_callback(obj, futureName, "Red") end
+    --alternative format:
+    --callback_function = |obj| spawn_callback(obj, futureName, "Red")
+}
+spawnObjectData(spawnParams)
+
+function spawn_callback(object_spawned, name, color)
+	object_spawned.setName(name)
+	object_spawned.setColorTint(color)
+end
+```
+
+!!!tip
+    You can modify an object's data prior to spawning, this is currently the only way to "Create States" via API (using the "States" key).
+
+---
 
 
 ####spawnObjectJSON(...)
