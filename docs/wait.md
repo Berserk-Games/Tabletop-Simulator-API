@@ -175,7 +175,7 @@ end
 ```
 
 Example (check if a die object is resting every 0.5 seconds):
-> This us an alternative method to using [condition()](#condition) where we can control how often we check the condition
+> This is an alternative method to using [condition()](#condition) where we can control how often we check the condition
 
 ``` Lua
 
