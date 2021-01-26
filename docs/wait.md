@@ -32,6 +32,9 @@ time([<span class="tag fun"></span>](types.md#function)&nbsp;toRunFunc, [<span c
     * [<span class="tag fun"></span>](types.md#function) **timeoutFunc**: The function that that triggers if the timeout amount is met.
         * {>>Optional, defaults to no function being triggered if a timeout happens.<<}
 
+!!!warning
+    **conditionFunc** is checked every frame, try to make this function as simple as possible to avoid performance issues. If complicated logic here is required, [Wait.time()](#time) can be used as a more controllable alternative.
+
 Example without a timeout:
 ``` Lua
 --Watches a die until it comes to rest, then print its result
@@ -120,6 +123,8 @@ function sayThree() print("Three") end
 ###stop(...)
 [<span class="ret boo"></span>](types.md)&nbsp;Stops a currently running Wait function. The only way to obtain these ID numbers is to get them from the return value of a Wait function.
 
+> The returned value is true if a Wait function with this ID was stopped. The returned value is false if a Wait function with this ID either doesn't exist, or has already been stopped.
+
 !!!info "stop(id)"
     * [<span class="tag int"></span>](types.md) **id**: The index number assigned by the game to every Wait function (besides stop).
 
@@ -151,10 +156,13 @@ Example (basic usage):
 ``` Lua
 function onLoad()
 	Wait.time(|| print("One"), 1)
+    --> prints "One" after 1 second
 
 	Wait.time(function() saySomething("Two") end, 2)
+    --> prints "Two" after 2 seconds
 
-	Wait.time(sayThree, 3)
+	Wait.time(sayThree, 3, 2)
+    --> prints "Three" after 3 seconds, then prints "Three" after 3 seconds
 end
 
 function saySomething(something)
@@ -164,6 +172,40 @@ end
 function sayThree()
     print("Three")
 end
+```
+
+Example (check if a die object is resting every 0.5 seconds):
+> This us an alternative method to using [condition()](#condition) where we can control how often we check the condition
+
+``` Lua
+
+-- this script goes on a dice object
+
+function onLoad()
+    self.roll() -- roll the die
+    startWatching() -- start watching the die
+end
+
+isRestingID = nil
+-- to store the id of the Wait.time() function for use with Wait.stop()
+
+function startWatching()
+    isRestingID = Wait.time(
+        isResting,
+        0.5, -- run the above function once every 0.5 seconds
+        -1 -- repeat -1 times (indefinitely, until we call Wait.stop() on this id)
+    )
+end
+
+function isResting()
+    if self.resting then
+        print("I am now resting.")
+        Wait.stop(isRestingID) -- stop the Wait.time() function in startWatching()
+    else
+        print("I am still rolling!")
+    end
+end
+
 ```
 
 ---
