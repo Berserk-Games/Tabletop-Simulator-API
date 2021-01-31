@@ -3449,7 +3449,7 @@
 </div>
 <p><div class="codehilite"><pre><span></span><span class="c1">-- Example Usage</span>
 <span class="kr">function</span> <span class="nf">onObjectCollisionEnter</span><span class="p">(</span><span class="n">registered_object</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">tostring</span><span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">collision_object</span><span class="p">)</span> <span class="o">..</span> <span class="s2">&quot; collided with &quot;</span> <span class="o">..</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">object</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">tostring</span><span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">collision_object</span><span class="p">)</span> <span class="o">..</span> <span class="s2">&quot; collided with &quot;</span> <span class="o">..</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">registered_object</span><span class="p">))</span>
 <span class="kr">end</span>
 </pre></div>
 <div class="codehilite"><pre><span></span><span class="c1">-- Example collision_info table</span>
@@ -3478,7 +3478,7 @@
 </div>
 <p><div class="codehilite"><pre><span></span><span class="c1">-- Example Usage</span>
 <span class="kr">function</span> <span class="nf">onObjectCollisionExit</span><span class="p">(</span><span class="n">registered_object</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">tostring</span><span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">collision_object</span><span class="p">)</span> <span class="o">..</span> <span class="s2">&quot; stopped colliding with &quot;</span> <span class="o">..</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">object</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">tostring</span><span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">collision_object</span><span class="p">)</span> <span class="o">..</span> <span class="s2">&quot; stopped colliding with &quot;</span> <span class="o">..</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">registered_object</span><span class="p">))</span>
 <span class="kr">end</span>
 </pre></div>
 <div class="codehilite"><pre><span></span><span class="c1">-- Example collision_info table</span>
@@ -3511,7 +3511,7 @@
 </div>
 <p><div class="codehilite"><pre><span></span><span class="c1">-- Example Usage</span>
 <span class="kr">function</span> <span class="nf">onObjectCollisionStay</span><span class="p">(</span><span class="n">registered_object</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">tostring</span><span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">collision_object</span><span class="p">)</span> <span class="o">..</span> <span class="s2">&quot; still colliding with &quot;</span> <span class="o">..</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">object</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">tostring</span><span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">collision_object</span><span class="p">)</span> <span class="o">..</span> <span class="s2">&quot; still colliding with &quot;</span> <span class="o">..</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">registered_object</span><span class="p">))</span>
 <span class="kr">end</span>
 </pre></div>
 <div class="codehilite"><pre><span></span><span class="c1">-- Example collision_info table</span>
