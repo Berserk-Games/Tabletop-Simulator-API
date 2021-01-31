@@ -3782,7 +3782,7 @@
 </tr>
 <tr>
 <td><a class="anchor" id="getposition"></a>getPosition()</td>
-<td>Returns a Vector of the current world position.</td>
+<td>Returns a Vector of the current <a href="../types/#position">World Position</a>.</td>
 <td><a href="../types/#vector"><span class="ret vec"></span></a></td>
 <td></td>
 </tr>
@@ -3830,13 +3830,13 @@
 </tr>
 <tr>
 <td>positionToLocal(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
-<td>Returns a Vector after converting a world Vector to a local Vector.</td>
+<td>Returns a Vector after converting a world Vector (World Position) to a local Vector (<a href="../types/#position">Local Position</a>).</td>
 <td><a href="../types/#vector"><span class="ret vec"></span></a></td>
 <td><a href="#positiontolocal"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>positionToWorld(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
-<td>Returns a Vector after converting a local Vector to a world Vector.</td>
+<td>Returns a Vector after converting a local Vector (Local Position) to a world Vector (<a href="../types/#position">World Position</a>).</td>
 <td><a href="../types/#vector"><span class="ret vec"></span></a></td>
 <td><a href="#positiontoworld"><span class="i"></span></a></td>
 </tr>
@@ -3860,13 +3860,13 @@
 </tr>
 <tr>
 <td><a class="anchor" id="setposition"></a>setPosition(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
-<td>Instantly moves an Object to the given Vector.</td>
+<td>Instantly moves an Object to the given Vector. The Vector is interpreted as <a href="../types/#position">World Position</a>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
 <td>setPositionSmooth(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector, <a href="../types/"><span class="tag boo"></span></a>&nbsp;collide, <a href="../types/"><span class="tag boo"></span></a>&nbsp;fast)</td>
-<td>Moves the Object smoothly to the given Vector.</td>
+<td>Moves the Object smoothly to the given Vector. The Vector is interpreted as <a href="../types/#position">World Position</a>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#setpositionsmooth"><span class="i"></span></a></td>
 </tr>
