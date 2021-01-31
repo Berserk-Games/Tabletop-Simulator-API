@@ -93,7 +93,7 @@ td {position: relative;}
 .anchor {
    position: absolute;
    top: 0px;
-   margin: -48px 0 0; /* negative fixed header height */
+   margin: -4.8rem 0 0; /* negative fixed header height */
 }
 
 /*prevent left/right scrollbar
@@ -124,4 +124,4 @@ disabled due to lack of need currently, but works*/
 
 code {
     white-space: nowrap;
-  }
+}
