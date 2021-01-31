@@ -197,7 +197,7 @@ This function is called when an Object starts colliding with a [collision regist
 ``` Lua
 -- Example Usage
 function onObjectCollisionEnter(registered_object, info)
-	print(tostring(info.collision_object) .. " collided with " .. tostring(object))
+	print(tostring(info.collision_object) .. " collided with " .. tostring(registered_object))
 end
 ```
 ``` Lua
@@ -228,7 +228,7 @@ This function is called when an Object stops colliding with a [collision registe
 ``` Lua
 -- Example Usage
 function onObjectCollisionExit(registered_object, info)
-	print(tostring(info.collision_object) .. " stopped colliding with " .. tostring(object))
+	print(tostring(info.collision_object) .. " stopped colliding with " .. tostring(registered_object))
 end
 ```
 ``` Lua
@@ -262,7 +262,7 @@ This function is called **every frame** that an Object is colliding with a [coll
 ``` Lua
 -- Example Usage
 function onObjectCollisionStay(registered_object, info)
-	print(tostring(info.collision_object) .. " still colliding with " .. tostring(object))
+	print(tostring(info.collision_object) .. " still colliding with " .. tostring(registered_object))
 end
 ```
 ``` Lua
