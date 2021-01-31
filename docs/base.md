@@ -9,6 +9,8 @@ General functions which work within any script.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
+<a class="anchor" id="fnc_addcontextmenuitem"></a>addContextMenuItem([<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag fun"></span>](types.md)&nbsp;toRunFunc, [<span class="tag boo"></span>](types.md)&nbsp;keep_open, [<span class="tag boo"></span>](types.md)&nbsp;require_table) | Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#addcontextmenuitem)
+clearContextMenu() | Clears all menu items added by function [addContextMenuItem](#fnc_addcontextmenuitem). | [<span class="ret boo"></span>](types.md) |
 copy([<span class="tag tab"></span>](types.md)&nbsp;object_list) | Copy a list of Objects to the clipboard. Works with [paste(...)](#paste). | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#copy)
 destroyObject([<span class="tag obj"></span>](types.md)&nbsp;obj) | Destory an Object. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#destroyobject)
 <a class="anchor" id="fliptable"></a>flipTable() | Flip the table. | [<span class="ret boo"></span>](types.md) |
@@ -23,6 +25,12 @@ spawnObjectJSON([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spa
 startLuaCoroutine([<span class="tag obj"></span>](types.md)&nbsp;function_owner, [<span class="tag str"></span>](types.md)&nbsp;function_name) | Start a coroutine. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#startluacoroutine)
 stringColorToRGB([<span class="tag str"></span>](types.md)&nbsp;player_color) | Converts a [Player Color](player-color.md) string into a Color Table for tinting. | [<span class="ret col"></span>](types.md#color) | [<span class="i"></span>](#stringcolortorgb)
 
+####Hotkey Functions
+Function Name | Description | Return | &nbsp;
+-- | -- | -- | --
+<a class="anchor" id="fnc_addhotkey"></a>addHotkey([<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag fun"></span>](types.md)&nbsp;toRunFunc, [<span class="tag boo"></span>](types.md)&nbsp;trigger_on_key_up) | Adds a bindable Hotkey to the game. User may assign a key to it in Options->Game Keys after the game was created. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#addhotkey)
+<a class="anchor" id="fnc_clearhotkeys"></a>clearHotkeys() | Clears all Hotkeys added by [addHotkey](#fnc_addhotkey) | [<span class="ret boo"></span>](types.md) |
+<a class="anchor" id="fnc_showhotkeyconfig"></a>showHotkeyConfig() | Shows the Hotkey configuration window under Options->Game Keys. | [<span class="ret boo"></span>](types.md) |
 
 ###Message Functions
 Functions which handle sending and displaying data.
@@ -46,9 +54,36 @@ printToColor([<span class="tag str"></span>](types.md)&nbsp;message, [<span clas
 
 ###Global Function details
 
+####addContextMenuItem(...)
+
+[<span class="ret boo"></span>](types.md)&nbsp;Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table.
+
+!!!info "addContextMenuItem(label, toRunFunc, keep_open, require_table)"
+	* [<span class="tag str"></span>](types.md) **label**: Label for the menu item.
+	* [<span class="tag fun"></span>](types.md) **toRunFunc**: Execute if menu item is selected.
+        * [<span class="tag str"></span>](types.md) **player_color** [Player Color](player-color.md) who selected the menu item.
+        * [<span class="tag vec"></span>](types.md) **menu_position** Global position of the right-click context menu.
+	* [<span class="tag boo"></span>](types.md) **keep_open**: Keep context menu open after menu
+     item was selected.
+        * {>>Optional, Default: keep_open = false. Close context menu after selection.<<}
+	* [<span class="tag boo"></span>](types.md) **require_table**: Show added menu item when right-clicked on empty space or table.            
+		* {>>Optional, Default: require_table = false. Show when right-clicked on empty space or table <<}
+
+``` Lua
+function onLoad()
+    addContextMenuItem("doStuff", itemAction)
+end
+
+function itemAction(player_color, menu_position)
+    print(player_color)
+end
+```
+
+---
+
 ####copy(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Copying a list of Objects the clipboard. Works with [paste(...)](#paste).
+[<span class="ret boo"></span>](types.md)&nbsp;Copy a list of Objects to the clipboard. Works with [paste(...)](#paste).
 
 !!!info "copy(object_list)"
 	* [<span class="tag tab"></span>](types.md) **object_list**: A Table of in-game objects to be copied.
@@ -63,7 +98,6 @@ copy(object_list)
 ```
 
 ---
-
 
 ####destroyObject(...)
 
@@ -115,7 +149,7 @@ end
 
 ####paste(...)
 
-[<span class="ret obj"></span>](types.md)&nbsp;Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy).
+[<span class="ret tab"></span>](types.md)&nbsp;Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy).
 
 !!!info "paste(parameters)"
 	* [<span class="tag tab"></span>](types.md) **parameters**: A Table containing instructions of where to spawn the Objects.
@@ -231,7 +265,7 @@ end
 
 ####startLuaCoroutine(...)
 
-[<span class="ret obj"></span>](types.md)&nbsp;Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the next frame of the game using `coroutine.yield(0)`.
+[<span class="ret boo"></span>](types.md)&nbsp;Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the next frame of the game using `coroutine.yield(0)`.
 
 !!!Attention
 	You MUST return a 1 at the end of any coroutine or it will throw an error.
@@ -262,10 +296,9 @@ end
 
 ---
 
-
 ####stringColorToRGB(...)
 
-[<span class="ret tab"></span>](types.md)&nbsp;Converts a [Player Color](player-color.md) string into a Color Table for tinting.
+[<span class="ret col"></span>](types.md)&nbsp;Converts a [Player Color](player-color.md) string into a Color Table for tinting.
 
 !!!info "stringColorToRGB(player_color)"
 	* [<span class="tag str"></span>](types.md) **player_color** A String of a [Player Color](player-color.md).
@@ -276,25 +309,45 @@ printToAll("Blue message", stringColorToRGB("Blue"))
 
 ---
 
+####addHotkey(...)
 
+[<span class="ret boo"></span>](types.md)&nbsp;Adds a bindable Hotkey to the game. User may assign a key to it in Options->Game Keys after the game was created.
 
+!!!info "addHotkey(label, toRunFunc, trigger_on_key_up)"
+	* [<span class="tag str"></span>](types.md) **label**: A String for the Hotkey.
+	* [<span class="tag fun"></span>](types.md) **toRunFunc**(player_color, hovered_object, world_position, key_down_up): The function that is executed at the moment the binded key is pressed.
+        * [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) who pressed the Hotkey.
+        * [<span class="tag obj"></span>](types.md) **hovered_object**: The object over which the Player's pointer hovers at the moment. **nil** if there is no object under the Player's pointer.
+        * [<span class="tag vec"></span>](types.md) **world_position**: [Word Position](types.md#position) of the Player's pointer who pressed the Hotkey.
+        * [<span class="tag boo"></span>](types.md) **key_down_up**: Indicates the moment at which the function **toRunFunc** is executed.
+            * **true**: Key is released.
+            * **false**: Key is pressed.
+	* [<span class="tag boo"></span>](types.md) **trigger_on_key_up**: Controls the timing at which the function **toRunFunc** is executed.
+        * {>>Optional, Default: trigger_on_key_up = false.<<}
+        * **true**: Executes the function 2 times. At the moment the key is pressed and released.
+        * **false**: Executes the function 1 time. At the moment the key is pressed.
 
+!!!important
+    * The key binding does not overwrite the key binding under Setting. e.g. if "R" (default: shuffle) is assigned as Hotkey, the Hotkey function and the default shuffle is executed by pressing the key "R".
+    * The added Hotkeys are not persistent, therefore the function addHotkey(...) needs to called each time the game is loaded.
+        * The key assigned by the player remains, if the label is unchanged.
 
+``` Lua
+function onLoad()
+    addHotkey("This is the first Hotkey for the game.", hotkey1)
+    addHotkey("This is the second Hotkey for the game.", hotkey2)
+end
 
+function hotkey1(player_color, hovered_object, world_position, key_down_up)
+    print(player_color)
+end
 
+function hotkey2(player_color, hovered_object, world_position, key_down_up)
+    print(player_color)
+end
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
+---
 
 ###Message Function Details
 
@@ -319,7 +372,7 @@ broadcastToAll(msg, rgb)
 
 [<span class="ret boo"></span>](types.md)&nbsp;Print an on-screen message to a specified Player and their in-game chat.
 
-!!!info "broadcastToColor(message, [player_color](player.md), message_tint)"
+!!!info "broadcastToColor(message, player_color, message_tint)"
 	* [<span class="tag str"></span>](types.md) **message**: Message to display on-screen.
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) to receive the message.
 	* [<span class="tag col"></span>](types.md#color) **message_tint**: RGB color tint for the text.
@@ -383,7 +436,7 @@ end
 [<span class="ret nil"></span>](types.md)&nbsp;Print a string into chat that only the host is able to see. Used for debugging scripts.
 
 !!!info "print(message)"
-	* [<span class="tag tab"></span>](types.md) **message**: Text to print into the chat log.
+	* [<span class="tag str"></span>](types.md) **message**: Text to print into the chat log.
 
 
 ---
@@ -394,7 +447,7 @@ end
 [<span class="ret boo"></span>](types.md)&nbsp;Print a message into the in-game chat of all connected players.
 
 !!!info "printToAll(message, message_tint)"
-	* [<span class="tag tab"></span>](types.md) **message**: Message to place into players' in-game chats.
+	* [<span class="tag str"></span>](types.md) **message**: Message to place into players' in-game chats.
 	* [<span class="tag col"></span>](types.md#color) **message_tint**: RGB values for the text's color tint.
 
 ``` Lua
@@ -408,7 +461,7 @@ printToAll("Hello World!", {r=1,g=0,b=0})
 
 [<span class="ret boo"></span>](types.md)&nbsp;Print a message to the in-game chat of a specific player.
 
-!!!info "printToColor(message, [player_color](player-color.md), message_tint)"
+!!!info "printToColor(message, player_color, message_tint)"
 	* [<span class="tag str"></span>](types.md) **message**: Message to place into the player's in-game chat.
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player that will receive the message.
 	* [<span class="tag col"></span>](types.md#color) **message_tint**: RGB values for the text's color tint.

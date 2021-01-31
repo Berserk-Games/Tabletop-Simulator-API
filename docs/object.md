@@ -27,6 +27,7 @@ Variable | Description | Type
 <a class="anchor" id="interactable"></a>interactable | If an object can be interacted with by Players. Other object will still be able to interact with it. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="is_face_down"></a>is_face_down | If an Object is roughly face-down (like with cards). The face is the "top" of the Object, the direction of its positive Y coordinate. Read only.  | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="loading_custom"></a>loading_custom | If the Object's custom elements (images/models/etc) are loading. Read only. | [<span class="tag boo"></span>](types.md)
+<a class="anchor" id="locked"></a>locked | If the object is frozen in place (preventing physics interactions). | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="mass"></a>mass | Mass. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md)
 <a class="anchor" id="name"></a>name | Internal resource name for this Object. Read only, and only useful for [spawnObjectJSON()](base.md#spawnobjectjson). Generally, you want [getName()](#getname). | [<span class="tag str"></span>](types.md)
 <a class="anchor" id="resting"></a>resting | If an Object is at rest. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/RigidbodiesOverview.html). | [<span class="tag boo"></span>](types.md)
@@ -81,7 +82,7 @@ addTorque([<span class="tag vec"></span>](types.md#vector)&nbsp;vector, [<span c
 <a class="anchor" id="getangularvelocity"></a>getAngularVelocity() | Returns a Vector of the current angular velocity. | [<span class="ret vec"></span>](types.md#vector)
 getBounds() | Returns a Vector describing the size of an object in Global terms. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#getbounds)
 getBoundsNormalized() | Returns a Vector describing the size of an object in Global terms, as if it was rotated to {0,0,0}. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#getboundsnormalized)
-<a class="anchor" id="getposition"></a>getPosition() | Returns a Vector of the current world position. | [<span class="ret vec"></span>](types.md#vector)
+<a class="anchor" id="getposition"></a>getPosition() | Returns a Vector of the current [World Position](types.md#position). | [<span class="ret vec"></span>](types.md#vector)
 <a class="anchor" id="getrotation"></a>getRotation() | Returns a Vector of the current rotation. | [<span class="ret vec"></span>](types.md#vector)
 getScale() | Returns a Vector of the current scale. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#getscale)
 getTransformForward() | Returns a Vector of the forward direction of this object. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#gettransformforward)
@@ -89,13 +90,13 @@ getTransformRight() | Returns a Vector of the right direction of this object. | 
 getTransformUp() | Returns a Vector of the up direction of this object. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#gettransformup)
 <a class="anchor" id="getvelocity"></a>getVelocity() | Returns a Vector of the current velocity. | [<span class="ret vec"></span>](types.md#vector) |
 <a class="anchor" id="issmoothmoving"></a>isSmoothMoving() | Indicates if an object is traveling as part of a Smooth move. Smooth moving is performed by setPositionSmooth and setRotationSmooth. | [<span class="ret boo"></span>](types.md) |
-positionToLocal([<span class="tag vec"></span>](types.md#vector)&nbsp;vector) | Returns a Vector after converting a world Vector to a local Vector. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#positiontolocal)
-positionToWorld([<span class="tag vec"></span>](types.md#vector)&nbsp;vector) | Returns a Vector after converting a local Vector to a world Vector. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#positiontoworld)
+positionToLocal([<span class="tag vec"></span>](types.md#vector)&nbsp;vector) | Returns a Vector after converting a world Vector (World Position) to a local Vector ([Local Position](types.md#position)). | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#positiontolocal)
+positionToWorld([<span class="tag vec"></span>](types.md#vector)&nbsp;vector) | Returns a Vector after converting a local Vector (Local Position) to a world Vector ([World Position](types.md#position)). | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#positiontoworld)
 rotate([<span class="tag vec"></span>](types.md#vector)&nbsp;vector) | Rotates Object smoothly in the direction of the given Vector. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#rotate)
 scale([<span class="tag vec"></span>](types.md#vector)&nbsp;vector or [<span class="tag flo"></span>](types.md)) | Scales Object by a multiple. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#scale)
 <a class="anchor" id="setangularvelocity"></a>setAngularVelocity([<span class="tag vec"></span>](types.md#vector)&nbsp;vector) | Sets a Vector as the current angular velocity. | [<span class="ret boo"></span>](types.md) |
-<a class="anchor" id="setposition"></a>setPosition([<span class="tag vec"></span>](types.md#vector)&nbsp;vector) | Instantly moves an Object to the given Vector. | [<span class="ret boo"></span>](types.md) |
-setPositionSmooth([<span class="tag vec"></span>](types.md#vector)&nbsp;vector, [<span class="tag boo"></span>](types.md)&nbsp;collide, [<span class="tag boo"></span>](types.md)&nbsp;fast) | Moves the Object smoothly to the given Vector. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setpositionsmooth)
+<a class="anchor" id="setposition"></a>setPosition([<span class="tag vec"></span>](types.md#vector)&nbsp;vector) | Instantly moves an Object to the given Vector. The Vector is interpreted as [World Position](types.md#position). | [<span class="ret boo"></span>](types.md) |
+setPositionSmooth([<span class="tag vec"></span>](types.md#vector)&nbsp;vector, [<span class="tag boo"></span>](types.md)&nbsp;collide, [<span class="tag boo"></span>](types.md)&nbsp;fast) | Moves the Object smoothly to the given Vector. The Vector is interpreted as [World Position](types.md#position). | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setpositionsmooth)
 <a class="anchor" id="setrotation"></a>setRotation([<span class="tag vec"></span>](types.md#vector)&nbsp;vector) | Instantly rotates an Object to the given Vector. | [<span class="ret boo"></span>](types.md) |
 setRotationSmooth([<span class="tag vec"></span>](types.md#vector)&nbsp;vector, [<span class="tag boo"></span>](types.md)&nbsp;collide, [<span class="tag boo"></span>](types.md)&nbsp;fast) | Rotates the Object smoothly to the given Vector. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setrotationsmooth)
 <a class="anchor" id="setscale"></a>setScale([<span class="tag vec"></span>](types.md#vector)&nbsp;vector) | Sets a Vector as the current scale. | [<span class="ret boo"></span>](types.md) |
@@ -133,11 +134,12 @@ These functions obtain information from an object.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-getAttachments() | Returns a table in the same format as [getObjects()](#getobjects) for containers. | [<span class="ret tab"></span>](types.md) |
+<a class="anchor" id="getattachments"></a>getAttachments() | Returns a table in the same format as [getObjects()](#getobjects) for containers. | [<span class="ret tab"></span>](types.md) |
 <a class="anchor" id="getcolortint"></a>getColorTint() | Color tint. | [<span class="ret col"></span>](types.md#color) |
 getCustomObject() | Returns a Table with the Custom Object information of a Custom Object. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getcustomobject)
 <a class="anchor" id="getdescription"></a>getDescription() | Description, also shows as part of Object's tooltip. | [<span class="ret str"></span>](types.md)
 getFogOfWarReveal() | Settings impacting [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone) being revealed. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getfogofwarreveal)
+<a class="anchor" id="getgmnotes"></a>getGMNotes() | Game Master Notes only visible for [Player Color](player-color.md) Black. | [<span class="ret str"></span>](types.md) |
 <a class="anchor" id="getguid"></a>getGUID() | String of the Object's unique identifier. | [<span class="ret str"></span>](types.md) |
 <a class="anchor" id="getjson"></a>getJSON() | Returns a serialization of the JSON string which represents this item. Works with [spawnObjectJSON()](base.md#spawnobjectjson). | [<span class="ret str"></span>](types.md) |
 getJoints() | Returns information on any joints attached to this object. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getjoints)
@@ -165,6 +167,7 @@ Function Name | Description | Return | &nbsp;
 setCustomObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Sets a custom Object's properties. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setcustomobject)
 <a class="anchor" id="setdescription"></a>setDescription([<span class="tag str"></span>](types.md)&nbsp;description) | Sets a description for an Object. Shows in tooltip after delay. | [<span class="ret boo"></span>](types.md)
 setFogOfWarReveal([<span class="tag tab"></span>](types.md)&nbsp;fog_settings) | Establish the settings and enable/disable an Object's revealing of [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone). | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setfogofwarreveal)
+<a class="anchor" id="setgmnotes"></a>setGMNotes([<span class="tag str"></span>](types.md)&nbsp;notes) | Sets Game Master Notes only visible for [Player Color](player-color.md) Black. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="setlock"></a>setLock([<span class="tag boo"></span>](types.md)&nbsp;lock) | Sets if an object is locked in place. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="setname"></a>setName([<span class="tag str"></span>](types.md)&nbsp;name) | Sets a name for an Object. Shows in tooltip. | [<span class="ret boo"></span>](types.md)
 setRotationValues([<span class="tag tab"></span>](types.md)&nbsp;rotation_values) | Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setrotationvalues)
@@ -181,6 +184,8 @@ These functions perform general actions on objects.
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 <a class="anchor" id="addattachment"></a>addAttachment([<span class="tag obj"></span>](types.md)&nbsp;Object) | The Object supplied as param is destroyed and becomes a dummy Object child. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="fnc_addcontextmenuitem"></a>addContextMenuItem([<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag fun"></span>](types.md)&nbsp;toRunFunc, [<span class="tag boo"></span>](types.md)&nbsp;keep_open) | Adds a menu item to the objects right-click context menu. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#addcontextmenuitem)
+clearContextMenu() | Clears all menu items added by function [addContextMenuItem](#fnc_addcontextmenuitem). | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="removeattachment"></a>removeAttachment([<span class="tag int"></span>](types.md)&nbsp;index) | Removes a child with the given index. Use [getAttachments()](#getattachments) to find out the index property. | [<span class="ret obj"></span>](types.md)
 <a class="anchor" id="removeattachments"></a>removeAttachments() | Detaches the children of this Object. Returns a table of object references | [<span class="ret tab"></span>](types.md)
 <a class="anchor" id="destroyattachment"></a>destroyAttachment([<span class="tag int"></span>](types.md)&nbsp;index) | Destroys an attachment with the given index. | [<span class="ret boo"></span>](types.md)
@@ -190,7 +195,7 @@ Function Name | Description | Return | &nbsp;
 <a class="anchor" id="flip"></a>flip() | Flips Object over. | [<span class="ret boo"></span>](types.md) |
 clone([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Copy/Paste this Object, returning a reference to the new Object. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#clone)
 cut([<span class="tag int"></span>](types.md)&nbsp;count) | Cuts (splits) a deck at the given card count. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#cut)
-deal([<span class="tag int"></span>](types.md)&nbsp;number, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;index) | Deals Objects. Will deal from decks/bags/stacks/individual items. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#deal)
+deal([<span class="tag int"></span>](types.md)&nbsp;number, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;index) | Deals Objects. Will deal from decks/bags/stacks/individual items. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#deal)
 dealToColorWithOffset([<span class="tag vec"></span>](types.md#vector)&nbsp;offset, [<span class="tag boo"></span>](types.md)&nbsp;flip, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Deals from a deck to a position relative to the hand zone. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#dealtocolorwithoffset)
 <a class="anchor" id="destruct"></a>destruct() | Destroys Object. Allows for `self.destruct()`. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="drop"></a>drop() | Forces an Object, if held by a player, to be dropped. | [<span class="ret boo"></span>](types.md) |
@@ -276,7 +281,7 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 [<span class="ret boo"></span>](types.md)&nbsp;Adds force to an object in a directional Vector.
 
 !!!info "addForce(vector, force_type)"
-	* [<span class="tag tab"></span>](types.md) **Vector**: A Vector of the direction and magnitude of force.
+	* [<span class="tag vec"></span>](types.md) **vector**: A Vector of the direction and magnitude of force.
     * [<span class="tag int"></span>](types.md) **force_type**: An Int representing the force type to apply. Options below.
 		* {>>Optional, defaults to 3.<<}
         * **1**: Continuous force, uses mass. *(Force)*
@@ -292,8 +297,8 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 [<span class="ret boo"></span>](types.md)&nbsp;Adds torque to an object in a rotational Vector.
 
 !!!info "addTorque(vector, force_type)"
-	* [<span class="tag tab"></span>](types.md) **Vector**: A Vector of the direction and magnitude of rotational force.
-	* [<span class="tag int"></span>](types.md) **Force Type**: An Int representing the force type to apply. Options below.
+	* [<span class="tag vec"></span>](types.md) **vector**: A Vector of the direction and magnitude of rotational force.
+	* [<span class="tag int"></span>](types.md) **force_type**: An Int representing the force type to apply. Options below.
 		* {>>Optional, defaults to 3.<<}
         * **1**: Continuous force, uses mass. *(Force)*
         * **2**: Continuous acceleration, ignores mass. *(Acceleration)*
@@ -306,7 +311,7 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 
 ####getBounds()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table of Vector information describing the size of an object in Global terms. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Table of Vector information describing the size of an object in Global terms. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
 
 !!!info "Return Table"
 	* [<span class="tag tab"></span>](types.md) **center**: The Vector of the center of the bounding box.
@@ -327,7 +332,7 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 
 ####getBoundsNormalized()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table of Vector information describing the size of an object in Global terms, as if it was rotated to {0,0,0}. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Table of Vector information describing the size of an object in Global terms, as if it was rotated to {0,0,0}. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
 
 !!!info "Return Table"
 	* [<span class="tag tab"></span>](types.md) **center**: The Vector of the center of the bounding box.
@@ -348,14 +353,14 @@ setVectorLines([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spaw
 
 ####getScale()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector of the current scale. Scale is not an absolute measurement, it is a multiple of the Object's default model size. So {x=2, y=2, z=2} would be a model twice its default size, not 2 units large.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector of the current scale. Scale is not an absolute measurement, it is a multiple of the Object's default model size. So {x=2, y=2, z=2} would be a model twice its default size, not 2 units large.
 
 ---
 
 
 ####getTransformForward()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector of the forward direction of this Object. The direction is relative to how the object is facing.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector of the forward direction of this Object. The direction is relative to how the object is facing.
 
 ``` Lua
 -- Example of moving forward 5 units
@@ -377,7 +382,7 @@ end
 
 ####getTransformRight()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector of the forward direction of this object. The direction is relative to how the object is facing.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector of the forward direction of this object. The direction is relative to how the object is facing.
 
 ``` Lua
 -- Example of moving right 5 units
@@ -399,7 +404,7 @@ end
 
 ####getTransformUp()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector of the up direction of this Object. The direction is relative to how the object is facing.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector of the up direction of this Object. The direction is relative to how the object is facing.
 
 ``` Lua
 -- Example of moving up 5 units
@@ -421,7 +426,7 @@ end
 
 ####positionToLocal(...)
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector after converting a world vector to a local Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector after converting a world vector to a local Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
 
 !!!tip "Object Scale"
 	This function takes the Object's scale into account, as the Object is the key relative point.
@@ -434,7 +439,7 @@ end
 
 ####positionToWorld(...)
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Vector after converting a local Vector to a world Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
+[<span class="ret vec"></span>](types.md)&nbsp;Returns a Vector after converting a local Vector to a world Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
 
 !!!tip "Object Scale"
 	This function takes the Object's scale into account, as the Object is the key relative point.
@@ -485,7 +490,7 @@ self.scale(2)
 [<span class="ret boo"></span>](types.md)&nbsp;Moves the Object smoothly to the given Vector.
 
 !!!info "setPositionSmooth(vector, collide, fast)"
-	* [<span class="tag tab"></span>](types.md) **Vector**: A positional Vector.
+	* [<span class="tag vec"></span>](types.md) **vector**: A positional Vector.
 	* [<span class="tag boo"></span>](types.md) **collide**: If the Object will collide with other Objects while moving.
 	* [<span class="tag boo"></span>](types.md) **fast**: If the Object is moved quickly.
 
@@ -497,7 +502,7 @@ self.scale(2)
 [<span class="ret boo"></span>](types.md)&nbsp;Rotates the Object smoothly to the given Vector.
 
 !!!info "setRotationSmooth(vector, collide, fast)"
-	* [<span class="tag tab"></span>](types.md) **Vector**: A rotational Vector.
+	* [<span class="tag vec"></span>](types.md) **vector**: A rotational Vector.
 	* [<span class="tag boo"></span>](types.md) **collide**: If the Object will collide with other Objects while rotating.
 	* [<span class="tag boo"></span>](types.md) **fast**: If the Object is rotated quickly.
 
@@ -1140,8 +1145,8 @@ obj.setCustomObject(params)
 
 [<span class="ret boo"></span>](types.md)&nbsp;Establish the settings and enable/disable an Object's revealing of [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone).
 
-!!!info "setFogOfWarReveal(fog_setting)"
-	* [<span class="tag tab"></span>](types.md)&nbsp;**fog_setting**: A Table containing information on if/how this Object should reveal Fog of War.
+!!!info "setFogOfWarReveal(fog_settings)"
+	* [<span class="tag tab"></span>](types.md)&nbsp;**fog_settings**: A Table containing information on if/how this Object should reveal Fog of War.
 		* [<span class="tag boo"></span>](types.md)&nbsp;**reveal**: Can the Object currently
 			* {>>If this is not used, the current setting for this Object is kept.<<}
 		* [<span class="tag str"></span>](types.md#vector)&nbsp;**color**: The rotation Vector of the Object that best represents the given value pointing up.
@@ -1230,6 +1235,29 @@ Tablet | Set String for the current URL.
 
 ###Action Function Details
 
+####addContextMenuItem(...)
+
+[<span class="ret boo"></span>](types.md)&nbsp;Adds a menu item to the objects right-click context menu.
+
+!!!info "addContextMenuItem(label, toRunFunc, keep_open)"
+	* [<span class="tag str"></span>](types.md) **label**: Label for the menu item.
+	* [<span class="tag fun"></span>](types.md) **toRunFunc**: Execute if menu item is selected.
+        * [<span class="tag str"></span>](types.md) **player_color** [Player Color](player-color.md) who selected the menu item.
+	* [<span class="tag boo"></span>](types.md) **keep_open**: Keep context menu open after menu
+     item was selected.
+        * {>>Optional, Default: keep_open = false. Close context menu after selection.<<}
+
+``` Lua
+function onLoad()
+    self.addContextMenuItem("doStuff", itemAction)
+end
+
+function itemAction(player_color)
+    print(player_color)
+end
+```
+
+---
 
 ####clone(...)
 
@@ -1798,7 +1826,7 @@ Returned table:
 			* [<span class="tag str"></span>](types.md) **parameters.subtable.url**: The file path or URL for the image to be displayed.
 			* [<span class="tag vec"></span>](types.md#vector) **parameters.subtable.position**: A Vector of the position to place Object.
 			* [<span class="tag vec"></span>](types.md#vector) **parameters.subtable.rotation**: A Vector of the rotation of the Object.
-			* [<span class="tag flo"></span>](types.md) **parameters.subtable.scale**: How the image is scaled.
+			* [<span class="tag vec"></span>](types.md) **parameters.subtable.scale**: How the image is scaled.
 				* {>>1 is normal scale, 0.5 would be half sized, 2 would be twice as large, etc.<<}
 
 ``` Lua
@@ -1835,8 +1863,8 @@ end
 > This function can also be used on the game world itself using Global.
 
 !!!info "setSnapPoints(parameters)"
-	* [<span class="tag str"></span>](types.md) **parameters**: A table containing numerically indexed sub-tables.
-		* [<span class="tag str"></span>](types.md) **sub-table**:
+	* [<span class="tag tab"></span>](types.md) **parameters**: A table containing numerically indexed sub-tables.
+		* [<span class="tag tab"></span>](types.md) **sub-table**:
 			* [<span class="tag vec"></span>](types.md#vector) **position**: Position of the snap point. This is relative to the entity's position (local).
 				* {>>Optional, defaults to {0,0,0}.<<}
 			* [<span class="tag vec"></span>](types.md#vector) **rotation**: Rotation of the snap point. This is relative to the entity's rotation (local).

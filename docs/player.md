@@ -29,17 +29,17 @@ Variable | Description | Type
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 attachCameraToObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Makes a Player's camera follow an Object. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#attachcameratoobject)
-broadcast([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag str"></span>](types.md)&nbsp;Color) | Print message on Player's screen and their game chat log. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#broadcast)
+broadcast([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag col"></span>](types.md)&nbsp;message_color) | Print message on Player's screen and their game chat log. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#broadcast)
 changeColor([<span class="tag str"></span>](types.md)&nbsp;player_color) | Changes player to this [Player Color](player-color.md). | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#changecolor)
+<a class="anchor" id="clearselectedobjects"></a>clearSelectedObjects() | Clears a player's current selection. | [<span class="ret boo"></span>](types.md)
 <a class="anchor" id="gethandcount"></a>getHandCount() | Number of [hand zones](http://berserk-games.com/knowledgebase/hands/) owned by this color. | [<span class="ret int"></span>](types.md)
 getHandObjects([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#gethandobjects)
 getHandTransform([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Returns a Table of data on this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#gethandtransform)
 <a class="anchor" id="getholdingobjects"></a>getHoldingObjects() | Objects a Player is holding in their hand. | [<span class="ret tab"></span>](types.md)
 <a class="anchor" id="gethoverobject"></a>getHoverObject() | Object that the Player's pointer is hovering over. | [<span class="ret obj"></span>](types.md)
 <a class="anchor" id="getpointerposition"></a>getPointerPosition() | Player's pointer coordinates. | [<span class="ret vec"></span>](types.md#vector)
-<a class="anchor" id="getpointerrotation"></a>getPointerRotation() | Player's pointer rotation on Y axis. | [<span class="ret float"></span>](types.md)
+<a class="anchor" id="getpointerrotation"></a>getPointerRotation() | Player's pointer rotation on Y axis. | [<span class="ret flo"></span>](types.md)
 <a class="anchor" id="getselectedobjects"></a>getSelectedObjects() | Objects that the Player has selected with an area selection. | [<span class="ret tab"></span>](types.md)
-<a class="anchor" id="clearselectedobjects"></a>clearSelectedObjects() | Clears a player's current selection. | [<span class="ret boo"></span>](types.md)
 <a class="anchor" id="kick"></a>kick() | Kicks Player out of the room. | [<span class="ret boo"></span>](types.md)
 lookAt([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Moves a Player's camera, forcing 3'rd person camera mode. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#lookat)
 <a class="anchor" id="mute"></a>mute() | Mutes or unmutes Player, preventing/allowing voice chat. | [<span class="ret boo"></span>](types.md)
@@ -187,6 +187,19 @@ Player["White"].lookAt({
 ---
 
 
+####setCameraMode(...)
+
+[<span class="ret boo"></span>](types.md)&nbsp;Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown".
+
+!!!info "changeColor(camera_mode)"
+    * [<span class="tag str"></span>](types.md) **camera_mode**: The Camera Mode to set the Player's Camera to.
+
+``` Lua
+Player["White"].setCameraMode("FirstPerson")
+```
+
+---
+
 ####setHandTransform(...)
 
 [<span class="ret boo"></span>](types.md)&nbsp;Sets transform elements of a [hand zone](http://berserk-games.com/knowledgebase/hands/).
@@ -216,21 +229,6 @@ Player["White"].setHandTransform(params, 2)
 ```
 
 ---
-
-
-####setCameraMode(...)
-
-[<span class="ret boo"></span>](types.md)&nbsp;Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown". 
-
-!!!info "changeColor(camera_mode)"
-    * [<span class="tag str"></span>](types.md) **camera_mode**: The Camera Mode to set the Player's Camera to.
-
-``` Lua
-Player["White"].setCameraMode("FirstPerson")
-```
-
----
-
 
 ###Direct Class Function Details
 

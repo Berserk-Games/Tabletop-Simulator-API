@@ -3,7 +3,7 @@ As mentioned in the [Introduction](introUI.md), attributes are modifiers that ca
 !!!important
     They consists of two parts, a **tag** and a **value**. ***The value is always in quotation marks.***
 
-##Attribute types
+## Attribute types
 
 For XML, most of the attribute types are self-explanatory, like string or float (See Lua Scripting section for details on those). However XML has some unique types.
 
@@ -22,194 +22,215 @@ For XML, most of the attribute types are self-explanatory, like string or float 
 
 ---
 
-##Common Attributes
+## Common Attributes
 
 Elements all share some common attributes which are not repeated under their separate entries. They can be broker down into category.
 
-###General Attributes
-Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+### General Attributes
+
+Attribute&nbsp;Name | Description | Type&nbsp;/&nbsp;Options | Default&nbsp;Value
 -- | -- | -- | --
-active | Specifies whether or not this element is active. This can be used to hide/show elements via scripting. Triggering this via script will not trigger animations. | bool | `true`
-class | This allows you to group elements together by giving them the same class. It is used with [Defaults](defaults.md). | string | (none)
-id | Used by Lua scripting to identify an element within the XML. | string | (none)
-isDropReceiver | Determine if an object triggers onElementDropped. | bool | false
-visibility | What colors are able to see the element. See below for additional details. | string | (visible to all)
+active | Specifies whether or not this element and its children are visible and contribute to layout. Modifying this via script will not trigger animations. | bool | `true`
+class | A list of classes, separated by spaces. An element will inherit attributes from any of its classes defined in [Defaults](defaults.md). | string | *(none)*
+id | A unique string used to identify the element from Lua scripting. | string | *(none)*
+visibility | A pipe-separated list of visibility targets. An element is always treated as inactive to players not specified here. | string | *(visible to all)*
 
-####Visibility Targets
-The visibility attribute allows for only certain people or groups to see an element. Hiding an element will hide its children as well.
+!!!note "Visibility Targets"
+    Targets for the `visibility` attribute are as follows:
 
-#####Visible To All Players
-Not using the visibility attribute (or setting it to an empty string) does not limit the visibility of the element.
+    * The game host: `Host`
+    * Any promoted player (including the host): `Admin`
+    * Every [player color](../player-color.md): `White`, `Brown`, `Red`, `Orange`, `Yellow`, `Green`, `Teal`, `Blue`, `Purple`, `Pink`, `Grey`, and `Black`
+    * Every [team](../player.md#team): `Clubs`, `Diamonds`, `Hearts`, `Spades`, `Jokers`, and `None`
 
-#####Visiblity Selection
-* `Host`:  Only visible to the game host.
-* `Admin`: Only visible to the host and any promoted player.
-* `Red`: Only visible to the player in that seat color. (Works with all valid [color names](../player-color.md))
-* `Clubs`: Only visible to members of that player group. (Works with all valid [team names](../player.md#team))
+    Not setting the visibility attribute (or setting it to an empty string) does not limit the visibility of the element.
 
-#####Combining Groups
-You are able to list multiple color names in a single string by placing a vertical line `|` between valid entries.
+    Multiple targets can be listed by separating them with a pipe (`|`). In this case if *any* of the targets applies to a player then the element will be active for that player.
 
-Example: `"Red|Blue|Host"` would be visible to the red seat, blue seat and the host of the server.
+    Example: `"Red|Blue|Host"` would be visible to the red seat, blue seat, and the host of the server.
 
+### Text Attributes
 
-
-###Text Attributes
 Many, but not all, elements have a text attribute.
 
-Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Attribute&nbsp;Name | Description | Type&nbsp;/&nbsp;Options | Default&nbsp;Value
 -- | -- | -- | --
-text | This can be used to determine the text that appears. It can also be modified externally by the script. | string | *(none)*
-alignment | | <ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul> | MiddleCenter
-color | | [<span class="tag xmlco"></span>](#attribute-types) | `#323232`
-fontStyle | | <ul><li>Normal</li><li>Bold</li><li>Italic</li><li>BoldItalic</li></ul> | `Normal`
-fontSize | | float | `14`
-resizeTextForBestFit | Resize text to fit? | [<span class="tag boo"></span>](#attribute-types) | `false`
-resizeTextMinSize | Minimum font size | float | `10`
-resizeTextMaxSize | Maximum font size | float | `40`
-horizontalOverflow | | <ul><li>Wrap</li><li>Overflow</li></ul> | `Overflow`
-verticalOverflow | | <ul><li>Truncate</li><li>Overflow</li></ul> | `Truncate`
+text | Text to be displayed. | string | *(none)*
+alignment | Typographic alignment of the text within its bounding box. | <ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul> | `MiddleCenter`
+color | Color of the text. Elements that also take an image `color` use `textColor` for this. | [<span class="tag xmlco"></span>](#attribute-types) | `#323232`
+fontStyle | Typographic emphasis on the text. | <ul><li>Normal</li><li>Bold</li><li>Italic</li><li>BoldAndItalic</li></ul> | `Normal`
+fontSize | Height of the text in pixels. | float | `14`
+resizeTextForBestFit | If set then `fontSize` is ignored and the text will be sized to be as large as possible while still fitting within its bounding box. | [<span class="tag boo"></span>](#attribute-types) | `false`
+resizeTextMinSize | When `resizeTextForBestFit` is set, text will not be sized smaller than this. | float | `10`
+resizeTextMaxSize | When `resizeTextForBestFit` is set, text will not be sized larger than this. | float | `40`
+horizontalOverflow | Defines what happens when text extends beyond the left or right edges of its bounding box. | <ul><li>Wrap</li><li>Overflow</li></ul> | `Overflow`
+verticalOverflow | Defines what happens when text extends beyond the top or bottom edges of its bounding box. | <ul><li>Truncate</li><li>Overflow</li></ul> | `Truncate`
 
+### Image Attributes
 
-###Image Attributes
 Applies to elements with an image component. The string that `image`s all take is the **NAME THE IMAGE WAS GIVEN WHEN YOU PUT IT IN THE IN-GAME ASSET MANAGER**.
 
-Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Attribute&nbsp;Name | Description | Type&nbsp;/&nbsp;Options | Default&nbsp;Value
 -- | -- | -- | --
-image | Name of image (in the asset manager). | string | (*none*)
-preserveAspect | Should the aspect ratio of this image be preserved? | [<span class="tag boo"></span>](#attribute-types) | *(varies)*
-color | Color for this element's image	 | [<span class="tag xmlco"></span>](#attribute-types) | `clear` or `#FFFFFF`
-type | Image Type | Simple, Sliced, Filled, Tiled | *(varies)*
+image | Name of the image in the asset manager. | string | *(none)*
+preserveAspect | If set, the image will not stretch beyond its original aspect ratio, potentially leaving gaps around the image. | [<span class="tag boo"></span>](#attribute-types) | *(varies)*
+color | Color to tint the image, or a flat color to display if no image is given. | [<span class="tag xmlco"></span>](#attribute-types) | `clear` or `#FFFFFF`
+type | Defines how the image is drawn. | <ul><li>Simple</li><li>Sliced</li><li>Filled</li><li>Tiled</li></ul> | *(varies)*
 raycastTarget | If the element blocks clicks. | [<span class="tag boo"></span>](#attribute-types) | `true`
 
+### Appearance Attributes
 
-###Appearance Attributes
-Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Attribute&nbsp;Name | Description | Type&nbsp;/&nbsp;Options | Default&nbsp;Value
 -- | -- | -- | --
-shadow | Defines the shadow color of this element. | [<span class="tag xmlco"></span>](#attribute-types) | (none)
+shadow | Defines the shadow color of this element. | [<span class="tag xmlco"></span>](#attribute-types) | *(none)*
 shadowDistance | Defines the distance of the shadow for this element. | float(x) float(y) | `1 -1`
-outline | Defines the outline color of this element. | [<span class="tag xmlco"></span>](#attribute-types) | (none)
+outline | Defines the outline color of this element. | [<span class="tag xmlco"></span>](#attribute-types) | *(none)*
 outlineSize | Defines the size of this elements outline. | float(x) float(y) | `1 -1`
 
+### Layout Element Attributes
 
-###Layout Element Attributes
 These will only apply to elements within a layout group.
 
-Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Attribute&nbsp;Name | Description | Type&nbsp;/&nbsp;Options | Default&nbsp;Value
 -- | -- | -- | --
-ignoreLayout | Should this element ignore its parent layout group? | [<span class="tag boo"></span>](#attribute-types) | `false`
-minWidth | 	Minimum width for this element. | float |
-minHeight | 	Minimum height for this element. | float |
-preferredWidth | Preferred width for this element. | float |
-preferredHeight | Preferred height for this element. | float |
-flexibleWidth | Should the width of this element be flexible? | <ul><li>1</li><li>0</li></ul> |
-flexibleHeight | Should the height of this element be flexible? | <ul><li>1</li><li>0</li></ul> |
+ignoreLayout | If this element ignores its parent's layout group behavior and treats it as a regular Panel. (This means it would obey regular position/size attributes.) | [<span class="tag boo"></span>](#attribute-types) | `false`
+minWidth | Elements will not be sized thinner than this. | float | *(varies)*
+minHeight | Elements will not be sized shorter than this. | float | *(varies)*
+preferredWidth | If there is space after `minWidth`s are sized, then element widths are sized according to this. | float | *(varies)*
+preferredHeight | If there is space after `minHeight`s are sized, then element heights are sized according to this. | float | *(varies)*
+flexibleWidth | If there is additional space after `preferredWidth`s are sized, defines how much the element expands to fill the available horizontal space, relative to other elements. | float | *(varies)*
+flexibleHeight | If there is additional space after `preferredHeights`s are sized, defines how much the element expands to fill the available vertical space, relative to other elements. | float | *(varies)*
 
+!!!note "On Sizing Elements"
+    Minimum and preferred sizes are defined in regular units, while the flexible sizes are defined in relative units. If any layout element has flexible size greater than zero, it means that all the available space will be filled out. The relative flexible size values of the siblings determines how big a proportion of the available space each sibling fills out. Most commonly, flexible width and height is set to just 0 or 1.
 
-###Position/Size Attributes (Basic)
-Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+### Position/Size Attributes (Basic)
+
+!!!important
+    These attributes do not apply to elements that are direct children of layout groups. To size those elements see [Layout Element Attributes](#layout-element-attributes).
+
+Attribute&nbsp;Name | Description | Type&nbsp;/&nbsp;Options | Default&nbsp;Value
 -- | -- | -- | --
-rectAlignment | Defines this elements position within its parent. Only applies to elements not contained within layout groups. | UpperLeft, UpperCenter, UpperRight, MiddleLeft, MiddleCenter, MiddleRight, LowerLeft, LowerCenter, LowerRight | `MiddleCenter`
-width | Defines the width of this element. | float (fixed width) or a Percentage value | `100%`
-height | Defines the height of this element. | float (fixed width) or a Percentage value | `100%`
-offsetXY | Defines an offset to the position of this element, e.g. a value of `-32 0` will cause this element to be 32 pixels to the left of where it would otherwise be. | float (x) float (y) | `0 0`
+rectAlignment | The element's anchor and pivot point, relative to its parent element. | <ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul> | `MiddleCenter`
+width | The width of this element in pixels or as a percentage of the width of its parent. | float (fixed width) or a Percentage value | `100%`
+height | The height of this element in pixels or as a percentage of the height of its parent. | float (fixed width) or a Percentage value | `100%`
+offsetXY | An offset to the position of this element, e.g. a value of `-32 10` will cause this element to be 10 pixels up and 32 pixels to the left of where it would otherwise be. | float(x) float(y) | `0 0`
 
+### Position/Size Attributes (Advanced)
 
-###Position/Size Attributes (Adv)
 These provide deeper access to Unity's [RectTransform](https://docs.unity3d.com/ScriptReference/RectTransform.html) properties.
 
-Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!!!important
+    Besides `rotation` and `scale`, these attributes do not apply to elements that are direct children of layout groups. To size those elements see [Layout Element Attributes](#layout-element-attributes).
+
+Attribute&nbsp;Name | Description | Type&nbsp;/&nbsp;Options | Default&nbsp;Value
 -- | -- | -- | --
-anchorMin |  | float(x) float(y) |
-anchorMax |  | float(x) float(y) |
-sizeDelta |  | float(x) float(y) |
-pivot |  | float(x) float(y) |
-position |  | float(x) float(y) float(z) |
-rotation |  | float(x) float(y) float(z) |
-scale |  | float(x) float(y) |
-offsetMin |  | float(left) float(bottom) |
-offsetMax |  | float(left) float(bottom) |
+anchorMin | The anchor point for the bottom-left corner of the element, where `0 0` is its parent's bottom-left corner and `1 1` is its parent's top-right corner. | float(x) float(y) | *(varies)*
+anchorMax | The anchor point for the top-right corner of the element, where `0 0` is its parent's bottom-left corner and `1 1` is its parent's top-right corner. | float(x) float(y) | *(varies)*
+sizeDelta | An offset to the size of the element, e.g. a value of `15 -20` will cause this element to be 15 pixels wider and 32 pixels shorter than what it would otherwise be. | float(x) float(y) | *(varies)*
+pivot | The pivot point this element is positioned, rotated, and scaled around. `0 0` is the element's bottom-left corner and `1 1` is its top-right corner. | float(x) float(y) | `0.5 0.5`
+position | An offset to the position of this element in 3D space. Z moves the element in and out. | float(x) float(y) float(z) | `0 0 0`
+rotation | Rotates the element in 3D space. X and Y tilt it like a dish, Z turns it like a steering wheel. | float(x) float(y) float(z) | `0 0 0`
+scale | Scales the component around its pivot. Note that this does not add more pixel detail, text with small font and other elements may appear pixelated or blurry. Z does not affect the thickness of the element (it is always flat), but does affect the transforms of its children. | float(x) float(y) float(z) | `1 1 1`
+offsetMin | An offset in pixels from `anchorMin` to be used as the bottom-left corner of the element. | float(x) float(y) | *(varies)*
+offsetMax | An offset in pixels from `anchorMax` to be used as the top-right corner of the element. | float(x) float(y) | *(varies)*
 
+!!!warning "Mixing Attributes"
+    Some [Advanced Position/Size Attributes](#positionsize-attributes-advanced) affect the same underlying properties as the [Basic Position/Size Attributes](#positionsize-attributes-basic) and other Advanced Position/Size Attributes. Using these overlapping attributes on the same element will cause one attribute to be effectively overwritten, and may result in unexpected behaviour.
 
-###Dragging Attributes
-Allow users to move elements by click/dragging.
+!!!note "Elements in 3D Space"
+    Moving elements in 3D space can achieve parallax and perspective effects, but elements later in the XML will always be drawn on top of elements earlier in the same XML, and will not occlude as other 3d objects would. To avoid any visual glitches, try to make sure unrelated UI elements can't be seen overlapping when viewed from most angles. Global UI has no perspective and is always 2D.
 
-Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
--- | -- | -- | --
-allowDragging | Allow this element to be dragged? <br>{>>Does not work on child elements of layout groups)<<} | [<span class="tag boo"></span>](#attribute-types) | `false`
-restrictDraggingToParentBounds | Prevent this element from being dragged outside of its parent? | [<span class="tag boo"></span>](#attribute-types) | `true`
-returnToOriginalPositionWhenReleased | If this is set to true, then the element will return to its original position when it is released. | [<span class="tag boo"></span>](#attribute-types) | `true`
+### Dragging Attributes
 
-
-###Animation Attributes
-Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
--- | -- | -- | --
-showAnimation |  | <ul><li>None</li><li>Grow</li><li>FadeIn</li><li>SlideIn_Left</li><li>SlideIn_Right</li><li>SlideIn_Top</li><li>SlideIn_Bottom</li></ul> | `None`
-hideAnimation |  | <ul><li>None</li><li>Shrink</li><li>FadeOut</li><li>SlideOut_Left</li><li>SlideOut_Right</li><li>SlideOut_Top</li><li>SlideOut_Bottom</li></ul> | `None`
-showAnimationDelay | Adds a short delay before playing this element's show animation. | float | `0`
-hideAnimationDelay | Adds a short delay before playing this element's hide animation. | float | `0`
-animationDuration | Specifies how long show/hide animations should take to play. | float | `0.25`
-
-
-###Tooltip Attributes
-Allow any element to have a tooltip (text that appears when the element is hovered over by the mouse).
-
-Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
--- | -- | -- | --
-tooltip | Tooltip text. | string | *(none)*
-tooltipBorderColor | Color of the tooltips border. | [<span class="tag xmlco"></span>](#attribute-types) | `#FFFFFF`
-tooltipBackgroundColor | Color of the tooltips background | [<span class="tag xmlco"></span>](#attribute-types) | `rgba(0,0,0,0.62)`
-tooltipTextColor | Color of the text within this tooltip | [<span class="tag xmlco"></span>](#attribute-types) |
-tooltipPosition | Position of this tooltip in relation to the element. | <ul><li>Above</li><li>Below</li><li>Left</li><li>Right</li></ul> | `Right`
-tooltipBorderImage | This attribute allows you to override the default image used for the tooltips border. | string |
-tooltipBackgroundImage | This attribute allows you to override the default image used for the tooltips background. | string |
-tooltipOffset | This attribute allows you to modify the distance this tooltip will appear from the element. | float |
-
-###Event Attributes
-Allows Lua scripting events to be triggered by any element, through a variety of interactions. See the [Input Elements](inputelements.md) page for how to interact with Lua scripting.
-
-Attribute&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
--- | -- | -- | --
-onClick | Clicking on the element. | string |
-onMouseEnter | Pointer entering the boundary of the element. | string |
-onMouseExit | Pointer leaving the boundary of the element. | string |
-onDrag | Element drag event. | string |
-onBeginDrag | Element beginning to be dragged. | string |
-onEndDrag | Element being release from its drag. | string |
-onMouseDown | Mouse click action. | string |
-onMouseUp | Mouse click finishing action. | string |
-onSubmit |  | string |
-onElementDropped | An element needs isDropReceiver for this to trigger | string
+Allow users to move elements by clicking/dragging.
 
 !!!note
-    onClick, onMouseEnter, onMouseExit, onMouseDown and onMouseUp all pass the click button. The values are -1 LMB, -2RMB, -3 MMB, 0 touch single, 1 double touche, 2 triple touch.
+    There is currently no reliable way to read the positions of elements, and dragged positions reset when the UI is reloaded.
+
+Attribute&nbsp;Name | Description | Type&nbsp;/&nbsp;Options | Default&nbsp;Value
+-- | -- | -- | --
+allowDragging | Allows the element to be dragged around. <br>{>>Does not work on child elements of layout groups)<<} | [<span class="tag boo"></span>](#attribute-types) | `false`
+restrictDraggingToParentBounds | If set, prevents the element from being dragged outside the bounding box of its parent. | [<span class="tag boo"></span>](#attribute-types) | `true`
+returnToOriginalPositionWhenReleased | If this is set to true, then the element will return to its original position when it is released. | [<span class="tag boo"></span>](#attribute-types) | `true`
+
+### Animation Attributes
+
+Attribute&nbsp;Name | Description | Type&nbsp;/&nbsp;Options | Default&nbsp;Value
+-- | -- | -- | --
+showAnimation | Animation to play when `show()` is called for the element. | <ul><li>None</li><li>Grow</li><li>FadeIn</li><li>SlideIn_Left</li><li>SlideIn_Right</li><li>SlideIn_Top</li><li>SlideIn_Bottom</li></ul> | `None`
+hideAnimation | Animation to play when `hide()` is called for the element. | <ul><li>None</li><li>Shrink</li><li>FadeOut</li><li>SlideOut_Left</li><li>SlideOut_Right</li><li>SlideOut_Top</li><li>SlideOut_Bottom</li></ul> | `None`
+showAnimationDelay | Time in seconds to wait before playing this element's show animation. Useful for staggering the animations of multiple elements. | float | `0`
+hideAnimationDelay | Time in seconds to wait before playing this element's hide animation. Useful for staggering the animations of multiple elements. | float | `0`
+animationDuration | Time in seconds that show/hide animations take to play. | float | `0.25`
+
+### Tooltip Attributes
+
+Allow any element to have a tooltip (text that appears when the element is hovered over by the mouse).
+
+Attribute&nbsp;Name | Description | Type&nbsp;/&nbsp;Options | Default&nbsp;Value
+-- | -- | -- | --
+tooltip | Text to display when the element is hovered over. | string | *(none)*
+tooltipBorderColor | Color of the tooltip's border. | [<span class="tag xmlco"></span>](#attribute-types) | `#FFFFFF`
+tooltipBackgroundColor | Color of the tooltip's background. | [<span class="tag xmlco"></span>](#attribute-types) | `rgba(0,0,0,0.62)`
+tooltipBorderImage | Image used for the tooltip's border. See [Image Attributes](#image-attributes). | string |
+tooltipBackgroundImage | Image used for the tooltip's background. See [Image Attributes](#image-attributes). | string |
+tooltipTextColor | Color of the text within this tooltip. | [<span class="tag xmlco"></span>](#attribute-types) | `#FFFFFF`
+tooltipPosition | Position of this tooltip in relation to the element. | <ul><li>Above</li><li>Below</li><li>Left</li><li>Right</li></ul> | `Right`
+tooltipOffset | Distance in pixels that this tooltip will appear from the element. | float | `8`
+
+### Event Attributes
+
+Allows Lua scripting functions to be triggered by an element, through a variety of interactions. All elements have no events by default, listed below is the default value passed as the 2nd parameter to the triggered function.
+
+See the [Input Elements](inputelements.md) page for how to interact with Lua scripting.
 
 
+Attribute&nbsp;Name | Description | Type&nbsp;/&nbsp;Options | Default&nbsp;Argument
+-- | -- | -- | --
+onClick | Called when the mouse is pressed while over the element and then released while still over it. | string | The click button
+onMouseEnter | Called when the pointer enters the boundary of the element. | string | `"-1"`
+onMouseExit | Called when the pointer leaves the boundary of the element. | string | `"-1"`
+onDrag | Called every frame if the element is being dragged and has moved that frame. | string | `nil`
+onBeginDrag | Called once when the element starts being dragged. | string | `nil`
+onEndDrag | Called once when the element stops being dragged and the mouse button is released. | string | `nil`
+onMouseDown | Called when the mouse is pressed while over the element. | string | The click button
+onMouseUp | Called when the mouse is released, if it had previously been pressed while over the element (no matter where the cursor currently is). | string | The click button
+onSubmit | Called when the Enter/Return key is pressed on an [Input Element](inputelements.md). | string | The value of the input element
 
+!!!note
+    `onClick`, `onMouseDown` and `onMouseUp` all pass the click button. They hold digits, but their data type is **string**. The possible values are:
 
+    - `"-1"`: Left mouse button
+    - `"-2"`: Right mouse button
+    - `"-3"`: Middle mouse button
+    - `"1"`: Single touch
+    - `"2"`: Double touch
+    - `"3"`: Triple touch
+
+    `onMouseEnter` and `onMouseExit` also pass click buttons, but the value is always `"-1"`.
 
 ---
 
+## Usage
 
-##Usage
-
-###Single Element Attributes
+### Single Element Attributes
 
 This is how you would assign attributes to a single element.
 
-####One Attribute
+#### One Attribute
 
 ```xml
 <Button onClick="test">Hello</Button>
 ```
 
-####Multiple Attributes
+#### Multiple Attributes
 
 ```xml
 <Button onClick="test" allowDragging="true">Hello</Button>
 ```
 
-####Many Attributes
+#### Many Attributes
 
 ```xml
 <Button
@@ -226,6 +247,3 @@ This is how you would assign attributes to a single element.
 >Hello
 </Button>
 ```
-
-
----

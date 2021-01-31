@@ -25,7 +25,6 @@
 [data-md-color-primary=indigo] .md-nav__link--active, [data-md-color-primary=indigo] .md-nav__link:active {
     color: black;
     background-color: #d3d3d3;
-    padding: 2px;
 }
 
 /*Coloring of top bar*/

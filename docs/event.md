@@ -21,9 +21,12 @@ onObjectDestroy([<span class="tag obj"></span>](types.md)&nbsp;dying_object) | C
 onObjectDrop([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag obj"></span>](types.md)&nbsp;dropped_object) | Called whenever any object is dropped by a player. | [<span class="i"></span>](#onobjectdrop)
 onObjectEnterScriptingZone([<span class="tag obj"></span>](types.md)&nbsp;zone, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when any object enters any scripting zone. | [<span class="i"></span>](#onobjectenterscriptingzone)
 onObjectEnterContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when any object enters any container. Includes decks | [<span class="i"></span>](#onobjectentercontainer)
+onObjectFlick([<span class="tag obj"></span>](types.md)&nbsp;hovered_object, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag flo"></span>](types.md)&nbsp;force) | Called when a player flicks an object. | [<span class="i"></span>](#onobjectflick)
+onObjectHover([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag obj"></span>](types.md)&nbsp;hovered_object) | Called when a player moves their pointer (cursor) over an object. | [<span class="i"></span>](#onobjecthover)
 onObjectLeaveScriptingZone([<span class="tag obj"></span>](types.md)&nbsp;zone, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when any object leaves any scripting zone. | [<span class="i"></span>](#onobjectleavescriptingzone)
 onObjectLeaveContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;leave_object) | Called when any object leaves any container. | [<span class="i"></span>](#onobjectleavecontainer)
 onObjectLoopingEffect([<span class="tag obj"></span>](types.md)&nbsp;loop_object, [<span class="tag int"></span>](types.md)&nbsp;index) | Called whenever the looping effect of an [AssetBundle](assetbundle.md) is activated. | [<span class="i"></span>](#onobjectloopingeffect)
+onObjectNumberTyped([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;number_typed) | Called when a Player types a number over a container. |
 onObjectPageChange([<span class="tag obj"></span>](types.md)&nbsp;object) | Called when a Custom PDF object changes page. | [<span class="i"></span>](#onobjectpagechange)
 onObjectPeek([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag str"></span>](types.md)&nbsp;player) | Called when a player using peek to look under an Object. | [<span class="i"></span>](#onobjectpeek)
 onObjectPickUp([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag obj"></span>](types.md)&nbsp;picked_up_object) | Called whenever a Player picks up an Object. | [<span class="i"></span>](#onobjectpickup)
@@ -33,9 +36,10 @@ onObjectSearchStart([<span class="tag obj"></span>](types.md)&nbsp;obj, [<span c
 onObjectSpawn([<span class="tag obj"></span>](types.md)&nbsp;spawn_object) | Called when any Object is spawned/created. | [<span class="i"></span>](#onobjectspawn)
 onObjectTriggerEffect([<span class="tag obj"></span>](types.md)&nbsp;trigger_object, [<span class="tag int"></span>](types.md)&nbsp;index) | Called whenever the trigger effect of an [AssetBundle](assetbundle.md) is activated. | [<span class="i"></span>](#onobjecttriggereffect)
 onPlayerChangeColor([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [<span class="i"></span>](#onplayerchangecolor)
+onPlayerChangeTeam([<span class="tag str"></span>](types.md)&nbsp;player_color,&nbsp;[<span class="tag str"></span>](types.md)&nbsp;team) | Called when a player changes team. | [<span class="i"></span>](#onplayerchangeteam)
 onPlayerConnect([<span class="tag pla"></span>](types.md)&nbsp;person) | Called when a [Player](player.md) connects to a game. | [<span class="i"></span>](#onplayerconnect)
 onPlayerDisconnect([<span class="tag pla"></span>](types.md)&nbsp;person) | Called when a [Player](player.md) disconnects from a game. | [<span class="i"></span>](#onplayerdisconnect)
-onPlayerTurn([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called at the start of a player's turn when using the in-game turn system. | [<span class="i"></span>](#onplayerturn)
+onPlayerTurn([<span class="tag pla"></span>](types.md)&nbsp;person) | Called at the start of a player's turn when using the in-game turn system. | [<span class="i"></span>](#onplayerturn)
 onSave() | Called whenever your game is saved. | [<span class="i"></span>](#onsave)
 onScriptingButtonDown([<span class="tag int"></span>](types.md)&nbsp;index, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttondown)
 onScriptingButtonUp([<span class="tag int"></span>](types.md)&nbsp;index, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttonup)
@@ -61,8 +65,11 @@ onCollisionExit([<span class="tag tab"></span>](types.md)&nbsp;collision_info) |
 onCollisionStay([<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called **every frame** that an Object is colliding with the Object this function is on. | [<span class="i"></span>](#oncollisionstay)
 onDestroy() | Called when an Object it is on is destroyed. | [<span class="i"></span>](#ondestroy)
 onDrop([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player releases an Object after picking it up. | [<span class="i"></span>](#ondrop)
+onFlick([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag flo"></span>](types.md)&nbsp;force) | Called when a player flicks the object. | [<span class="i"></span>](#onflick)
+onHover([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player moves their pointer (cursor) over an object. | [<span class="i"></span>](#onhover)
+onNumberTyped([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;number_typed) | Called when a Player types a number over the container. |
 onPageChange() | Called when a Custom PDF page is changed. | [<span class="i"></span>](#onpagechange)
-onPeek([<span class="tag str"></span>](types.md)&nbsp;player) | Called when a player using peek to look under this Object. | [<span class="i"></span>](#onpeek)
+onPeek([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player using peek to look under this Object. | [<span class="i"></span>](#onpeek)
 onPickUp([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player picks up an Object. | [<span class="i"></span>](#onpickup)
 onRandomize([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when this Object is randomized. Like when shuffling a deck or shaking dice. | [<span class="i"></span>](#onrandomize)
 onSearchEnd([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player finishes searches this Object. | [<span class="i"></span>](#onsearchend)
@@ -190,7 +197,7 @@ This function is called when an Object starts colliding with a [collision regist
 ``` Lua
 -- Example Usage
 function onObjectCollisionEnter(registered_object, info)
-	print(tostring(info.collision_object) .. " collided with " .. tostring(object))
+	print(tostring(info.collision_object) .. " collided with " .. tostring(registered_object))
 end
 ```
 ``` Lua
@@ -221,7 +228,7 @@ This function is called when an Object stops colliding with a [collision registe
 ``` Lua
 -- Example Usage
 function onObjectCollisionExit(registered_object, info)
-	print(tostring(info.collision_object) .. " stopped colliding with " .. tostring(object))
+	print(tostring(info.collision_object) .. " stopped colliding with " .. tostring(registered_object))
 end
 ```
 ``` Lua
@@ -255,7 +262,7 @@ This function is called **every frame** that an Object is colliding with a [coll
 ``` Lua
 -- Example Usage
 function onObjectCollisionStay(registered_object, info)
-	print(tostring(info.collision_object) .. " still colliding with " .. tostring(object))
+	print(tostring(info.collision_object) .. " still colliding with " .. tostring(registered_object))
 end
 ```
 ``` Lua
@@ -292,7 +299,7 @@ end
 Called whenever any object is dropped by a player.
 
 !!!info "onObjectDrop(player_color, dropped_object)"
-	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color) of the Player who dropped the Object.
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the Player who dropped the Object.
 	* [<span class="tag obj"></span>](types.md)&nbsp;**dropped_object**: The Object in game which was dropped.
 
 ``` Lua
@@ -320,7 +327,6 @@ end
 
 ---
 
-
 ###onObjectEnterContainer(...)
 
 Called when any object enters any container. Includes Objects entering decks.
@@ -338,6 +344,29 @@ end
 
 ---
 
+###onObjectHover(...)
+
+Called when a player moves their pointer (cursor) over an object.
+
+!!!info "onObjectHover(player_color, hovered_object)"
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who moved the pointer over an object.
+	* [<span class="tag obj"></span>](types.md)&nbsp;**hovered_object**: Object on which the pointer was moved.
+
+!!!important
+    [<span class="tag obj"></span>](types.md)&nbsp;**hovered_object** can be [<span class="tag nil"></span>](types.md)&nbsp;**nil** in some cases. For example if you move the pointer from the object to the table.
+
+
+
+``` Lua
+function onObjectHover(player_color, hovered_object)
+    if( hovered_object ~= nil ) then
+        print(player_color)
+	    print(hovered_object)
+    end
+end
+```
+
+---
 
 
 ###onObjectLeaveScriptingZone(...)
@@ -468,8 +497,8 @@ end
 Called when a search is finished on any container.
 
 !!!info "onObjectSearchEnd(obj, player_color)"
-* [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The Object which was searched.
-* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who triggered the function.
+    * [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The Object which was searched.
+    * [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who triggered the function.
 
 ---
 
@@ -479,8 +508,8 @@ Called when a search is finished on any container.
 Called when a search is started on any container.
 
 !!!info "onObjectSearchStart(obj, player_color)"
-* [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The Object which was searched.
-* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who triggered the function.
+    * [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The Object which was searched.
+    * [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who triggered the function.
 
 ---
 
@@ -517,9 +546,6 @@ end
 
 ---
 
-
-
-
 ###onPlayerChangeColor(...)
 
 Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect.
@@ -535,13 +561,35 @@ end
 
 ---
 
+###onPlayerChangeTeam(...)
+
+Called when a player changes team.
+
+!!!info "onPlayerChangeTeam(player_color, team)"
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who triggered the function.
+    * [<span class="tag str"></span>](types.md)&nbsp;**team**: Team to which the player has changed.  Options below.
+        * "" (empty string, if changed to None)
+        * Diamonds
+        * Hearts
+        * Jokers
+        * Clubs
+        * Spades
+
+``` Lua
+function onPlayerChangeTeam(player_color, team)
+	print(player_color)
+    print(team)
+end
+```
+
+---
 
 ###onPlayerConnect(...)
 
 Called when a [Player](player.md) connects to a game.
 
-!!!info "onPlayerConnect(person)""
-	* [<span class="tag pla"></span>](types.md)&nbsp;**person**: Player reference to who connected.
+!!!info "onPlayerConnect(person)"
+	* [<span class="tag pla"></span>](types.md)&nbsp;**person**: [Player](player.md) reference to who connected.
 
 ---
 
@@ -550,8 +598,8 @@ Called when a [Player](player.md) connects to a game.
 
 Called when a [Player](player.md) disconnects from a game.
 
-!!!info "onPlayerDisconnect(person)""
-	* [<span class="tag pla"></span>](types.md)&nbsp;**person**: Player reference to who disconnected.
+!!!info "onPlayerDisconnect(person)"
+	* [<span class="tag pla"></span>](types.md)&nbsp;**person**: [Player](player.md) reference to who disconnected.
 
 ---
 
@@ -559,12 +607,12 @@ Called when a [Player](player.md) disconnects from a game.
 ###onPlayerTurn(...)
 Called at the start of a player's turn when using the in-game turn system.
 
-!!!info "onPlayerTurn(player_color)"
-	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who's turn is starting.
+!!!info "onPlayerTurn(person)"
+	* [<span class="tag pla"></span>](types.md)&nbsp;**person**: [Player](player.md) who's turn is starting.
 
 ``` Lua
-function onPlayerTurn(color)
-	print(color .. "'s turn starts now.")
+function onPlayerTurn(person)
+	print(person.color .. "'s turn starts now.")
 end
 ```
 
@@ -650,6 +698,24 @@ end
 
 
 ##Function Details (Object only)
+
+
+###filterObjectEnter(...)
+
+Called when an object attempts to enter this object. The object is prevented from entering unless "true" is returned.
+
+!!!info "filterObjectEnter(obj)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The object that has tried to enter the object this script is attached to.
+
+``` Lua
+function filterObjectEnter(obj)
+	print(obj.getName()) -- Print entering object's name
+	return true -- Allows object to enter.
+end
+```
+
+
+---
 
 ###onCollisionEnter(...)
 
@@ -770,6 +836,21 @@ end
 
 ---
 
+###onHover(...)
+
+Called when a player moves their pointer (cursor) over an object.
+
+!!!info "onHover(player_color)"
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who moved the pointer over an object.
+
+``` Lua
+function onHover(player_color)
+    print(player_color)
+end
+```
+
+---
+
 ###onPageChange()
 
 Called when this object's Custom PDF page is changed.
@@ -783,29 +864,13 @@ end
 
 ---
 
-###filterObjectEnter(...)
-
-Called when an object attempts to enter this object. The object is prevented from entering unless "true" is returned.
-
-!!!info "filterObjectEnter(obj)"
-	* [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The object that has tried to enter the object this script is attached to.
-
-``` Lua
-function filterObjectEnter(obj)
-	print(obj.getName()) -- Print entering object's name
-	return true -- Allows object to enter.
-end
-```
-
-
----
 
 ###onPeek(...)
 
 Called when a player using peek to look under an Object.
 
-!!!info "onPeek(player)"
-	* [<span class="tag str"></span>](types.md)&nbsp;**player**: Name of the [Player Color](player-color.md) that peeked.
+!!!info "onPeek(player_color)"
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: Name of the [Player Color](player-color.md) that peeked.
 
 
 ``` Lua
