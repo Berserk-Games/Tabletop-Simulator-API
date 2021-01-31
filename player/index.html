@@ -1539,15 +1539,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sethandtransform" title="setHandTransform(...)" class="md-nav__link">
-    setHandTransform(...)
+  <a href="#setcameramode" title="setCameraMode(...)" class="md-nav__link">
+    setCameraMode(...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#setcameramode" title="setCameraMode(...)" class="md-nav__link">
-    setCameraMode(...)
+  <a href="#sethandtransform" title="setHandTransform(...)" class="md-nav__link">
+    setHandTransform(...)
   </a>
   
 </li>
@@ -2536,15 +2536,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sethandtransform" title="setHandTransform(...)" class="md-nav__link">
-    setHandTransform(...)
+  <a href="#setcameramode" title="setCameraMode(...)" class="md-nav__link">
+    setCameraMode(...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#setcameramode" title="setCameraMode(...)" class="md-nav__link">
-    setCameraMode(...)
+  <a href="#sethandtransform" title="setHandTransform(...)" class="md-nav__link">
+    setHandTransform(...)
   </a>
   
 </li>
@@ -2692,7 +2692,7 @@
 <td><a href="#attachcameratoobject"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>broadcast(<a href="../types/"><span class="tag str"></span></a>&nbsp;message, <a href="../types/"><span class="tag str"></span></a>&nbsp;Color)</td>
+<td>broadcast(<a href="../types/"><span class="tag str"></span></a>&nbsp;message, <a href="../types/"><span class="tag col"></span></a>&nbsp;message_color)</td>
 <td>Print message on Player's screen and their game chat log.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#broadcast"><span class="i"></span></a></td>
@@ -2702,6 +2702,12 @@
 <td>Changes player to this <a href="../player-color/">Player Color</a>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#changecolor"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="clearselectedobjects"></a>clearSelectedObjects()</td>
+<td>Clears a player's current selection.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td></td>
 </tr>
 <tr>
 <td><a class="anchor" id="gethandcount"></a>getHandCount()</td>
@@ -2742,19 +2748,13 @@
 <tr>
 <td><a class="anchor" id="getpointerrotation"></a>getPointerRotation()</td>
 <td>Player's pointer rotation on Y axis.</td>
-<td><a href="../types/"><span class="ret float"></span></a></td>
+<td><a href="../types/"><span class="ret flo"></span></a></td>
 <td></td>
 </tr>
 <tr>
 <td><a class="anchor" id="getselectedobjects"></a>getSelectedObjects()</td>
 <td>Objects that the Player has selected with an area selection.</td>
 <td><a href="../types/"><span class="ret tab"></span></a></td>
-<td></td>
-</tr>
-<tr>
-<td><a class="anchor" id="clearselectedobjects"></a>clearSelectedObjects()</td>
-<td>Clears a player's current selection.</td>
-<td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
@@ -2984,6 +2984,18 @@
 </ul>
 </div>
 <hr />
+<h4 id="setcameramode">setCameraMode(...)<a class="headerlink" href="#setcameramode" title="Permanent link"> </a></h4>
+<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown".</p>
+<div class="admonition info">
+<p class="admonition-title">changeColor(camera_mode)</p>
+<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>camera_mode</strong>: The Camera Mode to set the Player's Camera to.</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="n">Player</span><span class="p">[</span><span class="s2">&quot;White&quot;</span><span class="p">].</span><span class="n">setCameraMode</span><span class="p">(</span><span class="s2">&quot;FirstPerson&quot;</span><span class="p">)</span>
+</pre></div>
+
+<hr />
 <h4 id="sethandtransform">setHandTransform(...)<a class="headerlink" href="#sethandtransform" title="Permanent link"> </a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets transform elements of a <a href="http://berserk-games.com/knowledgebase/hands/">hand zone</a>.</p>
 <div class="admonition info">
@@ -3021,18 +3033,6 @@
     <span class="n">scale</span>    <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">},</span>
 <span class="p">}</span>
 <span class="n">Player</span><span class="p">[</span><span class="s2">&quot;White&quot;</span><span class="p">].</span><span class="n">setHandTransform</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-<hr />
-<h4 id="setcameramode">setCameraMode(...)<a class="headerlink" href="#setcameramode" title="Permanent link"> </a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown". </p>
-<div class="admonition info">
-<p class="admonition-title">changeColor(camera_mode)</p>
-<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>camera_mode</strong>: The Camera Mode to set the Player's Camera to.</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="n">Player</span><span class="p">[</span><span class="s2">&quot;White&quot;</span><span class="p">].</span><span class="n">setCameraMode</span><span class="p">(</span><span class="s2">&quot;FirstPerson&quot;</span><span class="p">)</span>
 </pre></div>
 
 <hr />
