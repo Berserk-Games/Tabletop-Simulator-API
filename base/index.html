@@ -3022,16 +3022,34 @@
 <li><a href="../types/"><span class="tag tab"></span></a> <strong>objects</strong>: A list of objects to be grouped together.</li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="kd">local</span> <span class="n">objList</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;b80a72&quot;</span><span class="p">),</span>
-        <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;a333b4&quot;</span><span class="p">),</span>
-        <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;c9f9d3&quot;</span><span class="p">),</span>
+<div class="admonition info">
+<p class="admonition-title">Format of the returned table</p>
+<ul>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>objGroupedList</strong>: A table containing a list of grouped objects, numerically indexed.<ul>
+<li><span class="critic comment">Different object types are grouped independently</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><div class="codehilite"><pre><span></span><span class="c1">-- Example</span>
+<span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">objects</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1">-- IMPORTANT: To get the example to work, you need to replace ###### by a real GUID of the object.</span>
+        <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;######&quot;</span><span class="p">),</span> <span class="c1">-- card</span>
+        <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;######&quot;</span><span class="p">),</span> <span class="c1">-- card</span>
+        <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;######&quot;</span><span class="p">),</span> <span class="c1">-- checker</span>
+        <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;######&quot;</span><span class="p">),</span> <span class="c1">-- checker</span>
     <span class="p">}</span>
-    <span class="n">group</span><span class="p">(</span><span class="n">objList</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">objGroupedList</span> <span class="o">=</span> <span class="n">group</span><span class="p">(</span><span class="n">objects</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">objGroupedList</span><span class="p">)</span>
 <span class="kr">end</span>
 </pre></div>
-
+<div class="codehilite"><pre><span></span><span class="c1">-- Possible Output for objGroupedList</span>
+<span class="p">{</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">Deck</span><span class="o">&gt;</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">CheckerStack</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</pre></div></p>
 <hr />
 <h4 id="paste">paste(...)<a class="headerlink" href="#paste" title="Permanent link"> </a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Pastes Objects in-game that were copied to the in-game clipboard. Works with <a href="#copy">copy(...)</a>.</p>
