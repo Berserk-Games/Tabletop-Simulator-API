@@ -134,10 +134,7 @@ Not all objects CAN be grouped. If the G key won't work on them, neither will th
 
 !!!info "Format of the returned table"
     * [<span class="tag tab"></span>](types.md) **objGroupedList**: A table containing a list of grouped objects, numerically indexed.
-        * {>>Different object typs are grouped independently<<}
-
-    !!!important "Important"
-        Wait at least 1 frame before working with the returned table.
+        * {>>Different object types are grouped independently<<}
 
 ``` Lua
 -- Example
@@ -150,7 +147,7 @@ function onLoad()
         getObjectFromGUID("######"), -- checker
     }
     local objGroupedList = group(objects)
-    Wait.frames( function() log(objGroupedList) end, 1 )
+    log(objGroupedList)
 end
 
 ```
