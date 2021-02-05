@@ -3606,34 +3606,138 @@
 <td>0-23 value. Changes when a Player hits flip or alt + rotate.</td>
 <td align="left"><a href="../types/"><span class="tag int"></span></a></td>
 </tr>
+<tr>
+<td><a class="anchor" id="hide_when_face_down"></a>hide_when_face_down</td>
+<td>Hide the Object when face-down as if it were in a hand zone. The face is the "top" of the Object, the direction of its positive Y coordinate. Cards/decks default to <code class="codehilite">true</code>.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="ignore_fog_of_war"></a>ignore_fog_of_war</td>
+<td>Makes the object not be hidden by <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a>.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="interactable"></a>interactable</td>
+<td>If an object can be interacted with by Players. Other object will still be able to interact with it.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="is_face_down"></a>is_face_down</td>
+<td>If an Object is roughly face-down (like with cards). The face is the "top" of the Object, the direction of its positive Y coordinate. Read only.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="loading_custom"></a>loading_custom</td>
+<td>If the Object's custom elements (images/models/etc) are loading. Read only.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="locked"></a>locked</td>
+<td>If the object is frozen in place (preventing physics interactions).</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="mass"></a>mass</td>
+<td>Mass. <a href="https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html">Unity rigidbody property</a>.</td>
+<td align="left"><a href="../types/"><span class="tag flo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="measure_movement"></a>measure_movement</td>
+<td>Measure Tool will automatically be used when moving the Object.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="name"></a>name</td>
+<td>Internal resource name for this Object. Read only, and only useful for <a href="../base/#spawnobjectjson">spawnObjectJSON()</a>. Generally, you want <a href="#getname">getName()</a>.</td>
+<td align="left"><a href="../types/"><span class="tag str"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="pick_up_position"></a>pick_up_position</td>
+<td>The position the Object was picked up at.</td>
+<td align="left"><a href="../types/#vector"><span class="tag vec"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="pick_up_rotation"></a>pick_up_rotation</td>
+<td>The rotation the Object was picked up at.</td>
+<td align="left"><a href="../types/#vector"><span class="tag vec"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="resting"></a>resting</td>
+<td>If an Object is at rest. <a href="https://docs.unity3d.com/2019.1/Documentation/Manual/RigidbodiesOverview.html">Unity rigidbody property</a>.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="script_code"></a>script_code</td>
+<td>The Lua Script on the Object.</td>
+<td align="left"><a href="../types/"><span class="tag str"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="script_state"></a>script_state</td>
+<td>The saved data on the object. See <a href="../event/#onsave">onSave()</a>.</td>
+<td align="left"><a href="../types/"><span class="tag str"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="spawning"></a>spawning</td>
+<td>If the Object is finished spawning. Read only.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="static_friction"></a>static_friction</td>
+<td>Static friction, value of 0-1. <a href="https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html">Unity physics material</a>.</td>
+<td align="left"><a href="../types/"><span class="tag flo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="sticky"></a>sticky</td>
+<td>If other Objects on top of this one are also picked up when this Object is.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="tag"></a>tag</td>
+<td>This object's type. Read only.</td>
+<td align="left"><a href="../types/"><span class="tag str"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="tooltip"></a>tooltip</td>
+<td>If the tooltip opens when a pointer hovers over the object. Tooltips display name and description.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="use_gravity"></a>use_gravity</td>
+<td>If gravity affects this object.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="use_grid"></a>use_grid</td>
+<td>If snapping to grid is enabled or not.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="use_hands"></a>use_hands</td>
+<td>If this object can be held in a hand zone.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="use_rotation_value_flip"></a>use_rotation_value_flip</td>
+<td>Switches the axis an Object rotates around when flipped.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="use_snap_points"></a>use_snap_points</td>
+<td>If snap points are used or ignored.</td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="value_flags"></a>value_flags</td>
+<td>A bit field, objects with overlapping <code class="codehilite">value_flag</code> bits are counted together when selected.</td>
+<td align="left"><a href="../types/"><span class="tag int"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="value"></a>value</td>
+<td>The value of the object for summing up selected objects. Only works if the apropriate bits are set in <code class="codehilite">obj.value_flags</code></td>
+<td align="left"><a href="../types/"><span class="tag int"></span></a></td>
+</tr>
 </tbody>
 </table>
-<p><a class="anchor" id="hide_when_face_down"></a>hide_when_face_down | Hide the Object when face-down as if it were in a hand zone. The face is the "top" of the Object, the direction of its positive Y coordinate. Cards/decks default to <code class="codehilite">true</code>. | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="ignore_fog_of_war"></a>ignore_fog_of_war | Makes the object not be hidden by <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a>. | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="interactable"></a>interactable | If an object can be interacted with by Players. Other object will still be able to interact with it. | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="is_face_down"></a>is_face_down | If an Object is roughly face-down (like with cards). The face is the "top" of the Object, the direction of its positive Y coordinate. Read only.  | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="loading_custom"></a>loading_custom | If the Object's custom elements (images/models/etc) are loading. Read only. | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="locked"></a>locked | If the object is frozen in place (preventing physics interactions). | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="mass"></a>mass | Mass. <a href="https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html">Unity rigidbody property</a>. | <a href="../types/"><span class="tag flo"></span></a>
-<a class="anchor" id="measure_movement"></a>measure_movement | Measure Tool will automatically be used when moving the Object. | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="name"></a>name | Internal resource name for this Object. Read only, and only useful for <a href="../base/#spawnobjectjson">spawnObjectJSON()</a>. Generally, you want <a href="#getname">getName()</a>. | <a href="../types/"><span class="tag str"></span></a>
-<a class="anchor" id="pick_up_position"></a>pick_up_position | The position the Object was picked up at. | <a href="../types/#vector"><span class="tag vec"></span></a>
-<a class="anchor" id="pick_up_rotation"></a>pick_up_rotation | The rotation the Object was picked up at. | <a href="../types/#vector"><span class="tag vec"></span></a></p>
-<p><a class="anchor" id="resting"></a>resting | If an Object is at rest. <a href="https://docs.unity3d.com/2019.1/Documentation/Manual/RigidbodiesOverview.html">Unity rigidbody property</a>. | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="script_code"></a>script_code | The Lua Script on the Object. | <a href="../types/"><span class="tag str"></span></a>
-<a class="anchor" id="script_state"></a>script_state | The saved data on the object. See <a href="../event/#onsave">onSave()</a>. | <a href="../types/"><span class="tag str"></span></a>
-<a class="anchor" id="spawning"></a>spawning | If the Object is finished spawning. Read only. | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="static_friction"></a>static_friction | Static friction, value of 0-1. <a href="https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html">Unity physics material</a>. | <a href="../types/"><span class="tag flo"></span></a>
-<a class="anchor" id="sticky"></a>sticky | If other Objects on top of this one are also picked up when this Object is. | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="tag"></a>tag | This object's type. Read only. | <a href="../types/"><span class="tag str"></span></a>
-<a class="anchor" id="tooltip"></a>tooltip | If the tooltip opens when a pointer hovers over the object. Tooltips display name and description. | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="use_gravity"></a>use_gravity | If gravity affects this object. | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="use_grid"></a>use_grid | If snapping to grid is enabled or not. | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="use_hands"></a>use_hands | If this object can be held in a hand zone. | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="use_rotation_value_flip"></a>use_rotation_value_flip | Switches the axis an Object rotates around when flipped. | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="use_snap_points"></a>use_snap_points | If snap points are used or ignored. | <a href="../types/"><span class="tag boo"></span></a>
-<a class="anchor" id="value_flags"></a>value_flags | A bit field, objects with overlapping <code class="codehilite">value_flag</code> bits are counted together when selected. | <a href="../types/"><span class="tag int"></span></a>
-<a class="anchor" id="value"></a>value | The value of the object for summing up selected objects. Only works if the apropriate bits are set in <code class="codehilite">obj.value_flags</code> | <a href="../types/"><span class="tag int"></span></a></p>
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
 <p>The <code class="codehilite">value_flags</code> and <code class="codehilite">value</code> member variables do not persist when the object is reloaded (such as loading a save and entering/exiting containers).</p>
