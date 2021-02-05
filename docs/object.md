@@ -1786,11 +1786,11 @@ print(decalTable[2].name)
 > This function can also be used directly on the game world (game table) using Global.
 
 !!!info "Format of the returned table"
-    * [<span class="tag tab"></span>](types.md) **parameters**: A table containing numerically indexed sub-tables.
-        * [<span class="tag tab"></span>](types.md) **sub-table**:
-            * [<span class="tag vec"></span>](types.md#vector) **position**: [Local Position](types.md#position) of the snap point. The position is relative to the entity's center.
-            * [<span class="tag vec"></span>](types.md#vector) **rotation**: Local Rotation of the snap point. The rotation is relative to the entity's rotation.
-            * [<span class="tag boo"></span>](types.md) **rotation_snap**: If the snap point is a "rotation" snap point.
+	* [<span class="tag tab"></span>](types.md) A table containing numerically indexed sub-tables.
+		* [<span class="tag tab"></span>](types.md) Sub-table(s), each representing a snap point:
+			* [<span class="tag vec"></span>](types.md#vector) **position**: [Local Position](types.md#position) of the snap point. The position is relative to the entity's center.
+			* [<span class="tag vec"></span>](types.md#vector) **rotation**: Local Rotation of the snap point. The rotation is relative to the entity's rotation.
+			* [<span class="tag boo"></span>](types.md) **rotation_snap**: If the snap point is a "rotation" snap point.
 
 
 Example:

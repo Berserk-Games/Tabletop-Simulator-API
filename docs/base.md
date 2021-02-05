@@ -133,8 +133,9 @@ Not all objects CAN be grouped. If the G key won't work on them, neither will th
 	* [<span class="tag tab"></span>](types.md) **objects**: A list of objects to be grouped together.
 
 !!!info "Format of the returned table"
-    * [<span class="tag tab"></span>](types.md) **objGroupedList**: A table containing a list of grouped objects, numerically indexed.
-        * {>>Different object types are grouped independently<<}
+    * [<span class="tag tab"></span>](types.md) A table containing the grouped objects, numerically indexed.
+		* [<span class="tag obj"></span>](types.md) Object(s)
+			* {>>Different types of object are grouped independently i.e. cards will form into a deck, each type of checker will form their own stack.<<}
 
 ``` Lua
 -- Example
