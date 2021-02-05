@@ -5905,21 +5905,18 @@
 <h4 id="getsnappoints">getSnapPoints()<a class="headerlink" href="#getsnappoints" title="Permanent link"> </a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a table of sub-tables, each sub-table representing one snap point.</p>
 <blockquote>
-<p>This function can also be used directly on the game world using Global.</p>
+<p>This function can also be used directly on the game world (game table) using Global.</p>
 </blockquote>
 <div class="admonition info">
-<p class="admonition-title">Sub-table contents</p>
+<p class="admonition-title">Format of the returned table</p>
 <ul>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>position</strong>: Position of the snap point. The position is relative to the entity's center (a local position).<ul>
-<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A table containing numerically indexed sub-tables.<ul>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>sub-table</strong>:<ul>
+<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>position</strong>: <a href="../types/#position">Local Position</a> of the snap point. The position is relative to the entity's center.</li>
+<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>rotation</strong>: Local Rotation of the snap point. The rotation is relative to the entity's rotation.</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>rotation_snap</strong>: If the snap point is a "rotation" snap point.</li>
 </ul>
 </li>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>rotation</strong>: Rotation of the snap point. The rotation is relative to the entity's rotation (a local rotation).<ul>
-<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
-</ul>
-</li>
-<li><a href="../types/"><span class="tag boo"></span></a> <strong>rotation_snap</strong>: If the snap point is a "rotation" snap point.<ul>
-<li><span class="critic comment">Optional, defaults to false.</span></li>
 </ul>
 </li>
 </ul>
@@ -5997,18 +5994,18 @@
 <h4 id="setsnappoints">setSnapPoints(...)<a class="headerlink" href="#setsnappoints" title="Permanent link"> </a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Spawns snap points from a list of parameters.</p>
 <blockquote>
-<p>This function can also be used on the game world itself using Global.</p>
+<p>This function can also be used on the game world (game table) itself using Global.</p>
 </blockquote>
 <div class="admonition info">
 <p class="admonition-title">setSnapPoints(parameters)</p>
 <ul>
 <li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A table containing numerically indexed sub-tables.<ul>
 <li><a href="../types/"><span class="tag tab"></span></a> <strong>sub-table</strong>:<ul>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>position</strong>: Position of the snap point. This is relative to the entity's position (local).<ul>
+<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>position</strong>: <a href="../types/#position">Local Position</a> of the snap point. This is relative to the entity's position.<ul>
 <li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
 </ul>
 </li>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>rotation</strong>: Rotation of the snap point. This is relative to the entity's rotation (local).<ul>
+<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>rotation</strong>: Local Rotation of the snap point. This is relative to the entity's rotation.<ul>
 <li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
 </ul>
 </li>
