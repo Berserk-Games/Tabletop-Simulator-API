@@ -975,6 +975,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#spawnobjectdata" title="spawnObjectData(...)" class="md-nav__link">
+    spawnObjectData(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#spawnobjectjson" title="spawnObjectJSON(...)" class="md-nav__link">
     spawnObjectJSON(...)
   </a>
@@ -2597,6 +2604,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#spawnobjectdata" title="spawnObjectData(...)" class="md-nav__link">
+    spawnObjectData(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#spawnobjectjson" title="spawnObjectJSON(...)" class="md-nav__link">
     spawnObjectJSON(...)
   </a>
@@ -2803,6 +2817,12 @@
 <td>Spawns an Object. See <a href="../built-in-object/">Built-in</a> and <a href="../custom-game-objects/">Custom</a> Spawnable Object pages for further details.</td>
 <td><a href="../types/"><span class="ret obj"></span></a></td>
 <td><a href="#spawnobject"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>spawnObjectData(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>Spawns an Object using a data table. Works with <a href="../object/#getdata">getData()</a>.</td>
+<td><a href="../types/"><span class="ret obj"></span></a></td>
+<td><a href="#spawnobjectdata"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>spawnObjectJSON(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
@@ -3093,6 +3113,57 @@
 <span class="kr">end</span>
 </pre></div>
 
+<hr />
+<h4 id="spawnobjectdata">spawnObjectData(...)<a class="headerlink" href="#spawnobjectdata" title="Permanent link"> </a></h4>
+<p>Spawns an Object using a data table. Works with <a href="../object/#getdata">getData()</a>. It works just like spawnObject, but instead of a <code class="codehilite">type</code>, you supply a <code class="codehilite">data</code> table. The other parameters will overwrite those in the Data.</p>
+<div class="admonition info">
+<p class="admonition-title">spawnObjectData(parameters)</p>
+<ul>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to determine how spawnObjectData will act.<ul>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters.data</strong>: <a href="../object/#getdata">getData()</a> table.</li>
+<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to place Object.<ul>
+<li><span class="critic comment">Optional, defaults to data table's value.</span></li>
+</ul>
+</li>
+<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the Object.<ul>
+<li><span class="critic comment">Optional, defaults to data table's value.</span></li>
+</ul>
+</li>
+<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the Object.<ul>
+<li><span class="critic comment">Optional, defaults to data table's value.</span></li>
+</ul>
+</li>
+<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>parameters.callback_function</strong>: The function to activate after the Object has finished spawning into the scene.<ul>
+<li><span class="critic comment">Optional, defaults to not being used.</span></li>
+<li><span class="critic comment">A reference to the object spawned is always passed to callback_function. See the example for how to access it.</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">futureName</span> <span class="o">=</span> <span class="s2">&quot;Spawned By Script!&quot;</span>
+<span class="n">spawnParams</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">data</span>              <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getData</span><span class="p">(),</span>
+    <span class="n">position</span>          <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">5</span><span class="p">},</span>
+    <span class="n">rotation</span>          <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">},</span>
+    <span class="n">scale</span>             <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">},</span>
+    <span class="n">callback_function</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="n">spawn_callback</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">futureName</span><span class="p">,</span> <span class="s2">&quot;Red&quot;</span><span class="p">)</span> <span class="kr">end</span>
+    <span class="c1">--alternative format:</span>
+    <span class="c1">--callback_function = |obj| spawn_callback(obj, futureName, &quot;Red&quot;)</span>
+<span class="p">}</span>
+<span class="n">spawnObjectData</span><span class="p">(</span><span class="n">spawnParams</span><span class="p">)</span>
+
+<span class="kr">function</span> <span class="nf">spawn_callback</span><span class="p">(</span><span class="n">object_spawned</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setColorTint</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can modify an object's data prior to spawning, this is currently the only way to "Create States" via API (using the "States" key).</p>
+</div>
 <hr />
 <h4 id="spawnobjectjson">spawnObjectJSON(...)<a class="headerlink" href="#spawnobjectjson" title="Permanent link"> </a></h4>
 <p>Spawns an Object using a JSON string. Works with <a href="../object/#getjson">getJSON()</a>. It works just like spawnObject, but instead of a <code class="codehilite">type</code>, you supply a <code class="codehilite">json</code> string. The other parameters will overwrite those in the JSON.</p>
