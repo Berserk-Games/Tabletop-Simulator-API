@@ -27,7 +27,6 @@ Variable | Description | Type
 <a class="anchor" id="held_reduce_force"></a>held_reduce_force | When the Object collides with something while moving this is automatically enabled and reduces the movement force. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="held_spin_index"></a>held_spin_index | 0-23 value. Changes when a Player rotates the Object. | [<span class="tag int"></span>](types.md)
 <a class="anchor" id="held_flip_index"></a>held_flip_index | 0-23 value. Changes when a Player hits flip or alt + rotate. | [<span class="tag int"></span>](types.md)
-
 <a class="anchor" id="hide_when_face_down"></a>hide_when_face_down | Hide the Object when face-down as if it were in a hand zone. The face is the "top" of the Object, the direction of its positive Y coordinate. Cards/decks default to `true`. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="ignore_fog_of_war"></a>ignore_fog_of_war | Makes the object not be hidden by [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone). | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="interactable"></a>interactable | If an object can be interacted with by Players. Other object will still be able to interact with it. | [<span class="tag boo"></span>](types.md)
@@ -39,7 +38,6 @@ Variable | Description | Type
 <a class="anchor" id="name"></a>name | Internal resource name for this Object. Read only, and only useful for [spawnObjectJSON()](base.md#spawnobjectjson). Generally, you want [getName()](#getname). | [<span class="tag str"></span>](types.md)
 <a class="anchor" id="pick_up_position"></a>pick_up_position | The position the Object was picked up at. | [<span class="tag vec"></span>](types.md#vector)
 <a class="anchor" id="pick_up_rotation"></a>pick_up_rotation | The rotation the Object was picked up at. | [<span class="tag vec"></span>](types.md#vector)
-
 <a class="anchor" id="resting"></a>resting | If an Object is at rest. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/RigidbodiesOverview.html). | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="script_code"></a>script_code | The Lua Script on the Object. | [<span class="tag str"></span>](types.md)
 <a class="anchor" id="script_state"></a>script_state | The saved data on the object. See [onSave()](event.md#onsave). | [<span class="tag str"></span>](types.md)
