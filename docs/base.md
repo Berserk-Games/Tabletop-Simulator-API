@@ -489,7 +489,7 @@ As an advanced feature, multiple log tags may be provided by space-separating se
 
 [<span class="ret str"></span>](types.md)&nbsp;_Returns_ a String formatted similarly to the output of [log(...)](#log). 
 
-!!!info "log(value, label, tags)"
+!!!info "logString(value, label, tags, concise, displayTag)"
 	* [<span class="tag var"></span>](types.md) **value**: The value you want to log.
 	* [<span class="tag str"></span>](types.md) **label**: Text to be logged before `value`.
 		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
