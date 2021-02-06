@@ -494,7 +494,7 @@ As an advanced feature, multiple log tags may be provided by space-separating se
 	* [<span class="tag str"></span>](types.md) **label**: Text to be logged before `value`.
 		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
 	* [<span class="tag str"></span>](types.md) **tags**: The log tag/style _or_ a space separated list of log tags/styles.
-		* {>>Optional, defaults to logging with the <default> log style.<<}
+		* {>>Optional, defaults to logging without any tags.<<}
 	* [<span class="tag boo"></span>](types.md) **concise**: Whether the resultant String should be generated in a more compact form (less newline characters).
 		* {>>Optional, defaults to `false`.<<}
 	* [<span class="tag boo"></span>](types.md) **displayTag**: Whether the specified tag(s) should be included as prefix of the resultant String.
@@ -507,7 +507,7 @@ If `value` is a [<span class="tag tab"></span>](types.md), then the table's cont
 !!!tip
 	Table contents max depth is configurable via the `log_max_table_depth` System Console command.
 
-In some circumstances log strings have newlines inserted in generated output e.g. between the `label` the textual representation of `value`. Providing `true` as the value for `concise` will use space separators instead of newlines.
+In some circumstances log strings have newlines inserted e.g. between the `label` and the textual representation of `value`. Providing `true` as the value for `concise` will use space separators instead of newlines.
 
 !!!example
 	_Print_, as opposed to log, the contents of a table (of objects):
