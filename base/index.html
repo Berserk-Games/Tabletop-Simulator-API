@@ -3442,7 +3442,7 @@
 </ul>
 </li>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>tags</strong>: The log tag/style <em>or</em> a space separated list of log tags/styles.<ul>
-<li><span class="critic comment">Optional, defaults to logging with the &lt;default&gt; log style.</span></li>
+<li><span class="critic comment">Optional, defaults to logging without any tags.</span></li>
 </ul>
 </li>
 <li><a href="../types/"><span class="tag boo"></span></a> <strong>concise</strong>: Whether the resultant String should be generated in a more compact form (less newline characters).<ul>
@@ -3461,7 +3461,7 @@
 <p class="admonition-title">Tip</p>
 <p>Table contents max depth is configurable via the <code class="codehilite">log_max_table_depth</code> System Console command.</p>
 </div>
-<p>In some circumstances log strings have newlines inserted in generated output e.g. between the <code class="codehilite">label</code> the textual representation of <code class="codehilite">value</code>. Providing <code class="codehilite">true</code> as the value for <code class="codehilite">concise</code> will use space separators instead of newlines.</p>
+<p>In some circumstances log strings have newlines inserted e.g. between the <code class="codehilite">label</code> and the textual representation of <code class="codehilite">value</code>. Providing <code class="codehilite">true</code> as the value for <code class="codehilite">concise</code> will use space separators instead of newlines.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p><em>Print</em>, as opposed to log, the contents of a table (of objects):
