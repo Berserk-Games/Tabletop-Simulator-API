@@ -40,7 +40,8 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 broadcastToAll([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag col"></span>](types.md#color)&nbsp;message_tint) | Print an on-screen message to all Players, as well as their in-game chat. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#broadcasttoall)
 broadcastToColor([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag col"></span>](types.md#color)&nbsp;message_tint) | Print an on-screen message to a specified Player, as well as their in-game chat. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#broadcasttocolor)
-log([<span class="tag var"></span>](types.md)&nbsp;element, [<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag str"></span>](types.md)&nbsp;tag) | Print information to the log tab. (Shortcut: ~) | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#log)
+log([<span class="tag var"></span>](types.md)&nbsp;value, [<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag str"></span>](types.md)&nbsp;tags) | Logs a message to the _host's_ System Console. (Shortcut: ~) | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#log)
+logString([<span class="tag var"></span>](types.md)&nbsp;value, [<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag str"></span>](types.md)&nbsp;tags, [<span class="tag boo"></span>](types.md)&nbsp;concise, [<span class="tag boo"></span>](types.md)&nbsp;displayTag) | _Returns_ a String formatted similarly to the output of [log(...)](#log). | [<span class="ret str"></span>](types.md) | [<span class="i"></span>](#logstring)
 logStyle([<span class="tag str"></span>](types.md)&nbsp;tag, [<span class="tag col"></span>](types.md#color)&nbsp;tint, [<span class="tag str"></span>](types.md)&nbsp;prefix, [<span class="tag str"></span>](types.md)&nbsp;postfix) | Set style options for the specified tag type for the log. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#logstyle)
 print([<span class="tag str"></span>](types.md)&nbsp;message) | Prints a string into chat that only the host is able to see. Used for debugging scripts. | [<span class="ret nil"></span>](types.md) | [<span class="i"></span>](#print)
 printToAll([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag col"></span>](types.md#color)&nbsp;message_tint) | Print a message into the chat of all connected players. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#printtoall)
@@ -445,28 +446,84 @@ broadcastToColor(msg, color, rgb)
 
 ####log(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Print information to the log. The log is a separate chat window in which you can also enter console commands. It is only visible to the host.
+[<span class="ret boo"></span>](types.md)&nbsp;Logs a message to the _host's_ System Console (accessible from `~` pane of in-game chat window).
 
-If a table is used for "element", the log will automatically display the key/value contents of it.
-
-!!!info "log(element, label, tag)"
-	* [<span class="tag var"></span>](types.md) **element**: The information you want placed into the log.
-	* [<span class="tag str"></span>](types.md) **label**: Text to be placed before the Var element is printed to the log.
+!!!info "log(value, label, tags)"
+	* [<span class="tag var"></span>](types.md) **value**: The value you want to log.
+	* [<span class="tag str"></span>](types.md) **label**: Text to be logged before `value`.
 		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
-	* [<span class="tag str"></span>](types.md) **tag**: Name that is usable to categorize log entries. (See: [logStyle](#logstyle))
+	* [<span class="tag str"></span>](types.md) **tags**: The log tag/style _or_ a space separated list of log tags/styles. (See: [logStyle(...)](#logstyle))
+		* {>>Optional, defaults to logging with the <default> log style.<<}
+
+If `value` is not already a [<span class="tag str"></span>](types.md), then it will be converted to a human-readable representation.
+
+If `value` is a [<span class="tag tab"></span>](types.md), then the table's contents (keys &amp; values) will be displayed. The contents of nested tables will also be displayed up to a user-configurable depth.
+
+!!!tip
+	Table contents max depth is configurable via the `log_max_table_depth` System Console command.
+
+As an advanced feature, multiple log tags may be provided by space-separating several tags (in the one String) provided as the `tags` parameter. The message style will be taken from the _first_ tag that the user has not explicitly disabled.
+
+!!!example
+	Log a simple message:
+	``` Lua
+	log("Something happened")
+	```
+
+!!!example
+	Log a table (of objects):
+	``` Lua
+	log(getObjects())
+	```
+
+!!!example
+	Log a message with a label and using the `"error"` log style:
+	``` Lua
+	log("Something unexpected happened.", "Oh no!", "error")
+	```
+
+---
+
+
+####logString(...)
+
+[<span class="ret str"></span>](types.md)&nbsp;_Returns_ a String formatted similarly to the output of [log(...)](#log). 
+
+!!!info "log(value, label, tags)"
+	* [<span class="tag var"></span>](types.md) **value**: The value you want to log.
+	* [<span class="tag str"></span>](types.md) **label**: Text to be logged before `value`.
 		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
+	* [<span class="tag str"></span>](types.md) **tags**: The log tag/style _or_ a space separated list of log tags/styles.
+		* {>>Optional, defaults to logging with the <default> log style.<<}
+	* [<span class="tag boo"></span>](types.md) **concise**: Whether the resultant String should be generated in a more compact form (less newline characters).
+		* {>>Optional, defaults to `false`.<<}
+	* [<span class="tag boo"></span>](types.md) **displayTag**: Whether the specified tag(s) should be included as prefix of the resultant String.
+		* {>>Optional, defaults to `false`.<<}
 
+If `value` is not already a [<span class="tag str"></span>](types.md), then it will be converted to a human-readable representation.
 
-``` Lua
-log(getAllObjects(), "All Objects:", "table")
-```
+If `value` is a [<span class="tag tab"></span>](types.md), then the table's contents (keys &amp; values) will be included in the resultant String. The contents of nested tables will also be displayed up to a user-configurable depth.
+
+!!!tip
+	Table contents max depth is configurable via the `log_max_table_depth` System Console command.
+
+In some circumstances log strings have newlines inserted in generated output e.g. between the `label` the textual representation of `value`. Providing `true` as the value for `concise` will use space separators instead of newlines.
+
+!!!example
+	_Print_, as opposed to log, the contents of a table (of objects):
+	``` Lua
+	print(logString(getObjects()))
+	```
 
 ---
 
 
 ####logStyle(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Set style options for the specified tag type for the log. This can also be set in the system console with the "log_style_tag" command.
+[<span class="ret boo"></span>](types.md)&nbsp;Configures style options for a [log(...)](#log) tag.
+
+!!!tip
+	Tag log styles can also be set via the System Console with the `log_style_tag` command.
 
 !!!info "logStyle(tag, tint, prefix, postfix)"
 	* [<span class="tag str"></span>](types.md) **tag**: A String of the log's tag.
@@ -477,12 +534,12 @@ log(getAllObjects(), "All Objects:", "table")
 	* [<span class="tag str"></span>](types.md) **postfix**: Text to place after this type of log entry.
 		* {>>Optional, defaults to an empty String. Empty Strings are not displayed.<<}
 
-``` Lua
-function onLoad()
-	logStyle("players", {0.5,0.5,0.5}, "", "End List")
-	log(getSeatedPlayers(), "players")
-end
-```
+!!!example
+	Sets the log style (grey text and a suffix) for the log tag `"seats"`. Then proceeds to log a table of available seat colors, using this tag/style.
+	``` Lua
+	logStyle("seats", {0.5, 0.5, 0.5}, "", "End List")
+	log(Player.getAvailableColors(), nil, "seats")
+	```
 
 ---
 
