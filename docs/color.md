@@ -394,7 +394,7 @@ function onLoad()
     local orange = yellow:lerp(Color.Red, 0.5)
 
     -- Iterate through all scene objects and set the color tint to orange
-    for k, obj in pairs(getAllObjects()) do
+    for k, obj in pairs(getObjects()) do
         obj.setColorTint(orange)
     end
 end
@@ -404,7 +404,7 @@ Tint all object in a random color.
 ```lua
 function onLoad()
     -- Iterate through all scene objects and generate a random color
-    for k, obj in pairs(getAllObjects()) do
+    for k, obj in pairs(getObjects()) do
         local colorA = getRandomColor()
         local colorB = getRandomColor()
 

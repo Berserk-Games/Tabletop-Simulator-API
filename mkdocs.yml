@@ -17,6 +17,7 @@ extra_css:
 
 markdown_extensions:
   - admonition
+  - attr_list
   - codehilite
   - pymdownx.arithmatex
   - pymdownx.betterem:

@@ -10,7 +10,7 @@ The Table of Contents will lay out the contents of the page you are on. It alway
 
 
 ##Growing TTS Documentation
-This documentation is written via Markdown language and some custom CSS. The relevant files you can modify, as well as some detailed editing instructions, are listed on GitHub. You can make a pull request to made modifications/improvements that can be incorporated into this documentation.
+This documentation is written via Markdown language and some custom CSS. The relevant files you can modify, as well as some detailed editing instructions, are listed on GitHub. You can make a pull request in order to submit modifications/improvements that can be incorporated into this documentation.
 
 Just click the link in the pencil icon in the top-right of an article, or visit the GitHub page for more information by clicking GitHub Source in the far upper right.
 
@@ -41,6 +41,13 @@ If an object is duplicated, it will sometimes have the same GUID for 1 frame bef
 
 ---
 
+
+##Deprecated APIs {: #deprecated }
+Through-out this documentation you may come across Lua APIs that are labelled as [<span class="tag deprecated"></span>](intro.md#deprecated). It is advised that you no longer use deprecated APIs. Typically, this is because newer/improved APIs have been introduced that better serve the same purpose.
+
+**Deprecated APIs will _not_ be removed or stop working.**
+
+Existing mods may continue to use deprecated functionality without issue. It is however strongly recommended, that for the best experience you avoid use of deprecated APIs in new code.
 
 
 ---
