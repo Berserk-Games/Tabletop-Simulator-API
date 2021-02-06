@@ -1044,6 +1044,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#logstring" title="logString(...)" class="md-nav__link">
+    logString(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#logstyle" title="logStyle(...)" class="md-nav__link">
     logStyle(...)
   </a>
@@ -2673,6 +2680,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#logstring" title="logString(...)" class="md-nav__link">
+    logString(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#logstyle" title="logStyle(...)" class="md-nav__link">
     logStyle(...)
   </a>
@@ -2900,10 +2914,16 @@
 <td><a href="#broadcasttocolor"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>log(<a href="../types/"><span class="tag var"></span></a>&nbsp;element, <a href="../types/"><span class="tag str"></span></a>&nbsp;label, <a href="../types/"><span class="tag str"></span></a>&nbsp;tag)</td>
-<td>Print information to the log tab. (Shortcut: ~)</td>
+<td>log(<a href="../types/"><span class="tag var"></span></a>&nbsp;value, <a href="../types/"><span class="tag str"></span></a>&nbsp;label, <a href="../types/"><span class="tag str"></span></a>&nbsp;tags)</td>
+<td>Logs a message to the <em>host's</em> System Console. (Shortcut: ~)</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#log"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>logString(<a href="../types/"><span class="tag var"></span></a>&nbsp;value, <a href="../types/"><span class="tag str"></span></a>&nbsp;label, <a href="../types/"><span class="tag str"></span></a>&nbsp;tags, <a href="../types/"><span class="tag boo"></span></a>&nbsp;concise, <a href="../types/"><span class="tag boo"></span></a>&nbsp;displayTag)</td>
+<td><em>Returns</em> a String formatted similarly to the output of <a href="#log">log(...)</a>.</td>
+<td><a href="../types/"><span class="ret str"></span></a></td>
+<td><a href="#logstring"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>logStyle(<a href="../types/"><span class="tag str"></span></a>&nbsp;tag, <a href="../types/#color"><span class="tag col"></span></a>&nbsp;tint, <a href="../types/"><span class="tag str"></span></a>&nbsp;prefix, <a href="../types/"><span class="tag str"></span></a>&nbsp;postfix)</td>
@@ -3370,28 +3390,91 @@
 
 <hr />
 <h4 id="log">log(...)<a class="headerlink" href="#log" title="Permanent link"> </a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Print information to the log. The log is a separate chat window in which you can also enter console commands. It is only visible to the host.</p>
-<p>If a table is used for "element", the log will automatically display the key/value contents of it.</p>
+<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Logs a message to the <em>host's</em> System Console (accessible from <code class="codehilite">~</code> pane of in-game chat window).</p>
 <div class="admonition info">
-<p class="admonition-title">log(element, label, tag)</p>
+<p class="admonition-title">log(value, label, tags)</p>
 <ul>
-<li><a href="../types/"><span class="tag var"></span></a> <strong>element</strong>: The information you want placed into the log.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>label</strong>: Text to be placed before the Var element is printed to the log.<ul>
+<li><a href="../types/"><span class="tag var"></span></a> <strong>value</strong>: The value you want to log.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>label</strong>: Text to be logged before <code class="codehilite">value</code>.<ul>
 <li><span class="critic comment">Optional, defaults to an empty String. Empty Strings are not displayed.</span></li>
 </ul>
 </li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>tag</strong>: Name that is usable to categorize log entries. (See: <a href="#logstyle">logStyle</a>)<ul>
-<li><span class="critic comment">Optional, defaults to an empty String. Empty Strings are not displayed.</span></li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>tags</strong>: The log tag/style <em>or</em> a space separated list of log tags/styles. (See: <a href="#logstyle">logStyle(...)</a>)<ul>
+<li><span class="critic comment">Optional, defaults to logging with the &lt;default&gt; log style.</span></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="n">log</span><span class="p">(</span><span class="n">getAllObjects</span><span class="p">(),</span> <span class="s2">&quot;All Objects:&quot;</span><span class="p">,</span> <span class="s2">&quot;table&quot;</span><span class="p">)</span>
-</pre></div>
-
+<p>If <code class="codehilite">value</code> is not already a <a href="../types/"><span class="tag str"></span></a>, then it will be converted to a human-readable representation.</p>
+<p>If <code class="codehilite">value</code> is a <a href="../types/"><span class="tag tab"></span></a>, then the table's contents (keys &amp; values) will be displayed. The contents of nested tables will also be displayed up to a user-configurable depth.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Table contents max depth is configurable via the <code class="codehilite">log_max_table_depth</code> System Console command.</p>
+</div>
+<p>As an advanced feature, multiple log tags may be provided by space-separating several tags (in the one String) provided as the <code class="codehilite">tags</code> parameter. The message style will be taken from the <em>first</em> tag that the user has not explicitly disabled.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Log a simple message:
+<div class="codehilite"><pre><span></span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Something happened&quot;</span><span class="p">)</span>
+</pre></div></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Log a table (of objects):
+<div class="codehilite"><pre><span></span><span class="n">log</span><span class="p">(</span><span class="n">getObjects</span><span class="p">())</span>
+</pre></div></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Log a message with a label and using the <code class="codehilite">&quot;error&quot;</code> log style:
+<div class="codehilite"><pre><span></span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Something unexpected happened.&quot;</span><span class="p">,</span> <span class="s2">&quot;Oh no!&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">)</span>
+</pre></div></p>
+</div>
+<hr />
+<h4 id="logstring">logString(...)<a class="headerlink" href="#logstring" title="Permanent link"> </a></h4>
+<p><a href="../types/"><span class="ret str"></span></a>&nbsp;<em>Returns</em> a String formatted similarly to the output of <a href="#log">log(...)</a>. </p>
+<div class="admonition info">
+<p class="admonition-title">log(value, label, tags)</p>
+<ul>
+<li><a href="../types/"><span class="tag var"></span></a> <strong>value</strong>: The value you want to log.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>label</strong>: Text to be logged before <code class="codehilite">value</code>.<ul>
+<li><span class="critic comment">Optional, defaults to an empty String. Empty Strings are not displayed.</span></li>
+</ul>
+</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>tags</strong>: The log tag/style <em>or</em> a space separated list of log tags/styles.<ul>
+<li><span class="critic comment">Optional, defaults to logging with the &lt;default&gt; log style.</span></li>
+</ul>
+</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>concise</strong>: Whether the resultant String should be generated in a more compact form (less newline characters).<ul>
+<li><span class="critic comment">Optional, defaults to `false`.</span></li>
+</ul>
+</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>displayTag</strong>: Whether the specified tag(s) should be included as prefix of the resultant String.<ul>
+<li><span class="critic comment">Optional, defaults to `false`.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>If <code class="codehilite">value</code> is not already a <a href="../types/"><span class="tag str"></span></a>, then it will be converted to a human-readable representation.</p>
+<p>If <code class="codehilite">value</code> is a <a href="../types/"><span class="tag tab"></span></a>, then the table's contents (keys &amp; values) will be included in the resultant String. The contents of nested tables will also be displayed up to a user-configurable depth.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Table contents max depth is configurable via the <code class="codehilite">log_max_table_depth</code> System Console command.</p>
+</div>
+<p>In some circumstances log strings have newlines inserted in generated output e.g. between the <code class="codehilite">label</code> the textual representation of <code class="codehilite">value</code>. Providing <code class="codehilite">true</code> as the value for <code class="codehilite">concise</code> will use space separators instead of newlines.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><em>Print</em>, as opposed to log, the contents of a table (of objects):
+<div class="codehilite"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">logString</span><span class="p">(</span><span class="n">getObjects</span><span class="p">()))</span>
+</pre></div></p>
+</div>
 <hr />
 <h4 id="logstyle">logStyle(...)<a class="headerlink" href="#logstyle" title="Permanent link"> </a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Set style options for the specified tag type for the log. This can also be set in the system console with the "log_style_tag" command.</p>
+<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Configures style options for a <a href="#log">log(...)</a> tag.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Tag log styles can also be set via the System Console with the <code class="codehilite">log_style_tag</code> command.</p>
+</div>
 <div class="admonition info">
 <p class="admonition-title">logStyle(tag, tint, prefix, postfix)</p>
 <ul>
@@ -3410,12 +3493,13 @@
 </li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="n">logStyle</span><span class="p">(</span><span class="s2">&quot;players&quot;</span><span class="p">,</span> <span class="p">{</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">},</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;End List&quot;</span><span class="p">)</span>
-    <span class="n">log</span><span class="p">(</span><span class="n">getSeatedPlayers</span><span class="p">(),</span> <span class="s2">&quot;players&quot;</span><span class="p">)</span>
-<span class="kr">end</span>
-</pre></div>
-
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Sets the log style (grey text and a suffix) for the log tag <code class="codehilite">&quot;seats&quot;</code>. Then proceeds to log a table of available seat colors, using this tag/style.
+<div class="codehilite"><pre><span></span><span class="n">logStyle</span><span class="p">(</span><span class="s2">&quot;seats&quot;</span><span class="p">,</span> <span class="p">{</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">},</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;End List&quot;</span><span class="p">)</span>
+<span class="n">log</span><span class="p">(</span><span class="n">Player</span><span class="p">.</span><span class="n">getAvailableColors</span><span class="p">(),</span> <span class="kc">nil</span><span class="p">,</span> <span class="s2">&quot;seats&quot;</span><span class="p">)</span>
+</pre></div></p>
+</div>
 <hr />
 <h4 id="print">print(...)<a class="headerlink" href="#print" title="Permanent link"> </a></h4>
 <p><a href="../types/"><span class="ret nil"></span></a>&nbsp;Print a string into chat that only the host is able to see. Used for debugging scripts.</p>
