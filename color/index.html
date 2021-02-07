@@ -3319,7 +3319,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
     <span class="kd">local</span> <span class="n">orange</span> <span class="o">=</span> <span class="n">yellow</span><span class="p">:</span><span class="n">lerp</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">Red</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 
     <span class="c1">-- Iterate through all scene objects and set the color tint to orange</span>
-    <span class="kr">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">obj</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">getAllObjects</span><span class="p">())</span> <span class="kr">do</span>
+    <span class="kr">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">obj</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">getObjects</span><span class="p">())</span> <span class="kr">do</span>
         <span class="n">obj</span><span class="p">.</span><span class="n">setColorTint</span><span class="p">(</span><span class="n">orange</span><span class="p">)</span>
     <span class="kr">end</span>
 <span class="kr">end</span>
@@ -3327,7 +3327,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <p>Tint all object in a random color.
 <div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="c1">-- Iterate through all scene objects and generate a random color</span>
-    <span class="kr">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">obj</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">getAllObjects</span><span class="p">())</span> <span class="kr">do</span>
+    <span class="kr">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">obj</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">getObjects</span><span class="p">())</span> <span class="kr">do</span>
         <span class="kd">local</span> <span class="n">colorA</span> <span class="o">=</span> <span class="n">getRandomColor</span><span class="p">()</span>
         <span class="kd">local</span> <span class="n">colorB</span> <span class="o">=</span> <span class="n">getRandomColor</span><span class="p">()</span>
 
