@@ -2809,6 +2809,24 @@
 <td></td>
 </tr>
 <tr>
+<td>getObjectsWithTag(<a href="../types/"><span class="tag str"></span></a>&nbsp;tag)</td>
+<td>Returns Table of all <a href="../object/">Objects</a> which have the specified tag attached.</td>
+<td><a href="../types/"><span class="ret tab"></span></a></td>
+<td><a href="#getobjectswithtag"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getObjectsWithAnyTags(<a href="../types/"><span class="tag tab"></span></a>&nbsp;tags)</td>
+<td>Returns Table of all <a href="../object/">Objects</a> which have at least one of the specified tags attached.</td>
+<td><a href="../types/"><span class="ret tab"></span></a></td>
+<td><a href="#getobjectswithanytags"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>getObjectsWithAllTags(<a href="../types/"><span class="tag tab"></span></a>&nbsp;tags)</td>
+<td>Returns Table of all <a href="../object/">Objects</a> which have all of the specified tags attached.</td>
+<td><a href="../types/"><span class="ret tab"></span></a></td>
+<td><a href="#getobjectswithalltags"><span class="i"></span></a></td>
+</tr>
+<tr>
 <td><a class="anchor" id="getseatedplayers"></a>getSeatedPlayers()</td>
 <td>Returns a Table of the <a href="../player-color/">Player Colors</a> strings of seated players.</td>
 <td><a href="../types/"><span class="ret tab"></span></a></td>
@@ -2982,7 +3000,7 @@
 <li><span class="critic comment">Optional, Default: keep_open = false. Close context menu after selection.</span></li>
 </ul>
 </li>
-<li><a href="../types/"><span class="tag boo"></span></a> <strong>require_table</strong>: Show added menu item when right-clicked on empty space or table.            <ul>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>require_table</strong>: Show added menu item when right-clicked on empty space or table.<ul>
 <li><span class="critic comment">Optional, Default: require_table = false. Show when right-clicked on empty space or table </span></li>
 </ul>
 </li>
@@ -3438,7 +3456,7 @@
 </div>
 <hr />
 <h4 id="logstring">logString(...)<a class="headerlink" href="#logstring" title="Permanent link"> </a></h4>
-<p><a href="../types/"><span class="ret str"></span></a>&nbsp;<em>Returns</em> a String formatted similarly to the output of <a href="#log">log(...)</a>. </p>
+<p><a href="../types/"><span class="ret str"></span></a>&nbsp;<em>Returns</em> a String formatted similarly to the output of <a href="#log">log(...)</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">logString(value, label, tags, concise, displayTag)</p>
 <ul>

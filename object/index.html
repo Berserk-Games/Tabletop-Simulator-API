@@ -943,6 +943,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tag-functions" title="Tag Functions" class="md-nav__link">
+    Tag Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ui-functions" title="UI Functions" class="md-nav__link">
     UI Functions
   </a>
@@ -2927,6 +2934,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tag-functions" title="Tag Functions" class="md-nav__link">
+    Tag Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ui-functions" title="UI Functions" class="md-nav__link">
     UI Functions
   </a>
@@ -3692,7 +3706,7 @@
 <td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="tag"></a>tag</td>
+<td><a class="anchor" id="type"></a>type</td>
 <td>This object's type. Read only.</td>
 <td align="left"><a href="../types/"><span class="tag str"></span></a></td>
 </tr>
@@ -3947,6 +3961,65 @@
 </tr>
 </tbody>
 </table>
+<h3 id="tag-functions">Tag Functions<a class="headerlink" href="#tag-functions" title="Permanent link"> </a></h3>
+<p>These functions deal with the <a href="https://kb.tabletopsimulator.com/game-tools/object-tags/">Tags</a> attached to the object. An individual tag is reprented by a <a href="../types/"><span class="tag str"></span></a>, and is functionally case-insensitive.</p>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Description</th>
+<th>Return</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="anchor" id="addtag"></a>addTag(<a href="../types/"><span class="tag str"></span></a> tag)</td>
+<td>Attaches the given tag to the object.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="anchor" id="gettags"></a>getTags()</td>
+<td>Returns a Table of the tags attached to the object.</td>
+<td><a href="../types/"><span class="ret tab"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="anchor" id="hasanytag"></a>hasAnyTag()</td>
+<td>Returns whether the object has any attached tags.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="anchor" id="hasmatchingtag"></a>hasMatchingTag(<a href="../types/"><span class="tag obj"></span></a> other)</td>
+<td>Returns whether the other object shares at least one attached tag with this object.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="anchor" id="hastag"></a>hasTag(<a href="../types/"><span class="tag str"></span></a>)</td>
+<td>Returns whether the given tag is attached to the object.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="anchor" id="settags"></a>setTags(<a href="../types/"><span class="tag tab"></span></a>&nbsp;table)</td>
+<td>Sets the tags attached to the object.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="anchor" id="removetag"></a>removeTag(<a href="../types/"><span class="tag str"></span></a>)</td>
+<td>Removes the given tag from the object.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>If you want to create your own system in which object tags govern the interactions, the canonical logic is that if the system has no tags it interacts with everything, but if it has any tags then it only interacts with objects which share one of them.  i.e. (assuming the system is represented by an in-game object):
+<div class="codehilite"><pre><span></span><span class="n">allow_interaction</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">system</span><span class="p">.</span><span class="n">hasAnyTag</span><span class="p">()</span> <span class="ow">or</span> <span class="n">system</span><span class="p">.</span><span class="n">hasMatchingTag</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+</pre></div></p>
 <h3 id="ui-functions">UI Functions<a class="headerlink" href="#ui-functions" title="Permanent link"> </a></h3>
 <p>A new UI system was added to Tabletop Simulator which allows for more flexibility in the creation of UI elements on Objects. The old system (Classic UI) and new system (Custom UI) both work, and each has its own strengths.</p>
 <h4 id="classic-ui">Classic UI<a class="headerlink" href="#classic-ui" title="Permanent link"> </a></h4>
