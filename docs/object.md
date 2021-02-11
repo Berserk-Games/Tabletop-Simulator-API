@@ -44,7 +44,7 @@ Variable | Description | Type
 <a class="anchor" id="spawning"></a>spawning | If the Object is finished spawning. Read only. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="static_friction"></a>static_friction | Static friction, value of 0-1. [Unity physics material](https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](types.md)
 <a class="anchor" id="sticky"></a>sticky | If other Objects on top of this one are also picked up when this Object is. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="tag"></a>tag | This object's type. Read only. | [<span class="tag str"></span>](types.md)
+<a class="anchor" id="type"></a>type | This object's type. Read only. | [<span class="tag str"></span>](types.md)
 <a class="anchor" id="tooltip"></a>tooltip | If the tooltip opens when a pointer hovers over the object. Tooltips display name and description. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="use_gravity"></a>use_gravity | If gravity affects this object. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="use_grid"></a>use_grid | If snapping to grid is enabled or not. | [<span class="tag boo"></span>](types.md)
@@ -112,6 +112,23 @@ setRotationSmooth([<span class="tag vec"></span>](types.md#vector)&nbsp;vector, 
 <a class="anchor" id="translate"></a>translate([<span class="tag vec"></span>](types.md#vector)&nbsp;vector) | Smoothly moves Object by the given Vector offset. | [<span class="ret boo"></span>](types.md) |
 
 
+###Tag Functions
+These functions deal with the [Tags](https://kb.tabletopsimulator.com/game-tools/object-tags/) attached to the object. An individual tag is reprented by a [<span class="tag str"></span>](types.md), and is functionally case-insensitive.
+
+Function Name | Description | Return | &nbsp;
+-- | -- | -- | --
+<a class="anchor" id="addtag"></a>addTag([<span class="tag str"></span>](types.md) tag) | Attaches the given tag to the object. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="gettags"></a>getTags() | Returns a Table of the tags attached to the object. | [<span class="ret tab"></span>](types.md)
+<a class="anchor" id="hasanytag"></a>hasAnyTag() | Returns whether the object has any attached tags. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="hasmatchingtag"></a>hasMatchingTag([<span class="tag obj"></span>](types.md) other) | Returns whether the other object shares at least one attached tag with this object. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="hastag"></a>hasTag([<span class="tag str"></span>](types.md)) | Returns whether the given tag is attached to the object. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="settags"></a>setTags([<span class="tag tab"></span>](types.md)&nbsp;table) | Sets the tags attached to the object. | [<span class="ret boo"></span>](types.md) |
+<a class="anchor" id="removetag"></a>removeTag([<span class="tag str"></span>](types.md)) | Removes the given tag from the object. | [<span class="ret boo"></span>](types.md)
+
+If you want to create your own system in which object tags govern the interactions, the canonical logic is that if the system has no tags it interacts with everything, but if it has any tags then it only interacts with objects which share one of them.  i.e. (assuming the system is represented by an in-game object):
+```lua
+allow_interaction = not system.hasAnyTag() or system.hasMatchingTag(object)
+```
 
 
 ###UI Functions
