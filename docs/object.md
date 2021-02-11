@@ -1496,9 +1496,8 @@ newDecks[4].deal(1)
 
 !!!info "spread(distance)"
 	* [<span class="tag flo"></span>](types.md) **distance**: How far apart should the cards be.
-		* {>>Optional, if no value is provided, they will be 0.6 units apart.<<}
-		* {>>Minimum Value: 0.6<<}
-		* {>>Maximum Value: 5<<}
+		* {>>Optional, if no value is provided, they will be 0.6 inches apart.<<}
+		* {>> Negative values will spread to the left instead of the right.<<}
 
 !!!info "Returned table"
 	The number of Objects in the table is equal to the number of cards in the deck. They are returned in the order they were in the deck.
