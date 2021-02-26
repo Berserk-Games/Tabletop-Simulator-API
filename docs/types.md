@@ -14,7 +14,7 @@ Tag | Type | Description | Example
 [<span class="tag col"></span>](types.md)&nbsp;| color | See section [Color](#color) for more info. |
 [<span class="tag fun"></span>](types.md)&nbsp;| function | See section [Function](#function) for more info. |
 [<span class="tag obj"></span>](types.md)&nbsp;| object | An in-game physical Object. Sometimes Global. | `#!lua Global or self`
-[<span class="tag pla"></span>](types.md)&nbsp;| player | An in-game Player. | `#!lua Player["White"]`
+[<span class="tag pla"></span>](types.md)&nbsp;| player | An in-game Player. See [Player](player.md) for more info. | `#!lua Player["White"]`
 [<span class="tag var"></span>](types.md)&nbsp;| variable | A combination of other types. |
 
 See below for more info.
@@ -31,6 +31,8 @@ For Functions, they are used when a delay is required within a running script th
 
 ###Color
 <span class="tag col"></span> Color is a type of Table that is used to define RGB values for tinting.
+
+You can use the [Color](color.md) class to manipulate colors.
 
 ####Keys
 
