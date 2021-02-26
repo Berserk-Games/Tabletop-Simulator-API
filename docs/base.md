@@ -17,6 +17,9 @@ destroyObject([<span class="tag obj"></span>](types.md)&nbsp;obj) | Destroy an O
 <a class="anchor" id="getallobjects"></a>getAllObjects() | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [getObjects()](#getobjects)_.</p>Returns a Table of all [Objects](object.md) in the game _except hand zones_. | [<span class="ret tab"></span>](types.md) |
 getObjectFromGUID([<span class="tag str"></span>](types.md)&nbsp;guid) | Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#getobjectfromguid)
 <a class="anchor" id="getobjects"></a>getObjects() | Returns a Table of all [Objects](object.md) in the game. | [<span class="ret tab"></span>](types.md) |
+getObjectsWithTag([<span class="tag str"></span>](types.md)&nbsp;tag) | Returns Table of all [Objects](object.md) which have the specified tag attached. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getobjectswithtag)
+getObjectsWithAnyTags([<span class="tag tab"></span>](types.md)&nbsp;tags) | Returns Table of all [Objects](object.md) which have at least one of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getobjectswithanytags)
+getObjectsWithAllTags([<span class="tag tab"></span>](types.md)&nbsp;tags) | Returns Table of all [Objects](object.md) which have all of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getobjectswithalltags)
 <a class="anchor" id="getseatedplayers"></a>getSeatedPlayers() | Returns a Table of the [Player Colors](player-color.md) strings of seated players. | [<span class="ret tab"></span>](types.md) |
 group([<span class="tag tab"></span>](types.md)&nbsp;objects) | Groups objects together, like how the `G` key does for players. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#group)
 paste([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#paste)
@@ -69,7 +72,7 @@ printToColor([<span class="tag str"></span>](types.md)&nbsp;message, [<span clas
 	* [<span class="tag boo"></span>](types.md) **keep_open**: Keep context menu open after menu
      item was selected.
         * {>>Optional, Default: keep_open = false. Close context menu after selection.<<}
-	* [<span class="tag boo"></span>](types.md) **require_table**: Show added menu item when right-clicked on empty space or table.            
+	* [<span class="tag boo"></span>](types.md) **require_table**: Show added menu item when right-clicked on empty space or table.
 		* {>>Optional, Default: require_table = false. Show when right-clicked on empty space or table <<}
 
 ``` Lua
@@ -488,7 +491,7 @@ As an advanced feature, multiple log tags may be provided by space-separating se
 
 ####logString(...)
 
-[<span class="ret str"></span>](types.md)&nbsp;_Returns_ a String formatted similarly to the output of [log(...)](#log). 
+[<span class="ret str"></span>](types.md)&nbsp;_Returns_ a String formatted similarly to the output of [log(...)](#log).
 
 !!!info "logString(value, label, tags, concise, displayTag)"
 	* [<span class="tag var"></span>](types.md) **value**: The value you want to log.
