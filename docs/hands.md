@@ -8,9 +8,9 @@ Like [Object member variables](object.md#member-variables), Hands has its own me
 
 Variable | Description | Type
 -- | -- | :--
-<a class="anchor" id="enable"></a>enable | Should player hands hold objects. | [<span class="tag boo"></span>](types.md)
+<a class="anchor" id="enable"></a>enable | Should player Hands hold objects. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="disable_unused"></a>disable_unused | Hands not used by a player will not be enabled. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="hiding"></a>hiding | How objects are hidden in hands. 1 = Default, 2 = Reverse, 3 = Disable| [<span class="tag int"></span>](types.md)
+<a class="anchor" id="hiding"></a>hiding | How objects are hidden in Hands. 1 = Default, 2 = Reverse, 3 = Disable| [<span class="tag int"></span>](types.md)
 
 
 ##Function Summary

@@ -13,7 +13,7 @@ Read Example = `isResting = self.resting` Write Example = `self.resting = true`
 
 Variable | Description | Type
 -- | -- | :--
-<a class="anchor" id="alt_view_angle"></a>alt_view_angle | When non-zero the Alt view will use the specified Euler angle to look at the object. | [<span class="tag vec"></span>](types.md)
+<a class="anchor" id="alt_view_angle"></a>alt_view_angle | When non-zero, the Alt view will use the specified Euler angle to look at the object. | [<span class="tag vec"></span>](types.md)
 <a class="anchor" id="angular_drag"></a>angular_drag | Angular drag. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md)
 <a class="anchor" id="auto_raise"></a>auto_raise | If an object should be lifted above other objects to avoid collision when held by a player. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="bounciness"></a>bounciness | Bounciness, value of 0-1. [Unity physics material](https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](types.md)
@@ -36,7 +36,7 @@ Variable | Description | Type
 <a class="anchor" id="locked"></a>locked | If the object is frozen in place (preventing physics interactions). | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="mass"></a>mass | Mass. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md)
 <a class="anchor" id="measure_movement"></a>measure_movement | Measure Tool will automatically be used when moving the Object. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="memo"></a>memo | A string you can store info in on an object. | [<span class="tag str"></span>](types.md)
+<a class="anchor" id="memo"></a>memo | A string you can store info in for an object. | [<span class="tag str"></span>](types.md)
 <a class="anchor" id="name"></a>name | Internal resource name for this Object. Read only, and only useful for [spawnObjectJSON()](base.md#spawnobjectjson). Generally, you want [getName()](#getname). | [<span class="tag str"></span>](types.md)
 <a class="anchor" id="pick_up_position"></a>pick_up_position | The position the Object was picked up at. | [<span class="tag vec"></span>](types.md#vector)
 <a class="anchor" id="pick_up_rotation"></a>pick_up_rotation | The rotation the Object was picked up at. | [<span class="tag vec"></span>](types.md#vector)
@@ -94,9 +94,9 @@ addTorque([<span class="tag vec"></span>](types.md#vector)&nbsp;vector, [<span c
 getBounds() | Returns a Vector describing the size of an object in Global terms. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#getbounds)
 getBoundsNormalized() | Returns a Vector describing the size of an object in Global terms, as if it was rotated to {0,0,0}. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#getboundsnormalized)
 <a class="anchor" id="getposition"></a>getPosition() | Returns a Vector of the current [World Position](types.md#position). | [<span class="ret vec"></span>](types.md#vector)
-<a class="anchor" id="getpositionsmooth"></a>getPositionSmooth() | Returns a Vector of the current smooth move target if the object is moving otherwise returns nil. | [<span class="ret vec"></span>](types.md#vector)
+<a class="anchor" id="getpositionsmooth"></a>getPositionSmooth() | Returns a Vector of the current smooth move target if the object is moving, otherwise returns nil. | [<span class="ret vec"></span>](types.md#vector)
 <a class="anchor" id="getrotation"></a>getRotation() | Returns a Vector of the current rotation. | [<span class="ret vec"></span>](types.md#vector)
-<a class="anchor" id="getrotationsmoth"></a>getRotationSmooth() | Returns a Vector of the current smooth rotation target if the object is moving otherwise returns nil. | [<span class="ret vec"></span>](types.md#vector)
+<a class="anchor" id="getrotationsmoth"></a>getRotationSmooth() | Returns a Vector of the current smooth rotation target if the object is moving, otherwise returns nil. | [<span class="ret vec"></span>](types.md#vector)
 getScale() | Returns a Vector of the current scale. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#getscale)
 getTransformForward() | Returns a Vector of the forward direction of this object. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#gettransformforward)
 getTransformRight() | Returns a Vector of the right direction of this object. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#gettransformright)
@@ -167,7 +167,7 @@ getRotationValues() | Returns a Table of rotation values. Rotation values are us
 <a class="anchor" id="getstateid"></a>getStateId() | Current [state](https://kb.tabletopsimulator.com/host-guides/creating-states/) ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1. | [<span class="ret int"></span>](types.md) |
 getStates() | Returns a Table of information on the [states](https://kb.tabletopsimulator.com/host-guides/creating-states/) of an Object. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getstates)
 getValue() | Object value. What the value represents depends on what type of Object this function is used on. | [<span class="ret int"></span>](types.md) | [<span class="i"></span>](#getvalue)
-<a class="anchor" id="isdestroyed"></a>isDestroyed() | Returns true if an object is (or will be) destroyed. | [<span class="ret boo"></span>](types.md) |
+<a class="anchor" id="isdestroyed"></a>isDestroyed() | Returns true if an Object is (or will be) destroyed. | [<span class="ret boo"></span>](types.md) |
 
 
 
