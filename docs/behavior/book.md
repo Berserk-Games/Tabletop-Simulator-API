@@ -47,9 +47,6 @@ setPage([<span class="tag int"></span>](../types.md) page, [<span class="tag boo
     object.Book.setHighlight(0.5, 0.5, 1, 1)
     ```
 
-!!! bug
-    setHighlight() will do nothing if you try to draw a highlight twice in a row at the same coordinates, even if you call clearHighlight() or reload() on the object in between calls to setHighlight().
-
 ---
 
 #### setPage(...)

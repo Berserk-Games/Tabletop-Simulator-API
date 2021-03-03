@@ -74,9 +74,6 @@ use_snap_points {: #use_snap_points } | If snap points are used or ignored. | [<
 value {: #value } | The value of the object for summing up selected objects. Only works if the apropriate bits are set in `obj.value_flags` | [<span class="tag int"></span>](types.md)
 value_flags {: #value_flags } | A bit field, objects with overlapping `value_flag` bits are counted together when selected. | [<span class="tag int"></span>](types.md)
 
-!!! bug
-    The `value_flags` and `value` member variables do not persist when the object is reloaded (such as loading a save and entering/exiting containers).
-
 ###Behavior Variables
 
 Some objects provide additional behavior. This functionality is accessible as Object member variables, but will be `nil`
