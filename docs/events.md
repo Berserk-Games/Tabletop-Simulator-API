@@ -94,7 +94,7 @@ onPlayerChangeColor([<span class="tag str"></span>](types.md) player_color) | Ca
 onPlayerChangeTeam([<span class="tag str"></span>](types.md) player_color,&nbsp;[<span class="tag str"></span>](types.md) team) | Called when a player changes team. | [:i:](#onplayerchangeteam)
 onPlayerConnect([<span class="tag pla"></span>](types.md) player) | Called when a [Player](player/instance.md) connects to a game. | [:i:](#onplayerconnect)
 onPlayerDisconnect([<span class="tag pla"></span>](types.md) player) | Called when a [Player](player/instance.md) disconnects from a game. | [:i:](#onplayerdisconnect)
-onPlayerTurn([<span class="tag pla"></span>](types.md) player) | Called at the start of a player's turn when using the in-game turn system. | [:i:](#onplayerturn)
+onPlayerTurn([<span class="tag pla"></span>](types.md) player, [<span class="tag pla"></span>](types.md) previous_player) | Called at the start of a player's turn. | [:i:](#onplayerturn)
 onSave() | Called whenever a script needs to save its state. | [:i:](#onsave)
 onScriptingButtonDown([<span class="tag int"></span>](types.md) index, [<span class="tag str"></span>](types.md) player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [:i:](#onscriptingbuttondown)
 onScriptingButtonUp([<span class="tag int"></span>](types.md) index, [<span class="tag str"></span>](types.md) player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [:i:](#onscriptingbuttonup)
@@ -774,16 +774,24 @@ Called when a [Player](player/instance.md) disconnects from a game.
 
 
 ###onPlayerTurn(...)
-Called at the start of a player's turn when using the in-game turn system.
 
-!!!info "onPlayerTurn(player)"
-	* [<span class="tag pla"></span>](types.md) **player**: [Player](player/instance.md) who's turn is starting.
+Called at the start of a player's turn. [Turns](turns.md) must be enabled.
 
-``` Lua
-function onPlayerTurn(player)
-	print(player.color .. "'s turn starts now.")
-end
-```
+!!!info "onPlayerTurn(player, previous_player)"
+	* [<span class="tag pla"></span>](types.md) **player**: [Player](player/instance.md) whose turn is starting.
+	* [<span class="tag pla"></span>](types.md) **previous_player**: [Player](player/instance.md) whose turn just finished, or `nil` if this is the first turn.
+
+!!!example
+	When a new turn starts, print whose turn ended and whose turn it now is:
+	```lua
+	function onPlayerTurn(player, previous_player)
+		if previous_player == nil then
+			print(player.color .. " is going first. It's now their turn.")
+		else
+			print(previous_player.color .. "'s turn is over. It's now " .. player.color .. "'s turn.")
+		end
+	end
+	```
 
 ---
 
