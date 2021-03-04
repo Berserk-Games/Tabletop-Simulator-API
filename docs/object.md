@@ -23,11 +23,11 @@ Variable | Description | Type
 <a class="anchor" id="grid_projection"></a>grid_projection | If grid lines can appear on the Object if visible grids are turned on. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="guid"></a>guid | The 6 character unique Object identifier within Tabletop Simulator. It is assigned correctly once the `spawning` member variable becomes false. | [<span class="tag str"></span>](types.md)
 <a class="anchor" id="held_by_color"></a>held_by_color | The Color of the Player that is holding the object. | [<span class="tag str"></span>](types.md)
-<a class="anchor" id="held_position_offset"></a>held_position_offset | Position offset from pointer. | [<span class="tag vec"></span>](types.md#vector)
-<a class="anchor" id="held_rotation_offset"></a>held_rotation_offset | Rotation offset from pointer. | [<span class="tag vec"></span>](types.md#vector)
-<a class="anchor" id="held_reduce_force"></a>held_reduce_force | When the Object collides with something while moving this is automatically enabled and reduces the movement force. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="held_spin_index"></a>held_spin_index | 0-23 value. Changes when a Player rotates the Object. | [<span class="tag int"></span>](types.md)
 <a class="anchor" id="held_flip_index"></a>held_flip_index | 0-23 value. Changes when a Player hits flip or alt + rotate. | [<span class="tag int"></span>](types.md)
+<a class="anchor" id="held_position_offset"></a>held_position_offset | Position offset from pointer. | [<span class="tag vec"></span>](types.md#vector)
+<a class="anchor" id="held_reduce_force"></a>held_reduce_force | When the Object collides with something while moving this is automatically enabled and reduces the movement force. | [<span class="tag boo"></span>](types.md)
+<a class="anchor" id="held_rotation_offset"></a>held_rotation_offset | Rotation offset from pointer. | [<span class="tag vec"></span>](types.md#vector)
+<a class="anchor" id="held_spin_index"></a>held_spin_index | 0-23 value. Changes when a Player rotates the Object. | [<span class="tag int"></span>](types.md)
 <a class="anchor" id="hide_when_face_down"></a>hide_when_face_down | Hide the Object when face-down as if it were in a hand zone. The face is the "top" of the Object, the direction of its positive Y coordinate. Cards/decks default to `true`. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="ignore_fog_of_war"></a>ignore_fog_of_war | Makes the object not be hidden by [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone). | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="interactable"></a>interactable | If an object can be interacted with by Players. Other object will still be able to interact with it. | [<span class="tag boo"></span>](types.md)
@@ -55,8 +55,8 @@ Variable | Description | Type
 <a class="anchor" id="use_hands"></a>use_hands | If this object can be held in a hand zone. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="use_rotation_value_flip"></a>use_rotation_value_flip | Switches the axis an Object rotates around when flipped. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="use_snap_points"></a>use_snap_points | If snap points are used or ignored. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="value_flags"></a>value_flags | A bit field, objects with overlapping `value_flag` bits are counted together when selected. | [<span class="tag int"></span>](types.md)
 <a class="anchor" id="value"></a>value | The value of the object for summing up selected objects. Only works if the apropriate bits are set in `obj.value_flags` | [<span class="tag int"></span>](types.md)
+<a class="anchor" id="value_flags"></a>value_flags | A bit field, objects with overlapping `value_flag` bits are counted together when selected. | [<span class="tag int"></span>](types.md)
 
 !!! bug
     The `value_flags` and `value` member variables do not persist when the object is reloaded (such as loading a save and entering/exiting containers).
