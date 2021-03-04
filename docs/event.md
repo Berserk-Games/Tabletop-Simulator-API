@@ -9,7 +9,7 @@ These are functions which are triggered by an event taking place in-game. They w
 
 Function Name | Description | &nbsp;
 -- | -- | --
-filterObjectEnterContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when an object attempts to enter any container. The object is prevented from entering unless "true" is returned. | [<span class="i"></span>](#filterobjectentercontainer)
+filterObjectEnterContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when an object attempts to enter any container. The object is prevented from entering unless `true` is returned. | [<span class="i"></span>](#filterobjectentercontainer)
 onChat([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag pla"></span>](types.md)&nbsp;sender) | Called when a chat message is sent in game chat. | [<span class="i"></span>](#onchat)
 onExternalMessage([<span class="tag tab"></span>](types.md)&nbsp;data) | Called when an external script editor (like [Atom](atom.md)) sends a message back to the game. Used for custom editor functionality. | [<span class="i"></span>](#onexternalmessage)
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [<span class="i"></span>](#onfixedupdate)
@@ -59,7 +59,7 @@ These are functions which are triggered by an event taking place in-game. They o
 
 Function Name | Description | &nbsp;
 -- | -- | --
-filterObjectEnter([<span class="tag obj"></span>](types.md)&nbsp;obj) | Called when an object attempts to enter this object. The object is prevented from entering unless "true" is returned. | [<span class="i"></span>](#filterobjectenter)
+filterObjectEnter([<span class="tag obj"></span>](types.md)&nbsp;obj) | Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned. | [<span class="i"></span>](#filterobjectenter)
 onCollisionEnter([<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called when an Object starts colliding with the Object the function is on. | [<span class="i"></span>](#oncollisionenter)
 onCollisionExit([<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called when an Object stops colliding with the Object the function is on. | [<span class="i"></span>](#oncollisionexit)
 onCollisionStay([<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called **every frame** that an Object is colliding with the Object this function is on. | [<span class="i"></span>](#oncollisionstay)
@@ -82,7 +82,7 @@ onSearchStart([<span class="tag str"></span>](types.md)&nbsp;player_color) | Cal
 
 ###filterObjectEnterContainer(...)
 
-Called when an object attempts to enter a container. The object is prevented from entering unless "true" is returned.
+Called when an object attempts to enter a container. The object is prevented from entering unless `true` is returned.
 
 !!!info "filterObjectEnter(container, enter_object)"
 	* [<span class="tag obj"></span>](types.md)&nbsp;**container**: The container the Object is trying to enter.
@@ -755,7 +755,7 @@ end
 
 ###filterObjectEnter(...)
 
-Called when an object attempts to enter this object. The object is prevented from entering unless "true" is returned.
+Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned.
 
 !!!info "filterObjectEnter(obj)"
 	* [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The object that has tried to enter the object this script is attached to.
