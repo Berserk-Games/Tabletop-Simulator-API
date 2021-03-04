@@ -21,7 +21,7 @@ onObjectDestroy([<span class="tag obj"></span>](types.md)&nbsp;dying_object) | C
 onObjectDrop([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag obj"></span>](types.md)&nbsp;dropped_object) | Called whenever any object is dropped by a player. | [<span class="i"></span>](#onobjectdrop)
 onObjectEnterScriptingZone([<span class="tag obj"></span>](types.md)&nbsp;zone, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when any object enters any scripting zone. | [<span class="i"></span>](#onobjectenterscriptingzone)
 onObjectEnterContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when any object enters any container. Includes decks | [<span class="i"></span>](#onobjectentercontainer)
-onObjectFlick([<span class="tag obj"></span>](types.md)&nbsp;hovered_object, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag flo"></span>](types.md)&nbsp;force) | Called when a player flicks an object. | [<span class="i"></span>](#onobjectflick)
+onObjectFlick([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag vec"></span>](types.md)&nbsp;impulse) | Called when a player flicks an object. | [<span class="i"></span>](#onobjectflick)
 onObjectHover([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag obj"></span>](types.md)&nbsp;hovered_object) | Called when a player moves their pointer (cursor) over an object. | [<span class="i"></span>](#onobjecthover)
 onObjectLeaveScriptingZone([<span class="tag obj"></span>](types.md)&nbsp;zone, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when any object leaves any scripting zone. | [<span class="i"></span>](#onobjectleavescriptingzone)
 onObjectLeaveContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;leave_object) | Called when any object leaves any container. | [<span class="i"></span>](#onobjectleavecontainer)
@@ -65,7 +65,7 @@ onCollisionExit([<span class="tag tab"></span>](types.md)&nbsp;collision_info) |
 onCollisionStay([<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called **every frame** that an Object is colliding with the Object this function is on. | [<span class="i"></span>](#oncollisionstay)
 onDestroy() | Called when an Object it is on is destroyed. | [<span class="i"></span>](#ondestroy)
 onDrop([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player releases an Object after picking it up. | [<span class="i"></span>](#ondrop)
-onFlick([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag flo"></span>](types.md)&nbsp;force) | Called when a player flicks the object. | [<span class="i"></span>](#onflick)
+onFlick([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag vec"></span>](types.md)&nbsp;impulse) | Called when a player flicks the object. | [<span class="i"></span>](#onflick)
 onHover([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player moves their pointer (cursor) over an object. | [<span class="i"></span>](#onhover)
 onNumberTyped([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;number_typed) | Called when a Player types a number over the container. |
 onPageChange() | Called when a Custom PDF page is changed. | [<span class="i"></span>](#onpagechange)
@@ -341,6 +341,25 @@ function onObjectEnterContainer(bag, obj)
 	print(obj)
 end
 ```
+
+---
+
+###onObjectFlick(...)
+
+Called whenever a player [flicks](https://kb.tabletopsimulator.com/game-tools/flick-tool/) flicks an object.
+
+!!!info "onFlick(object, player_color, impulse)"
+* [<span class="tag obj"></span>](types.md)&nbsp;**object**: The object that was flicked.
+* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who flicked an object.
+* [<span class="tag vec"></span>](types.md)&nbsp;**impulse**: The impulse applied to the object.
+
+!!!example
+	Print the player color, type of the flicked object, and magnitude of the flick:
+	``` Lua
+	function onObjectFlick(object, player_color, impulse)
+		print(player_color .. " flicked a " .. object.type ..  " with impulse " .. impulse:magnitude())
+	end
+	```
 
 ---
 
@@ -833,6 +852,24 @@ function onDrop(color)
 	print(color)
 end
 ```
+
+---
+
+###onFlick(...)
+
+Called when a player [flicks](https://kb.tabletopsimulator.com/game-tools/flick-tool/) this [Object](object.md).
+
+!!!info "onFlick(player_color, impulse)"
+* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who flicked this object.
+* [<span class="tag vec"></span>](types.md)&nbsp;**impulse**: The impulse applied to the object.
+
+!!!example
+	Print the player color and magnitude of the flick:
+	``` Lua
+	function onFlick(player_color, impulse)
+		print(player_color .. " flicked with impulse " .. impulse:magnitude())
+	end
+	```
 
 ---
 
