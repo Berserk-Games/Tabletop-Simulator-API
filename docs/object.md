@@ -71,8 +71,9 @@ use_grid {: #use_grid } | If snapping to grid is enabled or not. | [<span class=
 use_hands {: #use_hands } | If this object can be held in a hand zone. | [<span class="tag boo"></span>](types.md)
 use_rotation_value_flip {: #use_rotation_value_flip } | Switches the axis the Object rotates around when flipped. | [<span class="tag boo"></span>](types.md)
 use_snap_points {: #use_snap_points } | If snap points are used or ignored. | [<span class="tag boo"></span>](types.md)
-value {: #value } | The value of the object for summing up selected objects. Only works if the apropriate bits are set in `obj.value_flags` | [<span class="tag int"></span>](types.md)
-value_flags {: #value_flags } | A bit field, objects with overlapping `value_flag` bits are counted together when selected. | [<span class="tag int"></span>](types.md)
+value {: #value } | <p>A numeric value associated with the object, which when non-zero, will be displayed when hovering over the object.</p><p>In the case of stacks, the value shown in the UI will be multiplied by the stack size i.e. you can use `value` to create custom stackable chips.</p><p>When multiple objects are selected, values will be summed together with objects sharing overlapping [object tags](#tag-functions).</p> | [<span class="tag int"></span>](types.md)
+value_flags {: #value_flags } | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [object tags](#tag-functions)_.</p> A [bit field](https://en.wikipedia.org/wiki/Bit_field). When objects with overlapping `value_flags` are selected and hovered over, their [values](#value) will be summed together. | [<span class="tag int"></span>](types.md)
+
 
 ###Behavior Variables
 
