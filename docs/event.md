@@ -26,7 +26,7 @@ onObjectHover([<span class="tag str"></span>](types.md)&nbsp;player_color, [<spa
 onObjectLeaveScriptingZone([<span class="tag obj"></span>](types.md)&nbsp;zone, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when any object leaves any scripting zone. | [<span class="i"></span>](#onobjectleavescriptingzone)
 onObjectLeaveContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;leave_object) | Called when any object leaves any container. | [<span class="i"></span>](#onobjectleavecontainer)
 onObjectLoopingEffect([<span class="tag obj"></span>](types.md)&nbsp;loop_object, [<span class="tag int"></span>](types.md)&nbsp;index) | Called whenever the looping effect of an [AssetBundle](assetbundle.md) is activated. | [<span class="i"></span>](#onobjectloopingeffect)
-onObjectNumberTyped([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;number_typed) | Called when a Player types a number over a container. |
+onObjectNumberTyped([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;number) | Called when a player types a number whilst hovering over an object. | [<span class="i"></span>](#onobjectnumbertyped)
 onObjectPageChange([<span class="tag obj"></span>](types.md)&nbsp;object) | Called when a Custom PDF object changes page. | [<span class="i"></span>](#onobjectpagechange)
 onObjectPeek([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag str"></span>](types.md)&nbsp;player) | Called when a player using peek to look under an Object. | [<span class="i"></span>](#onobjectpeek)
 onObjectPickUp([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag obj"></span>](types.md)&nbsp;picked_up_object) | Called whenever a Player picks up an Object. | [<span class="i"></span>](#onobjectpickup)
@@ -67,7 +67,7 @@ onDestroy() | Called when an Object it is on is destroyed. | [<span class="i"></
 onDrop([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player releases an Object after picking it up. | [<span class="i"></span>](#ondrop)
 onFlick([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag vec"></span>](types.md)&nbsp;impulse) | Called when a player flicks the object. | [<span class="i"></span>](#onflick)
 onHover([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player moves their pointer (cursor) over the object. | [<span class="i"></span>](#onhover)
-onNumberTyped([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;number_typed) | Called when a Player types a number over the container. |
+onNumberTyped([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;number) | Called when a player types a number whilst hovering over the object. | [<span class="i"></span>](#onnumbertyped)
 onPageChange() | Called when a Custom PDF page is changed. | [<span class="i"></span>](#onpagechange)
 onPeek([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player using peek to look under this Object. | [<span class="i"></span>](#onpeek)
 onPickUp([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player picks up an Object. | [<span class="i"></span>](#onpickup)
@@ -436,6 +436,40 @@ function onObjectLoopingEffect(obj, index)
 	print("Loop " .. index .. " activated.")
 end
 ```
+
+---
+
+###onObjectNumberTyped(...)
+
+Called when a player types a number whilst hovering over an object.
+
+If you wish to prevent the default behavior (e.g. drawing a card) then you may return `true` to indicate you've handled the event yourself.
+
+!!!info "onObjectNumberTyped(object, player_color, number)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**object**: The object the player was hovering over whilst typing a number.
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player that typed the number.
+	* [<span class="tag int"></span>](types.md)&nbsp;**number**: The number typed.
+
+!!!example
+	Print the player color, the number they entered and the type of object being hovered over:
+	``` Lua
+	function onObjectNumberTyped(object, player_color, number)
+		print(player_color .. " typed " .. number .. " whilst hovering over a " .. object.type)
+	end
+	```
+
+!!!example
+	Prevent players drawing more than 2 cards at a time:
+	``` Lua
+	function onObjectNumberTyped(object, player_color, number)
+		if object.type == 'Deck' and number > 2 then
+			print("Sorry. You can only draw a maximum of 2 cards.")
+			return true
+		end
+	end
+	```
+
+---
 
 ---
 ###onObjectPageChange(...)
@@ -885,6 +919,37 @@ function onHover(player_color)
     print(player_color)
 end
 ```
+
+---
+
+###onNumberTyped(...)
+
+Called when a player types a number whilst hovering over this [Object](object.md).
+
+If you wish to prevent the default behavior (e.g. drawing a card, if this object were a deck) then you may return `true` to indicate you've handled the event yourself.
+
+!!!info "onNumberTyped(player_color, number)"
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player that typed the number.
+	* [<span class="tag int"></span>](types.md)&nbsp;**number**: The number typed.
+
+!!!example
+	Print the player color and the number they typed:
+	``` Lua
+	function onNumberTyped(player_color, number)
+		print(player_color .. " typed " .. number)
+	end
+	```
+
+!!!example
+	Prevent players drawing more than 2 cards at a time (from this object):
+	``` Lua
+	function onNumberTyped(player_color, number)
+		if self.type == 'Deck' and number > 2 then
+			print("Sorry. You can only draw a maximum of 2 cards.")
+			return true
+		end
+	end
+	```
 
 ---
 
