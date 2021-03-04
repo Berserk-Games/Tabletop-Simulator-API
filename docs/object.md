@@ -41,6 +41,7 @@ Variable | Description | Type
 <a class="anchor" id="name"></a>name | Internal resource name for this Object. Read only, and only useful for [spawnObjectJSON()](base.md#spawnobjectjson). Generally, you want [getName()](#getname). | [<span class="tag str"></span>](types.md)
 <a class="anchor" id="pick_up_position"></a>pick_up_position | The position the Object was picked up at. Read only. | [<span class="tag vec"></span>](types.md#vector)
 <a class="anchor" id="pick_up_rotation"></a>pick_up_rotation | The rotation the Object was picked up at. Read only. | [<span class="tag vec"></span>](types.md#vector)
+<a class="anchor" id="remainder"></a>remainder | <p>If this object is a container that cannot exist with less than two contained objects (e.g. a deck), [taking out](#takeObject) the second last contained object will result in the container being destroyed. In its place the last remaining object in the container will be spawned.</p><p>This variable provides a reference to the remaining object when it is being spawned. Otherwise, it's `nil`. Read only.</p> | [<span class="tag obj"></span>](types.md)
 <a class="anchor" id="resting"></a>resting | If an Object is at rest. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/RigidbodiesOverview.html). | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="script_code"></a>script_code | The Lua Script on the Object. | [<span class="tag str"></span>](types.md)
 <a class="anchor" id="script_state"></a>script_state | The saved data on the object. See [onSave()](event.md#onsave). | [<span class="tag str"></span>](types.md)
@@ -245,7 +246,7 @@ reload() | Returns Object reference of itself after it respawns itself. | [<span
 <a class="anchor" id="shufflestates"></a>shuffleStates() | Returns an Object reference to a new [state](http://berserk-games.com/knowledgebase/creating-states/) after randomly selecting and changing to one. | [<span class="ret obj"></span>](types.md) |
 split([<span class="tag int"></span>](types.md)&nbsp;piles) | Splits a deck, as evenly as possible, into a number of piles. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#split)
 spread([<span class="tag flo"></span>](types.md)&nbsp;distance) | Uses the spread action on a deck. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#spread)
-takeObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Returns an Object reference of Object taken from a container (bag/deck/chip stack) and placed into the world. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#takeobject)
+takeObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Takes an object out of a container (bag/deck/chip stack), returning a reference to the object that was taken out. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#takeobject)
 unregisterCollisions() | Unregisters this object for Global collision events. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#unregistercollisions)
 
 
@@ -1530,10 +1531,10 @@ newDecks[4].deal(1)
 
 ####takeObject(...)
 
-[<span class="ret obj"></span>](types.md)&nbsp;Takes an object from a container (bag/deck/chip stack) and places it in the world.
+[<span class="ret obj"></span>](types.md)&nbsp;Takes an object out of a container (bag/deck/chip stack), returning a reference to the object that was taken.
 
-!!!tip
-	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. It is also possible to add a delay using a [Wait](wait.md) function instead.
+Objects that are taken out of a container will take one or more frames to spawn.
+Certain interactions (e.g. physics) will not be able to take place until the object has finished spawning.
 
 !!!info "takeObject(parameters)"
 	* [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters used to determine how takeObject will act.
@@ -1545,38 +1546,54 @@ newDecks[4].deal(1)
 			* {>>Optional, defaults to false. Only used with decks, not bags/stacks.<<}
 			* {>>If rotation is used, flip's Bool will be ignored.<<}
 		* [<span class="tag str"></span>](types.md) **parameters.guid**: GUID of the Object to take.
-			* {>>Optional,  no default. Only use index or guid, never both.<<}
+			* {>>Optional, no default. Only use index or guid, never both.<<}
 		* [<span class="tag int"></span>](types.md) **parameters.index**: Index of the Object to take.
-			* {>>Optional,  no default. Only use index or guid, never both.<<}
+			* {>>Optional, no default. Only use index or guid, never both.<<}
 		* [<span class="tag boo"></span>](types.md) **parameters.top**: If an object is taken from the top (vs bottom).
 			* {>>Optional, defaults to true.<<}
 		* [<span class="tag boo"></span>](types.md) **parameters.smooth**: If the taken Object moves smoothly or instantly.
 			* {>>Optional, defaults to true.<<}
-		* [<span class="tag fun"></span>](types.md#function) **parameters.callback_function**: Function to activate once the taken Object fully "exists".
-			* {>>Optional, defaults to not being used.<<}
-			* {>>A reference to the object spawned is always passed to callback_function. See the example for how to access it.<<}
+		* [<span class="tag fun"></span>](types.md#function) **parameters.callback_function**: Callback which will be called when the taken object has finished spawnning.
+			* {>>Optional, no default.<<}
+			* {>>This function takes a single parameter: the object that was taken.<<}
 
-``` Lua
-function onLoad()
-    futureName = "Taken from container!"
-    takeParams = {
-        position = {x=0, y=3, z=5},
-        callback_function = function(obj) take_callback(obj, futureName) end,
-    }
-    self.takeObject(takeParams)
-end
+!!!caution
+	Certain containers only exist whilst they have more than one object contained within them (e.g. decks). Once you
+	remove the second last object from a container, the container will be destroyed and the remaining contained object
+	will spawn in its place. After calling `takeObject(...)` you can check for a [remainder](#remainder).
 
-function take_callback(object_spawned, name)
-    object_spawned.setName(name)
-end
-```
+!!!example
+	Take an object out of a container. As we take it out we'll instruct the object to smooth move (default positioning
+	behavior) to coordinates (0, 5, 0). Additionally, we're going to add a blue highlight on the object we've taking
+	out.
+	``` Lua
+	local takenObject = container.takeObject({
+		position = {x = 0, y = 5, z = 0},
+	})
+	takenObject.highlightOn('Blue')
+	```
 
-
-???tip "Tip for using GUID to pull Object"
-	When getting the GUIDs of objects in a container, it is possible items can have the same GUID while in a container. This is because only once two items try to exist at the same time is one of them given a new GUID, and Objects in a container do not currently exist. Removing all Objects from the container at once will force all of them to be given unique GUIDs.
-
-???tip "Tip for using index to pull Object"
-	When you take an Object from the container, all higher indexes are reduced by 1 instantly. If you pull more than once Object at once by their index, you must account for this index changing.
+!!!example "Advanced example"
+	<p>Take an object out of a container, and then apply an upward force (impulse) shooting it into the air.</p>
+	<p>We can only [apply an impulse](#addforce) to an object once its (underlying rigid body) has finished spawning
+	Additionally, freshly spawned objects are frozen in place for a single frame. So we need to wait for the taken
+	object to finish spawning (i.e. `callback_function`) _then_ [wait one more frame](wait.md#frames) before applying
+	the impulse.</p>
+	``` Lua
+	container.takeObject({
+		callback_function = function(spawnedObject)
+			Wait.frames(function()
+				-- We've just waited a frame, which has given the object time to unfreeze.
+				-- However, it's also given the object time to enter another container, if
+				-- it spawned on one. Thus, we must confirm the object is not destroyed.
+				if not spawnedObject.isDestroyed() then
+					spawnedObject.addForce({0, 30, 0})
+				end
+			end)
+		end,
+		smooth = false, -- Smooth moving objects cannot have forces applied to them.
+	})
+	```
 
 ---
 
