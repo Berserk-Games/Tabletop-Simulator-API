@@ -35,6 +35,7 @@ Variable | Description | Type
 <a class="anchor" id="loading_custom"></a>loading_custom | If the Object's custom elements (images/models/etc) are loading. Read only. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="locked"></a>locked | If the object is frozen in place (preventing physics interactions). | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="mass"></a>mass | Mass. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md)
+<a class="anchor" id="max_typed_number"></a>max_typed_number | <p>Determines the maximum number of digits which a user may type whilst hovering over an object.</p><p>As soon as a player types the maximum number of digits, the corresponding behavior (e.g. [onObjectNumberTyped](event.md#onobjectnumbertyped)/[onNumberTyped](event.md#onnumbertyped)) is triggered immediately, improving responsiveness.</p> | [<span class="tag int"></span>](types.md)
 <a class="anchor" id="measure_movement"></a>measure_movement | Measure Tool will automatically be used when moving the Object. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="memo"></a>memo | A string you can store info in for an object. | [<span class="tag str"></span>](types.md)
 <a class="anchor" id="name"></a>name | Internal resource name for this Object. Read only, and only useful for [spawnObjectJSON()](base.md#spawnobjectjson). Generally, you want [getName()](#getname). | [<span class="tag str"></span>](types.md)
