@@ -3737,14 +3737,14 @@
 <td align="left"><a href="../types/"><span class="tag flo"></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="drag_selectable"></a>drag_selectable</td>
-<td>If this is set, object will never be drag-selected.</td>
-<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
-</tr>
-<tr>
 <td><a class="anchor" id="drag"></a>drag</td>
 <td>Drag. <a href="https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html">Unity rigidbody property</a>.</td>
 <td align="left"><a href="../types/"><span class="tag flo"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="drag_selectable"></a>drag_selectable</td>
+<td><p>When <code class="codehilite">false</code>, the object will not be selected by regular (click and drag) selection boxes that are drawn around the object.</p><p>Players may proceed to override this behavior by holding the "Shift" modifier whilst drag selecting.</p></td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
 </tr>
 <tr>
 <td><a class="anchor" id="dynamic_friction"></a>dynamic_friction</td>
@@ -3767,13 +3767,13 @@
 <td align="left"><a href="../types/"><span class="tag str"></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="held_position_offset"></a>held_position_offset</td>
-<td>Position offset from pointer.</td>
-<td align="left"><a href="../types/#vector"><span class="tag vec"></span></a></td>
+<td><a class="anchor" id="held_flip_index"></a>held_flip_index</td>
+<td>0-23 value. Changes when a Player hits flip or alt + rotate.</td>
+<td align="left"><a href="../types/"><span class="tag int"></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="held_rotation_offset"></a>held_rotation_offset</td>
-<td>Rotation offset from pointer.</td>
+<td><a class="anchor" id="held_position_offset"></a>held_position_offset</td>
+<td>Position offset from pointer.</td>
 <td align="left"><a href="../types/#vector"><span class="tag vec"></span></a></td>
 </tr>
 <tr>
@@ -3782,13 +3782,13 @@
 <td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="held_spin_index"></a>held_spin_index</td>
-<td>0-23 value. Changes when a Player rotates the Object.</td>
-<td align="left"><a href="../types/"><span class="tag int"></span></a></td>
+<td><a class="anchor" id="held_rotation_offset"></a>held_rotation_offset</td>
+<td>Rotation offset from pointer.</td>
+<td align="left"><a href="../types/#vector"><span class="tag vec"></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="held_flip_index"></a>held_flip_index</td>
-<td>0-23 value. Changes when a Player hits flip or alt + rotate.</td>
+<td><a class="anchor" id="held_spin_index"></a>held_spin_index</td>
+<td>0-23 value. Changes when a Player rotates the Object.</td>
 <td align="left"><a href="../types/"><span class="tag int"></span></a></td>
 </tr>
 <tr>
@@ -3827,6 +3827,11 @@
 <td align="left"><a href="../types/"><span class="tag flo"></span></a></td>
 </tr>
 <tr>
+<td><a class="anchor" id="max_typed_number"></a>max_typed_number</td>
+<td><p>Determines the maximum number of digits which a user may type whilst hovering over an object.</p><p>As soon as a player types the maximum number of digits, the corresponding behavior (e.g. <a href="../event/#onobjectnumbertyped">onObjectNumberTyped</a>/<a href="../event/#onnumbertyped">onNumberTyped</a>) is triggered immediately, improving responsiveness.</p></td>
+<td align="left"><a href="../types/"><span class="tag int"></span></a></td>
+</tr>
+<tr>
 <td><a class="anchor" id="measure_movement"></a>measure_movement</td>
 <td>Measure Tool will automatically be used when moving the Object.</td>
 <td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
@@ -3843,13 +3848,18 @@
 </tr>
 <tr>
 <td><a class="anchor" id="pick_up_position"></a>pick_up_position</td>
-<td>The position the Object was picked up at.</td>
+<td>The position the Object was picked up at. Read only.</td>
 <td align="left"><a href="../types/#vector"><span class="tag vec"></span></a></td>
 </tr>
 <tr>
 <td><a class="anchor" id="pick_up_rotation"></a>pick_up_rotation</td>
-<td>The rotation the Object was picked up at.</td>
+<td>The rotation the Object was picked up at. Read only.</td>
 <td align="left"><a href="../types/#vector"><span class="tag vec"></span></a></td>
+</tr>
+<tr>
+<td><a class="anchor" id="remainder"></a>remainder</td>
+<td><p>If this object is a container that cannot exist with less than two contained objects (e.g. a deck), <a href="#takeObject">taking out</a> the second last contained object will result in the container being destroyed. In its place the last remaining object in the container will be spawned.</p><p>This variable provides a reference to the remaining object when it is being spawned. Otherwise, it's <code class="codehilite">nil</code>. Read only.</p></td>
+<td align="left"><a href="../types/"><span class="tag obj"></span></a></td>
 </tr>
 <tr>
 <td><a class="anchor" id="resting"></a>resting</td>
@@ -3883,7 +3893,7 @@
 </tr>
 <tr>
 <td><a class="anchor" id="tag"></a>tag</td>
-<td><a href="../intro/#deprecated"><span class="tag deprecated"></span></a> <em>Use <a href="#type">type</a></em>. This object's type. Read only.</td>
+<td><p><a href="../intro/#deprecated"><span class="tag deprecated"></span></a> <em>Use <a href="#type">type</a></em>.</p>This object's type. Read only.</td>
 <td align="left"><a href="../types/"><span class="tag str"></span></a></td>
 </tr>
 <tr>
@@ -3922,13 +3932,13 @@
 <td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="value_flags"></a>value_flags</td>
-<td>A bit field, objects with overlapping <code class="codehilite">value_flag</code> bits are counted together when selected.</td>
+<td><a class="anchor" id="value"></a>value</td>
+<td>The value of the object for summing up selected objects. Only works if the apropriate bits are set in <code class="codehilite">obj.value_flags</code></td>
 <td align="left"><a href="../types/"><span class="tag int"></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="value"></a>value</td>
-<td>The value of the object for summing up selected objects. Only works if the apropriate bits are set in <code class="codehilite">obj.value_flags</code></td>
+<td><a class="anchor" id="value_flags"></a>value_flags</td>
+<td>A bit field, objects with overlapping <code class="codehilite">value_flag</code> bits are counted together when selected.</td>
 <td align="left"><a href="../types/"><span class="tag int"></span></a></td>
 </tr>
 </tbody>
@@ -4693,7 +4703,7 @@
 </tr>
 <tr>
 <td>takeObject(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
-<td>Returns an Object reference of Object taken from a container (bag/deck/chip stack) and placed into the world.</td>
+<td>Takes an object out of a container (bag/deck/chip stack), returning a reference to the object that was taken out.</td>
 <td><a href="../types/"><span class="ret obj"></span></a></td>
 <td><a href="#takeobject"><span class="i"></span></a></td>
 </tr>
@@ -6024,11 +6034,9 @@
 </div>
 <hr />
 <h4 id="takeobject">takeObject(...)<a class="headerlink" href="#takeobject" title="Permanent link"> </a></h4>
-<p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Takes an object from a container (bag/deck/chip stack) and places it in the world.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. It is also possible to add a delay using a <a href="../wait/">Wait</a> function instead.</p>
-</div>
+<p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Takes an object out of a container (bag/deck/chip stack), returning a reference to the object that was taken.</p>
+<p>Objects that are taken out of a container will take one or more frames to spawn.
+Certain interactions (e.g. physics) will not be able to take place until the object has finished spawning.</p>
 <div class="admonition info">
 <p class="admonition-title">takeObject(parameters)</p>
 <ul>
@@ -6047,11 +6055,11 @@
 </ul>
 </li>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>parameters.guid</strong>: GUID of the Object to take.<ul>
-<li><span class="critic comment">Optional,  no default. Only use index or guid, never both.</span></li>
+<li><span class="critic comment">Optional, no default. Only use index or guid, never both.</span></li>
 </ul>
 </li>
 <li><a href="../types/"><span class="tag int"></span></a> <strong>parameters.index</strong>: Index of the Object to take.<ul>
-<li><span class="critic comment">Optional,  no default. Only use index or guid, never both.</span></li>
+<li><span class="critic comment">Optional, no default. Only use index or guid, never both.</span></li>
 </ul>
 </li>
 <li><a href="../types/"><span class="tag boo"></span></a> <strong>parameters.top</strong>: If an object is taken from the top (vs bottom).<ul>
@@ -6062,33 +6070,54 @@
 <li><span class="critic comment">Optional, defaults to true.</span></li>
 </ul>
 </li>
-<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>parameters.callback_function</strong>: Function to activate once the taken Object fully "exists".<ul>
-<li><span class="critic comment">Optional, defaults to not being used.</span></li>
-<li><span class="critic comment">A reference to the object spawned is always passed to callback_function. See the example for how to access it.</span></li>
+<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>parameters.callback_function</strong>: Callback which will be called when the taken object has finished spawnning.<ul>
+<li><span class="critic comment">Optional, no default.</span></li>
+<li><span class="critic comment">This function takes a single parameter: the object that was taken.</span></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="n">futureName</span> <span class="o">=</span> <span class="s2">&quot;Taken from container!&quot;</span>
-    <span class="n">takeParams</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">5</span><span class="p">},</span>
-        <span class="n">callback_function</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="n">take_callback</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">futureName</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span>
-    <span class="p">}</span>
-    <span class="n">self</span><span class="p">.</span><span class="n">takeObject</span><span class="p">(</span><span class="n">takeParams</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="kr">function</span> <span class="nf">take_callback</span><span class="p">(</span><span class="n">object_spawned</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="kr">end</span>
-</pre></div>
-
-<details class="tip"><summary>Tip for using GUID to pull Object</summary><p>When getting the GUIDs of objects in a container, it is possible items can have the same GUID while in a container. This is because only once two items try to exist at the same time is one of them given a new GUID, and Objects in a container do not currently exist. Removing all Objects from the container at once will force all of them to be given unique GUIDs.</p>
-</details>
-<details class="tip"><summary>Tip for using index to pull Object</summary><p>When you take an Object from the container, all higher indexes are reduced by 1 instantly. If you pull more than once Object at once by their index, you must account for this index changing.</p>
-</details>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Certain containers only exist whilst they have more than one object contained within them (e.g. decks). Once you
+remove the second last object from a container, the container will be destroyed and the remaining contained object
+will spawn in its place. After calling <code class="codehilite">takeObject(...)</code> you can check for a <a href="#remainder">remainder</a>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Take an object out of a container. As we take it out we'll instruct the object to smooth move (default positioning
+behavior) to coordinates (0, 5, 0). Additionally, we're going to add a blue highlight on the object we've taking
+out.
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">takenObject</span> <span class="o">=</span> <span class="n">container</span><span class="p">.</span><span class="n">takeObject</span><span class="p">({</span>
+    <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span><span class="p">},</span>
+<span class="p">})</span>
+<span class="n">takenObject</span><span class="p">.</span><span class="n">highlightOn</span><span class="p">(</span><span class="s1">&#39;Blue&#39;</span><span class="p">)</span>
+</pre></div></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Advanced example</p>
+<p><p>Take an object out of a container, and then apply an upward force (impulse) shooting it into the air.</p>
+<p>We can only <a href="#addforce">apply an impulse</a> to an object once its (underlying rigid body) has finished spawning
+Additionally, freshly spawned objects are frozen in place for a single frame. So we need to wait for the taken
+object to finish spawning (i.e. <code class="codehilite">callback_function</code>) <em>then</em> <a href="../wait/#frames">wait one more frame</a> before applying
+the impulse.</p>
+<div class="codehilite"><pre><span></span><span class="n">container</span><span class="p">.</span><span class="n">takeObject</span><span class="p">({</span>
+    <span class="n">callback_function</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">spawnedObject</span><span class="p">)</span>
+        <span class="n">Wait</span><span class="p">.</span><span class="n">frames</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
+            <span class="c1">-- We&#39;ve just waited a frame, which has given the object time to unfreeze.</span>
+            <span class="c1">-- However, it&#39;s also given the object time to enter another container, if</span>
+            <span class="c1">-- it spawned on one. Thus, we must confirm the object is not destroyed.</span>
+            <span class="kr">if</span> <span class="ow">not</span> <span class="n">spawnedObject</span><span class="p">.</span><span class="n">isDestroyed</span><span class="p">()</span> <span class="kr">then</span>
+                <span class="n">spawnedObject</span><span class="p">.</span><span class="n">addForce</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">})</span>
+            <span class="kr">end</span>
+        <span class="kr">end</span><span class="p">)</span>
+    <span class="kr">end</span><span class="p">,</span>
+    <span class="n">smooth</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">-- Smooth moving objects cannot have forces applied to them.</span>
+<span class="p">})</span>
+</pre></div></p>
+</div>
 <hr />
 <h4 id="unregistercollisions">unregisterCollisions(...)<a class="headerlink" href="#unregistercollisions" title="Permanent link"> </a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Unregisters this object for Global collision events. Returns <code class="codehilite">true</code> if the object was previously registered, <code class="codehilite">false</code> otherwise.</p>

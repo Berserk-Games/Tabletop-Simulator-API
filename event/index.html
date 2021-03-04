@@ -951,6 +951,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onobjectflick" title="onObjectFlick(...)" class="md-nav__link">
+    onObjectFlick(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onobjecthover" title="onObjectHover(...)" class="md-nav__link">
     onObjectHover(...)
   </a>
@@ -974,6 +981,13 @@
           <li class="md-nav__item">
   <a href="#onobjectloopingeffect" title="onObjectLoopingEffect(...)" class="md-nav__link">
     onObjectLoopingEffect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectnumbertyped" title="onObjectNumberTyped(...)" class="md-nav__link">
+    onObjectNumberTyped(...)
   </a>
   
 </li>
@@ -1153,8 +1167,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onflick" title="onFlick(...)" class="md-nav__link">
+    onFlick(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onhover" title="onHover(...)" class="md-nav__link">
     onHover(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onnumbertyped" title="onNumberTyped(...)" class="md-nav__link">
+    onNumberTyped(...)
   </a>
   
 </li>
@@ -2933,6 +2961,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onobjectflick" title="onObjectFlick(...)" class="md-nav__link">
+    onObjectFlick(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onobjecthover" title="onObjectHover(...)" class="md-nav__link">
     onObjectHover(...)
   </a>
@@ -2956,6 +2991,13 @@
           <li class="md-nav__item">
   <a href="#onobjectloopingeffect" title="onObjectLoopingEffect(...)" class="md-nav__link">
     onObjectLoopingEffect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onobjectnumbertyped" title="onObjectNumberTyped(...)" class="md-nav__link">
+    onObjectNumberTyped(...)
   </a>
   
 </li>
@@ -3135,8 +3177,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onflick" title="onFlick(...)" class="md-nav__link">
+    onFlick(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onhover" title="onHover(...)" class="md-nav__link">
     onHover(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onnumbertyped" title="onNumberTyped(...)" class="md-nav__link">
+    onNumberTyped(...)
   </a>
   
 </li>
@@ -3225,7 +3281,7 @@
 <tbody>
 <tr>
 <td>filterObjectEnterContainer(<a href="../types/"><span class="tag obj"></span></a>&nbsp;container, <a href="../types/"><span class="tag obj"></span></a>&nbsp;enter_object)</td>
-<td>Called when an object attempts to enter any container. The object is prevented from entering unless "true" is returned.</td>
+<td>Called when an object attempts to enter any container. The object is prevented from entering unless <code class="codehilite">true</code> is returned.</td>
 <td><a href="#filterobjectentercontainer"><span class="i"></span></a></td>
 </tr>
 <tr>
@@ -3284,7 +3340,7 @@
 <td><a href="#onobjectentercontainer"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>onObjectFlick(<a href="../types/"><span class="tag obj"></span></a>&nbsp;hovered_object, <a href="../types/"><span class="tag str"></span></a>&nbsp;player_color, <a href="../types/"><span class="tag flo"></span></a>&nbsp;force)</td>
+<td>onObjectFlick(<a href="../types/"><span class="tag obj"></span></a>&nbsp;object, <a href="../types/"><span class="tag str"></span></a>&nbsp;player_color, <a href="../types/"><span class="tag vec"></span></a>&nbsp;impulse)</td>
 <td>Called when a player flicks an object.</td>
 <td><a href="#onobjectflick"><span class="i"></span></a></td>
 </tr>
@@ -3309,9 +3365,9 @@
 <td><a href="#onobjectloopingeffect"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>onObjectNumberTyped(<a href="../types/"><span class="tag obj"></span></a>&nbsp;container, <a href="../types/"><span class="tag str"></span></a>&nbsp;player_color, <a href="../types/"><span class="tag int"></span></a>&nbsp;number_typed)</td>
-<td>Called when a Player types a number over a container.</td>
-<td></td>
+<td>onObjectNumberTyped(<a href="../types/"><span class="tag obj"></span></a>&nbsp;object, <a href="../types/"><span class="tag str"></span></a>&nbsp;player_color, <a href="../types/"><span class="tag int"></span></a>&nbsp;number)</td>
+<td>Called when a player types a number whilst hovering over an object.</td>
+<td><a href="#onobjectnumbertyped"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>onObjectPageChange(<a href="../types/"><span class="tag obj"></span></a>&nbsp;object)</td>
@@ -3413,7 +3469,7 @@
 <tbody>
 <tr>
 <td>filterObjectEnter(<a href="../types/"><span class="tag obj"></span></a>&nbsp;obj)</td>
-<td>Called when an object attempts to enter this object. The object is prevented from entering unless "true" is returned.</td>
+<td>Called when an object attempts to enter this object. The object is prevented from entering unless <code class="codehilite">true</code> is returned.</td>
 <td><a href="#filterobjectenter"><span class="i"></span></a></td>
 </tr>
 <tr>
@@ -3442,19 +3498,19 @@
 <td><a href="#ondrop"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>onFlick(<a href="../types/"><span class="tag str"></span></a>&nbsp;player_color, <a href="../types/"><span class="tag flo"></span></a>&nbsp;force)</td>
+<td>onFlick(<a href="../types/"><span class="tag str"></span></a>&nbsp;player_color, <a href="../types/"><span class="tag vec"></span></a>&nbsp;impulse)</td>
 <td>Called when a player flicks the object.</td>
 <td><a href="#onflick"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>onHover(<a href="../types/"><span class="tag str"></span></a>&nbsp;player_color)</td>
-<td>Called when a player moves their pointer (cursor) over an object.</td>
+<td>Called when a player moves their pointer (cursor) over the object.</td>
 <td><a href="#onhover"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>onNumberTyped(<a href="../types/"><span class="tag str"></span></a>&nbsp;player_color, <a href="../types/"><span class="tag int"></span></a>&nbsp;number_typed)</td>
-<td>Called when a Player types a number over the container.</td>
-<td></td>
+<td>onNumberTyped(<a href="../types/"><span class="tag str"></span></a>&nbsp;player_color, <a href="../types/"><span class="tag int"></span></a>&nbsp;number)</td>
+<td>Called when a player types a number whilst hovering over the object.</td>
+<td><a href="#onnumbertyped"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>onPageChange()</td>
@@ -3491,7 +3547,7 @@
 <hr />
 <h2 id="function-details-global-object">Function Details (Global &amp; Object)<a class="headerlink" href="#function-details-global-object" title="Permanent link"> </a></h2>
 <h3 id="filterobjectentercontainer">filterObjectEnterContainer(...)<a class="headerlink" href="#filterobjectentercontainer" title="Permanent link"> </a></h3>
-<p>Called when an object attempts to enter a container. The object is prevented from entering unless "true" is returned.</p>
+<p>Called when an object attempts to enter a container. The object is prevented from entering unless <code class="codehilite">true</code> is returned.</p>
 <div class="admonition info">
 <p class="admonition-title">filterObjectEnter(container, enter_object)</p>
 <ul>
@@ -3736,6 +3792,25 @@
 </pre></div>
 
 <hr />
+<h3 id="onobjectflick">onObjectFlick(...)<a class="headerlink" href="#onobjectflick" title="Permanent link"> </a></h3>
+<p>Called whenever a player <a href="https://kb.tabletopsimulator.com/game-tools/flick-tool/">flicks</a> flicks an object.</p>
+<div class="admonition info">
+<p class="admonition-title">onFlick(object, player_color, impulse)</p>
+</div>
+<ul>
+<li><a href="../types/"><span class="tag obj"></span></a>&nbsp;<strong>object</strong>: The object that was flicked.</li>
+<li><a href="../types/"><span class="tag str"></span></a>&nbsp;<strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who flicked an object.</li>
+<li><a href="../types/"><span class="tag vec"></span></a>&nbsp;<strong>impulse</strong>: The impulse applied to the object.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Print the player color, type of the flicked object, and magnitude of the flick:
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectFlick</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">player_color</span><span class="p">,</span> <span class="n">impulse</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">player_color</span> <span class="o">..</span> <span class="s2">&quot; flicked a &quot;</span> <span class="o">..</span> <span class="n">object</span><span class="p">.</span><span class="n">type</span> <span class="o">..</span>  <span class="s2">&quot; with impulse &quot;</span> <span class="o">..</span> <span class="n">impulse</span><span class="p">:</span><span class="n">magnitude</span><span class="p">())</span>
+<span class="kr">end</span>
+</pre></div></p>
+</div>
+<hr />
 <h3 id="onobjecthover">onObjectHover(...)<a class="headerlink" href="#onobjecthover" title="Permanent link"> </a></h3>
 <p>Called when a player moves their pointer (cursor) over an object.</p>
 <div class="admonition info">
@@ -3804,13 +3879,53 @@
 </pre></div>
 
 <hr />
+<h3 id="onobjectnumbertyped">onObjectNumberTyped(...)<a class="headerlink" href="#onobjectnumbertyped" title="Permanent link"> </a></h3>
+<p>Called when a player types a number whilst hovering over an object.</p>
+<p>If you wish to prevent the default behavior (e.g. drawing a card) then you may return <code class="codehilite">true</code> to indicate you've handled the event yourself.</p>
+<div class="admonition info">
+<p class="admonition-title">onObjectNumberTyped(object, player_color, number)</p>
+<ul>
+<li><a href="../types/"><span class="tag obj"></span></a>&nbsp;<strong>object</strong>: The object the player was hovering over whilst typing a number.</li>
+<li><a href="../types/"><span class="tag str"></span></a>&nbsp;<strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player that typed the number.</li>
+<li><a href="../types/"><span class="tag int"></span></a>&nbsp;<strong>number</strong>: The number typed.</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Print the player color, the number they entered and the type of object being hovered over:
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectNumberTyped</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">player_color</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">player_color</span> <span class="o">..</span> <span class="s2">&quot; typed &quot;</span> <span class="o">..</span> <span class="n">number</span> <span class="o">..</span> <span class="s2">&quot; whilst hovering over a &quot;</span> <span class="o">..</span> <span class="n">object</span><span class="p">.</span><span class="n">type</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Prevent players drawing more than 2 cards at a time:
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectNumberTyped</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">player_color</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+    <span class="kr">if</span> <span class="n">object</span><span class="p">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;Deck&#39;</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="kr">then</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry. You can only draw a maximum of 2 cards.&quot;</span><span class="p">)</span>
+        <span class="kr">return</span> <span class="kc">true</span>
+    <span class="kr">end</span>
+<span class="kr">end</span>
+</pre></div></p>
+</div>
+<hr />
 <h3 id="onobjectpagechange">onObjectPageChange(...)<a class="headerlink" href="#onobjectpagechange" title="Permanent link"> </a></h3>
 <p>Called when an object's Custom PDF page is changed.</p>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectPageChange</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">..</span> <span class="s2">&quot;changed page to &quot;</span> <span class="o">..</span> <span class="n">obj</span><span class="p">.</span><span class="n">Book</span><span class="p">.</span><span class="n">getPage</span><span class="p">())</span> <span class="c1">-- Print new page.</span>
+<div class="admonition info">
+<p class="admonition-title">onObjectPageChange(object)</p>
+<ul>
+<li><a href="../types/"><span class="tag obj"></span></a>&nbsp;<strong>object</strong>: The object that's page changed.</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Print the name of the object and what page it changed to:
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onObjectPageChange</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">object</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">..</span> <span class="s2">&quot; changed page to &quot;</span> <span class="o">..</span> <span class="n">object</span><span class="p">.</span><span class="n">Book</span><span class="p">.</span><span class="n">getPage</span><span class="p">())</span>
 <span class="kr">end</span>
-</pre></div>
-
+</pre></div></p>
+</div>
 <hr />
 <h3 id="onobjectpeek">onObjectPeek(...)<a class="headerlink" href="#onobjectpeek" title="Permanent link"> </a></h3>
 <p>Called when a player using peek to look under an Object.</p>
@@ -4041,7 +4156,7 @@
 <hr />
 <h2 id="function-details-object-only">Function Details (Object only)<a class="headerlink" href="#function-details-object-only" title="Permanent link"> </a></h2>
 <h3 id="filterobjectenter">filterObjectEnter(...)<a class="headerlink" href="#filterobjectenter" title="Permanent link"> </a></h3>
-<p>Called when an object attempts to enter this object. The object is prevented from entering unless "true" is returned.</p>
+<p>Called when an object attempts to enter this object. The object is prevented from entering unless <code class="codehilite">true</code> is returned.</p>
 <div class="admonition info">
 <p class="admonition-title">filterObjectEnter(obj)</p>
 <ul>
@@ -4165,8 +4280,26 @@
 </pre></div>
 
 <hr />
+<h3 id="onflick">onFlick(...)<a class="headerlink" href="#onflick" title="Permanent link"> </a></h3>
+<p>Called when a player <a href="https://kb.tabletopsimulator.com/game-tools/flick-tool/">flicks</a> this <a href="../object/">Object</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">onFlick(player_color, impulse)</p>
+</div>
+<ul>
+<li><a href="../types/"><span class="tag str"></span></a>&nbsp;<strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who flicked this object.</li>
+<li><a href="../types/"><span class="tag vec"></span></a>&nbsp;<strong>impulse</strong>: The impulse applied to the object.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Print the player color and magnitude of the flick:
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onFlick</span><span class="p">(</span><span class="n">player_color</span><span class="p">,</span> <span class="n">impulse</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">player_color</span> <span class="o">..</span> <span class="s2">&quot; flicked with impulse &quot;</span> <span class="o">..</span> <span class="n">impulse</span><span class="p">:</span><span class="n">magnitude</span><span class="p">())</span>
+<span class="kr">end</span>
+</pre></div></p>
+</div>
+<hr />
 <h3 id="onhover">onHover(...)<a class="headerlink" href="#onhover" title="Permanent link"> </a></h3>
-<p>Called when a player moves their pointer (cursor) over an object.</p>
+<p>Called when a player moves their pointer (cursor) over this <a href="../object/">Object</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">onHover(player_color)</p>
 <ul>
@@ -4179,13 +4312,46 @@
 </pre></div>
 
 <hr />
-<h3 id="onpagechange">onPageChange()<a class="headerlink" href="#onpagechange" title="Permanent link"> </a></h3>
-<p>Called when this object's Custom PDF page is changed.</p>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onPageChange</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">..</span> <span class="s2">&quot;changed page to &quot;</span> <span class="o">..</span> <span class="n">self</span><span class="p">.</span><span class="n">Book</span><span class="p">.</span><span class="n">getPage</span><span class="p">())</span> <span class="c1">-- Print new page.</span>
+<h3 id="onnumbertyped">onNumberTyped(...)<a class="headerlink" href="#onnumbertyped" title="Permanent link"> </a></h3>
+<p>Called when a player types a number whilst hovering over this <a href="../object/">Object</a>.</p>
+<p>If you wish to prevent the default behavior (e.g. drawing a card, if this object were a deck) then you may return <code class="codehilite">true</code> to indicate you've handled the event yourself.</p>
+<div class="admonition info">
+<p class="admonition-title">onNumberTyped(player_color, number)</p>
+<ul>
+<li><a href="../types/"><span class="tag str"></span></a>&nbsp;<strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player that typed the number.</li>
+<li><a href="../types/"><span class="tag int"></span></a>&nbsp;<strong>number</strong>: The number typed.</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Print the player color and the number they typed:
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onNumberTyped</span><span class="p">(</span><span class="n">player_color</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">player_color</span> <span class="o">..</span> <span class="s2">&quot; typed &quot;</span> <span class="o">..</span> <span class="n">number</span><span class="p">)</span>
 <span class="kr">end</span>
-</pre></div>
-
+</pre></div></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Prevent players drawing more than 2 cards at a time (from this object):
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onNumberTyped</span><span class="p">(</span><span class="n">player_color</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+    <span class="kr">if</span> <span class="n">self</span><span class="p">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;Deck&#39;</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="kr">then</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry. You can only draw a maximum of 2 cards.&quot;</span><span class="p">)</span>
+        <span class="kr">return</span> <span class="kc">true</span>
+    <span class="kr">end</span>
+<span class="kr">end</span>
+</pre></div></p>
+</div>
+<hr />
+<h3 id="onpagechange">onPageChange()<a class="headerlink" href="#onpagechange" title="Permanent link"> </a></h3>
+<p>Called when this <a href="../object/">Object</a>'s Custom PDF page is changed.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Print this object's name and what page it changed to:
+<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onPageChange</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">..</span> <span class="s2">&quot; changed page to &quot;</span> <span class="o">..</span> <span class="n">self</span><span class="p">.</span><span class="n">Book</span><span class="p">.</span><span class="n">getPage</span><span class="p">())</span>
+<span class="kr">end</span>
+</pre></div></p>
+</div>
 <hr />
 <h3 id="onpeek">onPeek(...)<a class="headerlink" href="#onpeek" title="Permanent link"> </a></h3>
 <p>Called when a player using peek to look under an Object.</p>
