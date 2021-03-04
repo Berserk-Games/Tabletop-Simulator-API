@@ -50,6 +50,7 @@ getXmlTable() | Returns the run-time UI's XML formatted as a Lua table. | [<span
 hide([<span class="tag str"></span>](types.md)&nbsp;id) | Hides the given UI element. Unlike the "active" attribute, hide triggers animations. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#hide)
 setAttribute([<span class="tag str"></span>](types.md)&nbsp;id, [<span class="tag str"></span>](types.md)&nbsp;attribute, [<span class="tag var"></span>](types.md)&nbsp;value) | Sets the value of a specified attribute of a UI element. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setattribute)
 setAttributes([<span class="tag str"></span>](types.md)&nbsp;id, [<span class="tag tab"></span>](types.md)&nbsp;data) | Updates the value of the supplied attributes of a UI element. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setattributes)
+setClass([<span class="tag str"></span>](types.md)&nbsp;id, [<span class="tag str"></span>](types.md)&nbsp;names) | Replaces all classes on a UI element. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setclass)
 setCustomAssets([<span class="tag tab"></span>](types.md)&nbsp;assets) | Sets the UI ASSETS (like custom images) for global or an Object. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setcustomassets)
 setValue([<span class="tag str"></span>](types.md)&nbsp;id, [<span class="tag str"></span>](types.md)&nbsp;value) | Updates the value between elements tags, like: `<Text>ValueChanged</Text>` | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setvalue)
 setXml([<span class="tag str"></span>](types.md)&nbsp;xml) | Replaces the run-time UI with the XML string. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setxml)
@@ -244,6 +245,23 @@ attributeTable = {
 }
 self.UI.setAttributes("exampleText", attributeTable)
 ```
+
+---
+
+
+###setClass(...)
+
+[<span class="ret boo"></span>](types.md)&nbsp;Replaces all classes on a UI element.
+
+!!!info "setClass(id, names)"
+    * [<span class="tag str"></span>](types.md) **id**: The ID of the UI element that should have its classes replaced.
+    * [<span class="tag str"></span>](types.md) **names**: Space separated class names.
+
+!!!example
+    Replace all classes on the element with ID `someElementId` with two classes "important" and "large".
+    ``` Lua
+    UI.setClass("someElementId", "important large")
+    ```
 
 ---
 
