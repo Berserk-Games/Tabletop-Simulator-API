@@ -46,7 +46,7 @@ Variable | Description | Type
 <a class="anchor" id="spawning"></a>spawning | If the Object is finished spawning. Read only. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="static_friction"></a>static_friction | Static friction, value of 0-1. [Unity physics material](https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](types.md)
 <a class="anchor" id="sticky"></a>sticky | If other Objects on top of this one are also picked up when this Object is. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="tag"></a>tag | [<span class="tag deprecated"></span>](intro.md#deprecated) _Use [type](#type)_. This object's type. Read only. | [<span class="tag str"></span>](types.md)
+<a class="anchor" id="tag"></a>tag | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [type](#type)_.</p>This object's type. Read only. | [<span class="tag str"></span>](types.md)
 <a class="anchor" id="tooltip"></a>tooltip | If the tooltip opens when a pointer hovers over the object. Tooltips display name and description. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="type"></a>type | This object's type. Read only. | [<span class="tag str"></span>](types.md)
 <a class="anchor" id="use_gravity"></a>use_gravity | If gravity affects this object. | [<span class="tag boo"></span>](types.md)

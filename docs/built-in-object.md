@@ -9,7 +9,7 @@ Each item listed below is treated as a unique object type. (ie. A red checker ti
 
 ### Blocks
 
-Name | Tag | Description | Notes
+Name | Type | Description | Notes
 -- | -- | -- | --
 <a class="anchor" id="BlockRectangle"></a>BlockRectangle | `Block` | A blue rectangular prism. |
 <a class="anchor" id="BlockSquare"></a>BlockSquare | `Block` | A red cube. |
@@ -19,7 +19,7 @@ Name | Tag | Description | Notes
 
 All boards spawn locked by default.
 
-Name | Tag | Description | Notes
+Name | Type | Description | Notes
 -- | -- | -- | --
 <a class="anchor" id="backgammon_board"></a>backgammon_board | `Board` | The fold-open board of Backgammon. | Includes snap-points along each triangle, totalling 120.
 <a class="anchor" id="CardBot_Board"></a>CardBot_Board | `Board` | The main board and 4 player boards of CardBots, Build & Destroy. | Includes snap-points on each card and deck location, totally 79.
@@ -32,7 +32,7 @@ Name | Tag | Description | Notes
 
 ### Cards
 
-Name | Tag | Description | Notes
+Name | Type | Description | Notes
 -- | -- | -- | --
 <a class="anchor" id="Card"></a>Card | `Card` | A blank card, standard playing card, or Cardbots card. |
 <a class="anchor" id="Deck"></a>Deck | `Deck` | A deck of the 52 standard playing cards. | Shuffles immediately when spawned.
@@ -41,7 +41,7 @@ Name | Tag | Description | Notes
 
 ### Checkers
 
-Name | Tag | Description | Notes
+Name | Type | Description | Notes
 -- | -- | -- | --
 <a class="anchor" id="Checker_black"></a>Checker_black | `Checker` | A black checker with a crown emblem on the top side. |
 <a class="anchor" id="Checker_red"></a>Checker_red | `Checker` | A red checker with a crown emblem on the top side. |
@@ -50,7 +50,7 @@ Name | Tag | Description | Notes
 
 ### Chess Pieces
 
-Name | Tag | Description | Notes
+Name | Type | Description | Notes
 -- | -- | -- | --
 <a class="anchor" id="Chess_Bishop"></a>Chess_Bishop | `Chess` | A chrome Chess bishop. | Faces visually to the left.
 <a class="anchor" id="Chess_King"></a>Chess_King | `Chess` | A chrome Chess king. |
@@ -61,7 +61,7 @@ Name | Tag | Description | Notes
 
 ### Chips
 
-Name | Tag | Description | Notes
+Name | Type | Description | Notes
 -- | -- | -- | --
 <a class="anchor" id="Chip_10"></a>Chip_10 | `Chip` | A blue casino chip worth $10 | Faces visually to the left.
 <a class="anchor" id="Chip_50"></a>Chip_50 | `Chip` | A green casino chip worth $50 | Faces visually to the left.
@@ -71,7 +71,7 @@ Name | Tag | Description | Notes
 
 ### Dice
 
-Name | Tag | Description | Notes
+Name | Type | Description | Notes
 -- | -- | -- | --
 <a class="anchor" id="Die_4"></a>Die_4 | `Dice` | A 4-sided die. |
 <a class="anchor" id="Die_6"></a>Die_6 | `Dice` | A 6-sided die with dots. |
@@ -84,7 +84,7 @@ Name | Tag | Description | Notes
 
 ### Dominos
 
-Name | Tag | Description | Notes
+Name | Type | Description | Notes
 -- | -- | -- | --
 <a class="anchor" id="Domino"></a>Domino | `Domino` | A blank domino. |
 <a class="anchor" id="Mahjong_Coin"></a>Mahjong_Coin | `Domino` | A coin used in Mahjong. |
@@ -93,7 +93,7 @@ Name | Tag | Description | Notes
 
 ### Figurines
 
-Name | Tag | Description | Notes
+Name | Type | Description | Notes
 -- | -- | -- | --
 <a class="anchor" id="Figurine_Card_Bot"></a>Figurine_Card_Bot | `Figurine` | A rectangle-based figurine of a CardBot from CardBots, Build & Destroy. | Faces visually to the side.
 <a class="anchor" id="Figurine_Kimi_Kat"></a>Figurine_Kimi_Kat | `Figurine` | A rectangle-based figurine of two sitting cats. |
@@ -107,7 +107,7 @@ Name | Tag | Description | Notes
 
 ### Go Pieces
 
-Name | Tag | Description | Notes
+Name | Type | Description | Notes
 -- | -- | -- | --
 <a class="anchor" id="go_game_piece_black"></a>go_game_piece_black | `GoPiece` | A black Go stone. | Spawned from a [black Go bowl](#go_game_bowl_black).
 <a class="anchor" id="go_game_piece_white"></a>go_game_piece_white | `GoPiece` | A white Go stone. | Spawned from a [white Go bowl](#go_game_bowl_white).
@@ -116,7 +116,7 @@ Name | Tag | Description | Notes
 
 ### Piecepack
 
-Name | Tag | Description | Notes
+Name | Type | Description | Notes
 -- | -- | -- | --
 <a class="anchor" id="PiecePack_Arms"></a>PiecePack_Arms | `Piecepack` | A wooden coin with a blue fleur-de-lis on the underside. |
 <a class="anchor" id="PiecePack_Crowns"></a>PiecePack_Crowns | `Piecepack` | A wooden coin with a green crown on the underside. |
@@ -125,7 +125,7 @@ Name | Tag | Description | Notes
 
 ### RPG Figurines
 
-Name | Tag | Description | Notes
+Name | Type | Description | Notes
 -- | -- | -- | --
 <a class="anchor" id="rpg_BARGHEST"></a>rpg_BARGHEST | `rpgFigurine` | An animated figurine of a mythical barghest. |
 <a class="anchor" id="rpg_BASILISK"></a>rpg_BASILISK | `rpgFigurine` | An animated figurine of a mythical basilisk (a.k.a. cockatrice). |
@@ -167,7 +167,7 @@ Name | Tag | Description | Notes
 
 ### Tileset Pieces
 
-Name | Tag | Description | Notes
+Name | Type | Description | Notes
 -- | -- | -- | --
 <a class="anchor" id="Tileset_Barrel"></a>Tileset_Barrel | `Tileset` | A small barrel for use in RPG Tilesets. |
 <a class="anchor" id="Tileset_Chair"></a>Tileset_Chair | `Tileset` | A small chair for use in RPG Tilesets. |
@@ -181,7 +181,7 @@ Name | Tag | Description | Notes
 
 ### Other
 
-Name | Tag | Description | Notes
+Name | Type | Description | Notes
 -- | -- | -- | --
 <a class="anchor" id="backgammon_piece_brown"></a>backgammon_piece_brown | `Backgammon Piece` | A brown Backgammon piece. |
 <a class="anchor" id="backgammon_piece_white"></a>backgammon_piece_white | `Backgammon Piece` | A white Backgammon piece. |
