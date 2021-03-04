@@ -1564,8 +1564,7 @@ Certain interactions (e.g. physics) will not be able to take place until the obj
 
 !!!example
 	Take an object out of a container. As we take it out we'll instruct the object to smooth move (default positioning
-	behavior) to coordinates (0, 5, 0). Additionally, we're going to add a blue highlight on the object we've taking
-	out.
+	behavior) to coordinates (0, 5, 0). Additionally, we're going to add a blue highlight on the object we've taken	out.
 	``` Lua
 	local takenObject = container.takeObject({
 		position = {x = 0, y = 5, z = 0},
