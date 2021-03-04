@@ -2078,6 +2078,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#setclass" title="setClass(...)" class="md-nav__link">
+    setClass(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setcustomassets" title="setCustomAssets(...)" class="md-nav__link">
     setCustomAssets(...)
   </a>
@@ -2649,6 +2656,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#setclass" title="setClass(...)" class="md-nav__link">
+    setClass(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setcustomassets" title="setCustomAssets(...)" class="md-nav__link">
     setCustomAssets(...)
   </a>
@@ -2812,6 +2826,12 @@ Example of calling a function targeted at an Object UI:
 <td>Updates the value of the supplied attributes of a UI element.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#setattributes"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>setClass(<a href="../types/"><span class="tag str"></span></a>&nbsp;id, <a href="../types/"><span class="tag str"></span></a>&nbsp;names)</td>
+<td>Replaces all classes on a UI element.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td><a href="#setclass"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>setCustomAssets(<a href="../types/"><span class="tag tab"></span></a>&nbsp;assets)</td>
@@ -3012,6 +3032,22 @@ Example of calling a function targeted at an Object UI:
 <span class="n">self</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">setAttributes</span><span class="p">(</span><span class="s2">&quot;exampleText&quot;</span><span class="p">,</span> <span class="n">attributeTable</span><span class="p">)</span>
 </pre></div>
 
+<hr />
+<h3 id="setclass">setClass(...)<a class="headerlink" href="#setclass" title="Permanent link"> </a></h3>
+<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Replaces all classes on a UI element.</p>
+<div class="admonition info">
+<p class="admonition-title">setClass(id, names)</p>
+<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>id</strong>: The ID of the UI element that should have its classes replaced.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>names</strong>: Space separated class names.</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Replace all classes on the element with ID <code class="codehilite">someElementId</code> with two classes "important" and "large".
+<div class="codehilite"><pre><span></span><span class="n">UI</span><span class="p">.</span><span class="n">setClass</span><span class="p">(</span><span class="s2">&quot;someElementId&quot;</span><span class="p">,</span> <span class="s2">&quot;important large&quot;</span><span class="p">)</span>
+</pre></div></p>
+</div>
 <hr />
 <h3 id="setcustomassets">setCustomAssets(...)<a class="headerlink" href="#setcustomassets" title="Permanent link"> </a></h3>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets the UI ASSETS (like custom images) for Global or an Object. Passing nothing as a parameter results in the clearing of the UI Assets.</p>
