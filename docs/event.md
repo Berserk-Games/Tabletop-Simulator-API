@@ -471,17 +471,20 @@ If you wish to prevent the default behavior (e.g. drawing a card) then you may r
 
 ---
 
----
 ###onObjectPageChange(...)
 
 Called when an object's Custom PDF page is changed.
 
-``` Lua
-function onObjectPageChange(obj)
-	print(obj.getName() .. "changed page to " .. obj.Book.getPage()) -- Print new page.
-end
-```
+!!!info "onObjectPageChange(object)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**object**: The object that's page changed.
 
+!!!example
+	Print the name of the object and what page it changed to:
+	``` Lua
+	function onObjectPageChange(object)
+		print(object.getName() .. " changed page to " .. object.Book.getPage())
+	end
+	```
 
 ---
 
@@ -955,14 +958,15 @@ If you wish to prevent the default behavior (e.g. drawing a card, if this object
 
 ###onPageChange()
 
-Called when this object's Custom PDF page is changed.
+Called when this [Object](object.md)'s Custom PDF page is changed.
 
-``` Lua
-function onPageChange()
-	print(self.getName() .. "changed page to " .. self.Book.getPage()) -- Print new page.
-end
-```
-
+!!!example
+	Print this object's name and what page it changed to:
+	``` Lua
+	function onPageChange()
+		print(self.getName() .. " changed page to " .. self.Book.getPage())
+	end
+	```
 
 ---
 
