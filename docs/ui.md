@@ -7,6 +7,7 @@ UI, a static global class AND an Object class. It is the method to interact with
 
 
 ##Global and Object
+
 UI can either be placed on the screen by using the **Global UI** or placed on an Object using **Object UI**. Depending on which you are using, these commands are used differently.
 
     Example of calling a function targeted at the Global UI:
@@ -37,7 +38,15 @@ end
 
 ---
 
-##Element Function Summary
+##Member Variable Summary
+
+Variable | Description | Type
+-- | -- | :--
+<a class="anchor" id="loading"></a>loading | Indicates whether (the server) has finished loading all UI custom assets. | [<span class="tag boo"></span>](types.md)
+
+---
+
+##Function Summary
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
@@ -62,7 +71,7 @@ show([<span class="tag str"></span>](types.md)&nbsp;id) | Displays the given UI 
 
 ---
 
-##Element Function Details
+##Function Details
 
 ###getAttribute(...)
 
