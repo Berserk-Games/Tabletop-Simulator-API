@@ -1,18 +1,18 @@
-The Wait class is a static global class which deals with triggering a specified function after some form of delay. It is how you can add pauses into your code while you wait for something, like waiting for a deck to finish forming after using putObject.
+The `Wait` class is a static global class which allows you to schedule code (functions) to be executed later on.
 
-Example usage: `Wait.frames(functionName, 60)`
-
-!!!tip
-    This is the first Class to use functions as parameters. To help, detailed examples are included for each usage. For more details, you can check out the [Function section](types.md#function) of the Introduction page.
+!!!important
+    Please note that `Wait` does _not_ pause Lua script execution, _because that would freeze Tabletop Simulator!_ The
+    next line of code after a `Wait` function call will always be executed immediately.
 
 ##Function Summary
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-condition([<span class="tag fun"></span>](types.md#function)&nbsp;toRunFunc, [<span class="tag fun"></span>](types.md#function)&nbsp;conditionFunc, [<span class="tag flo"></span>](types.md)&nbsp;timeout, [<span class="tag fun"></span>](types.md#function)&nbsp;timeoutFunc) | Activates a function when a given function returns `true` or activates a different function if a timeout occurs. | [<span class="ret int"></span>](types.md) | [<span class="i"></span>](#condition)
-frames([<span class="tag fun"></span>](types.md#function)&nbsp;toRunFunc, [<span class="tag int"></span>](types.md)&nbsp;frameCount) | Activates a function after a set number of frames. | [<span class="ret int"></span>](types.md) | [<span class="i"></span>](#frames)
-stop([<span class="tag int"></span>](types.md)&nbsp;id) | Stops a currently running Wait function. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#stop)
-time([<span class="tag fun"></span>](types.md#function)&nbsp;toRunFunc, [<span class="tag flo"></span>](types.md)&nbsp;time, [<span class="tag int"></span>](types.md)&nbsp;repetitions) | Activates a function after a set amount of time has passed. | [<span class="ret int"></span>](types.md) | [<span class="i"></span>](#time)
+condition([<span class="tag fun"></span>](types.md#function)&nbsp;toRunFunc, [<span class="tag fun"></span>](types.md#function)&nbsp;conditionFunc, [<span class="tag flo"></span>](types.md)&nbsp;timeout, [<span class="tag fun"></span>](types.md#function)&nbsp;timeoutFunc) | Schedules a function to be executed after the specified condition has been met. | [<span class="ret int"></span>](types.md) | [<span class="i"></span>](#condition)
+frames([<span class="tag fun"></span>](types.md#function)&nbsp;toRunFunc, [<span class="tag int"></span>](types.md)&nbsp;numberFrames) | Schedules a function to be executed after the specified number of frames have elapsed. | [<span class="ret int"></span>](types.md) | [<span class="i"></span>](#frames)
+stop([<span class="tag int"></span>](types.md)&nbsp;id) | Cancels a Wait-scheduled function. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#stop)
+stopAll() | Cancels all Wait-scheduled functions. | | [<span class="i"></span>](#stopall)
+time([<span class="tag fun"></span>](types.md#function)&nbsp;toRunFunc, [<span class="tag flo"></span>](types.md)&nbsp;seconds, [<span class="tag int"></span>](types.md)&nbsp;repetitions) | Schedules a function to be executed after the specified amount of time (in seconds) has elapsed. | [<span class="ret int"></span>](types.md) | [<span class="i"></span>](#time)
 
 ---
 
@@ -20,150 +20,196 @@ time([<span class="tag fun"></span>](types.md#function)&nbsp;toRunFunc, [<span c
 
 ###condition(...)
 
-[<span class="ret int"></span>](types.md)&nbsp;Activates a function when a given function returns `true` or activates a different function if a timeout occurs.
+[<span class="ret int"></span>](types.md)&nbsp;Schedules a function to be executed after the specified condition has been met.
 
-> The returned value is an ID which can be used with [stop](#stop) to cancel the function at any time.
+The return value is a unique ID that may be used to [stop](#stop) the scheduled function before it runs.
 
 !!!info "condition(toRunFunc, conditionFunc, timeout, timeoutFunc)"
-    * [<span class="tag fun"></span>](types.md#function) **toRunFunc**: The function to activate once the condition is met.
-    * [<span class="tag fun"></span>](types.md#function) **conditionFunc**: The function that is watched until it returns `true`.
-    * [<span class="tag flo"></span>](types.md) **timeout**: The amount of time, in seconds, before this function gives up checking the condition function.
+    * [<span class="tag fun"></span>](types.md#function) **toRunFunc**: The function to be executed after the specified condition is met.
+    * [<span class="tag fun"></span>](types.md#function) **conditionFunc**: The function that will be executed repeatedly, until it returns `true` (or the `timeout` is reached).
+    * [<span class="tag flo"></span>](types.md) **timeout**: The amount of time (in seconds) that may elapse before the scheduled function is cancelled.
         * {>>Optional, defaults to never timing out.<<}
-    * [<span class="tag fun"></span>](types.md#function) **timeoutFunc**: The function that that triggers if the timeout amount is met.
-        * {>>Optional, defaults to no function being triggered if a timeout happens.<<}
+    * [<span class="tag fun"></span>](types.md#function) **timeoutFunc**: The function that will be executed if the timeout is reached.
+        * {>>Optional<<}
 
-Example without a timeout:
-``` Lua
---Watches a die until it comes to rest, then print its result
-function onLoad()
-    --Roll a die, using its GUID
-    local die = getObjectFromGUID("555555")
-    die.roll()
+`conditionFunc` will be executed (possibly several times) until it returns `true`, at which point the
+scheduled function (`toRunFunc`) will be executed, and `conditionFunc` will no longer be executed again.
 
-    --Function that will be watched until it becomes true
-    local rollWatch = function() return die.resting end
-    --Function that will be run once the above condition becomes true
-    local rollEnd = function() print(die.getRotationValue()) end
+Optionally, a `timeout` and `timeoutFunc` may be specified. If `conditionFunc` does not return `true` before the specified
+timeout (seconds) has elapsed, then the scheduled function is cancelled i.e. will not be called. If a `timeoutFunc` is
+provided, then it will be called when the timeout is reached.
 
-    --Plug those two functions into the Wait function
-    Wait.condition(rollEnd, rollWatch)
-end
-```
-
-Example with a timeout, written differently:
-``` Lua
---Watches a die until it comes to rest, then print its result
-function onLoad()
-    --Roll a die, using its GUID
-    local die = getObjectFromGUID("a5b5ac")
-    die.roll()
-
-    --Activate the wait condition, passing parameters to exterior functions
+!!!example
+    Roll a die, and wait until it comes to rest.
+    ``` Lua
+    die.randomize() -- Roll a die
     Wait.condition(
-        function() printResult(die.getRotationValue()) end,
-        function() return checkResting(die) end,
-        2,
-        function() printResult("Too Slow!") end
+        function() -- Executed after our condition is met
+            if die.isDestroyed() then
+                print("Die was destroyed before it came to rest.")
+            else
+                print(die.getRotationValue() .. " was rolled.")
+            end
+        end,
+        function() -- Condition function
+            return die.isDestroyed() or die.resting
+        end
     )
-end
+    ```
 
---Prints the roll result, runs when wait condition is met
---It is also used in case of timeout to print that timeout message.
-function printResult(number)
-    print(number)
-end
-
---Checks if the object is resting
-function checkResting(target)
-    return target.resting
-end
-```
-
+!!!example
+    Launch an object into the air with a random impulse and wait until it comes to rest.
+    However, if it's taking too long (more than two seconds), give up waiting.
+    ``` Lua
+    local upwardImpulse = math.random(5, 25)
+    object.addForce({0, upwardImpulse, 0})
+    Wait.condition(
+        function()
+            if object.isDestroyed() then
+                print("Object was destroyed before it came to rest.")
+            else
+                print("The object came to rest in under two seconds.")
+            end
+        end,
+        function()
+            return object.isDestroyed() or object.resting
+        end,
+        2, -- second timeout
+        function() -- Executed if our timeout is reached
+            print("Took too long to come to rest.")
+        end
+    )
+    ```
 
 ---
-
 
 ###frames(...)
 
-[<span class="ret int"></span>](types.md)&nbsp;Activates a function after a set number of frames. The amount of time this takes is based off the Host's FPS. The higher their FPS, the faster this will trigger.
+[<span class="ret int"></span>](types.md)&nbsp;Schedules a function to be executed the specified number of frames have
+elapsed.
 
-> The returned value is an ID which can be used with [stop](#stop) to cancel the function at any time.
+The return value is a unique ID that may be used to [stop](#stop) the scheduled function before it runs.
 
 !!!info "frames(toRunFunc, frameCount)"
-    * [<span class="tag fun"></span>](types.md#function) **toRunFunc**: The function to activate once the condition is met.
-    * [<span class="tag int"></span>](types.md) **frameCount**: The number of frames to wait before activating the above function.
+    * [<span class="tag fun"></span>](types.md#function) **toRunFunc**: The function to be executed after the specified number of frames have elapsed.
+    * [<span class="tag int"></span>](types.md) **numberFrames**: The number of frames to must elapse before `toRunFunc` is executed.
+        * {>>Optional, defaults to `1`.<<}
 
-``` Lua
-function onLoad()
-	--Built-in functions with parameters can be called directly
-	--This is done by wrapping the function within `function()` and `end`
-	Wait.frames(function() print("One") end, 60)
+!!!example
+    Prints "Hello!" after 60 frames have elapsed.
+    ``` Lua
+    Wait.frames(
+        function()
+            print("Hello!")
+        end,
+        60
+    )
+    ```
+    It's a matter of personal preference, but it's quite common to see the above compacted into one line, like:
+    ``` Lua
+    Wait.frames(function() print("Hello!") end, 60)
+    ```
 
-	--You can also call custom functions you have made yourself
-	--Pass them any parameters you wish
-	Wait.frames(function() sayTwo("Two") end, 120)
+!!!example "Advanced Example"
+    <p>Prints "1", "2", "3", "4", "5", waiting 60 frames before each printed number.</p>
+    <p>Note that the scheduled function, upon execution, will reschedule itself unless `count` has reached 5.</p>
+    ``` Lua
+    local count = 1
+    local function printAndReschedule()
+        print(count)
 
-	--If you aren't passing any parameters to the function, you can shorten it
-	Wait.frames(sayThree, 180)
-end
+        if count < 5 then
+            count = count + 1
+            Wait.frames(printAndReschedule, 60)
+        end
+    end
 
---Has its parameter passed to it
-function sayTwo(s) print(s) end
-
---Does not have any parameters passed to it
-function sayThree() print("Three") end
-```
+    Wait.frames(printAndReschedule, 60)
+    ```
 
 ---
-
 
 ###stop(...)
-[<span class="ret boo"></span>](types.md)&nbsp;Stops a currently running Wait function. The only way to obtain these ID numbers is to get them from the return value of a Wait function.
+
+[<span class="ret boo"></span>](types.md)&nbsp;Cancels a Wait-scheduled function.
 
 !!!info "stop(id)"
-    * [<span class="tag int"></span>](types.md) **id**: The index number assigned by the game to every Wait function (besides stop).
+    * [<span class="tag int"></span>](types.md) **id**: A wait ID (returned from `Wait` scheduling functions).
 
-``` Lua
-function onLoad()
-    --This would print the message after 5 seconds
-    id = Wait.time(function() print("This won't print") end, 5)
-    --Except it is stopped immediately
-    Wait.stop(id)
-end
-```
+!!!example
+    Schedules two functions: one that says "Hello!", and one that says "Goodbye!". However, the latter is stopped before
+    it has a chance to execute i.e. We'll see "Hello!" printed, but we _won't_ see "Goodbye!"
+    ``` Lua
+    Wait.time(function() print("Hello!") end, 1)
+    local goodbyeId = Wait.time(function() print("Goodbye!") end, 2)
+    Wait.stop(goodbyeId)
+    ```
 
 ---
 
+###stopAll(...)
+
+Cancels all Wait-scheduled functions.
+
+!!!warning
+    You should be extremely careful using this function. Generally you should cancel individual scheduled functions with
+    [stop](#stop) instead.
+
+!!!example
+    Schedules two functions: one that says "Hello!", and one that says "Goodbye!". However, _both_ are stopped before
+    either has the chance to execute.
+    ``` Lua
+    Wait.time(function() print("Hello!") end, 1)
+    Wait.time(function() print("Goodbye!") end, 2)
+    Wait.stopAll()
+    ```
+
+---
 
 ###time(...)
-[<span class="ret int"></span>](types.md)&nbsp;Activates a function after a set amount of time has passes.
 
-> The returned value is an ID which can be used with [stop](#stop) to cancel the function at any time.
+[<span class="ret int"></span>](types.md)&nbsp;Schedules a function to be executed after the specified amount of time
+(in seconds) has elapsed.
 
-!!!info "time(toRunFunc, time, repetitions)"
-    * [<span class="tag fun"></span>](types.md#function) **toRunFunc**: The function to activate once the amount of time has passed.
-    * [<span class="tag flo"></span>](types.md) **time**: The amount of time before the function is triggered.
-    * [<span class="tag int"></span>](types.md) **repetitions**: Number of times the timer will be repeated.
-        * {>>Optional, defaults to 0.<<}
-        * {>>Using -1 causes it to loop indefinitely unless stopped.<<}
+The return value is a unique ID that may be used to [stop](#stop) the scheduled function before it runs.
 
-Example (basic usage):
-``` Lua
-function onLoad()
-	Wait.time(|| print("One"), 1)
+!!!info "time(toRunFunc, seconds, repetitions)"
+    * [<span class="tag fun"></span>](types.md#function) **toRunFunc**: The function to be executed after the specified amount of time has elapsed.
+    * [<span class="tag flo"></span>](types.md) **seconds**: The amount of time that must elapse before `toRunFunc` is executed.
+    * [<span class="tag int"></span>](types.md) **repetitions**: Number of times `toRunFunc` will be (re)scheduled. `-1` is infinite repetitions.
+        * {>>Optional, defaults to `1`.<<}
 
-	Wait.time(function() saySomething("Two") end, 2)
+`repetitions` is optional and defaults to `1`. When `repetitions` is a positive number, `toRunFunc` will execute for the
+specified number of repetitions, with the specified time delay before and between each execution. When `repetitions` is
+`-1`, `toRunFunc` will be re-scheduled indefinitely (i.e. infinite repetitions).
 
-	Wait.time(sayThree, 3)
-end
+!!!example
+    Prints "Hello!" after 1 second has elapsed.
+    ``` Lua
+    Wait.time(
+        function()
+            print("Hello!")
+        end,
+        1
+    )
+    ```
+    It's a matter of personal preference, but it's quite common to see the above compacted into one line, like:
+    ``` Lua
+    Wait.time(function() print("Hello!") end, 1)
+    ```
 
-function saySomething(something)
-    print(something)
-end
-
-function sayThree()
-    print("Three")
-end
-```
+!!!example
+    Prints "1", "2", "3", "4", "5", waiting 1 second before each printed number.
+    ``` Lua
+    local count = 1
+    Wait.time(
+        function()
+            print(count)
+            count = count + 1
+        end,
+        1, -- second delay
+        5 -- repetitions
+    )
+    ```
 
 ---
