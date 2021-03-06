@@ -23,123 +23,35 @@ Functions that interact with the in-game music player.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-play() | Plays currently loaded audioclip. Returns true if the music player is playing, otherwise returns false. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#play)
-pause() | Pauses currently playing audioclip. Returns true if the music player is paused, otherwise returns false. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#pause)
-skipForward() | Skips to the next audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#skipforward)
-skipBack() | Skips to the beginning of the audioclip or if the play time is less than 3 seconds to the previous audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#skipback)
 getCurrentAudioclip() | Gets the currently loaded audioclip. | [<span class="ret tab"></span>](types.md)| [<span class="i"></span>](#getcurrentaudioclip)
-setCurrentAudioclip() | Sets the audioclip to be loaded. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#setcurrentaudioclip)
 getPlaylist() | Gets the current playlist. | [<span class="ret tab"></span>](types.md)| [<span class="i"></span>](#getplaylist)
-setPlaylist() | Sets the current playlist. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#setplaylist)
+pause() | Pauses currently playing audioclip. Returns true if the music player is paused, otherwise returns false. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#pause)
+play() | Plays currently loaded audioclip. Returns true if the music player is playing, otherwise returns false. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#play)
+setCurrentAudioclip() | Sets the audioclip to be loaded. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#setcurrentaudioclip)
+setPlaylist() | Sets the current playlis
+skipBack() | Skips to the beginning of the audioclip or if the play time is less than 3 seconds to the previous audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#skipback)
+skipForward() | Skips to the next audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#skipforward) | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#setplaylist)
 
 ---
 
 
 ##Function Details
 
-####play()
-
-[<span class="ret boo"></span>](types.md)&nbsp;Plays currently loaded audioclip. Returns true if the music player is playing, otherwise returns false.
-
-``` Lua
---Example Usage
-startLuaCoroutine(self, "PlayMusic")
-
---Plays currently loaded audioclip when everyone has loaded the audioclip.
-function PlayMusic()
-  --Wait for everyone to load the audioclip.
-  while MusicPlayer.loaded == false do
-      coroutine.yield(0)
-  end
-
-  --Play audioclip.
-  MusicPlayer.play()
-
-  return 1
-end
-```
-
----
-
-####pause()
-
-[<span class="ret boo"></span>](types.md)&nbsp;Pauses currently playing audioclip. Returns true if the music player is paused, otherwise returns false.
-
-``` Lua
---Example Usage
-startLuaCoroutine(self, "PauseMusic")
-
---Pauses the currently playing audioclip after 1000 frames.
-function PauseMusic()
-  --Wait 1000 frames
-  for i=1,1000 do
-    coroutine.yield(0)
-  end
-
-  --Pause audioclip
-  MusicPlayer.pause()
-
-  return 1
-end
-```
-
----
-
-####skipForward()
-
-[<span class="ret boo"></span>](types.md)&nbsp;Skips to the next audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false.
-
-``` Lua
---Example Usage
-MusicPlayer.skipForward()
-```
-
----
-
-####skipBack()
-
-[<span class="ret boo"></span>](types.md)&nbsp;Skips to the beginning of the audioclip or if the play time is less than 3 seconds to the previous audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false.
-
-``` Lua
---Example Usage
-MusicPlayer.skipBack()
-```
-
----
-
 ####getCurrentAudioclip()
 
 [<span class="ret tab"></span>](types.md)&nbsp;Gets the currently loaded audioclip.
 
-``` Lua
---Example Usage
-currentAudioclip = MusicPlayer.getCurrentAudioclip()
-```
-``` Lua
---Example Returned Table
-{url="Audioclip Url", title="Audioclip Title"}
-```
+!!!info "Returned table"
+	* [<span class="tag tab"></span>](types.md) Table describing the current audioclip.
+		* [<span class="tag str"></span>](types.md) **url**: The URL of the current audioclip.
+		* [<span class="tag str"></span>](types.md) **title**: The title of the current audioclip.
 
----
-
-####setCurrentAudioclip(...)
-
-[<span class="ret boo"></span>](types.md)&nbsp;.Sets the audioclip to be loaded.
-
-!!!info "setCurrentAudioclip(parameters)"
-    * [<span class="tag tab"></span>](types.md) **parameters**: A Table containing the audioclip parameters.
-        * [<span class="tag str"></span>](types.md) **parameters.url**: Url for the new audioclip.
-        * [<span class="tag str"></span>](types.md) **parameters.title**: Title for the new audioclip.
-
-``` Lua
---Example Usage
-parameters =
-{
-	url="SOME URL HERE",
-	title="SOME TITLE HERE"
-}
-MusicPlayer.setCurrentAudioclip(parameters)
-```
+!!!example
+    Print the title of the current audioclip.
+    ``` Lua
+    local clip = MusicPlayer.getCurrentAudioclip()
+    print("Currently playing '" .. clip.title .. "'")
+    ```
 
 ---
 
@@ -147,40 +59,129 @@ MusicPlayer.setCurrentAudioclip(parameters)
 
 [<span class="ret tab"></span>](types.md)&nbsp;Gets the current playlist.
 
-``` Lua
---Example Usage
-playlist = MusicPlayer.getPlaylist()
-```
-``` Lua
---Example Returned Table
-{
-  {url="Audioclip Url 1", title="Audioclip Title 1"},
-  {url="Audioclip Url 2", title="Audioclip Title 2"},
-  {url="Audioclip Url 3", title="Audioclip Title 3"}
-}
-```
+!!!info "Returned table"
+	* [<span class="tag tab"></span>](types.md) Playlist table, consisting of zero or more audioclip sub-tables.
+        * [<span class="tag tab"></span>](types.md) Sub-table describing each audioclip.
+            * [<span class="tag str"></span>](types.md) **url**: The URL of the current audioclip.
+            * [<span class="tag str"></span>](types.md) **title**: The title of the current audioclip.
+
+!!!example
+    Print the track number and title of each audioclip making up the playlist.
+    ``` Lua
+    local playlist = MusicPlayer.getPlaylist()
+    for i, clip in ipairs(playlist) do
+        print(i .. " - " .. clip.title)
+    end
+    ```
+
+---
+
+####pause()
+
+[<span class="ret boo"></span>](types.md)&nbsp;Pause the current audioclip.
+
+Returns `true` if the music player is/was paused, otherwise `false`.
+
+!!!example
+    Pause the current track.
+    ``` Lua
+    MusicPlayer.pause()
+    ```
+
+---
+
+####play()
+
+[<span class="ret boo"></span>](types.md)&nbsp;Plays the current audioclip.
+
+Returns `true` if the music player is/was playing, otherwise `false`.
+
+!!!example
+    Play the current track.
+    ``` Lua
+    MusicPlayer.play()
+    ```
+
+---
+
+####setCurrentAudioclip(...)
+
+[<span class="ret boo"></span>](types.md)&nbsp;.Sets/loads the specified audioclip.
+
+!!!info "setCurrentAudioclip(parameters)"
+    * [<span class="tag tab"></span>](types.md) **parameters**: A table describing an audioclip.
+        * [<span class="tag str"></span>](types.md) **url**: The URL of the audioclip.
+        * [<span class="tag str"></span>](types.md) **title**: The title of the audioclip.
+
+!!!example
+    Set the current track.
+    ``` Lua
+    MusicPlayer.setCurrentAudioclip({
+        url = "https://domain.example/path/to/clip.mp3",
+        title = "Example"
+    })
+    ```
 
 ---
 
 ####setPlaylist(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;.Sets the current playlist.
+[<span class="ret boo"></span>](types.md)&nbsp;Sets the current playlist.
 
 !!!info "setPlaylist(parameters)"
-    * [<span class="tag tab"></span>](types.md) **parameters**: A Table containing the playlist parameters.
-        * [<span class="tag tab"></span>](types.md) **parameters**: A Table containing the audioclip parameters.
-            * [<span class="tag str"></span>](types.md) **parameters.url**: Url for the new audioclip.
-            * [<span class="tag str"></span>](types.md) **parameters.title**: Title for the new audioclip.
+    * [<span class="tag tab"></span>](types.md) **parameters**: A table containing zero or more audioclip sub-tables.
+        * [<span class="tag tab"></span>](types.md) Sub-table describing each audioclip.
+            * [<span class="tag str"></span>](types.md) **parameters.url**: The URL of an audioclip.
+            * [<span class="tag str"></span>](types.md) **parameters.title**: The title of an audioclip.
 
-``` Lua
---Example Usage
-parameters =
-{
-  {url="SOME URL HERE 1",title="SOME TITLE HERE 1"},
-  {url="SOME URL HERE 2",title="SOME TITLE HERE 2"},
-  {url="SOME URL HERE 3",title="SOME TITLE HERE 3"}
-}
-MusicPlayer.setPlaylist(parameters)
-```
+!!!example
+    Set the current playlist to include three pieces of music.
+    ``` Lua
+    MusicPlayer.setCurrentAudioclip({
+        {
+            url = "https://domain.example/path/to/clip.mp3",
+            title = "Example"
+        },
+        {
+            url = "https://domain.example/path/to/clip2.mp3",
+            title = "Example #2"
+        },
+        {
+            url = "https://domain.example/path/to/clip3.mp3",
+            title = "Example #3"
+        }
+    })
+    ```
+
+---
+
+####skipBack()
+
+[<span class="ret boo"></span>](types.md)&nbsp;Skips to the beginning of the audioclip or if the play time is less than 3 seconds to the previous audioclip in playlist if possible.
+
+Returns `true` if skip was successful, otherwise returns `false`.
+
+!!!example
+    Skip backwards to either the beginning of the audioclip, or the prior audioclip in the playlist.
+    ``` Lua
+    MusicPlayer.skipBack()
+    ```
+
+---
+
+####skipForward()
+
+[<span class="ret boo"></span>](types.md)&nbsp;Skips to the next audioclip in the current playlist. If the current
+audioclip is the last of the playlist, loops around to the first audioclip in the playlist.
+
+
+Returns `true` if skip was successful, otherwise returns `false`.
+
+
+!!!example
+    Skip to the next audioclip.
+    ``` Lua
+    MusicPlayer.skipForward()
+    ```
 
 ---
