@@ -1,6 +1,4 @@
-MusicPlayer, a static global class, is the in-game music player. It allows you to control the music player in the same way that the in-game music player user interface does.
-
-Example usage: `MusicPlayer.repeat_track = true`.
+`MusicPlayer` is a static global class which allows you to control the in-game music playback i.e. the in-game "Music" menu.
 
 ##Member Variables
 
@@ -15,10 +13,8 @@ Variable | Description | Type
 <a class="anchor" id="repeat_track"></a>repeat_track | If the current audioclip should be repeated.  | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="shuffle"></a>shuffle | If the playlist should play shuffled. | [<span class="tag boo"></span>](types.md)
 
-
 ##Function Summary
 
-###MusicPlayer Functions
 Functions that interact with the in-game music player.
 
 Function Name | Description | Return | &nbsp;
@@ -33,7 +29,6 @@ skipBack() | Skips to the beginning of the audioclip or if the play time is less
 skipForward() | Skips to the next audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#skipforward) | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#setplaylist)
 
 ---
-
 
 ##Function Details
 
