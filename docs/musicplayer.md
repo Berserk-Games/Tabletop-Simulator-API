@@ -8,11 +8,12 @@ Like [Object member variables](object.md#member-variables), MusicPlayer has its 
 
 Variable | Description | Type
 -- | -- | :--
-<a class="anchor" id="repeat_track"></a>repeat_track | If the current audioclip should be repeated.  | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="shuffle"></a>shuffle | If the playlist should play shuffled. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="playlistIndex"></a>playlistIndex | Current index of the playlist. -1 if no playlist audioclip is playing. | [<span class="tag int"></span>](types.md)
 <a class="anchor" id="loaded"></a>loaded | If all players loaded the current audioclip. Read only. | [<span class="tag boo"></span>](types.md)
 <a class="anchor" id="player_status"></a>player_status | The current state of the music player. Read only. <br/>Options: "Stop", "Play", "Loading", "Ready". | [<span class="tag str"></span>](types.md)
+<a class="anchor" id="playlistIndex"></a>playlistIndex |  <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [playlist_index](#playlist_index)_.</p>Current index of the playlist. `-1` if no playlist audioclip is playing. | [<span class="tag int"></span>](types.md)
+<a class="anchor" id="playlist_index"></a>playlist_index | Current index of the playlist. `-1` if no playlist audioclip is playing. | [<span class="tag int"></span>](types.md)
+<a class="anchor" id="repeat_track"></a>repeat_track | If the current audioclip should be repeated.  | [<span class="tag boo"></span>](types.md)
+<a class="anchor" id="shuffle"></a>shuffle | If the playlist should play shuffled. | [<span class="tag boo"></span>](types.md)
 
 
 ##Function Summary
