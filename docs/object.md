@@ -95,6 +95,8 @@ addTorque([<span class="tag vec"></span>](types.md#vector)&nbsp;vector, [<span c
 <a class="anchor" id="getangularvelocity"></a>getAngularVelocity() | Returns a Vector of the current angular velocity. | [<span class="ret vec"></span>](types.md#vector)
 getBounds() | Returns a Vector describing the size of an object in Global terms. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#getbounds)
 getBoundsNormalized() | Returns a Vector describing the size of an object in Global terms, as if it was rotated to {0,0,0}. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#getboundsnormalized)
+<a class="anchor" id="getnearestpositionfromobject"></a>getNearestPointFromObject([<span class="tag obj"></span>](types.md)&nbsp;other_object) | Returns the nearest point to the other Object. | [<span class="ret vec"></span>](types.md#vector) | 
+<a class="anchor" id="getnearestpositionfromposition"></a>getNearestPointFromPosition([<span class="tag vec"></span>](types.md)&nbsp;position) | Returns the nearest point to the position. | [<span class="ret vec"></span>](types.md#vector) | 
 <a class="anchor" id="getposition"></a>getPosition() | Returns a Vector of the current [World Position](types.md#position). | [<span class="ret vec"></span>](types.md#vector)
 <a class="anchor" id="getpositionsmooth"></a>getPositionSmooth() | Returns a Vector of the current smooth move target if the object is moving, otherwise returns nil. | [<span class="ret vec"></span>](types.md#vector)
 <a class="anchor" id="getrotation"></a>getRotation() | Returns a Vector of the current rotation. | [<span class="ret vec"></span>](types.md#vector)
@@ -243,7 +245,7 @@ reload() | Returns Object reference of itself after it respawns itself. | [<span
 <a class="anchor" id="reset"></a>reset() | Resets this Object. Resetting a Deck brings all the Cards back into it. Resetting a Bag clears its contents (works for both Loot and Infinite Bags). | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="roll"></a>roll() | Rolls dice/coins. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="shuffle"></a>shuffle() | Shuffles/shakes up contents of a deck or bag. | [<span class="ret boo"></span>](types.md) |
-<a class="anchor" id="shufflestates"></a>shuffleStates() | Returns an Object reference to a new [state](http://berserk-games.com/knowledgebase/creating-states/) after randomly selecting and changing to one. | [<span class="ret obj"></span>](types.md) |
+<a class="anchor" id="shufflestates"></a>shuffleStates() | Returns an Object reference to a new [state](https://kb.tabletopsimulator.com/host-guides/creating-states/) after randomly selecting and changing to one. | [<span class="ret obj"></span>](types.md) |
 split([<span class="tag int"></span>](types.md)&nbsp;piles) | Splits a deck, as evenly as possible, into a number of piles. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#split)
 spread([<span class="tag flo"></span>](types.md)&nbsp;distance) | Uses the spread action on a deck. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#spread)
 takeObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Takes an object out of a container (bag/deck/chip stack), returning a reference to the object that was taken out. | [<span class="ret obj"></span>](types.md) | [<span class="i"></span>](#takeobject)
@@ -986,7 +988,7 @@ If an Object is inside of a container, it does not exist in-game. As a result, y
 
 !!!info "Return Table by Object Type"
 	!!!info "Scripting Zone"
-		Returns a Table of Object references to every object in the scripting zone.
+		Returns a Table of Object references to every object in the scripting zone. If a scripting zone has [Tags](https://kb.tabletopsimulator.com/game-tools/object-tags/) set on it then only Objects with matching tags will be returned unless you override with `scripting_zone.getObjects(true)`.
 
 		``` Lua
 		{
