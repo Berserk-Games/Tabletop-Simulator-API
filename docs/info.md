@@ -1,4 +1,4 @@
-The static global Info class allows you to interact with Hand Objects. This allows you to manipulate the Info properties in the same way as the in-game interface.
+The static global Info class allows you to manipulate the Info properties in the same way as the in-game interface.
 
 > Example Usage:`#!lua Info.name = "My Game"`.
 
