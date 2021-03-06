@@ -85,8 +85,8 @@ provided, then it will be called when the timeout is reached.
 
 ###frames(...)
 
-[<span class="ret int"></span>](types.md)&nbsp;Schedules a function to be executed the specified number of frames have
-elapsed.
+[<span class="ret int"></span>](types.md)&nbsp;Schedules a function to be executed after the specified number of frames
+have elapsed.
 
 The return value is a unique ID that may be used to [stop](#stop) the scheduled function before it runs.
 
