@@ -9,7 +9,8 @@ These are functions which are triggered by an event taking place in-game. They w
 
 Function Name | Description | &nbsp;
 -- | -- | --
-filterObjectEnterContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when an object attempts to enter any container. The object is prevented from entering unless `true` is returned. | [<span class="i"></span>](#filterobjectentercontainer)
+filterObjectEnterContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer](#tryobjectentercontainer)_.</p>Called when an object attempts to enter any container. The object is prevented from entering unless `true` is returned. | 
+onBlindfold([<span class="tag pla"></span>](types.md)&nbsp;player, [<span class="tag boo"></span>](types.md)&nbsp;blindfold) | Called when a player puts on or takes off their blindfold. | 
 onChat([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag pla"></span>](types.md)&nbsp;sender) | Called when a chat message is sent in game chat. | [<span class="i"></span>](#onchat)
 onExternalMessage([<span class="tag tab"></span>](types.md)&nbsp;data) | Called when an external script editor (like [Atom](atom.md)) sends a message back to the game. Used for custom editor functionality. | [<span class="i"></span>](#onexternalmessage)
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [<span class="i"></span>](#onfixedupdate)
@@ -28,12 +29,13 @@ onObjectLeaveContainer([<span class="tag obj"></span>](types.md)&nbsp;container,
 onObjectLoopingEffect([<span class="tag obj"></span>](types.md)&nbsp;loop_object, [<span class="tag int"></span>](types.md)&nbsp;index) | Called whenever the looping effect of an [AssetBundle](assetbundle.md) is activated. | [<span class="i"></span>](#onobjectloopingeffect)
 onObjectNumberTyped([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;number) | Called when a player types a number whilst hovering over an object. | [<span class="i"></span>](#onobjectnumbertyped)
 onObjectPageChange([<span class="tag obj"></span>](types.md)&nbsp;object) | Called when a Custom PDF object changes page. | [<span class="i"></span>](#onobjectpagechange)
-onObjectPeek([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag str"></span>](types.md)&nbsp;player) | Called when a player using peek to look under an Object. | [<span class="i"></span>](#onobjectpeek)
+onObjectPeek([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player using peek to look under an Object. | [<span class="i"></span>](#onobjectpeek)
 onObjectPickUp([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag obj"></span>](types.md)&nbsp;picked_up_object) | Called whenever a Player picks up an Object. | [<span class="i"></span>](#onobjectpickup)
 onObjectRandomize([<span class="tag obj"></span>](types.md)&nbsp;randomize_object, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when an Object is randomized. Like when shuffling a deck or shaking dice. | [<span class="i"></span>](#onobjectrandomize)
 onObjectSearchEnd([<span class="tag obj"></span>](types.md)&nbsp;obj, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a search is finished on any container. | [<span class="i"></span>](#onobjectsearchend)
 onObjectSearchStart([<span class="tag obj"></span>](types.md)&nbsp;obj, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a search is started on any container. | [<span class="i"></span>](#onobjectsearchstart)
 onObjectSpawn([<span class="tag obj"></span>](types.md)&nbsp;spawn_object) | Called when any Object is spawned/created. | [<span class="i"></span>](#onobjectspawn)
+onObjectStateChange([<span class="tag obj"></span>](types.md)&nbsp;obj, [<span class="tag str"></span>](types.md)&nbsp;old_guid) | Called when any object changes states. | [<span class="i"></span>](#onobjectstatechange)
 onObjectTriggerEffect([<span class="tag obj"></span>](types.md)&nbsp;trigger_object, [<span class="tag int"></span>](types.md)&nbsp;index) | Called whenever the trigger effect of an [AssetBundle](assetbundle.md) is activated. | [<span class="i"></span>](#onobjecttriggereffect)
 onPlayerChangeColor([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [<span class="i"></span>](#onplayerchangecolor)
 onPlayerChangeTeam([<span class="tag str"></span>](types.md)&nbsp;player_color,&nbsp;[<span class="tag str"></span>](types.md)&nbsp;team) | Called when a player changes team. | [<span class="i"></span>](#onplayerchangeteam)
@@ -44,6 +46,8 @@ onSave() | Called whenever your game is saved. | [<span class="i"></span>](#onsa
 onScriptingButtonDown([<span class="tag int"></span>](types.md)&nbsp;index, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttondown)
 onScriptingButtonUp([<span class="tag int"></span>](types.md)&nbsp;index, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttonup)
 onUpdate() | Called **every frame**. | [<span class="i"></span>](#onupdate)
+tryObjectEnterContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when an object attempts to enter any container. The object is prevented from entering unless `true` is returned. | [<span class="i"></span>](#tryobjectentercontainer)
+tryObjectRandomize([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when someone tries to shuffle/roll/randomize an object. The object is prevented from being shuffled/rolled/randomized unless `true` is returned. | 
 
 
 
@@ -59,44 +63,29 @@ These are functions which are triggered by an event taking place in-game. They o
 
 Function Name | Description | &nbsp;
 -- | -- | --
-filterObjectEnter([<span class="tag obj"></span>](types.md)&nbsp;obj) | Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned. | [<span class="i"></span>](#filterobjectenter)
+filterObjectEnter([<span class="tag obj"></span>](types.md)&nbsp;obj) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnter](#tryobjectenter)_.</p>Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned. | 
 onCollisionEnter([<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called when an Object starts colliding with the Object the function is on. | [<span class="i"></span>](#oncollisionenter)
 onCollisionExit([<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called when an Object stops colliding with the Object the function is on. | [<span class="i"></span>](#oncollisionexit)
 onCollisionStay([<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called **every frame** that an Object is colliding with the Object this function is on. | [<span class="i"></span>](#oncollisionstay)
 onDestroy() | Called when an Object it is on is destroyed. | [<span class="i"></span>](#ondestroy)
-onDrop([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player releases an Object after picking it up. | [<span class="i"></span>](#ondrop)
-onFlick([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag vec"></span>](types.md)&nbsp;impulse) | Called when a player flicks the object. | [<span class="i"></span>](#onflick)
-onHover([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player moves their pointer (cursor) over the object. | [<span class="i"></span>](#onhover)
-onNumberTyped([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;number) | Called when a player types a number whilst hovering over the object. | [<span class="i"></span>](#onnumbertyped)
+onDrop([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player releases this Object after picking it up. | [<span class="i"></span>](#ondrop)
+onFlick([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag vec"></span>](types.md)&nbsp;impulse) | Called when a player flicks this object. | [<span class="i"></span>](#onflick)
+onHover([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player moves their pointer (cursor) over this object. | [<span class="i"></span>](#onhover)
+onNumberTyped([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;number) | Called when a player types a number whilst hovering over this object. | [<span class="i"></span>](#onnumbertyped)
 onPageChange() | Called when a Custom PDF page is changed. | [<span class="i"></span>](#onpagechange)
 onPeek([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player using peek to look under this Object. | [<span class="i"></span>](#onpeek)
-onPickUp([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player picks up an Object. | [<span class="i"></span>](#onpickup)
+onPickUp([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player picks up this Object. | [<span class="i"></span>](#onpickup)
 onRandomize([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when this Object is randomized. Like when shuffling a deck or shaking dice. | [<span class="i"></span>](#onrandomize)
 onSearchEnd([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player finishes searches this Object. | [<span class="i"></span>](#onsearchend)
 onSearchStart([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player starts searching this Object. | [<span class="i"></span>](#onsearchstart)
+onStateChange( [<span class="tag str"></span>](types.md)&nbsp;old_guid) | Called when this object changes states. | [<span class="i"></span>](#onstatechange)
+tryObjectEnter([<span class="tag obj"></span>](types.md)&nbsp;obj) | Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned. | [<span class="i"></span>](#tryobjectenter)
+tryRandomize([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when someone tries to shuffle/roll/randomize this object. The object is prevented from being shuffled/rolled/randomized unless `true` is returned. | [<span class="i"></span>](#tryrandomize)
 
 
 ---
 
 ##Function Details (Global & Object)
-
-###filterObjectEnterContainer(...)
-
-Called when an object attempts to enter a container. The object is prevented from entering unless `true` is returned.
-
-!!!info "filterObjectEnter(container, enter_object)"
-	* [<span class="tag obj"></span>](types.md)&nbsp;**container**: The container the Object is trying to enter.
-	* [<span class="tag obj"></span>](types.md)&nbsp;**enter_object**: The Object entering the container.
-
-``` Lua
-function filterObjectEnterContainer(container, enter_object)
-	print(enter_object.getName()) -- Print entering object's name
-	return true -- Allows object to enter.
-end
-```
-
-
----
 
 ###onChat(...)
 
@@ -299,7 +288,7 @@ end
 Called whenever any object is dropped by a player.
 
 !!!info "onObjectDrop(player_color, dropped_object)"
-	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the Player who dropped the Object.
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who dropped the Object.
 	* [<span class="tag obj"></span>](types.md)&nbsp;**dropped_object**: The Object in game which was dropped.
 
 ``` Lua
@@ -494,9 +483,9 @@ Called when an object's Custom PDF page is changed.
 
 Called when a player using peek to look under an Object.
 
-!!!info "onObjectPeek(object, player)"
+!!!info "onObjectPeek(object, player_color)"
 	* [<span class="tag obj"></span>](types.md)&nbsp;**object**: A reference to the Object which was peeked at.
-	* [<span class="tag str"></span>](types.md)&nbsp;**player**: Name of the [Player Color](player-color.md) that peeked.
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player that peeked.
 
 
 
@@ -534,7 +523,7 @@ end
 Called when an Object is randomized. Like when shuffling a deck or shaking dice.
 
 !!!info "onObjectRandomize(randomize_object, player_color)"
-	* [<span class="tag obj"></span>](types.md)&nbsp;**spawn_object**: The Object which triggered this function.
+	* [<span class="tag obj"></span>](types.md)&nbsp;**randomize_object**: The Object which triggered this function.
 	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who triggered the function.
 
 
@@ -582,6 +571,16 @@ function onObjectSpawn(obj)
 	print(obj)
 end
 ```
+
+---
+
+###onObjectStateChange(...)
+
+Called when any object changes states, after it is in the new state.
+
+!!!info "onObjectStateChange(obj, old_guid)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;obj: The object that just changed states.
+	* [<span class="tag str"></span>](types.md)&nbsp;old_guid): The guid that the object had before it changed states.
 
 ---
 
@@ -747,6 +746,45 @@ end
 
 ---
 
+###tryObjectEnterContainer(...)
+
+Called when an object attempts to enter a container. The object is prevented from entering unless `true` is returned.
+
+!!!info "tryObjectEnter(container, enter_object)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**container**: The container the Object is trying to enter.
+	* [<span class="tag obj"></span>](types.md)&nbsp;**enter_object**: The Object entering the container.
+
+``` Lua
+function tryObjectEnterContainer(container, enter_object)
+	print(enter_object.getName()) -- Print entering object's name
+	return true -- Allows object to enter.
+end
+```
+
+---
+
+
+##tryObjectRandomize(...)
+
+Called when someone tries to shuffle/roll/randomize an object. The object is prevented from being shuffled/rolled/randomized unless `true` is returned.
+
+!!!info "tryObjectRandomize(randomize_object, player_color)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**randomize_object**: The object someone tried to shuffle/roll/randomize.
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who tried to shuffle/roll/randomize the object.
+
+``` Lua
+function tryRandomize(randomize_object, player_color)
+	print(player_color .. " tried to randomize " .. randomize_object.getName())
+	if player_color == "Red" then -- Prevent the red player from randomizing any object
+		return false
+	end
+	return true
+end
+```
+
+
+---
+
 ---
 
 
@@ -756,22 +794,6 @@ end
 ##Function Details (Object only)
 
 
-###filterObjectEnter(...)
-
-Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned.
-
-!!!info "filterObjectEnter(obj)"
-	* [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The object that has tried to enter the object this script is attached to.
-
-``` Lua
-function filterObjectEnter(obj)
-	print(obj.getName()) -- Print entering object's name
-	return true -- Allows object to enter.
-end
-```
-
-
----
 
 ###onCollisionEnter(...)
 
@@ -973,10 +995,10 @@ Called when this [Object](object.md)'s Custom PDF page is changed.
 
 ###onPeek(...)
 
-Called when a player using peek to look under an Object.
+Called when a player using peek to look under this [Object](object.md).
 
 !!!info "onPeek(player_color)"
-	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: Name of the [Player Color](player-color.md) that peeked.
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player that peeked.
 
 
 ``` Lua
@@ -991,7 +1013,7 @@ end
 
 ###onPickUp(...)
 
-Called when a player picks up an Object.
+Called when a player picks up this [Object](object.md).
 
 !!!info "onPickUp(player_color)"
 	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the Player.
@@ -1008,7 +1030,7 @@ end
 
 ###onRandomize(...)
 
-Called when an Object is randomized. Like when shuffling a deck or shaking dice.
+Called when this [Object](object.md) is randomized. Like when shuffling a deck or shaking dice.
 
 !!!info "onRandomize(player_color)"
 	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who triggered the function.
@@ -1029,7 +1051,7 @@ end
 
 ###onSearchEnd(...)
 
-Called when a player first searches this Object.
+Called when a player first searches this [Object](object.md).
 
 !!!info "onSearchEnd([<span class="tag str"></span>](types.md)&nbsp;player_color)"
 	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the Player.
@@ -1039,9 +1061,56 @@ Called when a player first searches this Object.
 
 ###onSearchStart(...)
 
-Called when a player finishes searching this Object.
+Called when a player finishes searching this [Object](object.md).
 
 !!!info "onSearchStart([<span class="tag str"></span>](types.md)&nbsp;player_color)"
 	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the Player.
+
+---
+
+###onStateChange(...)
+
+Called when this object changes states.
+
+!!!info "onStateChange(old_guid)"
+	* [<span class="tag str"></span>](types.md)&nbsp;old_guid): The guid that this object had before it changed states.
+
+---
+
+
+
+##tryObjectEnter(...)
+
+Called when an object attempts to enter this [Object](object.md). The object is prevented from entering unless `true` is returned.
+
+!!!info "tryObjectEnter(obj)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The object that has tried to enter the object this script is attached to.
+
+``` Lua
+function tryObjectEnter(obj)
+	print(obj.getName()) -- Print entering object's name
+	return true -- Allows object to enter.
+end
+```
+
+
+---
+
+##tryRandomize(...)
+
+Called when someone tries to shuffle/roll/randomize this [Object](object.md). The object is prevented from being shuffled/rolled/randomized unless `true` is returned.
+
+!!!info "tryRandomize(player_color)"
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who tried to shuffle/roll/randomize the object this script is attached to.
+
+``` Lua
+function tryRandomize(player_color)
+	print(player_color .. " tried to randomize " .. self.getName())
+	if player_color == "Red" then -- Prevent the red player from randomizing this object
+		return false
+	end
+	return true
+end
+```
 
 ---
