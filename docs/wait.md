@@ -92,7 +92,7 @@ The return value is a unique ID that may be used to [stop](#stop) the scheduled 
 
 !!!info "frames(toRunFunc, frameCount)"
     * [<span class="tag fun"></span>](types.md#function) **toRunFunc**: The function to be executed after the specified number of frames have elapsed.
-    * [<span class="tag int"></span>](types.md) **numberFrames**: The number of frames to must elapse before `toRunFunc` is executed.
+    * [<span class="tag int"></span>](types.md) **numberFrames**: The number of frames that must elapse before `toRunFunc` is executed.
         * {>>Optional, defaults to `1`.<<}
 
 !!!example
