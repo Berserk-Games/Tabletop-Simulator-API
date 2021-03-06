@@ -1,4 +1,4 @@
-The static global Hands class allows you to interact with Hand Objects. This allows you to manipulate the properties of Hand Zones in the same way as the in-game interface.
+The static global Hands class allows you to interact with Hand Objects. This allows you to manipulate the properties of [Hand Zones](https://kb.tabletopsimulator.com/host-guides/player-hands/) in the same way as the in-game interface.
 
 > Example Usage:`#!lua Hands.enable = true`.
 

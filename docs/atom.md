@@ -18,7 +18,7 @@ This page provides a basic overview of how to install and use the plugin; if you
 
 Our official plugin introduces syntax highlighting, code autocompletion for the Tabletop Simulator Lua API, and functions to interact with the game. The in-game editor will continue to exist for quick access to scripts, but development on it will cease to continue.
 
-Prefer another text editor? Take look at our [External Editor API](http://berserk-games.com/knowledgebase/external-editor-api/) to make your own plugin.
+Prefer another text editor? Take look at our [External Editor API](externaleditorapi.md) to make your own plugin.
 
 ## Features
 

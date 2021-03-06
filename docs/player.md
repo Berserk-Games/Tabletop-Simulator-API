@@ -1,4 +1,4 @@
-Player, a static global class, allows control over in-game players and their [hand zones](http://berserk-games.com/knowledgebase/hands/).
+Player, a static global class, allows control over in-game players and their [hand zones](https://kb.tabletopsimulator.com/host-guides/player-hands/).
 
 Example Usage: `Player["White"].seated` or `Player["Green"].mute()`
 
@@ -32,9 +32,9 @@ attachCameraToObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) 
 broadcast([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag col"></span>](types.md)&nbsp;message_color) | Print message on Player's screen and their game chat log. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#broadcast)
 changeColor([<span class="tag str"></span>](types.md)&nbsp;player_color) | Changes player to this [Player Color](player-color.md). | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#changecolor)
 <a class="anchor" id="clearselectedobjects"></a>clearSelectedObjects() | Clears a player's current selection. | [<span class="ret boo"></span>](types.md)
-<a class="anchor" id="gethandcount"></a>getHandCount() | Number of [hand zones](http://berserk-games.com/knowledgebase/hands/) owned by this color. | [<span class="ret int"></span>](types.md)
-getHandObjects([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#gethandobjects)
-getHandTransform([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Returns a Table of data on this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#gethandtransform)
+<a class="anchor" id="gethandcount"></a>getHandCount() | Number of [hand zones](https://kb.tabletopsimulator.com/host-guides/player-hands/) owned by this color. | [<span class="ret int"></span>](types.md)
+getHandObjects([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Objects that are in this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#gethandobjects)
+getHandTransform([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Returns a Table of data on this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#gethandtransform)
 <a class="anchor" id="getholdingobjects"></a>getHoldingObjects() | Objects a Player is holding in their hand. | [<span class="ret tab"></span>](types.md)
 <a class="anchor" id="gethoverobject"></a>getHoverObject() | Object that the Player's pointer is hovering over. | [<span class="ret obj"></span>](types.md)
 <a class="anchor" id="getpointerposition"></a>getPointerPosition() | Player's pointer coordinates. | [<span class="ret vec"></span>](types.md#vector)
@@ -113,7 +113,7 @@ Player["White"].changeColor("Red")
 
 ####getHandObjects(...)
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table of Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/).
+[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table of Objects that are in this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/).
 
 !!!info "getHandObjects(hand_index)"
     * [<span class="tag int"></span>](types.md) **hand_index**: An index, representing which hand zone to return Objects for.
@@ -127,7 +127,7 @@ Player["White"].changeColor("Red")
 
 ####getHandTransform(...)
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table of data on this [hand zone](http://berserk-games.com/knowledgebase/hands/).
+[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table of data on this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/).
 
 !!!info "getHandTransform(hand_index)"
     * [<span class="tag int"></span>](types.md) **hand_index**: An index, representing which hand zone to return data on.
@@ -202,7 +202,7 @@ Player["White"].setCameraMode("FirstPerson")
 
 ####setHandTransform(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Sets transform elements of a [hand zone](http://berserk-games.com/knowledgebase/hands/).
+[<span class="ret boo"></span>](types.md)&nbsp;Sets transform elements of a [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/).
 
 !!!info "setHandTransform(parameters, hand_index)"
     * [<span class="tag tab"></span>](types.md) **parameters**: The Table of data to transform the hand zone with.

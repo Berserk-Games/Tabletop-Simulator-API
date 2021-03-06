@@ -1,4 +1,4 @@
-TextTool is a special Object type for creating text labels in the game instance. It is the same text that is created with the [text tool](http://berserk-games.com/knowledgebase/1958/). You call these functions like this: `self.TextTool.getFontColor()`.
+TextTool is a special Object type for creating text labels in the game instance. It is the same text that is created with the [text tool](https://kb.tabletopsimulator.com/game-tools/text-tool/). You call these functions like this: `self.TextTool.getFontColor()`.
 
 ##Function Summary
 

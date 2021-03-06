@@ -63,7 +63,7 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
 
 !!!info "Custom Parameters"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
-        * [<span class="tag str"></span>](types.md) **image**: The path/url for the [custom die](http://berserk-games.com/knowledgebase/custom-dice/).
+        * [<span class="tag str"></span>](types.md) **image**: The path/url for the [custom die](https://kb.tabletopsimulator.com/custom-content/custom-dice/).
         * [<span class="tag int"></span>](types.md) **type**: The type of die, which determines its number of sides.
             * {>>Optional, defaults to 1.<<}
                 * **0**: 4-sided
@@ -79,7 +79,7 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
 
 !!!info "Custom Parameters"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
-        * [<span class="tag str"></span>](types.md) **image**: The path/url for the [custom figurine](http://berserk-games.com/knowledgebase/custom-figurines/).
+        * [<span class="tag str"></span>](types.md) **image**: The path/url for the [custom figurine](https://kb.tabletopsimulator.com/custom-content/custom-figurine/).
         * [<span class="tag str"></span>](types.md) **image_secondary**: The path/url for the custom figurine's back.
             * {>>Optional, defaults to "image".<<}
 
@@ -89,7 +89,7 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
 
 !!!info "Custom Parameters"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
-        * [<span class="tag str"></span>](types.md) **mesh**: The path/url for the .obj mesh used on the [custom model](http://berserk-games.com/knowledgebase/custom-models/).
+        * [<span class="tag str"></span>](types.md) **mesh**: The path/url for the .obj mesh used on the [custom model](https://kb.tabletopsimulator.com/custom-content/custom-model/).
         * [<span class="tag str"></span>](types.md) **diffuse**: The path/url for the diffuse image.
         * [<span class="tag str"></span>](types.md) **normal**: The path/url for the normals image.
             * {>>Optional, is not used by default.<<}
@@ -130,7 +130,7 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
 
 !!!info "Custom Parameters"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
-        * [<span class="tag str"></span>](types.md) **image**: The path/url for the [custom tile](http://berserk-games.com/knowledgebase/custom-tiles/) image.
+        * [<span class="tag str"></span>](types.md) **image**: The path/url for the [custom tile](https://kb.tabletopsimulator.com/custom-content/custom-tile/) image.
         * [<span class="tag int"></span>](types.md) **type**: Determines the shape of the tile.
             * {>>Optional, defaults to 0.<<}
                 * **0**: Square/Rectangle
@@ -149,7 +149,7 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
 
 !!!info "Custom Parameters"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
-        * [<span class="tag str"></span>](types.md) **image**: The path/url for the [custom token](http://berserk-games.com/knowledgebase/custom-tokens/) image.
+        * [<span class="tag str"></span>](types.md) **image**: The path/url for the [custom token](https://kb.tabletopsimulator.com/custom-content/custom-token/) image.
         * [<span class="tag flo"></span>](types.md) **thickness**: How thick the tile is.
             * {>>Optional, defaults to 0.2.<<}
         * [<span class="tag flo"></span>](types.md) **mege_distance**: How accurate the edges are to the image.
