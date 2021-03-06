@@ -2105,6 +2105,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#stopall" title="stopAll(...)" class="md-nav__link">
+    stopAll(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#time" title="time(...)" class="md-nav__link">
     time(...)
   </a>
@@ -2523,6 +2530,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#stopall" title="stopAll(...)" class="md-nav__link">
+    stopAll(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#time" title="time(...)" class="md-nav__link">
     time(...)
   </a>
@@ -2555,11 +2569,11 @@
                 
                   <h1>Wait</h1>
                 
-                <p>The Wait class is a static global class which deals with triggering a specified function after some form of delay. It is how you can add pauses into your code while you wait for something, like waiting for a deck to finish forming after using putObject.</p>
-<p>Example usage: <code class="codehilite">Wait.frames(functionName, 60)</code></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>This is the first Class to use functions as parameters. To help, detailed examples are included for each usage. For more details, you can check out the <a href="../types/#function">Function section</a> of the Introduction page.</p>
+                <p>The <code class="codehilite">Wait</code> class is a static global class which allows you to schedule code (functions) to be executed later on.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Please note that <code class="codehilite">Wait</code> does <em>not</em> pause Lua script execution, <em>because that would freeze Tabletop Simulator!</em> The
+next line of code after a <code class="codehilite">Wait</code> function call will always be executed immediately.</p>
 </div>
 <h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link"> </a></h2>
 <table>
@@ -2574,25 +2588,31 @@
 <tbody>
 <tr>
 <td>condition(<a href="../types/#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="../types/#function"><span class="tag fun"></span></a>&nbsp;conditionFunc, <a href="../types/"><span class="tag flo"></span></a>&nbsp;timeout, <a href="../types/#function"><span class="tag fun"></span></a>&nbsp;timeoutFunc)</td>
-<td>Activates a function when a given function returns <code class="codehilite">true</code> or activates a different function if a timeout occurs.</td>
+<td>Schedules a function to be executed after the specified condition has been met.</td>
 <td><a href="../types/"><span class="ret int"></span></a></td>
 <td><a href="#condition"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>frames(<a href="../types/#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="../types/"><span class="tag int"></span></a>&nbsp;frameCount)</td>
-<td>Activates a function after a set number of frames.</td>
+<td>frames(<a href="../types/#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="../types/"><span class="tag int"></span></a>&nbsp;numberFrames)</td>
+<td>Schedules a function to be executed after the specified number of frames have elapsed.</td>
 <td><a href="../types/"><span class="ret int"></span></a></td>
 <td><a href="#frames"><span class="i"></span></a></td>
 </tr>
 <tr>
 <td>stop(<a href="../types/"><span class="tag int"></span></a>&nbsp;id)</td>
-<td>Stops a currently running Wait function.</td>
+<td>Cancels a Wait-scheduled function.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#stop"><span class="i"></span></a></td>
 </tr>
 <tr>
-<td>time(<a href="../types/#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="../types/"><span class="tag flo"></span></a>&nbsp;time, <a href="../types/"><span class="tag int"></span></a>&nbsp;repetitions)</td>
-<td>Activates a function after a set amount of time has passed.</td>
+<td>stopAll()</td>
+<td>Cancels all Wait-scheduled functions.</td>
+<td></td>
+<td><a href="#stopall"><span class="i"></span></a></td>
+</tr>
+<tr>
+<td>time(<a href="../types/#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="../types/"><span class="tag flo"></span></a>&nbsp;seconds, <a href="../types/"><span class="tag int"></span></a>&nbsp;repetitions)</td>
+<td>Schedules a function to be executed after the specified amount of time (in seconds) has elapsed.</td>
 <td><a href="../types/"><span class="ret int"></span></a></td>
 <td><a href="#time"><span class="i"></span></a></td>
 </tr>
@@ -2601,153 +2621,198 @@
 <hr />
 <h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link"> </a></h2>
 <h3 id="condition">condition(...)<a class="headerlink" href="#condition" title="Permanent link"> </a></h3>
-<p><a href="../types/"><span class="ret int"></span></a>&nbsp;Activates a function when a given function returns <code class="codehilite">true</code> or activates a different function if a timeout occurs.</p>
-<blockquote>
-<p>The returned value is an ID which can be used with <a href="#stop">stop</a> to cancel the function at any time.</p>
-</blockquote>
+<p><a href="../types/"><span class="ret int"></span></a>&nbsp;Schedules a function to be executed after the specified condition has been met.</p>
+<p>The return value is a unique ID that may be used to <a href="#stop">stop</a> the scheduled function before it runs.</p>
 <div class="admonition info">
 <p class="admonition-title">condition(toRunFunc, conditionFunc, timeout, timeoutFunc)</p>
 <ul>
-<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to activate once the condition is met.</li>
-<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>conditionFunc</strong>: The function that is watched until it returns <code class="codehilite">true</code>.</li>
-<li><a href="../types/"><span class="tag flo"></span></a> <strong>timeout</strong>: The amount of time, in seconds, before this function gives up checking the condition function.<ul>
+<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to be executed after the specified condition is met.</li>
+<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>conditionFunc</strong>: The function that will be executed repeatedly, until it returns <code class="codehilite">true</code> (or the <code class="codehilite">timeout</code> is reached).</li>
+<li><a href="../types/"><span class="tag flo"></span></a> <strong>timeout</strong>: The amount of time (in seconds) that may elapse before the scheduled function is cancelled.<ul>
 <li><span class="critic comment">Optional, defaults to never timing out.</span></li>
 </ul>
 </li>
-<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>timeoutFunc</strong>: The function that that triggers if the timeout amount is met.<ul>
-<li><span class="critic comment">Optional, defaults to no function being triggered if a timeout happens.</span></li>
+<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>timeoutFunc</strong>: The function that will be executed if the timeout is reached.<ul>
+<li><span class="critic comment">Optional</span></li>
 </ul>
 </li>
 </ul>
 </div>
-<p>Example without a timeout:
-<div class="codehilite"><pre><span></span><span class="c1">--Watches a die until it comes to rest, then print its result</span>
-<span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="c1">--Roll a die, using its GUID</span>
-    <span class="kd">local</span> <span class="n">die</span> <span class="o">=</span> <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;555555&quot;</span><span class="p">)</span>
-    <span class="n">die</span><span class="p">.</span><span class="n">roll</span><span class="p">()</span>
-
-    <span class="c1">--Function that will be watched until it becomes true</span>
-    <span class="kd">local</span> <span class="n">rollWatch</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span> <span class="kr">return</span> <span class="n">die</span><span class="p">.</span><span class="n">resting</span> <span class="kr">end</span>
-    <span class="c1">--Function that will be run once the above condition becomes true</span>
-    <span class="kd">local</span> <span class="n">rollEnd</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="n">die</span><span class="p">.</span><span class="n">getRotationValue</span><span class="p">())</span> <span class="kr">end</span>
-
-    <span class="c1">--Plug those two functions into the Wait function</span>
-    <span class="n">Wait</span><span class="p">.</span><span class="n">condition</span><span class="p">(</span><span class="n">rollEnd</span><span class="p">,</span> <span class="n">rollWatch</span><span class="p">)</span>
-<span class="kr">end</span>
+<p><code class="codehilite">conditionFunc</code> will be executed (possibly several times) until it returns <code class="codehilite">true</code>, at which point the
+scheduled function (<code class="codehilite">toRunFunc</code>) will be executed, and <code class="codehilite">conditionFunc</code> will no longer be executed again.</p>
+<p>Optionally, a <code class="codehilite">timeout</code> and <code class="codehilite">timeoutFunc</code> may be specified. If <code class="codehilite">conditionFunc</code> does not return <code class="codehilite">true</code> before the specified
+timeout (seconds) has elapsed, then the scheduled function is cancelled i.e. will not be called. If a <code class="codehilite">timeoutFunc</code> is
+provided, then it will be called when the timeout is reached.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Roll a die, and wait until it comes to rest.
+<div class="codehilite"><pre><span></span><span class="n">die</span><span class="p">.</span><span class="n">randomize</span><span class="p">()</span> <span class="c1">-- Roll a die</span>
+<span class="n">Wait</span><span class="p">.</span><span class="n">condition</span><span class="p">(</span>
+    <span class="kr">function</span><span class="p">()</span> <span class="c1">-- Executed after our condition is met</span>
+        <span class="kr">if</span> <span class="n">die</span><span class="p">.</span><span class="n">isDestroyed</span><span class="p">()</span> <span class="kr">then</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die was destroyed before it came to rest.&quot;</span><span class="p">)</span>
+        <span class="kr">else</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">die</span><span class="p">.</span><span class="n">getRotationValue</span><span class="p">()</span> <span class="o">..</span> <span class="s2">&quot; was rolled.&quot;</span><span class="p">)</span>
+        <span class="kr">end</span>
+    <span class="kr">end</span><span class="p">,</span>
+    <span class="kr">function</span><span class="p">()</span> <span class="c1">-- Condition function</span>
+        <span class="kr">return</span> <span class="n">die</span><span class="p">.</span><span class="n">isDestroyed</span><span class="p">()</span> <span class="ow">or</span> <span class="n">die</span><span class="p">.</span><span class="n">resting</span>
+    <span class="kr">end</span>
+<span class="p">)</span>
 </pre></div></p>
-<p>Example with a timeout, written differently:
-<div class="codehilite"><pre><span></span><span class="c1">--Watches a die until it comes to rest, then print its result</span>
-<span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="c1">--Roll a die, using its GUID</span>
-    <span class="kd">local</span> <span class="n">die</span> <span class="o">=</span> <span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;a5b5ac&quot;</span><span class="p">)</span>
-    <span class="n">die</span><span class="p">.</span><span class="n">roll</span><span class="p">()</span>
-
-    <span class="c1">--Activate the wait condition, passing parameters to exterior functions</span>
-    <span class="n">Wait</span><span class="p">.</span><span class="n">condition</span><span class="p">(</span>
-        <span class="kr">function</span><span class="p">()</span> <span class="n">printResult</span><span class="p">(</span><span class="n">die</span><span class="p">.</span><span class="n">getRotationValue</span><span class="p">())</span> <span class="kr">end</span><span class="p">,</span>
-        <span class="kr">function</span><span class="p">()</span> <span class="kr">return</span> <span class="n">checkResting</span><span class="p">(</span><span class="n">die</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span>
-        <span class="mi">2</span><span class="p">,</span>
-        <span class="kr">function</span><span class="p">()</span> <span class="n">printResult</span><span class="p">(</span><span class="s2">&quot;Too Slow!&quot;</span><span class="p">)</span> <span class="kr">end</span>
-    <span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="c1">--Prints the roll result, runs when wait condition is met</span>
-<span class="c1">--It is also used in case of timeout to print that timeout message.</span>
-<span class="kr">function</span> <span class="nf">printResult</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="c1">--Checks if the object is resting</span>
-<span class="kr">function</span> <span class="nf">checkResting</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
-    <span class="kr">return</span> <span class="n">target</span><span class="p">.</span><span class="n">resting</span>
-<span class="kr">end</span>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Launch an object into the air with a random impulse and wait until it comes to rest.
+However, if it's taking too long (more than two seconds), give up waiting.
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">upwardImpulse</span> <span class="o">=</span> <span class="nb">math.random</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">object</span><span class="p">.</span><span class="n">addForce</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="n">upwardImpulse</span><span class="p">,</span> <span class="mi">0</span><span class="p">})</span>
+<span class="n">Wait</span><span class="p">.</span><span class="n">condition</span><span class="p">(</span>
+    <span class="kr">function</span><span class="p">()</span>
+        <span class="kr">if</span> <span class="n">object</span><span class="p">.</span><span class="n">isDestroyed</span><span class="p">()</span> <span class="kr">then</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object was destroyed before it came to rest.&quot;</span><span class="p">)</span>
+        <span class="kr">else</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The object came to rest in under two seconds.&quot;</span><span class="p">)</span>
+        <span class="kr">end</span>
+    <span class="kr">end</span><span class="p">,</span>
+    <span class="kr">function</span><span class="p">()</span>
+        <span class="kr">return</span> <span class="n">object</span><span class="p">.</span><span class="n">isDestroyed</span><span class="p">()</span> <span class="ow">or</span> <span class="n">object</span><span class="p">.</span><span class="n">resting</span>
+    <span class="kr">end</span><span class="p">,</span>
+    <span class="mi">2</span><span class="p">,</span> <span class="c1">-- second timeout</span>
+    <span class="kr">function</span><span class="p">()</span> <span class="c1">-- Executed if our timeout is reached</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Took too long to come to rest.&quot;</span><span class="p">)</span>
+    <span class="kr">end</span>
+<span class="p">)</span>
 </pre></div></p>
+</div>
 <hr />
 <h3 id="frames">frames(...)<a class="headerlink" href="#frames" title="Permanent link"> </a></h3>
-<p><a href="../types/"><span class="ret int"></span></a>&nbsp;Activates a function after a set number of frames. The amount of time this takes is based off the Host's FPS. The higher their FPS, the faster this will trigger.</p>
-<blockquote>
-<p>The returned value is an ID which can be used with <a href="#stop">stop</a> to cancel the function at any time.</p>
-</blockquote>
+<p><a href="../types/"><span class="ret int"></span></a>&nbsp;Schedules a function to be executed the specified number of frames have
+elapsed.</p>
+<p>The return value is a unique ID that may be used to <a href="#stop">stop</a> the scheduled function before it runs.</p>
 <div class="admonition info">
 <p class="admonition-title">frames(toRunFunc, frameCount)</p>
 <ul>
-<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to activate once the condition is met.</li>
-<li><a href="../types/"><span class="tag int"></span></a> <strong>frameCount</strong>: The number of frames to wait before activating the above function.</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="c1">--Built-in functions with parameters can be called directly</span>
-    <span class="c1">--This is done by wrapping the function within `function()` and `end`</span>
-    <span class="n">Wait</span><span class="p">.</span><span class="n">frames</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One&quot;</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-
-    <span class="c1">--You can also call custom functions you have made yourself</span>
-    <span class="c1">--Pass them any parameters you wish</span>
-    <span class="n">Wait</span><span class="p">.</span><span class="n">frames</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="n">sayTwo</span><span class="p">(</span><span class="s2">&quot;Two&quot;</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
-
-    <span class="c1">--If you aren&#39;t passing any parameters to the function, you can shorten it</span>
-    <span class="n">Wait</span><span class="p">.</span><span class="n">frames</span><span class="p">(</span><span class="n">sayThree</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="c1">--Has its parameter passed to it</span>
-<span class="kr">function</span> <span class="nf">sayTwo</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="kr">end</span>
-
-<span class="c1">--Does not have any parameters passed to it</span>
-<span class="kr">function</span> <span class="nf">sayThree</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Three&quot;</span><span class="p">)</span> <span class="kr">end</span>
-</pre></div>
-
-<hr />
-<h3 id="stop">stop(...)<a class="headerlink" href="#stop" title="Permanent link"> </a></h3>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Stops a currently running Wait function. The only way to obtain these ID numbers is to get them from the return value of a Wait function.</p>
-<div class="admonition info">
-<p class="admonition-title">stop(id)</p>
-<ul>
-<li><a href="../types/"><span class="tag int"></span></a> <strong>id</strong>: The index number assigned by the game to every Wait function (besides stop).</li>
-</ul>
-</div>
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="c1">--This would print the message after 5 seconds</span>
-    <span class="n">id</span> <span class="o">=</span> <span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This won&#39;t print&quot;</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-    <span class="c1">--Except it is stopped immediately</span>
-    <span class="n">Wait</span><span class="p">.</span><span class="n">stop</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
-<span class="kr">end</span>
-</pre></div>
-
-<hr />
-<h3 id="time">time(...)<a class="headerlink" href="#time" title="Permanent link"> </a></h3>
-<p><a href="../types/"><span class="ret int"></span></a>&nbsp;Activates a function after a set amount of time has passes.</p>
-<blockquote>
-<p>The returned value is an ID which can be used with <a href="#stop">stop</a> to cancel the function at any time.</p>
-</blockquote>
-<div class="admonition info">
-<p class="admonition-title">time(toRunFunc, time, repetitions)</p>
-<ul>
-<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to activate once the amount of time has passed.</li>
-<li><a href="../types/"><span class="tag flo"></span></a> <strong>time</strong>: The amount of time before the function is triggered.</li>
-<li><a href="../types/"><span class="tag int"></span></a> <strong>repetitions</strong>: Number of times the timer will be repeated.<ul>
-<li><span class="critic comment">Optional, defaults to 0.</span></li>
-<li><span class="critic comment">Using -1 causes it to loop indefinitely unless stopped.</span></li>
+<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to be executed after the specified number of frames have elapsed.</li>
+<li><a href="../types/"><span class="tag int"></span></a> <strong>numberFrames</strong>: The number of frames to must elapse before <code class="codehilite">toRunFunc</code> is executed.<ul>
+<li><span class="critic comment">Optional, defaults to `1`.</span></li>
 </ul>
 </li>
 </ul>
 </div>
-<p>Example (basic usage):
-<div class="codehilite"><pre><span></span><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="o">||</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="n">saySomething</span><span class="p">(</span><span class="s2">&quot;Two&quot;</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-
-    <span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="n">sayThree</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="kr">function</span> <span class="nf">saySomething</span><span class="p">(</span><span class="n">something</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">something</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="kr">function</span> <span class="nf">sayThree</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Three&quot;</span><span class="p">)</span>
-<span class="kr">end</span>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Prints "Hello!" after 60 frames have elapsed.
+<div class="codehilite"><pre><span></span><span class="n">Wait</span><span class="p">.</span><span class="n">frames</span><span class="p">(</span>
+    <span class="kr">function</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
+    <span class="kr">end</span><span class="p">,</span>
+    <span class="mi">60</span>
+<span class="p">)</span>
+</pre></div>
+It's a matter of personal preference, but it's quite common to see the above compacted into one line, like:
+<div class="codehilite"><pre><span></span><span class="n">Wait</span><span class="p">.</span><span class="n">frames</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
 </pre></div></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Advanced Example</p>
+<p><p>Prints "1", "2", "3", "4", "5", waiting 60 frames before each printed number.</p>
+<p>Note that the scheduled function, upon execution, will reschedule itself unless <code class="codehilite">count</code> has reached 5.</p>
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">printAndReschedule</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+
+    <span class="kr">if</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="kr">then</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">Wait</span><span class="p">.</span><span class="n">frames</span><span class="p">(</span><span class="n">printAndReschedule</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="kr">end</span>
+<span class="kr">end</span>
+
+<span class="n">Wait</span><span class="p">.</span><span class="n">frames</span><span class="p">(</span><span class="n">printAndReschedule</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div></p>
+</div>
+<hr />
+<h3 id="stop">stop(...)<a class="headerlink" href="#stop" title="Permanent link"> </a></h3>
+<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Cancels a Wait-scheduled function.</p>
+<div class="admonition info">
+<p class="admonition-title">stop(id)</p>
+<ul>
+<li><a href="../types/"><span class="tag int"></span></a> <strong>id</strong>: A wait ID (returned from <code class="codehilite">Wait</code> scheduling functions).</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Schedules two functions: one that says "Hello!", and one that says "Goodbye!". However, the latter is stopped before
+it has a chance to execute i.e. We'll see "Hello!" printed, but we <em>won't</em> see "Goodbye!"
+<div class="codehilite"><pre><span></span><span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">goodbyeId</span> <span class="o">=</span> <span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Goodbye!&quot;</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">Wait</span><span class="p">.</span><span class="n">stop</span><span class="p">(</span><span class="n">goodbyeId</span><span class="p">)</span>
+</pre></div></p>
+</div>
+<hr />
+<h3 id="stopall">stopAll(...)<a class="headerlink" href="#stopall" title="Permanent link"> </a></h3>
+<p>Cancels all Wait-scheduled functions.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You should be extremely careful using this function. Generally you should cancel individual scheduled functions with
+<a href="#stop">stop</a> instead.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Schedules two functions: one that says "Hello!", and one that says "Goodbye!". However, <em>both</em> are stopped before
+either has the chance to execute.
+<div class="codehilite"><pre><span></span><span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Goodbye!&quot;</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">Wait</span><span class="p">.</span><span class="n">stopAll</span><span class="p">()</span>
+</pre></div></p>
+</div>
+<hr />
+<h3 id="time">time(...)<a class="headerlink" href="#time" title="Permanent link"> </a></h3>
+<p><a href="../types/"><span class="ret int"></span></a>&nbsp;Schedules a function to be executed after the specified amount of time
+(in seconds) has elapsed.</p>
+<p>The return value is a unique ID that may be used to <a href="#stop">stop</a> the scheduled function before it runs.</p>
+<div class="admonition info">
+<p class="admonition-title">time(toRunFunc, seconds, repetitions)</p>
+<ul>
+<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: The function to be executed after the specified amount of time has elapsed.</li>
+<li><a href="../types/"><span class="tag flo"></span></a> <strong>seconds</strong>: The amount of time that must elapse before <code class="codehilite">toRunFunc</code> is executed.</li>
+<li><a href="../types/"><span class="tag int"></span></a> <strong>repetitions</strong>: Number of times <code class="codehilite">toRunFunc</code> will be (re)scheduled. <code class="codehilite">-1</code> is infinite repetitions.<ul>
+<li><span class="critic comment">Optional, defaults to `1`.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><code class="codehilite">repetitions</code> is optional and defaults to <code class="codehilite">1</code>. When <code class="codehilite">repetitions</code> is a positive number, <code class="codehilite">toRunFunc</code> will execute for the
+specified number of repetitions, with the specified time delay before and between each execution. When <code class="codehilite">repetitions</code> is
+<code class="codehilite">-1</code>, <code class="codehilite">toRunFunc</code> will be re-scheduled indefinitely (i.e. infinite repetitions).</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Prints "Hello!" after 1 second has elapsed.
+<div class="codehilite"><pre><span></span><span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span>
+    <span class="kr">function</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
+    <span class="kr">end</span><span class="p">,</span>
+    <span class="mi">1</span>
+<span class="p">)</span>
+</pre></div>
+It's a matter of personal preference, but it's quite common to see the above compacted into one line, like:
+<div class="codehilite"><pre><span></span><span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Prints "1", "2", "3", "4", "5", waiting 1 second before each printed number.
+<div class="codehilite"><pre><span></span><span class="kd">local</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span>
+    <span class="kr">function</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="kr">end</span><span class="p">,</span>
+    <span class="mi">1</span><span class="p">,</span> <span class="c1">-- second delay</span>
+    <span class="mi">5</span> <span class="c1">-- repetitions</span>
+<span class="p">)</span>
+</pre></div></p>
+</div>
 <hr />
                 
                   
