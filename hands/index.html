@@ -559,6 +559,39 @@
     Member Variables
   </a>
   
+    <nav class="md-nav" aria-label="Member Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#member-variable-summary" class="md-nav__link">
+    Member Variable Summary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#member-variable-details" class="md-nav__link">
+    Member Variable Details
+  </a>
+  
+    <nav class="md-nav" aria-label="Member Variable Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hiding" class="md-nav__link">
+    hiding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -998,6 +1031,39 @@
     Member Variables
   </a>
   
+    <nav class="md-nav" aria-label="Member Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#member-variable-summary" class="md-nav__link">
+    Member Variable Summary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#member-variable-details" class="md-nav__link">
+    Member Variable Details
+  </a>
+  
+    <nav class="md-nav" aria-label="Member Variable Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hiding" class="md-nav__link">
+    hiding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1061,38 +1127,73 @@
 
 
 <!-- Markdown content -->
-<p>The static global Hands class allows you to interact with Hand Objects. This allows you to manipulate the properties of Hand Zones in the same way as the in-game interface.</p>
-<blockquote>
-<p>Example Usage:<code class="highlight"><span class="n">Hands</span><span class="p">.</span><span class="n">enable</span> <span class="o">=</span> <span class="kc">true</span></code>.</p>
-</blockquote>
+<p>The static global <code>Hands</code> class allows you to control the behavior of Hand Zones.</p>
 <h2 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link">&para;</a></h2>
-<p>Like <a href="../object/#member-variables">Object member variables</a>, Hands has its own member variables. They allow for direct access to the Hand's properties.</p>
+<h3 id="member-variable-summary">Member Variable Summary<a class="headerlink" href="#member-variable-summary" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Variable</th>
 <th>Description</th>
-<th align="left">Type</th>
+<th>Type</th>
+<th>&nbsp;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a class="anchor" id="enable"></a>enable</td>
-<td>Should player Hands hold objects.</td>
-<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+<td>Whether hand zones are enabled i.e. hold objects.</td>
+<td><a href="../types/"><span class="tag boo"></span></a></td>
+<td></td>
 </tr>
 <tr>
 <td><a class="anchor" id="disable_unused"></a>disable_unused</td>
-<td>Hands not used by a player will not be enabled.</td>
-<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+<td>Whether hands zones belonging to a color without a seated player should be disabled.</td>
+<td><a href="../types/"><span class="tag boo"></span></a></td>
+<td></td>
 </tr>
 <tr>
 <td><a class="anchor" id="hiding"></a>hiding</td>
-<td>How objects are hidden in Hands. 1 = Default, 2 = Reverse, 3 = Disable</td>
-<td align="left"><a href="../types/"><span class="tag int"></span></a></td>
+<td>Determines which hand contents are hidden from which players.</td>
+<td><a href="../types/"><span class="tag int"></span></a></td>
+<td><a href="#hiding"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 </tbody>
 </table>
+<h2 id="member-variable-details">Member Variable Details<a class="headerlink" href="#member-variable-details" title="Permanent link">&para;</a></h2>
+<h4 id="hiding">hiding<a class="headerlink" href="#hiding" title="Permanent link">&para;</a></h4>
+<p><a href="../types/"><span class="tag int"></span></a>&nbsp;Determines which hands are hidden from which players.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Default. The contents of a player's hands are only visible to the owner.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Reverse. The contents of a player's hands are visible to all other players, but not the owner.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Disable. Contents of all player hands are visible to all players.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Make all hand contents visible to everyone.
+<div class="highlight"><pre><span></span><code><span class="n">Hands</span><span class="p">.</span><span class="n">hiding</span> <span class="o">=</span> <span class="mi">3</span>
+</code></pre></div></p>
+</div>
+<hr />
 <h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link">&para;</a></h2>
 <h3 id="class-functions">Class Functions<a class="headerlink" href="#class-functions" title="Permanent link">&para;</a></h3>
 <table>
@@ -1132,7 +1233,7 @@
 <tbody>
 <tr>
 <td>getHands()</td>
-<td>Returns a Table of all Hand Zone Objects in the game.</td>
+<td>Returns a table of all Hand Zone Objects in the game.</td>
 <td><a href="../types/"><span class="ret tab"></a></td>
 <td align="right">&nbsp;</td>
 </tr>
