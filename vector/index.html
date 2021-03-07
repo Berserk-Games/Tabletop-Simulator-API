@@ -1778,7 +1778,7 @@
 <p class="admonition-title">Tip</p>
 <p>Vector and Color are the first classes to be defined in pure Lua. This means you <strong>have</strong> to use colon operator (e.g. <code>pos:angle()</code>) to call member functions, not the dot operator. Failing to do so will fail with cryptic error messages displayed.</p>
 </div>
-<h2 id="constructors-summary">Constructors summary<a class="headerlink" href="#constructors-summary" title="Permanent link"> </a></h2>
+<h2 id="constructors-summary">Constructors summary<a class="headerlink" href="#constructors-summary" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Every place that returns a coordinate table, like <code class="highlight"><span class="n">obj</span><span class="p">.</span><span class="n">getPosition</span><span class="p">()</span></code>, serves a Vector class instance already - you do not have to explicitly construct it.
@@ -1838,7 +1838,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 </tr>
 </tbody>
 </table>
-<h3 id="constructors-examples">Constructors examples<a class="headerlink" href="#constructors-examples" title="Permanent link"> </a></h3>
+<h3 id="constructors-examples">Constructors examples<a class="headerlink" href="#constructors-examples" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="kd">local</span> <span class="n">vec1</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
     <span class="kd">local</span> <span class="n">vec2</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">-- same as Vector.new(1, -1, 0)</span>
@@ -1849,7 +1849,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h2 id="element-access-summary">Element access summary<a class="headerlink" href="#element-access-summary" title="Permanent link"> </a></h2>
+<h2 id="element-access-summary">Element access summary<a class="headerlink" href="#element-access-summary" title="Permanent link">&para;</a></h2>
 <p>In addition to accessing vector components by their numeric indices (1, 2, 3) and textual identifiers (x, y, z), the following methods may also be utilized.</p>
 <table>
 <thead>
@@ -1899,7 +1899,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <p class="admonition-title">Tip</p>
 <p>Before <code>Vector</code> was introduced, coordinate tables contained separate values under 1, 2, 3 and x, y, z keys, with letter keys taking precedence when they were different. This is no longer the case, and using letter and numerical keys is equivalent. However, when iterating over Vector components you have to use <code>pairs</code> and only letter keys will be read there.</p>
 </div>
-<h3 id="element-access-examples">Element access examples<a class="headerlink" href="#element-access-examples" title="Permanent link"> </a></h3>
+<h3 id="element-access-examples">Element access examples<a class="headerlink" href="#element-access-examples" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="kd">local</span> <span class="n">vec</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
     <span class="n">vec</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">-- set the first component</span>
@@ -1917,7 +1917,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h2 id="arithmetics-summary">Arithmetics summary<a class="headerlink" href="#arithmetics-summary" title="Permanent link"> </a></h2>
+<h2 id="arithmetics-summary">Arithmetics summary<a class="headerlink" href="#arithmetics-summary" title="Permanent link">&para;</a></h2>
 <p>Vector also allows you to use arithmetic operators to performs basic operations:</p>
 <table>
 <thead>
@@ -1955,7 +1955,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 </tr>
 </tbody>
 </table>
-<h3 id="arithmetics-examples">Arithmetics examples<a class="headerlink" href="#arithmetics-examples" title="Permanent link"> </a></h3>
+<h3 id="arithmetics-examples">Arithmetics examples<a class="headerlink" href="#arithmetics-examples" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="kd">local</span> <span class="n">vec</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
     <span class="n">vec</span><span class="p">:</span><span class="n">add</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1">--&gt; vec is now {4, 4, 4}</span>
@@ -1969,12 +1969,12 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h2 id="methods-summary">Methods summary<a class="headerlink" href="#methods-summary" title="Permanent link"> </a></h2>
+<h2 id="methods-summary">Methods summary<a class="headerlink" href="#methods-summary" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Numerous methods of Vector will return the <span class="tag sel"></span> instance to allow easy "chaining". That way you can do more complex processing without saving an intermediate result in a variable, like e.g. <code class="highlight"><span class="n">vec</span><span class="p">:</span><span class="n">setAt</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.5</span><span class="p">):</span><span class="n">rotateOver</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span></code>.</p>
 </div>
-<h3 id="methods-modifying-self">Methods modifying self<a class="headerlink" href="#methods-modifying-self" title="Permanent link"> </a></h3>
+<h3 id="methods-modifying-self">Methods modifying self<a class="headerlink" href="#methods-modifying-self" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -2099,7 +2099,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 </tr>
 </tbody>
 </table>
-<h3 id="methods-not-modifying-self">Methods not modifying self<a class="headerlink" href="#methods-not-modifying-self" title="Permanent link"> </a></h3>
+<h3 id="methods-not-modifying-self">Methods not modifying self<a class="headerlink" href="#methods-not-modifying-self" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -2233,8 +2233,8 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 </tbody>
 </table>
 <hr />
-<h2 id="constructors-details">Constructors details<a class="headerlink" href="#constructors-details" title="Permanent link"> </a></h2>
-<h3 id="vectormin">Vector.min(...)<a class="headerlink" href="#vectormin" title="Permanent link"> </a></h3>
+<h2 id="constructors-details">Constructors details<a class="headerlink" href="#constructors-details" title="Permanent link">&para;</a></h2>
+<h3 id="vectormin">Vector.min(...)<a class="headerlink" href="#vectormin" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a vector that is made from the smallest components of two vectors.</p>
 <div class="admonition info">
 <p class="admonition-title">Vector.min(vec1, vec2)</p>
@@ -2247,7 +2247,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec2</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Vector</span><span class="p">.</span><span class="n">min</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">vec2</span><span class="p">))</span> <span class="c1">--&gt; Vector: { 1, 2, 2 }</span>
 </code></pre></div>
-<h3 id="vectormax">Vector.max(...)<a class="headerlink" href="#vectormax" title="Permanent link"> </a></h3>
+<h3 id="vectormax">Vector.max(...)<a class="headerlink" href="#vectormax" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a vector that is made from the largest components of two vectors.</p>
 <div class="admonition info">
 <p class="admonition-title">Vector.max(vec1, vec2)</p>
@@ -2260,7 +2260,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec2</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Vector</span><span class="p">.</span><span class="n">max</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">vec2</span><span class="p">))</span> <span class="c1">--&gt; Vector: { 4, 3, 3 }</span>
 </code></pre></div>
-<h3 id="vectorbetween">Vector.between(...)<a class="headerlink" href="#vectorbetween" title="Permanent link"> </a></h3>
+<h3 id="vectorbetween">Vector.between(...)<a class="headerlink" href="#vectorbetween" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Return a vector pointing from vec1 to vec2.</p>
 <div class="admonition info">
 <p class="admonition-title">Vector.between(vec1, vec2)</p>
@@ -2274,8 +2274,8 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="nb">print</span><span class="p">(</span><span class="n">Vector</span><span class="p">.</span><span class="n">between</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">vec2</span><span class="p">))</span> <span class="c1">--&gt; Vector: { 3, 1, -1 }</span>
 </code></pre></div>
 <hr />
-<h2 id="element-access-details">Element access details<a class="headerlink" href="#element-access-details" title="Permanent link"> </a></h2>
-<h3 id="setat">setAt(...)<a class="headerlink" href="#setat" title="Permanent link"> </a></h3>
+<h2 id="element-access-details">Element access details<a class="headerlink" href="#element-access-details" title="Permanent link">&para;</a></h2>
+<h3 id="setat">setAt(...)<a class="headerlink" href="#setat" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Update one component of the vector and returning self.</p>
 <div class="admonition info">
 <p class="admonition-title">setAt(key, num)</p>
@@ -2288,7 +2288,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec</span><span class="p">:</span><span class="n">setAt</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span><span class="n">setAt</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { 4, 3, 3 }</span>
 </code></pre></div>
-<h3 id="set">set(...)<a class="headerlink" href="#set" title="Permanent link"> </a></h3>
+<h3 id="set">set(...)<a class="headerlink" href="#set" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Update all components of the vector and returning self.</p>
 <p>Providing a nil value makes it ignore that argument.</p>
 <div class="admonition info">
@@ -2303,7 +2303,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec</span><span class="p">:</span><span class="n">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { 4, 3, 2 }</span>
 </code></pre></div>
-<h3 id="get">get()<a class="headerlink" href="#get" title="Permanent link"> </a></h3>
+<h3 id="get">get()<a class="headerlink" href="#get" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret flo" style="margin-right:5px;"></span></a>
 <a href="../types/"><span class="ret flo" style="margin-right:5px;"></span></a>
 <a href="../types/"><span class="ret flo"></span></a>&nbsp;Returns <code>x</code>, <code>y</code>, <code>z</code> components as three separate values.</p>
@@ -2311,7 +2311,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">vec</span><span class="p">:</span><span class="n">get</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="c1">--&gt; 6</span>
 </code></pre></div>
-<h3 id="copy">copy()<a class="headerlink" href="#copy" title="Permanent link"> </a></h3>
+<h3 id="copy">copy()<a class="headerlink" href="#copy" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Copy self into a new vector and return it.</p>
 <div class="highlight"><pre><span></span><code><span class="n">vec1</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">vec2</span> <span class="o">=</span> <span class="n">vec1</span><span class="p">:</span><span class="n">copy</span><span class="p">()</span>
@@ -2320,9 +2320,9 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="nb">print</span><span class="p">(</span><span class="n">vec2</span><span class="p">)</span> <span class="c1">--&gt; Vector { 1, 2, 3 }</span>
 </code></pre></div>
 <hr />
-<h2 id="methods-details">Methods details<a class="headerlink" href="#methods-details" title="Permanent link"> </a></h2>
-<h3 id="methods-modifying-self-details">Methods modifying self details<a class="headerlink" href="#methods-modifying-self-details" title="Permanent link"> </a></h3>
-<h4 id="add">add(...)<a class="headerlink" href="#add" title="Permanent link"> </a></h4>
+<h2 id="methods-details">Methods details<a class="headerlink" href="#methods-details" title="Permanent link">&para;</a></h2>
+<h3 id="methods-modifying-self-details">Methods modifying self details<a class="headerlink" href="#methods-modifying-self-details" title="Permanent link">&para;</a></h3>
+<h4 id="add">add(...)<a class="headerlink" href="#add" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;Adds components of otherVec to self and returning self.</p>
 <div class="admonition info">
 <p class="admonition-title">add(otherVec)</p>
@@ -2341,7 +2341,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec</span> <span class="o">=</span> <span class="n">vec</span> <span class="o">+</span> <span class="n">otherVec</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { 5, 7, 9 }</span>
 </code></pre></div>
-<h4 id="sub">sub(...)<a class="headerlink" href="#sub" title="Permanent link"> </a></h4>
+<h4 id="sub">sub(...)<a class="headerlink" href="#sub" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;Subtracts components of otherVec from self and returning self.</p>
 <div class="admonition info">
 <p class="admonition-title">sub(otherVec)</p>
@@ -2360,7 +2360,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec</span> <span class="o">=</span> <span class="n">vec</span> <span class="o">-</span> <span class="n">otherVec</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { -5, -3, -1 }</span>
 </code></pre></div>
-<h4 id="scale">scale(...)<a class="headerlink" href="#scale" title="Permanent link"> </a></h4>
+<h4 id="scale">scale(...)<a class="headerlink" href="#scale" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;Multiplies self-components by corresponding components from otherVec and returning self.</p>
 <p>Every component in the result is a component of vec multiplied by the same component of otherVec or by a number factor.</p>
 <div class="admonition info">
@@ -2382,7 +2382,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec</span><span class="p">:</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { 4, 12, 24 }</span>
 </code></pre></div>
-<h4 id="clamp">clamp(...)<a class="headerlink" href="#clamp" title="Permanent link"> </a></h4>
+<h4 id="clamp">clamp(...)<a class="headerlink" href="#clamp" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;If self-magnitude is higher than provided limit, scale self-down to match it and returning self.</p>
 <div class="admonition info">
 <p class="admonition-title">clamp(num)</p>
@@ -2394,7 +2394,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec</span><span class="p">:</span><span class="n">clamp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { 0.53, 1.07, 1.60 }</span>
 </code></pre></div>
-<h4 id="normalize">normalize()<a class="headerlink" href="#normalize" title="Permanent link"> </a></h4>
+<h4 id="normalize">normalize()<a class="headerlink" href="#normalize" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;Makes this vector have a magnitude of 1 and returning self.</p>
 <p>When normalized, a vector keeps the same direction but its length is 1.0.</p>
 <p>Note that this function will change the current vector. If you want to keep the current vector unchanged, use <a href="#normalized">normalized()</a> method.</p>
@@ -2402,7 +2402,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec</span><span class="p">:</span><span class="n">normalize</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { 0.27, 0.53, 0.80 }</span>
 </code></pre></div>
-<h4 id="project">project(...)<a class="headerlink" href="#project" title="Permanent link"> </a></h4>
+<h4 id="project">project(...)<a class="headerlink" href="#project" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;Make self into projection on another vector and return self.</p>
 <p>To understand vector projection, imagine that <code>otherVec</code> is resting on a line pointing in its direction. Somewhere along that line will be the nearest point to the tip of vector. The projection is just <code>otherVec</code> rescaled so that it reaches that point on the line.</p>
 <div class="admonition info">
@@ -2415,7 +2415,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec</span><span class="p">:</span><span class="n">project</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { 0.67, -1.3, 0.67 }</span>
 </code></pre></div>
-<h4 id="projectonplane">projectOnPlane(...)<a class="headerlink" href="#projectonplane" title="Permanent link"> </a></h4>
+<h4 id="projectonplane">projectOnPlane(...)<a class="headerlink" href="#projectonplane" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;Projects a vector onto a plane defined by a normal orthogonal to the plane and return self.</p>
 <p>A Vector stores the position of the given <code>vec</code> in 3d space. A second Vector is given by <code>otherVec</code> and defines a direction from a plane towards vector that passes through the origin. Vector.projectOnPlane uses the two Vector values to generate the position of vector in the <code>otherVec</code> direction, and return the location of the Vector on the plane.</p>
 <div class="admonition info">
@@ -2428,7 +2428,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec</span><span class="p">:</span><span class="n">projectOnPlane</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { 1.33, 2.33, 3.33 }</span>
 </code></pre></div>
-<h4 id="reflect">reflect(...)<a class="headerlink" href="#reflect" title="Permanent link"> </a></h4>
+<h4 id="reflect">reflect(...)<a class="headerlink" href="#reflect" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;Make self into reflection on another vector and return self.</p>
 <p>The <code>otherVec</code> vector defines a plane (a plane's normal is the vector that is perpendicular to its surface). The <code>vec</code> vector is treated as a directional arrow coming in to the plane. The returned value is a vector of equal magnitude to <code>vec</code> but with its direction reflected.</p>
 <div class="admonition info">
@@ -2441,13 +2441,13 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec</span><span class="p">:</span><span class="n">reflect</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { -3.41, -1.31, 0.79 }</span>
 </code></pre></div>
-<h4 id="inverse">inverse()<a class="headerlink" href="#inverse" title="Permanent link"> </a></h4>
+<h4 id="inverse">inverse()<a class="headerlink" href="#inverse" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;Multiply self-components by -1.</p>
 <div class="highlight"><pre><span></span><code><span class="n">vec</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">vec</span><span class="p">:</span><span class="n">inverse</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { -1, -2, -3 }</span>
 </code></pre></div>
-<h4 id="movetowards">moveTowards(...)<a class="headerlink" href="#movetowards" title="Permanent link"> </a></h4>
+<h4 id="movetowards">moveTowards(...)<a class="headerlink" href="#movetowards" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;Move self towards another vector, but only up to a provided distance limit and return self.</p>
 <div class="admonition info">
 <p class="admonition-title">moveTowards(otherVec, num)</p>
@@ -2460,7 +2460,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec</span><span class="p">:</span><span class="n">moveTowards</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { 1.45, 2.15, 2.85 }</span>
 </code></pre></div>
-<h4 id="rotatetowards">rotateTowards(...)<a class="headerlink" href="#rotatetowards" title="Permanent link"> </a></h4>
+<h4 id="rotatetowards">rotateTowards(...)<a class="headerlink" href="#rotatetowards" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;Rotate self towards another vector, but only up to a provided angle limit and return self.</p>
 <p>This function is similar to <a href="#movetowards">moveTowards()</a> except that the vector is treated as a direction rather than a position. The current vector will be rotated round toward the target direction by an angle of <code>maxAngle</code>, although it will land exactly on the target rather than overshoot. If the magnitudes of current and target are different, then the magnitude of the result will be linearly interpolated during the rotation. If a negative value is used for <code>maxAngle</code>, the vector will rotate away from target until it is pointing in exactly the opposite direction, then stops.</p>
 <div class="admonition info">
@@ -2474,7 +2474,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec</span><span class="p">:</span><span class="n">rotateTowards</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">45</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { 2.78, 2.08, 1.39 }</span>
 </code></pre></div>
-<h4 id="rotatetowardsunit">rotateTowardsUnit(...)<a class="headerlink" href="#rotatetowardsunit" title="Permanent link"> </a></h4>
+<h4 id="rotatetowardsunit">rotateTowardsUnit(...)<a class="headerlink" href="#rotatetowardsunit" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;Same as <a href="#rotatetowards">rotateTowards()</a>, but only works correctly if <code>target</code> Vector is normalized and return self. Less expensive than <code>rotateTowards()</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">rotateTowardsUnit(target, maxAngle)</p>
@@ -2487,7 +2487,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="n">vec</span><span class="p">:</span><span class="n">rotateTowardsUnit</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span><span class="n">normalized</span><span class="p">(),</span> <span class="mi">45</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { 3.29, 0.87, -1.55 }</span>
 </code></pre></div>
-<h4 id="rotateover">rotateOver(...)<a class="headerlink" href="#rotateover" title="Permanent link"> </a></h4>
+<h4 id="rotateover">rotateOver(...)<a class="headerlink" href="#rotateover" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;Rotate a Vector <code>angle</code> degrees over given <code>axis</code> (can be <code>'x'</code>, <code>'y'</code>, <code>'z'</code>) and return self.</p>
 <div class="admonition info">
 <p class="admonition-title">rotateOver(axis, angle)</p>
@@ -2501,8 +2501,8 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="c1">--&gt; Vector: { 4.24, 2, 0 }</span>
 </code></pre></div>
 <hr />
-<h3 id="methods-not-modifying-self-details">Methods not modifying self details<a class="headerlink" href="#methods-not-modifying-self-details" title="Permanent link"> </a></h3>
-<h4 id="dot">dot(...)<a class="headerlink" href="#dot" title="Permanent link"> </a></h4>
+<h3 id="methods-not-modifying-self-details">Methods not modifying self details<a class="headerlink" href="#methods-not-modifying-self-details" title="Permanent link">&para;</a></h3>
+<h4 id="dot">dot(...)<a class="headerlink" href="#dot" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret flo"></span></a>&nbsp;Return the dot product of two vectors.</p>
 <p>The dot product is a float value equal to the magnitudes of the two vectors multiplied together and then multiplied by the cosine of the angle between them.</p>
 <p>For normalized vectors Dot returns 1 if they point in exactly the same direction, -1 if they point in completely opposite directions and zero if the vectors are perpendicular.</p>
@@ -2518,19 +2518,19 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="nb">print</span><span class="p">(</span><span class="n">vec1</span><span class="p">:</span><span class="n">dot</span><span class="p">(</span><span class="n">vec2</span><span class="p">))</span> <span class="c1">--&gt; 10</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Vector</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">vec1</span><span class="p">:</span><span class="n">normalized</span><span class="p">(),</span> <span class="n">vec2</span><span class="p">:</span><span class="n">normalized</span><span class="p">()))</span> <span class="c1">--&gt; 1</span>
 </code></pre></div>
-<h4 id="magnitude">magnitude()<a class="headerlink" href="#magnitude" title="Permanent link"> </a></h4>
+<h4 id="magnitude">magnitude()<a class="headerlink" href="#magnitude" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret flo"></span></a>&nbsp;Returns the length of this vector.</p>
 <div class="highlight"><pre><span></span><code><span class="n">vec</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">:</span><span class="n">magnitude</span><span class="p">())</span> <span class="c1">--&gt; 3.74 (sqrt of 14)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Vector</span><span class="p">.</span><span class="n">magnitude</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span> <span class="c1">--&gt; 3.74 (sqrt of 14)</span>
 </code></pre></div>
-<h4 id="sqrmagnitude">sqrMagnitude()<a class="headerlink" href="#sqrmagnitude" title="Permanent link"> </a></h4>
+<h4 id="sqrmagnitude">sqrMagnitude()<a class="headerlink" href="#sqrmagnitude" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret flo"></span></a>&nbsp;Returns the squared length of this vector.</p>
 <div class="highlight"><pre><span></span><code><span class="n">vec</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">:</span><span class="n">sqrMagnitude</span><span class="p">())</span> <span class="c1">--&gt; 14</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Vector</span><span class="p">.</span><span class="n">sqrMagnitude</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span> <span class="c1">--&gt; 14</span>
 </code></pre></div>
-<h4 id="distance">distance(...)<a class="headerlink" href="#distance" title="Permanent link"> </a></h4>
+<h4 id="distance">distance(...)<a class="headerlink" href="#distance" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret flo"></span></a>&nbsp;Returns distance between two points.</p>
 <div class="admonition info">
 <p class="admonition-title">p1:distance(p2)</p>
@@ -2545,7 +2545,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="nb">print</span><span class="p">(</span><span class="n">Vector</span><span class="p">.</span><span class="n">distance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">))</span> <span class="c1">--&gt; 3.32</span>
 <span class="nb">print</span><span class="p">((</span><span class="n">p1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">):</span><span class="n">magnitude</span><span class="p">())</span>  <span class="c1">--&gt; 3.32</span>
 </code></pre></div>
-<h4 id="sqrdistance">sqrDistance(...)<a class="headerlink" href="#sqrdistance" title="Permanent link"> </a></h4>
+<h4 id="sqrdistance">sqrDistance(...)<a class="headerlink" href="#sqrdistance" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret flo"></span></a>&nbsp;Returns squared distance between two points.</p>
 <div class="admonition info">
 <p class="admonition-title">p1:sqrDistance(p2)</p>
@@ -2559,7 +2559,7 @@ When constructing Vector instances, the <code>.new</code> part can be omitted, m
 <span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="p">:</span><span class="n">sqrDistance</span><span class="p">(</span><span class="n">p2</span><span class="p">))</span> <span class="c1">--&gt; 11</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Vector</span><span class="p">.</span><span class="n">sqrDistance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">))</span> <span class="c1">--&gt; 11</span>
 </code></pre></div>
-<h4 id="equals">equals(...)<a class="headerlink" href="#equals" title="Permanent link"> </a></h4>
+<h4 id="equals">equals(...)<a class="headerlink" href="#equals" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Returns true if two vectors are approximately equal.
 The <code>margin</code> argument is optional and defaults to tolerating a difference of <code>~0.03</code> in both vector magnitude.</p>
 <div class="admonition info">
@@ -2575,7 +2575,7 @@ The <code>margin</code> argument is optional and defaults to tolerating a differ
 <span class="nb">print</span><span class="p">(</span><span class="n">vec1</span><span class="p">:</span><span class="n">equals</span><span class="p">(</span><span class="n">vec2</span><span class="p">))</span> <span class="c1">--&gt; false</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Vector</span><span class="p">.</span><span class="n">equals</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">vec2</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">))</span> <span class="c1">--&gt; true</span>
 </code></pre></div>
-<h4 id="string">string(...)<a class="headerlink" href="#string" title="Permanent link"> </a></h4>
+<h4 id="string">string(...)<a class="headerlink" href="#string" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret str" style="margin-right:5px;"></span></a>
 <a href="../types/"><span class="ret flo"></span></a>&nbsp;Return string describing self, optional string prefix.</p>
 <div class="admonition info">
@@ -2594,7 +2594,7 @@ The <code>margin</code> argument is optional and defaults to tolerating a differ
 <p class="admonition-title">Warning</p>
 <p>This function returns one extra float that will be displayed in print function. This value is returned by the last gsub used in internal function.</p>
 </div>
-<h4 id="angle">angle(...)<a class="headerlink" href="#angle" title="Permanent link"> </a></h4>
+<h4 id="angle">angle(...)<a class="headerlink" href="#angle" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret flo"></span></a>&nbsp;Returns the angle in degrees between two vectors.</p>
 <p>The angle returned is the unsigned angle between the two vectors. This means the smaller of the two possible angles between the two vectors is used. The result is never greater than 180 degrees.</p>
 <div class="admonition info">
@@ -2609,7 +2609,7 @@ The <code>margin</code> argument is optional and defaults to tolerating a differ
 <span class="nb">print</span><span class="p">(</span><span class="n">vec1</span><span class="p">:</span><span class="n">angle</span><span class="p">(</span><span class="n">vec2</span><span class="p">))</span> <span class="c1">--&gt; 37.43</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Vector</span><span class="p">.</span><span class="n">angle</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">vec2</span><span class="p">))</span> <span class="c1">--&gt; 37.43</span>
 </code></pre></div>
-<h4 id="cross">cross(...)<a class="headerlink" href="#cross" title="Permanent link"> </a></h4>
+<h4 id="cross">cross(...)<a class="headerlink" href="#cross" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Return a cross-product vector of two vectors.</p>
 <p>The cross product of two vectors results in a third vector which is perpendicular to the two input vectors. The result's magnitude is equal to the magnitudes of the two inputs multiplied together and then multiplied by the sine of the angle between the inputs. You can determine the direction of the result vector using the "left hand rule".</p>
 <div class="admonition info">
@@ -2626,7 +2626,7 @@ The <code>margin</code> argument is optional and defaults to tolerating a differ
 <span class="nb">print</span><span class="p">(</span><span class="n">Vector</span><span class="p">.</span><span class="n">cross</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">vec2</span><span class="p">))</span> <span class="c1">--&gt; Vector: { -5, 10, -5 }</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Vector</span><span class="p">.</span><span class="n">cross</span><span class="p">(</span><span class="n">vec2</span><span class="p">,</span> <span class="n">vec1</span><span class="p">))</span> <span class="c1">--&gt; Vector: { -5, -10, 5 }</span>
 </code></pre></div>
-<h4 id="lerp">lerp(...)<a class="headerlink" href="#lerp" title="Permanent link"> </a></h4>
+<h4 id="lerp">lerp(...)<a class="headerlink" href="#lerp" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Linearly interpolates between two points.</p>
 <p>Interpolates between the points a and b by the interpolant t. The parameter t is clamped to the range [0, 1]. This is most commonly used to find a point some fraction of the way along a line between two endpoints (e.g. to move an object gradually between those points).</p>
 <p>The value returned equals (b - a) * t. When t = 0 returns a. When t = 1 returns b. When t = 0.5 returns the point midway between a and b.</p>
@@ -2643,13 +2643,13 @@ The <code>margin</code> argument is optional and defaults to tolerating a differ
 <span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="p">:</span><span class="n">lerp</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">))</span> <span class="c1">--&gt; Vector: { 1, 2, -2 }</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Vector</span><span class="p">.</span><span class="n">lerp</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">))</span> <span class="c1">--&gt; Vector: { 1, 2, -2 }</span>
 </code></pre></div>
-<h4 id="normalized">normalized()<a class="headerlink" href="#normalized" title="Permanent link"> </a></h4>
+<h4 id="normalized">normalized()<a class="headerlink" href="#normalized" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Return a new vector that is normalized (length 1) version of self.</p>
 <div class="highlight"><pre><span></span><code><span class="n">vec</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="p">:</span><span class="n">normalized</span><span class="p">())</span> <span class="c1">--&gt; Vector: { 0.27, 0.53, 0.80}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Vector</span><span class="p">.</span><span class="n">normalized</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span> <span class="c1">--&gt; Vector: { 0.27, 0.53, 0.80}</span>
 </code></pre></div>
-<h4 id="orthonormalize">orthoNormalize(...)<a class="headerlink" href="#orthonormalize" title="Permanent link"> </a></h4>
+<h4 id="orthonormalize">orthoNormalize(...)<a class="headerlink" href="#orthonormalize" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret vec" style="margin-right:5px;"></span></a>
 <a href="../types/"><span class="ret vec" style="margin-right:5px;"></span></a>
 <a href="../types/"><span class="ret vec"></span></a>&nbsp;Return three normalized vectors perpendicular to each other, first one being in the same direction as self. If <code>binormalPlaner</code> is provided, the second vector is guaranteed to be on a self-binormalPlanar plane.</p>
@@ -2665,7 +2665,7 @@ The <code>margin</code> argument is optional and defaults to tolerating a differ
 <span class="nb">print</span><span class="p">(</span><span class="n">normal</span><span class="p">)</span> <span class="c1">--&gt; Vector: { -1, 0, 0}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">binormal</span><span class="p">)</span> <span class="c1">--&gt; Vector: { 0, -1, 0}</span>
 </code></pre></div>
-<h4 id="heading">heading(...)<a class="headerlink" href="#heading" title="Permanent link"> </a></h4>
+<h4 id="heading">heading(...)<a class="headerlink" href="#heading" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret flo"></span></a>&nbsp;Returns an angle (In degrees) of rotation of Vector over a given <code>axis</code> (can be <code>'x'</code>, <code>'y'</code>, <code>'z'</code>).</p>
 <div class="admonition info">
 <p class="admonition-title">heading(axis)</p>
@@ -2678,7 +2678,7 @@ The <code>margin</code> argument is optional and defaults to tolerating a differ
 <span class="nb">print</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="c1">--&gt; 26.57</span>
 </code></pre></div>
 <hr />
-<h2 id="manipulation-examples">Manipulation examples<a class="headerlink" href="#manipulation-examples" title="Permanent link"> </a></h2>
+<h2 id="manipulation-examples">Manipulation examples<a class="headerlink" href="#manipulation-examples" title="Permanent link">&para;</a></h2>
 <p>Moving an object towards a target position in small steps
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="kd">local</span> <span class="n">obj</span> <span class="o">=</span> <span class="nb">assert</span><span class="p">(</span><span class="n">getObjectFromGUID</span><span class="p">(</span><span class="s1">&#39;555555&#39;</span><span class="p">),</span> <span class="s1">&#39;Object not found!&#39;</span><span class="p">)</span>

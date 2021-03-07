@@ -2233,8 +2233,8 @@
 <li>Using <a href="../base/#getobjectfromguid"><code>getObjectFromGUID(...)</code></a> with the object's GUID (found by right clicking it with the pointer).</li>
 <li>Getting it as a return from another function, like with <a href="../base/#spawnobject"><code>spawnObject(...)</code></a>.</li>
 </ul>
-<h2 id="member-variable-summary">Member Variable Summary<a class="headerlink" href="#member-variable-summary" title="Permanent link"> </a></h2>
-<h3 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link"> </a></h3>
+<h2 id="member-variable-summary">Member Variable Summary<a class="headerlink" href="#member-variable-summary" title="Permanent link">&para;</a></h2>
+<h3 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link">&para;</a></h3>
 <p>These are variables that objects share. They allow for direct access to an Object's property information without a helping function. Some are read-only.</p>
 <p>Read Example = <code>isResting = self.resting</code> Write Example = <code>self.resting = true</code></p>
 <table>
@@ -2517,8 +2517,8 @@
 </tbody>
 </table>
 <hr />
-<h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link"> </a></h2>
-<h3 id="transform-functions">Transform Functions<a class="headerlink" href="#transform-functions" title="Permanent link"> </a></h3>
+<h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link">&para;</a></h2>
+<h3 id="transform-functions">Transform Functions<a class="headerlink" href="#transform-functions" title="Permanent link">&para;</a></h3>
 <p>These functions handle the physical attributes of an Object: Position, Rotation, Scale, Bounds, Velocity. In other words, moving objects around as well as getting information on how they are moving.</p>
 <table>
 <thead>
@@ -2722,7 +2722,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="tag-functions">Tag Functions<a class="headerlink" href="#tag-functions" title="Permanent link"> </a></h3>
+<h3 id="tag-functions">Tag Functions<a class="headerlink" href="#tag-functions" title="Permanent link">&para;</a></h3>
 <p>These functions deal with the <a href="https://kb.tabletopsimulator.com/game-tools/object-tags/">Tags</a> attached to the object. An individual tag is reprented by a <a href="../types/"><span class="tag str"></span></a>, and is functionally case-insensitive.</p>
 <table>
 <thead>
@@ -2781,9 +2781,9 @@
 <p>If you want to create your own system in which object tags govern the interactions, the canonical logic is that if the system has no tags it interacts with everything, but if it has any tags then it only interacts with objects which share one of them.  i.e. (assuming the system is represented by an in-game object):
 <div class="highlight"><pre><span></span><code><span class="n">allow_interaction</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">system</span><span class="p">.</span><span class="n">hasAnyTag</span><span class="p">()</span> <span class="ow">or</span> <span class="n">system</span><span class="p">.</span><span class="n">hasMatchingTag</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
 </code></pre></div></p>
-<h3 id="ui-functions">UI Functions<a class="headerlink" href="#ui-functions" title="Permanent link"> </a></h3>
+<h3 id="ui-functions">UI Functions<a class="headerlink" href="#ui-functions" title="Permanent link">&para;</a></h3>
 <p>A new UI system was added to Tabletop Simulator which allows for more flexibility in the creation of UI elements on Objects. The old system (Classic UI) and new system (Custom UI) both work, and each has its own strengths.</p>
-<h4 id="classic-ui">Classic UI<a class="headerlink" href="#classic-ui" title="Permanent link"> </a></h4>
+<h4 id="classic-ui">Classic UI<a class="headerlink" href="#classic-ui" title="Permanent link">&para;</a></h4>
 <p>These functions allow for the creation/editing/removal of functional buttons and text inputs which themselves trigger code within your scripts. These buttons/inputs are attached to the object they are created on.</p>
 <table>
 <thead>
@@ -2873,9 +2873,9 @@
 </tr>
 </tbody>
 </table>
-<h4 id="custom-ui">Custom UI<a class="headerlink" href="#custom-ui" title="Permanent link"> </a></h4>
+<h4 id="custom-ui">Custom UI<a class="headerlink" href="#custom-ui" title="Permanent link">&para;</a></h4>
 <p>Custom UI gives you a wide variety of element types, not just buttons and inputs, to place onto an Object. It is an extension of the UI class, and details on its use can be found <a href="../ui/">on the UI page</a>.</p>
-<h3 id="get-functions">Get Functions<a class="headerlink" href="#get-functions" title="Permanent link"> </a></h3>
+<h3 id="get-functions">Get Functions<a class="headerlink" href="#get-functions" title="Permanent link">&para;</a></h3>
 <p>These functions obtain information from an object.</p>
 <table>
 <thead>
@@ -3031,7 +3031,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="set-functions">Set Functions<a class="headerlink" href="#set-functions" title="Permanent link"> </a></h3>
+<h3 id="set-functions">Set Functions<a class="headerlink" href="#set-functions" title="Permanent link">&para;</a></h3>
 <p>These functions apply action to an object. They take some property in order to work.</p>
 <table>
 <thead>
@@ -3113,7 +3113,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="action-function">Action Function<a class="headerlink" href="#action-function" title="Permanent link"> </a></h3>
+<h3 id="action-function">Action Function<a class="headerlink" href="#action-function" title="Permanent link">&para;</a></h3>
 <p>These functions perform general actions on objects.</p>
 <table>
 <thead>
@@ -3339,7 +3339,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="hide-functions">Hide Functions<a class="headerlink" href="#hide-functions" title="Permanent link"> </a></h3>
+<h3 id="hide-functions">Hide Functions<a class="headerlink" href="#hide-functions" title="Permanent link">&para;</a></h3>
 <p>These functions can hide Objects, similar to how hand zones or hidden zones do.</p>
 <table>
 <thead>
@@ -3385,7 +3385,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="global-function">Global Function<a class="headerlink" href="#global-function" title="Permanent link"> </a></h3>
+<h3 id="global-function">Global Function<a class="headerlink" href="#global-function" title="Permanent link">&para;</a></h3>
 <p>The functions can be used on Objects, but can also be used on the game world using <code>Global</code>.</p>
 <div class="admonition important">
 <p class="admonition-title">Examples of Using Global and Object</p>
@@ -3505,9 +3505,9 @@
 </tbody>
 </table>
 <hr />
-<h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link"> </a></h2>
-<h3 id="transform-function-details">Transform Function Details<a class="headerlink" href="#transform-function-details" title="Permanent link"> </a></h3>
-<h4 id="addforce">addForce(...)<a class="headerlink" href="#addforce" title="Permanent link"> </a></h4>
+<h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link">&para;</a></h2>
+<h3 id="transform-function-details">Transform Function Details<a class="headerlink" href="#transform-function-details" title="Permanent link">&para;</a></h3>
+<h4 id="addforce">addForce(...)<a class="headerlink" href="#addforce" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Adds force to an object in a directional Vector.</p>
 <div class="admonition info">
 <p class="admonition-title">addForce(vector, force_type)</p>
@@ -3524,7 +3524,7 @@
 </ul>
 </div>
 <hr />
-<h4 id="addtorque">addTorque(...)<a class="headerlink" href="#addtorque" title="Permanent link"> </a></h4>
+<h4 id="addtorque">addTorque(...)<a class="headerlink" href="#addtorque" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Adds torque to an object in a rotational Vector.</p>
 <div class="admonition info">
 <p class="admonition-title">addTorque(vector, force_type)</p>
@@ -3541,7 +3541,7 @@
 </ul>
 </div>
 <hr />
-<h4 id="getbounds">getBounds()<a class="headerlink" href="#getbounds" title="Permanent link"> </a></h4>
+<h4 id="getbounds">getBounds()<a class="headerlink" href="#getbounds" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Table of Vector information describing the size of an object in Global terms. <a href="https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html">Bounds</a> are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.</p>
 <div class="admonition info">
 <p class="admonition-title">Return Table</p>
@@ -3559,7 +3559,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h4 id="getboundsnormalized">getBoundsNormalized()<a class="headerlink" href="#getboundsnormalized" title="Permanent link"> </a></h4>
+<h4 id="getboundsnormalized">getBoundsNormalized()<a class="headerlink" href="#getboundsnormalized" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Table of Vector information describing the size of an object in Global terms, as if it was rotated to {0,0,0}. <a href="https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html">Bounds</a> are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.</p>
 <div class="admonition info">
 <p class="admonition-title">Return Table</p>
@@ -3577,10 +3577,10 @@
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h4 id="getscale">getScale()<a class="headerlink" href="#getscale" title="Permanent link"> </a></h4>
+<h4 id="getscale">getScale()<a class="headerlink" href="#getscale" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Vector of the current scale. Scale is not an absolute measurement, it is a multiple of the Object's default model size. So {x=2, y=2, z=2} would be a model twice its default size, not 2 units large.</p>
 <hr />
-<h4 id="gettransformforward">getTransformForward()<a class="headerlink" href="#gettransformforward" title="Permanent link"> </a></h4>
+<h4 id="gettransformforward">getTransformForward()<a class="headerlink" href="#gettransformforward" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Vector of the forward direction of this Object. The direction is relative to how the object is facing.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- Example of moving forward 5 units</span>
 <span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
@@ -3596,7 +3596,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h4 id="gettransformright">getTransformRight()<a class="headerlink" href="#gettransformright" title="Permanent link"> </a></h4>
+<h4 id="gettransformright">getTransformRight()<a class="headerlink" href="#gettransformright" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Vector of the forward direction of this object. The direction is relative to how the object is facing.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- Example of moving right 5 units</span>
 <span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
@@ -3612,7 +3612,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h4 id="gettransformup">getTransformUp()<a class="headerlink" href="#gettransformup" title="Permanent link"> </a></h4>
+<h4 id="gettransformup">getTransformUp()<a class="headerlink" href="#gettransformup" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Vector of the up direction of this Object. The direction is relative to how the object is facing.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- Example of moving up 5 units</span>
 <span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
@@ -3628,7 +3628,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h4 id="positiontolocal">positionToLocal(...)<a class="headerlink" href="#positiontolocal" title="Permanent link"> </a></h4>
+<h4 id="positiontolocal">positionToLocal(...)<a class="headerlink" href="#positiontolocal" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Vector after converting a world vector to a local Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.</p>
 <div class="admonition tip">
 <p class="admonition-title">Object Scale</p>
@@ -3641,7 +3641,7 @@
 </ul>
 </div>
 <hr />
-<h4 id="positiontoworld">positionToWorld(...)<a class="headerlink" href="#positiontoworld" title="Permanent link"> </a></h4>
+<h4 id="positiontoworld">positionToWorld(...)<a class="headerlink" href="#positiontoworld" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Vector after converting a local Vector to a world Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.</p>
 <div class="admonition tip">
 <p class="admonition-title">Object Scale</p>
@@ -3654,7 +3654,7 @@
 </ul>
 </div>
 <hr />
-<h4 id="rotate">rotate(...)<a class="headerlink" href="#rotate" title="Permanent link"> </a></h4>
+<h4 id="rotate">rotate(...)<a class="headerlink" href="#rotate" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Rotates Object smoothly in the direction of the given Vector. This does not set the Object to face a specific rotation, it rotates the Object around by the number of degrees given for x/y/z.</p>
 <div class="admonition info">
 <p class="admonition-title">rotate(vector)</p>
@@ -3666,7 +3666,7 @@
 <span class="n">self</span><span class="p">.</span><span class="n">rotate</span><span class="p">({</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">})</span>
 </code></pre></div>
 <hr />
-<h4 id="scale">scale(...)<a class="headerlink" href="#scale" title="Permanent link"> </a></h4>
+<h4 id="scale">scale(...)<a class="headerlink" href="#scale" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Scales Object by a multiple. This does not set the Object to a specific scale, it scales the Object by the given multiple.</p>
 <div class="admonition info">
 <p class="admonition-title">scale(scale)</p>
@@ -3691,7 +3691,7 @@
 <span class="n">self</span><span class="p">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h4 id="setpositionsmooth">setPositionSmooth(...)<a class="headerlink" href="#setpositionsmooth" title="Permanent link"> </a></h4>
+<h4 id="setpositionsmooth">setPositionSmooth(...)<a class="headerlink" href="#setpositionsmooth" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Moves the Object smoothly to the given Vector.</p>
 <div class="admonition info">
 <p class="admonition-title">setPositionSmooth(vector, collide, fast)</p>
@@ -3702,7 +3702,7 @@
 </ul>
 </div>
 <hr />
-<h4 id="setrotationsmooth">setRotationSmooth(...)<a class="headerlink" href="#setrotationsmooth" title="Permanent link"> </a></h4>
+<h4 id="setrotationsmooth">setRotationSmooth(...)<a class="headerlink" href="#setrotationsmooth" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Rotates the Object smoothly to the given Vector.</p>
 <div class="admonition info">
 <p class="admonition-title">setRotationSmooth(vector, collide, fast)</p>
@@ -3713,8 +3713,8 @@
 </ul>
 </div>
 <hr />
-<h3 id="ui-function-details">UI Function Details<a class="headerlink" href="#ui-function-details" title="Permanent link"> </a></h3>
-<h4 id="createbutton">createButton(...)<a class="headerlink" href="#createbutton" title="Permanent link"> </a></h4>
+<h3 id="ui-function-details">UI Function Details<a class="headerlink" href="#ui-function-details" title="Permanent link">&para;</a></h3>
+<h4 id="createbutton">createButton(...)<a class="headerlink" href="#createbutton" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Creates a scripted button attached to the Object. Scripted buttons are buttons that can be clicked while in-game that trigger a function in a script.</p>
 <details class="tip"><summary>Button Tips</summary><ul>
 <li>Buttons can not be clicked from their back side.</li>
@@ -3824,7 +3824,7 @@
 <p>Button scale currently distorts button height and width if the button is rotated at anything besides <code>{0,0,0}</code>.</p>
 </div>
 <hr />
-<h4 id="createinput">createInput(...)<a class="headerlink" href="#createinput" title="Permanent link"> </a></h4>
+<h4 id="createinput">createInput(...)<a class="headerlink" href="#createinput" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Creates a scripted input attached to the Object. Scripted inputs are boxes you can click inside of in-game to input/edit text. Every letter typed triggers the function. The bool that is returned as part of the input_function allows you to determine when a player has finished editing the input.</p>
 <details class="tip"><summary>Input Tips</summary><ul>
 <li>Inputs can not be clicked from their back side.</li>
@@ -3951,7 +3951,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h4 id="editbutton">editButton(...)<a class="headerlink" href="#editbutton" title="Permanent link"> </a></h4>
+<h4 id="editbutton">editButton(...)<a class="headerlink" href="#editbutton" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Modify an existing button. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited button's element to remain. Indexes start at 0. The first button on any given Object has an index of 0, the next button on it has an index of 1, etc. Each Object has its own indexes.</p>
 <div class="admonition info">
 <p class="admonition-title">editButton(parameters)</p>
@@ -3979,7 +3979,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">self</span><span class="p">.</span><span class="n">editButton</span><span class="p">({</span><span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;New Label&quot;</span><span class="p">})</span>
 </code></pre></div>
 <hr />
-<h4 id="editinput">editInput(...)<a class="headerlink" href="#editinput" title="Permanent link"> </a></h4>
+<h4 id="editinput">editInput(...)<a class="headerlink" href="#editinput" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Modify an existing input. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited input's element to remain. Indexes start at 0. The first input on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.</p>
 <div class="admonition info">
 <p class="admonition-title">editInput(parameters)</p>
@@ -4030,15 +4030,15 @@
 <div class="highlight"><pre><span></span><code><span class="n">self</span><span class="p">.</span><span class="n">editInput</span><span class="p">({</span><span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;New Value&quot;</span><span class="p">})</span>
 </code></pre></div>
 <hr />
-<h4 id="getbuttons">getButtons()<a class="headerlink" href="#getbuttons" title="Permanent link"> </a></h4>
+<h4 id="getbuttons">getButtons()<a class="headerlink" href="#getbuttons" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table of all buttons on this Object. The Table contains parameters tables with the same keys as seen in the <a href="#createbutton">createButton</a> section, except each Table of parameters also contains an <strong>index</strong> entry. This is used to identify each button, used by <a href="#editbutton">editButton</a> and <a href="#removebutton">removeButton</a>.</p>
 <p>Indexes start at 0.</p>
 <hr />
-<h4 id="getinputs">getInputs()<a class="headerlink" href="#getinputs" title="Permanent link"> </a></h4>
+<h4 id="getinputs">getInputs()<a class="headerlink" href="#getinputs" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table of all inputs on this Object. The Table contains parameters tables with the same keys as seen in the <a href="#createinput">createInput</a> section, except each Table of parameters also contains an <strong>index</strong> entry. This is used to identify each input, used by <a href="#editinput">editInput</a> and <a href="#removeinput">removeInput</a>.</p>
 <p>Indexes start at 0.</p>
 <hr />
-<h4 id="removebutton">removeButton(...)<a class="headerlink" href="#removebutton" title="Permanent link"> </a></h4>
+<h4 id="removebutton">removeButton(...)<a class="headerlink" href="#removebutton" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Removes a specific button. Indexes start at 0. The first button on any given Object has an index of 0, the next button on it has an index of 1, etc. Each Object has its own indexes.</p>
 <p>Removing an index instantly causes all other higher indexes to shift down 1.</p>
 <div class="admonition info">
@@ -4048,7 +4048,7 @@
 </ul>
 </div>
 <hr />
-<h4 id="removeinput">removeInput(...)<a class="headerlink" href="#removeinput" title="Permanent link"> </a></h4>
+<h4 id="removeinput">removeInput(...)<a class="headerlink" href="#removeinput" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Removes a specific input. Indexes start at 0. The first input on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.</p>
 <p>Removing an index instantly causes all other higher indexes to shift down 1.</p>
 <div class="admonition info">
@@ -4058,8 +4058,8 @@
 </ul>
 </div>
 <hr />
-<h3 id="get-function-details">Get Function Details<a class="headerlink" href="#get-function-details" title="Permanent link"> </a></h3>
-<h4 id="getcustomobject">getCustomObject()<a class="headerlink" href="#getcustomobject" title="Permanent link"> </a></h4>
+<h3 id="get-function-details">Get Function Details<a class="headerlink" href="#get-function-details" title="Permanent link">&para;</a></h3>
+<h4 id="getcustomobject">getCustomObject()<a class="headerlink" href="#getcustomobject" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table with the Custom Object information of a Custom Object. See the <a href="../custom-game-objects/">Custom Game Objects</a> page for the kind of information returned.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- Example returned Table for a custom token</span>
 <span class="p">{</span>
@@ -4074,7 +4074,7 @@
 <p>If you use getCustomObject() on a puzzle piece, it will also return <code>desired_position</code>, which is its position if the puzzle is "solved". You can use this to determine where to put the piece.</p>
 </div>
 <hr />
-<h4 id="getfogofwarreveal">getFogOfWarReveal()<a class="headerlink" href="#getfogofwarreveal" title="Permanent link"> </a></h4>
+<h4 id="getfogofwarreveal">getFogOfWarReveal()<a class="headerlink" href="#getfogofwarreveal" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Settings impacting <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a> being revealed. In the example returned table, these are the default values of any object.</p>
 <div class="admonition note">
 <p class="admonition-title">Color Selection</p>
@@ -4088,7 +4088,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h4 id="getjoints">getJoints()<a class="headerlink" href="#getjoints" title="Permanent link"> </a></h4>
+<h4 id="getjoints">getJoints()<a class="headerlink" href="#getjoints" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns information on any joints attached to this object. This information included the GUID of the other objects attached via the joints.</p>
 <p>This function returns a table of sub-tables, each sub-table representing one joint.</p>
 <p>Example of a return table of an object with 2 joints:
@@ -4136,7 +4136,7 @@
 <span class="kr">end</span>
 </code></pre></div></p>
 <hr />
-<h4 id="getobjects">getObjects()<a class="headerlink" href="#getobjects" title="Permanent link"> </a></h4>
+<h4 id="getobjects">getObjects()<a class="headerlink" href="#getobjects" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table of objects in the script zone/bag/deck. What it returns varies depending on the type of Object it is used on.</p>
 <p>If an Object is inside of a container, it does not exist in-game. As a result, you only get data on each Object, not an Object reference.</p>
 <div class="admonition info">
@@ -4181,14 +4181,14 @@
 </div>
 <p>This function is often used with <a href="#takeobject">takeObject(...)</a> to remove objects from containers.</p>
 <hr />
-<h4 id="getrotationvalue">getRotationValue()<a class="headerlink" href="#getrotationvalue" title="Permanent link"> </a></h4>
+<h4 id="getrotationvalue">getRotationValue()<a class="headerlink" href="#getrotationvalue" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret var"></span></a>&nbsp;Returns the current rotationValue. Rotation values are used to give value to different rotations (like dice) and are set using scripting or the Gizmo tool. The value returned is for the rotation that is closest to being pointed "up".</p>
 <p>The returned value will either be a number or a string, depending on the value that was given to that rotation.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">value</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getRotationValue</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h4 id="getrotationvalues">getRotationValues()<a class="headerlink" href="#getrotationvalues" title="Permanent link"> </a></h4>
+<h4 id="getrotationvalues">getRotationValues()<a class="headerlink" href="#getrotationvalues" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice) based on which side is pointed "up". It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.</p>
 <p>You can manually assign rotation values to objects using the Rotation Value Gizmo tool (in the left side Gizmo menu) or using <a href="#setrotationvalues">setRotationValues(...)</a>.</p>
 <div class="admonition info">
@@ -4209,7 +4209,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h4 id="getstates">getStates()<a class="headerlink" href="#getstates" title="Permanent link"> </a></h4>
+<h4 id="getstates">getStates()<a class="headerlink" href="#getstates" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table of information on the <a href="https://kb.tabletopsimulator.com/host-guides/creating-states/">states</a> of an Object. Stated Objects have ids (indexes) starting with 1.</p>
 <div class="admonition tip">
 <p class="admonition-title">The returned table will <strong>NOT</strong> include data on the current state.</p>
@@ -4251,7 +4251,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h4 id="getvalue">getValue()<a class="headerlink" href="#getvalue" title="Permanent link"> </a></h4>
+<h4 id="getvalue">getValue()<a class="headerlink" href="#getvalue" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret int"></span></a>&nbsp;Gets a value. What the value represents depends on what type of Object this function is used on.</p>
 <table>
 <thead>
@@ -4288,8 +4288,8 @@
 </tbody>
 </table>
 <hr />
-<h3 id="set-function-details">Set Function Details<a class="headerlink" href="#set-function-details" title="Permanent link"> </a></h3>
-<h4 id="setcustomobject">setCustomObject(...)<a class="headerlink" href="#setcustomobject" title="Permanent link"> </a></h4>
+<h3 id="set-function-details">Set Function Details<a class="headerlink" href="#set-function-details" title="Permanent link">&para;</a></h3>
+<h4 id="setcustomobject">setCustomObject(...)<a class="headerlink" href="#setcustomobject" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets a custom Object's properties. It can be used after <a href="../base/#spawnobject">spawnObject</a> or on an already existing custom Object. If used on an already existing custom Object, you must use <a href="#reload">reload</a> on the object after setCustomObject for the changes to be displayed.</p>
 <div class="admonition info">
 <p class="admonition-title">setCustomObject(parameters)</p>
@@ -4305,7 +4305,7 @@
 <span class="n">obj</span><span class="p">.</span><span class="n">setCustomObject</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h4 id="setfogofwarreveal">setFogOfWarReveal(...)<a class="headerlink" href="#setfogofwarreveal" title="Permanent link"> </a></h4>
+<h4 id="setfogofwarreveal">setFogOfWarReveal(...)<a class="headerlink" href="#setfogofwarreveal" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Establish the settings and enable/disable an Object's revealing of <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">setFogOfWarReveal(fog_settings)</p>
@@ -4338,7 +4338,7 @@
 <span class="n">self</span><span class="p">.</span><span class="n">setFogOfWarReveal</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h4 id="setrotationvalues">setRotationValues(...)<a class="headerlink" href="#setrotationvalues" title="Permanent link"> </a></h4>
+<h4 id="setrotationvalues">setRotationValues(...)<a class="headerlink" href="#setrotationvalues" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.</p>
 <div class="admonition info">
 <p class="admonition-title">setRotationValues(rotation_values)</p>
@@ -4361,7 +4361,7 @@
 <span class="n">self</span><span class="p">.</span><span class="n">setRotationValues</span><span class="p">(</span><span class="n">rotation_values</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h4 id="setvalue">setValue(...)<a class="headerlink" href="#setvalue" title="Permanent link"> </a></h4>
+<h4 id="setvalue">setValue(...)<a class="headerlink" href="#setvalue" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets a value on an Object. What the value represents depends on what type of Object it is.</p>
 <table>
 <thead>
@@ -4394,8 +4394,8 @@
 </tbody>
 </table>
 <hr />
-<h3 id="action-function-details">Action Function Details<a class="headerlink" href="#action-function-details" title="Permanent link"> </a></h3>
-<h4 id="addcontextmenuitem">addContextMenuItem(...)<a class="headerlink" href="#addcontextmenuitem" title="Permanent link"> </a></h4>
+<h3 id="action-function-details">Action Function Details<a class="headerlink" href="#action-function-details" title="Permanent link">&para;</a></h3>
+<h4 id="addcontextmenuitem">addContextMenuItem(...)<a class="headerlink" href="#addcontextmenuitem" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Adds a menu item to the objects right-click context menu.</p>
 <div class="admonition info">
 <p class="admonition-title">addContextMenuItem(label, toRunFunc, keep_open)</p>
@@ -4421,7 +4421,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h4 id="clone">clone(...)<a class="headerlink" href="#clone" title="Permanent link"> </a></h4>
+<h4 id="clone">clone(...)<a class="headerlink" href="#clone" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Copy/Paste this Object.</p>
 <div class="admonition info">
 <p class="admonition-title">clone(parameters)</p>
@@ -4440,7 +4440,7 @@
 </ul>
 </div>
 <hr />
-<h4 id="cut">cut(...)<a class="headerlink" href="#cut" title="Permanent link"> </a></h4>
+<h4 id="cut">cut(...)<a class="headerlink" href="#cut" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Cuts (splits) a deck down to a given card. In other words, it counts down from the top of the deck and makes a new deck of that size and puts the remaining cards in the other pile.</p>
 <p>After the cut, the resulting decks much each have at least 2 cards. This means the parameter used must be between <strong>2</strong> and <strong>totalNumberOfCards - 2</strong>.</p>
 <div class="admonition important">
@@ -4472,7 +4472,7 @@
 <span class="n">newDecks</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">deal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">newDecks</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">deal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
-<h4 id="deal">deal(...)<a class="headerlink" href="#deal" title="Permanent link"> </a></h4>
+<h4 id="deal">deal(...)<a class="headerlink" href="#deal" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Deals Objects to hand zones. Will deal from decks/bags/stacks as well as individual items. If dealing an individual item to a hand zone, it is a good idea to make sure that its <a href="#member-variables">Member Variable</a> for <code>use_hands</code> is <code>true</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">deal(number, player_color, index)</p>
@@ -4489,7 +4489,7 @@
 </ul>
 </div>
 <hr />
-<h4 id="dealtocolorwithoffset">dealToColorWithOffset(...)<a class="headerlink" href="#dealtocolorwithoffset" title="Permanent link"> </a></h4>
+<h4 id="dealtocolorwithoffset">dealToColorWithOffset(...)<a class="headerlink" href="#dealtocolorwithoffset" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Deals from a deck to a position relative to the hand zone.</p>
 <div class="admonition info">
 <p class="admonition-title">dealToColorWithOffset(offset, flip, player_color)</p>
@@ -4504,7 +4504,7 @@
 <span class="n">self</span><span class="p">.</span><span class="n">dealToColorWithOffset</span><span class="p">({</span> <span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;White&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h4 id="jointto">jointTo(...)<a class="headerlink" href="#jointto" title="Permanent link"> </a></h4>
+<h4 id="jointto">jointTo(...)<a class="headerlink" href="#jointto" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Joints objects together, in the same way the Joint tool does.</p>
 <p><strong>Using obj.jointTo(), with no object or parameter used as arguments, will remove all joints from that Object.</strong></p>
 <div class="admonition info">
@@ -4549,7 +4549,7 @@
 <span class="p">})</span>
 </code></pre></div></p>
 <hr />
-<h4 id="putobject">putObject(...)<a class="headerlink" href="#putobject" title="Permanent link"> </a></h4>
+<h4 id="putobject">putObject(...)<a class="headerlink" href="#putobject" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Places an object into a container (chip stacks/bags/decks). If neither Object is a container, but they are able to be combined (like with 2 cards), then they form a deck/stack.</p>
 <div class="admonition info">
 <p class="admonition-title">putObject(put_object)</p>
@@ -4570,7 +4570,7 @@
 <span class="n">self</span><span class="p">.</span><span class="n">putObject</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h4 id="registercollisions">registerCollisions(...)<a class="headerlink" href="#registercollisions" title="Permanent link"> </a></h4>
+<h4 id="registercollisions">registerCollisions(...)<a class="headerlink" href="#registercollisions" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Registers this object for Global collision events, such as <a href="../event/#onobjectcollisionenter">onObjectCollisionEnter</a>. Always returns <code>true</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">registerCollision(stay)</p>
@@ -4582,11 +4582,11 @@
 </ul>
 </div>
 <hr />
-<h4 id="reload">reload()<a class="headerlink" href="#reload" title="Permanent link"> </a></h4>
+<h4 id="reload">reload()<a class="headerlink" href="#reload" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Returns Object reference of itself after it respawns itself. This function causes the Object to be deleted and respawned instantly to refresh it, so its old Object reference will no longer be valid.</p>
 <p>Most often this is used after using <a href="#setcustomobject">setCustomObject(...)</a> to modify a custom object.</p>
 <hr />
-<h4 id="split">split(...)<a class="headerlink" href="#split" title="Permanent link"> </a></h4>
+<h4 id="split">split(...)<a class="headerlink" href="#split" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Splits a deck, as evenly as possible, into a number of piles.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -4624,7 +4624,7 @@
 <span class="n">newDecks</span><span class="p">[</span><span class="mi">4</span><span class="p">].</span><span class="n">deal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h4 id="spread">spread(...)<a class="headerlink" href="#spread" title="Permanent link"> </a></h4>
+<h4 id="spread">spread(...)<a class="headerlink" href="#spread" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Spreads the cards of a deck out on the table.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -4653,7 +4653,7 @@
 </ul>
 </div>
 <hr />
-<h4 id="takeobject">takeObject(...)<a class="headerlink" href="#takeobject" title="Permanent link"> </a></h4>
+<h4 id="takeobject">takeObject(...)<a class="headerlink" href="#takeobject" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Takes an object out of a container (bag/deck/chip stack), returning a reference to the object that was taken.</p>
 <p>Objects that are taken out of a container will take one or more frames to spawn.
 Certain interactions (e.g. physics) will not be able to take place until the object has finished spawning.</p>
@@ -4738,14 +4738,14 @@ the impulse.</p>
 </code></pre></div></p>
 </div>
 <hr />
-<h4 id="unregistercollisions">unregisterCollisions(...)<a class="headerlink" href="#unregistercollisions" title="Permanent link"> </a></h4>
+<h4 id="unregistercollisions">unregisterCollisions(...)<a class="headerlink" href="#unregistercollisions" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Unregisters this object for Global collision events. Returns <code>true</code> if the object was previously registered, <code>false</code> otherwise.</p>
 <div class="admonition info">
 <p class="admonition-title">unregisterCollision()</p>
 </div>
 <hr />
-<h3 id="hide-function-details">Hide Function Details<a class="headerlink" href="#hide-function-details" title="Permanent link"> </a></h3>
-<h4 id="sethiddenfrom">setHiddenFrom(...)<a class="headerlink" href="#sethiddenfrom" title="Permanent link"> </a></h4>
+<h3 id="hide-function-details">Hide Function Details<a class="headerlink" href="#hide-function-details" title="Permanent link">&para;</a></h3>
+<h4 id="sethiddenfrom">setHiddenFrom(...)<a class="headerlink" href="#sethiddenfrom" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Hides the Object from the specified players, as if it were in a hand zone.</p>
 <p>Using an empty table will cause the Object to remove the hiding effect.</p>
 <div class="admonition info">
@@ -4766,7 +4766,7 @@ the impulse.</p>
 <p>Just like Objects in a hand zone, the player/s the object is hidden from can still interact/move the hidden Object. It still exists to them, but is shown as a question mark or as a hidden card.</p>
 </div>
 <hr />
-<h4 id="setinvisibleto">setInvisibleTo(...)<a class="headerlink" href="#setinvisibleto" title="Permanent link"> </a></h4>
+<h4 id="setinvisibleto">setInvisibleTo(...)<a class="headerlink" href="#setinvisibleto" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Hides the Object from the specified players, as if it were in a hidden zone.</p>
 <p>Using an empty table will cause the Object to remove the hiding effect.</p>
 <div class="admonition info">
@@ -4787,7 +4787,7 @@ the impulse.</p>
 <p>Just like Objects in a hidden zone, the player/s the object is hidden from can still interact/move the hidden Object. It still exists to them, just invisibly so.</p>
 </div>
 <hr />
-<h4 id="attachhider">attachHider(...)<a class="headerlink" href="#attachhider" title="Permanent link"> </a></h4>
+<h4 id="attachhider">attachHider(...)<a class="headerlink" href="#attachhider" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;A more advanced version of <code>setHiddenFrom(...)</code>, this function is also used to hide objects as if they were in a hand zone. It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.</p>
 <p>This function is slightly more complicated to use for basic hiding, but allows for much easier hiding in complex situations.</p>
 <div class="admonition info">
@@ -4817,7 +4817,7 @@ the impulse.</p>
 <p>Just like Objects in a hand zone, the player/s the object is hidden from can still interact/move the hidden Object. It still exists to them, but is shown as a question mark or as a hidden card.</p>
 </div>
 <hr />
-<h4 id="attachinvisiblehider">attachInvisibleHider(...)<a class="headerlink" href="#attachinvisiblehider" title="Permanent link"> </a></h4>
+<h4 id="attachinvisiblehider">attachInvisibleHider(...)<a class="headerlink" href="#attachinvisiblehider" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;A more advanced version of <code>setInvisibleTo(...)</code>, this function is also used to hide objects as if they were in a hidden zone. It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.</p>
 <p>This function is slightly more complicated to use for basic hiding, but allows for much easier hiding in complex situations.</p>
 <div class="admonition info">
@@ -4848,8 +4848,8 @@ the impulse.</p>
 </div>
 <hr />
 <hr />
-<h3 id="global-function-details">Global Function Details<a class="headerlink" href="#global-function-details" title="Permanent link"> </a></h3>
-<h4 id="adddecal">addDecal(...)<a class="headerlink" href="#adddecal" title="Permanent link"> </a></h4>
+<h3 id="global-function-details">Global Function Details<a class="headerlink" href="#global-function-details" title="Permanent link">&para;</a></h3>
+<h4 id="adddecal">addDecal(...)<a class="headerlink" href="#adddecal" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Add a Decal onto an object or the game world.</p>
 <div class="admonition tip">
 <p class="admonition-title">Relative Vectors</p>
@@ -4883,7 +4883,7 @@ the impulse.</p>
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h4 id="call">call(...)<a class="headerlink" href="#call" title="Permanent link"> </a></h4>
+<h4 id="call">call(...)<a class="headerlink" href="#call" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret var"></span></a>&nbsp;Used to call a Lua function on another entity.</p>
 <p><em>Var is only returned if the function called has a <code>return</code>. Otherwise return is <code>nil</code>. See example.</em></p>
 <blockquote>
@@ -4914,7 +4914,7 @@ the impulse.</p>
 <span class="kr">end</span>
 </code></pre></div></p>
 <hr />
-<h4 id="getdecals">getDecals()<a class="headerlink" href="#getdecals" title="Permanent link"> </a></h4>
+<h4 id="getdecals">getDecals()<a class="headerlink" href="#getdecals" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a table of sub-tables, each sub-table representing one decal.</p>
 <div class="admonition info">
 <p class="admonition-title">Sub-table elements</p>
@@ -4956,7 +4956,7 @@ the impulse.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">decalTable</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">name</span><span class="p">)</span>
 </code></pre></div></p>
 <hr />
-<h4 id="getsnappoints">getSnapPoints()<a class="headerlink" href="#getsnappoints" title="Permanent link"> </a></h4>
+<h4 id="getsnappoints">getSnapPoints()<a class="headerlink" href="#getsnappoints" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a table of sub-tables, each sub-table representing one snap point.</p>
 <blockquote>
 <p>This function can also be used directly on the game world (game table) using Global.</p>
@@ -4996,7 +4996,7 @@ the impulse.</p>
 <span class="p">}</span>
 </code></pre></div></p>
 <hr />
-<h4 id="setdecals">setDecals(...)<a class="headerlink" href="#setdecals" title="Permanent link"> </a></h4>
+<h4 id="setdecals">setDecals(...)<a class="headerlink" href="#setdecals" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets which decals are on an object. This removes other decals already present, and can remove all decals as well.</p>
 <div class="admonition tip">
 <p class="admonition-title">Removing decals</p>
@@ -5044,7 +5044,7 @@ the impulse.</p>
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h4 id="setsnappoints">setSnapPoints(...)<a class="headerlink" href="#setsnappoints" title="Permanent link"> </a></h4>
+<h4 id="setsnappoints">setSnapPoints(...)<a class="headerlink" href="#setsnappoints" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Spawns snap points from a list of parameters.</p>
 <blockquote>
 <p>This function can also be used on the game world (game table) itself using Global.</p>
@@ -5086,7 +5086,7 @@ the impulse.</p>
 <span class="p">})</span>
 </code></pre></div>
 <hr />
-<h4 id="setvectorlines">setVectorLines(...)<a class="headerlink" href="#setvectorlines" title="Permanent link"> </a></h4>
+<h4 id="setvectorlines">setVectorLines(...)<a class="headerlink" href="#setvectorlines" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Spawns Vector Lines from a list of parameters.</p>
 <blockquote>
 <p>This function can also be used on the game world itself using Global.</p>

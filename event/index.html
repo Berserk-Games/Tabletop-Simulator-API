@@ -1797,8 +1797,8 @@
 <!-- Markdown content -->
 <p>Events are functions which are activated by Tabletop Simulator when something takes place in-game. It is possible to use all of them within scripts on Objects, and most will also work in Global scripts.</p>
 <p>Many contain parameters which can be used to utilize additional information related to the event.</p>
-<h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link"> </a></h2>
-<h3 id="default-events-global-object">Default Events (Global &amp; Object)<a class="headerlink" href="#default-events-global-object" title="Permanent link"> </a></h3>
+<h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link">&para;</a></h2>
+<h3 id="default-events-global-object">Default Events (Global &amp; Object)<a class="headerlink" href="#default-events-global-object" title="Permanent link">&para;</a></h3>
 <p>These are functions which are triggered by an event taking place in-game. They work when within the script of an Object or the Global script.</p>
 <table>
 <thead>
@@ -2056,7 +2056,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="default-events-object-only">Default Events (Object Only)<a class="headerlink" href="#default-events-object-only" title="Permanent link"> </a></h3>
+<h3 id="default-events-object-only">Default Events (Object Only)<a class="headerlink" href="#default-events-object-only" title="Permanent link">&para;</a></h3>
 <p>These are functions which are triggered by an event taking place in-game. They only work within scripts that are on Objects, never in Global.</p>
 <table>
 <thead>
@@ -2175,8 +2175,8 @@
 </tbody>
 </table>
 <hr />
-<h2 id="function-details-global-object">Function Details (Global &amp; Object)<a class="headerlink" href="#function-details-global-object" title="Permanent link"> </a></h2>
-<h3 id="filterobjectentercontainer">filterObjectEnterContainer(...)<a class="headerlink" href="#filterobjectentercontainer" title="Permanent link"> </a></h3>
+<h2 id="function-details-global-object">Function Details (Global &amp; Object)<a class="headerlink" href="#function-details-global-object" title="Permanent link">&para;</a></h2>
+<h3 id="filterobjectentercontainer">filterObjectEnterContainer(...)<a class="headerlink" href="#filterobjectentercontainer" title="Permanent link">&para;</a></h3>
 <p>Called when an object attempts to enter a container. The object is prevented from entering unless <code>true</code> is returned.</p>
 <div class="admonition info">
 <p class="admonition-title">filterObjectEnter(container, enter_object)</p>
@@ -2191,7 +2191,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onchat">onChat(...)<a class="headerlink" href="#onchat" title="Permanent link"> </a></h3>
+<h3 id="onchat">onChat(...)<a class="headerlink" href="#onchat" title="Permanent link">&para;</a></h3>
 <p>This function is called when a message is sent through the in-game chat. It does not trigger when global chat messages are sent. Using <code class="highlight"><span class="kr">return</span> <span class="kc">false</span></code> inside of this function prevents the chat message which triggered it to be suppressed.</p>
 <div class="admonition info">
 <p class="admonition-title">onChat(message, sender)</p>
@@ -2206,7 +2206,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onexternalmessage">onExternalMessage(...)<a class="headerlink" href="#onexternalmessage" title="Permanent link"> </a></h3>
+<h3 id="onexternalmessage">onExternalMessage(...)<a class="headerlink" href="#onexternalmessage" title="Permanent link">&para;</a></h3>
 <p>This function is called when an external script editor (like <a href="../atom/">Atom</a>) sends a message back to the game. Used for custom editor functionality.</p>
 <div class="admonition info">
 <p class="admonition-title">onExternalMessage(data)</p>
@@ -2219,7 +2219,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onfixedupdate">onFixedUpdate()<a class="headerlink" href="#onfixedupdate" title="Permanent link"> </a></h3>
+<h3 id="onfixedupdate">onFixedUpdate()<a class="headerlink" href="#onfixedupdate" title="Permanent link">&para;</a></h3>
 <p>Called <strong>every physics tick</strong> (90 times a second). This is a frame independent onUpdate().</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2229,7 +2229,7 @@
     <span class="n">self</span><span class="p">.</span><span class="n">addTorque</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span> <span class="mi">1</span><span class="p">)</span>
 <span class="kr">end</span>
 </code></pre></div>
-<h3 id="onload">onLoad(...)<a class="headerlink" href="#onload" title="Permanent link"> </a></h3>
+<h3 id="onload">onLoad(...)<a class="headerlink" href="#onload" title="Permanent link">&para;</a></h3>
 <p>This function is called when a game save is finished loading every Object. This is where most setup code will go. The fast-forward and rewind feature will also cause this function to activate. If this function is in an Object's script and that Object is spawned, like by removing it from a container, it too will trigger onLoad().</p>
 <div class="admonition info">
 <p class="admonition-title">onLoad(save_state)</p>
@@ -2265,7 +2265,7 @@
 </code></pre></div>
 </details>
 <hr />
-<h3 id="onobjectcollisionenter">onObjectCollisionEnter(...)<a class="headerlink" href="#onobjectcollisionenter" title="Permanent link"> </a></h3>
+<h3 id="onobjectcollisionenter">onObjectCollisionEnter(...)<a class="headerlink" href="#onobjectcollisionenter" title="Permanent link">&para;</a></h3>
 <p>This function is called when an Object starts colliding with a <a href="../object/#registercollisions">collision registered</a> Object.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectCollisionEnter(registered_object, collision_info)</p>
@@ -2294,7 +2294,7 @@
 <span class="p">}</span>
 </code></pre></div></p>
 <hr />
-<h3 id="onobjectcollisionexit">onObjectCollisionExit(...)<a class="headerlink" href="#onobjectcollisionexit" title="Permanent link"> </a></h3>
+<h3 id="onobjectcollisionexit">onObjectCollisionExit(...)<a class="headerlink" href="#onobjectcollisionexit" title="Permanent link">&para;</a></h3>
 <p>This function is called when an Object stops colliding with a <a href="../object/#registercollisions">collision registered</a> Object.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectCollisionExit(registered_object, collision_info)</p>
@@ -2323,7 +2323,7 @@
 <span class="p">}</span>
 </code></pre></div></p>
 <hr />
-<h3 id="onobjectcollisionstay">onObjectCollisionStay(...)<a class="headerlink" href="#onobjectcollisionstay" title="Permanent link"> </a></h3>
+<h3 id="onobjectcollisionstay">onObjectCollisionStay(...)<a class="headerlink" href="#onobjectcollisionstay" title="Permanent link">&para;</a></h3>
 <p>This function is called <strong>every frame</strong> that an Object is colliding with a <a href="../object/#registercollisions">collision registered</a> Object.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2356,7 +2356,7 @@
 <span class="p">}</span>
 </code></pre></div></p>
 <hr />
-<h3 id="onobjectdestroy">onObjectDestroy(...)<a class="headerlink" href="#onobjectdestroy" title="Permanent link"> </a></h3>
+<h3 id="onobjectdestroy">onObjectDestroy(...)<a class="headerlink" href="#onobjectdestroy" title="Permanent link">&para;</a></h3>
 <p>Called whenever any object is destroyed. The dying Object has 1 frame left to live. This event fires immediately before the dying Object’s <code>onDestroy()</code> but their lifetime is the same final frame.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectDestroy(dying_object)</p>
@@ -2369,7 +2369,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onobjectdrop">onObjectDrop(...)<a class="headerlink" href="#onobjectdrop" title="Permanent link"> </a></h3>
+<h3 id="onobjectdrop">onObjectDrop(...)<a class="headerlink" href="#onobjectdrop" title="Permanent link">&para;</a></h3>
 <p>Called whenever any object is dropped by a player.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectDrop(player_color, dropped_object)</p>
@@ -2383,7 +2383,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onobjectenterscriptingzone">onObjectEnterScriptingZone(...)<a class="headerlink" href="#onobjectenterscriptingzone" title="Permanent link"> </a></h3>
+<h3 id="onobjectenterscriptingzone">onObjectEnterScriptingZone(...)<a class="headerlink" href="#onobjectenterscriptingzone" title="Permanent link">&para;</a></h3>
 <p>Called when any object enters any scripting zone.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectEnterScriptingZone(zone, enter_object)</p>
@@ -2397,7 +2397,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onobjectentercontainer">onObjectEnterContainer(...)<a class="headerlink" href="#onobjectentercontainer" title="Permanent link"> </a></h3>
+<h3 id="onobjectentercontainer">onObjectEnterContainer(...)<a class="headerlink" href="#onobjectentercontainer" title="Permanent link">&para;</a></h3>
 <p>Called when any object enters any container. Includes Objects entering decks.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectEnterContainer(container, enter_object)</p>
@@ -2412,7 +2412,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onobjectflick">onObjectFlick(...)<a class="headerlink" href="#onobjectflick" title="Permanent link"> </a></h3>
+<h3 id="onobjectflick">onObjectFlick(...)<a class="headerlink" href="#onobjectflick" title="Permanent link">&para;</a></h3>
 <p>Called whenever a player <a href="https://kb.tabletopsimulator.com/game-tools/flick-tool/">flicks</a> flicks an object.</p>
 <div class="admonition info">
 <p class="admonition-title">onFlick(object, player_color, impulse)</p>
@@ -2431,7 +2431,7 @@
 </code></pre></div></p>
 </div>
 <hr />
-<h3 id="onobjecthover">onObjectHover(...)<a class="headerlink" href="#onobjecthover" title="Permanent link"> </a></h3>
+<h3 id="onobjecthover">onObjectHover(...)<a class="headerlink" href="#onobjecthover" title="Permanent link">&para;</a></h3>
 <p>Called when a player moves their pointer (cursor) over an object.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectHover(player_color, hovered_object)</p>
@@ -2452,7 +2452,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onobjectleavescriptingzone">onObjectLeaveScriptingZone(...)<a class="headerlink" href="#onobjectleavescriptingzone" title="Permanent link"> </a></h3>
+<h3 id="onobjectleavescriptingzone">onObjectLeaveScriptingZone(...)<a class="headerlink" href="#onobjectleavescriptingzone" title="Permanent link">&para;</a></h3>
 <p>Called when any object leaves any scripting zone.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectLeaveScriptingZone(zone, enter_object)</p>
@@ -2466,7 +2466,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onobjectleavecontainer">onObjectLeaveContainer(...)<a class="headerlink" href="#onobjectleavecontainer" title="Permanent link"> </a></h3>
+<h3 id="onobjectleavecontainer">onObjectLeaveContainer(...)<a class="headerlink" href="#onobjectleavecontainer" title="Permanent link">&para;</a></h3>
 <p>Called when any object leaves any container.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectLeaveContainer(container, leave_object)</p>
@@ -2481,7 +2481,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onobjectloopingeffect">onObjectLoopingEffect(...)<a class="headerlink" href="#onobjectloopingeffect" title="Permanent link"> </a></h3>
+<h3 id="onobjectloopingeffect">onObjectLoopingEffect(...)<a class="headerlink" href="#onobjectloopingeffect" title="Permanent link">&para;</a></h3>
 <p>Called whenever the looping effect of an <a href="../assetbundle/">AssetBundle</a> is activated.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectLoopingEffect(loop_object, index)</p>
@@ -2495,7 +2495,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onobjectnumbertyped">onObjectNumberTyped(...)<a class="headerlink" href="#onobjectnumbertyped" title="Permanent link"> </a></h3>
+<h3 id="onobjectnumbertyped">onObjectNumberTyped(...)<a class="headerlink" href="#onobjectnumbertyped" title="Permanent link">&para;</a></h3>
 <p>Called when a player types a number whilst hovering over an object.</p>
 <p>If you wish to prevent the default behavior (e.g. drawing a card) then you may return <code>true</code> to indicate you've handled the event yourself.</p>
 <div class="admonition info">
@@ -2526,7 +2526,7 @@
 </code></pre></div></p>
 </div>
 <hr />
-<h3 id="onobjectpagechange">onObjectPageChange(...)<a class="headerlink" href="#onobjectpagechange" title="Permanent link"> </a></h3>
+<h3 id="onobjectpagechange">onObjectPageChange(...)<a class="headerlink" href="#onobjectpagechange" title="Permanent link">&para;</a></h3>
 <p>Called when an object's Custom PDF page is changed.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectPageChange(object)</p>
@@ -2543,7 +2543,7 @@
 </code></pre></div></p>
 </div>
 <hr />
-<h3 id="onobjectpeek">onObjectPeek(...)<a class="headerlink" href="#onobjectpeek" title="Permanent link"> </a></h3>
+<h3 id="onobjectpeek">onObjectPeek(...)<a class="headerlink" href="#onobjectpeek" title="Permanent link">&para;</a></h3>
 <p>Called when a player using peek to look under an Object.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectPeek(object, player)</p>
@@ -2557,7 +2557,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onobjectpickup">onObjectPickUp(...)<a class="headerlink" href="#onobjectpickup" title="Permanent link"> </a></h3>
+<h3 id="onobjectpickup">onObjectPickUp(...)<a class="headerlink" href="#onobjectpickup" title="Permanent link">&para;</a></h3>
 <p>Called whenever a Player picks up an Object.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectPickUp(player_color, picked_up_object)</p>
@@ -2571,7 +2571,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onobjectrandomize">onObjectRandomize(...)<a class="headerlink" href="#onobjectrandomize" title="Permanent link"> </a></h3>
+<h3 id="onobjectrandomize">onObjectRandomize(...)<a class="headerlink" href="#onobjectrandomize" title="Permanent link">&para;</a></h3>
 <p>Called when an Object is randomized. Like when shuffling a deck or shaking dice.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectRandomize(randomize_object, player_color)</p>
@@ -2585,7 +2585,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onobjectsearchend">onObjectSearchEnd(...)<a class="headerlink" href="#onobjectsearchend" title="Permanent link"> </a></h3>
+<h3 id="onobjectsearchend">onObjectSearchEnd(...)<a class="headerlink" href="#onobjectsearchend" title="Permanent link">&para;</a></h3>
 <p>Called when a search is finished on any container.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectSearchEnd(obj, player_color)</p>
@@ -2595,7 +2595,7 @@
 </ul>
 </div>
 <hr />
-<h3 id="onobjectsearchstart">onObjectSearchStart(...)<a class="headerlink" href="#onobjectsearchstart" title="Permanent link"> </a></h3>
+<h3 id="onobjectsearchstart">onObjectSearchStart(...)<a class="headerlink" href="#onobjectsearchstart" title="Permanent link">&para;</a></h3>
 <p>Called when a search is started on any container.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectSearchStart(obj, player_color)</p>
@@ -2605,7 +2605,7 @@
 </ul>
 </div>
 <hr />
-<h3 id="onobjectspawn">onObjectSpawn(...)<a class="headerlink" href="#onobjectspawn" title="Permanent link"> </a></h3>
+<h3 id="onobjectspawn">onObjectSpawn(...)<a class="headerlink" href="#onobjectspawn" title="Permanent link">&para;</a></h3>
 <p>Called when any Object is spawned/created.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectSpawn(spawn_object)</p>
@@ -2618,7 +2618,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onobjecttriggereffect">onObjectTriggerEffect(...)<a class="headerlink" href="#onobjecttriggereffect" title="Permanent link"> </a></h3>
+<h3 id="onobjecttriggereffect">onObjectTriggerEffect(...)<a class="headerlink" href="#onobjecttriggereffect" title="Permanent link">&para;</a></h3>
 <p>Called whenever the trigger effect of an <a href="../assetbundle/">AssetBundle</a> is activated.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectTriggerEffect(loop_object, index)</p>
@@ -2632,7 +2632,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onplayerchangecolor">onPlayerChangeColor(...)<a class="headerlink" href="#onplayerchangecolor" title="Permanent link"> </a></h3>
+<h3 id="onplayerchangecolor">onPlayerChangeColor(...)<a class="headerlink" href="#onplayerchangecolor" title="Permanent link">&para;</a></h3>
 <p>Called when a player changes color or selects it for the first time. It also returns <code>"Grey"</code> if they disconnect.</p>
 <div class="admonition info">
 <p class="admonition-title">onPlayerChangeColor(player_color)</p>
@@ -2645,7 +2645,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onplayerchangeteam">onPlayerChangeTeam(...)<a class="headerlink" href="#onplayerchangeteam" title="Permanent link"> </a></h3>
+<h3 id="onplayerchangeteam">onPlayerChangeTeam(...)<a class="headerlink" href="#onplayerchangeteam" title="Permanent link">&para;</a></h3>
 <p>Called when a player changes team.</p>
 <div class="admonition info">
 <p class="admonition-title">onPlayerChangeTeam(player_color, team)</p>
@@ -2668,7 +2668,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onplayerconnect">onPlayerConnect(...)<a class="headerlink" href="#onplayerconnect" title="Permanent link"> </a></h3>
+<h3 id="onplayerconnect">onPlayerConnect(...)<a class="headerlink" href="#onplayerconnect" title="Permanent link">&para;</a></h3>
 <p>Called when a <a href="../player/">Player</a> connects to a game.</p>
 <div class="admonition info">
 <p class="admonition-title">onPlayerConnect(person)</p>
@@ -2677,7 +2677,7 @@
 </ul>
 </div>
 <hr />
-<h3 id="onplayerdisconnect">onPlayerDisconnect(...)<a class="headerlink" href="#onplayerdisconnect" title="Permanent link"> </a></h3>
+<h3 id="onplayerdisconnect">onPlayerDisconnect(...)<a class="headerlink" href="#onplayerdisconnect" title="Permanent link">&para;</a></h3>
 <p>Called when a <a href="../player/">Player</a> disconnects from a game.</p>
 <div class="admonition info">
 <p class="admonition-title">onPlayerDisconnect(person)</p>
@@ -2686,7 +2686,7 @@
 </ul>
 </div>
 <hr />
-<h3 id="onplayerturn">onPlayerTurn(...)<a class="headerlink" href="#onplayerturn" title="Permanent link"> </a></h3>
+<h3 id="onplayerturn">onPlayerTurn(...)<a class="headerlink" href="#onplayerturn" title="Permanent link">&para;</a></h3>
 <p>Called at the start of a player's turn when using the in-game turn system.</p>
 <div class="admonition info">
 <p class="admonition-title">onPlayerTurn(person)</p>
@@ -2699,7 +2699,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onsave">onSave()<a class="headerlink" href="#onsave" title="Permanent link"> </a></h3>
+<h3 id="onsave">onSave()<a class="headerlink" href="#onsave" title="Permanent link">&para;</a></h3>
 <p>This is called whenever the game saves, either manually or by auto-save. This will work in both a Global script, and an Object script. It is used to allow information to persist through saving/loading, for example, to let your script remember its data previously after hitting the Undo or Redo button. By placing script information into a Lua table, then encoding that data into <a href="#json">JSON</a>, you are able to save information about the script's current state onto the script's parent, in the form of a string. You can also return a string value in this function to stash it.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -2718,7 +2718,7 @@
 </code></pre></div>
 <p>Check the <a href="#onload"><code>onLoad()</code></a> section for how to load that stored JSON information into your script.</p>
 <hr />
-<h3 id="onscriptingbuttondown">onScriptingButtonDown(...)<a class="headerlink" href="#onscriptingbuttondown" title="Permanent link"> </a></h3>
+<h3 id="onscriptingbuttondown">onScriptingButtonDown(...)<a class="headerlink" href="#onscriptingbuttondown" title="Permanent link">&para;</a></h3>
 <p>Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10.</p>
 <div class="admonition info">
 <p class="admonition-title">onScriptingButtonDown(index, player_color)</p>
@@ -2732,7 +2732,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onscriptingbuttonup">onScriptingButtonUp(...)<a class="headerlink" href="#onscriptingbuttonup" title="Permanent link"> </a></h3>
+<h3 id="onscriptingbuttonup">onScriptingButtonUp(...)<a class="headerlink" href="#onscriptingbuttonup" title="Permanent link">&para;</a></h3>
 <p>Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10.</p>
 <div class="admonition info">
 <p class="admonition-title">onScriptingButtonUp(index, player_color)</p>
@@ -2746,7 +2746,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onupdate">onUpdate()<a class="headerlink" href="#onupdate" title="Permanent link"> </a></h3>
+<h3 id="onupdate">onUpdate()<a class="headerlink" href="#onupdate" title="Permanent link">&para;</a></h3>
 <p>Called <strong>every frame</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2758,8 +2758,8 @@
 </code></pre></div>
 <hr />
 <hr />
-<h2 id="function-details-object-only">Function Details (Object only)<a class="headerlink" href="#function-details-object-only" title="Permanent link"> </a></h2>
-<h3 id="filterobjectenter">filterObjectEnter(...)<a class="headerlink" href="#filterobjectenter" title="Permanent link"> </a></h3>
+<h2 id="function-details-object-only">Function Details (Object only)<a class="headerlink" href="#function-details-object-only" title="Permanent link">&para;</a></h2>
+<h3 id="filterobjectenter">filterObjectEnter(...)<a class="headerlink" href="#filterobjectenter" title="Permanent link">&para;</a></h3>
 <p>Called when an object attempts to enter this object. The object is prevented from entering unless <code>true</code> is returned.</p>
 <div class="admonition info">
 <p class="admonition-title">filterObjectEnter(obj)</p>
@@ -2773,7 +2773,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="oncollisionenter">onCollisionEnter(...)<a class="headerlink" href="#oncollisionenter" title="Permanent link"> </a></h3>
+<h3 id="oncollisionenter">onCollisionEnter(...)<a class="headerlink" href="#oncollisionenter" title="Permanent link">&para;</a></h3>
 <p>This function is called when an Object starts colliding with the Object the function is on. Does not work in Global.</p>
 <div class="admonition info">
 <p class="admonition-title">onCollisionEnter(collision_info)</p>
@@ -2801,7 +2801,7 @@
 <span class="p">}</span>
 </code></pre></div></p>
 <hr />
-<h3 id="oncollisionexit">onCollisionExit(...)<a class="headerlink" href="#oncollisionexit" title="Permanent link"> </a></h3>
+<h3 id="oncollisionexit">onCollisionExit(...)<a class="headerlink" href="#oncollisionexit" title="Permanent link">&para;</a></h3>
 <p>This function is called when an Object stops colliding with the Object the function is on. Does not work in Global.</p>
 <div class="admonition info">
 <p class="admonition-title">onCollisionExit(collision_info)</p>
@@ -2829,7 +2829,7 @@
 <span class="p">}</span>
 </code></pre></div></p>
 <hr />
-<h3 id="oncollisionstay">onCollisionStay(...)<a class="headerlink" href="#oncollisionstay" title="Permanent link"> </a></h3>
+<h3 id="oncollisionstay">onCollisionStay(...)<a class="headerlink" href="#oncollisionstay" title="Permanent link">&para;</a></h3>
 <p>This function is called <strong>every frame</strong> that an Object is colliding with the Object this function is on. Does not work in Global.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2861,14 +2861,14 @@
 <span class="p">}</span>
 </code></pre></div></p>
 <hr />
-<h3 id="ondestroy">onDestroy()<a class="headerlink" href="#ondestroy" title="Permanent link"> </a></h3>
+<h3 id="ondestroy">onDestroy()<a class="headerlink" href="#ondestroy" title="Permanent link">&para;</a></h3>
 <p>This function is called when an <a href="../object/">Object</a> it is on is destroyed. When <code>onDestroy()</code> is called, the Object has one frame left to live but its recommended to avoid using it as a reference here. This event fires immediately after <a href="#onobjectdestroy">onObjectDestroy()</a> but their lifetime is the same final frame. Does not work in Global.</p>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onDestroy</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This object was destroyed!&quot;</span><span class="p">)</span>
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="ondrop">onDrop(...)<a class="headerlink" href="#ondrop" title="Permanent link"> </a></h3>
+<h3 id="ondrop">onDrop(...)<a class="headerlink" href="#ondrop" title="Permanent link">&para;</a></h3>
 <p>This function is called when this <a href="../object/">Object</a> is dropped. Does not work in Global.</p>
 <div class="admonition info">
 <p class="admonition-title">onDrop(player_color)</p>
@@ -2881,7 +2881,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onflick">onFlick(...)<a class="headerlink" href="#onflick" title="Permanent link"> </a></h3>
+<h3 id="onflick">onFlick(...)<a class="headerlink" href="#onflick" title="Permanent link">&para;</a></h3>
 <p>Called when a player <a href="https://kb.tabletopsimulator.com/game-tools/flick-tool/">flicks</a> this <a href="../object/">Object</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">onFlick(player_color, impulse)</p>
@@ -2899,7 +2899,7 @@
 </code></pre></div></p>
 </div>
 <hr />
-<h3 id="onhover">onHover(...)<a class="headerlink" href="#onhover" title="Permanent link"> </a></h3>
+<h3 id="onhover">onHover(...)<a class="headerlink" href="#onhover" title="Permanent link">&para;</a></h3>
 <p>Called when a player moves their pointer (cursor) over this <a href="../object/">Object</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">onHover(player_color)</p>
@@ -2912,7 +2912,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onnumbertyped">onNumberTyped(...)<a class="headerlink" href="#onnumbertyped" title="Permanent link"> </a></h3>
+<h3 id="onnumbertyped">onNumberTyped(...)<a class="headerlink" href="#onnumbertyped" title="Permanent link">&para;</a></h3>
 <p>Called when a player types a number whilst hovering over this <a href="../object/">Object</a>.</p>
 <p>If you wish to prevent the default behavior (e.g. drawing a card, if this object were a deck) then you may return <code>true</code> to indicate you've handled the event yourself.</p>
 <div class="admonition info">
@@ -2942,7 +2942,7 @@
 </code></pre></div></p>
 </div>
 <hr />
-<h3 id="onpagechange">onPageChange()<a class="headerlink" href="#onpagechange" title="Permanent link"> </a></h3>
+<h3 id="onpagechange">onPageChange()<a class="headerlink" href="#onpagechange" title="Permanent link">&para;</a></h3>
 <p>Called when this <a href="../object/">Object</a>'s Custom PDF page is changed.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -2953,7 +2953,7 @@
 </code></pre></div></p>
 </div>
 <hr />
-<h3 id="onpeek">onPeek(...)<a class="headerlink" href="#onpeek" title="Permanent link"> </a></h3>
+<h3 id="onpeek">onPeek(...)<a class="headerlink" href="#onpeek" title="Permanent link">&para;</a></h3>
 <p>Called when a player using peek to look under an Object.</p>
 <div class="admonition info">
 <p class="admonition-title">onPeek(player_color)</p>
@@ -2966,7 +2966,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onpickup">onPickUp(...)<a class="headerlink" href="#onpickup" title="Permanent link"> </a></h3>
+<h3 id="onpickup">onPickUp(...)<a class="headerlink" href="#onpickup" title="Permanent link">&para;</a></h3>
 <p>Called when a player picks up an Object.</p>
 <div class="admonition info">
 <p class="admonition-title">onPickUp(player_color)</p>
@@ -2979,7 +2979,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onrandomize">onRandomize(...)<a class="headerlink" href="#onrandomize" title="Permanent link"> </a></h3>
+<h3 id="onrandomize">onRandomize(...)<a class="headerlink" href="#onrandomize" title="Permanent link">&para;</a></h3>
 <p>Called when an Object is randomized. Like when shuffling a deck or shaking dice.</p>
 <div class="admonition info">
 <p class="admonition-title">onRandomize(player_color)</p>
@@ -2992,7 +2992,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="onsearchend">onSearchEnd(...)<a class="headerlink" href="#onsearchend" title="Permanent link"> </a></h3>
+<h3 id="onsearchend">onSearchEnd(...)<a class="headerlink" href="#onsearchend" title="Permanent link">&para;</a></h3>
 <p>Called when a player first searches this Object.</p>
 <div class="admonition info">
 <p class="admonition-title">onSearchEnd(<a href="../types/"><span class="tag str"></span></a>&nbsp;player_color)</p>
@@ -3001,7 +3001,7 @@
 </ul>
 </div>
 <hr />
-<h3 id="onsearchstart">onSearchStart(...)<a class="headerlink" href="#onsearchstart" title="Permanent link"> </a></h3>
+<h3 id="onsearchstart">onSearchStart(...)<a class="headerlink" href="#onsearchstart" title="Permanent link">&para;</a></h3>
 <p>Called when a player finishes searching this Object.</p>
 <div class="admonition info">
 <p class="admonition-title">onSearchStart(<a href="../types/"><span class="tag str"></span></a>&nbsp;player_color)</p>

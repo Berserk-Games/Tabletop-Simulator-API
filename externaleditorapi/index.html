@@ -1211,12 +1211,12 @@
 <!-- Markdown content -->
 <p>This page describes how our <a href="../atom/">Official Atom Plugin</a> API works so that you can write your own plugin for your text editor of choice if Atom does not suit your needs.</p>
 <p>Communication between the editor and TTS occurs via two localhost TCP connections: one where TTS listens for messages and one where the editor listens for messages. All communication messages are JSON.</p>
-<h2 id="atom-as-the-server">Atom as the Server<a class="headerlink" href="#atom-as-the-server" title="Permanent link"> </a></h2>
+<h2 id="atom-as-the-server">Atom as the Server<a class="headerlink" href="#atom-as-the-server" title="Permanent link">&para;</a></h2>
 <p>The following are messages the editor plugin listens for and handles.</p>
 <div class="admonition note">
 <p>Atom listens for incoming localhost TCP connections on port 39998.</p>
 </div>
-<h3 id="pushing-new-object">Pushing New Object<a class="headerlink" href="#pushing-new-object" title="Permanent link"> </a></h3>
+<h3 id="pushing-new-object">Pushing New Object<a class="headerlink" href="#pushing-new-object" title="Permanent link">&para;</a></h3>
 <p>When clicking on "Scripting Editor" in the right click contextual menu in TTS for an object that doesn't have a Lua Script yet, TTS will send a JSON message with an ID of 0 and data for the object. The Atom plugin will open a new tab for this Object. If TTS is unable to connect to an external editor, e.g. if Atom is not running, then TTS falls back to the in-game editor.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -1229,7 +1229,7 @@
     <span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="loading-a-new-game">Loading a New Game<a class="headerlink" href="#loading-a-new-game" title="Permanent link"> </a></h3>
+<h3 id="loading-a-new-game">Loading a New Game<a class="headerlink" href="#loading-a-new-game" title="Permanent link">&para;</a></h3>
 <p>After loading a new game in TTS, TTS will send all the Lua scripts and UI XML from the new game to Atom. TTS sends a JSON message with an ID of 1 and an array of the Lua Scripts and UI XMLs. TTS also sends this message as a response to requests made by the editor, as described later under messages TTS listens for and handles.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1249,14 +1249,14 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>Note that this message contains all objects in the TTS session that have Lua scripts or UI XML data. Any object not mentioned by this message does not have a Lua script or UI XML in TTS.</p>
-<h3 id="printdebug-messages">Print/Debug Messages<a class="headerlink" href="#printdebug-messages" title="Permanent link"> </a></h3>
+<h3 id="printdebug-messages">Print/Debug Messages<a class="headerlink" href="#printdebug-messages" title="Permanent link">&para;</a></h3>
 <p>TTS sends all print() messages to Atom to be displayed in Atom's console (ctrl + alt + i). TTS sends a JSON message with an ID of 2 and the message.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
     <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Hit player! White&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="error-messages">Error Messages<a class="headerlink" href="#error-messages" title="Permanent link"> </a></h3>
+<h3 id="error-messages">Error Messages<a class="headerlink" href="#error-messages" title="Permanent link">&para;</a></h3>
 <p>TTS sends all Lua error messages to Atom to be displayed in Atom's console <em>(ctrl + alt + i)</em>. TTS sends a JSON message with an ID of 3 and the error message.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
@@ -1265,42 +1265,42 @@
     <span class="nt">&quot;errorMessagePrefix&quot;</span><span class="p">:</span> <span class="s2">&quot;Error in Global Script: &quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="custom-messages">Custom messages<a class="headerlink" href="#custom-messages" title="Permanent link"> </a></h3>
+<h3 id="custom-messages">Custom messages<a class="headerlink" href="#custom-messages" title="Permanent link">&para;</a></h3>
 <p>A <code>messageID</code> of <em>4</em> is used to send a custom message from TTS to the attached editor.  This is done in Lua by calling <code>sendExternalMessage</code> with the table of data you wish to send.  It is up to the editor how it uses this information (usually this message is used when the editor itself has sent code to be executed by TTS, which will send something back. i.e. this is mainly of use for people developing editor plugins).</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
     <span class="nt">&quot;customMessage&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;foo&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="nt">&quot;bar&quot;</span><span class="p">:</span> <span class="s2">&quot;World&quot;</span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="return-messages">Return messages<a class="headerlink" href="#return-messages" title="Permanent link"> </a></h3>
+<h3 id="return-messages">Return messages<a class="headerlink" href="#return-messages" title="Permanent link">&para;</a></h3>
 <p>When the editor sends Lua code to TTS using the <code>Execute Lua Code</code> message (detailed below), if that code returns a value it will be sent back to the editor using message ID <em>5</em>.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
     <span class="nt">&quot;returnValue&quot;</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="game-saved">Game Saved<a class="headerlink" href="#game-saved" title="Permanent link"> </a></h3>
+<h3 id="game-saved">Game Saved<a class="headerlink" href="#game-saved" title="Permanent link">&para;</a></h3>
 <p>Whenever the player saves the game in TTS, a save game notification is sent to any attached editor using message ID <em>6</em>.</p>
-<h3 id="object-created">Object Created<a class="headerlink" href="#object-created" title="Permanent link"> </a></h3>
+<h3 id="object-created">Object Created<a class="headerlink" href="#object-created" title="Permanent link">&para;</a></h3>
 <p>Whenever the player creates an object in TTS a notification is sent to any attached editor using message ID <em>7</em>.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
     <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;abcdef&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="tabletop-simulator-as-the-server">Tabletop Simulator as the Server<a class="headerlink" href="#tabletop-simulator-as-the-server" title="Permanent link"> </a></h2>
+<h2 id="tabletop-simulator-as-the-server">Tabletop Simulator as the Server<a class="headerlink" href="#tabletop-simulator-as-the-server" title="Permanent link">&para;</a></h2>
 <p>The following describes messages that TTS listens for and handles.</p>
 <div class="admonition note">
 <p>TTS listens for incoming localhost TCP connections on port 39999.</p>
 </div>
-<h3 id="get-lua-scripts">Get Lua Scripts<a class="headerlink" href="#get-lua-scripts" title="Permanent link"> </a></h3>
+<h3 id="get-lua-scripts">Get Lua Scripts<a class="headerlink" href="#get-lua-scripts" title="Permanent link">&para;</a></h3>
 <p>TTS listens for a JSON message with an ID of 0, and responds by sending a JSON message containing scripts and UI XML.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">0</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>The response is not sent over the same connection as the original request, but rather is sent to a server listening on the localhost on port 39998. The response is a message sent by TTS with an ID of 1, and is the same as the message TTS sends when loading a new game.</p>
-<h3 id="save-play">Save &amp; Play<a class="headerlink" href="#save-play" title="Permanent link"> </a></h3>
+<h3 id="save-play">Save &amp; Play<a class="headerlink" href="#save-play" title="Permanent link">&para;</a></h3>
 <p>TTS listens for a JSON message with an ID of 1 containing an array of the Lua Scripts and UI XML.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1322,7 +1322,7 @@
 <p>TTS updates the Lua scripts and UI XML for any objects listed in the message, and then reloads the save file, the same way it does when pressing "Save &amp; Play" within the in-game editor. Objects not mentioned in the scriptStates array are not updated.</p>
 <p>Any objects mentioned have both their Lua script and their UI XML updated. If no value is set for either the "script" or "ui" key then the corresponding Lua script or UI XML is deleted. That means if you want to update a Lua script for an object without changing its UI XML, then the message must contain both the updated Lua script and the unchanged UI XML.</p>
 <p>After TTS reloads the game, it then also sends a message with an ID of 1 back to the editor, with content the same as the message TTS sends when loading a new game.</p>
-<h3 id="custom-message">Custom Message<a class="headerlink" href="#custom-message" title="Permanent link"> </a></h3>
+<h3 id="custom-message">Custom Message<a class="headerlink" href="#custom-message" title="Permanent link">&para;</a></h3>
 <p>TTS listens for a JSON message with an ID of 2 containing a custom message to be forwarded to the <a href="../event/#onexternalmessage"><code>onExternalMessage</code></a> event handler in the currently loaded game.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -1330,7 +1330,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>The value of <code>customMessage</code> must be a table, and is passed as a parameter to the event handler. If this value is not a table then the event is not triggered.</p>
-<h3 id="execute-lua-code">Execute Lua Code<a class="headerlink" href="#execute-lua-code" title="Permanent link"> </a></h3>
+<h3 id="execute-lua-code">Execute Lua Code<a class="headerlink" href="#execute-lua-code" title="Permanent link">&para;</a></h3>
 <p>TTS listens for a JSON message with an ID of 3 containing an object guid and lua script to run.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>

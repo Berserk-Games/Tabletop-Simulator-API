@@ -1146,7 +1146,7 @@
 <p class="admonition-title">Tip</p>
 <p>Be sure to check out the <a href="../"><strong>UI section of the Lua Scripting API</strong></a> for how to receive the input from these element types. With Lua scripting, you can even modify the UI elements!</p>
 </div>
-<h2 id="targeting-triggers">Targeting Triggers<a class="headerlink" href="#targeting-triggers" title="Permanent link"> </a></h2>
+<h2 id="targeting-triggers">Targeting Triggers<a class="headerlink" href="#targeting-triggers" title="Permanent link">&para;</a></h2>
 <p>When using an attribute that triggers scripting, like onValueChanged or onClick, the UI will target a default location. Global UI targets Global script, Object UI targets the Object's script. This behavior can be overwritten. For example:</p>
 <p><div class="highlight"><pre><span></span><code><span class="nt">&lt;Button</span> <span class="na">onClick=</span><span class="s">&quot;uiClickFunc&quot;</span><span class="nt">&gt;</span>Click Me<span class="nt">&lt;/Button&gt;</span>
 </code></pre></div>
@@ -1159,7 +1159,7 @@ Now when the button is clicked, it will still try to activate <code>function uiC
 And if this was in an Object's UI, it would direct the function activation to Global instead of that Object.</p>
 <p>Remember you can also use the <a href="../attributes/#general-attributes">Id attribute</a> to identify which UI element triggered the function.</p>
 <hr />
-<h2 id="element-summary">Element Summary<a class="headerlink" href="#element-summary" title="Permanent link"> </a></h2>
+<h2 id="element-summary">Element Summary<a class="headerlink" href="#element-summary" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1221,8 +1221,8 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 </tbody>
 </table>
 <hr />
-<h2 id="element-details">Element Details<a class="headerlink" href="#element-details" title="Permanent link"> </a></h2>
-<h3 id="inputfield">InputField<a class="headerlink" href="#inputfield" title="Permanent link"> </a></h3>
+<h2 id="element-details">Element Details<a class="headerlink" href="#element-details" title="Permanent link">&para;</a></h2>
+<h3 id="inputfield">InputField<a class="headerlink" href="#inputfield" title="Permanent link">&para;</a></h3>
 <p>A text input for single or multiple lines. Is able to send the text (during edit and when finished).</p>
 <table>
 <thead>
@@ -1330,7 +1330,7 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;InputField&gt;</span>Default Text<span class="nt">&lt;/InputField&gt;</span>
 </code></pre></div></p>
 <hr />
-<h3 id="button">Button<a class="headerlink" href="#button" title="Permanent link"> </a></h3>
+<h3 id="button">Button<a class="headerlink" href="#button" title="Permanent link">&para;</a></h3>
 <p>A button. Is able to send a trigger event.</p>
 <table>
 <thead>
@@ -1450,7 +1450,7 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 <p>The above example passes a string with the name of <code>"stringName"</code> to the Lua function for the value property.</p>
 </div>
 <hr />
-<h3 id="toggle">Toggle<a class="headerlink" href="#toggle" title="Permanent link"> </a></h3>
+<h3 id="toggle">Toggle<a class="headerlink" href="#toggle" title="Permanent link">&para;</a></h3>
 <p>A simple on/off toggle. Is able to send on/off status.</p>
 <table>
 <thead>
@@ -1500,7 +1500,7 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 <span class="nt">&lt;Toggle</span> <span class="na">isOn=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Toggle Text<span class="nt">&lt;/Toggle&gt;</span>
 </code></pre></div></p>
 <hr />
-<h3 id="togglebutton">ToggleButton<a class="headerlink" href="#togglebutton" title="Permanent link"> </a></h3>
+<h3 id="togglebutton">ToggleButton<a class="headerlink" href="#togglebutton" title="Permanent link">&para;</a></h3>
 <p>A toggle, but styled as a button.</p>
 <table>
 <thead>
@@ -1595,7 +1595,7 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;ToggleButton&gt;</span>Toggle Button Text<span class="nt">&lt;/Toggle&gt;</span>
 </code></pre></div>
 <hr />
-<h3 id="togglegroup">ToggleGroup<a class="headerlink" href="#togglegroup" title="Permanent link"> </a></h3>
+<h3 id="togglegroup">ToggleGroup<a class="headerlink" href="#togglegroup" title="Permanent link">&para;</a></h3>
 <p>Allows a group of toggles to act as a radio button, where only 1 of them can be "checked" at once. Works with Toggle or ToggleButton</p>
 <table>
 <thead>
@@ -1656,7 +1656,7 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 <span class="nt">&lt;/ToggleGroup&gt;</span>
 </code></pre></div>
 <hr />
-<h3 id="slider">Slider<a class="headerlink" href="#slider" title="Permanent link"> </a></h3>
+<h3 id="slider">Slider<a class="headerlink" href="#slider" title="Permanent link">&para;</a></h3>
 <p>A value slider. Is able to send Value.</p>
 <table>
 <thead>
@@ -1752,7 +1752,7 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;Slider</span> <span class="na">minValue=</span><span class="s">&quot;0&quot;</span> <span class="na">maxValue=</span><span class="s">&quot;1&quot;</span> <span class="na">value=</span><span class="s">&quot;0.5&quot;</span> <span class="nt">/&gt;</span>
 </code></pre></div></p>
 <hr />
-<h3 id="dropdown">Dropdown<a class="headerlink" href="#dropdown" title="Permanent link"> </a></h3>
+<h3 id="dropdown">Dropdown<a class="headerlink" href="#dropdown" title="Permanent link">&para;</a></h3>
 <p>A dropdown menu. Is able to send the contents of the selection made in it.</p>
 <table>
 <thead>

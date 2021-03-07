@@ -1144,13 +1144,13 @@
 <p class="admonition-title">Warning</p>
 <p>In other words, this is a highly advanced feature and this API is only able to teach you the basic commands to utilize it.</p>
 </div>
-<h2 id="general-concepts">General Concepts<a class="headerlink" href="#general-concepts" title="Permanent link"> </a></h2>
+<h2 id="general-concepts">General Concepts<a class="headerlink" href="#general-concepts" title="Permanent link">&para;</a></h2>
 <p>Every object in a "room" of Tabletop Simulator is a <strong>GameObject</strong>. Some sort of entity which exists within the scene. When a room is created, the GameObjects are loaded and initiated into the Lua script system. This is why, if you spawn a block and then run <code>print(self)</code> on it, it will print <code>BlockSquare(Clone) (LuaGameObjectScript)</code> into the chat. <code>BlockSquare(Clone)</code> is the GameObject, while <code>(LuaGameObjectScript)</code> is the Lua scripting system.</p>
 <p>GameObjects themselves contain many variables called <strong>Components</strong>. These can be the Collider, Transform, Mesh, etc that compose a GameObject, telling Unity how to render it. The component functions allow you to directly access the GameObjects and Components that make up any object in Tabletop Simulator, including your own AssetBundles. This means you can attach all manner of components (lights, sounds, and a lot more) and then control them.</p>
 <p>Finally, each Component has <strong>Vars</strong>, variables which you can modify to change how that Component effects the GameObject. The best way to explain this more clearly is with a few examples.</p>
-<h2 id="general-examples">General Examples<a class="headerlink" href="#general-examples" title="Permanent link"> </a></h2>
+<h2 id="general-examples">General Examples<a class="headerlink" href="#general-examples" title="Permanent link">&para;</a></h2>
 <p>The specific functions will be covered further down this page. These examples are scripts placed on a regular red block.</p>
-<h3 id="disable-receiving-shadows">Disable Receiving Shadows<a class="headerlink" href="#disable-receiving-shadows" title="Permanent link"> </a></h3>
+<h3 id="disable-receiving-shadows">Disable Receiving Shadows<a class="headerlink" href="#disable-receiving-shadows" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="c1">-- Get the MeshRenderer of the block&#39;s GameObject</span>
     <span class="kd">local</span> <span class="n">blockComp</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getComponent</span><span class="p">(</span><span class="s2">&quot;MeshRenderer&quot;</span><span class="p">)</span>
@@ -1158,7 +1158,7 @@
     <span class="n">blockComp</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;receiveShadows&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
 <span class="kr">end</span>
 </code></pre></div>
-<h3 id="modify-objects-collider">Modify Object's Collider<a class="headerlink" href="#modify-objects-collider" title="Permanent link"> </a></h3>
+<h3 id="modify-objects-collider">Modify Object's Collider<a class="headerlink" href="#modify-objects-collider" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="c1">-- Get the BoxCollider Component of the block&#39;s GameObject</span>
     <span class="kd">local</span> <span class="n">blockComp</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getComponent</span><span class="p">(</span><span class="s2">&quot;BoxCollider&quot;</span><span class="p">)</span>
@@ -1168,7 +1168,7 @@
     <span class="c1">-- The system deletes it once it falls too far</span>
 <span class="kr">end</span>
 </code></pre></div>
-<h3 id="completly-silence-an-object">Completly Silence an Object<a class="headerlink" href="#completly-silence-an-object" title="Permanent link"> </a></h3>
+<h3 id="completly-silence-an-object">Completly Silence an Object<a class="headerlink" href="#completly-silence-an-object" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="c1">-- Get the AudioSource Component of the block&#39;s GameObject</span>
     <span class="kd">local</span> <span class="n">blockComp</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getComponent</span><span class="p">(</span><span class="s2">&quot;AudioSource&quot;</span><span class="p">)</span>
@@ -1179,8 +1179,8 @@
 </code></pre></div>
 <p>And these examples are only scraping the surface of what these functions can do. It essentially gives you near-full access to anything an object in Unity is capable of.</p>
 <hr />
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link"> </a></h2>
-<h3 id="object-and-gameobject-commands">Object and GameObject Commands<a class="headerlink" href="#object-and-gameobject-commands" title="Permanent link"> </a></h3>
+<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
+<h3 id="object-and-gameobject-commands">Object and GameObject Commands<a class="headerlink" href="#object-and-gameobject-commands" title="Permanent link">&para;</a></h3>
 <p>These can be used on either a regular in-game Object or an in-game Objects <code>GameObject</code>.</p>
 <table>
 <thead>
@@ -1208,7 +1208,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="gameobject-children-commands">GameObject Children Commands<a class="headerlink" href="#gameobject-children-commands" title="Permanent link"> </a></h3>
+<h3 id="gameobject-children-commands">GameObject Children Commands<a class="headerlink" href="#gameobject-children-commands" title="Permanent link">&para;</a></h3>
 <p>When you access an in-game Object normally with Lua, it is always the "parent" object. Other objects can be "attached" to that parent object as a child object. You are able to access those children with these commands.</p>
 <table>
 <thead>
@@ -1241,7 +1241,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="component-commands">Component Commands<a class="headerlink" href="#component-commands" title="Permanent link"> </a></h3>
+<h3 id="component-commands">Component Commands<a class="headerlink" href="#component-commands" title="Permanent link">&para;</a></h3>
 <p>These commands are used on the Components of objects to find or modify the values of their variables. The values will depend on which variable is being changed. They are usually System.Int32 (an Integer), System.Boolean (a Bool) or UnityEngine.Vector3 (a Vector). These are all used on Components.</p>
 <table>
 <thead>

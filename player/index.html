@@ -1291,7 +1291,7 @@
 <!-- Markdown content -->
 <p>Player, a static global class, allows control over in-game players and their <a href="http://berserk-games.com/knowledgebase/hands/">hand zones</a>.</p>
 <p>Example Usage: <code>Player["White"].seated</code> or <code>Player["Green"].mute()</code></p>
-<h2 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link"> </a></h2>
+<h2 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link">&para;</a></h2>
 <p>Like <a href="../object/#member-variables">Object member variables</a>, Player has its own member variables.</p>
 <table>
 <thead>
@@ -1355,8 +1355,8 @@
 </tbody>
 </table>
 <hr />
-<h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link"> </a></h2>
-<h3 id="class-functions">Class Functions<a class="headerlink" href="#class-functions" title="Permanent link"> </a></h3>
+<h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link">&para;</a></h2>
+<h3 id="class-functions">Class Functions<a class="headerlink" href="#class-functions" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1507,7 +1507,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="direct-class-functions">Direct Class Functions<a class="headerlink" href="#direct-class-functions" title="Permanent link"> </a></h3>
+<h3 id="direct-class-functions">Direct Class Functions<a class="headerlink" href="#direct-class-functions" title="Permanent link">&para;</a></h3>
 <p>These functions return direct references to Players, not a Player Color. See details section for usage.</p>
 <table>
 <thead>
@@ -1550,9 +1550,9 @@
 </tbody>
 </table>
 <hr />
-<h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link"> </a></h2>
-<h3 id="class-function-details">Class Function Details<a class="headerlink" href="#class-function-details" title="Permanent link"> </a></h3>
-<h4 id="attachcameratoobject">attachCameraToObject(...)<a class="headerlink" href="#attachcameratoobject" title="Permanent link"> </a></h4>
+<h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link">&para;</a></h2>
+<h3 id="class-function-details">Class Function Details<a class="headerlink" href="#class-function-details" title="Permanent link">&para;</a></h3>
+<h4 id="attachcameratoobject">attachCameraToObject(...)<a class="headerlink" href="#attachcameratoobject" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Makes a Player's camera follow an Object.</p>
 <div class="admonition info">
 <p class="admonition-title">attachCameraToObject(parameters)</p>
@@ -1570,7 +1570,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">self</span><span class="p">.</span><span class="n">attachCameraToObject</span><span class="p">({</span><span class="n">object</span><span class="o">=</span><span class="n">self</span><span class="p">})</span>
 </code></pre></div>
 <hr />
-<h4 id="broadcast">broadcast(...)<a class="headerlink" href="#broadcast" title="Permanent link"> </a></h4>
+<h4 id="broadcast">broadcast(...)<a class="headerlink" href="#broadcast" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Print message on Player's screen and their game chat log.</p>
 <div class="admonition info">
 <p class="admonition-title">broadcast(message, message_color)</p>
@@ -1583,7 +1583,7 @@
 </ul>
 </div>
 <hr />
-<h4 id="changecolor">changeColor(...)<a class="headerlink" href="#changecolor" title="Permanent link"> </a></h4>
+<h4 id="changecolor">changeColor(...)<a class="headerlink" href="#changecolor" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Changes player to this <a href="../player-color/">Player Color</a> (seat).</p>
 <div class="admonition info">
 <p class="admonition-title">changeColor(player_color)</p>
@@ -1594,7 +1594,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">Player</span><span class="p">[</span><span class="s2">&quot;White&quot;</span><span class="p">].</span><span class="n">changeColor</span><span class="p">(</span><span class="s2">&quot;Red&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h4 id="gethandobjects">getHandObjects(...)<a class="headerlink" href="#gethandobjects" title="Permanent link"> </a></h4>
+<h4 id="gethandobjects">getHandObjects(...)<a class="headerlink" href="#gethandobjects" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table of Objects that are in this <a href="http://berserk-games.com/knowledgebase/hands/">hand zone</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">getHandObjects(hand_index)</p>
@@ -1610,7 +1610,7 @@
 <p>Hand indexes start at 1 and are numbered in the order of their creation. Each Player color has its own indexes.</p>
 </div>
 <hr />
-<h4 id="gethandtransform">getHandTransform(...)<a class="headerlink" href="#gethandtransform" title="Permanent link"> </a></h4>
+<h4 id="gethandtransform">getHandTransform(...)<a class="headerlink" href="#gethandtransform" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table of data on this <a href="http://berserk-games.com/knowledgebase/hands/">hand zone</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">getHandTransform(hand_index)</p>
@@ -1640,7 +1640,7 @@
 <p>Hand indexes start at 1 and are numbered in the order of their creation. Each Player color has its own indexes.</p>
 </div>
 <hr />
-<h4 id="lookat">lookAt(...)<a class="headerlink" href="#lookat" title="Permanent link"> </a></h4>
+<h4 id="lookat">lookAt(...)<a class="headerlink" href="#lookat" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Moves a Player's camera, forcing 3'rd person camera mode.</p>
 <div class="admonition info">
 <p class="admonition-title">lookAt(parameters)</p>
@@ -1672,7 +1672,7 @@
 <span class="p">})</span>
 </code></pre></div>
 <hr />
-<h4 id="print">print(...)<a class="headerlink" href="#print" title="Permanent link"> </a></h4>
+<h4 id="print">print(...)<a class="headerlink" href="#print" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Prints a message into the Player's game chat.</p>
 <div class="admonition info">
 <p class="admonition-title">print(message, message_color)</p>
@@ -1685,7 +1685,7 @@
 </ul>
 </div>
 <hr />
-<h4 id="setcameramode">setCameraMode(...)<a class="headerlink" href="#setcameramode" title="Permanent link"> </a></h4>
+<h4 id="setcameramode">setCameraMode(...)<a class="headerlink" href="#setcameramode" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown".</p>
 <div class="admonition info">
 <p class="admonition-title">changeColor(camera_mode)</p>
@@ -1696,7 +1696,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">Player</span><span class="p">[</span><span class="s2">&quot;White&quot;</span><span class="p">].</span><span class="n">setCameraMode</span><span class="p">(</span><span class="s2">&quot;FirstPerson&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h4 id="sethandtransform">setHandTransform(...)<a class="headerlink" href="#sethandtransform" title="Permanent link"> </a></h4>
+<h4 id="sethandtransform">setHandTransform(...)<a class="headerlink" href="#sethandtransform" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets transform elements of a <a href="http://berserk-games.com/knowledgebase/hands/">hand zone</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">setHandTransform(parameters, hand_index)</p>
@@ -1735,8 +1735,8 @@
 <span class="n">Player</span><span class="p">[</span><span class="s2">&quot;White&quot;</span><span class="p">].</span><span class="n">setHandTransform</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h3 id="direct-class-function-details">Direct Class Function Details<a class="headerlink" href="#direct-class-function-details" title="Permanent link"> </a></h3>
-<h4 id="getplayers">getPlayers()<a class="headerlink" href="#getplayers" title="Permanent link"> </a></h4>
+<h3 id="direct-class-function-details">Direct Class Function Details<a class="headerlink" href="#direct-class-function-details" title="Permanent link">&para;</a></h3>
+<h4 id="getplayers">getPlayers()<a class="headerlink" href="#getplayers" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns Table of all Players in the instance.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- Blindfolding all players</span>
 <span class="n">playerList</span> <span class="o">=</span> <span class="n">Player</span><span class="p">.</span><span class="n">getPlayers</span><span class="p">()</span>
@@ -1745,7 +1745,7 @@
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h4 id="getspectators">getSpectators()<a class="headerlink" href="#getspectators" title="Permanent link"> </a></h4>
+<h4 id="getspectators">getSpectators()<a class="headerlink" href="#getspectators" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns Table of all Players in spectator (Grey).</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- Printing steam name of all players to host chat</span>
 <span class="n">playerList</span> <span class="o">=</span> <span class="n">Player</span><span class="p">.</span><span class="n">getSpectators</span><span class="p">()</span>

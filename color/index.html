@@ -1511,7 +1511,7 @@
 <p class="admonition-title">Tip</p>
 <p>Vector and Color are the first classes to be defined in pure Lua. This means you <strong>have</strong> to use colon operator (e.g. <code>col:lerp()</code>) to call member functions, not the dot operator. Failing to do so will fail with cryptic error messages displayed.</p>
 </div>
-<h2 id="constructors-summary">Constructors summary<a class="headerlink" href="#constructors-summary" title="Permanent link"> </a></h2>
+<h2 id="constructors-summary">Constructors summary<a class="headerlink" href="#constructors-summary" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Every place that returns a coordinate table, like <code class="highlight"><span class="n">obj</span><span class="p">.</span><span class="n">getColorTint</span><span class="p">()</span></code>, serves a Color class instance already - you do not have to explicitly construct it.
@@ -1583,7 +1583,7 @@ This function exist but in version 12.3.5 she is not working.
 Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a color from a hex representation string ('#ff112233', 'ff1122'), hash sign and alpha are optional. | [<span class="ret col"></span>](types.md)
 -->
 
-<h3 id="constructors-examples">Constructors examples<a class="headerlink" href="#constructors-examples" title="Permanent link"> </a></h3>
+<h3 id="constructors-examples">Constructors examples<a class="headerlink" href="#constructors-examples" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="kd">local</span> <span class="n">red</span> <span class="o">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="kd">local</span> <span class="n">green</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">-- same as Color.new(0, 1, 0)</span>
@@ -1593,7 +1593,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h2 id="element-access-summary">Element access summary<a class="headerlink" href="#element-access-summary" title="Permanent link"> </a></h2>
+<h2 id="element-access-summary">Element access summary<a class="headerlink" href="#element-access-summary" title="Permanent link">&para;</a></h2>
 <p>In addition to accessing color components by their numeric indices (1, 2, 3, 4) and textual identifiers (r, g, b, a), the following methods may also be utilized.</p>
 <table>
 <thead>
@@ -1643,7 +1643,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <p class="admonition-title">Tip</p>
 <p>Before <code>Color</code> was introduced, color tables contained separate values under 1, 2, 3, 4 and r, g, b, a keys, with letter keys taking precedence when they were different. This is no longer the case, and using letter and numerical keys is equivalent. However, when iterating over Color components you have to use <code>pairs</code> and only letter keys will be read there.</p>
 </div>
-<h3 id="element-access-examples">Element access examples<a class="headerlink" href="#element-access-examples" title="Permanent link"> </a></h3>
+<h3 id="element-access-examples">Element access examples<a class="headerlink" href="#element-access-examples" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="kd">local</span> <span class="n">col</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">)</span>
     <span class="n">col</span><span class="p">.</span><span class="n">r</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">-- set the first component</span>
@@ -1661,7 +1661,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h2 id="arithmetics-summary">Arithmetics summary<a class="headerlink" href="#arithmetics-summary" title="Permanent link"> </a></h2>
+<h2 id="arithmetics-summary">Arithmetics summary<a class="headerlink" href="#arithmetics-summary" title="Permanent link">&para;</a></h2>
 <p>Color also allows you to use arithmetic operators to performs basic operations:</p>
 <table>
 <thead>
@@ -1687,7 +1687,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 </tr>
 </tbody>
 </table>
-<h3 id="arithmetics-examples">Arithmetics examples<a class="headerlink" href="#arithmetics-examples" title="Permanent link"> </a></h3>
+<h3 id="arithmetics-examples">Arithmetics examples<a class="headerlink" href="#arithmetics-examples" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="kd">local</span> <span class="n">col</span> <span class="o">=</span> <span class="n">Color</span><span class="p">({</span><span class="n">r</span> <span class="o">=</span> <span class="mf">0.118</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="mf">0.53</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">})</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">col</span> <span class="o">==</span> <span class="n">Color</span><span class="p">.</span><span class="n">blue</span><span class="p">)</span> <span class="c1">--&gt; true</span>
@@ -1700,8 +1700,8 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h2 id="methods-summary">Methods summary<a class="headerlink" href="#methods-summary" title="Permanent link"> </a></h2>
-<h3 id="methods-not-modifying-self">Methods not modifying self<a class="headerlink" href="#methods-not-modifying-self" title="Permanent link"> </a></h3>
+<h2 id="methods-summary">Methods summary<a class="headerlink" href="#methods-summary" title="Permanent link">&para;</a></h2>
+<h3 id="methods-not-modifying-self">Methods not modifying self<a class="headerlink" href="#methods-not-modifying-self" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1754,7 +1754,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 </tr>
 </tbody>
 </table>
-<h3 id="other-methods">Other methods<a class="headerlink" href="#other-methods" title="Permanent link"> </a></h3>
+<h3 id="other-methods">Other methods<a class="headerlink" href="#other-methods" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1784,8 +1784,8 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 </tbody>
 </table>
 <hr />
-<h2 id="constructors-details">Constructors details<a class="headerlink" href="#constructors-details" title="Permanent link"> </a></h2>
-<h3 id="colornew">Color.new(...)<a class="headerlink" href="#colornew" title="Permanent link"> </a></h3>
+<h2 id="constructors-details">Constructors details<a class="headerlink" href="#constructors-details" title="Permanent link">&para;</a></h2>
+<h3 id="colornew">Color.new(...)<a class="headerlink" href="#colornew" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret col"></span></a>&nbsp;Return a color with specified components.</p>
 <div class="admonition info">
 <p class="admonition-title">Color.new(r, g, b)</p>
@@ -1819,7 +1819,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <p class="admonition-title">Info</p>
 <p>If you want to use value between 0 and 255 you should divide them by 255 before construct the object.</p>
 </div>
-<h3 id="colorfromstring">Color.fromString(...)<a class="headerlink" href="#colorfromstring" title="Permanent link"> </a></h3>
+<h3 id="colorfromstring">Color.fromString(...)<a class="headerlink" href="#colorfromstring" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret col"></span></a>&nbsp;Return a color from a color string ('Red', 'Green' etc), capitalization ignored.</p>
 <div class="admonition info">
 <p class="admonition-title">Color.fromString(colorStr)</p>
@@ -1830,7 +1830,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">col</span> <span class="o">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">fromString</span><span class="p">(</span><span class="s2">&quot;Blue&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="c1">--&gt; Color: Blue { r = 0.118, g = 0.53, b = 1, a = 1 }</span>
 </code></pre></div>
-<h3 id="colorblue">Color.Blue<a class="headerlink" href="#colorblue" title="Permanent link"> </a></h3>
+<h3 id="colorblue">Color.Blue<a class="headerlink" href="#colorblue" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret col" style="margin-right:5px;"></span></a>
 <a href="../types/"><span class="ret str"></span></a>&nbsp;Return a color from a color string ('Red', 'Green' etc).</p>
 <p>Any <a href="../player-color/">Player Color</a> or color added with <a href="#coloradd">Color.Add</a>.</p>
@@ -1843,8 +1843,8 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="c1">-- Red</span>
 </code></pre></div>
 <hr />
-<h2 id="element-access-details">Element access details<a class="headerlink" href="#element-access-details" title="Permanent link"> </a></h2>
-<h3 id="setat">setAt(...)<a class="headerlink" href="#setat" title="Permanent link"> </a></h3>
+<h2 id="element-access-details">Element access details<a class="headerlink" href="#element-access-details" title="Permanent link">&para;</a></h2>
+<h3 id="setat">setAt(...)<a class="headerlink" href="#setat" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;Update one component of the color and returning self.</p>
 <div class="admonition info">
 <p class="admonition-title">setAt(key, num)</p>
@@ -1857,7 +1857,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <span class="n">col</span><span class="p">:</span><span class="n">setAt</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">128</span> <span class="o">/</span> <span class="mi">255</span><span class="p">):</span><span class="n">setAt</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="c1">--&gt; Color: { r = 0.501961, g = 0.53, b = 1, a = 0.5 }</span>
 </code></pre></div>
-<h3 id="set">set(...)<a class="headerlink" href="#set" title="Permanent link"> </a></h3>
+<h3 id="set">set(...)<a class="headerlink" href="#set" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret sel"></span></a>&nbsp;Update all components of the vector and returning self.</p>
 <p>Providing a nil value makes it ignore that argument.</p>
 <div class="admonition info">
@@ -1881,7 +1881,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <span class="n">col</span><span class="p">:</span><span class="n">set</span><span class="p">(</span><span class="mi">41</span> <span class="o">/</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">128</span> <span class="o">/</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">185</span> <span class="o">/</span> <span class="mi">255</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="c1">--&gt; Color: { r = 0.160784, g = 0.501961, b = 0.72549, a = 1 }</span>
 </code></pre></div>
-<h3 id="get">get()<a class="headerlink" href="#get" title="Permanent link"> </a></h3>
+<h3 id="get">get()<a class="headerlink" href="#get" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret flo" style="margin-right:5px;"></span></a>
 <a href="../types/"><span class="ret flo" style="margin-right:5px;"></span></a>
 <a href="../types/"><span class="ret flo" style="margin-right:5px;"></span></a>
@@ -1890,7 +1890,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">col</span><span class="p">:</span><span class="n">get</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">g</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span> <span class="c1">--&gt; 2.648</span>
 </code></pre></div>
-<h3 id="copy">copy()<a class="headerlink" href="#copy" title="Permanent link"> </a></h3>
+<h3 id="copy">copy()<a class="headerlink" href="#copy" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret col"></span></a>&nbsp;Copy self into a new Color and return it.</p>
 <div class="highlight"><pre><span></span><code><span class="n">col1</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">)</span>
 <span class="n">col2</span> <span class="o">=</span> <span class="n">col1</span><span class="p">:</span><span class="n">copy</span><span class="p">()</span>
@@ -1898,9 +1898,9 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <span class="nb">print</span><span class="p">(</span><span class="n">col1</span><span class="p">)</span> <span class="c1">--&gt; Color: { r = 0.75, g = 1, b = 0.25, a = 1 }</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">col2</span><span class="p">)</span> <span class="c1">--&gt; Color: { r = 1, g = 0.5, b = 0.75, a = 1 }</span>
 </code></pre></div>
-<h2 id="methods-details">Methods details<a class="headerlink" href="#methods-details" title="Permanent link"> </a></h2>
-<h3 id="methods-not-modifying-self_1">Methods not modifying self<a class="headerlink" href="#methods-not-modifying-self_1" title="Permanent link"> </a></h3>
-<h4 id="tohex">toHex(...)<a class="headerlink" href="#tohex" title="Permanent link"> </a></h4>
+<h2 id="methods-details">Methods details<a class="headerlink" href="#methods-details" title="Permanent link">&para;</a></h2>
+<h3 id="methods-not-modifying-self_1">Methods not modifying self<a class="headerlink" href="#methods-not-modifying-self_1" title="Permanent link">&para;</a></h3>
+<h4 id="tohex">toHex(...)<a class="headerlink" href="#tohex" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret str"></span></a>&nbsp;Returns a hex string representation of self.</p>
 <div class="admonition info">
 <p class="admonition-title">toHex(includeAlpha)</p>
@@ -1912,7 +1912,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <span class="nb">print</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">blue</span><span class="p">:</span><span class="n">toHex</span><span class="p">(</span><span class="kc">true</span><span class="p">))</span> <span class="c1">-- 1e87ffff</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">blue</span><span class="p">:</span><span class="n">toHex</span><span class="p">(</span><span class="kc">false</span><span class="p">))</span> <span class="c1">-- 1e87ff</span>
 </code></pre></div>
-<h4 id="tostring">toString(...)<a class="headerlink" href="#tostring" title="Permanent link"> </a></h4>
+<h4 id="tostring">toString(...)<a class="headerlink" href="#tostring" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret str"></span></a>&nbsp;Returns a color string if matching this instance, nil otherwise, optional numeric <code>tolerance</code> param.</p>
 <div class="admonition info">
 <p class="admonition-title">toString(tolerance)</p>
@@ -1922,7 +1922,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 </div>
 <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span> <span class="mf">0.118</span><span class="p">,</span> <span class="mf">0.53</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span><span class="n">toString</span><span class="p">())</span> <span class="c1">-- Blue</span>
 </code></pre></div>
-<h4 id="equals">equals(...)<a class="headerlink" href="#equals" title="Permanent link"> </a></h4>
+<h4 id="equals">equals(...)<a class="headerlink" href="#equals" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Returns true if <code>otherCol</code> same as self, false otherwise, optional numeric <code>tolerance</code> param.</p>
 <div class="admonition info">
 <p class="admonition-title">equals(otherCol, tolerance)</p>
@@ -1936,7 +1936,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 
 <span class="nb">print</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span> <span class="mf">0.118</span><span class="p">,</span> <span class="mf">0.53</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span><span class="n">equals</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">Blue</span><span class="p">))</span> <span class="c1">-- Throw errors</span>
 </code></pre></div>
-<h4 id="lerp">lerp(...)<a class="headerlink" href="#lerp" title="Permanent link"> </a></h4>
+<h4 id="lerp">lerp(...)<a class="headerlink" href="#lerp" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret col"></span></a>&nbsp;Return a color some part of the way between self and <code>otherCol</code>, numeric arg [0, 1] is the fraction.</p>
 <div class="admonition info">
 <p class="admonition-title">lerp(otherCol, fraction)</p>
@@ -1948,7 +1948,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">pink</span> <span class="o">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">Red</span><span class="p">:</span><span class="n">lerp</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">White</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pink</span><span class="p">)</span> <span class="c1">-- Color: { r = 0.928, g = 0.55, b = 0.547, a = 1 }</span>
 </code></pre></div>
-<h4 id="dump">dump(...)<a class="headerlink" href="#dump" title="Permanent link"> </a></h4>
+<h4 id="dump">dump(...)<a class="headerlink" href="#dump" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret str" style="margin-right:5px;"></span></a>
 <a href="../types/"><span class="ret flo"></span></a>&nbsp;Return string describing self, optional string prefix.</p>
 <div class="admonition info">
@@ -1967,8 +1967,8 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <span class="nb">print</span><span class="p">(</span><span class="n">col</span><span class="p">:</span><span class="n">dump</span><span class="p">(</span><span class="s1">&#39;Prefix&#39;</span><span class="p">))</span> <span class="c1">--&gt; Prefix: Blue { r = 0.118, g = 0.53, b = 1, a = 1 } 2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="s1">&#39;Prefix&#39;</span><span class="p">))</span> <span class="c1">--&gt; Prefix: Blue { r = 0.118, g = 0.53, b = 1, a = 1 } 2</span>
 </code></pre></div>
-<h3 id="other-methods_1">Other methods<a class="headerlink" href="#other-methods_1" title="Permanent link"> </a></h3>
-<h4 id="colorlist">Color.list<a class="headerlink" href="#colorlist" title="Permanent link"> </a></h4>
+<h3 id="other-methods_1">Other methods<a class="headerlink" href="#other-methods_1" title="Permanent link">&para;</a></h3>
+<h4 id="colorlist">Color.list<a class="headerlink" href="#colorlist" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a table of all color strings.</p>
 <div class="highlight"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">list</span>
 <span class="c1">-- Same as</span>
@@ -1987,7 +1987,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
     <span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;Black&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h4 id="coloradd">Color.Add(...)<a class="headerlink" href="#coloradd" title="Permanent link"> </a></h4>
+<h4 id="coloradd">Color.Add(...)<a class="headerlink" href="#coloradd" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret nil"></span></a>&nbsp;Add your own color definition to the class.</p>
 <div class="admonition info">
 <p class="admonition-title">dump(name, yourColor)</p>
@@ -2002,7 +2002,7 @@ Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a 
 <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="c1">-- River</span>
 </code></pre></div>
 <hr />
-<h2 id="manipulation-examples">Manipulation examples<a class="headerlink" href="#manipulation-examples" title="Permanent link"> </a></h2>
+<h2 id="manipulation-examples">Manipulation examples<a class="headerlink" href="#manipulation-examples" title="Permanent link">&para;</a></h2>
 <p>Tint all object in scene in orange.
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="kd">local</span> <span class="n">red</span> <span class="o">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">Red</span>

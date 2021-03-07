@@ -1086,9 +1086,9 @@
 
 <!-- Markdown content -->
 <p>The system console gives you a direct way to interact with Tabletop Simulator's settings.  It can be used to automate repetitive actions, and customise your TTS experience.</p>
-<h2 id="controls">Controls<a class="headerlink" href="#controls" title="Permanent link"> </a></h2>
+<h2 id="controls">Controls<a class="headerlink" href="#controls" title="Permanent link">&para;</a></h2>
 <p>The console accepts basic text input.  Additionally, you may hit <code>up arrow</code> and <code>down arrow</code> to cycle back and forth through the command history, and <code>tab</code> to autocomplete your current command (if more than one command is possible from your current prefix then hit it a couple of times to list all matching commands).  Hitting the <code>`</code> key will activate the console.  Hitting it again will type the character; if you would rather it deactivated the console input as well as activating it, then you can make it do that by entering this command: <code>+console_hotkey_lock</code></p>
-<h2 id="commands-variables">Commands &amp; Variables<a class="headerlink" href="#commands-variables" title="Permanent link"> </a></h2>
+<h2 id="commands-variables">Commands &amp; Variables<a class="headerlink" href="#commands-variables" title="Permanent link">&para;</a></h2>
 <p>You interact with the system console by typing commands into it.  When you hit enter the command will be perform its action, and then output its results to the console.</p>
 <p>There is a subset of the commands which have an additional property; these are called <code>variables</code>, and each one stores a value (in addition to behaving like regular commands).  Typically these are used for the settings which govern TTS behaviour.  For example, the <code>color</code> command is a variable; it holds the seat color you currently occupy.  Typing it without any parameters will make it output its current value, while typing it with a parameter will let you set it; you could type <code>color red</code> to switch to the red seat, for instance.  You may also create your own variables with the <code>store_number</code>, <code>store_toggle</code>, and <code>store_text</code> commands (or if you are familiar with programming, their aliases: <code>float</code>, <code>bool</code>, and <code>string</code>); these are especially useful when writing scripts.</p>
 <p>A lot of variables are toggles: they can be either <code>OFF</code> or <code>ON</code>.  For these you can set them in an additional way; by prefixing with <code>+</code>, <code>-</code>, or <code>!</code>.  <code>+</code> will turn it on, <code>-</code> will turn it off, and <code>!</code> will toggle it, changing it to the opposite of its current value.  For example: <code>+measure_in_metric</code> will set <code>measure_in_metric</code> to <code>ON</code>, and <code>!measure_logging</code> when <code>measure_logging</code> is <code>ON</code> will set it to <code>OFF</code> (and vice-versa).</p>
@@ -1103,7 +1103,7 @@
 Additionally, if you ask for <code>help</code> on a specific command it will give you a detailed description of how to use it.</p>
 <p>You may insert variables into commands by enclosing them in <code>{</code> and <code>}</code>.  For example, typing <code>hovered</code> will display the GUID of the object your pointer is hovering over; <code>spectator_camera_target {hovered}</code> will set the spectator camera target with it.</p>
 <p>If you start a command with the <code>@</code> symbol then it will be silenced; it will not output anything to the console.</p>
-<h2 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link"> </a></h2>
+<h2 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link">&para;</a></h2>
 <p>The <code>exec</code> command will execute a series of commands separated either by <code>;</code> or by being on separate lines.  Alternatively, you may use the <code>-v</code> parameter to execute a text variable as a script.  For example, <code>exec -v bootexec</code> will execute the commands in the <code>bootexec</code> variable (there is also a <code>run</code> alias, which performs <code>exec -v</code>, so <code>run bootexec</code> will do the same thing).  You may also pass <code>exec</code> a <code>-q</code> parameter to make it execute in quiet mode (commands being executed are not echoed to the console, but their output is).</p>
 <p>There are two special variables: <code>autoexec</code> and <code>bootexec</code>; these are text variables which load the contents of those two files - <code>autoexec.cfg</code> and <code>bootexec.cfg</code>, respectively - in your TTS user folder (typically <code>C:\Users\&lt;username&gt;\Documents\My Games\Tabletop Simulator</code>).</p>
 <p><code>autoexec</code> will be executed every time you arrive at the main menu in TTS, while <code>bootexec</code> is only executed once, when TTS first starts up.  Note that the game resets every time you go back to the main menu, so if you want to affect any settings / add bindings / etc you need to do it in <code>autoexec</code></p>
@@ -1151,7 +1151,7 @@ ui_button <span class="m">1</span> <span class="m">600</span>   <span class="m">
 ui_button <span class="m">2</span> <span class="m">600</span> -30 cam_load <span class="m">2</span>
 ui_button <span class="m">3</span> <span class="m">600</span> -60 cam_load <span class="m">3</span>
 </code></pre></div></p>
-<h3 id="special-characters">Special characters<a class="headerlink" href="#special-characters" title="Permanent link"> </a></h3>
+<h3 id="special-characters">Special characters<a class="headerlink" href="#special-characters" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>@</code> - Behaves as it does normally; prefix it to a command to silence that command.</li>
 <li><code>@@</code> - Two <code>@</code> in a row silences the remainder of the script; each command will behave as if it had a <code>@</code> before it.  <code>@@</code> again will disable this effect.</li>
@@ -1168,7 +1168,7 @@ Then when you hit right shift, it will resolve so that the command bound to righ
 </code></pre></div>
 Now when you hit right control while hovering over the object, the hovered object will be evaulated and passed to <code>spectator_camera_target</code>.</li>
 </ul>
-<h3 id="script-commands">Script commands<a class="headerlink" href="#script-commands" title="Permanent link"> </a></h3>
+<h3 id="script-commands">Script commands<a class="headerlink" href="#script-commands" title="Permanent link">&para;</a></h3>
 <p>The <code>skip</code> command can be used inside a script to jump forward to a label.  It may not be used to jump backwards.  You may give it an optional <code>variable</code> and then further optional <code>comparison</code> and <code>value</code> parameters: if you do it will only skip if the variable is non-zero, or the result of the comparison is true.</p>
 <p>The <code>wait</code> command will pause the script for the specified number of seconds.  It will always wait at least one frame, so <code>wait 0</code> will do just that.  This can be useful in <code>bootexec</code> and <code>autoexec</code>, as some game systems may take a couple of frames to intialize; if your commands do not appear to work then try putting them at the end of the script, after a <code>wait</code>.</p>
 <p>Finally, the <code>exit</code> command will cause the script to stop executing.</p>
@@ -1267,7 +1267,7 @@ end tap_script
 
 <span class="nb">bind</span> Mouse4 @run tap_script
 </code></pre></div></p>
-<h2 id="some-useful-commands">Some useful commands<a class="headerlink" href="#some-useful-commands" title="Permanent link"> </a></h2>
+<h2 id="some-useful-commands">Some useful commands<a class="headerlink" href="#some-useful-commands" title="Permanent link">&para;</a></h2>
 <p>As noted above, <code>help</code>, <code>commands</code>, and <code>variables</code> will let you find out everything you can do with the system console.  Having said that, here is a selection of some of the more useful commands available:</p>
 <ul>
 <li><code>add</code>, <code>subtract</code>, and <code>multiply</code> will let you do simple arithmetic on a variable.  <code>add</code> is useful for cycling a modal variable (it has an optional third parameter which sets a modulus), while <code>subtract</code> subtracts the variable <em>from</em> the value, so is useful for ping-ponging between two numbers.</li>

@@ -1273,7 +1273,7 @@
 <p>This class allows for the <strong>manipulation</strong> of UI <strong>at runtime</strong>. It does <strong>NOT</strong> modify or fetch <strong>the original XML</strong> in the editor, but rather what is displayed as it continues to run during a game. Just like with Lua, you can only get/set dynamic values during runtime. You can use <a href="../event/#onsave">onSave</a> and <a href="../event/#onload">onLoad</a> to record any data you want to persist through save/load/undo.</p>
 <p>For more information on how to build UI elements within XML, view the <a href="introUI/">UI API</a>.</p>
 </div>
-<h2 id="global-and-object">Global and Object<a class="headerlink" href="#global-and-object" title="Permanent link"> </a></h2>
+<h2 id="global-and-object">Global and Object<a class="headerlink" href="#global-and-object" title="Permanent link">&para;</a></h2>
 <p>UI can either be placed on the screen by using the <strong>Global UI</strong> or placed on an Object using <strong>Object UI</strong>. Depending on which you are using, these commands are used differently.</p>
 <div class="codehilite"><pre><span></span><code>Example of calling a function targeted at the Global UI:
     UI.getAttributes(id)
@@ -1281,7 +1281,7 @@ Example of calling a function targeted at an Object UI:
     object.UI.getAttributes(id)
 </code></pre></div>
 
-<h2 id="inputs">Inputs<a class="headerlink" href="#inputs" title="Permanent link"> </a></h2>
+<h2 id="inputs">Inputs<a class="headerlink" href="#inputs" title="Permanent link">&para;</a></h2>
 <p><a href="inputelements/">Input Elements</a> are able to trigger a function. By default, Global UI will trigger a function in Global and Object UI will trigger a function in the Object's script.  To change the target script for an input, <a href="inputelements/#targeting-triggers">view more details here</a>.</p>
 <p>When creating the input element in XML, you will select the name of the function it activates. Regardless of its name, it always will pass parameters</p>
 <div class="admonition info">
@@ -1304,7 +1304,7 @@ Example of calling a function targeted at an Object UI:
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h2 id="member-variable-summary">Member Variable Summary<a class="headerlink" href="#member-variable-summary" title="Permanent link"> </a></h2>
+<h2 id="member-variable-summary">Member Variable Summary<a class="headerlink" href="#member-variable-summary" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1322,7 +1322,7 @@ Example of calling a function targeted at an Object UI:
 </tbody>
 </table>
 <hr />
-<h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link"> </a></h2>
+<h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1454,8 +1454,8 @@ Example of calling a function targeted at an Object UI:
 </tbody>
 </table>
 <hr />
-<h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link"> </a></h2>
-<h3 id="getattribute">getAttribute(...)<a class="headerlink" href="#getattribute" title="Permanent link"> </a></h3>
+<h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link">&para;</a></h2>
+<h3 id="getattribute">getAttribute(...)<a class="headerlink" href="#getattribute" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret var"></span></a>&nbsp;Obtains the value of a specified attribute of a UI element. What it returns will typically be a string or a number.</p>
 <div class="admonition info">
 <p class="admonition-title">getAttribute(id, attribute)</p>
@@ -1467,7 +1467,7 @@ Example of calling a function targeted at an Object UI:
 <div class="highlight"><pre><span></span><code><span class="n">self</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">&quot;testElement&quot;</span><span class="p">,</span> <span class="s2">&quot;fontSize&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h3 id="getattributes">getAttributes(...)<a class="headerlink" href="#getattributes" title="Permanent link"> </a></h3>
+<h3 id="getattributes">getAttributes(...)<a class="headerlink" href="#getattributes" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns the attributes and their values of a UI element. It only returns the attributes (and values) for elements that have had those attributes set by the user.</p>
 <div class="admonition info">
 <p class="admonition-title">getAttributes(id)</p>
@@ -1487,7 +1487,7 @@ Example of calling a function targeted at an Object UI:
 <p><strong>IMPORTANT</strong>: This return table is an example of one you may get back from using it on a RawImage element type. The attribute keys you get back and their values will depend on the element you use the function on as well as the attributes you, the user, have assigned to it.</p>
 </div>
 <hr />
-<h3 id="getcustomassets">getCustomAssets()<a class="headerlink" href="#getcustomassets" title="Permanent link"> </a></h3>
+<h3 id="getcustomassets">getCustomAssets()<a class="headerlink" href="#getcustomassets" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns information on all custom assets uploaded to the UI ASSETS pane.</p>
 <div class="admonition info">
 <p class="admonition-title">Return table</p>
@@ -1505,7 +1505,7 @@ Example of calling a function targeted at an Object UI:
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="getvalue">getValue(...)<a class="headerlink" href="#getvalue" title="Permanent link"> </a></h3>
+<h3 id="getvalue">getValue(...)<a class="headerlink" href="#getvalue" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret str"></span></a>&nbsp;Obtains the value between elements tags, like: <code>&lt;Text&gt;ValueObtained&lt;/Text&gt;</code></p>
 <div class="admonition info">
 <p class="admonition-title">getValue(id)</p>
@@ -1517,7 +1517,7 @@ Example of calling a function targeted at an Object UI:
 <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h3 id="getxmltable">getXmlTable()<a class="headerlink" href="#getxmltable" title="Permanent link"> </a></h3>
+<h3 id="getxmltable">getXmlTable()<a class="headerlink" href="#getxmltable" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Obtain the run-time UI formatted as a Lua table of data.</p>
 <p>Example Returned Table:
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1556,7 +1556,7 @@ Example of calling a function targeted at an Object UI:
 <span class="nt">&lt;/HorizontalLayout&gt;</span>
 </code></pre></div></p>
 <hr />
-<h3 id="hide">hide(...)<a class="headerlink" href="#hide" title="Permanent link"> </a></h3>
+<h3 id="hide">hide(...)<a class="headerlink" href="#hide" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Hides the given UI element. Unlike the "active" attribute, hide triggers animations.</p>
 <div class="admonition info">
 <p class="admonition-title">hide(id)</p>
@@ -1567,7 +1567,7 @@ Example of calling a function targeted at an Object UI:
 <div class="highlight"><pre><span></span><code><span class="n">self</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;testElement&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h3 id="setattribute">setAttribute(...)<a class="headerlink" href="#setattribute" title="Permanent link"> </a></h3>
+<h3 id="setattribute">setAttribute(...)<a class="headerlink" href="#setattribute" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets the value of a specified attribute of a UI element.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -1584,7 +1584,7 @@ Example of calling a function targeted at an Object UI:
 <div class="highlight"><pre><span></span><code><span class="n">self</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">setAttribute</span><span class="p">(</span><span class="s2">&quot;testElement&quot;</span><span class="p">,</span> <span class="s2">&quot;fontSize&quot;</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h3 id="setattributes">setAttributes(...)<a class="headerlink" href="#setattributes" title="Permanent link"> </a></h3>
+<h3 id="setattributes">setAttributes(...)<a class="headerlink" href="#setattributes" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Updates the value of the supplied attributes of a UI element. You do not need to set every attribute with the data table, an element will continue using any previous values you do not overwrite.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -1615,7 +1615,7 @@ Example of calling a function targeted at an Object UI:
 <span class="n">self</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">setAttributes</span><span class="p">(</span><span class="s2">&quot;exampleText&quot;</span><span class="p">,</span> <span class="n">attributeTable</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h3 id="setclass">setClass(...)<a class="headerlink" href="#setclass" title="Permanent link"> </a></h3>
+<h3 id="setclass">setClass(...)<a class="headerlink" href="#setclass" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Replaces all classes on a UI element.</p>
 <div class="admonition info">
 <p class="admonition-title">setClass(id, names)</p>
@@ -1631,7 +1631,7 @@ Example of calling a function targeted at an Object UI:
 </code></pre></div></p>
 </div>
 <hr />
-<h3 id="setcustomassets">setCustomAssets(...)<a class="headerlink" href="#setcustomassets" title="Permanent link"> </a></h3>
+<h3 id="setcustomassets">setCustomAssets(...)<a class="headerlink" href="#setcustomassets" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets the UI ASSETS (like custom images) for Global or an Object. Passing nothing as a parameter results in the clearing of the UI Assets.</p>
 <div class="admonition warning">
 <p class="admonition-title">This function will overwrite any currently existing assets in Custom UI Assets, not add to them.</p>
@@ -1661,7 +1661,7 @@ Example of calling a function targeted at an Object UI:
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h3 id="setvalue">setValue(...)<a class="headerlink" href="#setvalue" title="Permanent link"> </a></h3>
+<h3 id="setvalue">setValue(...)<a class="headerlink" href="#setvalue" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Updates the value between elements tags, like: <code>&lt;Text&gt;ValueChanged&lt;/Text&gt;</code></p>
 <div class="admonition info">
 <p class="admonition-title">setValue(id, value)</p>
@@ -1673,7 +1673,7 @@ Example of calling a function targeted at an Object UI:
 <div class="highlight"><pre><span></span><code><span class="n">UI</span><span class="p">.</span><span class="n">setValue</span><span class="p">(</span><span class="s2">&quot;testElement&quot;</span><span class="p">,</span> <span class="s2">&quot;New Text To Display&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h3 id="setxml">setXml(...)<a class="headerlink" href="#setxml" title="Permanent link"> </a></h3>
+<h3 id="setxml">setXml(...)<a class="headerlink" href="#setxml" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Replaces the run-time UI with the XML string.</p>
 <div class="admonition info">
 <p class="admonition-title">setXml(xml)</p>
@@ -1688,7 +1688,7 @@ Example of calling a function targeted at an Object UI:
 <p>setXml takes 1 frame to update the runtime UI. This means any change or get of xml/attributes during this frame will not be recognized correctly.</p>
 </div>
 <hr />
-<h3 id="setxmltable">setXmlTable(...)<a class="headerlink" href="#setxmltable" title="Permanent link"> </a></h3>
+<h3 id="setxmltable">setXmlTable(...)<a class="headerlink" href="#setxmltable" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Replaces the run-time UI with an XML string which is generated from a table of data.</p>
 <div class="admonition info">
 <p class="admonition-title">setXmlTable(data)</p>
@@ -1748,7 +1748,7 @@ Example of calling a function targeted at an Object UI:
 <p>setXmlTable takes 1 frame to update the runtime UI. This means any change or get of xml/attributes during this frame will not be recognized correctly.</p>
 </div>
 <hr />
-<h3 id="show">show(...)<a class="headerlink" href="#show" title="Permanent link"> </a></h3>
+<h3 id="show">show(...)<a class="headerlink" href="#show" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Shows the given UI element. Unlike the "active" attribute, show triggers animations.</p>
 <div class="admonition info">
 <p class="admonition-title">show(id)</p>

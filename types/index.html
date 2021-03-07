@@ -1356,7 +1356,7 @@
 
 <!-- Markdown content -->
 <p>Type refers to the type of information being used. You do not need to declare a type in Lua, but in this API you will see them indicated. This is only so you know what kind of information is required in a given variable/parameter. This API utilizes the following types.</p>
-<h2 id="common-standards">Common Standards<a class="headerlink" href="#common-standards" title="Permanent link"> </a></h2>
+<h2 id="common-standards">Common Standards<a class="headerlink" href="#common-standards" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1446,13 +1446,13 @@
 <p>For more information on a type, you can read below or refer to the relevant <a href="https://www.lua.org/manual/5.1/manual.html#2.2">Lua documentation</a>.</p>
 </blockquote>
 <hr />
-<h2 id="special-standards">Special Standards<a class="headerlink" href="#special-standards" title="Permanent link"> </a></h2>
+<h2 id="special-standards">Special Standards<a class="headerlink" href="#special-standards" title="Permanent link">&para;</a></h2>
 <p>Some types need to be used in specific ways. For Color and Vector, they are Tables that are used often in Tabletop Simulator. They represent Vectors and Colors, and their contents must be formatted a certain way to be utilized correctly.</p>
 <p>For Functions, they are used when a delay is required within a running script that have specific requirements.</p>
-<h3 id="color">Color<a class="headerlink" href="#color" title="Permanent link"> </a></h3>
+<h3 id="color">Color<a class="headerlink" href="#color" title="Permanent link">&para;</a></h3>
 <p><span class="tag col"></span> Color is a type of Table that is used to define RGB values for tinting.</p>
 <p>You can use the <a href="../color/">Color</a> class to manipulate colors.</p>
-<h4 id="keys">Keys<a class="headerlink" href="#keys" title="Permanent link"> </a></h4>
+<h4 id="keys">Keys<a class="headerlink" href="#keys" title="Permanent link">&para;</a></h4>
 <p>The Table will contain the keys <code>r</code>, <code>g</code>, <code>b</code>, <code>a</code> and/or <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>. The letter and numeric keys are duplicates of each other, and each represents a color or transparency.</p>
 <table>
 <thead>
@@ -1492,7 +1492,7 @@
 <span class="p">}</span>
 </code></pre></div></p>
 <p>Notice it does not contain the <code>a</code> or <code>4</code> keys. This is because currently only scripted buttons and scripted inputs utilize the alpha channel (transparency).</p>
-<h4 id="mixed-keys">Mixed Keys<a class="headerlink" href="#mixed-keys" title="Permanent link"> </a></h4>
+<h4 id="mixed-keys">Mixed Keys<a class="headerlink" href="#mixed-keys" title="Permanent link">&para;</a></h4>
 <p>Only one type of key, number or letter, is required. If both a are present in a Table, the numeric key is ignored and only the <strong>letter key</strong> is used.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">--Valid Table for red</span>
 <span class="p">{</span><span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">}</span>
@@ -1501,20 +1501,20 @@
 <span class="c1">--This Table would be red.</span>
 <span class="p">{</span><span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
 </code></pre></div>
-<h4 id="value">Value<a class="headerlink" href="#value" title="Permanent link"> </a></h4>
+<h4 id="value">Value<a class="headerlink" href="#value" title="Permanent link">&para;</a></h4>
 <p>Values are between 0 and 1 for each key. If you are using RGB color that is in 0-255, you can use simple math to convert to the proper value.
 <div class="highlight"><pre><span></span><code><span class="c1">--To display a color that is r=50, b=83, g=199</span>
 <span class="n">self</span><span class="p">.</span><span class="n">setColorTint</span><span class="p">({</span><span class="mi">50</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="mi">83</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="mi">199</span><span class="o">/</span><span class="mi">255</span><span class="p">})</span>
 </code></pre></div></p>
-<h4 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link"> </a></h4>
+<h4 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">&para;</a></h4>
 <p>You are also able to use a String in place of a color table. Using a <a href="../player-color/">Player Color</a> will automatically fill in that value. It works with any of the 12 color names, as they are written on the <a href="../player-color/">Player Color</a> page.</p>
 <p>Example: <code>printToAll("Test", "Green")</code></p>
 <hr />
-<h3 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link"> </a></h3>
+<h3 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link">&para;</a></h3>
 <p><span class="tag vec"></span> Vector is a type of Object with x, y, and z coordinates that is used to define a position, rotation or direction.</p>
 <p>You can use the <a href="../vector/">Vector</a> class to manipulate vectors.</p>
 <p>Example: <code class="highlight"><span class="n">target</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span><span class="n">normalized</span><span class="p">()</span></code></p>
-<h4 id="keys_1">Keys<a class="headerlink" href="#keys_1" title="Permanent link"> </a></h4>
+<h4 id="keys_1">Keys<a class="headerlink" href="#keys_1" title="Permanent link">&para;</a></h4>
 <p>The Table will contain the keys <code>x</code>, <code>y</code>, <code>z</code> and/or <code>1</code>, <code>2</code>, <code>3</code>. The letter and numeric keys are equivalent.</p>
 <table>
 <thead>
@@ -1543,9 +1543,9 @@
     <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<h4 id="mixed-keys_1">Mixed Keys<a class="headerlink" href="#mixed-keys_1" title="Permanent link"> </a></h4>
+<h4 id="mixed-keys_1">Mixed Keys<a class="headerlink" href="#mixed-keys_1" title="Permanent link">&para;</a></h4>
 <p>Before <a href="../vector/"><code>Vector</code></a> was introduced, coordinate tables contained separate values under 1, 2, 3 and x, y, z keys, with letter keys taking precedence when they were different. This is no longer the case, and using letter and numerical keys is equivalent. However, when iterating over Vector components you have to use <code>pairs</code> and only letter keys will be read there.</p>
-<h4 id="value-range">Value Range<a class="headerlink" href="#value-range" title="Permanent link"> </a></h4>
+<h4 id="value-range">Value Range<a class="headerlink" href="#value-range" title="Permanent link">&para;</a></h4>
 <p>The range of values depend on the type of Vector you are using.</p>
 <table>
 <thead>
@@ -1573,8 +1573,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="type-details">Type Details<a class="headerlink" href="#type-details" title="Permanent link"> </a></h4>
-<h5 id="position">Position<a class="headerlink" href="#position" title="Permanent link"> </a></h5>
+<h4 id="type-details">Type Details<a class="headerlink" href="#type-details" title="Permanent link">&para;</a></h4>
+<h5 id="position">Position<a class="headerlink" href="#position" title="Permanent link">&para;</a></h5>
 <p>X is right/left, Y is up/down, Z is forward/back. A positional Vector can be either world or local. Most of Tabletop Simulator's functions use world positional Vectors.</p>
 <table>
 <thead>
@@ -1596,14 +1596,14 @@
 </table>
 <details class="tip"><summary>Conversion Between World/Local</summary><p><a href="../object/#positiontoworld">positionToWorld(...)</a> and <a href="../object/#positiontolocal">positionToLocal(...)</a> can be used to convert between the two types.</p>
 </details>
-<h5 id="rotation">Rotation<a class="headerlink" href="#rotation" title="Permanent link"> </a></h5>
+<h5 id="rotation">Rotation<a class="headerlink" href="#rotation" title="Permanent link">&para;</a></h5>
 <p>X is pitch (nodding your head), Y is yaw (shaking your head), Z is roll (tilting your head).</p>
-<h5 id="direction">Direction<a class="headerlink" href="#direction" title="Permanent link"> </a></h5>
+<h5 id="direction">Direction<a class="headerlink" href="#direction" title="Permanent link">&para;</a></h5>
 <p>X is right/left, Y is up/down, Z is forward/back.</p>
 <hr />
-<h3 id="function">Function<a class="headerlink" href="#function" title="Permanent link"> </a></h3>
+<h3 id="function">Function<a class="headerlink" href="#function" title="Permanent link">&para;</a></h3>
 <p><span class="tag fun"></span> A function is a section of code that can be run when triggered. In Lua, you are able to pass (use as a parameter) functions. Some elements in Tabletop Simulator can be passed functions to perform some action with, like triggering it after a delay.</p>
-<h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link"> </a></h4>
+<h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h4>
 <p>To pass a function, first you must create the function. There are multiple ways to do this:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">--Create it on-the-fly</span>
 <span class="kr">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Like This&quot;</span><span class="p">)</span> <span class="kr">end</span>
@@ -1626,7 +1626,7 @@ Instead, make the print the result of a function running:
 </code></pre></div></p>
 </div>
 <hr />
-<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link"> </a></h4>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
 <p>As an example, here is <a href="../wait/#frames">Wait.frames(...)</a> used 3 times. It waits a set number of frames and then activates a given function:</p>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="c1">--Built-in functions with parameters can be called directly</span>
@@ -1648,14 +1648,14 @@ Instead, make the print the result of a function running:
 <span class="kr">function</span> <span class="nf">sayThree</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Three&quot;</span><span class="p">)</span> <span class="kr">end</span>
 </code></pre></div>
 <hr />
-<h4 id="lambda-style-expressions">Lambda-Style Expressions<a class="headerlink" href="#lambda-style-expressions" title="Permanent link"> </a></h4>
+<h4 id="lambda-style-expressions">Lambda-Style Expressions<a class="headerlink" href="#lambda-style-expressions" title="Permanent link">&para;</a></h4>
 <p>You are able to replace <code>function()</code> and <code>end</code> with <code>||</code>, allowing for much shorter functions.</p>
-<h5 id="important-tips">Important Tips<a class="headerlink" href="#important-tips" title="Permanent link"> </a></h5>
+<h5 id="important-tips">Important Tips<a class="headerlink" href="#important-tips" title="Permanent link">&para;</a></h5>
 <p>You create a <code>|</code>, on a standard keyboard, by holding shift and pressing the key above enter (backslash).</p>
 <p><code>||</code> only work for one line. So if you intend to use a multi-line function, lambda-style will not be an option.</p>
 <p>When using <code>||</code> for a conditional function with <code>Wait.condition(returnFunc, conditionalFunc)</code>, you do not need to include return.</p>
 <p>If a parameter is passed to the return function, like with <code>callback_function</code> from <code>spawnObject(...)</code>, you can put a variable between the <code>||</code> characters to represent it. See the next section for an example.</p>
-<h5 id="lambda-style-example">Lambda-Style Example<a class="headerlink" href="#lambda-style-example" title="Permanent link"> </a></h5>
+<h5 id="lambda-style-example">Lambda-Style Example<a class="headerlink" href="#lambda-style-example" title="Permanent link">&para;</a></h5>
 <p>Without Lambda-style:
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="c1">--Spawn a deck with a callback function that triggers once deck spawns</span>
