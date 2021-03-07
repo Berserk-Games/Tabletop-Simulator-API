@@ -7,20 +7,20 @@ Each layout element has its own attributes specific to its type. Additionally, e
 ###Layout Summary
 Element Name | Description | &nbsp;
 -- | -- | --
-`#!xml <Panel></Panel>` | A "window" in which elements can be confined. | [<span class="i"></span>](#panel)
-`#!xml <HorizontalLayout></HorizontalLayout>` | A horizontal row of elements. | [<span class="i"></span>](#horizontallayout)
-`#!xml <VerticalLayout></VerticalLayout>` | A vertical column of elements. | [<span class="i"></span>](#verticallayout)
-`#!xml <GridLayout></GridLayout>` | A grid of elements. | [<span class="i"></span>](#gridlayout)
-`#!xml <TableLayout></TableLayout>` | A layout element based on HTML tables, allowing you to specify the position of elements in specific rows/columns. | [<span class="i"></span>](#tablelayout)
-`#!xml <Row></Row>` | A row within a TableLayout. | [<span class="i"></span>](#row)
-`#!xml <Cell></Cell>` | A cell within a TableLayout. | [<span class="i"></span>](#cell)
+`#!xml <Panel></Panel>` | A "window" in which elements can be confined. | [:i:](#panel)
+`#!xml <HorizontalLayout></HorizontalLayout>` | A horizontal row of elements. | [:i:](#horizontallayout)
+`#!xml <VerticalLayout></VerticalLayout>` | A vertical column of elements. | [:i:](#verticallayout)
+`#!xml <GridLayout></GridLayout>` | A grid of elements. | [:i:](#gridlayout)
+`#!xml <TableLayout></TableLayout>` | A layout element based on HTML tables, allowing you to specify the position of elements in specific rows/columns. | [:i:](#tablelayout)
+`#!xml <Row></Row>` | A row within a TableLayout. | [:i:](#row)
+`#!xml <Cell></Cell>` | A cell within a TableLayout. | [:i:](#cell)
 
 
 ###Scroll View Summary
 Element Name | Description | &nbsp;
 -- | -- | --
-`#!xml <HorizontalScrollView></HorizontalScrollView>` | A scrollable horizontal row of elements. | [<span class="i"></span>](#horizontalscrollview)
-`#!xml <VerticalScrollView></VerticalScrollView>` | A scrollable vertical column of elements. | [<span class="i"></span>](#verticalscrollview)
+`#!xml <HorizontalScrollView></HorizontalScrollView>` | A scrollable horizontal row of elements. | [:i:](#horizontalscrollview)
+`#!xml <VerticalScrollView></VerticalScrollView>` | A scrollable vertical column of elements. | [:i:](#verticalscrollview)
 
 
 ---

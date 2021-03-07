@@ -4,10 +4,10 @@ verify_ssl = true
 name = "Tabletop Simulator API"
 
 [packages]
-mkdocs-material = "~= 3.0.4"
-mkdocs = "~=1.0.4"
-pygments = "~=2.2.0"
-pymdown-extensions = "~=5.0"
+mkdocs = "~=1.1.2"
+mkdocs-material = "~= 7.0.4"
+mkdocs-material-extensions = "~= 1.0.1"
+pymdown-extensions = "~=8.1.1"
 
 [requires]
 python_version = "3.6"

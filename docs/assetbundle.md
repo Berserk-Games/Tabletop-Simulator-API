@@ -9,8 +9,8 @@ Example Usage: `self.AssetBundle.getLoopingEffects()`
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 <a class="anchor" id="getloopingeffectindex"></a>getLoopingEffectIndex()  |  Index of the currently looping effect. Indexs starts at 0. | [<span class="ret int"></span>](types.md)
-getLoopingEffects()  |  Returns a Table with the keys "index" and "name" for each looping effect. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getloopingeffects)
-getTriggerEffects()  |  Returns a Table with the keys "index" and "name" for each trigger effect. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#gettriggereffects)
+getLoopingEffects()  |  Returns a Table with the keys "index" and "name" for each looping effect. | [<span class="ret tab"></span>](types.md) | [:i:](#getloopingeffects)
+getTriggerEffects()  |  Returns a Table with the keys "index" and "name" for each trigger effect. | [<span class="ret tab"></span>](types.md) | [:i:](#gettriggereffects)
 <a class="anchor" id="playloopingeffect"></a>playLoopingEffect([<span class="tag int"></span>](types.md)&nbsp;index)  |  Starts playing a looping effect. Indexs starts at 0. | [<span class="ret nil"></span>](types.md) |
 <a class="anchor" id="playtriggereffect"></a>playTriggerEffect([<span class="tag int"></span>](types.md)&nbsp;index)  |  Starts playing a trigger effect. Indexs starts at 0. | [<span class="ret nil"></span>](types.md) |
 

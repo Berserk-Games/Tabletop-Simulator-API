@@ -19,14 +19,14 @@ Functions that interact with the in-game music player.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-getCurrentAudioclip() | Gets the currently loaded audioclip. | [<span class="ret tab"></span>](types.md)| [<span class="i"></span>](#getcurrentaudioclip)
-getPlaylist() | Gets the current playlist. | [<span class="ret tab"></span>](types.md)| [<span class="i"></span>](#getplaylist)
-pause() | Pauses currently playing audioclip. Returns true if the music player is paused, otherwise returns false. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#pause)
-play() | Plays currently loaded audioclip. Returns true if the music player is playing, otherwise returns false. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#play)
-setCurrentAudioclip() | Sets the audioclip to be loaded. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#setcurrentaudioclip)
+getCurrentAudioclip() | Gets the currently loaded audioclip. | [<span class="ret tab"></span>](types.md)| [:i:](#getcurrentaudioclip)
+getPlaylist() | Gets the current playlist. | [<span class="ret tab"></span>](types.md)| [:i:](#getplaylist)
+pause() | Pauses currently playing audioclip. Returns true if the music player is paused, otherwise returns false. | [<span class="ret boo"></span>](types.md)| [:i:](#pause)
+play() | Plays currently loaded audioclip. Returns true if the music player is playing, otherwise returns false. | [<span class="ret boo"></span>](types.md) | [:i:](#play)
+setCurrentAudioclip() | Sets the audioclip to be loaded. | [<span class="ret boo"></span>](types.md)| [:i:](#setcurrentaudioclip)
 setPlaylist() | Sets the current playlis
-skipBack() | Skips to the beginning of the audioclip or if the play time is less than 3 seconds to the previous audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#skipback)
-skipForward() | Skips to the next audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#skipforward) | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#setplaylist)
+skipBack() | Skips to the beginning of the audioclip or if the play time is less than 3 seconds to the previous audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false. | [<span class="ret boo"></span>](types.md)| [:i:](#skipback)
+skipForward() | Skips to the next audioclip in playlist if possible. Returns true if skip was successful, otherwise returns false. | [<span class="ret boo"></span>](types.md)| [:i:](#skipforward) | [<span class="ret boo"></span>](types.md)| [:i:](#setplaylist)
 
 ---
 

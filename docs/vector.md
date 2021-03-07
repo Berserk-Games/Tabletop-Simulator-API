@@ -22,9 +22,9 @@ Function Name | Description | Return | &nbsp;
 Vector([<span class="tag flo"></span>](types.md)&nbsp;x, [<span class="tag flo"></span>](types.md)&nbsp;y, [<span class="tag flo"></span>](types.md)&nbsp;z) | Return a vector with specified (x, y, z) components. | [<span class="ret vec"></span>](types.md)
 Vector([<span class="tag tab"></span>](types.md)&nbsp;v) | Return a vector with x&#47;y&#47;z or 1&#47;2&#47;3 components from source table (x&#47;y&#47;z first). | [<span class="ret vec"></span>](types.md)
 Vector.new(...) | Same as Vector(...). | [<span class="ret vec"></span>](types.md)
-Vector.min([<span class="tag vec"></span>](types.md)&nbsp;vec1, [<span class="tag vec"></span>](types.md)&nbsp;vec2) | Returns a vector that is made from the smallest components of two vectors. | [<span class="ret vec"></span>](types.md) | [<span class="i"></span>](#vectormin)
-Vector.max([<span class="tag vec"></span>](types.md)&nbsp;vec1, [<span class="tag vec"></span>](types.md)&nbsp;vec2) | Returns a vector that is made from the largest components of two vectors. | [<span class="ret vec"></span>](types.md) | [<span class="i"></span>](#vectormax)
-Vector.between([<span class="tag vec"></span>](types.md)&nbsp;vec1, [<span class="tag vec"></span>](types.md)&nbsp;vec2) | Return a vector pointing from vec1 to vec2. | [<span class="ret vec"></span>](types.md) | [<span class="i"></span>](#vectorbetween)
+Vector.min([<span class="tag vec"></span>](types.md)&nbsp;vec1, [<span class="tag vec"></span>](types.md)&nbsp;vec2) | Returns a vector that is made from the smallest components of two vectors. | [<span class="ret vec"></span>](types.md) | [:i:](#vectormin)
+Vector.max([<span class="tag vec"></span>](types.md)&nbsp;vec1, [<span class="tag vec"></span>](types.md)&nbsp;vec2) | Returns a vector that is made from the largest components of two vectors. | [<span class="ret vec"></span>](types.md) | [:i:](#vectormax)
+Vector.between([<span class="tag vec"></span>](types.md)&nbsp;vec1, [<span class="tag vec"></span>](types.md)&nbsp;vec2) | Return a vector pointing from vec1 to vec2. | [<span class="ret vec"></span>](types.md) | [:i:](#vectorbetween)
 
 
 ###Constructors examples
@@ -48,10 +48,10 @@ In addition to accessing vector components by their numeric indices (1, 2, 3) an
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-setAt([<span class="tag str"></span>](types.md)&nbsp;k, [<span class="tag flo"></span>](types.md)&nbsp;value) | Sets a component to value and returns self. | [<span class="ret sel"></span>](types.md#vector)  | [<span class="i"></span>](#setat)
-set([<span class="tag flo"></span>](types.md)&nbsp;x, [<span class="tag flo"></span>](types.md)&nbsp;y, [<span class="tag flo"></span>](types.md)&nbsp;z) | Sets `x`, `y`, `z` components to given values and returns self. | [<span class="ret sel"></span>](types.md#vector) | [<span class="i"></span>](#set)
-get() | Returns `x`, `y`, `z` components as three separate values. | [<span class="ret flo"></span>](types.md)<br>[<span class="ret flo"></span>](types.md)<br>[<span class="ret flo"></span>](types.md) | [<span class="i"></span>](#get)
-copy() | Returns a separate Vector with identical component values. | [<span class="ret vec"></span>](types.md#vector) | [<span class="i"></span>](#copy)
+setAt([<span class="tag str"></span>](types.md)&nbsp;k, [<span class="tag flo"></span>](types.md)&nbsp;value) | Sets a component to value and returns self. | [<span class="ret sel"></span>](types.md#vector)  | [:i:](#setat)
+set([<span class="tag flo"></span>](types.md)&nbsp;x, [<span class="tag flo"></span>](types.md)&nbsp;y, [<span class="tag flo"></span>](types.md)&nbsp;z) | Sets `x`, `y`, `z` components to given values and returns self. | [<span class="ret sel"></span>](types.md#vector) | [:i:](#set)
+get() | Returns `x`, `y`, `z` components as three separate values. | [<span class="ret flo"></span>](types.md)<br>[<span class="ret flo"></span>](types.md)<br>[<span class="ret flo"></span>](types.md) | [:i:](#get)
+copy() | Returns a separate Vector with identical component values. | [<span class="ret vec"></span>](types.md#vector) | [:i:](#copy)
 
 !!!tip
     Before `Vector` was introduced, coordinate tables contained separate values under 1, 2, 3 and x, y, z keys, with letter keys taking precedence when they were different. This is no longer the case, and using letter and numerical keys is equivalent. However, when iterating over Vector components you have to use `pairs` and only letter keys will be read there.
@@ -116,40 +116,40 @@ end
 
 Method Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-vec:add([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Adds components of otherVec to self. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#add)
-vec:sub([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Subtracts components of otherVec from self. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#sub)
-vec:scale([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Multiplies self-components by corresponding components from otherVec. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#scale)
-vec:scale([<span class="tag flo"></span>](types.md)&nbsp;num) | Multiplies self-components by a numeric factor. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#scale)
-vec:clamp([<span class="tag flo"></span>](types.md)&nbsp;num) | If self-magnitude is higher than provided limit, scale self-down to match it. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#clamp)
-vec:normalize() | Makes self-have a magnitude of 1. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#normalize)
-vec:project([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Make self into projection on another vector. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#project)
-vec:projectOnPlane([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Project self on a plane defined through a normal vector arg. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#projectonplane)
-vec:reflect([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Reflect self over a plane defined through a normal vector arg. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#reflect)
-vec:inverse() | Multiply self-components by -1. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#inverse)
-vec:moveTowards([<span class="tag vec"></span>](types.md)&nbsp;otherVec, [<span class="tag flo"></span>](types.md)&nbsp;num) | Move self towards another vector, but only up to a provided distance limit. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#movetowards)
-vec:rotateTowards([<span class="tag vec"></span>](types.md)&nbsp;target, [<span class="tag flo"></span>](types.md)&nbsp;maxAngle) | Rotate self towards another vector, but only up to a provided angle limit. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#rotatetowards)
-vec:rotateTowardsUnit([<span class="tag vec"></span>](types.md)&nbsp;target, [<span class="tag flo"></span>](types.md)&nbsp;maxAngle) | Same as rotateTowards, but only works correctly if `target` Vector is normalized. Less expensive than `rotateTowards`. | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#rotatetowardsunit)
-vec:rotateOver([<span class="tag str"></span>](types.md)&nbsp;axis, [<span class="tag flo"></span>](types.md)&nbsp;angle) | Rotate a Vector `angle` degrees over given `axis` (can be `'x'`, `'y'`, `'z'`). | [<span class="ret sel"></span>](types.md) | [<span class="i"></span>](#rotateover)
+vec:add([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Adds components of otherVec to self. | [<span class="ret sel"></span>](types.md) | [:i:](#add)
+vec:sub([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Subtracts components of otherVec from self. | [<span class="ret sel"></span>](types.md) | [:i:](#sub)
+vec:scale([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Multiplies self-components by corresponding components from otherVec. | [<span class="ret sel"></span>](types.md) | [:i:](#scale)
+vec:scale([<span class="tag flo"></span>](types.md)&nbsp;num) | Multiplies self-components by a numeric factor. | [<span class="ret sel"></span>](types.md) | [:i:](#scale)
+vec:clamp([<span class="tag flo"></span>](types.md)&nbsp;num) | If self-magnitude is higher than provided limit, scale self-down to match it. | [<span class="ret sel"></span>](types.md) | [:i:](#clamp)
+vec:normalize() | Makes self-have a magnitude of 1. | [<span class="ret sel"></span>](types.md) | [:i:](#normalize)
+vec:project([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Make self into projection on another vector. | [<span class="ret sel"></span>](types.md) | [:i:](#project)
+vec:projectOnPlane([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Project self on a plane defined through a normal vector arg. | [<span class="ret sel"></span>](types.md) | [:i:](#projectonplane)
+vec:reflect([<span class="tag vec"></span>](types.md)&nbsp;otherVec) | Reflect self over a plane defined through a normal vector arg. | [<span class="ret sel"></span>](types.md) | [:i:](#reflect)
+vec:inverse() | Multiply self-components by -1. | [<span class="ret sel"></span>](types.md) | [:i:](#inverse)
+vec:moveTowards([<span class="tag vec"></span>](types.md)&nbsp;otherVec, [<span class="tag flo"></span>](types.md)&nbsp;num) | Move self towards another vector, but only up to a provided distance limit. | [<span class="ret sel"></span>](types.md) | [:i:](#movetowards)
+vec:rotateTowards([<span class="tag vec"></span>](types.md)&nbsp;target, [<span class="tag flo"></span>](types.md)&nbsp;maxAngle) | Rotate self towards another vector, but only up to a provided angle limit. | [<span class="ret sel"></span>](types.md) | [:i:](#rotatetowards)
+vec:rotateTowardsUnit([<span class="tag vec"></span>](types.md)&nbsp;target, [<span class="tag flo"></span>](types.md)&nbsp;maxAngle) | Same as rotateTowards, but only works correctly if `target` Vector is normalized. Less expensive than `rotateTowards`. | [<span class="ret sel"></span>](types.md) | [:i:](#rotatetowardsunit)
+vec:rotateOver([<span class="tag str"></span>](types.md)&nbsp;axis, [<span class="tag flo"></span>](types.md)&nbsp;angle) | Rotate a Vector `angle` degrees over given `axis` (can be `'x'`, `'y'`, `'z'`). | [<span class="ret sel"></span>](types.md) | [:i:](#rotateover)
 
 ###Methods not modifying self
 
 Method Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-vec1:dot([<span class="tag vec"></span>](types.md)&nbsp;vec2) | Return a dot product of two vectors. | [<span class="ret flo"></span>](types.md) | [<span class="i"></span>](#dot)
-vec:magnitude() | Returns the length of this vector. | [<span class="ret flo"></span>](types.md) | [<span class="i"></span>](#magnitude)
-vec:sqrMagnitude() | Returns the squared length of this vector. | [<span class="ret flo"></span>](types.md) | [<span class="i"></span>](#sqrmagnitude)
-p1:distance([<span class="tag vec"></span>](types.md)&nbsp;p2) | Returns distance between two points. | [<span class="ret flo"></span>](types.md) | [<span class="i"></span>](#distance)
-p1:sqrDistance([<span class="tag vec"></span>](types.md)&nbsp;p2) | Returns squared distance between two points. | [<span class="ret flo"></span>](types.md) | [<span class="i"></span>](#sqrdistance)
-vec1:equals([<span class="tag vec"></span>](types.md)&nbsp;vec2, [<span class="tag flo"></span>](types.md)&nbsp;margin) | Returns true if two vectors are approximately equal. The `margin` argument is optional and defaults to tolerating a difference of ~0.03 in both vector magnitude. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#equals)
-vec:string([<span class="tag str"></span>](types.md)&nbsp;prefix) | Return string describing self, optional string prefix. | [<span class="ret str"></span>](types.md)<br>[<span class="ret flo"></span>](types.md) | [<span class="i"></span>](#string)
-vec1:angle([<span class="tag vec"></span>](types.md)&nbsp;vec2) | Return an angle between two vectors, in degrees [0, 180]. | [<span class="ret flo"></span>](types.md) | [<span class="i"></span>](#angle)
-vec1:cross([<span class="tag vec"></span>](types.md)&nbsp;vec2) | Return a cross-product vector of two vectors. | [<span class="ret vec"></span>](types.md) | [<span class="i"></span>](#cross)
-p1:lerp([<span class="tag vec"></span>](types.md)&nbsp;p2, [<span class="tag flo"></span>](types.md)&nbsp;t) | Linearly interpolates between two points. Numeric arg [0, 1] is the fraction. | [<span class="ret vec"></span>](types.md) | [<span class="i"></span>](#lerp)
-vec:normalized() | Return a new vector that is normalized (length 1) version of self. | [<span class="ret vec"></span>](types.md) | [<span class="i"></span>](#normalized)
-vec:orthoNormalize() | Return three normalized vectors perpendicular to each other, first one being in the same dir as self. Return `base`, `normal`, `binormal` vectors. | [<span class="ret vec"></span>](types.md)<br>[<span class="ret vec"></span>](types.md)<br>[<span class="ret vec"></span>](types.md)<br> | [<span class="i"></span>](#orthonormalize)
-vec:orthoNormalize([<span class="tag vec"></span>](types.md)&nbsp;binormalPlanar) | Same as vec:orthoNormalize(), but second vector is guranteed to be on a self-binormalPlanar plane. | [<span class="ret vec"></span>](types.md)<br>[<span class="ret vec"></span>](types.md)<br>[<span class="ret vec"></span>](types.md)<br> | [<span class="i"></span>](#orthonormalize)
-vec:heading() | Returns an angle (In degrees) of rotation of Vector over all axis (`'x'`, `'y'`, `'z'`). | [<span class="ret flo"></span>](types.md)<br>[<span class="ret flo"></span>](types.md)<br>[<span class="ret flo"></span>](types.md) | [<span class="i"></span>](#heading)
-vec:heading([<span class="tag str"></span>](types.md)&nbsp;axis) | Returns an angle (In degrees) of rotation of Vector over a given `axis` (can be `'x'`, `'y'`, `'z'`). | [<span class="ret flo"></span>](types.md) | [<span class="i"></span>](#heading)
+vec1:dot([<span class="tag vec"></span>](types.md)&nbsp;vec2) | Return a dot product of two vectors. | [<span class="ret flo"></span>](types.md) | [:i:](#dot)
+vec:magnitude() | Returns the length of this vector. | [<span class="ret flo"></span>](types.md) | [:i:](#magnitude)
+vec:sqrMagnitude() | Returns the squared length of this vector. | [<span class="ret flo"></span>](types.md) | [:i:](#sqrmagnitude)
+p1:distance([<span class="tag vec"></span>](types.md)&nbsp;p2) | Returns distance between two points. | [<span class="ret flo"></span>](types.md) | [:i:](#distance)
+p1:sqrDistance([<span class="tag vec"></span>](types.md)&nbsp;p2) | Returns squared distance between two points. | [<span class="ret flo"></span>](types.md) | [:i:](#sqrdistance)
+vec1:equals([<span class="tag vec"></span>](types.md)&nbsp;vec2, [<span class="tag flo"></span>](types.md)&nbsp;margin) | Returns true if two vectors are approximately equal. The `margin` argument is optional and defaults to tolerating a difference of ~0.03 in both vector magnitude. | [<span class="ret boo"></span>](types.md) | [:i:](#equals)
+vec:string([<span class="tag str"></span>](types.md)&nbsp;prefix) | Return string describing self, optional string prefix. | [<span class="ret str"></span>](types.md)<br>[<span class="ret flo"></span>](types.md) | [:i:](#string)
+vec1:angle([<span class="tag vec"></span>](types.md)&nbsp;vec2) | Return an angle between two vectors, in degrees [0, 180]. | [<span class="ret flo"></span>](types.md) | [:i:](#angle)
+vec1:cross([<span class="tag vec"></span>](types.md)&nbsp;vec2) | Return a cross-product vector of two vectors. | [<span class="ret vec"></span>](types.md) | [:i:](#cross)
+p1:lerp([<span class="tag vec"></span>](types.md)&nbsp;p2, [<span class="tag flo"></span>](types.md)&nbsp;t) | Linearly interpolates between two points. Numeric arg [0, 1] is the fraction. | [<span class="ret vec"></span>](types.md) | [:i:](#lerp)
+vec:normalized() | Return a new vector that is normalized (length 1) version of self. | [<span class="ret vec"></span>](types.md) | [:i:](#normalized)
+vec:orthoNormalize() | Return three normalized vectors perpendicular to each other, first one being in the same dir as self. Return `base`, `normal`, `binormal` vectors. | [<span class="ret vec"></span>](types.md)<br>[<span class="ret vec"></span>](types.md)<br>[<span class="ret vec"></span>](types.md)<br> | [:i:](#orthonormalize)
+vec:orthoNormalize([<span class="tag vec"></span>](types.md)&nbsp;binormalPlanar) | Same as vec:orthoNormalize(), but second vector is guranteed to be on a self-binormalPlanar plane. | [<span class="ret vec"></span>](types.md)<br>[<span class="ret vec"></span>](types.md)<br>[<span class="ret vec"></span>](types.md)<br> | [:i:](#orthonormalize)
+vec:heading() | Returns an angle (In degrees) of rotation of Vector over all axis (`'x'`, `'y'`, `'z'`). | [<span class="ret flo"></span>](types.md)<br>[<span class="ret flo"></span>](types.md)<br>[<span class="ret flo"></span>](types.md) | [:i:](#heading)
+vec:heading([<span class="tag str"></span>](types.md)&nbsp;axis) | Returns an angle (In degrees) of rotation of Vector over a given `axis` (can be `'x'`, `'y'`, `'z'`). | [<span class="ret flo"></span>](types.md) | [:i:](#heading)
 
 ---
 

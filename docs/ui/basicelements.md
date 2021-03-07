@@ -6,9 +6,9 @@ Each element has its own attributes specific to its type that work in addition t
 
 Element Name | Description | &nbsp;
 -- | -- | --
-`#!xml <Text></Text>` | Adds basic text. | [<span class="i"></span>](#text)
-`#!xml <Image></Image>` | Adds an image. | [<span class="i"></span>](#image)
-`#!xml <ProgressBar></ProgressBar>` | Displays a progress bar which can be updated dynamically via script. | [<span class="i"></span>](#progressbar)
+`#!xml <Text></Text>` | Adds basic text. | [:i:](#text)
+`#!xml <Image></Image>` | Adds an image. | [:i:](#image)
+`#!xml <ProgressBar></ProgressBar>` | Displays a progress bar which can be updated dynamically via script. | [:i:](#progressbar)
 
 ---
 

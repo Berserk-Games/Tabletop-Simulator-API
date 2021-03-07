@@ -19,9 +19,9 @@ Variable | Description | Type
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-<a class="anchor" id="getpage"></a>getPage([<span class="tag boo"></span>](types.md)&nbsp;offsetPageNumbering) | Gets the current page of the PDF. | [<span class="ret int"></span>](types.md) | [<span class="i"></span>](#getpage)
-<a class="anchor" id="setpage"></a>setPage([<span class="tag int"></span>](types.md)&nbsp;page, [<span class="tag boo"></span>](types.md)&nbsp;offsetPageNumbering) | Set current page. | [<span class="ret boo"></span>](types.md)| [<span class="i"></span>](#setpage)
-<a class="anchor" id="sethighlight"></a>setHighlight([<span class="tag flo"></span>](types.md)&nbsp;x1, [<span class="tag flo"></span>](types.md)&nbsp;y1, [<span class="tag flo"></span>](types.md)&nbsp;x2, [<span class="tag flo"></span>](types.md)&nbsp;y2) | Set highlight box on current page. | [<span class="ret boo"></span>](types.md) |  [<span class="i"></span>](#sethighlight)
+<a class="anchor" id="getpage"></a>getPage([<span class="tag boo"></span>](types.md)&nbsp;offsetPageNumbering) | Gets the current page of the PDF. | [<span class="ret int"></span>](types.md) | [:i:](#getpage)
+<a class="anchor" id="setpage"></a>setPage([<span class="tag int"></span>](types.md)&nbsp;page, [<span class="tag boo"></span>](types.md)&nbsp;offsetPageNumbering) | Set current page. | [<span class="ret boo"></span>](types.md)| [:i:](#setpage)
+<a class="anchor" id="sethighlight"></a>setHighlight([<span class="tag flo"></span>](types.md)&nbsp;x1, [<span class="tag flo"></span>](types.md)&nbsp;y1, [<span class="tag flo"></span>](types.md)&nbsp;x2, [<span class="tag flo"></span>](types.md)&nbsp;y2) | Set highlight box on current page. | [<span class="ret boo"></span>](types.md) |  [:i:](#sethighlight)
 <a class="anchor" id="clearhighlight"></a>clearHighlight() | Clears the current highlight. | [<span class="ret boo"></span>](types.md)
 
 ---

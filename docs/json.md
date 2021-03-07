@@ -11,9 +11,9 @@ The static global JSON class provides the ability to encode/decode data into JSO
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-decode([<span class="tag str"></span>](types.md)&nbsp;json_string) | Value obtained from the encoded string. Can return a number, string or Table. | [<span class="ret var"></span>](types.md) | [<span class="i"></span>](#decode)
-encode([<span class="tag var"></span>](types.md)&nbsp;data) | Encodes data from a number, string or Table into a JSON string. | [<span class="ret str"></span>](types.md) | [<span class="i"></span>](#encode)
-encode_pretty([<span class="tag var"></span>](types.md)&nbsp;data) | Same as encode(...) but this version is slightly less efficient but is easier to read. | [<span class="ret str"></span>](types.md) | [<span class="i"></span>](#encode_pretty)
+decode([<span class="tag str"></span>](types.md)&nbsp;json_string) | Value obtained from the encoded string. Can return a number, string or Table. | [<span class="ret var"></span>](types.md) | [:i:](#decode)
+encode([<span class="tag var"></span>](types.md)&nbsp;data) | Encodes data from a number, string or Table into a JSON string. | [<span class="ret str"></span>](types.md) | [:i:](#encode)
+encode_pretty([<span class="tag var"></span>](types.md)&nbsp;data) | Same as encode(...) but this version is slightly less efficient but is easier to read. | [<span class="ret str"></span>](types.md) | [:i:](#encode_pretty)
 
 ---
 

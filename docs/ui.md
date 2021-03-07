@@ -50,21 +50,21 @@ Variable | Description | Type
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-getAttribute([<span class="tag str"></span>](types.md)&nbsp;id, [<span class="tag str"></span>](types.md)&nbsp;attribute) | Obtains the value of a specified attribute of a UI element. | [<span class="ret var"></span>](types.md) | [<span class="i"></span>](#getattribute)
-getAttributes([<span class="tag str"></span>](types.md)&nbsp;id) | Returns the attributes and their values of a UI element. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getattributes)
-getCustomAssets() | Returns information on all custom assets uploaded to the UI ASSETS pane. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getcustomassets)
-getValue([<span class="tag str"></span>](types.md)&nbsp;id) | Obtains the value between elements tags, like: `<Text>ValueToGet</Text>` | [<span class="ret str"></span>](types.md) | [<span class="i"></span>](#getvalue)
+getAttribute([<span class="tag str"></span>](types.md)&nbsp;id, [<span class="tag str"></span>](types.md)&nbsp;attribute) | Obtains the value of a specified attribute of a UI element. | [<span class="ret var"></span>](types.md) | [:i:](#getattribute)
+getAttributes([<span class="tag str"></span>](types.md)&nbsp;id) | Returns the attributes and their values of a UI element. | [<span class="ret tab"></span>](types.md) | [:i:](#getattributes)
+getCustomAssets() | Returns information on all custom assets uploaded to the UI ASSETS pane. | [<span class="ret tab"></span>](types.md) | [:i:](#getcustomassets)
+getValue([<span class="tag str"></span>](types.md)&nbsp;id) | Obtains the value between elements tags, like: `<Text>ValueToGet</Text>` | [<span class="ret str"></span>](types.md) | [:i:](#getvalue)
 <a class="anchor" id="getxml"></a>getXml() | Returns the run-time UI's XML in string format. | [<span class="ret str"></span>](types.md) |
-getXmlTable() | Returns the run-time UI's XML formatted as a Lua table. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getxmltable)
-hide([<span class="tag str"></span>](types.md)&nbsp;id) | Hides the given UI element. Unlike the "active" attribute, hide triggers animations. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#hide)
-setAttribute([<span class="tag str"></span>](types.md)&nbsp;id, [<span class="tag str"></span>](types.md)&nbsp;attribute, [<span class="tag var"></span>](types.md)&nbsp;value) | Sets the value of a specified attribute of a UI element. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setattribute)
-setAttributes([<span class="tag str"></span>](types.md)&nbsp;id, [<span class="tag tab"></span>](types.md)&nbsp;data) | Updates the value of the supplied attributes of a UI element. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setattributes)
-setClass([<span class="tag str"></span>](types.md)&nbsp;id, [<span class="tag str"></span>](types.md)&nbsp;names) | Replaces all classes on a UI element. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setclass)
-setCustomAssets([<span class="tag tab"></span>](types.md)&nbsp;assets) | Sets the UI ASSETS (like custom images) for global or an Object. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setcustomassets)
-setValue([<span class="tag str"></span>](types.md)&nbsp;id, [<span class="tag str"></span>](types.md)&nbsp;value) | Updates the value between elements tags, like: `<Text>ValueChanged</Text>` | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setvalue)
-setXml([<span class="tag str"></span>](types.md)&nbsp;xml) | Replaces the run-time UI with the XML string. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setxml)
-setXmlTable([<span class="tag tab"></span>](types.md)&nbsp;data) | Replaces the run-time UI with an XML string which is generated from a table of data. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setxmltable)
-show([<span class="tag str"></span>](types.md)&nbsp;id) | Displays the given UI element. Unlike the "active" attribute, show triggers animations. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#show)
+getXmlTable() | Returns the run-time UI's XML formatted as a Lua table. | [<span class="ret tab"></span>](types.md) | [:i:](#getxmltable)
+hide([<span class="tag str"></span>](types.md)&nbsp;id) | Hides the given UI element. Unlike the "active" attribute, hide triggers animations. | [<span class="ret boo"></span>](types.md) | [:i:](#hide)
+setAttribute([<span class="tag str"></span>](types.md)&nbsp;id, [<span class="tag str"></span>](types.md)&nbsp;attribute, [<span class="tag var"></span>](types.md)&nbsp;value) | Sets the value of a specified attribute of a UI element. | [<span class="ret boo"></span>](types.md) | [:i:](#setattribute)
+setAttributes([<span class="tag str"></span>](types.md)&nbsp;id, [<span class="tag tab"></span>](types.md)&nbsp;data) | Updates the value of the supplied attributes of a UI element. | [<span class="ret boo"></span>](types.md) | [:i:](#setattributes)
+setClass([<span class="tag str"></span>](types.md)&nbsp;id, [<span class="tag str"></span>](types.md)&nbsp;names) | Replaces all classes on a UI element. | [<span class="ret boo"></span>](types.md) | [:i:](#setclass)
+setCustomAssets([<span class="tag tab"></span>](types.md)&nbsp;assets) | Sets the UI ASSETS (like custom images) for global or an Object. | [<span class="ret boo"></span>](types.md) | [:i:](#setcustomassets)
+setValue([<span class="tag str"></span>](types.md)&nbsp;id, [<span class="tag str"></span>](types.md)&nbsp;value) | Updates the value between elements tags, like: `<Text>ValueChanged</Text>` | [<span class="ret boo"></span>](types.md) | [:i:](#setvalue)
+setXml([<span class="tag str"></span>](types.md)&nbsp;xml) | Replaces the run-time UI with the XML string. | [<span class="ret boo"></span>](types.md) | [:i:](#setxml)
+setXmlTable([<span class="tag tab"></span>](types.md)&nbsp;data) | Replaces the run-time UI with an XML string which is generated from a table of data. | [<span class="ret boo"></span>](types.md) | [:i:](#setxmltable)
+show([<span class="tag str"></span>](types.md)&nbsp;id) | Displays the given UI element. Unlike the "active" attribute, show triggers animations. | [<span class="ret boo"></span>](types.md) | [:i:](#show)
 
 
 

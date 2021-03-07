@@ -26,7 +26,11 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - theme/icons
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
@@ -44,13 +48,13 @@ repo_url: 'https://github.com/Berserk-Games/Tabletop-Simulator-API'
 
 extra:
   social:
-    - type: 'reddit'
+    - icon: fontawesome/brands/reddit
       link: 'https://www.reddit.com/r/tabletopsimulator/'
-    - type: 'twitter'
+    - icon: fontawesome/brands/twitter
       link: 'https://twitter.com/tabletopsim'
-    - type: 'facebook'
+    - icon: fontawesome/brands/facebook
       link: 'https://www.facebook.com/tabletopsimulator'
-    - type: 'youtube'
+    - icon: fontawesome/brands/youtube
       link: 'https://www.youtube.com/user/berserkgames'
 
 nav:

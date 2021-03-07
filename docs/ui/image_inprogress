@@ -1,4 +1,4 @@
-`#!xml <RawImage></RawImage>` | Loads an image from those that were uploaded to the UI assets. | [<span class="i"></span>](#rawimage)
+`#!xml <RawImage></RawImage>` | Loads an image from those that were uploaded to the UI assets. | [:i:](#rawimage)
 
 ###RawImage
 

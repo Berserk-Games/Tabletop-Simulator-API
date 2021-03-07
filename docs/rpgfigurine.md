@@ -16,8 +16,8 @@ These functions are called by the game whenever a figurine attacks or is attacke
 
 Function Name | Description | &nbsp;
 -- | -- | --:
-onAttack([<span class="tag tab"></span>](types.md)&nbsp;hit_list) | Activates when an attack is performed by an identified RPGFigurine Object. | [<span class="i"></span>](#onattack)
-onHit([<span class="tag obj"></span>](types.md)&nbsp;attacker) | Activates when an attack is performed on this RPGFigurine Object. | [<span class="i"></span>](#onattack)
+onAttack([<span class="tag tab"></span>](types.md)&nbsp;hit_list) | Activates when an attack is performed by an identified RPGFigurine Object. | [:i:](#onattack)
+onHit([<span class="tag obj"></span>](types.md)&nbsp;attacker) | Activates when an attack is performed on this RPGFigurine Object. | [:i:](#onattack)
 
 
 

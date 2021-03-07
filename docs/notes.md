@@ -9,10 +9,10 @@ Functions that interact with the in-game notebook tabs.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-addNotebookTab([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Adds a notebook tab, returning its index. | [<span class="ret int"></span>](types.md) | [<span class="i"></span>](#addnotebooktab)
-editNotebookTab([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Edit an existing Tab in the notebook. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#editnotebooktab)
-getNotebookTabs() | Returns Table containing data on all tabs in the notebook. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getnotebooktabs)
-removeNotebookTab([<span class="tag int"></span>](types.md)&nbsp;index) | Remove a notebook tab. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#removenotebooktab)
+addNotebookTab([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Adds a notebook tab, returning its index. | [<span class="ret int"></span>](types.md) | [:i:](#addnotebooktab)
+editNotebookTab([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Edit an existing Tab in the notebook. | [<span class="ret boo"></span>](types.md) | [:i:](#editnotebooktab)
+getNotebookTabs() | Returns Table containing data on all tabs in the notebook. | [<span class="ret tab"></span>](types.md) | [:i:](#getnotebooktabs)
+removeNotebookTab([<span class="tag int"></span>](types.md)&nbsp;index) | Remove a notebook tab. | [<span class="ret boo"></span>](types.md) | [:i:](#removenotebooktab)
 
 ###Notes Functions
 Functions that interact with the on-screen notes (lower right corner of screen).
@@ -20,7 +20,7 @@ Functions that interact with the on-screen notes (lower right corner of screen).
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 <a class="anchor" id="getnotes"></a>getNotes() | Returns the contents of the on-screen notes section. | [<span class="ret str"></span>](types.md) |
-setNotes([<span class="tag str"></span>](types.md)&nbsp;notes) | Replace the text in the notes window with the string. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setnotes)
+setNotes([<span class="tag str"></span>](types.md)&nbsp;notes) | Replace the text in the notes window with the string. | [<span class="ret boo"></span>](types.md) | [:i:](#setnotes)
 
 ---
 

@@ -28,13 +28,13 @@ Remember you can also use the [Id attribute](attributes.md#general-attributes) t
 
 Element Name | Description | &nbsp;
 -- | -- | --
-`#!xml <InputField></InputField>` | A text input for single or multiple lines. Is able to send the text (during edit and when finished). | [<span class="i"></span>](#inputfield)
-`#!xml <Button></Button>` | A button. Is able to send a trigger event. | [<span class="i"></span>](#button)
-`#!xml <Toggle></Toggle>` | A simple on/off toggle. Is able to send on/off status. | [<span class="i"></span>](#toggle)
-`#!xml <ToggleButton></ToggleButton>` | A toggle, but styled as a button. | [<span class="i"></span>](#togglebutton)
-`#!xml <ToggleGroup></ToggleGroup>` | Allows a group of toggles to act as a radio button, where only 1 of them can be "checked" at once.| [<span class="i"></span>](#togglegroup)
-`#!xml <Slider></Slider>` | A value slider. Is able to send Value.  | [<span class="i"></span>](#slider)
-`#!xml <Dropdown></Dropdown>` | A dropdown menu. Is able to send the contents of the selection made in it. | [<span class="i"></span>](#dropdown)
+`#!xml <InputField></InputField>` | A text input for single or multiple lines. Is able to send the text (during edit and when finished). | [:i:](#inputfield)
+`#!xml <Button></Button>` | A button. Is able to send a trigger event. | [:i:](#button)
+`#!xml <Toggle></Toggle>` | A simple on/off toggle. Is able to send on/off status. | [:i:](#toggle)
+`#!xml <ToggleButton></ToggleButton>` | A toggle, but styled as a button. | [:i:](#togglebutton)
+`#!xml <ToggleGroup></ToggleGroup>` | Allows a group of toggles to act as a radio button, where only 1 of them can be "checked" at once.| [:i:](#togglegroup)
+`#!xml <Slider></Slider>` | A value slider. Is able to send Value.  | [:i:](#slider)
+`#!xml <Dropdown></Dropdown>` | A dropdown menu. Is able to send the contents of the selection made in it. | [:i:](#dropdown)
 
 ---
 

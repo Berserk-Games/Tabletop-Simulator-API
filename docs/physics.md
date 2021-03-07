@@ -31,7 +31,7 @@ Variable | Description | Type
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-cast([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Returns Table containing information on hit Objects. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#cast)
+cast([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Returns Table containing information on hit Objects. | [<span class="ret tab"></span>](types.md) | [:i:](#cast)
 <a class="anchor" id="getgravity"></a>getGravity() | Returns directional Vector of the direction gravity is pulling. | [<span class="ret vec"></span>](types.md#vector) |
 <a class="anchor" id="setgravity"></a>setGravity([<span class="tag vec"></span>](types.md#vector)&nbsp;direction) | Sets the direction gravity gravity pulls. | [<span class="ret boo"></span>](types.md)
 

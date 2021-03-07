@@ -6,7 +6,7 @@ In this section, you will find details on all events/classes/functions specific 
 This is the top-level list of classes and other information needed when scripting with Lua in Tabletop Simulator. Event, Base and Object are the three pages you will use the most, with the rest referring to niche information you can access as you go. It is a good idea to familiarize yourself with the contents of those three pages in order to have a good high-level understanding of what scripting is capable of doing.
 
 ###Right Column
-The Table of Contents will lay out the contents of the page you are on. It always starts with high-level summary information first and, if needed, detailed information towards the bottom. The <span class="i"></span> next to a summary element will take you directly down to the relevant detailed explanation below.
+The Table of Contents will lay out the contents of the page you are on. It always starts with high-level summary information first and, if needed, detailed information towards the bottom. The :i: next to a summary element will take you directly down to the relevant detailed explanation below.
 
 
 ##Growing TTS Documentation

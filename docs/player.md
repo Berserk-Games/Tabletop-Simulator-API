@@ -28,26 +28,26 @@ Variable | Description | Type
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-attachCameraToObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Makes a Player's camera follow an Object. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#attachcameratoobject)
-broadcast([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag col"></span>](types.md)&nbsp;message_color) | Print message on Player's screen and their game chat log. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#broadcast)
-changeColor([<span class="tag str"></span>](types.md)&nbsp;player_color) | Changes player to this [Player Color](player-color.md). | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#changecolor)
+attachCameraToObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Makes a Player's camera follow an Object. | [<span class="ret boo"></span>](types.md) | [:i:](#attachcameratoobject)
+broadcast([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag col"></span>](types.md)&nbsp;message_color) | Print message on Player's screen and their game chat log. | [<span class="ret boo"></span>](types.md) | [:i:](#broadcast)
+changeColor([<span class="tag str"></span>](types.md)&nbsp;player_color) | Changes player to this [Player Color](player-color.md). | [<span class="ret boo"></span>](types.md) | [:i:](#changecolor)
 <a class="anchor" id="clearselectedobjects"></a>clearSelectedObjects() | Clears a player's current selection. | [<span class="ret boo"></span>](types.md)
 <a class="anchor" id="gethandcount"></a>getHandCount() | Number of [hand zones](http://berserk-games.com/knowledgebase/hands/) owned by this color. | [<span class="ret int"></span>](types.md)
-getHandObjects([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#gethandobjects)
-getHandTransform([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Returns a Table of data on this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#gethandtransform)
+getHandObjects([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](types.md) | [:i:](#gethandobjects)
+getHandTransform([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Returns a Table of data on this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](types.md) | [:i:](#gethandtransform)
 <a class="anchor" id="getholdingobjects"></a>getHoldingObjects() | Objects a Player is holding in their hand. | [<span class="ret tab"></span>](types.md)
 <a class="anchor" id="gethoverobject"></a>getHoverObject() | Object that the Player's pointer is hovering over. | [<span class="ret obj"></span>](types.md)
 <a class="anchor" id="getpointerposition"></a>getPointerPosition() | Player's pointer coordinates. | [<span class="ret vec"></span>](types.md#vector)
 <a class="anchor" id="getpointerrotation"></a>getPointerRotation() | Player's pointer rotation on Y axis. | [<span class="ret flo"></span>](types.md)
 <a class="anchor" id="getselectedobjects"></a>getSelectedObjects() | Objects that the Player has selected with an area selection. | [<span class="ret tab"></span>](types.md)
 <a class="anchor" id="kick"></a>kick() | Kicks Player out of the room. | [<span class="ret boo"></span>](types.md)
-lookAt([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Moves a Player's camera, forcing 3'rd person camera mode. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#lookat)
+lookAt([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Moves a Player's camera, forcing 3'rd person camera mode. | [<span class="ret boo"></span>](types.md) | [:i:](#lookat)
 <a class="anchor" id="mute"></a>mute() | Mutes or unmutes Player, preventing/allowing voice chat. | [<span class="ret boo"></span>](types.md)
 <a class="anchor" id="pingtable"></a>pingTable([<span class="tag vec"></span>](types.md#vector)&nbsp;position) | Emulates the player using the ping tool at the given position (tapping Tab). | [<span class="ret boo"></span>](types.md)
-print([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag col"></span>](types.md#color)&nbsp;message_color) | Prints a message into the Player's game chat. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#print)
+print([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag col"></span>](types.md#color)&nbsp;message_color) | Prints a message into the Player's game chat. | [<span class="ret boo"></span>](types.md) | [:i:](#print)
 <a class="anchor" id="promote"></a>promote() | Promotes/demotes a Player. Promoted players have access to most host privileges. | [<span class="ret boo"></span>](types.md) |
-setCameraMode([<span class="tag str"></span>](types.md)&nbsp;camera_mode) | Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown". | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#setcameramode)
-setHandTransform([<span class="tag tab"></span>](types.md)&nbsp;parameters, [<span class="tag int"></span>](types.md)&nbsp;hand_index) | Sets transform elements of a hand zone. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#sethandtransform)
+setCameraMode([<span class="tag str"></span>](types.md)&nbsp;camera_mode) | Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown". | [<span class="ret boo"></span>](types.md) | [:i:](#setcameramode)
+setHandTransform([<span class="tag tab"></span>](types.md)&nbsp;parameters, [<span class="tag int"></span>](types.md)&nbsp;hand_index) | Sets transform elements of a hand zone. | [<span class="ret boo"></span>](types.md) | [:i:](#sethandtransform)
 
 
 
@@ -58,8 +58,8 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
 <a class="anchor" id="getavailablecolors"></a>getAvailableColors() | Returns a table of strings of every valid seat color at the current table. Returned colors are in the default order. | [<span class="ret tab"></span>](types.md)
 <a class="anchor" id="getcolors"></a>getColors() | Returns a table of strings of every possible seat color. Returned colors are in the default order. | [<span class="ret tab"></span>](types.md)
-getPlayers() | Returns Table of all Players in the instance. | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getplayers)
-getSpectators() | Returns Table of all Players in spectator (Grey). | [<span class="ret tab"></span>](types.md) | [<span class="i"></span>](#getspectators)
+getPlayers() | Returns Table of all Players in the instance. | [<span class="ret tab"></span>](types.md) | [:i:](#getplayers)
+getSpectators() | Returns Table of all Players in spectator (Grey). | [<span class="ret tab"></span>](types.md) | [:i:](#getspectators)
 
 
 ---

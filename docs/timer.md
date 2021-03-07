@@ -9,8 +9,8 @@ Timer is a static global class which provides methods for executing other functi
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-create([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Creates a Timer. It will auto-delete once its repetitions have been completed. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#create)
-destroy([<span class="tag str"></span>](types.md)&nbsp;identifier) | Destroys a Timer. | [<span class="ret boo"></span>](types.md) | [<span class="i"></span>](#destroy)
+create([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Creates a Timer. It will auto-delete once its repetitions have been completed. | [<span class="ret boo"></span>](types.md) | [:i:](#create)
+destroy([<span class="tag str"></span>](types.md)&nbsp;identifier) | Destroys a Timer. | [<span class="ret boo"></span>](types.md) | [:i:](#destroy)
 
 ---
 
