@@ -1,8 +1,14 @@
-Timer is a static global class which provides methods for executing other functions after a delay and/or repeatedly. Each Timer is tracked by a unique "identifier" string.
+---
+deprecated: true
+---
 
-> Example Usage: `Timer.destroy(...)`
+!!!danger "Deprecated"
+    Use [Wait.frames(...)](wait.md#frames) instead.
 
-!!!warning "Important Tip"
+`Timer` is a static global class which provides methods for executing other functions after a delay and/or repeatedly. Each Timer is tracked by a unique "identifier" string.
+
+
+!!!warning
     The "identifiers" are shared between Global and all Object scripts, so each Timer must have a unique name.
 
 ##Function Summary
