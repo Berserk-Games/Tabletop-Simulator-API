@@ -16,7 +16,13 @@
   as the main headline.
 -->
 {% if not "\x3ch1" in page.content %}
-  <h1>{{ page.title | d(config.site_name, true)}}</h1>
+  <h1>
+    {{ page.title | d(config.site_name, true)}}
+    {% if page.meta.deprecated %}
+      <a href="/intro/#deprecated"><span class="tag deprecated"></span></a>
+    {% endif %}
+  </h1>
+
 {% endif %}
 
 <!-- Markdown content -->

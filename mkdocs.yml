@@ -19,6 +19,7 @@ markdown_extensions:
   - admonition
   - attr_list
   - codehilite
+  - meta
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
