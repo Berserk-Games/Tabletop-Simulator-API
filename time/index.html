@@ -1007,12 +1007,14 @@
 
 
 <!-- Markdown content -->
-<p>Time (not to be confused with the devalued Timer class) is a static global class which provides access to Unity's time information.</p>
-<blockquote>
-<p>Example Usage: <code>Time.time</code></p>
-</blockquote>
+<p><code>Time</code>, not to be confused with the deprecated <a href="../timer/">Timer</a> class, is a static global class which provides access
+to Unity's time information.</p>
+<div class="admonition example">
+<p class="admonition-title">Example Usage</p>
+<div class="highlight"><pre><span></span><code><span class="n">Time</span><span class="p">.</span><span class="n">time</span>
+</code></pre></div>
+</div>
 <h3 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link">&para;</a></h3>
-<p>All of the member variables of time are read only.</p>
 <table>
 <thead>
 <tr>
@@ -1024,27 +1026,17 @@
 <tbody>
 <tr>
 <td><a class="anchor" id="time"></a>time</td>
-<td>Returns the current time. Works like <code>os.time()</code> but is more accurate.</td>
+<td>The current time. Works like <code>os.time()</code> but is more accurate. Read only.</td>
 <td><a href="../types/"><span class="ret flo"></span></a></td>
 </tr>
 <tr>
 <td><a class="anchor" id="delta_time"></a>delta_time</td>
-<td>Returns the amount of time since the last frame.</td>
-<td><a href="../types/"><span class="ret flo"></span></a></td>
-</tr>
-<tr>
-<td><a class="anchor" id="fixed_time"></a>fixed_time</td>
-<td>Returns a number like <code>time</code> does, but using Fixed updates.</td>
+<td>The amount of time since the last frame. Read only.</td>
 <td><a href="../types/"><span class="ret flo"></span></a></td>
 </tr>
 <tr>
 <td><a class="anchor" id="fixed_delta_time"></a>fixed_delta_time</td>
-<td>Returns a number like <code>delta_time</code> does, but using Fixed updates.</td>
-<td><a href="../types/"><span class="ret flo"></span></a></td>
-</tr>
-<tr>
-<td><a class="anchor" id="frame_count"></a>frame_count</td>
-<td>Returns the amount of total frames since the scene began.</td>
+<td>The interval (in seconds) between physics updates. Read only.</td>
 <td><a href="../types/"><span class="ret flo"></span></a></td>
 </tr>
 </tbody>
