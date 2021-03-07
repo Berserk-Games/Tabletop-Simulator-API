@@ -77,7 +77,22 @@ Variable | Description | Type
 !!! bug
     The `value_flags` and `value` member variables do not persist when the object is reloaded (such as loading a save and entering/exiting containers).
 
-###Behavior Variables
+These member variables are classes of their own, and have their own member variables. Each one is for a special type of Object.
+
+Variable Name | Description
+-- | --
+<a class="anchor" id="assetbundle"></a>AssetBundle | An [AssetBundle](assetbundle.md), which is a type of custom object made in Unity.
+<a class="anchor" id="book"></a>Book | A [Book](book.md), which is the in-game Custom PDF object.
+<a class="anchor" id="browser"></a>Browser | A [Browser](browser.md), which is the in-game Tablet object.
+<a class="anchor" id="clock"></a>Clock | A [Clock](clock.md), which is the in-game digital clock.
+<a class="anchor" id="counter"></a>Counter | A [Counter](counter.md), which is the in-game digital counter.
+<a class="anchor" id="rpgfigurine"></a>RPGFigurine | An [RPGFigurine](rpgfigurine.md), which is an in-game animated figurine.
+<a class="anchor" id="texttool"></a>TextTool | A [TextTool](texttool.md), which is an in-game text display system.
+
+---
+
+
+
 
 Some objects provide additional behavior. This functionality is accessible as Object member variables, but will be `nil`
 unless the Object includes the behavior.
@@ -315,8 +330,8 @@ getSnapPoints() | Returns a table of sub-tables, each sub-table representing one
 setDecals([<span class="tag tab"></span>](types.md) parameters) | Sets which decals are on an object. This removes other decals already present, and can remove all decals as well. | [<span class="ret boo"></span>](types.md) | [:i:](#setdecals)
 <a class="anchor" id="setluascript"></a>setLuaScript([<span class="tag str"></span>](types.md) script) | Input a string as an entity's Lua script. Generally only used after spawning a new Object. | [<span class="ret boo"></span>](types.md) |
 setSnapPoints([<span class="tag tab"></span>](types.md) parameters) | Spawns snap points from a list of parameters. | [<span class="ret boo"></span>](types.md) | [:i:](#setsnappoints)
-<a class="anchor" id="settable"></a>setTable([<span class="tag str"></span>](types.md) func_name, [<span class="tag tab"></span>](types.md) data) | Creates/updates a variable in another entity's script. Only used for tables. | [<span class="ret boo"></span>](types.md) |
-<a class="anchor" id="setvar"></a>setVar([<span class="tag str"></span>](types.md) func_name, [<span class="tag var"></span>](types.md) data) | Creates/updates a variable in another entity's script. Cannot set a table. | [<span class="ret boo"></span>](types.md) |
+<a class="anchor" id="settable"></a>setTable([<span class="tag str"></span>](types.md)&nbsp;table_name, [<span class="tag tab"></span>](types.md)&nbsp;data) | Creates/updates a variable in another entity's script. Only used for tables.  The value is treived by the function getTable|[#gettable]. Updating the table after it has been set does not update the table that will be retrieved by getTable|[#gettable]. | [<span class="ret boo"></span>](types.md) |
+<a class="anchor" id="setvar"></a>setVar([<span class="tag str"></span>](types.md)&nbsp;var_name, [<span class="tag var"></span>](types.md)&nbsp;data) | Creates/updates a variable in another entity's script. Cannot set a table.  The value is retrieved by the function getVar|[#getvar]. [<span class="ret boo"></span>](types.md) |
 setVectorLines([<span class="tag tab"></span>](types.md) parameters) | Spawns Vector Lines from a list of parameters on this entity. | [<span class="ret boo"></span>](types.md) | [:i:](#setvectorlines)
 
 
