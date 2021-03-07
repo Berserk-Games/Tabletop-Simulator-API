@@ -10,7 +10,7 @@ These are functions which are triggered by an event taking place in-game. They w
 Function Name | Description | &nbsp;
 -- | -- | --
 filterObjectEnterContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer](#tryobjectentercontainer)_.</p>Called when an object attempts to enter any container. The object is prevented from entering unless `true` is returned. | 
-onBlindfold([<span class="tag pla"></span>](types.md)&nbsp;player, [<span class="tag boo"></span>](types.md)&nbsp;blindfold) | Called when a player puts on or takes off their blindfold. | 
+onBlindfold([<span class="tag pla"></span>](types.md)&nbsp;player, [<span class="tag boo"></span>](types.md)&nbsp;blindfold) | Called when a player puts on or takes off their blindfold. | [<span class="i"></span>](#onblindfold)
 onChat([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag pla"></span>](types.md)&nbsp;sender) | Called when a chat message is sent in game chat. | [<span class="i"></span>](#onchat)
 onExternalMessage([<span class="tag tab"></span>](types.md)&nbsp;data) | Called when an external script editor (like [Atom](atom.md)) sends a message back to the game. Used for custom editor functionality. | [<span class="i"></span>](#onexternalmessage)
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [<span class="i"></span>](#onfixedupdate)
@@ -46,8 +46,8 @@ onSave() | Called whenever your game is saved. | [<span class="i"></span>](#onsa
 onScriptingButtonDown([<span class="tag int"></span>](types.md)&nbsp;index, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttondown)
 onScriptingButtonUp([<span class="tag int"></span>](types.md)&nbsp;index, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttonup)
 onUpdate() | Called **every frame**. | [<span class="i"></span>](#onupdate)
-tryObjectEnterContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when an object attempts to enter any container. The object is prevented from entering unless `true` is returned. | [<span class="i"></span>](#tryobjectentercontainer)
-tryObjectRandomize([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when someone tries to shuffle/roll/randomize an object. The object is prevented from being shuffled/rolled/randomized unless `true` is returned. | 
+tryObjectEnterContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when an Object attempts to enter any container. The Object is prevented from entering unless `true` is returned. | [<span class="i"></span>](#tryobjectentercontainer)
+tryObjectRandomize([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when someone tries to shuffle/roll/randomize an Object. The Object is prevented from being shuffled/rolled/randomized unless `true` is returned. | [<span class="i"></span>](#tryobjectrandomize)
 
 
 
@@ -63,7 +63,7 @@ These are functions which are triggered by an event taking place in-game. They o
 
 Function Name | Description | &nbsp;
 -- | -- | --
-filterObjectEnter([<span class="tag obj"></span>](types.md)&nbsp;obj) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnter](#tryobjectenter)_.</p>Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned. | 
+filterObjectEnter([<span class="tag obj"></span>](types.md)&nbsp;enter_object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnter](#tryobjectenter)_.</p>Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned. | 
 onCollisionEnter([<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called when an Object starts colliding with the Object the function is on. | [<span class="i"></span>](#oncollisionenter)
 onCollisionExit([<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called when an Object stops colliding with the Object the function is on. | [<span class="i"></span>](#oncollisionexit)
 onCollisionStay([<span class="tag tab"></span>](types.md)&nbsp;collision_info) | Called **every frame** that an Object is colliding with the Object this function is on. | [<span class="i"></span>](#oncollisionstay)
@@ -78,14 +78,34 @@ onPickUp([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called w
 onRandomize([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when this Object is randomized. Like when shuffling a deck or shaking dice. | [<span class="i"></span>](#onrandomize)
 onSearchEnd([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player finishes searches this Object. | [<span class="i"></span>](#onsearchend)
 onSearchStart([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player starts searching this Object. | [<span class="i"></span>](#onsearchstart)
-onStateChange( [<span class="tag str"></span>](types.md)&nbsp;old_guid) | Called when this object changes states. | [<span class="i"></span>](#onstatechange)
-tryObjectEnter([<span class="tag obj"></span>](types.md)&nbsp;obj) | Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned. | [<span class="i"></span>](#tryobjectenter)
-tryRandomize([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when someone tries to shuffle/roll/randomize this object. The object is prevented from being shuffled/rolled/randomized unless `true` is returned. | [<span class="i"></span>](#tryrandomize)
+onStateChange([<span class="tag str"></span>](types.md)&nbsp;old_guid) | Called when this Object changes states. | [<span class="i"></span>](#onstatechange)
+tryObjectEnter([<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when an Object attempts to enter this Object. The Object is prevented from entering unless `true` is returned. | [<span class="i"></span>](#tryobjectenter)
+tryRandomize([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when someone tries to shuffle/roll/randomize this Object. The Object is prevented from being shuffled/rolled/randomized unless `true` is returned. | [<span class="i"></span>](#tryrandomize)
 
 
 ---
 
 ##Function Details (Global & Object)
+
+###onBlindfold(...)
+
+Called when a player puts on or takes off their blindfold.
+
+!!!info "onBlindfold(player, blindfold)"
+	* [<span class="tag pla"></span>](types.md)&nbsp;**player**: Player who put on or took off their blindfold.
+	* [<span class="tag boo"></span>](types.md)&nbsp;**blindfold**: Whether the player's blindfold is now on or off.
+
+``` Lua
+function onBlindfold(player, blindfold)
+	if blindfold then
+		print(player.steam_name .. " has put on their blindfold.")
+	else
+		print(player.steam_name .. " has taken off their blindfold.")
+	end
+end
+```
+
+---
 
 ###onChat(...)
 
@@ -337,10 +357,10 @@ end
 
 Called whenever a player [flicks](https://kb.tabletopsimulator.com/game-tools/flick-tool/) flicks an object.
 
-!!!info "onFlick(object, player_color, impulse)"
-* [<span class="tag obj"></span>](types.md)&nbsp;**object**: The object that was flicked.
-* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who flicked an object.
-* [<span class="tag vec"></span>](types.md)&nbsp;**impulse**: The impulse applied to the object.
+!!!info "onObjectFlick(object, player_color, impulse)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**object**: The object that was flicked.
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who flicked an object.
+	* [<span class="tag vec"></span>](types.md)&nbsp;**impulse**: The impulse applied to the object.
 
 !!!example
 	Print the player color, type of the flicked object, and magnitude of the flick:
@@ -481,7 +501,7 @@ Called when an object's Custom PDF page is changed.
 
 ###onObjectPeek(...)
 
-Called when a player using peek to look under an Object.
+Called when a player uses peek to look under an Object.
 
 !!!info "onObjectPeek(object, player_color)"
 	* [<span class="tag obj"></span>](types.md)&nbsp;**object**: A reference to the Object which was peeked at.
@@ -576,11 +596,11 @@ end
 
 ###onObjectStateChange(...)
 
-Called when any object changes states, after it is in the new state.
+Called when any Object changes states, after it is in the new state.
 
-!!!info "onObjectStateChange(obj, old_guid)"
-	* [<span class="tag obj"></span>](types.md)&nbsp;obj: The object that just changed states.
-	* [<span class="tag str"></span>](types.md)&nbsp;old_guid): The guid that the object had before it changed states.
+!!!info "onObjectStateChange(object, old_guid)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**object**: The Object that just changed states.
+	* [<span class="tag str"></span>](types.md)&nbsp;**old_guid**: The guid that the Object had before it changed states.
 
 ---
 
@@ -748,7 +768,7 @@ end
 
 ###tryObjectEnterContainer(...)
 
-Called when an object attempts to enter a container. The object is prevented from entering unless `true` is returned.
+Called when an Object attempts to enter a container. The Object is prevented from entering unless `true` is returned.
 
 !!!info "tryObjectEnter(container, enter_object)"
 	* [<span class="tag obj"></span>](types.md)&nbsp;**container**: The container the Object is trying to enter.
@@ -756,8 +776,8 @@ Called when an object attempts to enter a container. The object is prevented fro
 
 ``` Lua
 function tryObjectEnterContainer(container, enter_object)
-	print(enter_object.getName()) -- Print entering object's name
-	return true -- Allows object to enter.
+	print(enter_object.getName()) -- Print entering Object's name
+	return true -- Allows Object to enter.
 end
 ```
 
@@ -766,16 +786,16 @@ end
 
 ##tryObjectRandomize(...)
 
-Called when someone tries to shuffle/roll/randomize an object. The object is prevented from being shuffled/rolled/randomized unless `true` is returned.
+Called when someone tries to shuffle/roll/randomize an Object. The Object is prevented from being shuffled/rolled/randomized unless `true` is returned.
 
 !!!info "tryObjectRandomize(randomize_object, player_color)"
-	* [<span class="tag obj"></span>](types.md)&nbsp;**randomize_object**: The object someone tried to shuffle/roll/randomize.
-	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who tried to shuffle/roll/randomize the object.
+	* [<span class="tag obj"></span>](types.md)&nbsp;**randomize_object**: The Object someone tried to shuffle/roll/randomize.
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who tried to shuffle/roll/randomize the Object.
 
 ``` Lua
-function tryRandomize(randomize_object, player_color)
+function tryObjectRandomize(randomize_object, player_color)
 	print(player_color .. " tried to randomize " .. randomize_object.getName())
-	if player_color == "Red" then -- Prevent the red player from randomizing any object
+	if player_color == "Red" then -- Prevent the red player from randomizing any Object
 		return false
 	end
 	return true
@@ -919,8 +939,8 @@ end
 Called when a player [flicks](https://kb.tabletopsimulator.com/game-tools/flick-tool/) this [Object](object.md).
 
 !!!info "onFlick(player_color, impulse)"
-* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who flicked this object.
-* [<span class="tag vec"></span>](types.md)&nbsp;**impulse**: The impulse applied to the object.
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who flicked this object.
+	* [<span class="tag vec"></span>](types.md)&nbsp;**impulse**: The impulse applied to the object.
 
 !!!example
 	Print the player color and magnitude of the flick:
@@ -1070,10 +1090,10 @@ Called when a player finishes searching this [Object](object.md).
 
 ###onStateChange(...)
 
-Called when this object changes states.
+Called when this Object changes states.
 
 !!!info "onStateChange(old_guid)"
-	* [<span class="tag str"></span>](types.md)&nbsp;old_guid): The guid that this object had before it changed states.
+	* [<span class="tag str"></span>](types.md)&nbsp;**old_guid**: The guid that this Object had before it changed states.
 
 ---
 
@@ -1081,15 +1101,15 @@ Called when this object changes states.
 
 ##tryObjectEnter(...)
 
-Called when an object attempts to enter this [Object](object.md). The object is prevented from entering unless `true` is returned.
+Called when an Object attempts to enter this [Object](object.md). The Object is prevented from entering unless `true` is returned.
 
-!!!info "tryObjectEnter(obj)"
-	* [<span class="tag obj"></span>](types.md)&nbsp;**obj**: The object that has tried to enter the object this script is attached to.
+!!!info "tryObjectEnter(enter_object)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**enter_object**: The Object that has tried to enter the Object this script is attached to.
 
 ``` Lua
 function tryObjectEnter(obj)
-	print(obj.getName()) -- Print entering object's name
-	return true -- Allows object to enter.
+	print(obj.getName()) -- Print entering Object's name
+	return true -- Allows Object to enter.
 end
 ```
 
@@ -1098,15 +1118,15 @@ end
 
 ##tryRandomize(...)
 
-Called when someone tries to shuffle/roll/randomize this [Object](object.md). The object is prevented from being shuffled/rolled/randomized unless `true` is returned.
+Called when someone tries to shuffle/roll/randomize this [Object](object.md). The Object is prevented from being shuffled/rolled/randomized unless `true` is returned.
 
 !!!info "tryRandomize(player_color)"
-	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who tried to shuffle/roll/randomize the object this script is attached to.
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the player who tried to shuffle/roll/randomize the Object this script is attached to.
 
 ``` Lua
 function tryRandomize(player_color)
 	print(player_color .. " tried to randomize " .. self.getName())
-	if player_color == "Red" then -- Prevent the red player from randomizing this object
+	if player_color == "Red" then -- Prevent the Red player from randomizing this Object
 		return false
 	end
 	return true
