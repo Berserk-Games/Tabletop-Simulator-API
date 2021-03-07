@@ -3,7 +3,7 @@
     font-family: 'Inconsolata', 'Monaco', 'Consolas', 'Courier New', 'Courier';
     font-weight: normal;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.5rem;
     display: inline;
     padding: 2px 4px;
     border-radius:5px;
@@ -27,7 +27,7 @@
     /*background-color:rgba(1, 0, 0, 0.2);*/
     font-style: italic;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.5rem;
     /*padding: 1px 4px;
     box-shadow: 2px 2px #696969;
     border-radius: 6px;*/

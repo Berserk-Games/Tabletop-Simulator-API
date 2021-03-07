@@ -10,15 +10,25 @@
 
 /*Disable top bar shdow fade-in*/
 .md-header {
-    transition: initial !important;
+    box-shadow: 0 0 .2rem rgba(0,0,0,.1),0 .2rem .4rem rgba(0,0,0,.2);
 }
 
 /*Increase width/height of icon on top bar*/
-.md-header-nav__button.md-logo * {
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
     width: 42px;
     height: 42px;
-    position: relative;
-    bottom: 5px;
+}
+
+.md-header__button.md-logo {
+    margin: 0 0.2rem 0 0.2rem;
+    padding: 0;
+}
+
+/* Override scrollbar colors */
+[class$=__scrollwrap]:hover,
+.md-typeset pre > code:hover {
+    scrollbar-color: #bb0c0d transparent;
 }
 
 /*background behind current selection in left bar*/
@@ -36,42 +46,42 @@
 .md-typeset h1 {
     color: #000000;
     font-weight: 600;
-    font-size: 3.2rem;
+    font-size: 1.6rem;
     text-transform: none;
     font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 .md-typeset h2{
     color: #202020;
     font-weight: 500;
-    font-size: 2.9rem;
+    font-size: 1.45rem;
     text-transform: none;
     font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 .md-typeset h3 {
     color: #404040;
     font-weight: 500;
-    font-size: 2.6rem;
+    font-size: 1.3rem;
     text-transform: none;
     font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 .md-typeset h4 {
     color: #606060;
     font-weight: 400;
-    font-size: 2.3rem;
+    font-size: 1.15rem;
     text-transform: none;
     font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 .md-typeset h5 {
     color: #808080;
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 1rem;
     text-transform: none;
     font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 .md-typeset h6 {
     color: #A0A0A0;
     font-weight: 200;
-    font-size: 1.7rem;
+    font-size: 0.85rem;
     text-transform: none;
     font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
@@ -86,16 +96,6 @@
     color: #bb0c0d !important;
 }
 
-/*anchor offset*/
-
-td {position: relative;}
-
-.anchor {
-   position: absolute;
-   top: 0px;
-   margin: -4.8rem 0 0; /* negative fixed header height */
-}
-
 /*prevent left/right scrollbar
 .md-typeset .admonition, .md-typeset details {
     overflow-x:hidden;
@@ -104,7 +104,7 @@ disabled due to lack of need currently, but works*/
 
 /*Make lines across pages solid*/
 .md-typeset hr {
-    border-bottom: .1rem solid rgba(0,0,0,.26);
+    border-bottom: .05rem solid rgba(0,0,0,.26);
 }
 
 .custom-line {
@@ -118,8 +118,8 @@ disabled due to lack of need currently, but works*/
 .custom-link {
     color:#f4641d;
     position:relative;
-    left:1.3rem;
-    top:-0.5rem;
+    left:0.625rem;
+    top:-0.25rem;
 }
 
 code {

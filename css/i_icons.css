@@ -1,10 +1,13 @@
-/*Styling the i icons that link to details*/
+/* Fixed size for icons in links in the last cell of tables i.e. (i) more info links. */
 
-.i:after {
-    font-family: "Material Icons";
-    content: "\E88F";
-    font-size: 22px;
-    
-    position: relative;
-    right: 2px;
+td:last-child > a > .twemoji {
+    height: 22px;
+    margin: -2px 0 0 0;
+}
+
+td:last-child > a > .twemoji > svg {
+    width: 22px;
+    height: 22px;
+    max-width: 22px;
+    max-height: 22px;
 }
