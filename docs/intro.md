@@ -41,45 +41,9 @@ If an object is duplicated, it will sometimes have the same GUID for 1 frame bef
 
 ---
 
-
 ##Deprecated APIs {: #deprecated }
 Through-out this documentation you may come across Lua APIs that are labelled as [<span class="tag deprecated"></span>](intro.md#deprecated). It is advised that you no longer use deprecated APIs. Typically, this is because newer/improved APIs have been introduced that better serve the same purpose.
 
 **Deprecated APIs will _not_ be removed or stop working.**
 
 Existing mods may continue to use deprecated functionality without issue. It is however strongly recommended, that for the best experience you avoid use of deprecated APIs in new code.
-
-
----
-
-###Classes
-
-Defining classes requires further knowledge of object-oriented programming to really understand. However for the purposes of Tabletop Simulator Lua scripting, you can think of a class as a standard or collection that handles categories of objects.
-
-####Object Classes
-Associated with in-game Objects.
-
-* [Clock](clock.md)
-* [Counter](counter.md)
-* [Object](object.md)
-* [AssetBundle](assetbundle.md)
-* [RPGFigurine](rpgfigurine.md)
-* [TextTool](texttool.md)
-
-####Static Classes
-Associated with in-game properties and systems.
-
-* [JSON](json.md)
-* [Player](player.md)
-* [WebRequest](webrequest.md)
-* [Physics](physics.md)
-* [Lighting](lighting.md)
-* [Turns](turns.md)
-* [Notes](notes.md)
-* [UI](ui.md)
-* [Wait](wait.md)
-* [Web Request](webrequest.md)
-
-For more information on what a class is, you can refer to the relevant [Lua Documentation](https://www.lua.org/pil/16.1.html).
-
----
