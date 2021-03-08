@@ -75,14 +75,17 @@ nav:
     - Event: event.md
     - Base: base.md
     - Object: object.md
-    - AssetBundle: assetbundle.md
+    - Object Behaviors:
+      - AssetBundle: behavior/assetbundle.md
+      - Book: behavior/book.md
+      - Browser: behavior/browser.md
+      - Clock: behavior/clock.md
+      - Counter: behavior/counter.md
+      - RPGFigurine: behavior/rpgfigurine.md
+      - TextTool: behavior/texttool.md
     - Background: backgrounds.md
-    - Book: book.md
-    - Browser: browser.md
-    - Clock: clock.md
     - Color: color.md
     - Component: component.md
-    - Counter: counter.md
     - Grid: grid.md
     - Hands: hands.md
     - Info: info.md
@@ -93,12 +96,10 @@ nav:
     - Physics: physics.md
     - Player: player.md
     - Player Color: player-color.md
-    - RPGFigurine: rpgfigurine.md
     - Spawnable Objects:
       - Built-in: built-in-object.md
       - Custom: custom-game-objects.md
     - Tables: tables.md
-    - TextTool: texttool.md
     - Time: time.md
     - Timer: timer.md
     - Turns: turns.md

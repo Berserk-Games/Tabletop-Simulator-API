@@ -25,7 +25,7 @@ onObjectFlick([<span class="tag obj"></span>](types.md)&nbsp;object, [<span clas
 onObjectHover([<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag obj"></span>](types.md)&nbsp;hovered_object) | Called when a player moves their pointer (cursor) over an object. | [:i:](#onobjecthover)
 onObjectLeaveScriptingZone([<span class="tag obj"></span>](types.md)&nbsp;zone, [<span class="tag obj"></span>](types.md)&nbsp;enter_object) | Called when any object leaves any scripting zone. | [:i:](#onobjectleavescriptingzone)
 onObjectLeaveContainer([<span class="tag obj"></span>](types.md)&nbsp;container, [<span class="tag obj"></span>](types.md)&nbsp;leave_object) | Called when any object leaves any container. | [:i:](#onobjectleavecontainer)
-onObjectLoopingEffect([<span class="tag obj"></span>](types.md)&nbsp;loop_object, [<span class="tag int"></span>](types.md)&nbsp;index) | Called whenever the looping effect of an [AssetBundle](assetbundle.md) is activated. | [:i:](#onobjectloopingeffect)
+onObjectLoopingEffect([<span class="tag obj"></span>](types.md)&nbsp;loop_object, [<span class="tag int"></span>](types.md)&nbsp;index) | Called whenever the looping effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjectloopingeffect)
 onObjectNumberTyped([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag int"></span>](types.md)&nbsp;number) | Called when a player types a number whilst hovering over an object. | [:i:](#onobjectnumbertyped)
 onObjectPageChange([<span class="tag obj"></span>](types.md)&nbsp;object) | Called when a Custom PDF object changes page. | [:i:](#onobjectpagechange)
 onObjectPeek([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag str"></span>](types.md)&nbsp;player) | Called when a player using peek to look under an Object. | [:i:](#onobjectpeek)
@@ -34,7 +34,7 @@ onObjectRandomize([<span class="tag obj"></span>](types.md)&nbsp;randomize_objec
 onObjectSearchEnd([<span class="tag obj"></span>](types.md)&nbsp;obj, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a search is finished on any container. | [:i:](#onobjectsearchend)
 onObjectSearchStart([<span class="tag obj"></span>](types.md)&nbsp;obj, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a search is started on any container. | [:i:](#onobjectsearchstart)
 onObjectSpawn([<span class="tag obj"></span>](types.md)&nbsp;spawn_object) | Called when any Object is spawned/created. | [:i:](#onobjectspawn)
-onObjectTriggerEffect([<span class="tag obj"></span>](types.md)&nbsp;trigger_object, [<span class="tag int"></span>](types.md)&nbsp;index) | Called whenever the trigger effect of an [AssetBundle](assetbundle.md) is activated. | [:i:](#onobjecttriggereffect)
+onObjectTriggerEffect([<span class="tag obj"></span>](types.md)&nbsp;trigger_object, [<span class="tag int"></span>](types.md)&nbsp;index) | Called whenever the trigger effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjecttriggereffect)
 onPlayerChangeColor([<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [:i:](#onplayerchangecolor)
 onPlayerChangeTeam([<span class="tag str"></span>](types.md)&nbsp;player_color,&nbsp;[<span class="tag str"></span>](types.md)&nbsp;team) | Called when a player changes team. | [:i:](#onplayerchangeteam)
 onPlayerConnect([<span class="tag pla"></span>](types.md)&nbsp;person) | Called when a [Player](player.md) connects to a game. | [:i:](#onplayerconnect)
@@ -425,7 +425,7 @@ end
 
 ###onObjectLoopingEffect(...)
 
-Called whenever the looping effect of an [AssetBundle](assetbundle.md) is activated.
+Called whenever the looping effect of an [AssetBundle](behavior/assetbundle.md) is activated.
 
 !!!info "onObjectLoopingEffect(loop_object, index)"
 	* [<span class="tag obj"></span>](types.md)&nbsp;**loop_object**: AssetBundle which had its loop activated.
@@ -588,7 +588,7 @@ end
 
 ###onObjectTriggerEffect(...)
 
-Called whenever the trigger effect of an [AssetBundle](assetbundle.md) is activated.
+Called whenever the trigger effect of an [AssetBundle](behavior/assetbundle.md) is activated.
 
 !!!info "onObjectTriggerEffect(loop_object, index)"
 	* [<span class="tag obj"></span>](types.md)&nbsp;**loop_object**: AssetBundle which had its trigger activated.

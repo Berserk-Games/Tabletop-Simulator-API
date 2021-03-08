@@ -32,15 +32,6 @@ Value | Description
 
 ##Function Summary
 
-###Class Functions
-
-Function Name | Description | Return | &nbsp;
--- | -- | -- | --:
-getValue() | Returns the color of a Hand Zone. | [<span class="ret str"></span>](types.md) | &nbsp;
-setValue([<span class="tag str"></span>](types.md)&nbsp;color) | Sets the color of a Hand Zone. | [<span class="ret boo"></span>](types.md) | &nbsp;
-
-###Direct Class Functions
-
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
 getHands() | Returns a table of all Hand Zone Objects in the game. | [<span class="ret tab">](types.md) | &nbsp;

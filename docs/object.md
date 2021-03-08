@@ -4,12 +4,27 @@ The Object class represents any entity within tabletop simulator. Once you have 
 * Using [`getObjectFromGUID(...)`](base.md#getobjectfromguid) with the object's GUID (found by right clicking it with the pointer).
 * Getting it as a return from another function, like with [`spawnObject(...)`](base.md#spawnobject).
 
-##Member Variable Summary
+##Member Variables
 
-###Member Variables
-These are variables that objects share. They allow for direct access to an Object's property information without a helping function. Some are read-only.
+###Common Variables
+These are variables that are common to all objects. Some variables are read-only, which means you can query the
+property, but are unable to assign a new value to it.
 
-Read Example = `isResting = self.resting` Write Example = `self.resting = true`
+!!!example
+	Locking/freezing an object by assigning `true` to [locked](#locked).
+	```lua
+	object.locked = true
+	```
+
+!!!example
+	Printing whether or not object is [locked](#locked).
+	```lua
+	if object.locked then
+		print("Object is locked")
+	else
+		print("Object is not locked")
+	end
+	```
 
 Variable | Description | Type
 -- | -- | :--
@@ -62,26 +77,30 @@ Variable | Description | Type
 !!! bug
     The `value_flags` and `value` member variables do not persist when the object is reloaded (such as loading a save and entering/exiting containers).
 
-These member variables are classes of their own, and have their own member variables. Each one is for a special type of Object.
+###Behavior Variables
 
-Variable Name | Description
--- | --
-<a class="anchor" id="assetbundle"></a>AssetBundle | An [AssetBundle](assetbundle.md), which is a type of custom object made in Unity.
-<a class="anchor" id="book"></a>Book | A [Book](book.md), which is the in-game Custom PDF object.
-<a class="anchor" id="browser"></a>Browser | A [Browser](browser.md), which is the in-game Tablet object.
-<a class="anchor" id="clock"></a>Clock | A [Clock](clock.md), which is the in-game digital clock.
-<a class="anchor" id="counter"></a>Counter | A [Counter](counter.md), which is the in-game digital counter.
-<a class="anchor" id="rpgfigurine"></a>RPGFigurine | An [RPGFigurine](rpgfigurine.md), which is an in-game animated figurine.
-<a class="anchor" id="texttool"></a>TextTool | A [TextTool](texttool.md), which is an in-game text display system.
+Some objects have additional behavior that is either unique to that specific object, or all objects of a particular
+[type](#type). This functionality is accessible as Object member variables, but will be `nil` unless the Object includes
+the behavior.
+
+!!!example
+	The "Counter" Object has a `counter` member variable. We'll use it to increment and retrieve the counter's value.
+	```lua
+	object.counter.increment()
+	print("The counter value is now " .. object.Counter.getValue())
+	```
+
+Variable | Type | Available On
+-- | -- | --
+<a class="anchor" id="assetbundle"></a>AssetBundle | [AssetBundle](behavior/assetbundle.md) | Custom "AssetBundle" objects.
+<a class="anchor" id="book"></a>Book | [Book](behavior/book.md) | "Custom PDF" objects.
+<a class="anchor" id="browser"></a>Browser | [Browser](behavior/browser.md) | "Tablet" objects.
+<a class="anchor" id="clock"></a>Clock | [Clock](behavior/clock.md) | "Digital Clock" objects.
+<a class="anchor" id="counter"></a>Counter | [Counter](behavior/counter.md) | "Counter" objects.
+<a class="anchor" id="rpgfigurine"></a>RPGFigurine | [RPGFigurine](behavior/rpgfigurine.md) | All objects with the [type](#type) "Figurine".
+<a class="anchor" id="texttool"></a>TextTool | [TextTool](behavior/TextTool.md) | Available on 3D Text objects e.g. text created with the in-game "Text" tool.
 
 ---
-
-
-
-
-
-
-
 
 ##Function Summary
 
@@ -185,7 +204,7 @@ getRotationValues() | Returns a Table of rotation values. Rotation values are us
 <a class="anchor" id="getselectingplayers"></a>getSelectingPlayers() | Returns a table of the player colors currently selecting the object. | [<span class="ret tab"></span>](types.md)
 <a class="anchor" id="getstateid"></a>getStateId() | Current [state](https://kb.tabletopsimulator.com/host-guides/creating-states/) ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1. | [<span class="ret int"></span>](types.md) |
 getStates() | Returns a Table of information on the [states](https://kb.tabletopsimulator.com/host-guides/creating-states/) of an Object. | [<span class="ret tab"></span>](types.md) | [:i:](#getstates)
-getValue() | Object value. What the value represents depends on what type of Object this function is used on. | [<span class="ret int"></span>](types.md) | [:i:](#getvalue)
+getValue() | Returns the Object's value. This represents something different depending on the Object's [type](#type). | [<span class="ret var"></span>](types.md) | [:i:](#getvalue)
 <a class="anchor" id="isdestroyed"></a>isDestroyed() | Returns true if an Object is (or will be) destroyed. | [<span class="ret boo"></span>](types.md) |
 
 
@@ -204,9 +223,10 @@ setFogOfWarReveal([<span class="tag tab"></span>](types.md)&nbsp;fog_settings) |
 <a class="anchor" id="setgmnotes"></a>setGMNotes([<span class="tag str"></span>](types.md)&nbsp;notes) | Sets Game Master Notes only visible for [Player Color](player-color.md) Black. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="setlock"></a>setLock([<span class="tag boo"></span>](types.md)&nbsp;lock) | Sets if an object is locked in place. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="setname"></a>setName([<span class="tag str"></span>](types.md)&nbsp;name) | Sets a name for an Object. Shows in tooltip. | [<span class="ret boo"></span>](types.md)
+setRotationValue([<span class="tag int"></span>](types.md)/[<span class="tag str"></span>](types.md)/[<span class="tag flo"></span>](types.md) rotation_value) | Sets the Object's rotation value i.e. physically rotates the object. | | [:i:](#setrotationvalue)
 setRotationValues([<span class="tag tab"></span>](types.md)&nbsp;rotation_values) | Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). | [<span class="ret boo"></span>](types.md) | [:i:](#setrotationvalues)
 <a class="anchor" id="setstate"></a>setState([<span class="tag int"></span>](types.md)&nbsp;state_id) | Sets [state](https://kb.tabletopsimulator.com/host-guides/creating-states/) of an Object. State ids (indexes) start at 1. | [<span class="ret obj"></span>](types.md) |
-setValue([<span class="tag var"></span>](types.md)&nbsp;value) | Sets an Int as the value. What the value represents depends on what type of Object it is. | [<span class="ret boo"></span>](types.md) | [:i:](#setvalue)
+setValue([<span class="tag var"></span>](types.md)&nbsp;value) | Sets the Object's value. This represents something different depending on the Object's [type](#type). | [<span class="ret boo"></span>](types.md) | [:i:](#setvalue)
 
 
 
@@ -1114,44 +1134,16 @@ You can manually assign rotation values to objects using the Rotation Value Gizm
 
 ####getValue()
 
-[<span class="ret int"></span>](types.md)&nbsp;Gets a value. What the value represents depends on what type of Object this function is used on.
+[<span class="ret var"></span>](types.md)&nbsp; Returns the Object's value. This represents something different depending on the Object's [type](#type).
 
-Object | Value
--- | --
-[Clock](clock.md) | Returns Int of stopwatch/timer current time *(in seconds)*.
-[Counter](clock.md) | Returns Int of counter value.
-Rotation Value | Returns Int of the face-up value. For objects with rotation values set using [setRotationValues](#setrotationvalues) this is an index into the table of rotation values.
-Hidden Zone | Returns String of the Player [Color](player-color.md) of the zone.
-Poker Chip | Returns Int of the face value. {>>Does not work on custom chips.<<}
-Tablet | Returns String of the current URL.
+!!!important
+	If the Object has [rotation values](#getrotationvalues), then this method will return the rotation value i.e. behave
+	the same as [getRotationValue()](#getrotationvalue).
 
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+See [setValue(...)](#setvalue) for more information.
 
 
 ###Set Function Details
-
 
 
 ####setCustomObject(...)
@@ -1201,10 +1193,24 @@ params = {
 self.setFogOfWarReveal(params)
 ```
 
-
-
 ---
 
+####setRotationValue(...)
+
+Sets the Object's rotation value i.e. physically rotates the object.
+
+!!!info "setRotationValue(rotation_value)"
+	* [<span class="tag int"></span>](types.md)/[<span class="tag str"></span>](types.md)/[<span class="tag flo"></span>](types.md) **rotation_value**: A [rotation value](#getrotationvalues). Should be a [<span class="tag int"></span>](types.md), [<span class="tag str"></span>](types.md) or [<span class="tag flo"></span>](types.md).
+
+The Object will be elevated (smooth moved upward), smoothly rotated to the rotation corresponding with the specified `rotation_value` and then released to fall back into place.
+
+!!!example
+	Rotate a die to show the value 6.
+	```lua
+	die.setRotationValue(6)
+	```
+
+---
 
 ####setRotationValues(...)
 
@@ -1212,61 +1218,45 @@ self.setFogOfWarReveal(params)
 
 !!!info "setRotationValues(rotation_values)"
 	* [<span class="tag tab"></span>](types.md)&nbsp;**rotation_values**: A Table containing Tables with the following values. 1 sub-Table per "face".
-		* [<span class="tag var"></span>](types.md)&nbsp;**rotation_values.value**: What value is associated with a given rotation. Often a String or Int.
-			* {>>Starting a value with a # will cause it not to show in the Object's tooltip.<<}
-		* [<span class="tag vec"></span>](types.md#vector)&nbsp;**rotation_values.rotation**: The rotation Vector of the Object that best represents the given value pointing up.
+		* [<span class="tag int"></span>](types.md)/[<span class="tag str"></span>](types.md)/[<span class="tag flo"></span>](types.md) **value**: Value associated with the rotation.
+			* {>>If `value` is a string starting with "#", then it will not be displayed in the Object's tooltip.<<}
+		* [<span class="tag vec"></span>](types.md#vector) **rotation**: The rotation of the Object that corresponds with the provided `value`.
 
-``` Lua
--- Example setting of rotation values for a coin
-rotation_values = {
-	{value="Heads", rotation={x=0, y=0, z=0}},
-	{value="Tails", rotation={x=180, y=0, z=0}},
-}
-self.setRotationValues(rotation_values)
-```
+!!!example
+	Set the two different sides (rotations) of a coin to have the values "Heads" and "Tails".
+	```lua
+	self.setRotationValues({
+		{
+			value="Heads",
+			rotation={x=0, y=0, z=0}
+		},
+		{
+			value="Tails",
+			rotation={x=180, y=0, z=0}
+		},
+	})
+	```
 
 ---
-
-
-
-
 
 ####setValue(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Sets a value on an Object. What the value represents depends on what type of Object it is.
+[<span class="ret boo"></span>](types.md)&nbsp;Sets the Object's value. This represents something different depending on the Object's [type](#type).
 
-Object | Value
--- | --
-[Clock](clock.md) | Set Int for stopwatch/timer current time *(in seconds)*.
-[Counter](clock.md) | Set Int for counter value.
-Rotation Value | Set Int for the face-up value. For objects with rotation values set with [setRotationValues](#setrotationvalues) this is an index into the table of rotation values.
-Hidden Zone | Set String for the [Player Color](player-color.md) of the zone.
-Tablet | Set String for the current URL.
+!!!important
+	If the Object has [rotation values](#getrotationvalues), then this method will set the rotation value i.e. behave
+	the same as [setRotationValue(...)](#setrotationvalue).
+
+[Object Type](#type) | Value Type | Description
+-- | -- | --
+`3D Text` | [<span class="tag str"></span>](types.md) | Replaces the 3D Text's content.
+`Clock` | [<span class="tag int"></span>](types.md) | Sets the remaining "Stopwatch" time (in seconds) on the Clock.
+`Counter` (Digital Counter) | [<span class="tag int"></span>](types.md) | Sets the counter's value.
+`FogOfWar` (Hidden Zone) | [<span class="tag str"></span>](types.md) | Changes the hidden zone owner to the specified [Player Color](player-color.md).
+`Hand` (Hand Zone) | [<span class="tag str"></span>](types.md) | Changes the hand owner to the specified [Player Color](player-color.md).
+`Tablet` | [<span class="tag str"></span>](types.md) | Loads the specified URL in the tablet's browser.
 
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ###Action Function Details
 
