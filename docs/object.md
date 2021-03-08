@@ -1252,7 +1252,7 @@ The Object will be elevated (smooth moved upward), smoothly rotated to the rotat
 `3D Text` | [<span class="tag str"></span>](types.md) | Replaces the 3D Text's content.
 `Clock` | [<span class="tag int"></span>](types.md) | Sets the remaining "Stopwatch" time (in seconds) on the Clock.
 `Counter` (Digital Counter) | [<span class="tag int"></span>](types.md) | Sets the counter's value.
-`FogOfWar` (Hidden Zone) | [<span class="tag str"></span>](types.md) | Changes the hidden zone owner to the specified [Player Color](player-color.md).
+`Fog` (Hidden Zone) | [<span class="tag str"></span>](types.md) | Changes the hidden zone owner to the specified [Player Color](player-color.md).
 `Hand` (Hand Zone) | [<span class="tag str"></span>](types.md) | Changes the hand owner to the specified [Player Color](player-color.md).
 `Tablet` | [<span class="tag str"></span>](types.md) | Loads the specified URL in the tablet's browser.
 
