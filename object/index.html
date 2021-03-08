@@ -772,6 +772,26 @@
     getObjects()
   </a>
   
+    <nav class="md-nav" aria-label="getObjects()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getobjects-containers" class="md-nav__link">
+    Containers (Bags/Decks)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getobjects-zones" class="md-nav__link">
+    Zones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1957,6 +1977,26 @@
     getObjects()
   </a>
   
+    <nav class="md-nav" aria-label="getObjects()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getobjects-containers" class="md-nav__link">
+    Containers (Bags/Decks)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getobjects-zones" class="md-nav__link">
+    Zones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3060,8 +3100,8 @@ the behavior.</p>
 </tr>
 <tr>
 <td>getObjects()</td>
-<td>Returns a Table of Objects in the script zone/bag/deck.</td>
-<td><a href="../types/"><span class="ret tab"></span></a></td>
+<td>Returns data describing the objects contained within in the zone/bag/deck.</td>
+<td><a href="../types/"><span class="ret var"></span></a></td>
 <td><a href="#getobjects"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
@@ -4238,49 +4278,104 @@ the behavior.</p>
 </code></pre></div></p>
 <hr />
 <h4 id="getobjects">getObjects()<a class="headerlink" href="#getobjects" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table of objects in the script zone/bag/deck. What it returns varies depending on the type of Object it is used on.</p>
-<p>If an Object is inside of a container, it does not exist in-game. As a result, you only get data on each Object, not an Object reference.</p>
-<div class="admonition info">
-<p class="admonition-title">Return Table by Object Type</p>
-<div class="admonition info">
-<p class="admonition-title">Scripting Zone</p>
-<p>Returns a Table of Object references to every object in the scripting zone.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="n">object_1</span><span class="p">,</span>
-    <span class="n">object_2</span><span class="p">,</span>
-<span class="p">}</span>
-</code></pre></div>
+<p><a href="../types/"><span class="ret var"></span></a>&nbsp;Returns data describing the objects contained within in the zone/bag/deck.</p>
+<p>The format of the data returned depends on the kind of object.</p>
+<h5 id="getobjects-containers">Containers (Bags/Decks)<a class="headerlink" href="#getobjects-containers" title="Permanent link">&para;</a></h5>
+<p>Containers return a (numerically indexed) table consisting of sub-tables that each have the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>description</td>
+<td><a href="../types/"><span class="tag str"></span></a></td>
+<td><a href="#description">Description</a> of the contained object.</td>
+</tr>
+<tr>
+<td>gm_notes</td>
+<td><a href="../types/"><span class="tag str"></span></a></td>
+<td><a href="#getgmnotes">GM Notes</a> on the contained object.</td>
+</tr>
+<tr>
+<td>guid</td>
+<td><a href="../types/"><span class="tag str"></span></a></td>
+<td><a href="#guid">GUID</a> of the contained object.</td>
+</tr>
+<tr>
+<td>index</td>
+<td><a href="../types/"><span class="tag int"></span></a></td>
+<td>Index of the contained object, represents the item's order in the container.</td>
+</tr>
+<tr>
+<td>lua_script</td>
+<td><a href="../types/"><span class="tag str"></span></a></td>
+<td><a href="#script_code">Lua script</a> on the contained object.</td>
+</tr>
+<tr>
+<td>lua_script_state</td>
+<td><a href="../types/"><span class="tag str"></span></a></td>
+<td><a href="#script_state">Lua script saved state</a> of the contained object.</td>
+</tr>
+<tr>
+<td>memo</td>
+<td><a href="../types/"><span class="tag str"></span></a></td>
+<td><a href="#memo">Memo</a> on the contained object.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="../types/"><span class="tag str"></span></a></td>
+<td><a href="#name">Name</a> of the contained object.</td>
+</tr>
+<tr>
+<td>nickname</td>
+<td><a href="../types/"><span class="tag str"></span></a></td>
+<td><p><a href="../intro/#deprecated"><span class="tag deprecated"></span></a> <em>Use <code>nickname</code></em>.</p><a href="#name">Name</a> of the item.</td>
+</tr>
+<tr>
+<td>tags</td>
+<td><a href="../types/"><span class="tag tab"></span></a></td>
+<td>A table of <a href="../types/"><span class="tag str"></span></a> representing the <a href="#gettags">tags</a> on the contained object.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Find a contained object with the name "Super Card" (within the Bag/Deck <code>object</code>), and use its index to
+<a href="#takeobject">take the object out</a> of the container.
+<div class="highlight"><pre><span></span><code><span class="c1">-- Iterate through each contained object</span>
+<span class="kr">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">containedObject</span> <span class="kr">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">object</span><span class="p">.</span><span class="n">getObjects</span><span class="p">())</span> <span class="kr">do</span>
+    <span class="kr">if</span> <span class="n">containedObject</span><span class="p">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Super Card&quot;</span> <span class="kr">then</span>
+        <span class="n">object</span><span class="p">.</span><span class="n">takeObject</span><span class="p">({</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">containedObject</span><span class="p">.</span><span class="n">index</span>
+        <span class="p">})</span>
+        <span class="kr">break</span> <span class="c1">-- Stop iterating</span>
+    <span class="kr">end</span>
+<span class="kr">end</span>
+</code></pre></div></p>
 </div>
-<div class="admonition info">
-<p class="admonition-title">Bag or Deck</p>
-<p>Returns a Table of sub-Tables, each sub-Table containing data on 1 bagged item. Indexes start at 0.</p>
-<ul>
-<li><a href="../types/"><span class="tag int"></span></a> <strong>index</strong>: Index of the item, represents the item's order in the container.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>name</strong>: Name of the item.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>description</strong>: Description of the item.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>guid</strong>: GUID of the item.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>gm_notes</strong>: GM Notes on the item.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>lua_script</strong>: Any Lua scripting saved on the item.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>lua_script_state</strong>: Any JSON save data on this item.</li>
-<li><span class="critic comment">nickname: A duplicate of the &quot;name&quot; field.</span><ul>
-<li><span class="critic comment">This is for backwards compatibility purposes only.</span></li>
-</ul>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="p">{</span>
-        <span class="n">name</span>             <span class="o">=</span> <span class="s2">&quot;Object Name&quot;</span><span class="p">,</span>
-        <span class="n">description</span>      <span class="o">=</span> <span class="s2">&quot;Object Description&quot;</span><span class="p">,</span>
-        <span class="n">guid</span>             <span class="o">=</span> <span class="s2">&quot;AAA111&quot;</span><span class="p">,</span>
-        <span class="n">index</span>            <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="n">lua_script</span>       <span class="o">=</span> <span class="s2">&quot;Any Lua Script On This Object&quot;</span><span class="p">,</span>
-        <span class="n">lua_script_state</span> <span class="o">=</span> <span class="s2">&quot;Any JSON Save Data On This Object&quot;</span>
-    <span class="p">},</span>
-<span class="p">}</span>
-</code></pre></div>
+<h5 id="getobjects-zones">Zones<a class="headerlink" href="#getobjects-zones" title="Permanent link">&para;</a></h5>
+<p>A (numerically indexed) table of game Objects occupying the zone.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If the zone has <a href="#gettags">tags</a>, then only objects with compatible tags will be considered "occupying"
+the zone.</p>
 </div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><a href="#highlighton">Highlight</a> red all cards occupying a zone (<code>object</code>).
+<div class="highlight"><pre><span></span><code><span class="c1">-- Iterate through object occupying the zone</span>
+<span class="kr">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">occupyingObject</span> <span class="kr">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">object</span><span class="p">.</span><span class="n">getObjects</span><span class="p">())</span> <span class="kr">do</span>
+    <span class="kr">if</span> <span class="n">occupyingObject</span><span class="p">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&quot;Card&quot;</span> <span class="kr">then</span>
+        <span class="n">occupyingObject</span><span class="p">.</span><span class="n">highlightOn</span><span class="p">(</span><span class="s1">&#39;Red&#39;</span><span class="p">)</span>
+    <span class="kr">end</span>
+<span class="kr">end</span>
+</code></pre></div></p>
 </div>
-<p>This function is often used with <a href="#takeobject">takeObject(...)</a> to remove objects from containers.</p>
 <hr />
 <h4 id="getrotationvalue">getRotationValue()<a class="headerlink" href="#getrotationvalue" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret var"></span></a>&nbsp;Returns the current rotationValue. Rotation values are used to give value to different rotations (like dice) and are set using scripting or the Gizmo tool. The value returned is for the rotation that is closest to being pointed "up".</p>
