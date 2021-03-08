@@ -86,7 +86,7 @@ the behavior.
 !!!example
 	The "Counter" Object has a `Counter` member variable. We'll use it to increment and retrieve the counter's value.
 	```lua
-	object.counter.increment()
+	object.Counter.increment()
 	print("The counter value is now " .. object.Counter.getValue())
 	```
 
