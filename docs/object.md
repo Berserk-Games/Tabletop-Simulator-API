@@ -197,7 +197,7 @@ getFogOfWarReveal() | Settings impacting [Fog of War](https://kb.tabletopsimulat
 getJoints() | Returns information on any joints attached to this object. | [<span class="ret tab"></span>](types.md) | [:i:](#getjoints)
 <a class="anchor" id="getlock"></a>getLock() | If the Object is locked. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="getname"></a>getName() | Name, also shows as part of Object's tooltip. | [<span class="ret str"></span>](types.md) |
-getObjects() | Returns a Table of Objects in the script zone/bag/deck. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjects)
+getObjects() | Returns data describing the objects contained within in the zone/bag/deck. | [<span class="ret var"></span>](types.md) | [:i:](#getobjects)
 <a class="anchor" id="getquantity"></a>getQuantity() | How many objects are in the stack. Returns -1 if the Object is not a stack. | [<span class="ret int"></span>](types.md) |
 getRotationValue() | Returns the current rotationValue. Rotation values are used to give value to different rotations (like dice). | [<span class="ret var"></span>](types.md) | [:i:](#getrotationvalue)
 getRotationValues() | Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice). | [<span class="ret tab"></span>](types.md) | [:i:](#getrotationvalues)
@@ -1000,53 +1000,62 @@ end
 
 ####getObjects()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table of objects in the script zone/bag/deck. What it returns varies depending on the type of Object it is used on.
+[<span class="ret var"></span>](types.md)&nbsp;Returns data describing the objects contained within in the zone/bag/deck.
 
-If an Object is inside of a container, it does not exist in-game. As a result, you only get data on each Object, not an Object reference.
+The format of the data returned depends on the kind of object.
 
-!!!info "Return Table by Object Type"
-	!!!info "Scripting Zone"
-		Returns a Table of Object references to every object in the scripting zone.
+#####Containers (Bags/Decks) {: #getobjects-containers }
 
-		``` Lua
-		{
-			object_1,
-			object_2,
-		}
-		```
+Containers return a (numerically indexed) table consisting of sub-tables that each have the following properties:
 
-	!!!info "Bag or Deck"
-		Returns a Table of sub-Tables, each sub-Table containing data on 1 bagged item. Indexes start at 0.
+Name | Type | Description
+-- | -- | --
+description | [<span class="tag str"></span>](types.md) | [Description](#description) of the contained object.
+gm_notes | [<span class="tag str"></span>](types.md) | [GM Notes](#getgmnotes) on the contained object.
+guid | [<span class="tag str"></span>](types.md) | [GUID](#guid) of the contained object.
+index | [<span class="tag int"></span>](types.md) | Index of the contained object, represents the item's order in the container.
+lua_script | [<span class="tag str"></span>](types.md) | [Lua script](#script_code) on the contained object.
+lua_script_state | [<span class="tag str"></span>](types.md) | [Lua script saved state](#script_state) of the contained object.
+memo | [<span class="tag str"></span>](types.md) | [Memo](#memo) on the contained object.
+name | [<span class="tag str"></span>](types.md) | [Name](#name) of the contained object.
+nickname | [<span class="tag str"></span>](types.md) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use `nickname`_.</p>[Name](#name) of the item.
+tags | [<span class="tag tab"></span>](types.md) | A table of [<span class="tag str"></span>](types.md) representing the [tags](#gettags) on the contained object.
 
-		* [<span class="tag int"></span>](types.md) **index**: Index of the item, represents the item's order in the container.
-		* [<span class="tag str"></span>](types.md) **name**: Name of the item.
-		* [<span class="tag str"></span>](types.md) **description**: Description of the item.
-		* [<span class="tag str"></span>](types.md) **guid**: GUID of the item.
-		* [<span class="tag str"></span>](types.md) **gm_notes**: GM Notes on the item.
-		* [<span class="tag str"></span>](types.md) **lua_script**: Any Lua scripting saved on the item.
-		* [<span class="tag str"></span>](types.md) **lua_script_state**: Any JSON save data on this item.
-		* {>>nickname: A duplicate of the "name" field.<<}
-			* {>>This is for backwards compatibility purposes only.<<}
+!!!example
+	Find a contained object with the name "Super Card" (within the Bag/Deck `object`), and use its index to
+	[take the object out](#takeobject) of the container.
+	```lua
+	-- Iterate through each contained object
+	for _, containedObject in ipairs(object.getObjects()) do
+		if containedObject.name == "Super Card" then
+			object.takeObject({
+				index = containedObject.index
+			})
+			break -- Stop iterating
+		end
+	end
+	```
 
-		``` Lua
-		{
-			{
-				name             = "Object Name",
-				description      = "Object Description",
-				guid             = "AAA111",
-				index            = 0,
-				lua_script       = "Any Lua Script On This Object",
-				lua_script_state = "Any JSON Save Data On This Object"
-			},
-		}
-		```
+#####Zones {: #getobjects-zones }
 
+A (numerically indexed) table of game Objects occupying the zone.
 
+!!!important
+	If the zone has <a href="#gettags">tags</a>, then only objects with compatible tags will be considered "occupying"
+	the zone.
 
-This function is often used with [takeObject(...)](#takeobject) to remove objects from containers.
+!!!example
+	[Highlight](#highlighton) red all cards occupying a zone (`object`).
+	```lua
+	-- Iterate through object occupying the zone
+	for _, occupyingObject in ipairs(object.getObjects()) do
+		if occupyingObject.type == "Card" then
+			occupyingObject.highlightOn('Red')
+		end
+	end
+	```
 
 ---
-
 
 ####getRotationValue()
 
