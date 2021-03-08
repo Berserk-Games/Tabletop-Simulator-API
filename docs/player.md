@@ -157,7 +157,7 @@ Player["White"].changeColor("Red")
         * [<span class="tag vec"></span>](types.md#vector) **parameters.position**: Position to center the camera on.
         * [<span class="tag flo"></span>](types.md) **parameters.pitch**: Pitch angle of the camera. 0 to 90.
             * {>>Optional, defaults to 0.<<}
-        * [<span class="tag flo"></span>](types.md) **parameters.yaw**: Yaw angle of the camera. -180 to 180.
+        * [<span class="tag flo"></span>](types.md) **parameters.yaw**: Yaw angle of the camera. 0 to 360.
             * {>>Optional, defaults to 0.<<}
         * [<span class="tag flo"></span>](types.md) **parameters.distance**: Distance the camera is from the position Vector.
             * {>>Optional, defaults to 40.<<}
