@@ -84,7 +84,7 @@ Some objects have additional behavior that is either unique to that specific obj
 the behavior.
 
 !!!example
-	The "Counter" Object has a `counter` member variable. We'll use it to increment and retrieve the counter's value.
+	The "Counter" Object has a `Counter` member variable. We'll use it to increment and retrieve the counter's value.
 	```lua
 	object.counter.increment()
 	print("The counter value is now " .. object.Counter.getValue())
