@@ -14,7 +14,7 @@ Variable | Description | Type | &nbsp;
 
 ####hiding
 
-[<span class="tag int"></span>](types.md)&nbsp;Determines which hands are hidden from which players.
+[<span class="tag int"></span>](types.md) Determines which hands are hidden from which players.
 
 Value | Description
 -- | --

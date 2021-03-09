@@ -8,11 +8,11 @@ The `Wait` class is a static global class which allows you to schedule code (fun
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-condition([<span class="tag fun"></span>](types.md#function)&nbsp;toRunFunc, [<span class="tag fun"></span>](types.md#function)&nbsp;conditionFunc, [<span class="tag flo"></span>](types.md)&nbsp;timeout, [<span class="tag fun"></span>](types.md#function)&nbsp;timeoutFunc) | Schedules a function to be executed after the specified condition has been met. | [<span class="ret int"></span>](types.md) | [:i:](#condition)
-frames([<span class="tag fun"></span>](types.md#function)&nbsp;toRunFunc, [<span class="tag int"></span>](types.md)&nbsp;numberFrames) | Schedules a function to be executed after the specified number of frames have elapsed. | [<span class="ret int"></span>](types.md) | [:i:](#frames)
-stop([<span class="tag int"></span>](types.md)&nbsp;id) | Cancels a Wait-scheduled function. | [<span class="ret boo"></span>](types.md) | [:i:](#stop)
+condition([<span class="tag fun"></span>](types.md#function) toRunFunc, [<span class="tag fun"></span>](types.md#function) conditionFunc, [<span class="tag flo"></span>](types.md) timeout, [<span class="tag fun"></span>](types.md#function) timeoutFunc) | Schedules a function to be executed after the specified condition has been met. | [<span class="ret int"></span>](types.md) | [:i:](#condition)
+frames([<span class="tag fun"></span>](types.md#function) toRunFunc, [<span class="tag int"></span>](types.md) numberFrames) | Schedules a function to be executed after the specified number of frames have elapsed. | [<span class="ret int"></span>](types.md) | [:i:](#frames)
+stop([<span class="tag int"></span>](types.md) id) | Cancels a Wait-scheduled function. | [<span class="ret boo"></span>](types.md) | [:i:](#stop)
 stopAll() | Cancels all Wait-scheduled functions. | | [:i:](#stopall)
-time([<span class="tag fun"></span>](types.md#function)&nbsp;toRunFunc, [<span class="tag flo"></span>](types.md)&nbsp;seconds, [<span class="tag int"></span>](types.md)&nbsp;repetitions) | Schedules a function to be executed after the specified amount of time (in seconds) has elapsed. | [<span class="ret int"></span>](types.md) | [:i:](#time)
+time([<span class="tag fun"></span>](types.md#function) toRunFunc, [<span class="tag flo"></span>](types.md) seconds, [<span class="tag int"></span>](types.md) repetitions) | Schedules a function to be executed after the specified amount of time (in seconds) has elapsed. | [<span class="ret int"></span>](types.md) | [:i:](#time)
 
 ---
 
@@ -20,7 +20,7 @@ time([<span class="tag fun"></span>](types.md#function)&nbsp;toRunFunc, [<span c
 
 ###condition(...)
 
-[<span class="ret int"></span>](types.md)&nbsp;Schedules a function to be executed after the specified condition has been met.
+[<span class="ret int"></span>](types.md) Schedules a function to be executed after the specified condition has been met.
 
 The return value is a unique ID that may be used to [stop](#stop) the scheduled function before it runs.
 
@@ -85,7 +85,7 @@ provided, then it will be called when the timeout is reached.
 
 ###frames(...)
 
-[<span class="ret int"></span>](types.md)&nbsp;Schedules a function to be executed after the specified number of frames
+[<span class="ret int"></span>](types.md) Schedules a function to be executed after the specified number of frames
 have elapsed.
 
 The return value is a unique ID that may be used to [stop](#stop) the scheduled function before it runs.
@@ -131,7 +131,7 @@ The return value is a unique ID that may be used to [stop](#stop) the scheduled 
 
 ###stop(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Cancels a Wait-scheduled function.
+[<span class="ret boo"></span>](types.md) Cancels a Wait-scheduled function.
 
 !!!info "stop(id)"
     * [<span class="tag int"></span>](types.md) **id**: A wait ID (returned from `Wait` scheduling functions).
@@ -168,7 +168,7 @@ Cancels all Wait-scheduled functions.
 
 ###time(...)
 
-[<span class="ret int"></span>](types.md)&nbsp;Schedules a function to be executed after the specified amount of time
+[<span class="ret int"></span>](types.md) Schedules a function to be executed after the specified amount of time
 (in seconds) has elapsed.
 
 The return value is a unique ID that may be used to [stop](#stop) the scheduled function before it runs.

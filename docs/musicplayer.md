@@ -34,7 +34,7 @@ skipForward() | Skips to the next audioclip in playlist if possible. Returns tru
 
 ####getCurrentAudioclip()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Gets the currently loaded audioclip.
+[<span class="ret tab"></span>](types.md) Gets the currently loaded audioclip.
 
 !!!info "Returned table"
 	* [<span class="tag tab"></span>](types.md) Table describing the current audioclip.
@@ -52,7 +52,7 @@ skipForward() | Skips to the next audioclip in playlist if possible. Returns tru
 
 ####getPlaylist()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Gets the current playlist.
+[<span class="ret tab"></span>](types.md) Gets the current playlist.
 
 !!!info "Returned table"
 	* [<span class="tag tab"></span>](types.md) Playlist table, consisting of zero or more audioclip sub-tables.
@@ -73,7 +73,7 @@ skipForward() | Skips to the next audioclip in playlist if possible. Returns tru
 
 ####pause()
 
-[<span class="ret boo"></span>](types.md)&nbsp;Pause the current audioclip.
+[<span class="ret boo"></span>](types.md) Pause the current audioclip.
 
 Returns `true` if the music player is/was paused, otherwise `false`.
 
@@ -87,7 +87,7 @@ Returns `true` if the music player is/was paused, otherwise `false`.
 
 ####play()
 
-[<span class="ret boo"></span>](types.md)&nbsp;Plays the current audioclip.
+[<span class="ret boo"></span>](types.md) Plays the current audioclip.
 
 Returns `true` if the music player is/was playing, otherwise `false`.
 
@@ -101,7 +101,7 @@ Returns `true` if the music player is/was playing, otherwise `false`.
 
 ####setCurrentAudioclip(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;.Sets/loads the specified audioclip.
+[<span class="ret boo"></span>](types.md) .Sets/loads the specified audioclip.
 
 !!!info "setCurrentAudioclip(parameters)"
     * [<span class="tag tab"></span>](types.md) **parameters**: A table describing an audioclip.
@@ -121,7 +121,7 @@ Returns `true` if the music player is/was playing, otherwise `false`.
 
 ####setPlaylist(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Sets the current playlist.
+[<span class="ret boo"></span>](types.md) Sets the current playlist.
 
 !!!info "setPlaylist(parameters)"
     * [<span class="tag tab"></span>](types.md) **parameters**: A table containing zero or more audioclip sub-tables.
@@ -152,7 +152,7 @@ Returns `true` if the music player is/was playing, otherwise `false`.
 
 ####skipBack()
 
-[<span class="ret boo"></span>](types.md)&nbsp;Skips to the beginning of the audioclip or if the play time is less than 3 seconds to the previous audioclip in playlist if possible.
+[<span class="ret boo"></span>](types.md) Skips to the beginning of the audioclip or if the play time is less than 3 seconds to the previous audioclip in playlist if possible.
 
 Returns `true` if skip was successful, otherwise returns `false`.
 
@@ -166,7 +166,7 @@ Returns `true` if skip was successful, otherwise returns `false`.
 
 ####skipForward()
 
-[<span class="ret boo"></span>](types.md)&nbsp;Skips to the next audioclip in the current playlist. If the current
+[<span class="ret boo"></span>](types.md) Skips to the next audioclip in the current playlist. If the current
 audioclip is the last of the playlist, loops around to the first audioclip in the playlist.
 
 

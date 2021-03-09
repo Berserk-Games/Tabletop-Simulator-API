@@ -24,10 +24,10 @@ Function Name | Description | Return
 <a class="anchor" id="getambientgroundcolor"></a>getAmbientGroundColor() | Returns Color Table of the gradient ground. Not used if `ambient_type = 1`. | [<span class="ret col"></span>](types.md#color)
 <a class="anchor" id="getambientskycolor"></a>getAmbientSkyColor() | Returns Color Table of the gradient sky. Not used if `ambient_type = 1`. | [<span class="ret col"></span>](types.md#color)
 <a class="anchor" id="getlightcolor"></a>getLightColor() | Returns Color Table of the directional light, which shines straight down on the table. | [<span class="ret col"></span>](types.md#color)
-<a class="anchor" id="setambientequatorcolor"></a>setAmbientEquatorColor([<span class="tag col"></span>](types.md#color)&nbsp;tint) | Sets the color of the gradient equator. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](types.md)
-<a class="anchor" id="setambientgroundcolor"></a>setAmbientGroundColor([<span class="tag col"></span>](types.md#color)&nbsp;tint) | Sets the color of the gradient ground. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](types.md)
-<a class="anchor" id="setambientskycolor"></a>setAmbientSkyColor([<span class="tag col"></span>](types.md#color)&nbsp;tint) | Sets the color of the gradient sky. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](types.md)
-<a class="anchor" id="setlightcolor"></a>setLightColor([<span class="tag col"></span>](types.md#color)&nbsp;tint) | Sets the color of the directional light, which shines straight down on the table. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="setambientequatorcolor"></a>setAmbientEquatorColor([<span class="tag col"></span>](types.md#color) tint) | Sets the color of the gradient equator. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="setambientgroundcolor"></a>setAmbientGroundColor([<span class="tag col"></span>](types.md#color) tint) | Sets the color of the gradient ground. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="setambientskycolor"></a>setAmbientSkyColor([<span class="tag col"></span>](types.md#color) tint) | Sets the color of the gradient sky. Not used if `ambient_type = 1`. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="setlightcolor"></a>setLightColor([<span class="tag col"></span>](types.md#color) tint) | Sets the color of the directional light, which shines straight down on the table. | [<span class="ret boo"></span>](types.md)
 
 
 ---

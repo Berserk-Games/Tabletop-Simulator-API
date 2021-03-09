@@ -32,7 +32,7 @@ The Global script, which is a script that is not attached to any particular Obje
 A script that is attached to an in-game Object, and is saved as part of it. This is similar to any other property like its scale or tint. Some functions ask for an Object reference in order to attempt to run a function on it. In these cases, Global (exactly as written here) is also a valid Object reference.
 
 ###GUID
-In Tabletop Simulator, a GUID is a unique 6-character [string](types.md)&nbsp;which can be used to identify in-game [Objects](object.md). GUIDs are automatically assigned when objects exist within the scene.
+In Tabletop Simulator, a GUID is a unique 6-character [string](types.md) which can be used to identify in-game [Objects](object.md). GUIDs are automatically assigned when objects exist within the scene.
 
 If an object is duplicated, it will sometimes have the same GUID for 1 frame before the engine assigns a new GUID to the newer Object. Objects in containers (bags/decks/etc) do not automatically get new GUIDs assigned to them in this way. Only once their contents are moved out into the scene.
 

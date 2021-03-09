@@ -15,8 +15,8 @@ deprecated: true
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-create([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Creates a Timer. It will auto-delete once its repetitions have been completed. | [<span class="ret boo"></span>](types.md) | [:i:](#create)
-destroy([<span class="tag str"></span>](types.md)&nbsp;identifier) | Destroys a Timer. | [<span class="ret boo"></span>](types.md) | [:i:](#destroy)
+create([<span class="tag tab"></span>](types.md) parameters) | Creates a Timer. It will auto-delete once its repetitions have been completed. | [<span class="ret boo"></span>](types.md) | [:i:](#create)
+destroy([<span class="tag str"></span>](types.md) identifier) | Destroys a Timer. | [<span class="ret boo"></span>](types.md) | [:i:](#destroy)
 
 ---
 
@@ -25,7 +25,7 @@ destroy([<span class="tag str"></span>](types.md)&nbsp;identifier) | Destroys a 
 
 ###create(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Creates a Timer. It will auto-delete once its repetitions have been completed.
+[<span class="ret boo"></span>](types.md) Creates a Timer. It will auto-delete once its repetitions have been completed.
 
 !!!info "create(parameters)"
     * [<span class="tag_tab"></span>](types.md) **parameters**: A Table containing the information used to start the Timer.
@@ -67,7 +67,7 @@ end
 
 ###destroy(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Destroys a Timer. A timer, if it completes its number of repetitions, will automatically destroy itself.
+[<span class="ret boo"></span>](types.md) Destroys a Timer. A timer, if it completes its number of repetitions, will automatically destroy itself.
 
 !!!info "destroy(identifier)"
     * [<span class="tag str"></span>](types.md) **identifier**: The unique identifier for the timer you want to destroy.

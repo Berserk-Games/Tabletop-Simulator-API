@@ -35,7 +35,7 @@ setValue([<span class="tag int"></span>](types.md) seconds) | Switches clock to 
 
 ###setValue(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Set the timer to display a number of seconds. This function acts the same as [Object's setValue()](object.md#setvalue). If the Clock is not in timer mode, it will be switched. If it is in timer mode, it will be paused and the remaining time will be changed. This will not start the countdown on its own.
+[<span class="ret boo"></span>](types.md) Set the timer to display a number of seconds. This function acts the same as [Object's setValue()](object.md#setvalue). If the Clock is not in timer mode, it will be switched. If it is in timer mode, it will be paused and the remaining time will be changed. This will not start the countdown on its own.
 
 
 !!!info "setValue(seconds)"

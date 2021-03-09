@@ -28,26 +28,26 @@ Variable | Description | Type
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-attachCameraToObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Makes a Player's camera follow an Object. | [<span class="ret boo"></span>](types.md) | [:i:](#attachcameratoobject)
-broadcast([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag col"></span>](types.md)&nbsp;message_color) | Print message on Player's screen and their game chat log. | [<span class="ret boo"></span>](types.md) | [:i:](#broadcast)
-changeColor([<span class="tag str"></span>](types.md)&nbsp;player_color) | Changes player to this [Player Color](player-color.md). | [<span class="ret boo"></span>](types.md) | [:i:](#changecolor)
+attachCameraToObject([<span class="tag tab"></span>](types.md) parameters) | Makes a Player's camera follow an Object. | [<span class="ret boo"></span>](types.md) | [:i:](#attachcameratoobject)
+broadcast([<span class="tag str"></span>](types.md) message, [<span class="tag col"></span>](types.md) message_color) | Print message on Player's screen and their game chat log. | [<span class="ret boo"></span>](types.md) | [:i:](#broadcast)
+changeColor([<span class="tag str"></span>](types.md) player_color) | Changes player to this [Player Color](player-color.md). | [<span class="ret boo"></span>](types.md) | [:i:](#changecolor)
 <a class="anchor" id="clearselectedobjects"></a>clearSelectedObjects() | Clears a player's current selection. | [<span class="ret boo"></span>](types.md)
 <a class="anchor" id="gethandcount"></a>getHandCount() | Number of [hand zones](http://berserk-games.com/knowledgebase/hands/) owned by this color. | [<span class="ret int"></span>](types.md)
-getHandObjects([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](types.md) | [:i:](#gethandobjects)
-getHandTransform([<span class="tag int"></span>](types.md)&nbsp;hand_index) | Returns a Table of data on this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](types.md) | [:i:](#gethandtransform)
+getHandObjects([<span class="tag int"></span>](types.md) hand_index) | Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](types.md) | [:i:](#gethandobjects)
+getHandTransform([<span class="tag int"></span>](types.md) hand_index) | Returns a Table of data on this [hand zone](http://berserk-games.com/knowledgebase/hands/). | [<span class="ret tab"></span>](types.md) | [:i:](#gethandtransform)
 <a class="anchor" id="getholdingobjects"></a>getHoldingObjects() | Objects a Player is holding in their hand. | [<span class="ret tab"></span>](types.md)
 <a class="anchor" id="gethoverobject"></a>getHoverObject() | Object that the Player's pointer is hovering over. | [<span class="ret obj"></span>](types.md)
 <a class="anchor" id="getpointerposition"></a>getPointerPosition() | Player's pointer coordinates. | [<span class="ret vec"></span>](types.md#vector)
 <a class="anchor" id="getpointerrotation"></a>getPointerRotation() | Player's pointer rotation on Y axis. | [<span class="ret flo"></span>](types.md)
 <a class="anchor" id="getselectedobjects"></a>getSelectedObjects() | Objects that the Player has selected with an area selection. | [<span class="ret tab"></span>](types.md)
 <a class="anchor" id="kick"></a>kick() | Kicks Player out of the room. | [<span class="ret boo"></span>](types.md)
-lookAt([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Moves a Player's camera, forcing 3'rd person camera mode. | [<span class="ret boo"></span>](types.md) | [:i:](#lookat)
+lookAt([<span class="tag tab"></span>](types.md) parameters) | Moves a Player's camera, forcing 3'rd person camera mode. | [<span class="ret boo"></span>](types.md) | [:i:](#lookat)
 <a class="anchor" id="mute"></a>mute() | Mutes or unmutes Player, preventing/allowing voice chat. | [<span class="ret boo"></span>](types.md)
-<a class="anchor" id="pingtable"></a>pingTable([<span class="tag vec"></span>](types.md#vector)&nbsp;position) | Emulates the player using the ping tool at the given position (tapping Tab). | [<span class="ret boo"></span>](types.md)
-print([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag col"></span>](types.md#color)&nbsp;message_color) | Prints a message into the Player's game chat. | [<span class="ret boo"></span>](types.md) | [:i:](#print)
+<a class="anchor" id="pingtable"></a>pingTable([<span class="tag vec"></span>](types.md#vector) position) | Emulates the player using the ping tool at the given position (tapping Tab). | [<span class="ret boo"></span>](types.md)
+print([<span class="tag str"></span>](types.md) message, [<span class="tag col"></span>](types.md#color) message_color) | Prints a message into the Player's game chat. | [<span class="ret boo"></span>](types.md) | [:i:](#print)
 <a class="anchor" id="promote"></a>promote() | Promotes/demotes a Player. Promoted players have access to most host privileges. | [<span class="ret boo"></span>](types.md) |
-setCameraMode([<span class="tag str"></span>](types.md)&nbsp;camera_mode) | Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown". | [<span class="ret boo"></span>](types.md) | [:i:](#setcameramode)
-setHandTransform([<span class="tag tab"></span>](types.md)&nbsp;parameters, [<span class="tag int"></span>](types.md)&nbsp;hand_index) | Sets transform elements of a hand zone. | [<span class="ret boo"></span>](types.md) | [:i:](#sethandtransform)
+setCameraMode([<span class="tag str"></span>](types.md) camera_mode) | Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown". | [<span class="ret boo"></span>](types.md) | [:i:](#setcameramode)
+setHandTransform([<span class="tag tab"></span>](types.md) parameters, [<span class="tag int"></span>](types.md) hand_index) | Sets transform elements of a hand zone. | [<span class="ret boo"></span>](types.md) | [:i:](#sethandtransform)
 
 
 
@@ -70,7 +70,7 @@ getSpectators() | Returns Table of all Players in spectator (Grey). | [<span cla
 
 ####attachCameraToObject(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Makes a Player's camera follow an Object.
+[<span class="ret boo"></span>](types.md) Makes a Player's camera follow an Object.
 
 !!!info "attachCameraToObject(parameters)"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table with parameters which guide the function.
@@ -87,7 +87,7 @@ self.attachCameraToObject({object=self})
 
 ####broadcast(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Print message on Player's screen and their game chat log.
+[<span class="ret boo"></span>](types.md) Print message on Player's screen and their game chat log.
 
 !!!info "broadcast(message, message_color)"
     * [<span class="tag str"></span>](types.md) **message**: The message to be displayed.
@@ -99,7 +99,7 @@ self.attachCameraToObject({object=self})
 
 ####changeColor(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Changes player to this [Player Color](player-color.md) (seat).
+[<span class="ret boo"></span>](types.md) Changes player to this [Player Color](player-color.md) (seat).
 
 !!!info "changeColor(player_color)"
     * [<span class="tag str"></span>](types.md) **player_color**: The [Player Color](player-color.md) seat to move the Player to.
@@ -113,7 +113,7 @@ Player["White"].changeColor("Red")
 
 ####getHandObjects(...)
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table of Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/).
+[<span class="ret tab"></span>](types.md) Returns a Table of Objects that are in this [hand zone](http://berserk-games.com/knowledgebase/hands/).
 
 !!!info "getHandObjects(hand_index)"
     * [<span class="tag int"></span>](types.md) **hand_index**: An index, representing which hand zone to return Objects for.
@@ -127,7 +127,7 @@ Player["White"].changeColor("Red")
 
 ####getHandTransform(...)
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a Table of data on this [hand zone](http://berserk-games.com/knowledgebase/hands/).
+[<span class="ret tab"></span>](types.md) Returns a Table of data on this [hand zone](http://berserk-games.com/knowledgebase/hands/).
 
 !!!info "getHandTransform(hand_index)"
     * [<span class="tag int"></span>](types.md) **hand_index**: An index, representing which hand zone to return data on.
@@ -150,7 +150,7 @@ Player["White"].changeColor("Red")
 
 ####lookAt(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Moves a Player's camera, forcing 3'rd person camera mode.
+[<span class="ret boo"></span>](types.md) Moves a Player's camera, forcing 3'rd person camera mode.
 
 !!!info "lookAt(parameters)"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table of controlling parameters to point the player camera.
@@ -177,7 +177,7 @@ Player["White"].lookAt({
 
 ####print(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Prints a message into the Player's game chat.
+[<span class="ret boo"></span>](types.md) Prints a message into the Player's game chat.
 
 !!!info "print(message, message_color)"
     * [<span class="tag str"></span>](types.md) **message**: The text to be displayed.
@@ -189,7 +189,7 @@ Player["White"].lookAt({
 
 ####setCameraMode(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown".
+[<span class="ret boo"></span>](types.md) Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown".
 
 !!!info "changeColor(camera_mode)"
     * [<span class="tag str"></span>](types.md) **camera_mode**: The Camera Mode to set the Player's Camera to.
@@ -202,7 +202,7 @@ Player["White"].setCameraMode("FirstPerson")
 
 ####setHandTransform(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Sets transform elements of a [hand zone](http://berserk-games.com/knowledgebase/hands/).
+[<span class="ret boo"></span>](types.md) Sets transform elements of a [hand zone](http://berserk-games.com/knowledgebase/hands/).
 
 !!!info "setHandTransform(parameters, hand_index)"
     * [<span class="tag tab"></span>](types.md) **parameters**: The Table of data to transform the hand zone with.
@@ -234,7 +234,7 @@ Player["White"].setHandTransform(params, 2)
 
 ####getPlayers()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns Table of all Players in the instance.
+[<span class="ret tab"></span>](types.md) Returns Table of all Players in the instance.
 
 ``` Lua
 -- Blindfolding all players
@@ -249,7 +249,7 @@ end
 
 ####getSpectators()
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns Table of all Players in spectator (Grey).
+[<span class="ret tab"></span>](types.md) Returns Table of all Players in spectator (Grey).
 
 ``` Lua
 -- Printing steam name of all players to host chat

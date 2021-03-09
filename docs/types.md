@@ -4,18 +4,18 @@ Type refers to the type of information being used. You do not need to declare a 
 
 Tag | Type | Description | Example
 -- | -- | -- | --
-[<span class="tag nil"></span>](types.md)&nbsp;| nil | No value. | `#!lua nil`
-[<span class="tag int"></span>](types.md)&nbsp;| int | Non-decimal value. | `#!lua 5`
-[<span class="tag flo"></span>](types.md)&nbsp;| float | Non-exact decimal value. | `#!lua 2.032`
-[<span class="tag boo"></span>](types.md)&nbsp;| bool | `true` or `false` value. | `#!lua true`
-[<span class="tag str"></span>](types.md)&nbsp;| string | A series of characters. | `#!lua "Hello."`
-[<span class="tag tab"></span>](types.md)&nbsp;| table | A container with keys and values. | `#!lua {["key"]="value", true, 5}`
-[<span class="tag vec"></span>](types.md)&nbsp;| vector | See section [Vector](#vector) for more info. |
-[<span class="tag col"></span>](types.md)&nbsp;| color | See section [Color](#color) for more info. |
-[<span class="tag fun"></span>](types.md)&nbsp;| function | See section [Function](#function) for more info. |
-[<span class="tag obj"></span>](types.md)&nbsp;| object | An in-game physical Object. Sometimes Global. | `#!lua Global or self`
-[<span class="tag pla"></span>](types.md)&nbsp;| player | An in-game Player. See [Player](player.md) for more info. | `#!lua Player["White"]`
-[<span class="tag var"></span>](types.md)&nbsp;| variable | A combination of other types. |
+[<span class="tag nil"></span>](types.md) | nil | No value. | `#!lua nil`
+[<span class="tag int"></span>](types.md) | int | Non-decimal value. | `#!lua 5`
+[<span class="tag flo"></span>](types.md) | float | Non-exact decimal value. | `#!lua 2.032`
+[<span class="tag boo"></span>](types.md) | bool | `true` or `false` value. | `#!lua true`
+[<span class="tag str"></span>](types.md) | string | A series of characters. | `#!lua "Hello."`
+[<span class="tag tab"></span>](types.md) | table | A container with keys and values. | `#!lua {["key"]="value", true, 5}`
+[<span class="tag vec"></span>](types.md) | vector | See section [Vector](#vector) for more info. |
+[<span class="tag col"></span>](types.md) | color | See section [Color](#color) for more info. |
+[<span class="tag fun"></span>](types.md) | function | See section [Function](#function) for more info. |
+[<span class="tag obj"></span>](types.md) | object | An in-game physical Object. Sometimes Global. | `#!lua Global or self`
+[<span class="tag pla"></span>](types.md) | player | An in-game Player. See [Player](player.md) for more info. | `#!lua Player["White"]`
+[<span class="tag var"></span>](types.md) | variable | A combination of other types. |
 
 See below for more info.
 

@@ -24,9 +24,9 @@ All functions return a WebRequest.
 
 Function Name | Description | &nbsp;
 -- | -- | --:
-get([<span class="tag str"></span>](types.md)&nbsp;url, [<span class="tag fun"></span>](types.md#function)&nbsp;callback_function) | Get data from the current URL. | [:i:](#get)
-post([<span class="tag str"></span>](types.md)&nbsp;url,  [<span class="tag tab"></span>](types.md)&nbsp;form, [<span class="tag fun"></span>](types.md#function)&nbsp;callback_function) | Post the form to the URL. | [:i:](#post)
-put([<span class="tag str"></span>](types.md)&nbsp;url,  [<span class="tag str"></span>](types.md)&nbsp;data, [<span class="tag fun"></span>](types.md#function)&nbsp;callback_function) | Post the data to the URL. | [:i:](#put)
+get([<span class="tag str"></span>](types.md) url, [<span class="tag fun"></span>](types.md#function) callback_function) | Get data from the current URL. | [:i:](#get)
+post([<span class="tag str"></span>](types.md) url,  [<span class="tag tab"></span>](types.md) form, [<span class="tag fun"></span>](types.md#function) callback_function) | Post the form to the URL. | [:i:](#post)
+put([<span class="tag str"></span>](types.md) url,  [<span class="tag str"></span>](types.md) data, [<span class="tag fun"></span>](types.md#function) callback_function) | Post the data to the URL. | [:i:](#put)
 
 ---
 

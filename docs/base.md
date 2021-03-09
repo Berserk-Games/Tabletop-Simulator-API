@@ -9,31 +9,31 @@ General functions which work within any script.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-<a class="anchor" id="fnc_addcontextmenuitem"></a>addContextMenuItem([<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag fun"></span>](types.md)&nbsp;toRunFunc, [<span class="tag boo"></span>](types.md)&nbsp;keep_open, [<span class="tag boo"></span>](types.md)&nbsp;require_table) | Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table. | [<span class="ret boo"></span>](types.md) | [:i:](#addcontextmenuitem)
+<a class="anchor" id="fnc_addcontextmenuitem"></a>addContextMenuItem([<span class="tag str"></span>](types.md) label, [<span class="tag fun"></span>](types.md) toRunFunc, [<span class="tag boo"></span>](types.md) keep_open, [<span class="tag boo"></span>](types.md) require_table) | Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table. | [<span class="ret boo"></span>](types.md) | [:i:](#addcontextmenuitem)
 clearContextMenu() | Clears all menu items added by function [addContextMenuItem](#fnc_addcontextmenuitem). | [<span class="ret boo"></span>](types.md) |
-copy([<span class="tag tab"></span>](types.md)&nbsp;object_list) | Copy a list of Objects to the clipboard. Works with [paste(...)](#paste). | [<span class="ret boo"></span>](types.md) | [:i:](#copy)
-destroyObject([<span class="tag obj"></span>](types.md)&nbsp;obj) | Destroy an Object. | [<span class="ret boo"></span>](types.md) | [:i:](#destroyobject)
+copy([<span class="tag tab"></span>](types.md) object_list) | Copy a list of Objects to the clipboard. Works with [paste(...)](#paste). | [<span class="ret boo"></span>](types.md) | [:i:](#copy)
+destroyObject([<span class="tag obj"></span>](types.md) obj) | Destroy an Object. | [<span class="ret boo"></span>](types.md) | [:i:](#destroyobject)
 <a class="anchor" id="fliptable"></a>flipTable() | Flip the table. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="getallobjects"></a>getAllObjects() | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [getObjects()](#getobjects)_.</p>Returns a Table of all [Objects](object.md) in the game _except hand zones_. | [<span class="ret tab"></span>](types.md) |
-getObjectFromGUID([<span class="tag str"></span>](types.md)&nbsp;guid) | Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist. | [<span class="ret obj"></span>](types.md) | [:i:](#getobjectfromguid)
+getObjectFromGUID([<span class="tag str"></span>](types.md) guid) | Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist. | [<span class="ret obj"></span>](types.md) | [:i:](#getobjectfromguid)
 <a class="anchor" id="getobjects"></a>getObjects() | Returns a Table of all [Objects](object.md) in the game. | [<span class="ret tab"></span>](types.md) |
-getObjectsWithTag([<span class="tag str"></span>](types.md)&nbsp;tag) | Returns Table of all [Objects](object.md) which have the specified tag attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithtag)
-getObjectsWithAnyTags([<span class="tag tab"></span>](types.md)&nbsp;tags) | Returns Table of all [Objects](object.md) which have at least one of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithanytags)
-getObjectsWithAllTags([<span class="tag tab"></span>](types.md)&nbsp;tags) | Returns Table of all [Objects](object.md) which have all of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithalltags)
+getObjectsWithTag([<span class="tag str"></span>](types.md) tag) | Returns Table of all [Objects](object.md) which have the specified tag attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithtag)
+getObjectsWithAnyTags([<span class="tag tab"></span>](types.md) tags) | Returns Table of all [Objects](object.md) which have at least one of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithanytags)
+getObjectsWithAllTags([<span class="tag tab"></span>](types.md) tags) | Returns Table of all [Objects](object.md) which have all of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithalltags)
 <a class="anchor" id="getseatedplayers"></a>getSeatedPlayers() | Returns a Table of the [Player Colors](player-color.md) strings of seated players. | [<span class="ret tab"></span>](types.md) |
-group([<span class="tag tab"></span>](types.md)&nbsp;objects) | Groups objects together, like how the `G` key does for players. | [<span class="ret tab"></span>](types.md) | [:i:](#group)
-paste([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](types.md) | [:i:](#paste)
-<a class="anchor" id="setlookingforplayers"></a>setLookingForPlayers([<span class="tag boo"></span>](types.md)&nbsp;lfp) | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](types.md) |
-spawnObject([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spawns an Object. See [Built-in](built-in-object.md) and [Custom](custom-game-objects.md) Spawnable Object pages for further details. | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobject)
-spawnObjectData([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spawns an Object using a data table. Works with [getData()](object.md#getdata). | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectdata)
-spawnObjectJSON([<span class="tag tab"></span>](types.md)&nbsp;parameters) | Spawns an Object using a JSON string. Works with [getJSON()](object.md#getjson). | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectjson)
-startLuaCoroutine([<span class="tag obj"></span>](types.md)&nbsp;function_owner, [<span class="tag str"></span>](types.md)&nbsp;function_name) | Start a coroutine. | [<span class="ret boo"></span>](types.md) | [:i:](#startluacoroutine)
-stringColorToRGB([<span class="tag str"></span>](types.md)&nbsp;player_color) | Converts a [Player Color](player-color.md) string into a Color Table for tinting. | [<span class="ret col"></span>](types.md#color) | [:i:](#stringcolortorgb)
+group([<span class="tag tab"></span>](types.md) objects) | Groups objects together, like how the `G` key does for players. | [<span class="ret tab"></span>](types.md) | [:i:](#group)
+paste([<span class="tag tab"></span>](types.md) parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](types.md) | [:i:](#paste)
+<a class="anchor" id="setlookingforplayers"></a>setLookingForPlayers([<span class="tag boo"></span>](types.md) lfp) | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](types.md) |
+spawnObject([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object. See [Built-in](built-in-object.md) and [Custom](custom-game-objects.md) Spawnable Object pages for further details. | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobject)
+spawnObjectData([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object using a data table. Works with [getData()](object.md#getdata). | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectdata)
+spawnObjectJSON([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object using a JSON string. Works with [getJSON()](object.md#getjson). | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectjson)
+startLuaCoroutine([<span class="tag obj"></span>](types.md) function_owner, [<span class="tag str"></span>](types.md) function_name) | Start a coroutine. | [<span class="ret boo"></span>](types.md) | [:i:](#startluacoroutine)
+stringColorToRGB([<span class="tag str"></span>](types.md) player_color) | Converts a [Player Color](player-color.md) string into a Color Table for tinting. | [<span class="ret col"></span>](types.md#color) | [:i:](#stringcolortorgb)
 
 ####Hotkey Functions
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-<a class="anchor" id="fnc_addhotkey"></a>addHotkey([<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag fun"></span>](types.md)&nbsp;toRunFunc, [<span class="tag boo"></span>](types.md)&nbsp;trigger_on_key_up) | Adds a bindable Hotkey to the game. User may assign a key to it in Options->Game Keys after the game was created. | [<span class="ret boo"></span>](types.md) | [:i:](#addhotkey)
+<a class="anchor" id="fnc_addhotkey"></a>addHotkey([<span class="tag str"></span>](types.md) label, [<span class="tag fun"></span>](types.md) toRunFunc, [<span class="tag boo"></span>](types.md) trigger_on_key_up) | Adds a bindable Hotkey to the game. User may assign a key to it in Options->Game Keys after the game was created. | [<span class="ret boo"></span>](types.md) | [:i:](#addhotkey)
 <a class="anchor" id="fnc_clearhotkeys"></a>clearHotkeys() | Clears all Hotkeys added by [addHotkey](#fnc_addhotkey) | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="fnc_showhotkeyconfig"></a>showHotkeyConfig() | Shows the Hotkey configuration window under Options->Game Keys. | [<span class="ret boo"></span>](types.md) |
 
@@ -42,15 +42,15 @@ Functions which handle sending and displaying data.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-broadcastToAll([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag col"></span>](types.md#color)&nbsp;message_tint) | Print an on-screen message to all Players, as well as their in-game chat. | [<span class="ret boo"></span>](types.md) | [:i:](#broadcasttoall)
-broadcastToColor([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag col"></span>](types.md#color)&nbsp;message_tint) | Print an on-screen message to a specified Player, as well as their in-game chat. | [<span class="ret boo"></span>](types.md) | [:i:](#broadcasttocolor)
-log([<span class="tag var"></span>](types.md)&nbsp;value, [<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag str"></span>](types.md)&nbsp;tags) | Logs a message to the _host's_ System Console. (Shortcut: ~) | [<span class="ret boo"></span>](types.md) | [:i:](#log)
-logString([<span class="tag var"></span>](types.md)&nbsp;value, [<span class="tag str"></span>](types.md)&nbsp;label, [<span class="tag str"></span>](types.md)&nbsp;tags, [<span class="tag boo"></span>](types.md)&nbsp;concise, [<span class="tag boo"></span>](types.md)&nbsp;displayTag) | _Returns_ a String formatted similarly to the output of [log(...)](#log). | [<span class="ret str"></span>](types.md) | [:i:](#logstring)
-logStyle([<span class="tag str"></span>](types.md)&nbsp;tag, [<span class="tag col"></span>](types.md#color)&nbsp;tint, [<span class="tag str"></span>](types.md)&nbsp;prefix, [<span class="tag str"></span>](types.md)&nbsp;postfix) | Set style options for the specified tag type for the log. | [<span class="ret boo"></span>](types.md) | [:i:](#logstyle)
-print([<span class="tag str"></span>](types.md)&nbsp;message) | Prints a string into chat that only the host is able to see. Used for debugging scripts. | [<span class="ret nil"></span>](types.md) | [:i:](#print)
-printToAll([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag col"></span>](types.md#color)&nbsp;message_tint) | Print a message into the chat of all connected players. | [<span class="ret boo"></span>](types.md) | [:i:](#printtoall)
-printToColor([<span class="tag str"></span>](types.md)&nbsp;message, [<span class="tag str"></span>](types.md)&nbsp;player_color, [<span class="tag col"></span>](types.md#color)&nbsp;message_tint) | Print a message to a specific [Player Color](player-color.md). | [<span class="ret boo"></span>](types.md) | [:i:](#printtocolor)
-<a class="anchor" id="sendexternalmessage"></a>sendExternalMessage([<span class="tag tab"></span>](types.md)&nbsp;data) | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](types.md) |
+broadcastToAll([<span class="tag str"></span>](types.md) message, [<span class="tag col"></span>](types.md#color) message_tint) | Print an on-screen message to all Players, as well as their in-game chat. | [<span class="ret boo"></span>](types.md) | [:i:](#broadcasttoall)
+broadcastToColor([<span class="tag str"></span>](types.md) message, [<span class="tag str"></span>](types.md) player_color, [<span class="tag col"></span>](types.md#color) message_tint) | Print an on-screen message to a specified Player, as well as their in-game chat. | [<span class="ret boo"></span>](types.md) | [:i:](#broadcasttocolor)
+log([<span class="tag var"></span>](types.md) value, [<span class="tag str"></span>](types.md) label, [<span class="tag str"></span>](types.md) tags) | Logs a message to the _host's_ System Console. (Shortcut: ~) | [<span class="ret boo"></span>](types.md) | [:i:](#log)
+logString([<span class="tag var"></span>](types.md) value, [<span class="tag str"></span>](types.md) label, [<span class="tag str"></span>](types.md) tags, [<span class="tag boo"></span>](types.md) concise, [<span class="tag boo"></span>](types.md) displayTag) | _Returns_ a String formatted similarly to the output of [log(...)](#log). | [<span class="ret str"></span>](types.md) | [:i:](#logstring)
+logStyle([<span class="tag str"></span>](types.md) tag, [<span class="tag col"></span>](types.md#color) tint, [<span class="tag str"></span>](types.md) prefix, [<span class="tag str"></span>](types.md) postfix) | Set style options for the specified tag type for the log. | [<span class="ret boo"></span>](types.md) | [:i:](#logstyle)
+print([<span class="tag str"></span>](types.md) message) | Prints a string into chat that only the host is able to see. Used for debugging scripts. | [<span class="ret nil"></span>](types.md) | [:i:](#print)
+printToAll([<span class="tag str"></span>](types.md) message, [<span class="tag col"></span>](types.md#color) message_tint) | Print a message into the chat of all connected players. | [<span class="ret boo"></span>](types.md) | [:i:](#printtoall)
+printToColor([<span class="tag str"></span>](types.md) message, [<span class="tag str"></span>](types.md) player_color, [<span class="tag col"></span>](types.md#color) message_tint) | Print a message to a specific [Player Color](player-color.md). | [<span class="ret boo"></span>](types.md) | [:i:](#printtocolor)
+<a class="anchor" id="sendexternalmessage"></a>sendExternalMessage([<span class="tag tab"></span>](types.md) data) | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](types.md) |
 
 
 
@@ -62,7 +62,7 @@ printToColor([<span class="tag str"></span>](types.md)&nbsp;message, [<span clas
 
 ####addContextMenuItem(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table.
+[<span class="ret boo"></span>](types.md) Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table.
 
 !!!info "addContextMenuItem(label, toRunFunc, keep_open, require_table)"
 	* [<span class="tag str"></span>](types.md) **label**: Label for the menu item.
@@ -89,7 +89,7 @@ end
 
 ####copy(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Copy a list of Objects to the clipboard. Works with [paste(...)](#paste).
+[<span class="ret boo"></span>](types.md) Copy a list of Objects to the clipboard. Works with [paste(...)](#paste).
 
 !!!info "copy(object_list)"
 	* [<span class="tag tab"></span>](types.md) **object_list**: A Table of in-game objects to be copied.
@@ -107,7 +107,7 @@ copy(object_list)
 
 ####destroyObject(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Destroy an Object.
+[<span class="ret boo"></span>](types.md) Destroy an Object.
 
 !!!info "destroyObject(obj)"
 	* [<span class="tag obj"></span>](types.md) **obj**: The Object you wish to delete from the instance.
@@ -117,7 +117,7 @@ copy(object_list)
 
 ####getObjectFromGUID(...)
 
-[<span class="ret obj"></span>](types.md)&nbsp;Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist.
+[<span class="ret obj"></span>](types.md) Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist.
 
 !!!info "getObjectFromGUID(guid)"
 	* [<span class="tag str"></span>](types.md) **guid**: GUID of the Object to get a reference of.
@@ -129,7 +129,7 @@ copy(object_list)
 
 ####group(...)
 
-[<span class="ret tab"></span>](types.md)&nbsp;Groups objects together, like how the `G` key does for players. It returns a table of object references to any decks/stacks formed.
+[<span class="ret tab"></span>](types.md) Groups objects together, like how the `G` key does for players. It returns a table of object references to any decks/stacks formed.
 
 Not all objects CAN be grouped. If the G key won't work on them, neither will this function.
 
@@ -170,7 +170,7 @@ end
 
 ####paste(...)
 
-[<span class="ret tab"></span>](types.md)&nbsp;Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy).
+[<span class="ret tab"></span>](types.md) Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy).
 
 !!!info "paste(parameters)"
 	* [<span class="tag tab"></span>](types.md) **parameters**: A Table containing instructions of where to spawn the Objects.
@@ -185,7 +185,7 @@ end
 
 ####spawnObject(...)
 
-[<span class="ret obj"></span>](types.md)&nbsp;Spawns an Object. See [Built-in](built-in-object.md) and [Custom](custom-game-objects.md) Spawnable Objects pages for details of specific spawnable objects.
+[<span class="ret obj"></span>](types.md) Spawns an Object. See [Built-in](built-in-object.md) and [Custom](custom-game-objects.md) Spawnable Objects pages for details of specific spawnable objects.
 
 If you are spawning a **custom Object**, you should call [setCustomObject](object.md#setcustomobject) immediately after spawnObject to set its custom properties.
 
@@ -326,7 +326,7 @@ end
 
 ####startLuaCoroutine(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the next frame of the game using `coroutine.yield(0)`.
+[<span class="ret boo"></span>](types.md) Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the next frame of the game using `coroutine.yield(0)`.
 
 !!!Attention
 	You MUST return a 1 at the end of any coroutine or it will throw an error.
@@ -359,7 +359,7 @@ end
 
 ####stringColorToRGB(...)
 
-[<span class="ret col"></span>](types.md)&nbsp;Converts a [Player Color](player-color.md) string into a Color Table for tinting.
+[<span class="ret col"></span>](types.md) Converts a [Player Color](player-color.md) string into a Color Table for tinting.
 
 !!!info "stringColorToRGB(player_color)"
 	* [<span class="tag str"></span>](types.md) **player_color** A String of a [Player Color](player-color.md).
@@ -372,7 +372,7 @@ printToAll("Blue message", stringColorToRGB("Blue"))
 
 ####addHotkey(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Adds a bindable Hotkey to the game. User may assign a key to it in Options->Game Keys after the game was created.
+[<span class="ret boo"></span>](types.md) Adds a bindable Hotkey to the game. User may assign a key to it in Options->Game Keys after the game was created.
 
 !!!info "addHotkey(label, toRunFunc, trigger_on_key_up)"
 	* [<span class="tag str"></span>](types.md) **label**: A String for the Hotkey.
@@ -414,7 +414,7 @@ end
 
 ####broadcastToAll(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Print an on-screen message to all Players.
+[<span class="ret boo"></span>](types.md) Print an on-screen message to all Players.
 
 !!!info "broadcastToAll(message, message_tint)"
 	* [<span class="tag str"></span>](types.md) **message**: Message to display on-screen.
@@ -431,7 +431,7 @@ broadcastToAll(msg, rgb)
 
 ####broadcastToColor(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Print an on-screen message to a specified Player and their in-game chat.
+[<span class="ret boo"></span>](types.md) Print an on-screen message to a specified Player and their in-game chat.
 
 !!!info "broadcastToColor(message, player_color, message_tint)"
 	* [<span class="tag str"></span>](types.md) **message**: Message to display on-screen.
@@ -450,7 +450,7 @@ broadcastToColor(msg, color, rgb)
 
 ####log(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Logs a message to the _host's_ System Console (accessible from `~` pane of in-game chat window).
+[<span class="ret boo"></span>](types.md) Logs a message to the _host's_ System Console (accessible from `~` pane of in-game chat window).
 
 !!!info "log(value, label, tags)"
 	* [<span class="tag var"></span>](types.md) **value**: The value you want to log.
@@ -491,7 +491,7 @@ As an advanced feature, multiple log tags may be provided by space-separating se
 
 ####logString(...)
 
-[<span class="ret str"></span>](types.md)&nbsp;_Returns_ a String formatted similarly to the output of [log(...)](#log).
+[<span class="ret str"></span>](types.md) _Returns_ a String formatted similarly to the output of [log(...)](#log).
 
 !!!info "logString(value, label, tags, concise, displayTag)"
 	* [<span class="tag var"></span>](types.md) **value**: The value you want to log.
@@ -524,7 +524,7 @@ In some circumstances log strings have newlines inserted e.g. between the `label
 
 ####logStyle(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Configures style options for a [log(...)](#log) tag.
+[<span class="ret boo"></span>](types.md) Configures style options for a [log(...)](#log) tag.
 
 !!!tip
 	Tag log styles can also be set via the System Console with the `log_style_tag` command.
@@ -550,7 +550,7 @@ In some circumstances log strings have newlines inserted e.g. between the `label
 
 ####print(...)
 
-[<span class="ret nil"></span>](types.md)&nbsp;Print a string into chat that only the host is able to see. Used for debugging scripts.
+[<span class="ret nil"></span>](types.md) Print a string into chat that only the host is able to see. Used for debugging scripts.
 
 !!!info "print(message)"
 	* [<span class="tag str"></span>](types.md) **message**: Text to print into the chat log.
@@ -561,7 +561,7 @@ In some circumstances log strings have newlines inserted e.g. between the `label
 
 ####printToAll(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Print a message into the in-game chat of all connected players.
+[<span class="ret boo"></span>](types.md) Print a message into the in-game chat of all connected players.
 
 !!!info "printToAll(message, message_tint)"
 	* [<span class="tag str"></span>](types.md) **message**: Message to place into players' in-game chats.
@@ -576,7 +576,7 @@ printToAll("Hello World!", {r=1,g=0,b=0})
 
 ####printToColor(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Print a message to the in-game chat of a specific player.
+[<span class="ret boo"></span>](types.md) Print a message to the in-game chat of a specific player.
 
 !!!info "printToColor(message, player_color, message_tint)"
 	* [<span class="tag str"></span>](types.md) **message**: Message to place into the player's in-game chat.

@@ -11,9 +11,9 @@ The static global JSON class provides the ability to encode/decode data into JSO
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-decode([<span class="tag str"></span>](types.md)&nbsp;json_string) | Value obtained from the encoded string. Can return a number, string or Table. | [<span class="ret var"></span>](types.md) | [:i:](#decode)
-encode([<span class="tag var"></span>](types.md)&nbsp;data) | Encodes data from a number, string or Table into a JSON string. | [<span class="ret str"></span>](types.md) | [:i:](#encode)
-encode_pretty([<span class="tag var"></span>](types.md)&nbsp;data) | Same as encode(...) but this version is slightly less efficient but is easier to read. | [<span class="ret str"></span>](types.md) | [:i:](#encode_pretty)
+decode([<span class="tag str"></span>](types.md) json_string) | Value obtained from the encoded string. Can return a number, string or Table. | [<span class="ret var"></span>](types.md) | [:i:](#decode)
+encode([<span class="tag var"></span>](types.md) data) | Encodes data from a number, string or Table into a JSON string. | [<span class="ret str"></span>](types.md) | [:i:](#encode)
+encode_pretty([<span class="tag var"></span>](types.md) data) | Same as encode(...) but this version is slightly less efficient but is easier to read. | [<span class="ret str"></span>](types.md) | [:i:](#encode_pretty)
 
 ---
 
@@ -22,7 +22,7 @@ encode_pretty([<span class="tag var"></span>](types.md)&nbsp;data) | Same as enc
 
 ###decode(...)
 
-[<span class="ret var"></span>](types.md)&nbsp;Value obtained from the encoded string. Can return a number, string or Table.
+[<span class="ret var"></span>](types.md) Value obtained from the encoded string. Can return a number, string or Table.
 
 !!!info "decode(json_string)"
     * [<span class="tag str"></span>](types.md) **json_string**: A String that is decoded, generally created by encode(...) or encode_pretty(...).
@@ -39,7 +39,7 @@ print(decoded) --Prints Test
 
 ###encode(...)
 
-[<span class="ret str"></span>](types.md)&nbsp;Encodes data from a number, string or Table into a JSON string.
+[<span class="ret str"></span>](types.md) Encodes data from a number, string or Table into a JSON string.
 
 !!!info "encode(data)"
     * [<span class="tag var"></span>](types.md) **data**: A Var, either String, Int, Float or Table, to encode as a string.
@@ -49,7 +49,7 @@ print(decoded) --Prints Test
 
 ###encode_pretty(...)
 
-[<span class="ret str"></span>](types.md)&nbsp;Encodes data from a number, string or Table into a JSON string. This version is slightly less efficient but is easier to read.
+[<span class="ret str"></span>](types.md) Encodes data from a number, string or Table into a JSON string. This version is slightly less efficient but is easier to read.
 
 !!!info "encode_pretty(data)"
     * [<span class="tag var"></span>](types.md) **data**: A Var, either String, Int, Float or Table, to encode as a string.

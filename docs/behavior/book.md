@@ -19,9 +19,9 @@ Variable | Description | Type
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-<a class="anchor" id="getpage"></a>getPage([<span class="tag boo"></span>](types.md)&nbsp;offsetPageNumbering) | Gets the current page of the PDF. | [<span class="ret int"></span>](types.md) | [:i:](#getpage)
-<a class="anchor" id="setpage"></a>setPage([<span class="tag int"></span>](types.md)&nbsp;page, [<span class="tag boo"></span>](types.md)&nbsp;offsetPageNumbering) | Set current page. | [<span class="ret boo"></span>](types.md)| [:i:](#setpage)
-<a class="anchor" id="sethighlight"></a>setHighlight([<span class="tag flo"></span>](types.md)&nbsp;x1, [<span class="tag flo"></span>](types.md)&nbsp;y1, [<span class="tag flo"></span>](types.md)&nbsp;x2, [<span class="tag flo"></span>](types.md)&nbsp;y2) | Set highlight box on current page. | [<span class="ret boo"></span>](types.md) |  [:i:](#sethighlight)
+<a class="anchor" id="getpage"></a>getPage([<span class="tag boo"></span>](types.md) offsetPageNumbering) | Gets the current page of the PDF. | [<span class="ret int"></span>](types.md) | [:i:](#getpage)
+<a class="anchor" id="setpage"></a>setPage([<span class="tag int"></span>](types.md) page, [<span class="tag boo"></span>](types.md) offsetPageNumbering) | Set current page. | [<span class="ret boo"></span>](types.md)| [:i:](#setpage)
+<a class="anchor" id="sethighlight"></a>setHighlight([<span class="tag flo"></span>](types.md) x1, [<span class="tag flo"></span>](types.md) y1, [<span class="tag flo"></span>](types.md) x2, [<span class="tag flo"></span>](types.md) y2) | Set highlight box on current page. | [<span class="ret boo"></span>](types.md) |  [:i:](#sethighlight)
 <a class="anchor" id="clearhighlight"></a>clearHighlight() | Clears the current highlight. | [<span class="ret boo"></span>](types.md)
 
 ---
@@ -30,7 +30,7 @@ Function Name | Description | Return | &nbsp;
 
 ####getPage(...)
 
-[<span class="ret int"></span>](types.md)&nbsp;Gets the current page of the PDF.
+[<span class="ret int"></span>](types.md) Gets the current page of the PDF.
 
 !!! info "getPage(offsetPageNumbering)"
 	  * [<span class="tag boo"></span>](types.md) **offsetPageNumbering**: Indicates whether or not [page_offset](#page_offset) should be applied to the page number returned.
@@ -39,7 +39,7 @@ Function Name | Description | Return | &nbsp;
 
 ####setPage(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Sets the current page of the PDF. Returns true if the page was succesfully set, false if the page number was invalid.
+[<span class="ret boo"></span>](types.md) Sets the current page of the PDF. Returns true if the page was succesfully set, false if the page number was invalid.
 
 !!! info "setPage(page, offsetPageNumbering)"
     * [<span class="tag int"></span>](types.md) **page**: The new page number.
@@ -51,7 +51,7 @@ Function Name | Description | Return | &nbsp;
 
 ####setHighlight(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Draws a highlight rectangle on the popout mode of the PDF at the given coordinates. Coordinates (0,0) are the lower left corner of the PDF, while coordinates (1,1) are the upper right corner.
+[<span class="ret boo"></span>](types.md) Draws a highlight rectangle on the popout mode of the PDF at the given coordinates. Coordinates (0,0) are the lower left corner of the PDF, while coordinates (1,1) are the upper right corner.
 
 !!! info "setHighlight(x1, y1, x2, y2)"
     * [<span class="tag flo"></span>](types.md) **x1**: x coordinate of the rectangle's left side.

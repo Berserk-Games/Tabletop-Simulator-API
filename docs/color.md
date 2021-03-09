@@ -17,17 +17,17 @@ Check [Manipulation examples](#manipulation-examples) for more detailed usage.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-Color([<span class="tag flo"></span>](types.md)&nbsp;r, [<span class="tag flo"></span>](types.md)&nbsp;g, [<span class="tag flo"></span>](types.md)&nbsp;b) | Return a color with specified (r, g, b) components. | [<span class="ret col"></span>](types.md) | [:i:](#colornew)
-Color([<span class="tag flo"></span>](types.md)&nbsp;r, [<span class="tag flo"></span>](types.md)&nbsp;g, [<span class="tag flo"></span>](types.md)&nbsp;b, [<span class="tag flo"></span>](types.md)&nbsp;a) | Return a color with specified (r, g, b, a) components. | [<span class="ret col"></span>](types.md) | [:i:](#colornew)
-Color([<span class="tag tab"></span>](types.md)&nbsp;t) | Return a color with r&#47;g&#47;b&#47;a <!-- (Not work in 12.3.5) or 1&#47;2&#47;3&#47;4 --> components from source table<!-- (r&#47;g&#47;b&#47;a first)-->. | [<span class="ret col"></span>](types.md) | [:i:](#colornew)
+Color([<span class="tag flo"></span>](types.md) r, [<span class="tag flo"></span>](types.md) g, [<span class="tag flo"></span>](types.md) b) | Return a color with specified (r, g, b) components. | [<span class="ret col"></span>](types.md) | [:i:](#colornew)
+Color([<span class="tag flo"></span>](types.md) r, [<span class="tag flo"></span>](types.md) g, [<span class="tag flo"></span>](types.md) b, [<span class="tag flo"></span>](types.md) a) | Return a color with specified (r, g, b, a) components. | [<span class="ret col"></span>](types.md) | [:i:](#colornew)
+Color([<span class="tag tab"></span>](types.md) t) | Return a color with r&#47;g&#47;b&#47;a <!-- (Not work in 12.3.5) or 1&#47;2&#47;3&#47;4 --> components from source table<!-- (r&#47;g&#47;b&#47;a first)-->. | [<span class="ret col"></span>](types.md) | [:i:](#colornew)
 Color.new(...) | Same as Color(...). | [<span class="ret col"></span>](types.md) | [:i:](#colornew)
-Color.fromString([<span class="tag str"></span>](types.md)&nbsp;colorStr) | Return a color from a color string ('Red', 'Green' etc), capitalization ignored. | [<span class="ret col"></span>](types.md) | [:i:](#colorfromstring)
+Color.fromString([<span class="tag str"></span>](types.md) colorStr) | Return a color from a color string ('Red', 'Green' etc), capitalization ignored. | [<span class="ret col"></span>](types.md) | [:i:](#colorfromstring)
 Color.Blue | Shorthand for Color.fromString('Blue'), works for all [Player](player-color.md) and [added colors](#coloradd), capitalization ignored. Also return the color name. | [<span class="ret col"></span>](types.md)[<span class="ret str"></span>](types.md) | [:i:](#colorblue)
 
 <!--
 This function exist but in version 12.3.5 she is not working.
 
-Color.fromHex([<span class="tag str"></span>](types.md)&nbsp;hexStr) | Return a color from a hex representation string ('#ff112233', 'ff1122'), hash sign and alpha are optional. | [<span class="ret col"></span>](types.md)
+Color.fromHex([<span class="tag str"></span>](types.md) hexStr) | Return a color from a hex representation string ('#ff112233', 'ff1122'), hash sign and alpha are optional. | [<span class="ret col"></span>](types.md)
 -->
 
 
@@ -51,8 +51,8 @@ In addition to accessing color components by their numeric indices (1, 2, 3, 4) 
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-setAt([<span class="tag str"></span>](types.md)&nbsp;k, [<span class="tag flo"></span>](types.md)&nbsp;value) | Sets a component to value and returns self. | [<span class="ret sel"></span>](types.md#vector)  | [:i:](#setat)
-set([<span class="tag flo"></span>](types.md)&nbsp;r, [<span class="tag flo"></span>](types.md)&nbsp;g, [<span class="tag flo"></span>](types.md)&nbsp;b, [<span class="tag flo"></span>](types.md)&nbsp;a) | Sets `r`, `g`, `b`, `a` components to given values and returns self, alpha is optional| [<span class="ret sel"></span>](types.md#vector) | [:i:](#set)
+setAt([<span class="tag str"></span>](types.md) k, [<span class="tag flo"></span>](types.md) value) | Sets a component to value and returns self. | [<span class="ret sel"></span>](types.md#vector)  | [:i:](#setat)
+set([<span class="tag flo"></span>](types.md) r, [<span class="tag flo"></span>](types.md) g, [<span class="tag flo"></span>](types.md) b, [<span class="tag flo"></span>](types.md) a) | Sets `r`, `g`, `b`, `a` components to given values and returns self, alpha is optional| [<span class="ret sel"></span>](types.md#vector) | [:i:](#set)
 get() | Returns `r`, `g`, `b`, `a` components as four separate values. | [<span class="ret flo"></span>](types.md)<br>[<span class="ret flo"></span>](types.md)<br>[<span class="ret flo"></span>](types.md)<br>[<span class="ret flo"></span>](types.md) | [:i:](#get)
 copy() | Returns a separate Color with identical component values. | [<span class="ret col"></span>](types.md#vector) | [:i:](#copy)
 
@@ -88,8 +88,8 @@ Color also allows you to use arithmetic operators to performs basic operations:
 
 Operator | Description | Return | &nbsp;
 -- | -- | -- | --
-[<span class="tag col"></span>](types.md)&nbsp;one == [<span class="tag col"></span>](types.md)&nbsp;two | Return true if both colors identical or within a small margin of each other, false otherwise. See also [color:equals()](#equals). | [<span class="tag boo"></span>](types.md)
-tostring([<span class="tag col"></span>](types.md)&nbsp;col) | Return a string description of a color. | [<span class="tag str"></span>](types.md)
+[<span class="tag col"></span>](types.md) one == [<span class="tag col"></span>](types.md) two | Return true if both colors identical or within a small margin of each other, false otherwise. See also [color:equals()](#equals). | [<span class="tag boo"></span>](types.md)
+tostring([<span class="tag col"></span>](types.md) col) | Return a string description of a color. | [<span class="tag str"></span>](types.md)
 
 ###Arithmetics examples
 
@@ -114,17 +114,17 @@ end
 
 Method Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-col:toHex([<span class="tag boo"></span>](types.md)&nbsp;includeAlpha) | Returns a hex string for `col`, boolean parameter `includeAlpha`. | [<span class="ret str"></span>](types.md) | [:i:](#tohex)
-col:toString([<span class="tag flo"></span>](types.md)&nbsp;tolerance) | Returns a color string if matching this instance, nil otherwise, optional numeric `tolerance` param. | [<span class="ret str"></span>](types.md) | [:i:](#tostring)
-col:equals([<span class="tag col"></span>](types.md)&nbsp;otherCol, [<span class="tag flo"></span>](types.md)&nbsp;num) | Returns true if `otherCol` same as `col`, false otherwise, optional numeric tolerance param. | [<span class="ret boo"></span>](types.md) | [:i:](#equals)
-col:lerp([<span class="tag col"></span>](types.md)&nbsp;otherCol, [<span class="tag flo"></span>](types.md)&nbsp;num) | Return a color some part of the way between `col` and `otherCol`, numeric arg [0, 1] is the fraction. | [<span class="ret col"></span>](types.md) | [:i:](#lerp)
-col:dump([<span class="tag str"></span>](types.md)&nbsp;prefix) | Return a string description of a color with an optional `prefix`. | [<span class="ret str"></span>](types.md)<br>[<span class="ret flo"></span>](types.md) | [:i:](#dump)
+col:toHex([<span class="tag boo"></span>](types.md) includeAlpha) | Returns a hex string for `col`, boolean parameter `includeAlpha`. | [<span class="ret str"></span>](types.md) | [:i:](#tohex)
+col:toString([<span class="tag flo"></span>](types.md) tolerance) | Returns a color string if matching this instance, nil otherwise, optional numeric `tolerance` param. | [<span class="ret str"></span>](types.md) | [:i:](#tostring)
+col:equals([<span class="tag col"></span>](types.md) otherCol, [<span class="tag flo"></span>](types.md) num) | Returns true if `otherCol` same as `col`, false otherwise, optional numeric tolerance param. | [<span class="ret boo"></span>](types.md) | [:i:](#equals)
+col:lerp([<span class="tag col"></span>](types.md) otherCol, [<span class="tag flo"></span>](types.md) num) | Return a color some part of the way between `col` and `otherCol`, numeric arg [0, 1] is the fraction. | [<span class="ret col"></span>](types.md) | [:i:](#lerp)
+col:dump([<span class="tag str"></span>](types.md) prefix) | Return a string description of a color with an optional `prefix`. | [<span class="ret str"></span>](types.md)<br>[<span class="ret flo"></span>](types.md) | [:i:](#dump)
 
 ###Other methods
 Method Name | Description | Return | &nbsp;
 -- | -- | -- | --:
 Color.list | Returns a table of all color strings. | [<span class="ret tab"></span>](types.md) | [:i:](#colorlist)
-Color.Add([<span class="tag str"></span>](types.md)&nbsp;name, [<span class="tag col"></span>](types.md)&nbsp;yourColor) | Add your own color definition to the class. | [<span class="ret nil"></span>](types.md) | [:i:](#coloradd)
+Color.Add([<span class="tag str"></span>](types.md) name, [<span class="tag col"></span>](types.md) yourColor) | Add your own color definition to the class. | [<span class="ret nil"></span>](types.md) | [:i:](#coloradd)
 
 ---
 
@@ -132,7 +132,7 @@ Color.Add([<span class="tag str"></span>](types.md)&nbsp;name, [<span class="tag
 
 ###Color.new(...)
 
-[<span class="ret col"></span>](types.md)&nbsp;Return a color with specified components.
+[<span class="ret col"></span>](types.md) Return a color with specified components.
 
 !!!info "Color.new(r, g, b)"
     * [<span class="tag flo"></span>](types.md) **r**: Red component between 0 and 1.
@@ -162,7 +162,7 @@ local teal = Color({ r = 0.129, g = 0.694, b = 0.607})
 
 ###Color.fromString(...)
 
-[<span class="ret col"></span>](types.md)&nbsp;Return a color from a color string ('Red', 'Green' etc), capitalization ignored.
+[<span class="ret col"></span>](types.md) Return a color from a color string ('Red', 'Green' etc), capitalization ignored.
 
 !!!info "Color.fromString(colorStr)"
     * [<span class="tag str"></span>](types.md) **colorStr**: Any [Player Color](player-color.md) or color added with [Color.Add](#coloradd).
@@ -175,7 +175,7 @@ print(col) --> Color: Blue { r = 0.118, g = 0.53, b = 1, a = 1 }
 ###Color.Blue
 
 [<span class="ret col" style="margin-right:5px;"></span>](types.md)
-[<span class="ret str"></span>](types.md)&nbsp;Return a color from a color string ('Red', 'Green' etc).
+[<span class="ret str"></span>](types.md) Return a color from a color string ('Red', 'Green' etc).
 
 Any [Player Color](player-color.md) or color added with [Color.Add](#coloradd).
 
@@ -195,7 +195,7 @@ print(name) -- Red
 
 ###setAt(...)
 
-[<span class="ret sel"></span>](types.md)&nbsp;Update one component of the color and returning self.
+[<span class="ret sel"></span>](types.md) Update one component of the color and returning self.
 
 !!!info "setAt(key, num)"
     * [<span class="tag int"></span>](types.md) **key**: Index of component (1, 2, 3 or 4 for r, g, b or a).
@@ -209,7 +209,7 @@ print(col) --> Color: { r = 0.501961, g = 0.53, b = 1, a = 0.5 }
 
 ###set(...)
 
-[<span class="ret sel"></span>](types.md)&nbsp;Update all components of the vector and returning self.
+[<span class="ret sel"></span>](types.md) Update all components of the vector and returning self.
 
 Providing a nil value makes it ignore that argument.
 
@@ -235,7 +235,7 @@ print(col) --> Color: { r = 0.160784, g = 0.501961, b = 0.72549, a = 1 }
 [<span class="ret flo" style="margin-right:5px;"></span>](types.md)
 [<span class="ret flo" style="margin-right:5px;"></span>](types.md)
 [<span class="ret flo" style="margin-right:5px;"></span>](types.md)
-[<span class="ret flo"></span>](types.md)&nbsp;Returns `r`, `g`, `b`, `a` components as four separate values.
+[<span class="ret flo"></span>](types.md) Returns `r`, `g`, `b`, `a` components as four separate values.
 
 ``` Lua
 col = Color.Blue
@@ -245,7 +245,7 @@ print(r + g + b + a) --> 2.648
 
 ###copy()
 
-[<span class="ret col"></span>](types.md)&nbsp;Copy self into a new Color and return it.
+[<span class="ret col"></span>](types.md) Copy self into a new Color and return it.
 
 ``` Lua
 col1 = Color(1, 0.5, 0.75)
@@ -262,7 +262,7 @@ print(col2) --> Color: { r = 1, g = 0.5, b = 0.75, a = 1 }
 
 ####toHex(...)
 
-[<span class="ret str"></span>](types.md)&nbsp;Returns a hex string representation of self.
+[<span class="ret str"></span>](types.md) Returns a hex string representation of self.
 
 !!!info "toHex(includeAlpha)"
     * [<span class="tag boo"></span>](types.md) **includeAlpha**: Include or not the `a` value. (Default true)
@@ -275,7 +275,7 @@ print(Color.blue:toHex(false)) -- 1e87ff
 
 ####toString(...)
 
-[<span class="ret str"></span>](types.md)&nbsp;Returns a color string if matching this instance, nil otherwise, optional numeric `tolerance` param.
+[<span class="ret str"></span>](types.md) Returns a color string if matching this instance, nil otherwise, optional numeric `tolerance` param.
 
 !!!info "toString(tolerance)"
     * [<span class="tag flo"></span>](types.md) **tolerance**: Numeric `tolerance`, by default 0.01.
@@ -286,7 +286,7 @@ print(Color( 0.118, 0.53, 1):toString()) -- Blue
 
 ####equals(...)
 
-[<span class="ret boo"></span>](types.md)&nbsp;Returns true if `otherCol` same as self, false otherwise, optional numeric `tolerance` param.
+[<span class="ret boo"></span>](types.md) Returns true if `otherCol` same as self, false otherwise, optional numeric `tolerance` param.
 
 !!!info "equals(otherCol, tolerance)"
     * [<span class="tag col"></span>](types.md) **otherCol**: The color to compare with.
@@ -301,7 +301,7 @@ print(Color( 0.118, 0.53, 1):equals(Color.Blue)) -- Throw errors
 
 ####lerp(...)
 
-[<span class="ret col"></span>](types.md)&nbsp;Return a color some part of the way between self and `otherCol`, numeric arg [0, 1] is the fraction.
+[<span class="ret col"></span>](types.md) Return a color some part of the way between self and `otherCol`, numeric arg [0, 1] is the fraction.
 
 !!!info "lerp(otherCol, fraction)"
     * [<span class="tag col"></span>](types.md) **otherCol**: The color to compare with.
@@ -315,7 +315,7 @@ print(pink) -- Color: { r = 0.928, g = 0.55, b = 0.547, a = 1 }
 ####dump(...)
 
 [<span class="ret str" style="margin-right:5px;"></span>](types.md)
-[<span class="ret flo"></span>](types.md)&nbsp;Return string describing self, optional string prefix.
+[<span class="ret flo"></span>](types.md) Return string describing self, optional string prefix.
 
 !!!info "dump(prefix)"
     * [<span class="tag str"></span>](types.md) **prefix**: The prefix of return string.
@@ -336,7 +336,7 @@ print(Color.dump(col, 'Prefix')) --> Prefix: Blue { r = 0.118, g = 0.53, b = 1, 
 
 ####Color.list
 
-[<span class="ret tab"></span>](types.md)&nbsp;Returns a table of all color strings.
+[<span class="ret tab"></span>](types.md) Returns a table of all color strings.
 
 
 ``` Lua
@@ -361,7 +361,7 @@ data = {
 
 ####Color.Add(...)
 
-[<span class="ret nil"></span>](types.md)&nbsp;Add your own color definition to the class.
+[<span class="ret nil"></span>](types.md) Add your own color definition to the class.
 
 !!!info "dump(name, yourColor)"
     * [<span class="tag str"></span>](types.md) **name**: The name of the color.
