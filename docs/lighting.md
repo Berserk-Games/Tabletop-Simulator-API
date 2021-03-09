@@ -1,4 +1,4 @@
-Lighting, a static global class, is the in-game light of the map. It allows you to modify the lighting of the instance in the same way that the [in-game lighting menu](http://berserk-games.com/knowledgebase/lighting/) does. You call these functions like this: `Lighting.apply()`.
+Lighting, a static global class, is the in-game light of the map. It allows you to modify the lighting of the instance in the same way that the [in-game lighting menu](https://kb.tabletopsimulator.com/host-guides/lighting/) does. You call these functions like this: `Lighting.apply()`.
 
 For more information on lighting in Unity, [refer to the Unity documentation](https://docs.unity3d.com/Manual/LightingOverview.html).
 

@@ -97,7 +97,7 @@ Variable | Type | Available On
 <a class="anchor" id="clock"></a>Clock | [Clock](behavior/clock.md) | "Digital Clock" objects.
 <a class="anchor" id="counter"></a>Counter | [Counter](behavior/counter.md) | "Counter" objects.
 <a class="anchor" id="rpgfigurine"></a>RPGFigurine | [RPGFigurine](behavior/rpgfigurine.md) | "RPG Kit" animated figurine objects i.e. [type](#type) "rpgFigurine".
-<a class="anchor" id="texttool"></a>TextTool | [TextTool](behavior/TextTool.md) | 3D Text objects e.g. text created with the in-game Text tool.
+<a class="anchor" id="texttool"></a>TextTool | [TextTool](behavior/texttool.md) | 3D Text objects e.g. text created with the in-game Text tool.
 
 ---
 
@@ -262,7 +262,7 @@ reload() | Returns Object reference of itself after it respawns itself. | [<span
 <a class="anchor" id="reset"></a>reset() | Resets this Object. Resetting a Deck brings all the Cards back into it. Resetting a Bag clears its contents (works for both Loot and Infinite Bags). | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="roll"></a>roll() | Rolls dice/coins. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="shuffle"></a>shuffle() | Shuffles/shakes up contents of a deck or bag. | [<span class="ret boo"></span>](types.md) |
-<a class="anchor" id="shufflestates"></a>shuffleStates() | Returns an Object reference to a new [state](http://berserk-games.com/knowledgebase/creating-states/) after randomly selecting and changing to one. | [<span class="ret obj"></span>](types.md) |
+<a class="anchor" id="shufflestates"></a>shuffleStates() | Returns an Object reference to a new [state](https://kb.tabletopsimulator.com/host-guides/creating-states/) after randomly selecting and changing to one. | [<span class="ret obj"></span>](types.md) |
 split([<span class="tag int"></span>](types.md) piles) | Splits a deck, as evenly as possible, into a number of piles. | [<span class="ret tab"></span>](types.md) | [:i:](#split)
 spread([<span class="tag flo"></span>](types.md) distance) | Uses the spread action on a deck. | [<span class="ret tab"></span>](types.md) | [:i:](#spread)
 takeObject([<span class="tag tab"></span>](types.md) parameters) | Takes an object out of a container (bag/deck/chip stack), returning a reference to the object that was taken out. | [<span class="ret obj"></span>](types.md) | [:i:](#takeobject)
