@@ -197,7 +197,7 @@ getJoints() | Returns information on any joints attached to this object. | [<spa
 <a class="anchor" id="getlock"></a>getLock() | If the Object is locked. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="getname"></a>getName() | Name, also shows as part of Object's tooltip. | [<span class="ret str"></span>](types.md) |
 getObjects() | Returns data describing the objects contained within in the zone/bag/deck. | [<span class="ret var"></span>](types.md) | [:i:](#getobjects)
-<a class="anchor" id="getquantity"></a>getQuantity() | How many objects are in the stack. Returns -1 if the Object is not a stack. | [<span class="ret int"></span>](types.md) |
+<a class="anchor" id="getquantity"></a>getQuantity() | Returns the number of objects contained within (if the Object is a bag, deck or stack), otherwise -1. | [<span class="ret int"></span>](types.md) |
 getRotationValue() | Returns the current rotationValue. Rotation values are used to give value to different rotations (like dice). | [<span class="ret var"></span>](types.md) | [:i:](#getrotationvalue)
 getRotationValues() | Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice). | [<span class="ret tab"></span>](types.md) | [:i:](#getrotationvalues)
 <a class="anchor" id="getselectingplayers"></a>getSelectingPlayers() | Returns a table of the player colors currently selecting the object. | [<span class="ret tab"></span>](types.md)
