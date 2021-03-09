@@ -223,7 +223,7 @@ setFogOfWarReveal([<span class="tag tab"></span>](types.md)&nbsp;fog_settings) |
 <a class="anchor" id="setgmnotes"></a>setGMNotes([<span class="tag str"></span>](types.md)&nbsp;notes) | Sets Game Master Notes only visible for [Player Color](player-color.md) Black. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="setlock"></a>setLock([<span class="tag boo"></span>](types.md)&nbsp;lock) | Sets if an object is locked in place. | [<span class="ret boo"></span>](types.md) |
 <a class="anchor" id="setname"></a>setName([<span class="tag str"></span>](types.md)&nbsp;name) | Sets a name for an Object. Shows in tooltip. | [<span class="ret boo"></span>](types.md)
-setRotationValue([<span class="tag int"></span>](types.md)/[<span class="tag str"></span>](types.md)/[<span class="tag flo"></span>](types.md) rotation_value) | Sets the Object's rotation value i.e. physically rotates the object. | | [:i:](#setrotationvalue)
+setRotationValue([<span class="tag var"></span>](types.md) rotation_value) | Sets the Object's rotation value i.e. physically rotates the object. | | [:i:](#setrotationvalue)
 setRotationValues([<span class="tag tab"></span>](types.md)&nbsp;rotation_values) | Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). | [<span class="ret boo"></span>](types.md) | [:i:](#setrotationvalues)
 <a class="anchor" id="setstate"></a>setState([<span class="tag int"></span>](types.md)&nbsp;state_id) | Sets [state](https://kb.tabletopsimulator.com/host-guides/creating-states/) of an Object. State ids (indexes) start at 1. | [<span class="ret obj"></span>](types.md) |
 setValue([<span class="tag var"></span>](types.md)&nbsp;value) | Sets the Object's value. This represents something different depending on the Object's [type](#type). | [<span class="ret boo"></span>](types.md) | [:i:](#setvalue)
@@ -1209,7 +1209,7 @@ self.setFogOfWarReveal(params)
 Sets the Object's rotation value i.e. physically rotates the object.
 
 !!!info "setRotationValue(rotation_value)"
-	* [<span class="tag int"></span>](types.md)/[<span class="tag str"></span>](types.md)/[<span class="tag flo"></span>](types.md) **rotation_value**: A [rotation value](#getrotationvalues). Should be a [<span class="tag int"></span>](types.md), [<span class="tag str"></span>](types.md) or [<span class="tag flo"></span>](types.md).
+	* [<span class="tag var"></span>](types.md) **rotation_value**: A [rotation value](#getrotationvalues). Should be a [<span class="tag int"></span>](types.md), [<span class="tag str"></span>](types.md) or [<span class="tag flo"></span>](types.md).
 
 The Object will be elevated (smooth moved upward), smoothly rotated to the rotation corresponding with the specified `rotation_value` and then released to fall back into place.
 
@@ -1227,7 +1227,7 @@ The Object will be elevated (smooth moved upward), smoothly rotated to the rotat
 
 !!!info "setRotationValues(rotation_values)"
 	* [<span class="tag tab"></span>](types.md)&nbsp;**rotation_values**: A Table containing Tables with the following values. 1 sub-Table per "face".
-		* [<span class="tag int"></span>](types.md)/[<span class="tag str"></span>](types.md)/[<span class="tag flo"></span>](types.md) **value**: Value associated with the rotation.
+		* [<span class="tag var"></span>](types.md) **value**: Value associated with the rotation. Should be a [<span class="tag int"></span>](types.md), [<span class="tag str"></span>](types.md) or [<span class="tag flo"></span>](types.md).
 			* {>>If `value` is a string starting with "#", then it will not be displayed in the Object's tooltip.<<}
 		* [<span class="tag vec"></span>](types.md#vector) **rotation**: The rotation of the Object that corresponds with the provided `value`.
 
