@@ -83,7 +83,7 @@ nav:
       - Counter: behavior/counter.md
       - RPGFigurine: behavior/rpgfigurine.md
       - TextTool: behavior/texttool.md
-    - Background: backgrounds.md
+    - Backgrounds: backgrounds.md
     - Color: color.md
     - Component: component.md
     - Grid: grid.md
