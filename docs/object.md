@@ -138,17 +138,17 @@ setRotationSmooth([<span class="tag vec"></span>](types.md#vector)&nbsp;vector, 
 
 
 ###Tag Functions
-These functions deal with the [Tags](https://kb.tabletopsimulator.com/game-tools/object-tags/) attached to the object. An individual tag is reprented by a [<span class="tag str"></span>](types.md), and is functionally case-insensitive.
+These functions deal with the [Tags](https://kb.tabletopsimulator.com/game-tools/object-tags/) associated with the object. An individual tag is a [<span class="tag str"></span>](types.md) and is case-insensitive.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-<a class="anchor" id="addtag"></a>addTag([<span class="tag str"></span>](types.md) tag) | Attaches the given tag to the object. | [<span class="ret boo"></span>](types.md)
-<a class="anchor" id="gettags"></a>getTags() | Returns a Table of the tags attached to the object. | [<span class="ret tab"></span>](types.md)
-<a class="anchor" id="hasanytag"></a>hasAnyTag() | Returns whether the object has any attached tags. | [<span class="ret boo"></span>](types.md)
-<a class="anchor" id="hasmatchingtag"></a>hasMatchingTag([<span class="tag obj"></span>](types.md) other) | Returns whether the other object shares at least one attached tag with this object. | [<span class="ret boo"></span>](types.md)
-<a class="anchor" id="hastag"></a>hasTag([<span class="tag str"></span>](types.md)) | Returns whether the given tag is attached to the object. | [<span class="ret boo"></span>](types.md)
-<a class="anchor" id="settags"></a>setTags([<span class="tag tab"></span>](types.md)&nbsp;table) | Sets the tags attached to the object. | [<span class="ret boo"></span>](types.md) |
-<a class="anchor" id="removetag"></a>removeTag([<span class="tag str"></span>](types.md)) | Removes the given tag from the object. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="addtag"></a>addTag([<span class="tag str"></span>](types.md) tag) | Adds the specified tag to the object. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="gettags"></a>getTags() | Returns a table of tags ([<span class="tag str"></span>](types.md)) that have been added to the object. | [<span class="ret tab"></span>](types.md)
+<a class="anchor" id="hasanytag"></a>hasAnyTag() | Returns whether the object has any tags. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="hasmatchingtag"></a>hasMatchingTag([<span class="tag obj"></span>](types.md) other) | Returns whether the object and the specified `other` object share at least one tag in common. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="hastag"></a>hasTag([<span class="tag str"></span>](types.md) tag) | Returns whether the object has the specified tag. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="removetag"></a>removeTag([<span class="tag str"></span>](types.md) tag) | Removes the specified tag from the object. | [<span class="ret boo"></span>](types.md)
+<a class="anchor" id="settags"></a>setTags([<span class="tag tab"></span>](types.md)&nbsp;tags) | Replaces all tags on the object with those contained in the specified table (containing [<span class="tag str"></span>](types.md)). | [<span class="ret boo"></span>](types.md) |
 
 If you want to create your own system in which object tags govern the interactions, the canonical logic is that if the system has no tags it interacts with everything, but if it has any tags then it only interacts with objects which share one of them.  i.e. (assuming the system is represented by an in-game object):
 ```lua
