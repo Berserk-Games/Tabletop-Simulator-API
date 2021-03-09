@@ -1129,7 +1129,7 @@
 </ul>
 </blockquote>
 <h2 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link">&para;</a></h2>
-<p>Like <a href="object.md#member-variables">Object member variables</a>, Clocks have their own member variable.</p>
+<p>Like <a href="../../object/#member-variables">Object member variables</a>, Clocks have their own member variable.</p>
 <table>
 <thead>
 <tr>
@@ -1142,7 +1142,7 @@
 <tr>
 <td><a class="anchor" id="paused"></a>paused</td>
 <td>If the clock timer is paused.</td>
-<td align="left"><a href="types.md"><span class="tag boo"></span></a></td>
+<td align="left"><a href="../../types/"><span class="tag boo"></span></a></td>
 </tr>
 </tbody>
 </table>
@@ -1161,20 +1161,20 @@
 <tbody>
 <tr>
 <td><a class="anchor" id="getvalue"></a>getValue()</td>
-<td>Current time in stopwatch or timer mode. Clock mode returns 0. This function acts the same as <a href="object.md#getvalue">Object's getValue()</a>.</td>
-<td><a href="types.md"><span class="ret int"></span></a></td>
+<td>Current time in stopwatch or timer mode. Clock mode returns 0. This function acts the same as <a href="../../object/#getvalue">Object's getValue()</a>.</td>
+<td><a href="../../types/"><span class="ret int"></span></a></td>
 <td align="right"></td>
 </tr>
 <tr>
 <td><a class="anchor" id="pausestart"></a>pauseStart()</td>
 <td>Pauses/resumes a Clock in stopwatch or timer mode.</td>
-<td><a href="types.md"><span class="ret boo"></span></a></td>
+<td><a href="../../types/"><span class="ret boo"></span></a></td>
 <td align="right"></td>
 </tr>
 <tr>
-<td>setValue(<a href="types.md"><span class="tag int"></span></a> seconds)</td>
-<td>Switches clock to timer and sets countdown time. This function acts the same as <a href="object.md#setvalue">Object's setValue()</a>.</td>
-<td><a href="types.md"><span class="ret boo"></span></a></td>
+<td>setValue(<a href="../../types/"><span class="tag int"></span></a> seconds)</td>
+<td>Switches clock to timer and sets countdown time. This function acts the same as <a href="../../object/#setvalue">Object's setValue()</a>.</td>
+<td><a href="../../types/"><span class="ret boo"></span></a></td>
 <td align="right"><a href="#setvalue"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
@@ -1182,13 +1182,13 @@
 <tr>
 <td><a class="anchor" id="showcurrenttime"></a>showCurrentTime()</td>
 <td>Switches clock to display current time. It will clear any stopwatch or timer.</td>
-<td><a href="types.md"><span class="ret boo"></span></a></td>
+<td><a href="../../types/"><span class="ret boo"></span></a></td>
 <td align="right"></td>
 </tr>
 <tr>
 <td><a class="anchor" id="startstopwatch"></a>startStopwatch()</td>
 <td>Switches clock to stopwatch, setting time to 0. It will reset time if already in stopwatch mode.</td>
-<td><a href="types.md"><span class="ret boo"></span></a></td>
+<td><a href="../../types/"><span class="ret boo"></span></a></td>
 <td align="right"></td>
 </tr>
 </tbody>
@@ -1196,11 +1196,11 @@
 <hr />
 <h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link">&para;</a></h2>
 <h3 id="setvalue">setValue(...)<a class="headerlink" href="#setvalue" title="Permanent link">&para;</a></h3>
-<p><a href="types.md"><span class="ret boo"></span></a> Set the timer to display a number of seconds. This function acts the same as <a href="object.md#setvalue">Object's setValue()</a>. If the Clock is not in timer mode, it will be switched. If it is in timer mode, it will be paused and the remaining time will be changed. This will not start the countdown on its own.</p>
+<p><a href="../../types/"><span class="ret boo"></span></a> Set the timer to display a number of seconds. This function acts the same as <a href="../../object/#setvalue">Object's setValue()</a>. If the Clock is not in timer mode, it will be switched. If it is in timer mode, it will be paused and the remaining time will be changed. This will not start the countdown on its own.</p>
 <div class="admonition info">
 <p class="admonition-title">setValue(seconds)</p>
 <ul>
-<li><a href="types.md"><span class="tag int"></span></a> <strong>seconds</strong>: How many seconds will be counted down.</li>
+<li><a href="../../types/"><span class="tag int"></span></a> <strong>seconds</strong>: How many seconds will be counted down.</li>
 </ul>
 </div>
 <div class="highlight"><pre><span></span><code><span class="n">self</span><span class="p">.</span><span class="n">Clock</span><span class="p">.</span><span class="n">setValue</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
