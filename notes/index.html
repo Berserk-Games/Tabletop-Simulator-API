@@ -532,7 +532,7 @@
   
     <li class="md-nav__item">
       <a href="../backgrounds/" class="md-nav__link">
-        Background
+        Backgrounds
       </a>
     </li>
   
@@ -1238,7 +1238,7 @@
 </thead>
 <tbody>
 <tr>
-<td>addNotebookTab(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>addNotebookTab(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
 <td>Adds a notebook tab, returning its index.</td>
 <td><a href="../types/"><span class="ret int"></span></a></td>
 <td><a href="#addnotebooktab"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -1246,7 +1246,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>editNotebookTab(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>editNotebookTab(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
 <td>Edit an existing Tab in the notebook.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#editnotebooktab"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -1262,7 +1262,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>removeNotebookTab(<a href="../types/"><span class="tag int"></span></a>&nbsp;index)</td>
+<td>removeNotebookTab(<a href="../types/"><span class="tag int"></span></a> index)</td>
 <td>Remove a notebook tab.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#removenotebooktab"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -1290,7 +1290,7 @@
 <td></td>
 </tr>
 <tr>
-<td>setNotes(<a href="../types/"><span class="tag str"></span></a>&nbsp;notes)</td>
+<td>setNotes(<a href="../types/"><span class="tag str"></span></a> notes)</td>
 <td>Replace the text in the notes window with the string.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#setnotes"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -1303,7 +1303,7 @@
 <h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link">&para;</a></h2>
 <h3 id="notebook-function-details">Notebook Function Details<a class="headerlink" href="#notebook-function-details" title="Permanent link">&para;</a></h3>
 <h4 id="addnotebooktab">addNotebookTab(...)<a class="headerlink" href="#addnotebooktab" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret int"></span></a>&nbsp;Add a new notebook tab. If it failed to create a new tab, a -1 is returned instead. Indexes for notebook tabs begin at 0.</p>
+<p><a href="../types/"><span class="ret int"></span></a> Add a new notebook tab. If it failed to create a new tab, a -1 is returned instead. Indexes for notebook tabs begin at 0.</p>
 <div class="admonition info">
 <p class="admonition-title">addNotebookTab(parameters)</p>
 <ul>
@@ -1330,7 +1330,7 @@
 </code></pre></div>
 <hr />
 <h4 id="editnotebooktab">editNotebookTab(...)<a class="headerlink" href="#editnotebooktab" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Edit an existing Tab in the notebook. Indexes for notebook tabs begin at 0.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Edit an existing Tab in the notebook. Indexes for notebook tabs begin at 0.</p>
 <div class="admonition info">
 <p class="admonition-title">editNotebookTab(parameters)</p>
 <ul>
@@ -1362,7 +1362,7 @@
 </code></pre></div>
 <hr />
 <h4 id="getnotebooktabs">getNotebookTabs()<a class="headerlink" href="#getnotebooktabs" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table containing data on all tabs in the notebook. Indexes for notebook tabs begin at 0.</p>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a Table containing data on all tabs in the notebook. Indexes for notebook tabs begin at 0.</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1">--Example Usage</span>
 <span class="n">tabInfo</span> <span class="o">=</span> <span class="n">Notes</span><span class="p">.</span><span class="n">getNotebookTabs</span><span class="p">()</span>
 </code></pre></div>
@@ -1375,7 +1375,7 @@
 </code></pre></div></p>
 <hr />
 <h4 id="removenotebooktab">removeNotebookTab(...)<a class="headerlink" href="#removenotebooktab" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Remove a notebook tab. Notebook tab indexes begin at 0.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Remove a notebook tab. Notebook tab indexes begin at 0.</p>
 <div class="admonition info">
 <p class="admonition-title">removeNotebookTab(index)</p>
 <ul>
@@ -1387,7 +1387,7 @@
 <hr />
 <h3 id="notes-function-details">Notes Function Details<a class="headerlink" href="#notes-function-details" title="Permanent link">&para;</a></h3>
 <h4 id="setnotes">setNotes(...)<a class="headerlink" href="#setnotes" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Replace the text in the notes window with the string. The notes is an area which displays text in the lower-right corner of the screen.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Replace the text in the notes window with the string. The notes is an area which displays text in the lower-right corner of the screen.</p>
 <div class="admonition info">
 <p class="admonition-title">setNotes(notes)</p>
 <ul>

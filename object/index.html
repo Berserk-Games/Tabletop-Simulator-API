@@ -1212,7 +1212,7 @@
   
     <li class="md-nav__item">
       <a href="../backgrounds/" class="md-nav__link">
-        Background
+        Backgrounds
       </a>
     </li>
   
@@ -2488,7 +2488,7 @@ property, but are unable to assign a new value to it.</p>
 </tr>
 <tr>
 <td><a class="anchor" id="name"></a>name</td>
-<td>Internal resource name for this Object. Read only, and only useful for <a href="../base/#spawnobjectjson">spawnObjectJSON()</a>. Generally, you want <a href="#getname">getName()</a>.</td>
+<td>Internal resource name for this Object. Read only, and only useful for <a href="../base/#spawnobjectdata">spawnObjectData()</a>. Generally, you want <a href="#getname">getName()</a>.</td>
 <td align="left"><a href="../types/"><span class="tag str"></span></a></td>
 </tr>
 <tr>
@@ -2593,9 +2593,8 @@ property, but are unable to assign a new value to it.</p>
 <p>The <code>value_flags</code> and <code>value</code> member variables do not persist when the object is reloaded (such as loading a save and entering/exiting containers).</p>
 </div>
 <h3 id="behavior-variables">Behavior Variables<a class="headerlink" href="#behavior-variables" title="Permanent link">&para;</a></h3>
-<p>Some objects have additional behavior that is either unique to that specific object, or all objects of a particular
-<a href="#type">type</a>. This functionality is accessible as Object member variables, but will be <code>nil</code> unless the Object includes
-the behavior.</p>
+<p>Some objects provide additional behavior. This functionality is accessible as Object member variables, but will be <code>nil</code>
+unless the Object includes the behavior.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>The "Counter" Object has a <code>Counter</code> member variable. We'll use it to increment and retrieve the counter's value.
@@ -2640,12 +2639,12 @@ the behavior.</p>
 <tr>
 <td><a class="anchor" id="rpgfigurine"></a>RPGFigurine</td>
 <td><a href="../behavior/rpgfigurine/">RPGFigurine</a></td>
-<td>All objects with the <a href="#type">type</a> "Figurine".</td>
+<td>"RPG Kit" animated figurine objects i.e. <a href="#type">type</a> "rpgFigurine".</td>
 </tr>
 <tr>
 <td><a class="anchor" id="texttool"></a>TextTool</td>
 <td><a href="behavior/TextTool.md">TextTool</a></td>
-<td>Available on 3D Text objects e.g. text created with the in-game "Text" tool.</td>
+<td>3D Text objects e.g. text created with the in-game Text tool.</td>
 </tr>
 </tbody>
 </table>
@@ -2664,7 +2663,7 @@ the behavior.</p>
 </thead>
 <tbody>
 <tr>
-<td>addForce(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector, <a href="../types/"><span class="tag int"></span></a>&nbsp;force_type)</td>
+<td>addForce(<a href="../types/#vector"><span class="tag vec"></span></a> vector, <a href="../types/"><span class="tag int"></span></a> force_type)</td>
 <td>Adds force to an object in a directional Vector.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#addforce"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2672,7 +2671,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>addTorque(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector, <a href="../types/"><span class="tag int"></span></a>&nbsp;force_type)</td>
+<td>addTorque(<a href="../types/#vector"><span class="tag vec"></span></a> vector, <a href="../types/"><span class="tag int"></span></a> force_type)</td>
 <td>Adds torque to an object in a rotational Vector.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#addtorque"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2770,7 +2769,7 @@ the behavior.</p>
 <td></td>
 </tr>
 <tr>
-<td>positionToLocal(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
+<td>positionToLocal(<a href="../types/#vector"><span class="tag vec"></span></a> vector)</td>
 <td>Returns a Vector after converting a world Vector (World Position) to a local Vector (<a href="../types/#position">Local Position</a>).</td>
 <td><a href="../types/#vector"><span class="ret vec"></span></a></td>
 <td><a href="#positiontolocal"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2778,7 +2777,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>positionToWorld(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
+<td>positionToWorld(<a href="../types/#vector"><span class="tag vec"></span></a> vector)</td>
 <td>Returns a Vector after converting a local Vector (Local Position) to a world Vector (<a href="../types/#position">World Position</a>).</td>
 <td><a href="../types/#vector"><span class="ret vec"></span></a></td>
 <td><a href="#positiontoworld"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2786,7 +2785,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>rotate(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
+<td>rotate(<a href="../types/#vector"><span class="tag vec"></span></a> vector)</td>
 <td>Rotates Object smoothly in the direction of the given Vector.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#rotate"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2794,7 +2793,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>scale(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector or <a href="../types/"><span class="tag flo"></span></a>)</td>
+<td>scale(<a href="../types/#vector"><span class="tag vec"></span></a> vector or <a href="../types/"><span class="tag flo"></span></a>)</td>
 <td>Scales Object by a multiple.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#scale"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2802,19 +2801,19 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="setangularvelocity"></a>setAngularVelocity(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
+<td><a class="anchor" id="setangularvelocity"></a>setAngularVelocity(<a href="../types/#vector"><span class="tag vec"></span></a> vector)</td>
 <td>Sets a Vector as the current angular velocity.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="setposition"></a>setPosition(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
+<td><a class="anchor" id="setposition"></a>setPosition(<a href="../types/#vector"><span class="tag vec"></span></a> vector)</td>
 <td>Instantly moves an Object to the given Vector. The Vector is interpreted as <a href="../types/#position">World Position</a>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>setPositionSmooth(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector, <a href="../types/"><span class="tag boo"></span></a>&nbsp;collide, <a href="../types/"><span class="tag boo"></span></a>&nbsp;fast)</td>
+<td>setPositionSmooth(<a href="../types/#vector"><span class="tag vec"></span></a> vector, <a href="../types/"><span class="tag boo"></span></a> collide, <a href="../types/"><span class="tag boo"></span></a> fast)</td>
 <td>Moves the Object smoothly to the given Vector. The Vector is interpreted as <a href="../types/#position">World Position</a>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#setpositionsmooth"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2822,13 +2821,13 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="setrotation"></a>setRotation(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
+<td><a class="anchor" id="setrotation"></a>setRotation(<a href="../types/#vector"><span class="tag vec"></span></a> vector)</td>
 <td>Instantly rotates an Object to the given Vector.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>setRotationSmooth(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector, <a href="../types/"><span class="tag boo"></span></a>&nbsp;collide, <a href="../types/"><span class="tag boo"></span></a>&nbsp;fast)</td>
+<td>setRotationSmooth(<a href="../types/#vector"><span class="tag vec"></span></a> vector, <a href="../types/"><span class="tag boo"></span></a> collide, <a href="../types/"><span class="tag boo"></span></a> fast)</td>
 <td>Rotates the Object smoothly to the given Vector.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#setrotationsmooth"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2836,19 +2835,19 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="setscale"></a>setScale(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
+<td><a class="anchor" id="setscale"></a>setScale(<a href="../types/#vector"><span class="tag vec"></span></a> vector)</td>
 <td>Sets a Vector as the current scale.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="setvelocity"></a>setVelocity(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
+<td><a class="anchor" id="setvelocity"></a>setVelocity(<a href="../types/#vector"><span class="tag vec"></span></a> vector)</td>
 <td>Sets a Vector as the current velocity.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="translate"></a>translate(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;vector)</td>
+<td><a class="anchor" id="translate"></a>translate(<a href="../types/#vector"><span class="tag vec"></span></a> vector)</td>
 <td>Smoothly moves Object by the given Vector offset.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
@@ -2856,7 +2855,7 @@ the behavior.</p>
 </tbody>
 </table>
 <h3 id="tag-functions">Tag Functions<a class="headerlink" href="#tag-functions" title="Permanent link">&para;</a></h3>
-<p>These functions deal with the <a href="https://kb.tabletopsimulator.com/game-tools/object-tags/">Tags</a> attached to the object. An individual tag is reprented by a <a href="../types/"><span class="tag str"></span></a>, and is functionally case-insensitive.</p>
+<p>These functions deal with the <a href="https://kb.tabletopsimulator.com/game-tools/object-tags/">Tags</a> associated with the object. An individual tag is a <a href="../types/"><span class="tag str"></span></a> and is case-insensitive.</p>
 <table>
 <thead>
 <tr>
@@ -2869,43 +2868,43 @@ the behavior.</p>
 <tbody>
 <tr>
 <td><a class="anchor" id="addtag"></a>addTag(<a href="../types/"><span class="tag str"></span></a> tag)</td>
-<td>Attaches the given tag to the object.</td>
+<td>Adds the specified tag to the object.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
 <td><a class="anchor" id="gettags"></a>getTags()</td>
-<td>Returns a Table of the tags attached to the object.</td>
+<td>Returns a table of tags (<a href="../types/"><span class="tag str"></span></a>) that have been added to the object.</td>
 <td><a href="../types/"><span class="ret tab"></span></a></td>
 <td></td>
 </tr>
 <tr>
 <td><a class="anchor" id="hasanytag"></a>hasAnyTag()</td>
-<td>Returns whether the object has any attached tags.</td>
+<td>Returns whether the object has any tags.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
 <td><a class="anchor" id="hasmatchingtag"></a>hasMatchingTag(<a href="../types/"><span class="tag obj"></span></a> other)</td>
-<td>Returns whether the other object shares at least one attached tag with this object.</td>
+<td>Returns whether the object and the specified <code>other</code> object share at least one tag in common.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="hastag"></a>hasTag(<a href="../types/"><span class="tag str"></span></a>)</td>
-<td>Returns whether the given tag is attached to the object.</td>
+<td><a class="anchor" id="hastag"></a>hasTag(<a href="../types/"><span class="tag str"></span></a> tag)</td>
+<td>Returns whether the object has the specified tag.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="settags"></a>setTags(<a href="../types/"><span class="tag tab"></span></a>&nbsp;table)</td>
-<td>Sets the tags attached to the object.</td>
+<td><a class="anchor" id="removetag"></a>removeTag(<a href="../types/"><span class="tag str"></span></a> tag)</td>
+<td>Removes the specified tag from the object.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="removetag"></a>removeTag(<a href="../types/"><span class="tag str"></span></a>)</td>
-<td>Removes the given tag from the object.</td>
+<td><a class="anchor" id="settags"></a>setTags(<a href="../types/"><span class="tag tab"></span></a> tags)</td>
+<td>Replaces all tags on the object with those contained in the specified table (containing <a href="../types/"><span class="tag str"></span></a>).</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
@@ -2941,7 +2940,7 @@ the behavior.</p>
 <td></td>
 </tr>
 <tr>
-<td>createButton(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>createButton(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
 <td>Creates a scripted button attached to the Object.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#createbutton"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2949,7 +2948,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>createInput(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>createInput(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
 <td>Creates a scripted input attached to the Object.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#createinput"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2957,7 +2956,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>editButton(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>editButton(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
 <td>Modify an existing button.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#editbutton"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2965,7 +2964,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>editInput(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>editInput(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
 <td>Modify an existing input.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#editinput"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2989,7 +2988,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>removeButton(<a href="../types/"><span class="tag int"></span></a>&nbsp;index)</td>
+<td>removeButton(<a href="../types/"><span class="tag int"></span></a> index)</td>
 <td>Removes a specific button.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#removebutton"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2997,7 +2996,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>removeInput(<a href="../types/"><span class="tag int"></span></a>&nbsp;index)</td>
+<td>removeInput(<a href="../types/"><span class="tag int"></span></a> index)</td>
 <td>Removes a specific button.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#removeinput"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3108,7 +3107,7 @@ the behavior.</p>
 </tr>
 <tr>
 <td><a class="anchor" id="getquantity"></a>getQuantity()</td>
-<td>How many objects are in the stack. Returns -1 if the Object is not a stack.</td>
+<td>Returns the number of objects contained within (if the Object is a bag, deck or stack), otherwise -1.</td>
 <td><a href="../types/"><span class="ret int"></span></a></td>
 <td></td>
 </tr>
@@ -3177,13 +3176,13 @@ the behavior.</p>
 </thead>
 <tbody>
 <tr>
-<td><a class="anchor" id="setcolortint"></a>setColorTint(<a href="../types/#color"><span class="tag col"></span></a>&nbsp;Color)</td>
+<td><a class="anchor" id="setcolortint"></a>setColorTint(<a href="../types/#color"><span class="tag col"></span></a> Color)</td>
 <td>Sets the Color tint.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>setCustomObject(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>setCustomObject(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
 <td>Sets a custom Object's properties.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#setcustomobject"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3191,13 +3190,13 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="setdescription"></a>setDescription(<a href="../types/"><span class="tag str"></span></a>&nbsp;description)</td>
+<td><a class="anchor" id="setdescription"></a>setDescription(<a href="../types/"><span class="tag str"></span></a> description)</td>
 <td>Sets a description for an Object. Shows in tooltip after delay.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>setFogOfWarReveal(<a href="../types/"><span class="tag tab"></span></a>&nbsp;fog_settings)</td>
+<td>setFogOfWarReveal(<a href="../types/"><span class="tag tab"></span></a> fog_settings)</td>
 <td>Establish the settings and enable/disable an Object's revealing of <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#setfogofwarreveal"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3205,25 +3204,25 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="setgmnotes"></a>setGMNotes(<a href="../types/"><span class="tag str"></span></a>&nbsp;notes)</td>
+<td><a class="anchor" id="setgmnotes"></a>setGMNotes(<a href="../types/"><span class="tag str"></span></a> notes)</td>
 <td>Sets Game Master Notes only visible for <a href="../player-color/">Player Color</a> Black.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="setlock"></a>setLock(<a href="../types/"><span class="tag boo"></span></a>&nbsp;lock)</td>
+<td><a class="anchor" id="setlock"></a>setLock(<a href="../types/"><span class="tag boo"></span></a> lock)</td>
 <td>Sets if an object is locked in place.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="setname"></a>setName(<a href="../types/"><span class="tag str"></span></a>&nbsp;name)</td>
+<td><a class="anchor" id="setname"></a>setName(<a href="../types/"><span class="tag str"></span></a> name)</td>
 <td>Sets a name for an Object. Shows in tooltip.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>setRotationValue(<a href="../types/"><span class="tag int"></span></a>/<a href="../types/"><span class="tag str"></span></a>/<a href="../types/"><span class="tag flo"></span></a> rotation_value)</td>
+<td>setRotationValue(<a href="../types/"><span class="tag var"></span></a> rotation_value)</td>
 <td>Sets the Object's rotation value i.e. physically rotates the object.</td>
 <td></td>
 <td><a href="#setrotationvalue"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3231,7 +3230,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>setRotationValues(<a href="../types/"><span class="tag tab"></span></a>&nbsp;rotation_values)</td>
+<td>setRotationValues(<a href="../types/"><span class="tag tab"></span></a> rotation_values)</td>
 <td>Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice).</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#setrotationvalues"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3239,13 +3238,13 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="setstate"></a>setState(<a href="../types/"><span class="tag int"></span></a>&nbsp;state_id)</td>
+<td><a class="anchor" id="setstate"></a>setState(<a href="../types/"><span class="tag int"></span></a> state_id)</td>
 <td>Sets <a href="https://kb.tabletopsimulator.com/host-guides/creating-states/">state</a> of an Object. State ids (indexes) start at 1.</td>
 <td><a href="../types/"><span class="ret obj"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>setValue(<a href="../types/"><span class="tag var"></span></a>&nbsp;value)</td>
+<td>setValue(<a href="../types/"><span class="tag var"></span></a> value)</td>
 <td>Sets the Object's value. This represents something different depending on the Object's <a href="#type">type</a>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#setvalue"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3267,13 +3266,13 @@ the behavior.</p>
 </thead>
 <tbody>
 <tr>
-<td><a class="anchor" id="addattachment"></a>addAttachment(<a href="../types/"><span class="tag obj"></span></a>&nbsp;Object)</td>
+<td><a class="anchor" id="addattachment"></a>addAttachment(<a href="../types/"><span class="tag obj"></span></a> Object)</td>
 <td>The Object supplied as param is destroyed and becomes a dummy Object child.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="fnc_addcontextmenuitem"></a>addContextMenuItem(<a href="../types/"><span class="tag str"></span></a>&nbsp;label, <a href="../types/"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="../types/"><span class="tag boo"></span></a>&nbsp;keep_open)</td>
+<td><a class="anchor" id="fnc_addcontextmenuitem"></a>addContextMenuItem(<a href="../types/"><span class="tag str"></span></a> label, <a href="../types/"><span class="tag fun"></span></a> toRunFunc, <a href="../types/"><span class="tag boo"></span></a> keep_open)</td>
 <td>Adds a menu item to the objects right-click context menu.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#addcontextmenuitem"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3287,7 +3286,7 @@ the behavior.</p>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="removeattachment"></a>removeAttachment(<a href="../types/"><span class="tag int"></span></a>&nbsp;index)</td>
+<td><a class="anchor" id="removeattachment"></a>removeAttachment(<a href="../types/"><span class="tag int"></span></a> index)</td>
 <td>Removes a child with the given index. Use <a href="#getattachments">getAttachments()</a> to find out the index property.</td>
 <td><a href="../types/"><span class="ret obj"></span></a></td>
 <td></td>
@@ -3299,7 +3298,7 @@ the behavior.</p>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="destroyattachment"></a>destroyAttachment(<a href="../types/"><span class="tag int"></span></a>&nbsp;index)</td>
+<td><a class="anchor" id="destroyattachment"></a>destroyAttachment(<a href="../types/"><span class="tag int"></span></a> index)</td>
 <td>Destroys an attachment with the given index.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
@@ -3311,13 +3310,13 @@ the behavior.</p>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="addtoplayerselection"></a>addToPlayerSelection(<a href="../types/"><span class="tag str"></span></a>&nbsp;player_color)</td>
+<td><a class="anchor" id="addtoplayerselection"></a>addToPlayerSelection(<a href="../types/"><span class="tag str"></span></a> player_color)</td>
 <td>Adds object to player's selection.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="removefromlayerselection"></a>removeFromPlayerSelection(<a href="../types/"><span class="tag str"></span></a>&nbsp;player_color)</td>
+<td><a class="anchor" id="removefromlayerselection"></a>removeFromPlayerSelection(<a href="../types/"><span class="tag str"></span></a> player_color)</td>
 <td>Removes object from player's selection.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
@@ -3329,7 +3328,7 @@ the behavior.</p>
 <td></td>
 </tr>
 <tr>
-<td>clone(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>clone(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
 <td>Copy/Paste this Object, returning a reference to the new Object.</td>
 <td><a href="../types/"><span class="ret obj"></span></a></td>
 <td><a href="#clone"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3337,7 +3336,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>cut(<a href="../types/"><span class="tag int"></span></a>&nbsp;count)</td>
+<td>cut(<a href="../types/"><span class="tag int"></span></a> count)</td>
 <td>Cuts (splits) a deck at the given card count.</td>
 <td><a href="../types/"><span class="ret tab"></span></a></td>
 <td><a href="#cut"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3345,7 +3344,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>deal(<a href="../types/"><span class="tag int"></span></a>&nbsp;number, <a href="../types/"><span class="tag str"></span></a>&nbsp;player_color, <a href="../types/"><span class="tag int"></span></a>&nbsp;index)</td>
+<td>deal(<a href="../types/"><span class="tag int"></span></a> number, <a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag int"></span></a> index)</td>
 <td>Deals Objects. Will deal from decks/bags/stacks/individual items.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#deal"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3353,7 +3352,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>dealToColorWithOffset(<a href="../types/#vector"><span class="tag vec"></span></a>&nbsp;offset, <a href="../types/"><span class="tag boo"></span></a>&nbsp;flip, <a href="../types/"><span class="tag str"></span></a>&nbsp;player_color)</td>
+<td>dealToColorWithOffset(<a href="../types/#vector"><span class="tag vec"></span></a> offset, <a href="../types/"><span class="tag boo"></span></a> flip, <a href="../types/"><span class="tag str"></span></a> player_color)</td>
 <td>Deals from a deck to a position relative to the hand zone.</td>
 <td><a href="../types/"><span class="ret obj"></span></a></td>
 <td><a href="#dealtocolorwithoffset"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3373,19 +3372,19 @@ the behavior.</p>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="highlighton"></a>highlightOn(<a href="../types/#color"><span class="tag col"></span></a>&nbsp;color, <a href="../types/"><span class="tag flo"></span></a>&nbsp;duration)</td>
+<td><a class="anchor" id="highlighton"></a>highlightOn(<a href="../types/#color"><span class="tag col"></span></a> color, <a href="../types/"><span class="tag flo"></span></a> duration)</td>
 <td>Creates a highlight around an Object.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="highlightoff"></a>highlightOff(<a href="../types/#color"><span class="tag col"></span></a>&nbsp;color)</td>
+<td><a class="anchor" id="highlightoff"></a>highlightOff(<a href="../types/#color"><span class="tag col"></span></a> color)</td>
 <td>Removes a highlight from around an Object.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>jointTo(<a href="../types/"><span class="tag obj"></span></a>&nbsp;object, <a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>jointTo(<a href="../types/"><span class="tag obj"></span></a> object, <a href="../types/"><span class="tag tab"></span></a> parameters)</td>
 <td>Joints objects together, in the same way the Joint tool does.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#jointto"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3393,7 +3392,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>putObject(<a href="../types/"><span class="tag obj"></span></a>&nbsp;put_object)</td>
+<td>putObject(<a href="../types/"><span class="tag obj"></span></a> put_object)</td>
 <td>Places an object into a container (chip stacks/bags/decks).</td>
 <td><a href="../types/"><span class="ret obj"></span></a></td>
 <td><a href="#putobject"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3401,13 +3400,13 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="randomize"></a>randomize(<a href="../types/"><span class="tag str"></span></a>&nbsp;color)</td>
+<td><a class="anchor" id="randomize"></a>randomize(<a href="../types/"><span class="tag str"></span></a> color)</td>
 <td>Shuffles deck/bag, rolls dice/coin, lifts other objects into the air. Same as pressing <code>R</code> by default. If the optional parameter <code>color</code> is used, this function will trigger <code>onObjectRandomized()</code>, passing that player color.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>registerCollisions(<a href="../types/"><span class="tag boo"></span></a>&nbsp;stay)</td>
+<td>registerCollisions(<a href="../types/"><span class="tag boo"></span></a> stay)</td>
 <td>Registers this object for Global collision events.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#registercollisions"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3447,7 +3446,7 @@ the behavior.</p>
 <td></td>
 </tr>
 <tr>
-<td>split(<a href="../types/"><span class="tag int"></span></a>&nbsp;piles)</td>
+<td>split(<a href="../types/"><span class="tag int"></span></a> piles)</td>
 <td>Splits a deck, as evenly as possible, into a number of piles.</td>
 <td><a href="../types/"><span class="ret tab"></span></a></td>
 <td><a href="#split"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3455,7 +3454,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>spread(<a href="../types/"><span class="tag flo"></span></a>&nbsp;distance)</td>
+<td>spread(<a href="../types/"><span class="tag flo"></span></a> distance)</td>
 <td>Uses the spread action on a deck.</td>
 <td><a href="../types/"><span class="ret tab"></span></a></td>
 <td><a href="#spread"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3463,7 +3462,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>takeObject(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>takeObject(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
 <td>Takes an object out of a container (bag/deck/chip stack), returning a reference to the object that was taken out.</td>
 <td><a href="../types/"><span class="ret obj"></span></a></td>
 <td><a href="#takeobject"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3493,7 +3492,7 @@ the behavior.</p>
 </thead>
 <tbody>
 <tr>
-<td>setHiddenFrom(<a href="../types/"><span class="tag tab"></span></a>&nbsp;players)</td>
+<td>setHiddenFrom(<a href="../types/"><span class="tag tab"></span></a> players)</td>
 <td>Hides the Object from the specified players, as if it were in a hand zone.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#sethiddenfrom"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3501,7 +3500,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>setInvisibleTo(<a href="../types/"><span class="tag tab"></span></a>&nbsp;players)</td>
+<td>setInvisibleTo(<a href="../types/"><span class="tag tab"></span></a> players)</td>
 <td>Hides the Object from the specified players, as if it were in a hidden zone.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#setinvisibleto"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3509,7 +3508,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>attachHider(<a href="../types/"><span class="tag str"></span></a>&nbsp;id, <a href="../types/"><span class="tag boo"></span></a>&nbsp;hidden, <a href="../types/"><span class="tag tab"></span></a>&nbsp;players)</td>
+<td>attachHider(<a href="../types/"><span class="tag str"></span></a> id, <a href="../types/"><span class="tag boo"></span></a> hidden, <a href="../types/"><span class="tag tab"></span></a> players)</td>
 <td>A more advanced version of <code>setHiddenFrom(...)</code>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#attachhider"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3517,7 +3516,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>attachInvisibleHider(<a href="../types/"><span class="tag str"></span></a>&nbsp;id, <a href="../types/"><span class="tag boo"></span></a>&nbsp;hidden, <a href="../types/"><span class="tag tab"></span></a>&nbsp;players)</td>
+<td>attachInvisibleHider(<a href="../types/"><span class="tag str"></span></a> id, <a href="../types/"><span class="tag boo"></span></a> hidden, <a href="../types/"><span class="tag tab"></span></a> players)</td>
 <td>A more advanced version of <code>setInvisibleTo(...)</code>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#attachinvisiblehider"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3546,7 +3545,7 @@ the behavior.</p>
 </thead>
 <tbody>
 <tr>
-<td>addDecal(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>addDecal(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
 <td>Add a Decal onto an object or the game world.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#adddecal"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3554,7 +3553,7 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>call(<a href="../types/"><span class="tag str"></span></a>&nbsp;func_name, <a href="../types/"><span class="tag tab"></span></a>&nbsp;func_params)</td>
+<td>call(<a href="../types/"><span class="tag str"></span></a> func_name, <a href="../types/"><span class="tag tab"></span></a> func_params)</td>
 <td>Used to call a Lua function on another entity.</td>
 <td><a href="../types/"><span class="ret var"></span></a></td>
 <td><a href="#call"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3584,13 +3583,13 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="gettable"></a>getTable(<a href="../types/"><span class="tag str"></span></a>&nbsp;table_name)</td>
+<td><a class="anchor" id="gettable"></a>getTable(<a href="../types/"><span class="tag str"></span></a> table_name)</td>
 <td>Data value of a variable in another Object's script. Can only return a table.</td>
 <td><a href="../types/"><span class="ret tab"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="getvar"></a>getVar(<a href="../types/"><span class="tag str"></span></a>&nbsp;var_name)</td>
+<td><a class="anchor" id="getvar"></a>getVar(<a href="../types/"><span class="tag str"></span></a> var_name)</td>
 <td>Data value of a variable in another entity's script. Cannot return a table.</td>
 <td><a href="../types/"><span class="ret var"></span></a></td>
 <td></td>
@@ -3602,7 +3601,7 @@ the behavior.</p>
 <td></td>
 </tr>
 <tr>
-<td>setDecals(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>setDecals(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
 <td>Sets which decals are on an object. This removes other decals already present, and can remove all decals as well.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#setdecals"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3610,13 +3609,13 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="setluascript"></a>setLuaScript(<a href="../types/"><span class="tag str"></span></a>&nbsp;script)</td>
+<td><a class="anchor" id="setluascript"></a>setLuaScript(<a href="../types/"><span class="tag str"></span></a> script)</td>
 <td>Input a string as an entity's Lua script. Generally only used after spawning a new Object.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>setSnapPoints(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>setSnapPoints(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
 <td>Spawns snap points from a list of parameters.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#setsnappoints"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3624,19 +3623,19 @@ the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td><a class="anchor" id="settable"></a>setTable(<a href="../types/"><span class="tag str"></span></a>&nbsp;func_name, <a href="../types/"><span class="tag tab"></span></a>&nbsp;data)</td>
+<td><a class="anchor" id="settable"></a>setTable(<a href="../types/"><span class="tag str"></span></a> func_name, <a href="../types/"><span class="tag tab"></span></a> data)</td>
 <td>Creates/updates a variable in another entity's script. Only used for tables.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a class="anchor" id="setvar"></a>setVar(<a href="../types/"><span class="tag str"></span></a>&nbsp;func_name, <a href="../types/"><span class="tag var"></span></a>&nbsp;data)</td>
+<td><a class="anchor" id="setvar"></a>setVar(<a href="../types/"><span class="tag str"></span></a> func_name, <a href="../types/"><span class="tag var"></span></a> data)</td>
 <td>Creates/updates a variable in another entity's script. Cannot set a table.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
 <tr>
-<td>setVectorLines(<a href="../types/"><span class="tag tab"></span></a>&nbsp;parameters)</td>
+<td>setVectorLines(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
 <td>Spawns Vector Lines from a list of parameters on this entity.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#setvectorlines"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -3649,7 +3648,7 @@ the behavior.</p>
 <h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link">&para;</a></h2>
 <h3 id="transform-function-details">Transform Function Details<a class="headerlink" href="#transform-function-details" title="Permanent link">&para;</a></h3>
 <h4 id="addforce">addForce(...)<a class="headerlink" href="#addforce" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Adds force to an object in a directional Vector.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Adds force to an object in a directional Vector.</p>
 <div class="admonition info">
 <p class="admonition-title">addForce(vector, force_type)</p>
 <ul>
@@ -3666,7 +3665,7 @@ the behavior.</p>
 </div>
 <hr />
 <h4 id="addtorque">addTorque(...)<a class="headerlink" href="#addtorque" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Adds torque to an object in a rotational Vector.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Adds torque to an object in a rotational Vector.</p>
 <div class="admonition info">
 <p class="admonition-title">addTorque(vector, force_type)</p>
 <ul>
@@ -3683,7 +3682,7 @@ the behavior.</p>
 </div>
 <hr />
 <h4 id="getbounds">getBounds()<a class="headerlink" href="#getbounds" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Table of Vector information describing the size of an object in Global terms. <a href="https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html">Bounds</a> are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.</p>
+<p><a href="../types/"><span class="ret vec"></span></a> Returns a Table of Vector information describing the size of an object in Global terms. <a href="https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html">Bounds</a> are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.</p>
 <div class="admonition info">
 <p class="admonition-title">Return Table</p>
 <ul>
@@ -3701,7 +3700,7 @@ the behavior.</p>
 </code></pre></div>
 <hr />
 <h4 id="getboundsnormalized">getBoundsNormalized()<a class="headerlink" href="#getboundsnormalized" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Table of Vector information describing the size of an object in Global terms, as if it was rotated to {0,0,0}. <a href="https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html">Bounds</a> are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.</p>
+<p><a href="../types/"><span class="ret vec"></span></a> Returns a Table of Vector information describing the size of an object in Global terms, as if it was rotated to {0,0,0}. <a href="https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html">Bounds</a> are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.</p>
 <div class="admonition info">
 <p class="admonition-title">Return Table</p>
 <ul>
@@ -3719,10 +3718,10 @@ the behavior.</p>
 </code></pre></div>
 <hr />
 <h4 id="getscale">getScale()<a class="headerlink" href="#getscale" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Vector of the current scale. Scale is not an absolute measurement, it is a multiple of the Object's default model size. So {x=2, y=2, z=2} would be a model twice its default size, not 2 units large.</p>
+<p><a href="../types/"><span class="ret vec"></span></a> Returns a Vector of the current scale. Scale is not an absolute measurement, it is a multiple of the Object's default model size. So {x=2, y=2, z=2} would be a model twice its default size, not 2 units large.</p>
 <hr />
 <h4 id="gettransformforward">getTransformForward()<a class="headerlink" href="#gettransformforward" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Vector of the forward direction of this Object. The direction is relative to how the object is facing.</p>
+<p><a href="../types/"><span class="ret vec"></span></a> Returns a Vector of the forward direction of this Object. The direction is relative to how the object is facing.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- Example of moving forward 5 units</span>
 <span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="n">distance</span> <span class="o">=</span> <span class="mi">5</span>
@@ -3738,7 +3737,7 @@ the behavior.</p>
 </code></pre></div>
 <hr />
 <h4 id="gettransformright">getTransformRight()<a class="headerlink" href="#gettransformright" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Vector of the forward direction of this object. The direction is relative to how the object is facing.</p>
+<p><a href="../types/"><span class="ret vec"></span></a> Returns a Vector of the forward direction of this object. The direction is relative to how the object is facing.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- Example of moving right 5 units</span>
 <span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="n">distance</span> <span class="o">=</span> <span class="mi">5</span>
@@ -3754,7 +3753,7 @@ the behavior.</p>
 </code></pre></div>
 <hr />
 <h4 id="gettransformup">getTransformUp()<a class="headerlink" href="#gettransformup" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Vector of the up direction of this Object. The direction is relative to how the object is facing.</p>
+<p><a href="../types/"><span class="ret vec"></span></a> Returns a Vector of the up direction of this Object. The direction is relative to how the object is facing.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- Example of moving up 5 units</span>
 <span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="n">distance</span> <span class="o">=</span> <span class="mi">5</span>
@@ -3770,7 +3769,7 @@ the behavior.</p>
 </code></pre></div>
 <hr />
 <h4 id="positiontolocal">positionToLocal(...)<a class="headerlink" href="#positiontolocal" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Vector after converting a world vector to a local Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.</p>
+<p><a href="../types/"><span class="ret vec"></span></a> Returns a Vector after converting a world vector to a local Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.</p>
 <div class="admonition tip">
 <p class="admonition-title">Object Scale</p>
 <p>This function takes the Object's scale into account, as the Object is the key relative point.</p>
@@ -3783,7 +3782,7 @@ the behavior.</p>
 </div>
 <hr />
 <h4 id="positiontoworld">positionToWorld(...)<a class="headerlink" href="#positiontoworld" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret vec"></span></a>&nbsp;Returns a Vector after converting a local Vector to a world Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.</p>
+<p><a href="../types/"><span class="ret vec"></span></a> Returns a Vector after converting a local Vector to a world Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.</p>
 <div class="admonition tip">
 <p class="admonition-title">Object Scale</p>
 <p>This function takes the Object's scale into account, as the Object is the key relative point.</p>
@@ -3796,7 +3795,7 @@ the behavior.</p>
 </div>
 <hr />
 <h4 id="rotate">rotate(...)<a class="headerlink" href="#rotate" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Rotates Object smoothly in the direction of the given Vector. This does not set the Object to face a specific rotation, it rotates the Object around by the number of degrees given for x/y/z.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Rotates Object smoothly in the direction of the given Vector. This does not set the Object to face a specific rotation, it rotates the Object around by the number of degrees given for x/y/z.</p>
 <div class="admonition info">
 <p class="admonition-title">rotate(vector)</p>
 <ul>
@@ -3808,7 +3807,7 @@ the behavior.</p>
 </code></pre></div>
 <hr />
 <h4 id="scale">scale(...)<a class="headerlink" href="#scale" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Scales Object by a multiple. This does not set the Object to a specific scale, it scales the Object by the given multiple.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Scales Object by a multiple. This does not set the Object to a specific scale, it scales the Object by the given multiple.</p>
 <div class="admonition info">
 <p class="admonition-title">scale(scale)</p>
 <ul>
@@ -3833,7 +3832,7 @@ the behavior.</p>
 </code></pre></div>
 <hr />
 <h4 id="setpositionsmooth">setPositionSmooth(...)<a class="headerlink" href="#setpositionsmooth" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Moves the Object smoothly to the given Vector.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Moves the Object smoothly to the given Vector.</p>
 <div class="admonition info">
 <p class="admonition-title">setPositionSmooth(vector, collide, fast)</p>
 <ul>
@@ -3844,7 +3843,7 @@ the behavior.</p>
 </div>
 <hr />
 <h4 id="setrotationsmooth">setRotationSmooth(...)<a class="headerlink" href="#setrotationsmooth" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Rotates the Object smoothly to the given Vector.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Rotates the Object smoothly to the given Vector.</p>
 <div class="admonition info">
 <p class="admonition-title">setRotationSmooth(vector, collide, fast)</p>
 <ul>
@@ -3856,7 +3855,7 @@ the behavior.</p>
 <hr />
 <h3 id="ui-function-details">UI Function Details<a class="headerlink" href="#ui-function-details" title="Permanent link">&para;</a></h3>
 <h4 id="createbutton">createButton(...)<a class="headerlink" href="#createbutton" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Creates a scripted button attached to the Object. Scripted buttons are buttons that can be clicked while in-game that trigger a function in a script.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Creates a scripted button attached to the Object. Scripted buttons are buttons that can be clicked while in-game that trigger a function in a script.</p>
 <details class="tip"><summary>Button Tips</summary><ul>
 <li>Buttons can not be clicked from their back side.</li>
 <li>Buttons can not be clicked if there is another object between the pointer and the button. This does not include the Object the button is attached to.</li>
@@ -3966,7 +3965,7 @@ the behavior.</p>
 </div>
 <hr />
 <h4 id="createinput">createInput(...)<a class="headerlink" href="#createinput" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Creates a scripted input attached to the Object. Scripted inputs are boxes you can click inside of in-game to input/edit text. Every letter typed triggers the function. The bool that is returned as part of the input_function allows you to determine when a player has finished editing the input.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Creates a scripted input attached to the Object. Scripted inputs are boxes you can click inside of in-game to input/edit text. Every letter typed triggers the function. The bool that is returned as part of the input_function allows you to determine when a player has finished editing the input.</p>
 <details class="tip"><summary>Input Tips</summary><ul>
 <li>Inputs can not be clicked from their back side.</li>
 <li>Inputs can not be clicked if there is another object between the pointer and the inputs. This does not include the Object the input is attached to.</li>
@@ -4093,7 +4092,7 @@ the behavior.</p>
 </code></pre></div>
 <hr />
 <h4 id="editbutton">editButton(...)<a class="headerlink" href="#editbutton" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Modify an existing button. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited button's element to remain. Indexes start at 0. The first button on any given Object has an index of 0, the next button on it has an index of 1, etc. Each Object has its own indexes.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Modify an existing button. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited button's element to remain. Indexes start at 0. The first button on any given Object has an index of 0, the next button on it has an index of 1, etc. Each Object has its own indexes.</p>
 <div class="admonition info">
 <p class="admonition-title">editButton(parameters)</p>
 <ul>
@@ -4121,7 +4120,7 @@ the behavior.</p>
 </code></pre></div>
 <hr />
 <h4 id="editinput">editInput(...)<a class="headerlink" href="#editinput" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Modify an existing input. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited input's element to remain. Indexes start at 0. The first input on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Modify an existing input. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited input's element to remain. Indexes start at 0. The first input on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.</p>
 <div class="admonition info">
 <p class="admonition-title">editInput(parameters)</p>
 <p><em>All fields besides <code>index</code> are optional. If not used, the element will default to the element's current setting.</em></p>
@@ -4138,7 +4137,7 @@ the behavior.</p>
 <li><a href="../types/"><span class="tag flo"></span></a> <strong>parameters.height</strong>: How tall the input will be, relative to the Object.</li>
 <li><a href="../types/"><span class="tag flo"></span></a> <strong>parameters.font_size</strong>: Size the label/value font will be, relative to the Object.</li>
 <li><a href="../types/#color"><span class="tag col"></span></a> <strong>parameters.color</strong>: A Color for the input's background.</li>
-<li><a href="../types/#color"><span class="tag col"></span></a>&nbsp;<strong>parameters.font_color</strong>: A Color for the value text.</li>
+<li><a href="../types/#color"><span class="tag col"></span></a> <strong>parameters.font_color</strong>: A Color for the value text.</li>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>parameters.tooltip</strong>: A popup of text, similar to how an Object's name is displayed on mouseover.</li>
 <li><a href="../types/"><span class="tag int"></span></a> <strong>parameters.alignment</strong>: How text is aligned in the input box.<ul>
 <li><strong>1</strong>: Automatic</li>
@@ -4172,15 +4171,15 @@ the behavior.</p>
 </code></pre></div>
 <hr />
 <h4 id="getbuttons">getButtons()<a class="headerlink" href="#getbuttons" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table of all buttons on this Object. The Table contains parameters tables with the same keys as seen in the <a href="#createbutton">createButton</a> section, except each Table of parameters also contains an <strong>index</strong> entry. This is used to identify each button, used by <a href="#editbutton">editButton</a> and <a href="#removebutton">removeButton</a>.</p>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a Table of all buttons on this Object. The Table contains parameters tables with the same keys as seen in the <a href="#createbutton">createButton</a> section, except each Table of parameters also contains an <strong>index</strong> entry. This is used to identify each button, used by <a href="#editbutton">editButton</a> and <a href="#removebutton">removeButton</a>.</p>
 <p>Indexes start at 0.</p>
 <hr />
 <h4 id="getinputs">getInputs()<a class="headerlink" href="#getinputs" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table of all inputs on this Object. The Table contains parameters tables with the same keys as seen in the <a href="#createinput">createInput</a> section, except each Table of parameters also contains an <strong>index</strong> entry. This is used to identify each input, used by <a href="#editinput">editInput</a> and <a href="#removeinput">removeInput</a>.</p>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a Table of all inputs on this Object. The Table contains parameters tables with the same keys as seen in the <a href="#createinput">createInput</a> section, except each Table of parameters also contains an <strong>index</strong> entry. This is used to identify each input, used by <a href="#editinput">editInput</a> and <a href="#removeinput">removeInput</a>.</p>
 <p>Indexes start at 0.</p>
 <hr />
 <h4 id="removebutton">removeButton(...)<a class="headerlink" href="#removebutton" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Removes a specific button. Indexes start at 0. The first button on any given Object has an index of 0, the next button on it has an index of 1, etc. Each Object has its own indexes.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Removes a specific button. Indexes start at 0. The first button on any given Object has an index of 0, the next button on it has an index of 1, etc. Each Object has its own indexes.</p>
 <p>Removing an index instantly causes all other higher indexes to shift down 1.</p>
 <div class="admonition info">
 <p class="admonition-title">removeButton(index)</p>
@@ -4190,7 +4189,7 @@ the behavior.</p>
 </div>
 <hr />
 <h4 id="removeinput">removeInput(...)<a class="headerlink" href="#removeinput" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Removes a specific input. Indexes start at 0. The first input on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Removes a specific input. Indexes start at 0. The first input on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.</p>
 <p>Removing an index instantly causes all other higher indexes to shift down 1.</p>
 <div class="admonition info">
 <p class="admonition-title">removeInput(index)</p>
@@ -4201,7 +4200,7 @@ the behavior.</p>
 <hr />
 <h3 id="get-function-details">Get Function Details<a class="headerlink" href="#get-function-details" title="Permanent link">&para;</a></h3>
 <h4 id="getcustomobject">getCustomObject()<a class="headerlink" href="#getcustomobject" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table with the Custom Object information of a Custom Object. See the <a href="../custom-game-objects/">Custom Game Objects</a> page for the kind of information returned.</p>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a Table with the Custom Object information of a Custom Object. See the <a href="../custom-game-objects/">Custom Game Objects</a> page for the kind of information returned.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- Example returned Table for a custom token</span>
 <span class="p">{</span>
     <span class="n">image</span> <span class="o">=</span> <span class="s2">&quot;SOME URL HERE&quot;</span><span class="p">,</span>
@@ -4216,7 +4215,7 @@ the behavior.</p>
 </div>
 <hr />
 <h4 id="getfogofwarreveal">getFogOfWarReveal()<a class="headerlink" href="#getfogofwarreveal" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Settings impacting <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a> being revealed. In the example returned table, these are the default values of any object.</p>
+<p><a href="../types/"><span class="ret tab"></span></a> Settings impacting <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a> being revealed. In the example returned table, these are the default values of any object.</p>
 <div class="admonition note">
 <p class="admonition-title">Color Selection</p>
 <p>"Black" and "All" are synonymous for Fog of War. Either means that all players can see the revealed area when <code>reveal = true</code>.</p>
@@ -4230,7 +4229,7 @@ the behavior.</p>
 </code></pre></div>
 <hr />
 <h4 id="getjoints">getJoints()<a class="headerlink" href="#getjoints" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns information on any joints attached to this object. This information included the GUID of the other objects attached via the joints.</p>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns information on any joints attached to this object. This information included the GUID of the other objects attached via the joints.</p>
 <p>This function returns a table of sub-tables, each sub-table representing one joint.</p>
 <p>Example of a return table of an object with 2 joints:
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -4278,7 +4277,7 @@ the behavior.</p>
 </code></pre></div></p>
 <hr />
 <h4 id="getobjects">getObjects()<a class="headerlink" href="#getobjects" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret var"></span></a>&nbsp;Returns data describing the objects contained within in the zone/bag/deck.</p>
+<p><a href="../types/"><span class="ret var"></span></a> Returns data describing the objects contained within in the zone/bag/deck.</p>
 <p>The format of the data returned depends on the kind of object.</p>
 <h5 id="getobjects-containers">Containers (Bags/Decks)<a class="headerlink" href="#getobjects-containers" title="Permanent link">&para;</a></h5>
 <p>Containers return a (numerically indexed) table consisting of sub-tables that each have the following properties:</p>
@@ -4294,7 +4293,7 @@ the behavior.</p>
 <tr>
 <td>description</td>
 <td><a href="../types/"><span class="tag str"></span></a></td>
-<td><a href="#description">Description</a> of the contained object.</td>
+<td><a href="#getdescription">Description</a> of the contained object.</td>
 </tr>
 <tr>
 <td>gm_notes</td>
@@ -4329,12 +4328,12 @@ the behavior.</p>
 <tr>
 <td>name</td>
 <td><a href="../types/"><span class="tag str"></span></a></td>
-<td><a href="#name">Name</a> of the contained object.</td>
+<td><p>Name of the contained object.</p><p>Will correspond with <a href="#getname">getName()</a>, unless it's blank, in which case it'll be the <a href="#name">internal resource name</a>.</p></td>
 </tr>
 <tr>
 <td>nickname</td>
 <td><a href="../types/"><span class="tag str"></span></a></td>
-<td><p><a href="../intro/#deprecated"><span class="tag deprecated"></span></a> <em>Use <code>nickname</code></em>.</p><a href="#name">Name</a> of the item.</td>
+<td><p><a href="../intro/#deprecated"><span class="tag deprecated"></span></a> <em>Use <code>name</code></em>.</p><a href="#getname">Name</a> of the item.</td>
 </tr>
 <tr>
 <td>tags</td>
@@ -4359,7 +4358,7 @@ the behavior.</p>
 </code></pre></div></p>
 </div>
 <h5 id="getobjects-zones">Zones<a class="headerlink" href="#getobjects-zones" title="Permanent link">&para;</a></h5>
-<p>A (numerically indexed) table of game Objects occupying the zone.</p>
+<p>Zones return a (numerically indexed) table of game Objects occupying the zone.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>If the zone has <a href="#gettags">tags</a>, then only objects with compatible tags will be considered "occupying"
@@ -4378,14 +4377,14 @@ the zone.</p>
 </div>
 <hr />
 <h4 id="getrotationvalue">getRotationValue()<a class="headerlink" href="#getrotationvalue" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret var"></span></a>&nbsp;Returns the current rotationValue. Rotation values are used to give value to different rotations (like dice) and are set using scripting or the Gizmo tool. The value returned is for the rotation that is closest to being pointed "up".</p>
+<p><a href="../types/"><span class="ret var"></span></a> Returns the current rotationValue. Rotation values are used to give value to different rotations (like dice) and are set using scripting or the Gizmo tool. The value returned is for the rotation that is closest to being pointed "up".</p>
 <p>The returned value will either be a number or a string, depending on the value that was given to that rotation.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">value</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getRotationValue</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h4 id="getrotationvalues">getRotationValues()<a class="headerlink" href="#getrotationvalues" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice) based on which side is pointed "up". It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.</p>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice) based on which side is pointed "up". It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.</p>
 <p>You can manually assign rotation values to objects using the Rotation Value Gizmo tool (in the left side Gizmo menu) or using <a href="#setrotationvalues">setRotationValues(...)</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">Return Table</p>
@@ -4406,7 +4405,7 @@ the zone.</p>
 </code></pre></div>
 <hr />
 <h4 id="getstates">getStates()<a class="headerlink" href="#getstates" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a Table of information on the <a href="https://kb.tabletopsimulator.com/host-guides/creating-states/">states</a> of an Object. Stated Objects have ids (indexes) starting with 1.</p>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a Table of information on the <a href="https://kb.tabletopsimulator.com/host-guides/creating-states/">states</a> of an Object. Stated Objects have ids (indexes) starting with 1.</p>
 <div class="admonition tip">
 <p class="admonition-title">The returned table will <strong>NOT</strong> include data on the current state.</p>
 </div>
@@ -4448,7 +4447,7 @@ the zone.</p>
 </code></pre></div>
 <hr />
 <h4 id="getvalue">getValue()<a class="headerlink" href="#getvalue" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret var"></span></a>&nbsp; Returns the Object's value. This represents something different depending on the Object's <a href="#type">type</a>.</p>
+<p><a href="../types/"><span class="ret var"></span></a>  Returns the Object's value. This represents something different depending on the Object's <a href="#type">type</a>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>If the Object has <a href="#getrotationvalues">rotation values</a>, then this method will return the rotation value i.e. behave
@@ -4457,7 +4456,7 @@ the same as <a href="#getrotationvalue">getRotationValue()</a>.</p>
 <p>See <a href="#setvalue">setValue(...)</a> for more information.</p>
 <h3 id="set-function-details">Set Function Details<a class="headerlink" href="#set-function-details" title="Permanent link">&para;</a></h3>
 <h4 id="setcustomobject">setCustomObject(...)<a class="headerlink" href="#setcustomobject" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets a custom Object's properties. It can be used after <a href="../base/#spawnobject">spawnObject</a> or on an already existing custom Object. If used on an already existing custom Object, you must use <a href="#reload">reload</a> on the object after setCustomObject for the changes to be displayed.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Sets a custom Object's properties. It can be used after <a href="../base/#spawnobject">spawnObject</a> or on an already existing custom Object. If used on an already existing custom Object, you must use <a href="#reload">reload</a> on the object after setCustomObject for the changes to be displayed.</p>
 <div class="admonition info">
 <p class="admonition-title">setCustomObject(parameters)</p>
 <p>The Table of parameters varies, depending on which type of custom Object it is. See the <a href="../custom-game-objects/">Custom Game Objects</a> page for the parameters needed.</p>
@@ -4473,22 +4472,22 @@ the same as <a href="#getrotationvalue">getRotationValue()</a>.</p>
 </code></pre></div>
 <hr />
 <h4 id="setfogofwarreveal">setFogOfWarReveal(...)<a class="headerlink" href="#setfogofwarreveal" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Establish the settings and enable/disable an Object's revealing of <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a>.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Establish the settings and enable/disable an Object's revealing of <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">setFogOfWarReveal(fog_settings)</p>
 <ul>
-<li><a href="../types/"><span class="tag tab"></span></a>&nbsp;<strong>fog_settings</strong>: A Table containing information on if/how this Object should reveal Fog of War.<ul>
-<li><a href="../types/"><span class="tag boo"></span></a>&nbsp;<strong>reveal</strong>: Can the Object currently<ul>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>fog_settings</strong>: A Table containing information on if/how this Object should reveal Fog of War.<ul>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>reveal</strong>: Can the Object currently<ul>
 <li><span class="critic comment">If this is not used, the current setting for this Object is kept.</span></li>
 </ul>
 </li>
-<li><a href="../types/#vector"><span class="tag str"></span></a>&nbsp;<strong>color</strong>: The rotation Vector of the Object that best represents the given value pointing up.<ul>
+<li><a href="../types/#vector"><span class="tag str"></span></a> <strong>color</strong>: The rotation Vector of the Object that best represents the given value pointing up.<ul>
 <li><span class="critic comment">If this is not used, the current setting for this Object is kept.</span></li>
 <li><span class="critic comment">&quot;Black&quot; means &quot;visible to all players.&quot;</span></li>
 <li><span class="critic comment">&quot;All&quot; means &quot;visible to all players.&quot;</span></li>
 </ul>
 </li>
-<li><a href="../types/#vector"><span class="tag flo"></span></a>&nbsp;<strong>range</strong>: How far from the Object the reveal effect reaches (radius, inches).<ul>
+<li><a href="../types/#vector"><span class="tag flo"></span></a> <strong>range</strong>: How far from the Object the reveal effect reaches (radius, inches).<ul>
 <li><span class="critic comment">If this is not used, the current setting for this Object is kept.</span></li>
 </ul>
 </li>
@@ -4510,7 +4509,7 @@ the same as <a href="#getrotationvalue">getRotationValue()</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">setRotationValue(rotation_value)</p>
 <ul>
-<li><a href="../types/"><span class="tag int"></span></a>/<a href="../types/"><span class="tag str"></span></a>/<a href="../types/"><span class="tag flo"></span></a> <strong>rotation_value</strong>: A <a href="#getrotationvalues">rotation value</a>. Should be a <a href="../types/"><span class="tag int"></span></a>, <a href="../types/"><span class="tag str"></span></a> or <a href="../types/"><span class="tag flo"></span></a>.</li>
+<li><a href="../types/"><span class="tag var"></span></a> <strong>rotation_value</strong>: A <a href="#getrotationvalues">rotation value</a>. Should be a <a href="../types/"><span class="tag int"></span></a>, <a href="../types/"><span class="tag str"></span></a> or <a href="../types/"><span class="tag flo"></span></a>.</li>
 </ul>
 </div>
 <p>The Object will be elevated (smooth moved upward), smoothly rotated to the rotation corresponding with the specified <code>rotation_value</code> and then released to fall back into place.</p>
@@ -4522,12 +4521,12 @@ the same as <a href="#getrotationvalue">getRotationValue()</a>.</p>
 </div>
 <hr />
 <h4 id="setrotationvalues">setRotationValues(...)<a class="headerlink" href="#setrotationvalues" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.</p>
 <div class="admonition info">
 <p class="admonition-title">setRotationValues(rotation_values)</p>
 <ul>
-<li><a href="../types/"><span class="tag tab"></span></a>&nbsp;<strong>rotation_values</strong>: A Table containing Tables with the following values. 1 sub-Table per "face".<ul>
-<li><a href="../types/"><span class="tag int"></span></a>/<a href="../types/"><span class="tag str"></span></a>/<a href="../types/"><span class="tag flo"></span></a> <strong>value</strong>: Value associated with the rotation.<ul>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>rotation_values</strong>: A Table containing Tables with the following values. 1 sub-Table per "face".<ul>
+<li><a href="../types/"><span class="tag var"></span></a> <strong>value</strong>: Value associated with the rotation. Should be a <a href="../types/"><span class="tag int"></span></a>, <a href="../types/"><span class="tag str"></span></a> or <a href="../types/"><span class="tag flo"></span></a>.<ul>
 <li><span class="critic comment">If `value` is a string starting with &quot;#&quot;, then it will not be displayed in the Object's tooltip.</span></li>
 </ul>
 </li>
@@ -4553,7 +4552,7 @@ the same as <a href="#getrotationvalue">getRotationValue()</a>.</p>
 </div>
 <hr />
 <h4 id="setvalue">setValue(...)<a class="headerlink" href="#setvalue" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets the Object's value. This represents something different depending on the Object's <a href="#type">type</a>.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Sets the Object's value. This represents something different depending on the Object's <a href="#type">type</a>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>If the Object has <a href="#getrotationvalues">rotation values</a>, then this method will set the rotation value i.e. behave
@@ -4603,7 +4602,7 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 <hr />
 <h3 id="action-function-details">Action Function Details<a class="headerlink" href="#action-function-details" title="Permanent link">&para;</a></h3>
 <h4 id="addcontextmenuitem">addContextMenuItem(...)<a class="headerlink" href="#addcontextmenuitem" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Adds a menu item to the objects right-click context menu.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Adds a menu item to the objects right-click context menu.</p>
 <div class="admonition info">
 <p class="admonition-title">addContextMenuItem(label, toRunFunc, keep_open)</p>
 <ul>
@@ -4629,7 +4628,7 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 </code></pre></div>
 <hr />
 <h4 id="clone">clone(...)<a class="headerlink" href="#clone" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Copy/Paste this Object.</p>
+<p><a href="../types/"><span class="ret obj"></span></a> Copy/Paste this Object.</p>
 <div class="admonition info">
 <p class="admonition-title">clone(parameters)</p>
 <ul>
@@ -4648,7 +4647,7 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 </div>
 <hr />
 <h4 id="cut">cut(...)<a class="headerlink" href="#cut" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Cuts (splits) a deck down to a given card. In other words, it counts down from the top of the deck and makes a new deck of that size and puts the remaining cards in the other pile.</p>
+<p><a href="../types/"><span class="ret tab"></span></a> Cuts (splits) a deck down to a given card. In other words, it counts down from the top of the deck and makes a new deck of that size and puts the remaining cards in the other pile.</p>
 <p>After the cut, the resulting decks much each have at least 2 cards. This means the parameter used must be between <strong>2</strong> and <strong>totalNumberOfCards - 2</strong>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -4680,7 +4679,7 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 <span class="n">newDecks</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">deal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="deal">deal(...)<a class="headerlink" href="#deal" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Deals Objects to hand zones. Will deal from decks/bags/stacks as well as individual items. If dealing an individual item to a hand zone, it is a good idea to make sure that its <a href="#member-variables">Member Variable</a> for <code>use_hands</code> is <code>true</code>.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Deals Objects to hand zones. Will deal from decks/bags/stacks as well as individual items. If dealing an individual item to a hand zone, it is a good idea to make sure that its <a href="#member-variables">Member Variable</a> for <code>use_hands</code> is <code>true</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">deal(number, player_color, index)</p>
 <ul>
@@ -4697,7 +4696,7 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 </div>
 <hr />
 <h4 id="dealtocolorwithoffset">dealToColorWithOffset(...)<a class="headerlink" href="#dealtocolorwithoffset" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Deals from a deck to a position relative to the hand zone.</p>
+<p><a href="../types/"><span class="ret obj"></span></a> Deals from a deck to a position relative to the hand zone.</p>
 <div class="admonition info">
 <p class="admonition-title">dealToColorWithOffset(offset, flip, player_color)</p>
 <ul>
@@ -4712,7 +4711,7 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 </code></pre></div>
 <hr />
 <h4 id="jointto">jointTo(...)<a class="headerlink" href="#jointto" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Joints objects together, in the same way the Joint tool does.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Joints objects together, in the same way the Joint tool does.</p>
 <p><strong>Using obj.jointTo(), with no object or parameter used as arguments, will remove all joints from that Object.</strong></p>
 <div class="admonition info">
 <p class="admonition-title">jointTo(object, parameters)</p>
@@ -4757,7 +4756,7 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 </code></pre></div></p>
 <hr />
 <h4 id="putobject">putObject(...)<a class="headerlink" href="#putobject" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Places an object into a container (chip stacks/bags/decks). If neither Object is a container, but they are able to be combined (like with 2 cards), then they form a deck/stack.</p>
+<p><a href="../types/"><span class="ret obj"></span></a> Places an object into a container (chip stacks/bags/decks). If neither Object is a container, but they are able to be combined (like with 2 cards), then they form a deck/stack.</p>
 <div class="admonition info">
 <p class="admonition-title">putObject(put_object)</p>
 <ul>
@@ -4778,7 +4777,7 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 </code></pre></div>
 <hr />
 <h4 id="registercollisions">registerCollisions(...)<a class="headerlink" href="#registercollisions" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Registers this object for Global collision events, such as <a href="../event/#onobjectcollisionenter">onObjectCollisionEnter</a>. Always returns <code>true</code>.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Registers this object for Global collision events, such as <a href="../event/#onobjectcollisionenter">onObjectCollisionEnter</a>. Always returns <code>true</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">registerCollision(stay)</p>
 <ul>
@@ -4790,11 +4789,11 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 </div>
 <hr />
 <h4 id="reload">reload()<a class="headerlink" href="#reload" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Returns Object reference of itself after it respawns itself. This function causes the Object to be deleted and respawned instantly to refresh it, so its old Object reference will no longer be valid.</p>
+<p><a href="../types/"><span class="ret obj"></span></a> Returns Object reference of itself after it respawns itself. This function causes the Object to be deleted and respawned instantly to refresh it, so its old Object reference will no longer be valid.</p>
 <p>Most often this is used after using <a href="#setcustomobject">setCustomObject(...)</a> to modify a custom object.</p>
 <hr />
 <h4 id="split">split(...)<a class="headerlink" href="#split" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Splits a deck, as evenly as possible, into a number of piles.</p>
+<p><a href="../types/"><span class="ret tab"></span></a> Splits a deck, as evenly as possible, into a number of piles.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>New decks take a frame to be created. This means trying to act on them immediately will not work. Use a coroutine or timer to add a delay.</p>
@@ -4832,7 +4831,7 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 </code></pre></div>
 <hr />
 <h4 id="spread">spread(...)<a class="headerlink" href="#spread" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Spreads the cards of a deck out on the table.</p>
+<p><a href="../types/"><span class="ret tab"></span></a> Spreads the cards of a deck out on the table.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Cards take a frame to be created. This means trying to act on them immediately will not work. Use a coroutine or timer to add a delay.</p>
@@ -4861,7 +4860,7 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 </div>
 <hr />
 <h4 id="takeobject">takeObject(...)<a class="headerlink" href="#takeobject" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret obj"></span></a>&nbsp;Takes an object out of a container (bag/deck/chip stack), returning a reference to the object that was taken.</p>
+<p><a href="../types/"><span class="ret obj"></span></a> Takes an object out of a container (bag/deck/chip stack), returning a reference to the object that was taken.</p>
 <p>Objects that are taken out of a container will take one or more frames to spawn.
 Certain interactions (e.g. physics) will not be able to take place until the object has finished spawning.</p>
 <div class="admonition info">
@@ -4946,14 +4945,14 @@ the impulse.</p>
 </div>
 <hr />
 <h4 id="unregistercollisions">unregisterCollisions(...)<a class="headerlink" href="#unregistercollisions" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Unregisters this object for Global collision events. Returns <code>true</code> if the object was previously registered, <code>false</code> otherwise.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Unregisters this object for Global collision events. Returns <code>true</code> if the object was previously registered, <code>false</code> otherwise.</p>
 <div class="admonition info">
 <p class="admonition-title">unregisterCollision()</p>
 </div>
 <hr />
 <h3 id="hide-function-details">Hide Function Details<a class="headerlink" href="#hide-function-details" title="Permanent link">&para;</a></h3>
 <h4 id="sethiddenfrom">setHiddenFrom(...)<a class="headerlink" href="#sethiddenfrom" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Hides the Object from the specified players, as if it were in a hand zone.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Hides the Object from the specified players, as if it were in a hand zone.</p>
 <p>Using an empty table will cause the Object to remove the hiding effect.</p>
 <div class="admonition info">
 <p class="admonition-title">setHiddenFrom(players)</p>
@@ -4974,7 +4973,7 @@ the impulse.</p>
 </div>
 <hr />
 <h4 id="setinvisibleto">setInvisibleTo(...)<a class="headerlink" href="#setinvisibleto" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Hides the Object from the specified players, as if it were in a hidden zone.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Hides the Object from the specified players, as if it were in a hidden zone.</p>
 <p>Using an empty table will cause the Object to remove the hiding effect.</p>
 <div class="admonition info">
 <p class="admonition-title">setInvisibleTo(players)</p>
@@ -4995,7 +4994,7 @@ the impulse.</p>
 </div>
 <hr />
 <h4 id="attachhider">attachHider(...)<a class="headerlink" href="#attachhider" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;A more advanced version of <code>setHiddenFrom(...)</code>, this function is also used to hide objects as if they were in a hand zone. It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> A more advanced version of <code>setHiddenFrom(...)</code>, this function is also used to hide objects as if they were in a hand zone. It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.</p>
 <p>This function is slightly more complicated to use for basic hiding, but allows for much easier hiding in complex situations.</p>
 <div class="admonition info">
 <p class="admonition-title">attachHider(id, hidden, players)</p>
@@ -5025,7 +5024,7 @@ the impulse.</p>
 </div>
 <hr />
 <h4 id="attachinvisiblehider">attachInvisibleHider(...)<a class="headerlink" href="#attachinvisiblehider" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;A more advanced version of <code>setInvisibleTo(...)</code>, this function is also used to hide objects as if they were in a hidden zone. It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> A more advanced version of <code>setInvisibleTo(...)</code>, this function is also used to hide objects as if they were in a hidden zone. It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.</p>
 <p>This function is slightly more complicated to use for basic hiding, but allows for much easier hiding in complex situations.</p>
 <div class="admonition info">
 <p class="admonition-title">attachInvisibleHider(id, hidden, players)</p>
@@ -5057,7 +5056,7 @@ the impulse.</p>
 <hr />
 <h3 id="global-function-details">Global Function Details<a class="headerlink" href="#global-function-details" title="Permanent link">&para;</a></h3>
 <h4 id="adddecal">addDecal(...)<a class="headerlink" href="#adddecal" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Add a Decal onto an object or the game world.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Add a Decal onto an object or the game world.</p>
 <div class="admonition tip">
 <p class="admonition-title">Relative Vectors</p>
 <p>When using this function, the vector parameters (position, rotation) are relative to what the decal is being placed on. For example, if you put a decal at <code>{0,0,0}</code> on Global, it will attach to the center of the game room. If you do the same to an object, it will place the decal on the origin point of the object.</p>
@@ -5091,7 +5090,7 @@ the impulse.</p>
 </code></pre></div>
 <hr />
 <h4 id="call">call(...)<a class="headerlink" href="#call" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret var"></span></a>&nbsp;Used to call a Lua function on another entity.</p>
+<p><a href="../types/"><span class="ret var"></span></a> Used to call a Lua function on another entity.</p>
 <p><em>Var is only returned if the function called has a <code>return</code>. Otherwise return is <code>nil</code>. See example.</em></p>
 <blockquote>
 <p>This function can also be used directly on the game world using Global.</p>
@@ -5122,7 +5121,7 @@ the impulse.</p>
 </code></pre></div></p>
 <hr />
 <h4 id="getdecals">getDecals()<a class="headerlink" href="#getdecals" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a table of sub-tables, each sub-table representing one decal.</p>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a table of sub-tables, each sub-table representing one decal.</p>
 <div class="admonition info">
 <p class="admonition-title">Sub-table elements</p>
 <ul>
@@ -5164,7 +5163,7 @@ the impulse.</p>
 </code></pre></div></p>
 <hr />
 <h4 id="getsnappoints">getSnapPoints()<a class="headerlink" href="#getsnappoints" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a>&nbsp;Returns a table of sub-tables, each sub-table representing one snap point.</p>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a table of sub-tables, each sub-table representing one snap point.</p>
 <blockquote>
 <p>This function can also be used directly on the game world (game table) using Global.</p>
 </blockquote>
@@ -5204,7 +5203,7 @@ the impulse.</p>
 </code></pre></div></p>
 <hr />
 <h4 id="setdecals">setDecals(...)<a class="headerlink" href="#setdecals" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Sets which decals are on an object. This removes other decals already present, and can remove all decals as well.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Sets which decals are on an object. This removes other decals already present, and can remove all decals as well.</p>
 <div class="admonition tip">
 <p class="admonition-title">Removing decals</p>
 <p>Using this function with an empty table will remove all decals from Global or the object it is used on.
@@ -5252,7 +5251,7 @@ the impulse.</p>
 </code></pre></div>
 <hr />
 <h4 id="setsnappoints">setSnapPoints(...)<a class="headerlink" href="#setsnappoints" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Spawns snap points from a list of parameters.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Spawns snap points from a list of parameters.</p>
 <blockquote>
 <p>This function can also be used on the game world (game table) itself using Global.</p>
 </blockquote>
@@ -5294,7 +5293,7 @@ the impulse.</p>
 </code></pre></div>
 <hr />
 <h4 id="setvectorlines">setVectorLines(...)<a class="headerlink" href="#setvectorlines" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Spawns Vector Lines from a list of parameters.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Spawns Vector Lines from a list of parameters.</p>
 <blockquote>
 <p>This function can also be used on the game world itself using Global.</p>
 </blockquote>

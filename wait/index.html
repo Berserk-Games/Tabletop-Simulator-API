@@ -532,7 +532,7 @@
   
     <li class="md-nav__item">
       <a href="../backgrounds/" class="md-nav__link">
-        Background
+        Backgrounds
       </a>
     </li>
   
@@ -1148,7 +1148,7 @@ next line of code after a <code>Wait</code> function call will always be execute
 </thead>
 <tbody>
 <tr>
-<td>condition(<a href="../types/#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="../types/#function"><span class="tag fun"></span></a>&nbsp;conditionFunc, <a href="../types/"><span class="tag flo"></span></a>&nbsp;timeout, <a href="../types/#function"><span class="tag fun"></span></a>&nbsp;timeoutFunc)</td>
+<td>condition(<a href="../types/#function"><span class="tag fun"></span></a> toRunFunc, <a href="../types/#function"><span class="tag fun"></span></a> conditionFunc, <a href="../types/"><span class="tag flo"></span></a> timeout, <a href="../types/#function"><span class="tag fun"></span></a> timeoutFunc)</td>
 <td>Schedules a function to be executed after the specified condition has been met.</td>
 <td><a href="../types/"><span class="ret int"></span></a></td>
 <td><a href="#condition"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -1156,7 +1156,7 @@ next line of code after a <code>Wait</code> function call will always be execute
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>frames(<a href="../types/#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="../types/"><span class="tag int"></span></a>&nbsp;numberFrames)</td>
+<td>frames(<a href="../types/#function"><span class="tag fun"></span></a> toRunFunc, <a href="../types/"><span class="tag int"></span></a> numberFrames)</td>
 <td>Schedules a function to be executed after the specified number of frames have elapsed.</td>
 <td><a href="../types/"><span class="ret int"></span></a></td>
 <td><a href="#frames"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -1164,7 +1164,7 @@ next line of code after a <code>Wait</code> function call will always be execute
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>stop(<a href="../types/"><span class="tag int"></span></a>&nbsp;id)</td>
+<td>stop(<a href="../types/"><span class="tag int"></span></a> id)</td>
 <td>Cancels a Wait-scheduled function.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#stop"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -1180,7 +1180,7 @@ next line of code after a <code>Wait</code> function call will always be execute
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>time(<a href="../types/#function"><span class="tag fun"></span></a>&nbsp;toRunFunc, <a href="../types/"><span class="tag flo"></span></a>&nbsp;seconds, <a href="../types/"><span class="tag int"></span></a>&nbsp;repetitions)</td>
+<td>time(<a href="../types/#function"><span class="tag fun"></span></a> toRunFunc, <a href="../types/"><span class="tag flo"></span></a> seconds, <a href="../types/"><span class="tag int"></span></a> repetitions)</td>
 <td>Schedules a function to be executed after the specified amount of time (in seconds) has elapsed.</td>
 <td><a href="../types/"><span class="ret int"></span></a></td>
 <td><a href="#time"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -1192,7 +1192,7 @@ next line of code after a <code>Wait</code> function call will always be execute
 <hr />
 <h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link">&para;</a></h2>
 <h3 id="condition">condition(...)<a class="headerlink" href="#condition" title="Permanent link">&para;</a></h3>
-<p><a href="../types/"><span class="ret int"></span></a>&nbsp;Schedules a function to be executed after the specified condition has been met.</p>
+<p><a href="../types/"><span class="ret int"></span></a> Schedules a function to be executed after the specified condition has been met.</p>
 <p>The return value is a unique ID that may be used to <a href="#stop">stop</a> the scheduled function before it runs.</p>
 <div class="admonition info">
 <p class="admonition-title">condition(toRunFunc, conditionFunc, timeout, timeoutFunc)</p>
@@ -1258,7 +1258,7 @@ However, if it's taking too long (more than two seconds), give up waiting.
 </div>
 <hr />
 <h3 id="frames">frames(...)<a class="headerlink" href="#frames" title="Permanent link">&para;</a></h3>
-<p><a href="../types/"><span class="ret int"></span></a>&nbsp;Schedules a function to be executed after the specified number of frames
+<p><a href="../types/"><span class="ret int"></span></a> Schedules a function to be executed after the specified number of frames
 have elapsed.</p>
 <p>The return value is a unique ID that may be used to <a href="#stop">stop</a> the scheduled function before it runs.</p>
 <div class="admonition info">
@@ -1304,7 +1304,7 @@ It's a matter of personal preference, but it's quite common to see the above com
 </div>
 <hr />
 <h3 id="stop">stop(...)<a class="headerlink" href="#stop" title="Permanent link">&para;</a></h3>
-<p><a href="../types/"><span class="ret boo"></span></a>&nbsp;Cancels a Wait-scheduled function.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Cancels a Wait-scheduled function.</p>
 <div class="admonition info">
 <p class="admonition-title">stop(id)</p>
 <ul>
@@ -1339,7 +1339,7 @@ either has the chance to execute.
 </div>
 <hr />
 <h3 id="time">time(...)<a class="headerlink" href="#time" title="Permanent link">&para;</a></h3>
-<p><a href="../types/"><span class="ret int"></span></a>&nbsp;Schedules a function to be executed after the specified amount of time
+<p><a href="../types/"><span class="ret int"></span></a> Schedules a function to be executed after the specified amount of time
 (in seconds) has elapsed.</p>
 <p>The return value is a unique ID that may be used to <a href="#stop">stop</a> the scheduled function before it runs.</p>
 <div class="admonition info">
