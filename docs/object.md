@@ -79,9 +79,8 @@ Variable | Description | Type
 
 ###Behavior Variables
 
-Some objects have additional behavior that is either unique to that specific object, or all objects of a particular
-[type](#type). This functionality is accessible as Object member variables, but will be `nil` unless the Object includes
-the behavior.
+Some objects provide additional behavior. This functionality is accessible as Object member variables, but will be `nil`
+unless the Object includes the behavior.
 
 !!!example
 	The "Counter" Object has a `Counter` member variable. We'll use it to increment and retrieve the counter's value.
@@ -97,8 +96,8 @@ Variable | Type | Available On
 <a class="anchor" id="browser"></a>Browser | [Browser](behavior/browser.md) | "Tablet" objects.
 <a class="anchor" id="clock"></a>Clock | [Clock](behavior/clock.md) | "Digital Clock" objects.
 <a class="anchor" id="counter"></a>Counter | [Counter](behavior/counter.md) | "Counter" objects.
-<a class="anchor" id="rpgfigurine"></a>RPGFigurine | [RPGFigurine](behavior/rpgfigurine.md) | All objects with the [type](#type) "Figurine".
-<a class="anchor" id="texttool"></a>TextTool | [TextTool](behavior/TextTool.md) | Available on 3D Text objects e.g. text created with the in-game "Text" tool.
+<a class="anchor" id="rpgfigurine"></a>RPGFigurine | [RPGFigurine](behavior/rpgfigurine.md) | "RPG Kit" animated figurine objects i.e. [type](#type) "rpgFigurine".
+<a class="anchor" id="texttool"></a>TextTool | [TextTool](behavior/TextTool.md) | 3D Text objects e.g. text created with the in-game Text tool.
 
 ---
 
