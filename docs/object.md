@@ -1009,15 +1009,15 @@ Containers return a (numerically indexed) table consisting of sub-tables that ea
 
 Name | Type | Description
 -- | -- | --
-description | [<span class="tag str"></span>](types.md) | [Description](#description) of the contained object.
+description | [<span class="tag str"></span>](types.md) | [Description](#getdescription) of the contained object.
 gm_notes | [<span class="tag str"></span>](types.md) | [GM Notes](#getgmnotes) on the contained object.
 guid | [<span class="tag str"></span>](types.md) | [GUID](#guid) of the contained object.
 index | [<span class="tag int"></span>](types.md) | Index of the contained object, represents the item's order in the container.
 lua_script | [<span class="tag str"></span>](types.md) | [Lua script](#script_code) on the contained object.
 lua_script_state | [<span class="tag str"></span>](types.md) | [Lua script saved state](#script_state) of the contained object.
 memo | [<span class="tag str"></span>](types.md) | [Memo](#memo) on the contained object.
-name | [<span class="tag str"></span>](types.md) | [Name](#name) of the contained object.
-nickname | [<span class="tag str"></span>](types.md) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use `nickname`_.</p>[Name](#name) of the item.
+name | [<span class="tag str"></span>](types.md) | <p>Name of the contained object.</p><p>Will correspond with [getName()](#getname), unless it's blank, in which case it'll be the [internal resource name](#name).</p>
+nickname | [<span class="tag str"></span>](types.md) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use `name`_.</p>[Name](#getname) of the item.
 tags | [<span class="tag tab"></span>](types.md) | A table of [<span class="tag str"></span>](types.md) representing the [tags](#gettags) on the contained object.
 
 !!!example
@@ -1037,7 +1037,7 @@ tags | [<span class="tag tab"></span>](types.md) | A table of [<span class="tag 
 
 #####Zones {: #getobjects-zones }
 
-A (numerically indexed) table of game Objects occupying the zone.
+Zones return a (numerically indexed) table of game Objects occupying the zone.
 
 !!!important
 	If the zone has <a href="#gettags">tags</a>, then only objects with compatible tags will be considered "occupying"
