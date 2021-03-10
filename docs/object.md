@@ -77,22 +77,7 @@ Variable | Description | Type
 !!! bug
     The `value_flags` and `value` member variables do not persist when the object is reloaded (such as loading a save and entering/exiting containers).
 
-These member variables are classes of their own, and have their own member variables. Each one is for a special type of Object.
-
-Variable Name | Description
--- | --
-<a class="anchor" id="assetbundle"></a>AssetBundle | An [AssetBundle](assetbundle.md), which is a type of custom object made in Unity.
-<a class="anchor" id="book"></a>Book | A [Book](book.md), which is the in-game Custom PDF object.
-<a class="anchor" id="browser"></a>Browser | A [Browser](browser.md), which is the in-game Tablet object.
-<a class="anchor" id="clock"></a>Clock | A [Clock](clock.md), which is the in-game digital clock.
-<a class="anchor" id="counter"></a>Counter | A [Counter](counter.md), which is the in-game digital counter.
-<a class="anchor" id="rpgfigurine"></a>RPGFigurine | An [RPGFigurine](rpgfigurine.md), which is an in-game animated figurine.
-<a class="anchor" id="texttool"></a>TextTool | A [TextTool](texttool.md), which is an in-game text display system.
-
----
-
-
-
+###Behavior Variables
 
 Some objects provide additional behavior. This functionality is accessible as Object member variables, but will be `nil`
 unless the Object includes the behavior.
@@ -324,14 +309,14 @@ call([<span class="tag str"></span>](types.md) func_name, [<span class="tag tab"
 getDecals() | Returns information on all decals attached to this object or the world. | [<span class="ret tab"></span>](types.md) | [:i:](#getdecals)
 <a class="anchor" id="getluascript"></a>getLuaScript() | Get a Lua script as a string from the entity. | [<span class="ret str"></span>](types.md) |
 getSnapPoints() | Returns a table of sub-tables, each sub-table representing one snap point. | [<span class="ret tab"></span>](types.md) | [:i:](#getsnappoints)
-<a class="anchor" id="gettable"></a>getTable([<span class="tag str"></span>](types.md) table_name) | Data value of a variable in another Object's script. Can only return a table. | [<span class="ret tab"></span>](types.md) |
-<a class="anchor" id="getvar"></a>getVar([<span class="tag str"></span>](types.md) var_name) | Data value of a variable in another entity's script. Cannot return a table. | [<span class="ret var"></span>](types.md) |
+<a class="anchor" id="gettable"></a>getTable([<span class="tag str"></span>](types.md) table_name) | Data value of a variable in another Object's script. Can only return a table. See [setTable](#settable). | [<span class="ret tab"></span>](types.md) |
+<a class="anchor" id="getvar"></a>getVar([<span class="tag str"></span>](types.md) var_name) | Data value of a variable in another entity's script. Cannot return a table. See [setVar](#setvar).| [<span class="ret var"></span>](types.md) |
 <a class="anchor" id="getvectorlines"></a>getVectorLines() | Returns Table of data representing the current Vector Lines on this entity. See [setVectorLines](#setvectorlines) for table format.| [<span class="ret tab"></span>](types.md) |
 setDecals([<span class="tag tab"></span>](types.md) parameters) | Sets which decals are on an object. This removes other decals already present, and can remove all decals as well. | [<span class="ret boo"></span>](types.md) | [:i:](#setdecals)
 <a class="anchor" id="setluascript"></a>setLuaScript([<span class="tag str"></span>](types.md) script) | Input a string as an entity's Lua script. Generally only used after spawning a new Object. | [<span class="ret boo"></span>](types.md) |
 setSnapPoints([<span class="tag tab"></span>](types.md) parameters) | Spawns snap points from a list of parameters. | [<span class="ret boo"></span>](types.md) | [:i:](#setsnappoints)
-<a class="anchor" id="settable"></a>setTable([<span class="tag str"></span>](types.md)&nbsp;table_name, [<span class="tag tab"></span>](types.md)&nbsp;data) | Creates/updates a variable in another entity's script. Only used for tables.  The value is treived by the function getTable|[#gettable]. Updating the table after it has been set does not update the table that will be retrieved by getTable|[#gettable]. | [<span class="ret boo"></span>](types.md) |
-<a class="anchor" id="setvar"></a>setVar([<span class="tag str"></span>](types.md)&nbsp;var_name, [<span class="tag var"></span>](types.md)&nbsp;data) | Creates/updates a variable in another entity's script. Cannot set a table.  The value is retrieved by the function getVar|[#getvar]. [<span class="ret boo"></span>](types.md) |
+setTable([<span class="tag str"></span>](types.md)&nbsp;table_name, [<span class="tag tab"></span>](types.md)&nbsp;data) | Creates/updates a variable in another entity's script. Only used for tables.| [<span class="ret boo"></span>](types.md) | [:i:](#settable)
+<a class="anchor" id="setvar"></a>setVar([<span class="tag str"></span>](types.md)&nbsp;var_name, [<span class="tag var"></span>](types.md)&nbsp;data) | Creates/updates a variable in another entity's script. Cannot set a table.  The value is retrieved by the function [getVar](#getvar).  The value will not be saved when the object is saved. [<span class="ret boo"></span>](types.md) |
 setVectorLines([<span class="tag tab"></span>](types.md) parameters) | Spawns Vector Lines from a list of parameters on this entity. | [<span class="ret boo"></span>](types.md) | [:i:](#setvectorlines)
 
 
@@ -1974,6 +1959,32 @@ self.setSnapPoints({
 ---
 
 
+
+
+####setTable(table_name, table)
+
+[<span class="ret boo"></span>](types.md) Sets a table on the object that can be retrieved at a later time by calling [getTable](#gettable).
+
+Changing the table will not modify the value that is returned by calling [getTable](#gettable), instead [setTable](#settable) must be called again.
+
+The table is not stored with the object when the object is saved.  Therefore, when the game is loaded the value returned by [getTable](#gettable) will be nil.
+
+
+```Lua
+local table = {state="hungry", size="big"}
+self.setTable("details", table)
+local read = self.getTable("details")
+print(read["state"]) -- hungry
+read['size'] = "small"
+local read2 = self.getTable("details")
+print(read2["size"]) -- big
+self.setTable("details", read)
+local read3 = self.getTable("details")
+print(read3["size"]) -- small
+```
+
+
+---
 
 ####setVectorLines(...)
 
