@@ -125,6 +125,8 @@ interactable |  | [<span class="tag boo"></span>](attributes.md#attribute-types)
 textColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
 colors |  | [<span class="tag xmlcb"></span>](attributes.md#attribute-types) | `#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)`
 isOn | If the toggle is "on" or not. Is the value sent to onValueChanged's function. | [<span class="tag boo"></span>](attributes.md#attribute-types) | false
+toggleWidth | Sets the width in pixels of the internal check box | float | 20
+toggleHeight | Sets the width in pixels of the internal check box | float | 20
 
 Example:
 ```xml
