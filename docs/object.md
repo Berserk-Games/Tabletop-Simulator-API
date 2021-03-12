@@ -309,14 +309,14 @@ call([<span class="tag str"></span>](types.md) func_name, [<span class="tag tab"
 getDecals() | Returns information on all decals attached to this object or the world. | [<span class="ret tab"></span>](types.md) | [:i:](#getdecals)
 <a class="anchor" id="getluascript"></a>getLuaScript() | Get a Lua script as a string from the entity. | [<span class="ret str"></span>](types.md) |
 getSnapPoints() | Returns a table of sub-tables, each sub-table representing one snap point. | [<span class="ret tab"></span>](types.md) | [:i:](#getsnappoints)
-<a class="anchor" id="gettable"></a>getTable([<span class="tag str"></span>](types.md) table_name) | Data value of a variable in another Object's script. Can only return a table. | [<span class="ret tab"></span>](types.md) |
-<a class="anchor" id="getvar"></a>getVar([<span class="tag str"></span>](types.md) var_name) | Data value of a variable in another entity's script. Cannot return a table. | [<span class="ret var"></span>](types.md) |
+<a class="anchor" id="gettable"></a>getTable([<span class="tag str"></span>](types.md) table_name) | Data value of a variable in another Object's script. Can only return a table. See [setTable](#settable). | [<span class="ret tab"></span>](types.md) |
+<a class="anchor" id="getvar"></a>getVar([<span class="tag str"></span>](types.md) var_name) | Data value of a variable in another entity's script. Cannot return a table. See [setVar](#setvar). | [<span class="ret var"></span>](types.md) |
 <a class="anchor" id="getvectorlines"></a>getVectorLines() | Returns Table of data representing the current Vector Lines on this entity. See [setVectorLines](#setvectorlines) for table format.| [<span class="ret tab"></span>](types.md) |
 setDecals([<span class="tag tab"></span>](types.md) parameters) | Sets which decals are on an object. This removes other decals already present, and can remove all decals as well. | [<span class="ret boo"></span>](types.md) | [:i:](#setdecals)
 <a class="anchor" id="setluascript"></a>setLuaScript([<span class="tag str"></span>](types.md) script) | Input a string as an entity's Lua script. Generally only used after spawning a new Object. | [<span class="ret boo"></span>](types.md) |
 setSnapPoints([<span class="tag tab"></span>](types.md) parameters) | Spawns snap points from a list of parameters. | [<span class="ret boo"></span>](types.md) | [:i:](#setsnappoints)
-<a class="anchor" id="settable"></a>setTable([<span class="tag str"></span>](types.md) func_name, [<span class="tag tab"></span>](types.md) data) | Creates/updates a variable in another entity's script. Only used for tables. | [<span class="ret boo"></span>](types.md) |
-<a class="anchor" id="setvar"></a>setVar([<span class="tag str"></span>](types.md) func_name, [<span class="tag var"></span>](types.md) data) | Creates/updates a variable in another entity's script. Cannot set a table. | [<span class="ret boo"></span>](types.md) |
+setTable([<span class="tag str"></span>](types.md) func_name, [<span class="tag tab"></span>](types.md) data) | Creates/updates a variable in another entity's script. Only used for tables. | [<span class="ret boo"></span>](types.md) | [:i:](#settable)
+setVar([<span class="tag str"></span>](types.md) func_name, [<span class="tag var"></span>](types.md) data) | Creates/updates a variable in another entity's script. Cannot set a table. | [<span class="ret boo"></span>](types.md) | | [:i:](#setvar)
 setVectorLines([<span class="tag tab"></span>](types.md) parameters) | Spawns Vector Lines from a list of parameters on this entity. | [<span class="ret boo"></span>](types.md) | [:i:](#setvectorlines)
 
 
@@ -1958,7 +1958,40 @@ self.setSnapPoints({
 
 ---
 
+####setTable(table_name, table)
 
+[<span class="ret boo"></span>](types.md) Sets a table on the object that can be retrieved at a later time by calling [getTable](#gettable).
+
+Changing the table will not modify the value that is returned by calling [getTable](#gettable), instead [setTable](#settable) must be called again.
+
+The table is not stored with the object when the object is saved.  Therefore, when the game is loaded the value returned by [getTable](#gettable) will be nil.
+
+
+```Lua
+local table = {state="hungry", size="big"}
+self.setTable("details", table)
+local read = self.getTable("details")
+print(read["state"]) -- hungry
+read['size'] = "small"
+local read2 = self.getTable("details")
+print(read2["size"]) -- big
+self.setTable("details", read)
+local read3 = self.getTable("details")
+print(read3["size"]) -- small
+```
+
+---
+
+####setVar(var_name, var)
+
+Creates/updates a variable in another entity's script. Cannot set a table.  The value is retrieved by the function [getVar](#getvar).  The value will not be saved when the object is saved.
+
+```Lua
+self.setVar("state", "large")
+print(self.getVar("state")) -- large
+```
+
+---
 
 ####setVectorLines(...)
 
