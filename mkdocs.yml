@@ -1,12 +1,12 @@
 site_name: Tabletop Simulator API
 theme:
+  custom_dir: 'theme'
+  favicon: 'img/Icon-Dice.png'
+  logo: 'img/TSIcon.png'
   name: 'material'
   palette:
     primary: 'indigo'
     accent: 'indigo'
-  logo: 'img/TSIcon.png'
-  favicon: 'img/Icon-Dice.png'
-  custom_dir: 'theme'
 
 extra_css:
   - css/theme.css
@@ -34,14 +34,14 @@ markdown_extensions:
           - theme/icons
   - pymdownx.highlight
   - pymdownx.inlinehilite
-  - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-  - toc:
+  - toc_ext:
+      mkdocs_search_sections: true
       permalink: true
 
 repo_name: 'GitHub Source'
