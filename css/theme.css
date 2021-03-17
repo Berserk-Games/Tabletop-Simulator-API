@@ -111,3 +111,7 @@ disabled due to lack of need currently, but works*/
     left:0.625rem;
     top:-0.25rem;
 }
+
+[data-toc-mock-searchable] {
+    scroll-margin-top: 72px !important;
+}
