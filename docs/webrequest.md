@@ -140,8 +140,6 @@ Performs a HTTP PUT request, sending the specified data. Returns a [Web Request 
 
 The data will be UTF-8 encoded and sent as binary data in the body of the request (`Content-Type: application/octet-stream`).
 
-The application/octet-stream
-
 !!!info "put(url, data, callback_function)"
     * [<span class="tag str"></span>](types.md) **url**: The url to pull post to.
     * [<span class="tag str"></span>](types.md) **data**: The data to post.
