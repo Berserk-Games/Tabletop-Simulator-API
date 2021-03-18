@@ -380,8 +380,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../event/" class="md-nav__link">
-        Event
+      <a href="../../events/" class="md-nav__link">
+        Events
       </a>
     </li>
   
@@ -562,6 +562,81 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      <label class="md-nav__link" for="__nav_2_7">
+        Object Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Object Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Object Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/component/" class="md-nav__link">
+        Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/gameobject/" class="md-nav__link">
+        GameObject
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../backgrounds/" class="md-nav__link">
         Backgrounds
@@ -577,18 +652,6 @@
     <li class="md-nav__item">
       <a href="../../color/" class="md-nav__link">
         Color
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../component/" class="md-nav__link">
-        Component
       </a>
     </li>
   
@@ -1071,27 +1134,32 @@
 
 
 <!-- Markdown content -->
-<p>The Tablet is an in-game Object that displays a web page. It has its own class, Browser, with member variables associated with it. This allows you to manipulate the special properties of a tablet.</p>
-<p>Example Usage: <code>self.Browser.url = "https://yahoo.com/"</code></p>
+<p>The Browser behavior is present on the Tablet Object.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Instruct a Tablet Object to load the Tabletop Simulator homepage.
+<div class="highlight"><pre><span></span><code><span class="n">object</span><span class="p">.</span><span class="n">Browser</span><span class="p">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://tabletopsimulator.com&quot;</span>
+</code></pre></div></p>
+</div>
 <h2 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Variable</th>
+<th>Type</th>
 <th>Description</th>
-<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td id="url">url</td>
+<td><a href="../../types/"><span class="tag str"></span></a></td>
 <td>URL which currently wants to display.</td>
-<td align="left"><a href="../../types/"><span class="tag str"></span></a></td>
 </tr>
 <tr>
 <td id="pixel_width">pixel_width</td>
+<td><a href="../../types/"><span class="tag int"></span></a></td>
 <td>The pixel width the browser is virtually rendering to.</td>
-<td align="left"><a href="../../types/"><span class="tag int"></span></a></td>
 </tr>
 </tbody>
 </table>

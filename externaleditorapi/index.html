@@ -517,8 +517,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../event/" class="md-nav__link">
-        Event
+      <a href="../events/" class="md-nav__link">
+        Events
       </a>
     </li>
   
@@ -663,6 +663,81 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      <label class="md-nav__link" for="__nav_2_7">
+        Object Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Object Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Object Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/component/" class="md-nav__link">
+        Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/gameobject/" class="md-nav__link">
+        GameObject
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../backgrounds/" class="md-nav__link">
         Backgrounds
@@ -678,18 +753,6 @@
     <li class="md-nav__item">
       <a href="../color/" class="md-nav__link">
         Color
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../component/" class="md-nav__link">
-        Component
       </a>
     </li>
   
@@ -1389,7 +1452,7 @@
 <p>Any objects mentioned have both their Lua script and their UI XML updated. If no value is set for either the "script" or "ui" key then the corresponding Lua script or UI XML is deleted. That means if you want to update a Lua script for an object without changing its UI XML, then the message must contain both the updated Lua script and the unchanged UI XML.</p>
 <p>After TTS reloads the game, it then also sends a message with an ID of 1 back to the editor, with content the same as the message TTS sends when loading a new game.</p>
 <h3 id="custom-message">Custom Message<a class="headerlink" href="#custom-message" title="Permanent link">&para;</a></h3>
-<p>TTS listens for a JSON message with an ID of 2 containing a custom message to be forwarded to the <a href="../event/#onexternalmessage"><code>onExternalMessage</code></a> event handler in the currently loaded game.</p>
+<p>TTS listens for a JSON message with an ID of 2 containing a custom message to be forwarded to the <a href="../events/#onexternalmessage"><code>onExternalMessage</code></a> event handler in the currently loaded game.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;messageID&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
     <span class="nt">&quot;customMessage&quot;</span><span class="p">:</span> <span class="p">{</span><span class="err">...</span><span class="p">}</span>

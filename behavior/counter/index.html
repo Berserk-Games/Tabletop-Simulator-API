@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#function-summary" class="md-skip">
+        <a href="#functions" class="md-skip">
           Skip to content
         </a>
       
@@ -380,8 +380,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../event/" class="md-nav__link">
-        Event
+      <a href="../../events/" class="md-nav__link">
+        Events
       </a>
     </li>
   
@@ -514,16 +514,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#function-summary" class="md-nav__link">
-    Function Summary
+  <a href="#functions" class="md-nav__link">
+    Functions
   </a>
   
-    <nav class="md-nav" aria-label="Function Summary">
+    <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#object-functions" class="md-nav__link">
-    Object Functions
+  <a href="#clear" class="md-nav__link">
+    clear()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decrement" class="md-nav__link">
+    decrement()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvalue" class="md-nav__link">
+    getValue()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#increment" class="md-nav__link">
+    increment()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvalue" class="md-nav__link">
+    setValue()
   </a>
   
 </li>
@@ -575,6 +603,81 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      <label class="md-nav__link" for="__nav_2_7">
+        Object Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Object Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Object Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/component/" class="md-nav__link">
+        Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/gameobject/" class="md-nav__link">
+        GameObject
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../backgrounds/" class="md-nav__link">
         Backgrounds
@@ -590,18 +693,6 @@
     <li class="md-nav__item">
       <a href="../../color/" class="md-nav__link">
         Color
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../component/" class="md-nav__link">
-        Component
       </a>
     </li>
   
@@ -1044,16 +1135,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#function-summary" class="md-nav__link">
-    Function Summary
+  <a href="#functions" class="md-nav__link">
+    Functions
   </a>
   
-    <nav class="md-nav" aria-label="Function Summary">
+    <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#object-functions" class="md-nav__link">
-    Object Functions
+  <a href="#clear" class="md-nav__link">
+    clear()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decrement" class="md-nav__link">
+    decrement()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvalue" class="md-nav__link">
+    getValue()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#increment" class="md-nav__link">
+    increment()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvalue" class="md-nav__link">
+    setValue()
   </a>
   
 </li>
@@ -1097,45 +1216,50 @@
 
 
 <!-- Markdown content -->
-<p>The Counter is an in-game Object of a digital counter. It has its own class, Counter, with functions/members associated with it. This allows you to manipulate the special properties of a Counter. You call these functions like this: <code>self.Counter.increment()</code>.</p>
-<h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link">&para;</a></h2>
-<h3 id="object-functions">Object Functions<a class="headerlink" href="#object-functions" title="Permanent link">&para;</a></h3>
+<p>The Counter behavior is present on the Counter object.</p>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Function Name</th>
+<th>Return</th>
 <th>Description</th>
-<th align="right">Return</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td id="clear">clear()</td>
+<td id="clear" style="position: relative;">clear()<h6 data-toc-mock-searchable="" id="clear" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">clear()</h6></td>
+<td><a href="../../types/"><span class="ret boo"></span></a></td>
 <td>Resets Counter to 0.</td>
-<td align="right"><a href="../../types/"><span class="ret boo"></span></a></td>
 </tr>
 <tr>
-<td id="decrement">decrement()</td>
+<td id="decrement" style="position: relative;">decrement()<h6 data-toc-mock-searchable="" id="decrement" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">decrement()</h6></td>
+<td><a href="../../types/"><span class="ret boo"></span></a></td>
 <td>Reduces Counter's value by 1.</td>
-<td align="right"><a href="../../types/"><span class="ret boo"></span></a></td>
 </tr>
 <tr>
-<td id="getvalue">getValue()</td>
-<td>Returns Int of the current value displayed by the Counter. This function acts the same as <a href="../../object/#getvalue">Object's getValue()</a>.</td>
-<td align="right"><a href="../../types/"><span class="ret boo"></span></a></td>
+<td id="getvalue" style="position: relative;">getValue()<h6 data-toc-mock-searchable="" id="getvalue" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">getValue()</h6></td>
+<td><a href="../../types/"><span class="ret int"></span></a></td>
+<td>Returns Counter's current value. This function behaves the same as <a href="../../object/#getvalue">Object's getValue()</a>.</td>
 </tr>
 <tr>
-<td id="increment">increment()</td>
+<td id="increment" style="position: relative;">increment()<h6 data-toc-mock-searchable="" id="increment" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">increment()</h6></td>
+<td><a href="../../types/"><span class="ret boo"></span></a></td>
 <td>Increases Counter's value by 1.</td>
-<td align="right"><a href="../../types/"><span class="ret boo"></span></a></td>
 </tr>
 <tr>
-<td id="setvalue">setValue()</td>
-<td>Sets the current value of the Counter. This function acts the same as <a href="../../object/#setvalue">Object's setValue()</a>.</td>
-<td align="right"><a href="../../types/"><span class="ret boo"></span></a></td>
+<td id="setvalue" style="position: relative;">setValue()<h6 data-toc-mock-searchable="" id="setvalue" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">setValue()</h6></td>
+<td><a href="../../types/"><span class="ret boo"></span></a></td>
+<td>Sets the current value of the Counter. This function behaves the same as <a href="../../object/#setvalue">Object's setValue()</a>.</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Increment a counter's value.
+<div class="highlight"><pre><span></span><code><span class="n">object</span><span class="p">.</span><span class="n">Counter</span><span class="p">.</span><span class="n">increment</span><span class="p">()</span>
+</code></pre></div></p>
+</div>
 
 <!-- Last update of source file -->
 

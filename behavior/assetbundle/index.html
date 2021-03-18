@@ -380,8 +380,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../event/" class="md-nav__link">
-        Event
+      <a href="../../events/" class="md-nav__link">
+        Events
       </a>
     </li>
   
@@ -470,19 +470,6 @@
     Function Summary
   </a>
   
-    <nav class="md-nav" aria-label="Function Summary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#object-functions" class="md-nav__link">
-    Object Functions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -494,6 +481,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#getloopingeffectindex" class="md-nav__link">
+    getLoopingEffectIndex()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getloopingeffects" class="md-nav__link">
     getLoopingEffects()
   </a>
@@ -503,6 +497,20 @@
           <li class="md-nav__item">
   <a href="#gettriggereffects" class="md-nav__link">
     getTriggerEffects()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playloopingeffect" class="md-nav__link">
+    playLoopingEffect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playtriggereffect" class="md-nav__link">
+    playTriggerEffect(...)
   </a>
   
 </li>
@@ -602,6 +610,81 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      <label class="md-nav__link" for="__nav_2_7">
+        Object Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Object Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Object Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/component/" class="md-nav__link">
+        Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/gameobject/" class="md-nav__link">
+        GameObject
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../backgrounds/" class="md-nav__link">
         Backgrounds
@@ -617,18 +700,6 @@
     <li class="md-nav__item">
       <a href="../../color/" class="md-nav__link">
         Color
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../component/" class="md-nav__link">
-        Component
       </a>
     </li>
   
@@ -1075,19 +1146,6 @@
     Function Summary
   </a>
   
-    <nav class="md-nav" aria-label="Function Summary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#object-functions" class="md-nav__link">
-    Object Functions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1099,6 +1157,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#getloopingeffectindex" class="md-nav__link">
+    getLoopingEffectIndex()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getloopingeffects" class="md-nav__link">
     getLoopingEffects()
   </a>
@@ -1108,6 +1173,20 @@
           <li class="md-nav__item">
   <a href="#gettriggereffects" class="md-nav__link">
     getTriggerEffects()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playloopingeffect" class="md-nav__link">
+    playLoopingEffect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playtriggereffect" class="md-nav__link">
+    playTriggerEffect(...)
   </a>
   
 </li>
@@ -1151,10 +1230,9 @@
 
 
 <!-- Markdown content -->
-<p>AssetBundle is a special <a href="../../object/">Object</a> type that has access to <a href="https://kb.tabletopsimulator.com/custom-content/custom-assetbundle/">custom AssetBundle</a> related functions like looping and trigger effects.</p>
-<p>Example Usage: <code>self.AssetBundle.getLoopingEffects()</code></p>
+<p>The AssetBundle behavior is present on Objects that were created from a
+<a href="https://kb.tabletopsimulator.com/custom-content/custom-assetbundle/">custom AssetBundle</a>.</p>
 <h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link">&para;</a></h2>
-<h3 id="object-functions">Object Functions<a class="headerlink" href="#object-functions" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1166,37 +1244,37 @@
 </thead>
 <tbody>
 <tr>
-<td id="getloopingeffectindex">getLoopingEffectIndex()</td>
-<td>Index of the currently looping effect. Indexs starts at 0.</td>
+<td id="getloopingeffectindex" style="position: relative;">getLoopingEffectIndex()<h6 data-toc-mock-searchable="" id="getloopingeffectindex" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">getLoopingEffectIndex()</h6></td>
 <td><a href="../../types/"><span class="ret int"></span></a></td>
+<td>Index of the currently looping effect. Indexs starts at 0.</td>
 <td></td>
 </tr>
 <tr>
 <td>getLoopingEffects()</td>
-<td>Returns a Table with the keys "index" and "name" for each looping effect.</td>
 <td><a href="../../types/"><span class="ret tab"></span></a></td>
+<td>Returns a Table with the keys "index" and "name" for each looping effect.</td>
 <td><a href="#getloopingeffects"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
 <td>getTriggerEffects()</td>
-<td>Returns a Table with the keys "index" and "name" for each trigger effect.</td>
 <td><a href="../../types/"><span class="ret tab"></span></a></td>
+<td>Returns a Table with the keys "index" and "name" for each trigger effect.</td>
 <td><a href="#gettriggereffects"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td id="playloopingeffect">playLoopingEffect(<a href="../../types/"><span class="tag int"></span></a> index)</td>
-<td>Starts playing a looping effect. Indexs starts at 0.</td>
+<td id="playloopingeffect" style="position: relative;">playLoopingEffect(<h6 data-toc-mock-searchable="" id="playloopingeffect" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">playLoopingEffect(...)</h6><a href="../../types/"><span class="tag int"></span></a> index)</td>
 <td><a href="../../types/"><span class="ret nil"></span></a></td>
+<td>Starts playing a looping effect. Indexs starts at 0.</td>
 <td></td>
 </tr>
 <tr>
-<td id="playtriggereffect">playTriggerEffect(<a href="../../types/"><span class="tag int"></span></a> index)</td>
-<td>Starts playing a trigger effect. Indexs starts at 0.</td>
+<td id="playtriggereffect" style="position: relative;">playTriggerEffect(<h6 data-toc-mock-searchable="" id="playtriggereffect" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">playTriggerEffect(...)</h6><a href="../../types/"><span class="tag int"></span></a> index)</td>
 <td><a href="../../types/"><span class="ret nil"></span></a></td>
+<td>Starts playing a trigger effect. Indexs starts at 0.</td>
 <td></td>
 </tr>
 </tbody>

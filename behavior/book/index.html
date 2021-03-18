@@ -380,8 +380,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../event/" class="md-nav__link">
-        Event
+      <a href="../../events/" class="md-nav__link">
+        Events
       </a>
     </li>
   
@@ -489,19 +489,6 @@
     Function Summary
   </a>
   
-    <nav class="md-nav" aria-label="Function Summary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#object-functions" class="md-nav__link">
-    Object Functions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -513,6 +500,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#clearhighlight" class="md-nav__link">
+    clearHighlight()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getpage" class="md-nav__link">
     getPage(...)
   </a>
@@ -520,15 +514,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#setpage" class="md-nav__link">
-    setPage(...)
+  <a href="#sethighlight" class="md-nav__link">
+    setHighlight(...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sethighlight" class="md-nav__link">
-    setHighlight(...)
+  <a href="#setpage" class="md-nav__link">
+    setPage(...)
   </a>
   
 </li>
@@ -616,6 +610,81 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      <label class="md-nav__link" for="__nav_2_7">
+        Object Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Object Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Object Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/component/" class="md-nav__link">
+        Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/gameobject/" class="md-nav__link">
+        GameObject
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../backgrounds/" class="md-nav__link">
         Backgrounds
@@ -631,18 +700,6 @@
     <li class="md-nav__item">
       <a href="../../color/" class="md-nav__link">
         Color
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../component/" class="md-nav__link">
-        Component
       </a>
     </li>
   
@@ -1096,19 +1153,6 @@
     Function Summary
   </a>
   
-    <nav class="md-nav" aria-label="Function Summary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#object-functions" class="md-nav__link">
-    Object Functions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1120,6 +1164,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#clearhighlight" class="md-nav__link">
+    clearHighlight()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getpage" class="md-nav__link">
     getPage(...)
   </a>
@@ -1127,15 +1178,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#setpage" class="md-nav__link">
-    setPage(...)
+  <a href="#sethighlight" class="md-nav__link">
+    setHighlight(...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sethighlight" class="md-nav__link">
-    setHighlight(...)
+  <a href="#setpage" class="md-nav__link">
+    setPage(...)
   </a>
   
 </li>
@@ -1179,22 +1230,21 @@
 
 
 <!-- Markdown content -->
-<p>The Custom PDF is a type in-game Spawnable Object that renders a PDF from a URL. It has its own class, Book, with functions/members associated with it. This allows you to manipulate the special properties of a Custom PDF.</p>
-<p>Example Usage: <code>obj.Book.setPage(1, false)</code></p>
+<p>The Book behavior is present on Custom PDF Objects. The Book behaviour allows you to manipulate the displayed PDF.</p>
 <h2 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Variable</th>
-<th>Description</th>
-<th align="left">Type</th>
+<th>Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td id="page_offset">page_offset</td>
-<td>The page numbers displayed in the Custom PDF UI are offset by this amount.</td>
-<td align="left"><a href="../../types/"><span class="tag int"></span></a></td>
+<td><a href="../../types/"><span class="tag int"></span></a></td>
+<td align="left">The page numbers displayed in the Custom PDF UI are offset by this amount.</td>
 </tr>
 </tbody>
 </table>
@@ -1203,46 +1253,45 @@
 <p>For example, if <code>page_offset</code> were set to 10, the first page in the UI would be 11, rather than 1. Negative numbers are accepted, and useful if a rule book contains a front cover, index etc. within the PDF file.</p>
 </div>
 <h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link">&para;</a></h2>
-<h3 id="object-functions">Object Functions<a class="headerlink" href="#object-functions" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Function Name</th>
-<th>Description</th>
 <th>Return</th>
-<th align="right">&nbsp;</th>
+<th>Description</th>
+<th>&nbsp;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>getPage(<a href="../../types/"><span class="tag boo"></span></a> offsetPageNumbering)</td>
-<td>Gets the current page of the PDF.</td>
-<td><a href="../../types/"><span class="ret int"></span></a></td>
-<td align="right"><a href="#getpage"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+<td id="clearhighlight" style="position: relative;">clearHighlight()<h6 data-toc-mock-searchable="" id="clearhighlight" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">clearHighlight()</h6></td>
+<td><a href="../../types/"><span class="ret boo"></span></a></td>
+<td>Clears the current highlight.</td>
+<td></td>
 </tr>
 <tr>
-<td>setPage(<a href="../../types/"><span class="tag int"></span></a> page, <a href="../../types/"><span class="tag boo"></span></a> offsetPageNumbering)</td>
-<td>Set current page.</td>
-<td><a href="../../types/"><span class="ret boo"></span></a></td>
-<td align="right"><a href="#setpage"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<td>getPage(<a href="../../types/"><span class="tag boo"></span></a> offsetPageNumbering)</td>
+<td><a href="../../types/"><span class="ret int"></span></a></td>
+<td>Gets the current page of the PDF.</td>
+<td><a href="#getpage"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
 <td>setHighlight(<a href="../../types/"><span class="tag flo"></span></a> x1, <a href="../../types/"><span class="tag flo"></span></a> y1, <a href="../../types/"><span class="tag flo"></span></a> x2, <a href="../../types/"><span class="tag flo"></span></a> y2)</td>
-<td>Set highlight box on current page.</td>
 <td><a href="../../types/"><span class="ret boo"></span></a></td>
-<td align="right"><a href="#sethighlight"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<td>Set highlight box on current page.</td>
+<td><a href="#sethighlight"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td id="clearhighlight">clearHighlight()</td>
-<td>Clears the current highlight.</td>
+<td>setPage(<a href="../../types/"><span class="tag int"></span></a> page, <a href="../../types/"><span class="tag boo"></span></a> offsetPageNumbering)</td>
 <td><a href="../../types/"><span class="ret boo"></span></a></td>
-<td align="right"></td>
+<td>Set current page.</td>
+<td><a href="#setpage"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 </tbody>
 </table>
@@ -1260,19 +1309,6 @@
 </ul>
 </div>
 <hr />
-<h4 id="setpage">setPage(...)<a class="headerlink" href="#setpage" title="Permanent link">&para;</a></h4>
-<p><a href="../../types/"><span class="ret boo"></span></a> Sets the current page of the PDF. Returns true if the page was succesfully set, false if the page number was invalid.</p>
-<div class="admonition info">
-<p class="admonition-title">setPage(page, offsetPageNumbering)</p>
-<ul>
-<li><a href="../../types/"><span class="tag int"></span></a> <strong>page</strong>: The new page number.</li>
-<li><a href="../../types/"><span class="tag boo"></span></a> <strong>offsetPageNumbering</strong>: Indicates whether or not <a href="#page_offset">page_offset</a> should be applied to the page number set.<ul>
-<li><span class="critic comment">Optional, defaults to `false`.</span></li>
-</ul>
-</li>
-</ul>
-</div>
-<hr />
 <h4 id="sethighlight">setHighlight(...)<a class="headerlink" href="#sethighlight" title="Permanent link">&para;</a></h4>
 <p><a href="../../types/"><span class="ret boo"></span></a> Draws a highlight rectangle on the popout mode of the PDF at the given coordinates. Coordinates (0,0) are the lower left corner of the PDF, while coordinates (1,1) are the upper right corner.</p>
 <div class="admonition info">
@@ -1284,12 +1320,28 @@
 <li><a href="../../types/"><span class="tag flo"></span></a> <strong>y2</strong>: y coordinate of the rectangle's top side.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="c1">-- Sets highlight of upper right quarter of the pdf</span>
-<span class="n">self</span><span class="p">.</span><span class="n">Book</span><span class="p">.</span><span class="n">setHighlight</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Highlight the upper right quarter of a PDF.
+<div class="highlight"><pre><span></span><code><span class="n">object</span><span class="p">.</span><span class="n">Book</span><span class="p">.</span><span class="n">setHighlight</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
 <p>setHighlight() will do nothing if you try to draw a highlight twice in a row at the same coordinates, even if you call clearHighlight() or reload() on the object in between calls to setHighlight().</p>
+</div>
+<hr />
+<h4 id="setpage">setPage(...)<a class="headerlink" href="#setpage" title="Permanent link">&para;</a></h4>
+<p><a href="../../types/"><span class="ret boo"></span></a> Sets the current page of the PDF. Returns true if the page was succesfully set, false if the page number was invalid.</p>
+<div class="admonition info">
+<p class="admonition-title">setPage(page, offsetPageNumbering)</p>
+<ul>
+<li><a href="../../types/"><span class="tag int"></span></a> <strong>page</strong>: The new page number.</li>
+<li><a href="../../types/"><span class="tag boo"></span></a> <strong>offsetPageNumbering</strong>: Indicates whether or not <a href="#page_offset">page_offset</a> should be applied to the page number set.<ul>
+<li><span class="critic comment">Optional, defaults to `false`.</span></li>
+</ul>
+</li>
+</ul>
 </div>
 
 <!-- Last update of source file -->

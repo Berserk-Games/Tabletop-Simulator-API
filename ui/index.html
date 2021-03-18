@@ -380,8 +380,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../event/" class="md-nav__link">
-        Event
+      <a href="../events/" class="md-nav__link">
+        Events
       </a>
     </li>
   
@@ -526,6 +526,81 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      <label class="md-nav__link" for="__nav_2_7">
+        Object Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Object Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Object Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/component/" class="md-nav__link">
+        Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/gameobject/" class="md-nav__link">
+        GameObject
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../backgrounds/" class="md-nav__link">
         Backgrounds
@@ -541,18 +616,6 @@
     <li class="md-nav__item">
       <a href="../color/" class="md-nav__link">
         Color
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../component/" class="md-nav__link">
-        Component
       </a>
     </li>
   
@@ -868,6 +931,13 @@
           <li class="md-nav__item">
   <a href="#getvalue" class="md-nav__link">
     getValue(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getxml" class="md-nav__link">
+    getXml()
   </a>
   
 </li>
@@ -1225,6 +1295,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getxml" class="md-nav__link">
+    getXml()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getxmltable" class="md-nav__link">
     getXmlTable()
   </a>
@@ -1336,7 +1413,7 @@
 <p>UI, a static global class AND an Object class. It is the method to interact with custom UI elements. It allows you to read/write attributes of elements defined in the XML of the UI. It also allows you to receive information from various inputs (like buttons) on-screen and on objects.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>This class allows for the <strong>manipulation</strong> of UI <strong>at runtime</strong>. It does <strong>NOT</strong> modify or fetch <strong>the original XML</strong> in the editor, but rather what is displayed as it continues to run during a game. Just like with Lua, you can only get/set dynamic values during runtime. You can use <a href="../event/#onsave">onSave</a> and <a href="../event/#onload">onLoad</a> to record any data you want to persist through save/load/undo.</p>
+<p>This class allows for the <strong>manipulation</strong> of UI <strong>at runtime</strong>. It does <strong>NOT</strong> modify or fetch <strong>the original XML</strong> in the editor, but rather what is displayed as it continues to run during a game. Just like with Lua, you can only get/set dynamic values during runtime. You can use <a href="../events/#onsave">onSave</a> and <a href="../events/#onload">onLoad</a> to record any data you want to persist through save/load/undo.</p>
 <p>For more information on how to build UI elements within XML, view the <a href="introUI/">UI API</a>.</p>
 </div>
 <h2 id="global-and-object">Global and Object<a class="headerlink" href="#global-and-object" title="Permanent link">&para;</a></h2>
@@ -1432,7 +1509,7 @@ Example of calling a function targeted at an Object UI:
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td id="getxml">getXml()</td>
+<td id="getxml" style="position: relative;">getXml()<h6 data-toc-mock-searchable="" id="getxml" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">getXml()</h6></td>
 <td>Returns the run-time UI's XML in string format.</td>
 <td><a href="../types/"><span class="ret str"></span></a></td>
 <td></td>
