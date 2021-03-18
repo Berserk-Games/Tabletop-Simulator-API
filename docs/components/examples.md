@@ -15,8 +15,6 @@ These examples are complete scripts which can placed on a regular Red Block.
 	end
 	```
 
----
-
 !!!example
 	Disable an object's (box) collider. This will typically result in the object falling through the table.
     
