@@ -114,6 +114,12 @@ Name | Type | Description | Notes
 <a class="anchor" id="go_game_bowl_black"></a>go_game_bowl_black | `GoPiece` | A bowl that any number of [Black Go Stones](#go_game_piece_black) can be taken from and dropped back into. |
 <a class="anchor" id="go_game_bowl_white"></a>go_game_bowl_white | `GoPiece` | A bowl that any number of [White Go Stones](#go_game_piece_white) can be taken from and dropped back into. |
 
+### Graphics
+
+Name | Description | Notes
+-- | -- | --
+<a class="anchor" id="3DText"></a>3DText | The text that the [Text Tool](https://kb.tabletopsimulator.com/game-tools/text-tool/) spawns. |
+
 ### Piecepack
 
 Name | Type | Description | Notes
@@ -196,14 +202,16 @@ Name | Type | Description | Notes
 <a class="anchor" id="reversi_chip"></a>reversi_chip | `Generic` | A dual-colored Reversi chip. | Spawns white-side up.
 <a class="anchor" id="Tablet"></a>Tablet | `Tablet` | A tablet that displays a webpage. |
 
-### Scripting
+### Zones
 
 Name | Description | Notes
 -- | -- | --
-<a class="anchor" id="ScriptingTrigger"></a>ScriptingTrigger | A Scripting Zone. |
-<a class="anchor" id="FogOfWarTrigger"></a>FogOfWarTrigger | A [Hidden Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#hidden-zone) |
 <a class="anchor" id="FogOfWar"></a>FogOfWar | A [Fog of War Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone) |
-<a class="anchor" id="3DText"></a>3DText | The text that the [Text Tool](https://kb.tabletopsimulator.com/game-tools/text-tool/) spawns. |
+<a class="anchor" id="FogOfWarTrigger"></a>FogOfWarTrigger | A [Hidden Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#hidden-zone) |
+<a class="anchor" id="HandTrigger"></a>HandTrigger | A [Hand Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#hand-zone) |
+<a class="anchor" id="LayoutZone"></a>LayoutZone | A [Layout Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#layout-zone) |
+<a class="anchor" id="RandomizeTrigger"></a>RandomizeTrigger | A [Randomize Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#randomize-zone) |
+<a class="anchor" id="ScriptingTrigger"></a>ScriptingTrigger | A [Scripting Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#scripting-zone). |
 
 ## Spawnable Names
 
