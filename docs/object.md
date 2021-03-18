@@ -289,7 +289,7 @@ addDecal([<span class="tag tab"></span>](types.md) parameters) | Add a Decal ont
 call([<span class="tag str"></span>](types.md) func_name, [<span class="tag tab"></span>](types.md) func_params) | Used to call a Lua function on another entity. | [<span class="ret var"></span>](types.md) | [:i:](#call)
 getDecals() | Returns information on all decals attached to this object or the world. | [<span class="ret tab"></span>](types.md) | [:i:](#getdecals)
 getLuaScript() {: data-toc-label="getLuaScript()" data-toc-child-of="global-function-details" } | Get a Lua script as a string from the entity. | [<span class="ret str"></span>](types.md) |
-getSnapPoints() | Returns a table of sub-tables, each sub-table representing one snap point. | [<span class="ret tab"></span>](types.md) | [:i:](#getsnappoints)
+getSnapPoints() | Returns a table representing a list of snap points. | [<span class="ret tab"></span>](types.md) | [:i:](#getsnappoints)
 getTable([<span class="tag str"></span>](types.md) table_name) {: data-toc-label="getTable(...)" data-toc-child-of="global-function-details" } | Data value of a variable in another Object's script. Can only return a table. | [<span class="ret tab"></span>](types.md) |
 getVar([<span class="tag str"></span>](types.md) var_name) {: data-toc-label="getVar(...)" data-toc-child-of="global-function-details" } | Data value of a variable in another entity's script. Cannot return a table. | [<span class="ret var"></span>](types.md) |
 getVectorLines() {: data-toc-label="getVectorLines()" data-toc-child-of="global-function-details" } | Returns Table of data representing the current Vector Lines on this entity. See [setVectorLines](#setvectorlines) for table format.| [<span class="ret tab"></span>](types.md) |
@@ -1764,41 +1764,28 @@ print(decalTable[2].name)
 
 ####getSnapPoints()
 
-[<span class="ret tab"></span>](types.md) Returns a table of sub-tables, each sub-table representing one snap point.
+[<span class="ret tab"></span>](types.md) Returns a table representing a list of snap points.
 
-> This function can also be used directly on the game world (game table) using Global.
+!!!tip
+	This function may be called on `Global` in order to return a list of global snap points (i.e. snap points on the
+	table).
 
-!!!info "Format of the returned table"
-	* [<span class="tag tab"></span>](types.md) A table containing numerically indexed sub-tables.
-		* [<span class="tag tab"></span>](types.md) Sub-table(s), each representing a snap point:
-			* [<span class="tag vec"></span>](types.md#vector) **position**: [Local Position](types.md#position) of the snap point. The position is relative to the entity's center.
-			* [<span class="tag vec"></span>](types.md#vector) **rotation**: Local Rotation of the snap point. The rotation is relative to the entity's rotation.
-			* [<span class="tag boo"></span>](types.md) **rotation_snap**: If the snap point is a "rotation" snap point.
+##### Return value {: #getsnappoints-return-value data-toc-omit } 
 
+The returned table is a list (numerically indexed table) of sub-tables, where each sub-table represents a snap point and
+has the following properties:
 
-Example:
-```Lua
-function onLoad()
-	snapPointList = Global.getSnapPoints()
-	log(snapPointsList)
-end
-```
+Name | Type | Description
+-- | -- | --
+position | [<span class="tag vec"></span>](types.md) | [Local Position](types.md#position) of the snap point. The position is relative to the entity's center.
+rotation | [<span class="tag vec"></span>](types.md) | Local Rotation of the snap point. The rotation is relative to the entity's rotation.
+rotation_snap | [<span class="tag boo"></span>](types.md) | If the snap point is a [rotation snap point](https://kb.tabletopsimulator.com/game-tools/snap-point-tool/#rotation-snap).
 
-Returned table:
-```Lua
-{
-	{
-		position = {2,2,2},
-	    rotation = {0,90,0},
-	    rotation_snap = false
-	},
-	{
-		position = {5,2,5},
-	    rotation = {0,0,0},
-	    rotation_snap = true
-	},
-}
-```
+!!!example
+	Log the list of global snap points:
+	```lua
+	log(Global.getSnapPoints())
+	```
 
 ---
 
