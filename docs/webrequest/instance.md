@@ -1,6 +1,6 @@
 # Web Request Instance
 
-Web request instances represent a singular in-progress, completed or failed web request. They are created via the [Web Request Manager](webrequest.md).
+Web request instances represent a singular in-progress, completed or failed web request. They are created via the [Web Request Manager](manager.md).
 
 ##Member Variables
 

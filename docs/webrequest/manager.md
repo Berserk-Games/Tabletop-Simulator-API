@@ -10,12 +10,12 @@
 
 Function Name | Return | Description | &nbsp;
 -- | -- | -- | --:
-custom([<span class="tag str"></span>](types.md) url, [<span class="tag str"></span>](types.md) method, [<span class="tag boo"></span>](types.md) download, [<span class="tag str"></span>](types.md) data, [<span class="tag tab"></span>](types.md) headers, [<span class="tag fun"></span>](types.md#function) callback_function) | [Web Request Instance](webrequest-instance.md) | Performs a HTTP request using the specified method, data and headers. | [:i:](#custom)
-delete([<span class="tag str"></span>](types.md) url, [<span class="tag fun"></span>](types.md#function) callback_function) {: data-toc-label="delete(...)" data-toc-child-of="function-details" } | [Web Request Instance](webrequest-instance.md) | Performs a HTTP DELETE request. |
-get([<span class="tag str"></span>](types.md) url, [<span class="tag fun"></span>](types.md#function) callback_function) | [Web Request Instance](webrequest-instance.md) | Performs a HTTP GET request. | [:i:](#get)
-head([<span class="tag str"></span>](types.md) url, [<span class="tag fun"></span>](types.md#function) callback_function) {: data-toc-label="head(...)" data-toc-child-of="function-details" } | [Web Request Instance](webrequest-instance.md) | Performs a HTTP HEAD request. |
-post([<span class="tag str"></span>](types.md) url,  [<span class="tag var"></span>](types.md) form, [<span class="tag fun"></span>](types.md#function) callback_function) | [Web Request Instance](webrequest-instance.md)  | Performs a HTTP POST request, sending the specified form. | [:i:](#post)
-put([<span class="tag str"></span>](types.md) url,  [<span class="tag str"></span>](types.md) data, [<span class="tag fun"></span>](types.md#function) callback_function) | [Web Request Instance](webrequest-instance.md)  | Performs a HTTP PUT request, sending the specified data. | [:i:](#put)
+custom([<span class="tag str"></span>](types.md) url, [<span class="tag str"></span>](types.md) method, [<span class="tag boo"></span>](types.md) download, [<span class="tag str"></span>](types.md) data, [<span class="tag tab"></span>](types.md) headers, [<span class="tag fun"></span>](types.md#function) callback_function) | [Web Request Instance](instance.md) | Performs a HTTP request using the specified method, data and headers. | [:i:](#custom)
+delete([<span class="tag str"></span>](types.md) url, [<span class="tag fun"></span>](types.md#function) callback_function) {: data-toc-label="delete(...)" data-toc-child-of="function-details" } | [Web Request Instance](instance.md) | Performs a HTTP DELETE request. |
+get([<span class="tag str"></span>](types.md) url, [<span class="tag fun"></span>](types.md#function) callback_function) | [Web Request Instance](instance.md) | Performs a HTTP GET request. | [:i:](#get)
+head([<span class="tag str"></span>](types.md) url, [<span class="tag fun"></span>](types.md#function) callback_function) {: data-toc-label="head(...)" data-toc-child-of="function-details" } | [Web Request Instance](instance.md) | Performs a HTTP HEAD request. |
+post([<span class="tag str"></span>](types.md) url,  [<span class="tag var"></span>](types.md) form, [<span class="tag fun"></span>](types.md#function) callback_function) | [Web Request Instance](instance.md)  | Performs a HTTP POST request, sending the specified form. | [:i:](#post)
+put([<span class="tag str"></span>](types.md) url,  [<span class="tag str"></span>](types.md) data, [<span class="tag fun"></span>](types.md#function) callback_function) | [Web Request Instance](instance.md)  | Performs a HTTP PUT request, sending the specified data. | [:i:](#put)
 
 ---
 
@@ -23,15 +23,15 @@ put([<span class="tag str"></span>](types.md) url,  [<span class="tag str"></spa
 
 ###custom(...)
 
-Performs a HTTP request using the specified method, data and headers. Returns a [Web Request Instance](webrequest-instance.md).
+Performs a HTTP request using the specified method, data and headers. Returns a [Web Request Instance](instance.md).
 
 !!!info "custom(url, method, download, data, headers, callback_function)"
     * [<span class="tag str"></span>](types.md) **url**: The URL.
     * [<span class="tag str"></span>](types.md) **method**: The HTTP method.
-    * [<span class="tag boo"></span>](types.md) **download**: Whether you want to handle the response body. Must be `true` if you intend to read the response [text](webrequest-instance.md#text).
+    * [<span class="tag boo"></span>](types.md) **download**: Whether you want to handle the response body. Must be `true` if you intend to read the response [text](instance.md#text).
     * [<span class="tag str"></span>](types.md) **data**: The request body.
     * [<span class="tag tab"></span>](types.md) **headers**: Table of request headers. The table's keys and values must both be [<span class="tag str"></span>](types.md).
-    * [<span class="tag fun"></span>](types.md#function) **callback_function**: Called when the request completes (or fails). Passed the [Web Request Instance](webrequest-instance.md).
+    * [<span class="tag fun"></span>](types.md#function) **callback_function**: Called when the request completes (or fails). Passed the [Web Request Instance](instance.md).
         * {>>Optional, but you will be unable to handle the response (or errors) if unused.<<}
 
 !!!example
@@ -94,11 +94,11 @@ Performs a HTTP request using the specified method, data and headers. Returns a 
 
 ###get(...)
 
-Performs a HTTP GET request. Returns a [Web Request Instance](webrequest-instance.md).
+Performs a HTTP GET request. Returns a [Web Request Instance](instance.md).
 
 !!!info "get(url, callback_function)"
     * [<span class="tag str"></span>](types.md) **url**: The URL.
-    * [<span class="tag fun"></span>](types.md#function) **callback_function**: Called when the request completes (or fails). Passed the [Web Request Instance](webrequest-instance.md).
+    * [<span class="tag fun"></span>](types.md#function) **callback_function**: Called when the request completes (or fails). Passed the [Web Request Instance](instance.md).
         * {>>Technically optional, but it makes no sense to send a GET request and not handle the response (or errors).<<}
 
 !!!example
@@ -118,14 +118,14 @@ Performs a HTTP GET request. Returns a [Web Request Instance](webrequest-instanc
 
 ###post(...)
 
-Performs a HTTP POST request, sending the specified data. Returns a [Web Request Instance](webrequest-instance.md).
+Performs a HTTP POST request, sending the specified data. Returns a [Web Request Instance](instance.md).
 
 The form will be sent as the body of the request (`Content-Type: application/x-www-form-urlencoded`).
 
 !!!info "post(url, form, callback_function)"
     * [<span class="tag str"></span>](types.md) **url**: The url to pull post to.
     * [<span class="tag tab"></span>](types.md)/[<span class="tag str"></span>](types.md) **form**: The form to post.
-    * [<span class="tag fun"></span>](types.md#function) **callback_function**: Called when the request completes (or fails). Passed the [Web Request Instance](webrequest-instance.md).
+    * [<span class="tag fun"></span>](types.md#function) **callback_function**: Called when the request completes (or fails). Passed the [Web Request Instance](instance.md).
         * {>>Optional, but you will be unable to handle the response (or errors) if unused.<<}
 
 When `form` is provided as a [<span class="tag tab"></span>](types.md) the data will be URL encoded for you.
@@ -136,12 +136,12 @@ The table keys and values must both be [<span class="tag str"></span>](types.md)
 
 ###put(...)
 
-Performs a HTTP PUT request, sending the specified data. Returns a [Web Request Instance](webrequest-instance.md).
+Performs a HTTP PUT request, sending the specified data. Returns a [Web Request Instance](instance.md).
 
 The data will be UTF-8 encoded and sent as binary data in the body of the request (`Content-Type: application/octet-stream`).
 
 !!!info "put(url, data, callback_function)"
     * [<span class="tag str"></span>](types.md) **url**: The url to pull post to.
     * [<span class="tag str"></span>](types.md) **data**: The data to post.
-    * [<span class="tag fun"></span>](types.md#function) **callback_function**: Called when the request completes (or fails). Passed the [Web Request Instance](webrequest-instance.md).
+    * [<span class="tag fun"></span>](types.md#function) **callback_function**: Called when the request completes (or fails). Passed the [Web Request Instance](instance.md).
         * {>>Optional, but you will be unable to handle the response (or errors) if unused.<<}
