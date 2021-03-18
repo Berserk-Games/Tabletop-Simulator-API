@@ -1036,9 +1036,30 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../player/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_18" type="checkbox" id="__nav_2_18" >
+      
+      <label class="md-nav__link" for="__nav_2_18">
         Player
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Player" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_18">
+          <span class="md-nav__icon md-icon"></span>
+          Player
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player/colors/" class="md-nav__link">
+        Colors
       </a>
     </li>
   
@@ -1049,9 +1070,27 @@
   
   
     <li class="md-nav__item">
-      <a href="../player-color/" class="md-nav__link">
-        Player Color
+      <a href="../player/manager/" class="md-nav__link">
+        Manager
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player/instance/" class="md-nav__link">
+        Instance
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1064,14 +1103,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_20" type="checkbox" id="__nav_2_20" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_19" type="checkbox" id="__nav_2_19" >
       
-      <label class="md-nav__link" for="__nav_2_20">
+      <label class="md-nav__link" for="__nav_2_19">
         Spawnable Objects
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Spawnable Objects" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_20">
+        <label class="md-nav__title" for="__nav_2_19">
           <span class="md-nav__icon md-icon"></span>
           Spawnable Objects
         </label>
@@ -1199,14 +1238,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_28" type="checkbox" id="__nav_2_28" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_27" type="checkbox" id="__nav_2_27" >
       
-      <label class="md-nav__link" for="__nav_2_28">
+      <label class="md-nav__link" for="__nav_2_27">
         Web Request
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Web Request" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_28">
+        <label class="md-nav__title" for="__nav_2_27">
           <span class="md-nav__icon md-icon"></span>
           Web Request
         </label>
@@ -1791,7 +1830,7 @@
 </tr>
 <tr>
 <td id="getseatedplayers" style="position: relative;">getSeatedPlayers()<h6 data-toc-mock-searchable="" id="getseatedplayers" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">getSeatedPlayers()</h6></td>
-<td>Returns a Table of the <a href="../player-color/">Player Colors</a> strings of seated players.</td>
+<td>Returns a Table of the <a href="../player/colors/">Player Colors</a> strings of seated players.</td>
 <td><a href="../types/"><span class="ret tab"></span></a></td>
 <td></td>
 </tr>
@@ -1851,7 +1890,7 @@
 </tr>
 <tr>
 <td>stringColorToRGB(<a href="../types/"><span class="tag str"></span></a> player_color)</td>
-<td>Converts a <a href="../player-color/">Player Color</a> string into a Color Table for tinting.</td>
+<td>Converts a <a href="../player/colors/">Player Color</a> string into a Color Table for tinting.</td>
 <td><a href="../types/#color"><span class="ret col"></span></a></td>
 <td><a href="#stringcolortorgb"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1962,7 +2001,7 @@
 </tr>
 <tr>
 <td>printToColor(<a href="../types/"><span class="tag str"></span></a> message, <a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/#color"><span class="tag col"></span></a> message_tint)</td>
-<td>Print a message to a specific <a href="../player-color/">Player Color</a>.</td>
+<td>Print a message to a specific <a href="../player/colors/">Player Color</a>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#printtocolor"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1986,7 +2025,7 @@
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>label</strong>: Label for the menu item.</li>
 <li><a href="../types/"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: Execute if menu item is selected.<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong> <a href="../player-color/">Player Color</a> who selected the menu item.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong> <a href="../player/colors/">Player Color</a> who selected the menu item.</li>
 <li><a href="../types/"><span class="tag vec"></span></a> <strong>menu_position</strong> Global position of the right-click context menu.</li>
 </ul>
 </li>
@@ -2308,11 +2347,11 @@
 </code></pre></div>
 <hr />
 <h4 id="stringcolortorgb">stringColorToRGB(...)<a class="headerlink" href="#stringcolortorgb" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret col"></span></a> Converts a <a href="../player-color/">Player Color</a> string into a Color Table for tinting.</p>
+<p><a href="../types/"><span class="ret col"></span></a> Converts a <a href="../player/colors/">Player Color</a> string into a Color Table for tinting.</p>
 <div class="admonition info">
 <p class="admonition-title">stringColorToRGB(player_color)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong> A String of a <a href="../player-color/">Player Color</a>.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong> A String of a <a href="../player/colors/">Player Color</a>.</li>
 </ul>
 </div>
 <div class="highlight"><pre><span></span><code><span class="n">printToAll</span><span class="p">(</span><span class="s2">&quot;Blue message&quot;</span><span class="p">,</span> <span class="n">stringColorToRGB</span><span class="p">(</span><span class="s2">&quot;Blue&quot;</span><span class="p">))</span>
@@ -2333,7 +2372,7 @@ are used, then player hotkey bindings will persist.</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>label</strong>: A label displayed to users.</li>
 <li><a href="../types/"><span class="tag fun"></span></a> <strong>callback</strong>(playerColor, hoveredObject, pointerPosition, isKeyUp): The function that will be executed whenever the hotkey is pressed, and <em>also</em> when released if <code>triggerOnKeyUp</code> is <code>true</code>.<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>playerColor</strong>: <a href="../player-color/">Player Color</a> of the player that pressed the hotkey.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>playerColor</strong>: <a href="../player/colors/">Player Color</a> of the player that pressed the hotkey.</li>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>hoveredObject</strong>: The object that the Player's pointer was hovering over at the moment the key was pressed/released. <code>nil</code> if no object was under the Player's pointer at the time.</li>
 <li><a href="../types/"><span class="tag vec"></span></a> <strong>pointerPosition</strong>: <a href="../types/#position">Word Position</a> of the Player's pointer at the moment the key was pressed/released.</li>
 <li><a href="../types/"><span class="tag boo"></span></a> <strong>isKeyUp</strong>: Whether this callback is being triggered in response to a hotkey being released.</li>
@@ -2377,7 +2416,7 @@ hotkey, the hotkey callback and the default shuffle behavior will both be execut
 <p class="admonition-title">broadcastToColor(message, player_color, message_tint)</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>message</strong>: Message to display on-screen.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> to receive the message.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> to receive the message.</li>
 <li><a href="../types/#color"><span class="tag col"></span></a> <strong>message_tint</strong>: RGB color tint for the text.</li>
 </ul>
 </div>
@@ -2526,7 +2565,7 @@ hotkey, the hotkey callback and the default shuffle behavior will both be execut
 <p class="admonition-title">printToColor(message, player_color, message_tint)</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>message</strong>: Message to place into the player's in-game chat.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player that will receive the message.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player that will receive the message.</li>
 <li><a href="../types/#color"><span class="tag col"></span></a> <strong>message_tint</strong>: RGB values for the text's color tint.</li>
 </ul>
 </div>

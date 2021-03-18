@@ -1938,9 +1938,30 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../player/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_18" type="checkbox" id="__nav_2_18" >
+      
+      <label class="md-nav__link" for="__nav_2_18">
         Player
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Player" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_18">
+          <span class="md-nav__icon md-icon"></span>
+          Player
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player/colors/" class="md-nav__link">
+        Colors
       </a>
     </li>
   
@@ -1951,9 +1972,27 @@
   
   
     <li class="md-nav__item">
-      <a href="../player-color/" class="md-nav__link">
-        Player Color
+      <a href="../player/manager/" class="md-nav__link">
+        Manager
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player/instance/" class="md-nav__link">
+        Instance
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1966,14 +2005,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_20" type="checkbox" id="__nav_2_20" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_19" type="checkbox" id="__nav_2_19" >
       
-      <label class="md-nav__link" for="__nav_2_20">
+      <label class="md-nav__link" for="__nav_2_19">
         Spawnable Objects
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Spawnable Objects" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_20">
+        <label class="md-nav__title" for="__nav_2_19">
           <span class="md-nav__icon md-icon"></span>
           Spawnable Objects
         </label>
@@ -2101,14 +2140,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_28" type="checkbox" id="__nav_2_28" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_27" type="checkbox" id="__nav_2_27" >
       
-      <label class="md-nav__link" for="__nav_2_28">
+      <label class="md-nav__link" for="__nav_2_27">
         Web Request
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Web Request" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_28">
+        <label class="md-nav__title" for="__nav_2_27">
           <span class="md-nav__icon md-icon"></span>
           Web Request
         </label>
@@ -4233,7 +4272,7 @@ unless the Object includes the behavior.</p>
 </tr>
 <tr>
 <td id="getgmnotes_1" style="position: relative;">getGMNotes()<h6 data-toc-mock-searchable="" id="getgmnotes" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">getGMNotes()</h6></td>
-<td>Game Master Notes only visible for <a href="../player-color/">Player Color</a> Black.</td>
+<td>Game Master Notes only visible for <a href="../player/colors/">Player Color</a> Black.</td>
 <td><a href="../types/"><span class="ret str"></span></a></td>
 <td></td>
 </tr>
@@ -4377,7 +4416,7 @@ unless the Object includes the behavior.</p>
 </tr>
 <tr>
 <td id="setgmnotes_1" style="position: relative;">setGMNotes(<h6 data-toc-mock-searchable="" id="setgmnotes" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">setGMNotes(...)</h6><a href="../types/"><span class="tag str"></span></a> notes)</td>
-<td>Sets Game Master Notes only visible for <a href="../player-color/">Player Color</a> Black.</td>
+<td>Sets Game Master Notes only visible for <a href="../player/colors/">Player Color</a> Black.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td></td>
 </tr>
@@ -5148,7 +5187,7 @@ unless the Object includes the behavior.</p>
 <p><em>The click function which is activated by clicking this button has its own parameters it is passed automatically.</em></p>
 <ul>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>obj</strong>: The Object the button is attached to.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_clicker_color</strong>: <a href="../player-color/">Player Color</a> of the player that pressed the button.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_clicker_color</strong>: <a href="../player/colors/">Player Color</a> of the player that pressed the button.</li>
 <li><a href="../types/"><span class="tag boo"></span></a> <strong>alt_click</strong>: True if a button other than left-click was used to click the button.</li>
 </ul>
 </div>
@@ -5280,7 +5319,7 @@ unless the Object includes the behavior.</p>
 <p><em>The click function which is activated by editing the text in this input has its own parameters it is passed automatically.</em></p>
 <ul>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>obj</strong>: The Object the input is attached to.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_clicker_color</strong>: <a href="../player-color/">Player Color</a> of the player that has selected/edited the input.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_clicker_color</strong>: <a href="../player/colors/">Player Color</a> of the player that has selected/edited the input.</li>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>input_value</strong>: Text currently in the input.</li>
 <li><a href="../types/"><span class="tag boo"></span></a> <strong>selected</strong>: If the value box is still being edited or not.</li>
 </ul>
@@ -5807,12 +5846,12 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 <tr>
 <td><code>Fog</code> (Hidden Zone)</td>
 <td><a href="../types/"><span class="tag str"></span></a></td>
-<td>Changes the hidden zone owner to the specified <a href="../player-color/">Player Color</a>.</td>
+<td>Changes the hidden zone owner to the specified <a href="../player/colors/">Player Color</a>.</td>
 </tr>
 <tr>
 <td><code>Hand</code> (Hand Zone)</td>
 <td><a href="../types/"><span class="tag str"></span></a></td>
-<td>Changes the hand owner to the specified <a href="../player-color/">Player Color</a>.</td>
+<td>Changes the hand owner to the specified <a href="../player/colors/">Player Color</a>.</td>
 </tr>
 <tr>
 <td><code>Tablet</code></td>
@@ -5830,7 +5869,7 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>label</strong>: Label for the menu item.</li>
 <li><a href="../types/"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: Execute if menu item is selected.<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong> <a href="../player-color/">Player Color</a> who selected the menu item.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong> <a href="../player/colors/">Player Color</a> who selected the menu item.</li>
 </ul>
 </li>
 <li><a href="../types/"><span class="tag boo"></span></a> <strong>keep_open</strong>: Keep context menu open after menu
@@ -5906,7 +5945,7 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 <p class="admonition-title">deal(number, player_color, index)</p>
 <ul>
 <li><a href="../types/"><span class="tag int"></span></a> <strong>number</strong>: How many to deal.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: The <a href="../player-color/">Player Color</a> to deal to.<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: The <a href="../player/colors/">Player Color</a> to deal to.<ul>
 <li><span class="critic comment">Optional, defaults to an empty string. If not supplied, it will attempt to deal to all seated players.</span></li>
 </ul>
 </li>
@@ -5924,7 +5963,7 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 <ul>
 <li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>offset</strong>: The x/y/z offset to deal to around the given hand zone.</li>
 <li><a href="../types/"><span class="tag boo"></span></a> <strong>flip</strong>: If the card is flipped over when dealt.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: Hand zone <a href="../player-color/">Player Color</a> to offset dealing to.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: Hand zone <a href="../player/colors/">Player Color</a> to offset dealing to.</li>
 </ul>
 </div>
 <div class="highlight"><pre><span></span><code><span class="c1">-- Example of dealing 2 cards in front of the White player, face up.</span>

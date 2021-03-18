@@ -14,7 +14,7 @@
     
     
       
-        <title>Basic Elements - Tabletop Simulator API</title>
+        <title>Manager - Tabletop Simulator API</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#element-summary" class="md-skip">
+        <a href="#player-manager" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Basic Elements
+              Manager
             
           </span>
         </div>
@@ -331,12 +331,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Scripting API
@@ -718,12 +720,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_18" type="checkbox" id="__nav_2_18" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_18" type="checkbox" id="__nav_2_18" checked>
       
       <label class="md-nav__link" for="__nav_2_18">
         Player
@@ -741,7 +745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../player/colors/" class="md-nav__link">
+      <a href="../colors/" class="md-nav__link">
         Colors
       </a>
     </li>
@@ -751,11 +755,90 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../player/manager/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Manager
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Manager
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#function-summary" class="md-nav__link">
+    Function Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-details" class="md-nav__link">
+    Function Details
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getavailablecolors" class="md-nav__link">
+    getAvailableColors()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcolors" class="md-nav__link">
+    getColors()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getplayers" class="md-nav__link">
+    getPlayers()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getspectators" class="md-nav__link">
+    getSpectators()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -765,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../player/instance/" class="md-nav__link">
+      <a href="../instance/" class="md-nav__link">
         Instance
       </a>
     </li>
@@ -882,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../ui/" class="md-nav__link">
         UI
       </a>
     </li>
@@ -976,14 +1059,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         UI API
@@ -1001,7 +1082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../introUI/" class="md-nav__link">
+      <a href="../../ui/introUI/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -1013,7 +1094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../attributes/" class="md-nav__link">
+      <a href="../../ui/attributes/" class="md-nav__link">
         Attributes
       </a>
     </li>
@@ -1023,79 +1104,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Basic Elements
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../ui/basicelements/" class="md-nav__link">
         Basic Elements
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#element-summary" class="md-nav__link">
-    Element Summary
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-details" class="md-nav__link">
-    Element Details
-  </a>
-  
-    <nav class="md-nav" aria-label="Element Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#text" class="md-nav__link">
-    Text
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#image" class="md-nav__link">
-    Image
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#progressbar" class="md-nav__link">
-    ProgressBar
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1105,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../inputelements/" class="md-nav__link">
+      <a href="../../ui/inputelements/" class="md-nav__link">
         Input Elements
       </a>
     </li>
@@ -1117,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../layoutgrouping/" class="md-nav__link">
+      <a href="../../ui/layoutgrouping/" class="md-nav__link">
         Layout/Grouping
       </a>
     </li>
@@ -1129,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../defaults/" class="md-nav__link">
+      <a href="../../ui/defaults/" class="md-nav__link">
         Defaults
       </a>
     </li>
@@ -1157,6 +1170,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1165,37 +1180,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#element-summary" class="md-nav__link">
-    Element Summary
+  <a href="#function-summary" class="md-nav__link">
+    Function Summary
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#element-details" class="md-nav__link">
-    Element Details
+  <a href="#function-details" class="md-nav__link">
+    Function Details
   </a>
   
-    <nav class="md-nav" aria-label="Element Details">
+    <nav class="md-nav" aria-label="Function Details">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#text" class="md-nav__link">
-    Text
+  <a href="#getavailablecolors" class="md-nav__link">
+    getAvailableColors()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#image" class="md-nav__link">
-    Image
+  <a href="#getcolors" class="md-nav__link">
+    getColors()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#progressbar" class="md-nav__link">
-    ProgressBar
+  <a href="#getplayers" class="md-nav__link">
+    getPlayers()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getspectators" class="md-nav__link">
+    getSpectators()
   </a>
   
 </li>
@@ -1218,7 +1240,7 @@
               
 
   <a
-    href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/ui/basicelements.md"
+    href="https://github.com/Berserk-Games/Tabletop-Simulator-API/edit/master/docs/player/manager.md"
     title="Edit this page"
     class="md-content__button md-icon"
   >
@@ -1231,257 +1253,75 @@
   as the main headline.
 -->
 
-  <h1>
-    Basic Elements
-    
-  </h1>
-
-
 
 <!-- Markdown content -->
-<p>These are display-type elements for the UI. They cannot send information to any Lua scripts.</p>
-<p>Each element has its own attributes specific to its type that work in addition to the <a href="../attributes/#common-attributes">common attributes</a>.</p>
-<h2 id="element-summary">Element Summary<a class="headerlink" href="#element-summary" title="Permanent link">&para;</a></h2>
+<h1 id="player-manager">Player Manager<a class="headerlink" href="#player-manager" title="Permanent link">&para;</a></h1>
+<p>Player is a static global class which allows you to retrieve <a href="../instance/">Player instances</a> and
+<a href="../colors/">Player colors</a>.</p>
+<h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Element Name</th>
+<th>Function Name</th>
+<th>Return</th>
 <th>Description</th>
 <th>&nbsp;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code class="highlight"><span class="nt">&lt;Text&gt;&lt;/Text&gt;</span></code></td>
-<td>Adds basic text.</td>
-<td><a href="#text"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<td id="getavailablecolors" style="position: relative;">getAvailableColors()<h6 data-toc-mock-searchable="" id="getavailablecolors" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">getAvailableColors()</h6></td>
+<td><a href="../../types/"><span class="ret tab"></span></a></td>
+<td>Returns a table of strings of every valid seat color at the current table. Returned colors are in the default order.</td>
+<td></td>
+</tr>
+<tr>
+<td id="getcolors" style="position: relative;">getColors()<h6 data-toc-mock-searchable="" id="getcolors" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">getColors()</h6></td>
+<td><a href="../../types/"><span class="ret tab"></span></a></td>
+<td>Returns a table of strings of every possible seat color. Returned colors are in the default order.</td>
+<td></td>
+</tr>
+<tr>
+<td>getPlayers()</td>
+<td><a href="../../types/"><span class="ret tab"></span></a></td>
+<td>Returns a table of all <a href="../instance/">Player instances</a>.</td>
+<td><a href="#getplayers"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td><code class="highlight"><span class="nt">&lt;Image&gt;&lt;/Image&gt;</span></code></td>
-<td>Adds an image.</td>
-<td><a href="#image"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
-</tr>
-<tr>
-<td><code class="highlight"><span class="nt">&lt;ProgressBar&gt;&lt;/ProgressBar&gt;</span></code></td>
-<td>Displays a progress bar which can be updated dynamically via script.</td>
-<td><a href="#progressbar"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<td>getSpectators()</td>
+<td><a href="../../types/"><span class="ret tab"></span></a></td>
+<td>Returns a table of all spectator (Grey) <a href="../instance/">Player instances</a>.</td>
+<td><a href="#getspectators"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="element-details">Element Details<a class="headerlink" href="#element-details" title="Permanent link">&para;</a></h2>
-<h3 id="text">Text<a class="headerlink" href="#text" title="Permanent link">&para;</a></h3>
-<p>Adds basic text. This tag supports Rich Text as shown in the example below.</p>
-<table>
-<thead>
-<tr>
-<th>Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Type / Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Default Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>text</td>
-<td>This can be used to determine the text that appears. It can also be modified externally by the script.</td>
-<td>string</td>
-<td><em>(none)</em></td>
-</tr>
-<tr>
-<td>alignment</td>
-<td></td>
-<td><ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul></td>
-<td>MiddleCenter</td>
-</tr>
-<tr>
-<td>color</td>
-<td></td>
-<td><a href="../attributes/#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><code>#323232</code></td>
-</tr>
-<tr>
-<td>fontStyle</td>
-<td></td>
-<td><ul><li>Normal</li><li>Bold</li><li>Italic</li><li>BoldItalic</li></ul></td>
-<td><code>Normal</code></td>
-</tr>
-<tr>
-<td>fontSize</td>
-<td></td>
-<td>float</td>
-<td><code>14</code></td>
-</tr>
-<tr>
-<td>resizeTextForBestFit</td>
-<td>Resize text to fit?</td>
-<td><a href="../attributes/#attribute-types"><span class="tag boo"></span></a></td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td>resizeTextMinSize</td>
-<td>Minimum font size</td>
-<td>float</td>
-<td><code>10</code></td>
-</tr>
-<tr>
-<td>resizeTextMaxSize</td>
-<td>Maximum font size</td>
-<td>float</td>
-<td><code>40</code></td>
-</tr>
-<tr>
-<td>horizontalOverflow</td>
-<td></td>
-<td><ul><li>Wrap</li><li>Overflow</li></ul></td>
-<td><code>Overflow</code></td>
-</tr>
-<tr>
-<td>verticalOverflow</td>
-<td></td>
-<td><ul><li>Truncate</li><li>Overflow</li></ul></td>
-<td><code>Truncate</code></td>
-</tr>
-</tbody>
-</table>
-<p>Example:
-<div class="highlight"><pre><span></span><code><span class="c">&lt;!-- Standard Text element --&gt;</span>
-<span class="nt">&lt;Text&gt;</span>Some Text<span class="nt">&lt;/Text&gt;</span>
-
-<span class="c">&lt;!-- Rich Text --&gt;</span>
-<span class="nt">&lt;Text&gt;</span>
-    This text is <span class="nt">&lt;b&gt;</span>Bold<span class="nt">&lt;/b&gt;</span>, <span class="nt">&lt;i&gt;</span>Italic<span class="nt">&lt;/i&gt;</span>, 
-    and <span class="nt">&lt;textcolor</span> <span class="na">color=</span><span class="s">&quot;#00FF00&quot;</span><span class="nt">&gt;</span>Green<span class="nt">&lt;/textcolor&gt;</span>.    
-    This text is <span class="nt">&lt;textsize</span> <span class="na">size=</span><span class="s">&quot;18&quot;</span><span class="nt">&gt;</span>Larger<span class="nt">&lt;/textsize&gt;</span>.
-<span class="nt">&lt;/Text&gt;</span>
+<h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link">&para;</a></h2>
+<h3 id="getplayers">getPlayers()<a class="headerlink" href="#getplayers" title="Permanent link">&para;</a></h3>
+<p><a href="../../types/"><span class="ret tab"></span></a> Returns a table of all <a href="../instance/">Player instances</a>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Blindfold all players.
+<div class="highlight"><pre><span></span><code><span class="kr">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">player</span> <span class="kr">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">Player</span><span class="p">.</span><span class="n">getPlayers</span><span class="p">())</span> <span class="kr">do</span>
+    <span class="n">player</span><span class="p">.</span><span class="n">blindfolded</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="kr">end</span>
 </code></pre></div></p>
+</div>
 <hr />
-<h3 id="image">Image<a class="headerlink" href="#image" title="Permanent link">&para;</a></h3>
-<p>Adds an image.</p>
-<table>
-<thead>
-<tr>
-<th>Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>image</td>
-<td>The name of the file in the asset manager (upper right corner of the scripting window in-game).</td>
-<td>string</td>
-<td><em>(none)</em></td>
-</tr>
-<tr>
-<td>color</td>
-<td></td>
-<td><a href="../attributes/#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><code>#FFFFFF</code></td>
-</tr>
-<tr>
-<td>type</td>
-<td>Image Type</td>
-<td><ul><li>Simple</li><li>Sliced</li><li>Filled</li><li>Tiled</li></ul></td>
-<td><code>Simple</code></td>
-</tr>
-<tr>
-<td>raycastTarget</td>
-<td>Should this image block clicks from passing through it?</td>
-<td><a href="../attributes/#attribute-types"><span class="tag boo"></span></a></td>
-<td><code>true</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="progressbar">ProgressBar<a class="headerlink" href="#progressbar" title="Permanent link">&para;</a></h3>
-<p>Displays a progress bar which can be updated dynamically via script.</p>
-<table>
-<thead>
-<tr>
-<th>Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Type / Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th>Default Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>image</td>
-<td>Background Image</td>
-<td>(path to image)</td>
-<td><em>(none)</em></td>
-</tr>
-<tr>
-<td>color</td>
-<td>Background Color</td>
-<td><a href="../attributes/#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><code>#FFFFFF</code></td>
-</tr>
-<tr>
-<td>fillImage</td>
-<td>Fill Image</td>
-<td>string</td>
-<td><em>(none)</em></td>
-</tr>
-<tr>
-<td>fillImageColor</td>
-<td>Fill Color</td>
-<td><a href="../attributes/#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><code>#FFFFFF</code></td>
-</tr>
-<tr>
-<td>percentage</td>
-<td>Percentage to Display</td>
-<td>float</td>
-<td><code>0</code></td>
-</tr>
-<tr>
-<td>showPercentageText</td>
-<td>Is the percentage text displayed?</td>
-<td><a href="../attributes/#attribute-types"><span class="tag boo"></span></a></td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td>percentageTextFormat</td>
-<td>Format to use for the percentage text</td>
-<td>string</td>
-<td><code>0.00</code></td>
-</tr>
-<tr>
-<td>textColor</td>
-<td>Percentage Text Color</td>
-<td><a href="../attributes/#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><code>#000000</code></td>
-</tr>
-<tr>
-<td>textShadow</td>
-<td>Percentage Text Shadow Color</td>
-<td><a href="../attributes/#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><em>(none)</em></td>
-</tr>
-<tr>
-<td>textOutline</td>
-<td>Percentage Text Outline Color</td>
-<td><a href="../attributes/#attribute-types"><span class="tag xmlco"></span></a></td>
-<td><em>(none)</em></td>
-</tr>
-<tr>
-<td>textAlignment</td>
-<td>Percentage Text Alignment</td>
-<td><ul><li>UpperLeft</li><li>UpperCenter</li><li>UpperRight</li><li>MiddleLeft</li><li>MiddleCenter</li><li>MiddleRight</li><li>LowerLeft</li><li>LowerCenter</li><li>LowerRight</li></ul></td>
-<td><code>MiddleCenter</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
+<h3 id="getspectators">getSpectators()<a class="headerlink" href="#getspectators" title="Permanent link">&para;</a></h3>
+<p><a href="../../types/"><span class="ret tab"></span></a> Returns a table of all spectator (Grey) <a href="../instance/">Player instances</a>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Print the steam name of all spectators.
+<div class="highlight"><pre><span></span><code><span class="kr">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">spectator</span> <span class="kr">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">Player</span><span class="p">.</span><span class="n">getSpectators</span><span class="p">())</span> <span class="kr">do</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">spectator</span><span class="p">.</span><span class="n">steam_name</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div></p>
+</div>
 
 <!-- Last update of source file -->
 

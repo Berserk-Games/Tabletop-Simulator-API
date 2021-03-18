@@ -1151,9 +1151,30 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../player/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_18" type="checkbox" id="__nav_2_18" >
+      
+      <label class="md-nav__link" for="__nav_2_18">
         Player
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Player" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_18">
+          <span class="md-nav__icon md-icon"></span>
+          Player
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player/colors/" class="md-nav__link">
+        Colors
       </a>
     </li>
   
@@ -1164,9 +1185,27 @@
   
   
     <li class="md-nav__item">
-      <a href="../player-color/" class="md-nav__link">
-        Player Color
+      <a href="../player/manager/" class="md-nav__link">
+        Manager
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player/instance/" class="md-nav__link">
+        Instance
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1179,14 +1218,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_20" type="checkbox" id="__nav_2_20" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_19" type="checkbox" id="__nav_2_19" >
       
-      <label class="md-nav__link" for="__nav_2_20">
+      <label class="md-nav__link" for="__nav_2_19">
         Spawnable Objects
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Spawnable Objects" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_20">
+        <label class="md-nav__title" for="__nav_2_19">
           <span class="md-nav__icon md-icon"></span>
           Spawnable Objects
         </label>
@@ -1314,14 +1353,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_28" type="checkbox" id="__nav_2_28" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_27" type="checkbox" id="__nav_2_27" >
       
-      <label class="md-nav__link" for="__nav_2_28">
+      <label class="md-nav__link" for="__nav_2_27">
         Web Request
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Web Request" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_28">
+        <label class="md-nav__title" for="__nav_2_27">
           <span class="md-nav__icon md-icon"></span>
           Web Request
         </label>
@@ -2136,14 +2175,14 @@
 </tr>
 <tr>
 <td>onPlayerConnect(<a href="../types/"><span class="tag pla"></span></a> person)</td>
-<td>Called when a <a href="../player/">Player</a> connects to a game.</td>
+<td>Called when a <a href="../player/instance/">Player</a> connects to a game.</td>
 <td><a href="#onplayerconnect"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
 <td>onPlayerDisconnect(<a href="../types/"><span class="tag pla"></span></a> person)</td>
-<td>Called when a <a href="../player/">Player</a> disconnects from a game.</td>
+<td>Called when a <a href="../player/instance/">Player</a> disconnects from a game.</td>
 <td><a href="#onplayerdisconnect"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
@@ -2503,7 +2542,7 @@
 <div class="admonition info">
 <p class="admonition-title">onObjectDrop(player_color, dropped_object)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the Player who dropped the Object.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the Player who dropped the Object.</li>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>dropped_object</strong>: The Object in game which was dropped.</li>
 </ul>
 </div>
@@ -2548,7 +2587,7 @@
 </div>
 <ul>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: The object that was flicked.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who flicked an object.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who flicked an object.</li>
 <li><a href="../types/"><span class="tag vec"></span></a> <strong>impulse</strong>: The impulse applied to the object.</li>
 </ul>
 <div class="admonition example">
@@ -2565,7 +2604,7 @@
 <div class="admonition info">
 <p class="admonition-title">onObjectHover(player_color, hovered_object)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who moved the pointer over an object.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who moved the pointer over an object.</li>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>hovered_object</strong>: Object on which the pointer was moved.</li>
 </ul>
 </div>
@@ -2631,7 +2670,7 @@
 <p class="admonition-title">onObjectNumberTyped(object, player_color, number)</p>
 <ul>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: The object the player was hovering over whilst typing a number.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player that typed the number.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player that typed the number.</li>
 <li><a href="../types/"><span class="tag int"></span></a> <strong>number</strong>: The number typed.</li>
 </ul>
 </div>
@@ -2678,7 +2717,7 @@
 <p class="admonition-title">onObjectPeek(object, player)</p>
 <ul>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: A reference to the Object which was peeked at.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player</strong>: Name of the <a href="../player-color/">Player Color</a> that peeked.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player</strong>: Name of the <a href="../player/colors/">Player Color</a> that peeked.</li>
 </ul>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectPeek</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
@@ -2691,7 +2730,7 @@
 <div class="admonition info">
 <p class="admonition-title">onObjectPickUp(player_color, picked_up_object)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the Player who picked up the object.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the Player who picked up the object.</li>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>picked_up_object</strong>: The Object in game which was picked up.</li>
 </ul>
 </div>
@@ -2706,7 +2745,7 @@
 <p class="admonition-title">onObjectRandomize(randomize_object, player_color)</p>
 <ul>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>spawn_object</strong>: The Object which triggered this function.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who triggered the function.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who triggered the function.</li>
 </ul>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectRandomize</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
@@ -2720,7 +2759,7 @@
 <p class="admonition-title">onObjectSearchEnd(obj, player_color)</p>
 <ul>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>obj</strong>: The Object which was searched.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who triggered the function.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who triggered the function.</li>
 </ul>
 </div>
 <hr />
@@ -2730,7 +2769,7 @@
 <p class="admonition-title">onObjectSearchStart(obj, player_color)</p>
 <ul>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>obj</strong>: The Object which was searched.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who triggered the function.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who triggered the function.</li>
 </ul>
 </div>
 <hr />
@@ -2766,7 +2805,7 @@
 <div class="admonition info">
 <p class="admonition-title">onPlayerChangeColor(player_color)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who triggered the function.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who triggered the function.</li>
 </ul>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onPlayerChangeColor</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
@@ -2779,7 +2818,7 @@
 <div class="admonition info">
 <p class="admonition-title">onPlayerChangeTeam(player_color, team)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who triggered the function.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who triggered the function.</li>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>team</strong>: Team to which the player has changed.  Options below.<ul>
 <li>"" (empty string, if changed to None)</li>
 <li>Diamonds</li>
@@ -2798,20 +2837,20 @@
 </code></pre></div>
 <hr />
 <h3 id="onplayerconnect">onPlayerConnect(...)<a class="headerlink" href="#onplayerconnect" title="Permanent link">&para;</a></h3>
-<p>Called when a <a href="../player/">Player</a> connects to a game.</p>
+<p>Called when a <a href="../player/instance/">Player</a> connects to a game.</p>
 <div class="admonition info">
 <p class="admonition-title">onPlayerConnect(person)</p>
 <ul>
-<li><a href="../types/"><span class="tag pla"></span></a> <strong>person</strong>: <a href="../player/">Player</a> reference to who connected.</li>
+<li><a href="../types/"><span class="tag pla"></span></a> <strong>person</strong>: <a href="../player/instance/">Player</a> reference to who connected.</li>
 </ul>
 </div>
 <hr />
 <h3 id="onplayerdisconnect">onPlayerDisconnect(...)<a class="headerlink" href="#onplayerdisconnect" title="Permanent link">&para;</a></h3>
-<p>Called when a <a href="../player/">Player</a> disconnects from a game.</p>
+<p>Called when a <a href="../player/instance/">Player</a> disconnects from a game.</p>
 <div class="admonition info">
 <p class="admonition-title">onPlayerDisconnect(person)</p>
 <ul>
-<li><a href="../types/"><span class="tag pla"></span></a> <strong>person</strong>: <a href="../player/">Player</a> reference to who disconnected.</li>
+<li><a href="../types/"><span class="tag pla"></span></a> <strong>person</strong>: <a href="../player/instance/">Player</a> reference to who disconnected.</li>
 </ul>
 </div>
 <hr />
@@ -2820,7 +2859,7 @@
 <div class="admonition info">
 <p class="admonition-title">onPlayerTurn(person)</p>
 <ul>
-<li><a href="../types/"><span class="tag pla"></span></a> <strong>person</strong>: <a href="../player/">Player</a> who's turn is starting.</li>
+<li><a href="../types/"><span class="tag pla"></span></a> <strong>person</strong>: <a href="../player/instance/">Player</a> who's turn is starting.</li>
 </ul>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onPlayerTurn</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
@@ -2853,7 +2892,7 @@
 <p class="admonition-title">onScriptingButtonDown(index, player_color)</p>
 <ul>
 <li><a href="../types/"><span class="tag int"></span></a> <strong>index</strong>: Index number, representing which key was pressed.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who triggered the function.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who triggered the function.</li>
 </ul>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onScriptingButtonDown</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
@@ -2867,7 +2906,7 @@
 <p class="admonition-title">onScriptingButtonUp(index, player_color)</p>
 <ul>
 <li><a href="../types/"><span class="tag int"></span></a> <strong>index</strong>: Index number, representing which key was released.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who triggered the function.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who triggered the function.</li>
 </ul>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onScriptingButtonUp</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
@@ -3002,7 +3041,7 @@
 <div class="admonition info">
 <p class="admonition-title">onDrop(player_color)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the Player.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the Player.</li>
 </ul>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onDrop</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
@@ -3016,7 +3055,7 @@
 <p class="admonition-title">onFlick(player_color, impulse)</p>
 </div>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who flicked this object.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who flicked this object.</li>
 <li><a href="../types/"><span class="tag vec"></span></a> <strong>impulse</strong>: The impulse applied to the object.</li>
 </ul>
 <div class="admonition example">
@@ -3033,7 +3072,7 @@
 <div class="admonition info">
 <p class="admonition-title">onHover(player_color)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who moved the pointer over an object.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who moved the pointer over an object.</li>
 </ul>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onHover</span><span class="p">(</span><span class="n">player_color</span><span class="p">)</span>
@@ -3047,7 +3086,7 @@
 <div class="admonition info">
 <p class="admonition-title">onNumberTyped(player_color, number)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player that typed the number.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player that typed the number.</li>
 <li><a href="../types/"><span class="tag int"></span></a> <strong>number</strong>: The number typed.</li>
 </ul>
 </div>
@@ -3087,7 +3126,7 @@
 <div class="admonition info">
 <p class="admonition-title">onPeek(player_color)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: Name of the <a href="../player-color/">Player Color</a> that peeked.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: Name of the <a href="../player/colors/">Player Color</a> that peeked.</li>
 </ul>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onPeek</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
@@ -3100,7 +3139,7 @@
 <div class="admonition info">
 <p class="admonition-title">onPickUp(player_color)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the Player.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the Player.</li>
 </ul>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onPickUp</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
@@ -3113,7 +3152,7 @@
 <div class="admonition info">
 <p class="admonition-title">onRandomize(player_color)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the player who triggered the function.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who triggered the function.</li>
 </ul>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onRandomize</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
@@ -3126,7 +3165,7 @@
 <div class="admonition info">
 <p class="admonition-title">onSearchEnd(<a href="../types/"><span class="tag str"></span></a> player_color)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the Player.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the Player.</li>
 </ul>
 </div>
 <hr />
@@ -3135,7 +3174,7 @@
 <div class="admonition info">
 <p class="admonition-title">onSearchStart(<a href="../types/"><span class="tag str"></span></a> player_color)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player-color/">Player Color</a> of the Player.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the Player.</li>
 </ul>
 </div>
 <hr />
