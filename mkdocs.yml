@@ -83,9 +83,13 @@ nav:
       - Counter: behavior/counter.md
       - RPGFigurine: behavior/rpgfigurine.md
       - TextTool: behavior/texttool.md
+    - Object Components:
+      - Introduction: components/introduction.md
+      - Component: components/component.md
+      - GameObject: components/gameobject.md
+      - Examples: components/examples.md
     - Backgrounds: backgrounds.md
     - Color: color.md
-    - Component: component.md
     - Grid: grid.md
     - Hands: hands.md
     - Info: info.md
