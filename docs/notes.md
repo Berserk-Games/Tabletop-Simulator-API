@@ -19,7 +19,7 @@ Functions that interact with the on-screen notes (lower right corner of screen).
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-getNotes() {: #getnotes } | Returns the contents of the on-screen notes section. | [<span class="ret str"></span>](types.md) |
+getNotes() {: #getnotes data-toc-label="getNotes()" data-toc-child-of="notes-function-details" } | Returns the contents of the on-screen notes section. | [<span class="ret str"></span>](types.md) |
 setNotes([<span class="tag str"></span>](types.md) notes) | Replace the text in the notes window with the string. | [<span class="ret boo"></span>](types.md) | [:i:](#setnotes)
 
 ---
@@ -118,7 +118,7 @@ Notes.removeNotebookTab(0)
 
 
 
-###Notes Function Details
+###Notes Function Details {: data-toc-sort }
 
 
 ####setNotes(...)

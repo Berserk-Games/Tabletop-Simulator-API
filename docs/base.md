@@ -10,20 +10,20 @@ General functions which work within any script.
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 addContextMenuItem([<span class="tag str"></span>](types.md) label, [<span class="tag fun"></span>](types.md) toRunFunc, [<span class="tag boo"></span>](types.md) keep_open, [<span class="tag boo"></span>](types.md) require_table) | Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table. | [<span class="ret boo"></span>](types.md) | [:i:](#addcontextmenuitem)
-clearContextMenu() | Clears all menu items added by function [addContextMenuItem](#fnc_addcontextmenuitem). | [<span class="ret boo"></span>](types.md) |
+clearContextMenu() | Clears all menu items added by function [addContextMenuItem](#addcontextmenuitem). | [<span class="ret boo"></span>](types.md) |
 copy([<span class="tag tab"></span>](types.md) object_list) | Copy a list of Objects to the clipboard. Works with [paste(...)](#paste). | [<span class="ret boo"></span>](types.md) | [:i:](#copy)
 destroyObject([<span class="tag obj"></span>](types.md) obj) | Destroy an Object. | [<span class="ret boo"></span>](types.md) | [:i:](#destroyobject)
-flipTable() {: #fliptable } | Flip the table. | [<span class="ret boo"></span>](types.md) |
-getAllObjects() {: #getallobjects } | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [getObjects()](#getobjects)_.</p>Returns a Table of all [Objects](object.md) in the game _except hand zones_. | [<span class="ret tab"></span>](types.md) |
+flipTable() {: #fliptable data-toc-label="flipTable()" data-toc-child-of="global-function-details" } | Flip the table. | [<span class="ret boo"></span>](types.md) |
+getAllObjects() {: #getallobjects data-toc-label="getAllObjects()" data-toc-child-of="global-function-details" } | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [getObjects()](#getobjects)_.</p>Returns a Table of all [Objects](object.md) in the game _except hand zones_. | [<span class="ret tab"></span>](types.md) |
 getObjectFromGUID([<span class="tag str"></span>](types.md) guid) | Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist. | [<span class="ret obj"></span>](types.md) | [:i:](#getobjectfromguid)
-getObjects() {: #getobjects } | Returns a Table of all [Objects](object.md) in the game. | [<span class="ret tab"></span>](types.md) |
+getObjects() {: #getobjects data-toc-label="getObjects()" data-toc-child-of="global-function-details" } | Returns a Table of all [Objects](object.md) in the game. | [<span class="ret tab"></span>](types.md) |
 getObjectsWithTag([<span class="tag str"></span>](types.md) tag) | Returns Table of all [Objects](object.md) which have the specified tag attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithtag)
 getObjectsWithAnyTags([<span class="tag tab"></span>](types.md) tags) | Returns Table of all [Objects](object.md) which have at least one of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithanytags)
 getObjectsWithAllTags([<span class="tag tab"></span>](types.md) tags) | Returns Table of all [Objects](object.md) which have all of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithalltags)
-getSeatedPlayers() {: #getseatedplayers } | Returns a Table of the [Player Colors](player-color.md) strings of seated players. | [<span class="ret tab"></span>](types.md) |
+getSeatedPlayers() {: #getseatedplayers data-toc-label="getSeatedPlayers()" data-toc-child-of="global-function-details" } | Returns a Table of the [Player Colors](player-color.md) strings of seated players. | [<span class="ret tab"></span>](types.md) |
 group([<span class="tag tab"></span>](types.md) objects) | Groups objects together, like how the `G` key does for players. | [<span class="ret tab"></span>](types.md) | [:i:](#group)
 paste([<span class="tag tab"></span>](types.md) parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](types.md) | [:i:](#paste)
-setLookingForPlayers([<span class="tag boo"></span>](types.md) lfp) {: #setlookingforplayers } | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](types.md) |
+setLookingForPlayers([<span class="tag boo"></span>](types.md) lfp) {: #setlookingforplayers data-toc-label="setLookingForPlayers(...)" data-toc-child-of="global-function-details" } | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](types.md) |
 spawnObject([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object. See [Built-in](built-in-object.md) and [Custom](custom-game-objects.md) Spawnable Object pages for further details. | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobject)
 spawnObjectData([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object using a data table. Works with [getData()](object.md#getdata). | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectdata)
 spawnObjectJSON([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object using a JSON string. Works with [getJSON()](object.md#getjson). | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectjson)
@@ -33,9 +33,9 @@ stringColorToRGB([<span class="tag str"></span>](types.md) player_color) | Conve
 ####Hotkey Functions
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-addHotkey([<span class="tag str"></span>](types.md) label, [<span class="tag fun"></span>](types.md) toRunFunc, [<span class="tag boo"></span>](types.md) trigger_on_key_up)  | Adds a bindable Hotkey to the game. User may assign a key to it in Options->Game Keys after the game was created. | [<span class="ret boo"></span>](types.md) | [:i:](#addhotkey)
-clearHotkeys() {: #fnc_clearhotkeys } | Clears all Hotkeys added by [addHotkey](#fnc_addhotkey) | [<span class="ret boo"></span>](types.md) |
-showHotkeyConfig() {: #fnc_showhotkeyconfig } | Shows the Hotkey configuration window under Options->Game Keys. | [<span class="ret boo"></span>](types.md) |
+addHotkey([<span class="tag str"></span>](types.md) label, [<span class="tag fun"></span>](types.md) toRunFunc, [<span class="tag boo"></span>](types.md) trigger_on_key_up)  | Adds a bindable hotkey to the game. | [<span class="ret boo"></span>](types.md) | [:i:](#addhotkey)
+clearHotkeys() {: #clearhotkeys data-toc-label="clearHotkeys()" data-toc-child-of="hotkey-function-details" } | Clears all hotkeys previously added via [addHotkey(...)](#addhotkey). | [<span class="ret boo"></span>](types.md) |
+showHotkeyConfig() {: #showhotkeyconfig data-toc-label="showHotkeyConfig()" data-toc-child-of="hotkey-function-details" } | Shows the hotkey configuration window under Options->Game Keys. | [<span class="ret boo"></span>](types.md) |
 
 ###Message Functions
 Functions which handle sending and displaying data.
@@ -50,7 +50,7 @@ logStyle([<span class="tag str"></span>](types.md) tag, [<span class="tag col"><
 print([<span class="tag str"></span>](types.md) message) | Prints a string into chat that only the host is able to see. Used for debugging scripts. | [<span class="ret nil"></span>](types.md) | [:i:](#print)
 printToAll([<span class="tag str"></span>](types.md) message, [<span class="tag col"></span>](types.md#color) message_tint) | Print a message into the chat of all connected players. | [<span class="ret boo"></span>](types.md) | [:i:](#printtoall)
 printToColor([<span class="tag str"></span>](types.md) message, [<span class="tag str"></span>](types.md) player_color, [<span class="tag col"></span>](types.md#color) message_tint) | Print a message to a specific [Player Color](player-color.md). | [<span class="ret boo"></span>](types.md) | [:i:](#printtocolor)
-sendExternalMessage([<span class="tag tab"></span>](types.md) data) {: #sendexternalmessage } | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](types.md) |
+sendExternalMessage([<span class="tag tab"></span>](types.md) data) {: #sendexternalmessage data-toc-label="sendExternalMessage(...)" data-toc-child-of="message-function-details" } | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](types.md) |
 
 
 
@@ -58,7 +58,7 @@ sendExternalMessage([<span class="tag tab"></span>](types.md) data) {: #sendexte
 
 ##Function Details
 
-###Global Function details
+###Global Function Details {: data-toc-sort }
 
 ####addContextMenuItem(...)
 
@@ -370,47 +370,43 @@ printToAll("Blue message", stringColorToRGB("Blue"))
 
 ---
 
+### Hotkey Function Details {: data-toc-sort }
+
 ####addHotkey(...)
 
-[<span class="ret boo"></span>](types.md) Adds a bindable Hotkey to the game. User may assign a key to it in Options->Game Keys after the game was created.
+[<span class="ret boo"></span>](types.md) Adds a bindable hotkey to the game.
 
-!!!info "addHotkey(label, toRunFunc, trigger_on_key_up)"
-	* [<span class="tag str"></span>](types.md) **label**: A String for the Hotkey.
-	* [<span class="tag fun"></span>](types.md) **toRunFunc**(player_color, hovered_object, world_position, key_down_up): The function that is executed at the moment the binded key is pressed.
-        * [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) who pressed the Hotkey.
-        * [<span class="tag obj"></span>](types.md) **hovered_object**: The object over which the Player's pointer hovers at the moment. **nil** if there is no object under the Player's pointer.
-        * [<span class="tag vec"></span>](types.md) **world_position**: [Word Position](types.md#position) of the Player's pointer who pressed the Hotkey.
-        * [<span class="tag boo"></span>](types.md) **key_down_up**: Indicates the moment at which the function **toRunFunc** is executed.
-            * **true**: Key is released.
-            * **false**: Key is pressed.
-	* [<span class="tag boo"></span>](types.md) **trigger_on_key_up**: Controls the timing at which the function **toRunFunc** is executed.
-        * {>>Optional, Default: trigger_on_key_up = false.<<}
-        * **true**: Executes the function 2 times. At the moment the key is pressed and released.
-        * **false**: Executes the function 1 time. At the moment the key is pressed.
+Players can bind key to hotkeys from the `Options` -> `Game Keys` UI after this function is called.
 
 !!!important
-    * The key binding does not overwrite the key binding under Setting. e.g. if "R" (default: shuffle) is assigned as Hotkey, the Hotkey function and the default shuffle is executed by pressing the key "R".
-    * The added Hotkeys are not persistent, therefore the function addHotkey(...) needs to called each time the game is loaded.
-        * The key assigned by the player remains, if the label is unchanged.
+	Added hotkeys are unable to persist between loads/rewinds, because the bound callback function may no longer exist.
+	Therefore [addHotkey(...)](#addhotkey) needs to be called each time the game is loaded. As long as the same labels
+	are used, then player hotkey bindings will persist.
 
-``` Lua
-function onLoad()
-    addHotkey("This is the first Hotkey for the game.", hotkey1)
-    addHotkey("This is the second Hotkey for the game.", hotkey2)
-end
+!!!info "addHotkey(label, callback, triggerOnKeyUp)"
+	* [<span class="tag str"></span>](types.md) **label**: A label displayed to users.
+	* [<span class="tag fun"></span>](types.md) **callback**(playerColor, hoveredObject, pointerPosition, isKeyUp): The function that will be executed whenever the hotkey is pressed, and _also_ when released if `triggerOnKeyUp` is `true`.
+        * [<span class="tag str"></span>](types.md) **playerColor**: [Player Color](player-color.md) of the player that pressed the hotkey.
+        * [<span class="tag obj"></span>](types.md) **hoveredObject**: The object that the Player's pointer was hovering over at the moment the key was pressed/released. `nil` if no object was under the Player's pointer at the time.
+        * [<span class="tag vec"></span>](types.md) **pointerPosition**: [Word Position](types.md#position) of the Player's pointer at the moment the key was pressed/released.
+        * [<span class="tag boo"></span>](types.md) **isKeyUp**: Whether this callback is being triggered in response to a hotkey being released.
+	* [<span class="tag boo"></span>](types.md) **triggerOnKeyUp**: Whether the `callback` is _also_ executed when the hotkey is released. The `callback` is always triggered when the hotkey is pressed.
+        * {>>Optional, defaults to false.<<}
 
-function hotkey1(player_color, hovered_object, world_position, key_down_up)
-    print(player_color)
-end
+Hotkey bindings do not prevent the behavior of Settings key bindings i.e. if `R` (shuffle by default) is assigned as a
+hotkey, the hotkey callback and the default shuffle behavior will both be executed whenever `R` is pressed.
 
-function hotkey2(player_color, hovered_object, world_position, key_down_up)
-    print(player_color)
-end
-```
+!!!example
+	```lua
+	addHotkey("My Hotkey", function(playerColor, object, pointerPosition, isKeyUp)
+		local action = isKeyUp and "released" or "pressed"
+		print(playerColor .. " " .. action .. " the hotkey")
+	end, true)
+	```
 
 ---
 
-###Message Function Details
+###Message Function Details {: data-toc-sort }
 
 ####broadcastToAll(...)
 

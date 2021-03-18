@@ -1,7 +1,7 @@
 UI, a static global class AND an Object class. It is the method to interact with custom UI elements. It allows you to read/write attributes of elements defined in the XML of the UI. It also allows you to receive information from various inputs (like buttons) on-screen and on objects.
 
 !!!attention
-    This class allows for the **manipulation** of UI **at runtime**. It does **NOT** modify or fetch **the original XML** in the editor, but rather what is displayed as it continues to run during a game. Just like with Lua, you can only get/set dynamic values during runtime. You can use [onSave](event.md#onsave) and [onLoad](event.md#onload) to record any data you want to persist through save/load/undo.
+    This class allows for the **manipulation** of UI **at runtime**. It does **NOT** modify or fetch **the original XML** in the editor, but rather what is displayed as it continues to run during a game. Just like with Lua, you can only get/set dynamic values during runtime. You can use [onSave](events.md#onsave) and [onLoad](events.md#onload) to record any data you want to persist through save/load/undo.
 
     For more information on how to build UI elements within XML, view the [UI API](ui/introUI.md).
 
@@ -54,7 +54,7 @@ getAttribute([<span class="tag str"></span>](types.md) id, [<span class="tag str
 getAttributes([<span class="tag str"></span>](types.md) id) | Returns the attributes and their values of a UI element. | [<span class="ret tab"></span>](types.md) | [:i:](#getattributes)
 getCustomAssets() | Returns information on all custom assets uploaded to the UI ASSETS pane. | [<span class="ret tab"></span>](types.md) | [:i:](#getcustomassets)
 getValue([<span class="tag str"></span>](types.md) id) | Obtains the value between elements tags, like: `<Text>ValueToGet</Text>` | [<span class="ret str"></span>](types.md) | [:i:](#getvalue)
-getXml() {: #getxml } | Returns the run-time UI's XML in string format. | [<span class="ret str"></span>](types.md) |
+getXml() {: #getxml data-toc-label="getXml()" data-toc-child-of="function-details" } | Returns the run-time UI's XML in string format. | [<span class="ret str"></span>](types.md) |
 getXmlTable() | Returns the run-time UI's XML formatted as a Lua table. | [<span class="ret tab"></span>](types.md) | [:i:](#getxmltable)
 hide([<span class="tag str"></span>](types.md) id) | Hides the given UI element. Unlike the "active" attribute, hide triggers animations. | [<span class="ret boo"></span>](types.md) | [:i:](#hide)
 setAttribute([<span class="tag str"></span>](types.md) id, [<span class="tag str"></span>](types.md) attribute, [<span class="tag var"></span>](types.md) value) | Sets the value of a specified attribute of a UI element. | [<span class="ret boo"></span>](types.md) | [:i:](#setattribute)
@@ -71,7 +71,7 @@ show([<span class="tag str"></span>](types.md) id) | Displays the given UI eleme
 
 ---
 
-##Function Details
+##Function Details {: data-toc-sort }
 
 ###getAttribute(...)
 

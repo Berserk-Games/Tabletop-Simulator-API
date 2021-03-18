@@ -50,7 +50,7 @@ is_face_down {: #is_face_down } | If an Object is roughly face-down (like with c
 loading_custom {: #loading_custom } | If the Object's custom elements (images/models/etc) are loading. Read only. | [<span class="tag boo"></span>](types.md)
 locked {: #locked } | If the object is frozen in place (preventing physics interactions). | [<span class="tag boo"></span>](types.md)
 mass {: #mass } | Mass. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md)
-max_typed_number {: #max_typed_number } | <p>Determines the maximum number of digits which a user may type whilst hovering over an object.</p><p>As soon as a player types the maximum number of digits, the corresponding behavior (e.g. [onObjectNumberTyped](event.md#onobjectnumbertyped)/[onNumberTyped](event.md#onnumbertyped)) is triggered immediately, improving responsiveness.</p> | [<span class="tag int"></span>](types.md)
+max_typed_number {: #max_typed_number } | <p>Determines the maximum number of digits which a user may type whilst hovering over an object.</p><p>As soon as a player types the maximum number of digits, the corresponding behavior (e.g. [onObjectNumberTyped](events.md#onobjectnumbertyped)/[onNumberTyped](events.md#onnumbertyped)) is triggered immediately, improving responsiveness.</p> | [<span class="tag int"></span>](types.md)
 measure_movement {: #measure_movement } | Measure Tool will automatically be used when moving the Object. | [<span class="tag boo"></span>](types.md)
 memo {: #memo } | A string you can store info in for an object. | [<span class="tag str"></span>](types.md)
 name {: #name } | Internal resource name for this Object. Read only, and only useful for [spawnObjectData()](base.md#spawnobjectdata). Generally, you want [getName()](#getname). | [<span class="tag str"></span>](types.md)
@@ -59,7 +59,7 @@ pick_up_rotation {: #pick_up_rotation } | The rotation the Object was picked up 
 remainder {: #remainder } | <p>If this object is a container that cannot exist with less than two contained objects (e.g. a deck), [taking out](#takeObject) the second last contained object will result in the container being destroyed. In its place the last remaining object in the container will be spawned.</p><p>This variable provides a reference to the remaining object when it is being spawned. Otherwise, it's `nil`. Read only.</p> | [<span class="tag obj"></span>](types.md)
 resting {: #resting } | If an Object is at rest. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/RigidbodiesOverview.html). | [<span class="tag boo"></span>](types.md)
 script_code {: #script_code } | The Lua Script on the Object. | [<span class="tag str"></span>](types.md)
-script_state {: #script_state } | The saved data on the object. See [onSave()](event.md#onsave). | [<span class="tag str"></span>](types.md)
+script_state {: #script_state } | The saved data on the object. See [onSave()](events.md#onsave). | [<span class="tag str"></span>](types.md)
 spawning {: #spawning } | If the Object is finished spawning. Read only. | [<span class="tag boo"></span>](types.md)
 static_friction {: #static_friction } | Static friction, value of 0-1. [Unity physics material](https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](types.md)
 sticky {: #sticky } | If other Objects on top of this one are also picked up when this Object is. | [<span class="tag boo"></span>](types.md)
@@ -233,7 +233,7 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 addAttachment([<span class="tag obj"></span>](types.md) Object) {: data-toc-label="addAttachment(...)" data-toc-child-of="action-function-details" } | The Object supplied as param is destroyed and becomes a dummy Object child. | [<span class="ret boo"></span>](types.md)
 addContextMenuItem([<span class="tag str"></span>](types.md) label, [<span class="tag fun"></span>](types.md) toRunFunc, [<span class="tag boo"></span>](types.md) keep_open) {: data-toc-label="addContextMenuItem(...)" data-toc-child-of="action-function-details" } | Adds a menu item to the objects right-click context menu. | [<span class="ret boo"></span>](types.md) | [:i:](#addcontextmenuitem)
-clearContextMenu() | Clears all menu items added by function [addContextMenuItem](#fnc_addcontextmenuitem). | [<span class="ret boo"></span>](types.md) |
+clearContextMenu() | Clears all menu items added by function [addContextMenuItem](#addcontextmenuitem). | [<span class="ret boo"></span>](types.md) |
 removeAttachment([<span class="tag int"></span>](types.md) index) {: data-toc-label="removeAttachment(...)" data-toc-child-of="action-function-details" } | Removes a child with the given index. Use [getAttachments()](#getattachments) to find out the index property. | [<span class="ret obj"></span>](types.md)
 removeAttachments() {: data-toc-label="removeAttachments()" data-toc-child-of="action-function-details" } | Detaches the children of this Object. Returns a table of object references | [<span class="ret tab"></span>](types.md)
 destroyAttachment([<span class="tag int"></span>](types.md) index) {: data-toc-label="destroyAttachment(...)" data-toc-child-of="action-function-details" } | Destroys an attachment with the given index. | [<span class="ret boo"></span>](types.md)
@@ -262,6 +262,20 @@ split([<span class="tag int"></span>](types.md) piles) | Splits a deck, as evenl
 spread([<span class="tag flo"></span>](types.md) distance) | Uses the spread action on a deck. | [<span class="ret tab"></span>](types.md) | [:i:](#spread)
 takeObject([<span class="tag tab"></span>](types.md) parameters) | Takes an object out of a container (bag/deck/chip stack), returning a reference to the object that was taken out. | [<span class="ret obj"></span>](types.md) | [:i:](#takeobject)
 unregisterCollisions() | Unregisters this object for Global collision events. | [<span class="ret boo"></span>](types.md) | [:i:](#unregistercollisions)
+
+###Component Functions
+
+Component APIs are an advanced feature. An **understanding of how Unity works is required** to utilize them. See the
+[Introduction to Components](components/introduction.md) for more information.
+
+Name {: data-toc-label="Component Function Details" data-toc-after="action-function-details" data-toc-sort } | Return | Description
+-- | -- | --
+getChild([<span class="tag str"></span>](types.md) name) {: #getchild data-toc-label="getChild(...)" data-toc-child-of="component-function-details" } | [GameObject](components/gameobject.md) | Returns a child GameObject matching the specified `name`.
+getChildren() {: #getchildren data-toc-label="getChildren()" data-toc-child-of="component-function-details" } | [GameObject](components/gameobject.md) | Returns the list of children GameObjects.
+getComponent([<span class="tag str"></span>](types.md) name) {: #getcomponent data-toc-label="getComponent(...)" data-toc-child-of="component-function-details" } | [Component](components/component.md) | Returns a Component matching the specified `name` from the Object's list of Components.
+getComponentInChildren([<span class="tag str"></span>](types.md) name) {: #getcomponentinchildren data-toc-label="getComponentInChildren(...)" data-toc-child-of="component-function-details" } | [Component](components/component.md) | Returns a Component matching the specified `name`. Found by searching the Components of the Object and its [children](#getchildren) recursively (depth first).
+getComponents([<span class="tag str"></span>](types.md) name) {: #getcomponents data-toc-label="getComponents(...)" data-toc-child-of="component-function-details" } | [<span class="ret tab"></span>](types.md) | Returns the Object's list of Components. `name` is optional, when specified only Components with specified `name` will be included.
+getComponentsInChildren([<span class="tag str"></span>](types.md) name) {: #getcomponentsinchildren data-toc-label="getComponentsInChildren(...)" data-toc-child-of="component-function-details" } | [Component](components/component.md) | Returns a list of Components found by searching the Object and its [children](#getchildren) recursively (depth first). `name` is optional, when specified only Components with specified `name` will be included.
 
 
 ###Hide Functions
@@ -1390,10 +1404,10 @@ self.putObject(obj)
 
 ####registerCollisions(...)
 
-[<span class="ret boo"></span>](types.md) Registers this object for Global collision events, such as [onObjectCollisionEnter](event.md#onobjectcollisionenter). Always returns `true`.
+[<span class="ret boo"></span>](types.md) Registers this object for Global collision events, such as [onObjectCollisionEnter](events.md#onobjectcollisionenter). Always returns `true`.
 
 !!!info "registerCollision(stay)"
-	* [<span class="tag boo"></span>](types.md) **stay**: Whether we should register for [onObjectCollisionStay](event.md#onobjectcollisionstay). Stay events may negatively impact performance, only set this to `true` if absolutely necessary.
+	* [<span class="tag boo"></span>](types.md) **stay**: Whether we should register for [onObjectCollisionStay](events.md#onobjectcollisionstay). Stay events may negatively impact performance, only set this to `true` if absolutely necessary.
         * {>>Optional, defaults to `false`.<<}
 
 ---

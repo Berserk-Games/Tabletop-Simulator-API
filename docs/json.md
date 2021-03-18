@@ -1,4 +1,4 @@
-The static global JSON class provides the ability to encode/decode data into JSON strings. This is largely used by the [onSave()](event.md#onsave) event function, but has other potential applications as well. The JSON class can be used on any String, Int, Float or Table. You call these functions like this: `JSON.encode(...)`.
+The static global JSON class provides the ability to encode/decode data into JSON strings. This is largely used by the [onSave()](events.md#onsave) event function, but has other potential applications as well. The JSON class can be used on any String, Int, Float or Table. You call these functions like this: `JSON.encode(...)`.
 
 !!!warning
     This class **does not** work with Object references. Use the Object's GUID instead.
@@ -6,8 +6,6 @@ The static global JSON class provides the ability to encode/decode data into JSO
 
 
 ##Function Summary
-
-###Object Functions
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:

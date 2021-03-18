@@ -6,7 +6,7 @@ Web request instances represent a singular in-progress, completed or failed web 
 
 Variable | Description | Type
 -- | -- | :--
-download_progress { #download_progress } | Download percentage, represented as a number in the range 0-1. | [<span class="tag flo"></span>](types.md)
+download_progress {: #download_progress } | Download percentage, represented as a number in the range 0-1. | [<span class="tag flo"></span>](types.md)
 error {: #error } | <p>Reason why the request failed to complete.</p><p>If the server responds with a [HTTP status code](#response_code) that represents a HTTP error (4xx/5xx), this is _not_ considered a request error.</p> | [<span class="tag str"></span>](types.md)
 is_error {: #is_error } | If the request failed due to an [error](#error). | [<span class="tag boo"></span>](types.md)
 is_done {: #is_done } | If the request completed _or failed_. If the request failed, [is_error](#is_error) will be set. | [<span class="tag boo"></span>](types.md)

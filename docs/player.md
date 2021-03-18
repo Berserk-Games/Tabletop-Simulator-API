@@ -29,21 +29,21 @@ Function Name | Description | Return | &nbsp;
 attachCameraToObject([<span class="tag tab"></span>](types.md) parameters) | Makes a Player's camera follow an Object. | [<span class="ret boo"></span>](types.md) | [:i:](#attachcameratoobject)
 broadcast([<span class="tag str"></span>](types.md) message, [<span class="tag col"></span>](types.md) message_color) | Print message on Player's screen and their game chat log. | [<span class="ret boo"></span>](types.md) | [:i:](#broadcast)
 changeColor([<span class="tag str"></span>](types.md) player_color) | Changes player to this [Player Color](player-color.md). | [<span class="ret boo"></span>](types.md) | [:i:](#changecolor)
-clearSelectedObjects() {: #clearselectedobjects } | Clears a player's current selection. | [<span class="ret boo"></span>](types.md)
-getHandCount() {: #gethandcount } | Number of [hand zones](https://kb.tabletopsimulator.com/host-guides/player-hands/) owned by this color. | [<span class="ret int"></span>](types.md)
+clearSelectedObjects() {: #clearselectedobjects data-toc-label="clearSelectedObjects()" data-toc-child-of="class-function-details" } | Clears a player's current selection. | [<span class="ret boo"></span>](types.md)
+getHandCount() {: #gethandcount data-toc-label="getHandCount()" data-toc-child-of="class-function-details" } | Number of [hand zones](https://kb.tabletopsimulator.com/host-guides/player-hands/) owned by this color. | [<span class="ret int"></span>](types.md)
 getHandObjects([<span class="tag int"></span>](types.md) hand_index) | Objects that are in this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/). | [<span class="ret tab"></span>](types.md) | [:i:](#gethandobjects)
 getHandTransform([<span class="tag int"></span>](types.md) hand_index) | Returns a Table of data on this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/). | [<span class="ret tab"></span>](types.md) | [:i:](#gethandtransform)
-getHoldingObjects() {: #getholdingobjects } | Objects a Player is holding in their hand. | [<span class="ret tab"></span>](types.md)
-getHoverObject() {: #gethoverobject } | Object that the Player's pointer is hovering over. | [<span class="ret obj"></span>](types.md)
-getPointerPosition() {: #getpointerposition } | Player's pointer coordinates. | [<span class="ret vec"></span>](types.md#vector)
-getPointerRotation() {: #getpointerrotation } | Player's pointer rotation on Y axis. | [<span class="ret flo"></span>](types.md)
-getSelectedObjects() {: #getselectedobjects } | Objects that the Player has selected with an area selection. | [<span class="ret tab"></span>](types.md)
-kick() {: #kick } | Kicks Player out of the room. | [<span class="ret boo"></span>](types.md)
+getHoldingObjects() {: #getholdingobjects data-toc-label="getHoldingObjects()" data-toc-child-of="class-function-details" } | Objects a Player is holding in their hand. | [<span class="ret tab"></span>](types.md)
+getHoverObject() {: #gethoverobject data-toc-label="getHoverObject()" data-toc-child-of="class-function-details" } | Object that the Player's pointer is hovering over. | [<span class="ret obj"></span>](types.md)
+getPointerPosition() {: #getpointerposition data-toc-label="getPointerPosition()" data-toc-child-of="class-function-details" } | Player's pointer coordinates. | [<span class="ret vec"></span>](types.md#vector)
+getPointerRotation() {: #getpointerrotation data-toc-label="getPointerRotation()" data-toc-child-of="class-function-details" } | Player's pointer rotation on Y axis. | [<span class="ret flo"></span>](types.md)
+getSelectedObjects() {: #getselectedobjects data-toc-label="getSelectedObjects()" data-toc-child-of="class-function-details" } | Objects that the Player has selected with an area selection. | [<span class="ret tab"></span>](types.md)
+kick() {: #kick data-toc-label="kick()" data-toc-child-of="class-function-details" } | Kicks Player out of the room. | [<span class="ret boo"></span>](types.md)
 lookAt([<span class="tag tab"></span>](types.md) parameters) | Moves a Player's camera, forcing 3'rd person camera mode. | [<span class="ret boo"></span>](types.md) | [:i:](#lookat)
-mute() {: #mute } | Mutes or unmutes Player, preventing/allowing voice chat. | [<span class="ret boo"></span>](types.md)
-pingTable([<span class="tag vec"></span>](types.md#vector) position) {: #pingtable } | Emulates the player using the ping tool at the given position (tapping Tab). | [<span class="ret boo"></span>](types.md)
+mute() {: #mute data-toc-label="mute()" data-toc-child-of="class-function-details" } | Mutes or unmutes Player, preventing/allowing voice chat. | [<span class="ret boo"></span>](types.md)
+pingTable([<span class="tag vec"></span>](types.md#vector) position) {: #pingtable data-toc-label="pingTable(...)" data-toc-child-of="class-function-details" } | Emulates the player using the ping tool at the given position (tapping Tab). | [<span class="ret boo"></span>](types.md)
 print([<span class="tag str"></span>](types.md) message, [<span class="tag col"></span>](types.md#color) message_color) | Prints a message into the Player's game chat. | [<span class="ret boo"></span>](types.md) | [:i:](#print)
-promote() {: #promote } | Promotes/demotes a Player. Promoted players have access to most host privileges. | [<span class="ret boo"></span>](types.md) |
+promote() {: #promote data-toc-label="promote()" data-toc-child-of="class-function-details" } | Promotes/demotes a Player. Promoted players have access to most host privileges. | [<span class="ret boo"></span>](types.md) |
 setCameraMode([<span class="tag str"></span>](types.md) camera_mode) | Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown". | [<span class="ret boo"></span>](types.md) | [:i:](#setcameramode)
 setHandTransform([<span class="tag tab"></span>](types.md) parameters, [<span class="tag int"></span>](types.md) hand_index) | Sets transform elements of a hand zone. | [<span class="ret boo"></span>](types.md) | [:i:](#sethandtransform)
 
@@ -54,8 +54,8 @@ These functions return direct references to Players, not a Player Color. See det
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-getAvailableColors() {: #getavailablecolors } | Returns a table of strings of every valid seat color at the current table. Returned colors are in the default order. | [<span class="ret tab"></span>](types.md)
-getColors() {: #getcolors } | Returns a table of strings of every possible seat color. Returned colors are in the default order. | [<span class="ret tab"></span>](types.md)
+getAvailableColors() {: #getavailablecolors data-toc-label="getAvailableColors()" data-toc-child-of="direct-class-function-details" } | Returns a table of strings of every valid seat color at the current table. Returned colors are in the default order. | [<span class="ret tab"></span>](types.md)
+getColors() {: #getcolors data-toc-label="getColors()" data-toc-child-of="direct-class-function-details" } | Returns a table of strings of every possible seat color. Returned colors are in the default order. | [<span class="ret tab"></span>](types.md)
 getPlayers() | Returns Table of all Players in the instance. | [<span class="ret tab"></span>](types.md) | [:i:](#getplayers)
 getSpectators() | Returns Table of all Players in spectator (Grey). | [<span class="ret tab"></span>](types.md) | [:i:](#getspectators)
 
@@ -64,7 +64,7 @@ getSpectators() | Returns Table of all Players in spectator (Grey). | [<span cla
 
 ##Function Details
 
-###Class Function Details
+###Class Function Details {: data-toc-sort }
 
 ####attachCameraToObject(...)
 
@@ -228,7 +228,7 @@ Player["White"].setHandTransform(params, 2)
 
 ---
 
-###Direct Class Function Details
+###Direct Class Function Details {: data-toc-sort }
 
 ####getPlayers()
 

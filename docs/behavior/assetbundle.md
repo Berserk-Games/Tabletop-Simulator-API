@@ -1,24 +1,21 @@
-AssetBundle is a special [Object](../object.md) type that has access to [custom AssetBundle](https://kb.tabletopsimulator.com/custom-content/custom-assetbundle/) related functions like looping and trigger effects.
+The AssetBundle behavior is present on Objects that were created from a
+[custom AssetBundle](https://kb.tabletopsimulator.com/custom-content/custom-assetbundle/).
 
-Example Usage: `self.AssetBundle.getLoopingEffects()`
-
-##Function Summary
-
-###Object Functions
+## Function Summary
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-getLoopingEffectIndex()  {: #getloopingeffectindex } |  Index of the currently looping effect. Indexs starts at 0. | [<span class="ret int"></span>](../types.md)
-getLoopingEffects()  |  Returns a Table with the keys "index" and "name" for each looping effect. | [<span class="ret tab"></span>](../types.md) | [:i:](#getloopingeffects)
-getTriggerEffects()  |  Returns a Table with the keys "index" and "name" for each trigger effect. | [<span class="ret tab"></span>](../types.md) | [:i:](#gettriggereffects)
-playLoopingEffect([<span class="tag int"></span>](../types.md) index)  {: #playloopingeffect } |  Starts playing a looping effect. Indexs starts at 0. | [<span class="ret nil"></span>](../types.md) |
-playTriggerEffect([<span class="tag int"></span>](../types.md) index)  {: #playtriggereffect } |  Starts playing a trigger effect. Indexs starts at 0. | [<span class="ret nil"></span>](../types.md) |
+getLoopingEffectIndex() {: #getloopingeffectindex data-toc-label="" data-toc-child-of="function-details" } | [<span class="ret int"></span>](../types.md) | Index of the currently looping effect. Indexs starts at 0. |
+getLoopingEffects() | [<span class="ret tab"></span>](../types.md) | Returns a Table with the keys "index" and "name" for each looping effect. | [:i:](#getloopingeffects)
+getTriggerEffects() | [<span class="ret tab"></span>](../types.md) | Returns a Table with the keys "index" and "name" for each trigger effect. | [:i:](#gettriggereffects)
+playLoopingEffect([<span class="tag int"></span>](../types.md) index) {: #playloopingeffect data-toc-label="playLoopingEffect(...)" data-toc-child-of="function-details" } | [<span class="ret nil"></span>](../types.md) | Starts playing a looping effect. Indexs starts at 0. |
+playTriggerEffect([<span class="tag int"></span>](../types.md) index) {: #playtriggereffect data-toc-label="playTriggerEffect(...)" data-toc-child-of="function-details" } | [<span class="ret nil"></span>](../types.md) | Starts playing a trigger effect. Indexs starts at 0. |
 
 ---
 
-##Function Details
+## Function Details {: data-toc-sort }
 
-###getLoopingEffects()
+### getLoopingEffects()
 
 [<span class="ret tab"></span>](../types.md) Returns a Table with the keys "index" and "name" for each looping effect.
 
@@ -36,8 +33,7 @@ playTriggerEffect([<span class="tag int"></span>](../types.md) index)  {: #playt
 
 ---
 
-
-###getTriggerEffects()
+### getTriggerEffects()
 
 [<span class="ret tab"></span>](../types.md) Returns a Table with the keys "index" and "name" for each trigger effect.
 

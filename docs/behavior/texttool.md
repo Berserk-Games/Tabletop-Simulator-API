@@ -1,14 +1,13 @@
-TextTool is a special Object type for creating text labels in the game instance. It is the same text that is created with the [text tool](https://kb.tabletopsimulator.com/game-tools/text-tool/). You call these functions like this: `self.TextTool.getFontColor()`.
+The TextTool behavior is present on 3DText objects i.e those created with the
+[text tool](https://kb.tabletopsimulator.com/game-tools/text-tool/).
 
-##Function Summary
+## Functions {: data-toc-sort }
 
-###Object Functions
-
-Function Name | Description | Return
+Function Name | Return | Description
 -- | -- | --
-getFontColor()  {: #getfontcolor } | Returns Table of font Color. | [<span class="ret col"></span>](../types.md#color)
-getFontSize()  {: #getfontsize } | Returns Int of the font size. | [<span class="ret int"></span>](../types.md)
-getValue()  {: #getvalue } | Returns the current text. Works the same as Object's [getValue()](../object.md#getvalue). | [<span class="ret str"></span>](../types.md)
-setFontColor([<span class="tag col"></span>](../types.md#color) font_color) {: #setfontcolor } | Sets font Color. | [<span class="ret boo"></span>](../types.md)
-setFontSize([<span class="tag int"></span>](../types.md) font_size) {: #setfontsize } | Sets font size. | [<span class="ret boo"></span>](../types.md)
-setValue([<span class="tag str"></span>](../types.md) text) {: #setvalue } | Sets the current text. Works the same as Object's [setValue(...)](../object.md#setvalue). | [<span class="ret boo"></span>](../types.md)
+getFontColor()  {: #getfontcolor data-toc-label="getFontColor()" data-toc-child-of="functions" } | [<span class="ret col"></span>](../types.md#color) | Returns Table of font Color.
+getFontSize()  {: #getfontsize data-toc-label="getFontSize()" data-toc-child-of="functions" } | [<span class="ret int"></span>](../types.md) | Returns Int of the font size.
+getValue()  {: #getvalue data-toc-label="getValue()" data-toc-child-of="functions" } | [<span class="ret str"></span>](../types.md) | Returns the current text. Behaves the same as Object's [getValue()](../object.md#getvalue).
+setFontColor([<span class="tag col"></span>](../types.md#color) font_color) {: #setfontcolor data-toc-label="setFontColor(...)" data-toc-child-of="functions" } | [<span class="ret boo"></span>](../types.md) | Sets font Color.
+setFontSize([<span class="tag int"></span>](../types.md) font_size) {: #setfontsize data-toc-label="setFontSize(...)" data-toc-child-of="functions" } | [<span class="ret boo"></span>](../types.md) | Sets font size.
+setValue([<span class="tag str"></span>](../types.md) text) {: #setvalue data-toc-label="setValue(...)" data-toc-child-of="functions" } | [<span class="ret boo"></span>](../types.md) | Sets the current text. Behaves the same as Object's [setValue(...)](../object.md#setvalue).

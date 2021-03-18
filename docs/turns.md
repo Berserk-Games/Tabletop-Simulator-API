@@ -16,14 +16,14 @@ pass_turns {: #pass_turns } | Enable/disable a player's ability to pass their tu
 turn_color {: #turn_color } | The color of the Player who's turn it is. | [<span class="tag str"></span>](types.md)
 
 
-##Function Summary
+##Function Summary {: data-toc-sort }
 
 ###Functions
 
 Function Name | Description | Return
 -- | -- | --:
-getNextTurnColor() {: #getnextturncolor } | Returns the Player Color string of the next player in the turn order. | [<span class="ret str"></span>](types.md)
-getPreviousTurnColor() {: #getpreviousturncolor } | Returns the Player Color string of the previous player in the turn order. | [<span class="ret str"></span>](types.md)
+getNextTurnColor() {: #getnextturncolor data-toc-label="getNextTurnColor()" data-toc-child-of="functions" } | Returns the Player Color string of the next player in the turn order. | [<span class="ret str"></span>](types.md)
+getPreviousTurnColor() {: #getpreviousturncolor data-toc-label="getPreviousTurnColor()" data-toc-child-of="functions" } | Returns the Player Color string of the previous player in the turn order. | [<span class="ret str"></span>](types.md)
 
 
 

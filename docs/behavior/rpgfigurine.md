@@ -1,71 +1,69 @@
-An RPGFigurine is an in-game Object of a figurine with built-in animations. It has its own class, RPGFigurine, with functions associated with it. This allows you to manipulate the special properties of these figurines.
+The RPGFigurine behavior is present on Objects that are figurines with built-in animations i.e. RPG Kit objects.
 
-##Function Summary
+## Callback Members
 
-###Object Functions
-These functions are called like this: `self.RPGFigurine.attack()`.
+These are `RPGFigurine` member variable which can be assigned a function that will be executed in response to an even
+occurring.
 
-Function Name | Description | Return
+Member Name | Description | &nbsp;
 -- | -- | --
-attack() {: #attack } | Plays a random attack animation. | [<span class="ret boo"></span>](../types.md)
-changeMode() {: #changemode } | Changes the figurine's current mode. What the mode represents is based on the figurine. | [<span class="ret boo"></span>](../types.md)
-die() {: #die } | Plays the death animation or causes it to return to life. | [<span class="ret boo"></span>](../types.md)
+onAttack([<span class="tag tab"></span>](../types.md) hitObjects) | Executed when an attack is performed by the RPGFigurine Object. | [:i:](#onattack)
+onHit([<span class="tag obj"></span>](../types.md) attacker) | Executed when the RPGFigurine Object is attacked. | [:i:](#onattack)
 
-###Event Functions
-These functions are called by the game whenever a figurine attacks or is attacked. See details for example usage.
+## Functions {: data-toc-sort }
 
-Function Name | Description | &nbsp;
--- | -- | --:
-onAttack([<span class="tag tab"></span>](../types.md) hit_list) | Activates when an attack is performed by an identified RPGFigurine Object. | [:i:](#onattack)
-onHit([<span class="tag obj"></span>](../types.md) attacker) | Activates when an attack is performed on this RPGFigurine Object. | [:i:](#onattack)
+Function Name | Return | Description
+-- | -- | --
+attack() {: #attack data-toc-label="attack()" data-toc-child-of="functions" } | [<span class="ret boo"></span>](../types.md) | Plays a random attack animation.
+changeMode() {: #changemode data-toc-label="changeMode()" data-toc-child-of="functions" } | [<span class="ret boo"></span>](../types.md) | Changes the figurine's current mode. What the mode represents is based on the figurine.
+die() {: #die data-toc-label="die()" data-toc-child-of="functions" } | [<span class="ret boo"></span>](../types.md) | Plays the death animation or causes it to return to life.
 
-
-
-
-
+!!!example
+    Make an RPG figurine attack.
+    ```lua
+    object.RPGFigurine.attack()
+    ```
 ---
 
-##Function Details
+## Callback Member Details
 
-###Event Function Details
+### onAttack(...)
 
-####onAttack(...)
+Executed when an attack is performed by the RPGFigurine Object.
 
-Activates when an attack is performed by an identified RPGFigurine Object. An attack is triggered via the context menu or pressing the appropriate number key. If another RPGFigurine is within its attack arch, then the function will be triggered with the figurine hit passed as a parameter.
+An attack is triggered via the context menu or by pressing the appropriate number key. If another RPGFigurine is within
+its attack arc, then [onHit](#onhit) will be executed on the other figurine.
 
-!!!info "onAttack(hit_list)"
-    * [<span class="tag tab"></span>](../types.md) **hit_list**: A Table of RPGFigurine Object references within the reach of the attack.
+!!!info "onAttack(hitObjects)"
+    * [<span class="tag tab"></span>](../types.md) **hitObjects**: A table of RPGFigurine Objects within the reach of the attack.
 
-``` Lua
--- Monitoring and announcing a cyclops attacks
-function onLoad()
-    cyclops = getObjectFromGUID("aaa111")
-
-    function cyclops.RPGFigurine.onAttack(hit_list)
-        for _, v in ipairs(hit_list) do
+!!!example
+    Assign an `onAttack` callback that prints the name of each object attacked.
+    ```lua
+    function object.RPGFigurine.onAttack(hitObjects)
+        for _, v in ipairs(hitObjects) do
             print(v.getName() .. " was hit!")
         end
     end
-end
-```
+    ```
 
 ---
 
 
-####onHit(...)
+### onHit(...)
 
-Activates when an attack is performed on this RPGFigurine Object. An attack is triggered via the context menu or pressing the appropriate number key. If this RPGFigurine is within the attack radius, this function is triggered, passing a parameter of the Object which attacked.
+Executed when the RPGFigurine Object is hit by another attacking RPGFigure Object.
+
+An attack is triggered via the context menu or by pressing the appropriate number key. If this RPGFigurine Object is
+within the attack radius of an attacker, this function will be executed.
 
 !!!info "onHit(attacker)"
-    * [<span class="tag obj"></span>](../types.md) **attacker**: Reference to the RPGFigurine attacking the indicated RPGFigurine.
+    * [<span class="tag obj"></span>](../types.md) **attacker**: The RPGFigurine Object performing the attack.
 
-``` Lua
--- Monitoring and announcing a cyclops being hit
-function onLoad()
-    cyclops = getObjectFromGUID("aaa111")
-
-    function cyclops.RPGFigurine.onHit(attacker)
+!!!example
+    Assign an `onHit` callback that prints the name of the object that performed the attack.
+    ```lua
+    function object.RPGFigurine.onHit(attacker)
         print(attacker.getName() .. " attacked the Cyclops!")
     end
-end
-```
+    ```

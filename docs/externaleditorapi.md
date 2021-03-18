@@ -173,7 +173,7 @@ After TTS reloads the game, it then also sends a message with an ID of 1 back to
 
 ###Custom Message
 
-TTS listens for a JSON message with an ID of 2 containing a custom message to be forwarded to the [`onExternalMessage`](event.md#onexternalmessage) event handler in the currently loaded game.
+TTS listens for a JSON message with an ID of 2 containing a custom message to be forwarded to the [`onExternalMessage`](events.md#onexternalmessage) event handler in the currently loaded game.
 
 ```JSON
 {

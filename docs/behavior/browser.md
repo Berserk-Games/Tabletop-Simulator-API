@@ -1,10 +1,14 @@
-The Tablet is an in-game Object that displays a web page. It has its own class, Browser, with member variables associated with it. This allows you to manipulate the special properties of a tablet.
+The Browser behavior is present on the Tablet Object.
 
-Example Usage: `self.Browser.url = "https://yahoo.com/"`
+!!!example
+    Instruct a Tablet Object to load the Tabletop Simulator homepage.
+    ```lua
+    object.Browser.url = "https://tabletopsimulator.com"
+    ```
 
-##Member Variables
+## Member Variables
 
-Variable | Description | Type
--- | -- | :--
-url {: #url } | URL which currently wants to display. | [<span class="tag str"></span>](../types.md)
-pixel_width {: #pixel_width } | The pixel width the browser is virtually rendering to. | [<span class="tag int"></span>](../types.md)
+Variable | Type | Description
+-- | -- | --
+url {: #url } | [<span class="tag str"></span>](../types.md) | URL which currently wants to display.
+pixel_width {: #pixel_width } | [<span class="tag int"></span>](../types.md) | The pixel width the browser is virtually rendering to.

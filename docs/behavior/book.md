@@ -1,32 +1,28 @@
-The Custom PDF is a type in-game Spawnable Object that renders a PDF from a URL. It has its own class, Book, with functions/members associated with it. This allows you to manipulate the special properties of a Custom PDF.
+The Book behavior is present on Custom PDF Objects. The Book behaviour allows you to manipulate the displayed PDF.
 
-Example Usage: `obj.Book.setPage(1, false)`
+## Member Variables
 
-##Member Variables
-
-Variable | Description | Type
+Variable | Type | Description
 -- | -- | :--
-page_offset {: #page_offset } | The page numbers displayed in the Custom PDF UI are offset by this amount. | [<span class="tag int"></span>](../types.md)
+page_offset {: #page_offset } | [<span class="tag int"></span>](../types.md) | The page numbers displayed in the Custom PDF UI are offset by this amount.
 
 !!! info
     For example, if `page_offset` were set to 10, the first page in the UI would be 11, rather than 1. Negative numbers are accepted, and useful if a rule book contains a front cover, index etc. within the PDF file.
 
-##Function Summary
+## Function Summary
 
-###Object Functions
-
-Function Name | Description | Return | &nbsp;
--- | -- | -- | --:
-getPage([<span class="tag boo"></span>](../types.md) offsetPageNumbering)  | Gets the current page of the PDF. | [<span class="ret int"></span>](../types.md) | [:i:](#getpage)
-setPage([<span class="tag int"></span>](../types.md) page, [<span class="tag boo"></span>](../types.md) offsetPageNumbering)  | Set current page. | [<span class="ret boo"></span>](../types.md)| [:i:](#setpage)
-setHighlight([<span class="tag flo"></span>](../types.md) x1, [<span class="tag flo"></span>](../types.md) y1, [<span class="tag flo"></span>](../types.md) x2, [<span class="tag flo"></span>](../types.md) y2)  | Set highlight box on current page. | [<span class="ret boo"></span>](../types.md) |  [:i:](#sethighlight)
-clearHighlight() {: #clearhighlight } | Clears the current highlight. | [<span class="ret boo"></span>](../types.md)
+Function Name | Return | Description  | &nbsp;
+-- | -- | -- | --
+clearHighlight() {: #clearhighlight data-toc-label="clearHighlight()" data-toc-child-of="function-details" } | [<span class="ret boo"></span>](../types.md) | Clears the current highlight.
+getPage([<span class="tag boo"></span>](../types.md) offsetPageNumbering)  | [<span class="ret int"></span>](../types.md) | Gets the current page of the PDF. | [:i:](#getpage)
+setHighlight([<span class="tag flo"></span>](../types.md) x1, [<span class="tag flo"></span>](../types.md) y1, [<span class="tag flo"></span>](../types.md) x2, [<span class="tag flo"></span>](../types.md) y2) | [<span class="ret boo"></span>](../types.md) | Set highlight box on current page.| [:i:](#sethighlight)
+setPage([<span class="tag int"></span>](../types.md) page, [<span class="tag boo"></span>](../types.md) offsetPageNumbering) | [<span class="ret boo"></span>](../types.md) | Set current page.| [:i:](#setpage)
 
 ---
 
-##Function Details
+## Function Details {: data-toc-sort }
 
-####getPage(...)
+#### getPage(...)
 
 [<span class="ret int"></span>](../types.md) Gets the current page of the PDF.
 
@@ -35,19 +31,7 @@ clearHighlight() {: #clearhighlight } | Clears the current highlight. | [<span c
         * {>>Optional, defaults to `false`.<<}
 ---
 
-####setPage(...)
-
-[<span class="ret boo"></span>](../types.md) Sets the current page of the PDF. Returns true if the page was succesfully set, false if the page number was invalid.
-
-!!! info "setPage(page, offsetPageNumbering)"
-    * [<span class="tag int"></span>](../types.md) **page**: The new page number.
-    * [<span class="tag boo"></span>](../types.md) **offsetPageNumbering**: Indicates whether or not [page_offset](#page_offset) should be applied to the page number set.
-        * {>>Optional, defaults to `false`.<<}
-
-
----
-
-####setHighlight(...)
+#### setHighlight(...)
 
 [<span class="ret boo"></span>](../types.md) Draws a highlight rectangle on the popout mode of the PDF at the given coordinates. Coordinates (0,0) are the lower left corner of the PDF, while coordinates (1,1) are the upper right corner.
 
@@ -57,10 +41,22 @@ clearHighlight() {: #clearhighlight } | Clears the current highlight. | [<span c
     * [<span class="tag flo"></span>](../types.md) **x2**: x coordinate of the rectangle's right side.
     * [<span class="tag flo"></span>](../types.md) **y2**: y coordinate of the rectangle's top side.
 
-``` Lua
--- Sets highlight of upper right quarter of the pdf
-self.Book.setHighlight(0.5, 0.5, 1, 1)
-```
+!!!example
+    Highlight the upper right quarter of a PDF.
+    ```lua
+    object.Book.setHighlight(0.5, 0.5, 1, 1)
+    ```
 
 !!! bug
     setHighlight() will do nothing if you try to draw a highlight twice in a row at the same coordinates, even if you call clearHighlight() or reload() on the object in between calls to setHighlight().
+
+---
+
+#### setPage(...)
+
+[<span class="ret boo"></span>](../types.md) Sets the current page of the PDF. Returns true if the page was succesfully set, false if the page number was invalid.
+
+!!! info "setPage(page, offsetPageNumbering)"
+    * [<span class="tag int"></span>](../types.md) **page**: The new page number.
+    * [<span class="tag boo"></span>](../types.md) **offsetPageNumbering**: Indicates whether or not [page_offset](#page_offset) should be applied to the page number set.
+        * {>>Optional, defaults to `false`.<<}

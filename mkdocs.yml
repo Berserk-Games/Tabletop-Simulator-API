@@ -72,7 +72,7 @@ nav:
   - Scripting API:
     - Introduction: intro.md
     - Types: types.md
-    - Event: event.md
+    - Events: events.md
     - Base: base.md
     - Object: object.md
     - Object Behaviors:

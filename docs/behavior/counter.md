@@ -1,13 +1,17 @@
-The Counter is an in-game Object of a digital counter. It has its own class, Counter, with functions/members associated with it. This allows you to manipulate the special properties of a Counter. You call these functions like this: `self.Counter.increment()`.
+The Counter behavior is present on the Counter object.
 
-##Function Summary
+## Functions {: data-toc-sort }
 
-###Object Functions
+Function Name | Return | Description
+-- | -- | --
+clear() {: #clear data-toc-label="clear()" data-toc-child-of="functions" } | [<span class="ret boo"></span>](../types.md) | Resets Counter to 0.
+decrement() {: #decrement data-toc-label="decrement()" data-toc-child-of="functions" } | [<span class="ret boo"></span>](../types.md) | Reduces Counter's value by 1.
+getValue() {: #getvalue data-toc-label="getValue()" data-toc-child-of="functions" } | [<span class="ret int"></span>](../types.md) | Returns Counter's current value. This function behaves the same as [Object's getValue()](../object.md#getvalue).
+increment() {: #increment data-toc-label="increment()" data-toc-child-of="functions" } | [<span class="ret boo"></span>](../types.md) | Increases Counter's value by 1.
+setValue() {: #setvalue data-toc-label="setValue()" data-toc-child-of="functions" } | [<span class="ret boo"></span>](../types.md) | Sets the current value of the Counter. This function behaves the same as [Object's setValue()](../object.md#setvalue).
 
-Function Name | Description | Return
--- | -- | --:
-clear() {: #clear } | Resets Counter to 0. | [<span class="ret boo"></span>](../types.md)
-decrement() {: #decrement } | Reduces Counter's value by 1. | [<span class="ret boo"></span>](../types.md)
-getValue() {: #getvalue } | Returns Int of the current value displayed by the Counter. This function acts the same as [Object's getValue()](../object.md#getvalue). | [<span class="ret boo"></span>](../types.md)
-increment() {: #increment } | Increases Counter's value by 1. | [<span class="ret boo"></span>](../types.md)
-setValue() {: #setvalue } | Sets the current value of the Counter. This function acts the same as [Object's setValue()](../object.md#setvalue). | [<span class="ret boo"></span>](../types.md)
+!!!example
+    Increment a counter's value.
+    ```lua
+    object.Counter.increment()
+    ```
