@@ -4561,7 +4561,7 @@ unless the Object includes the behavior.</p>
 </tr>
 <tr>
 <td>getSnapPoints()</td>
-<td>Returns a table of sub-tables, each sub-table representing one snap point.</td>
+<td>Returns a table representing a list of snap points.</td>
 <td><a href="../types/"><span class="ret tab"></span></a></td>
 <td><a href="#getsnappoints"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -6153,44 +6153,47 @@ the impulse.</p>
 </code></pre></div></p>
 <hr />
 <h4 id="getsnappoints">getSnapPoints()<a class="headerlink" href="#getsnappoints" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a> Returns a table of sub-tables, each sub-table representing one snap point.</p>
-<blockquote>
-<p>This function can also be used directly on the game world (game table) using Global.</p>
-</blockquote>
-<div class="admonition info">
-<p class="admonition-title">Format of the returned table</p>
-<ul>
-<li><a href="../types/"><span class="tag tab"></span></a> A table containing numerically indexed sub-tables.<ul>
-<li><a href="../types/"><span class="tag tab"></span></a> Sub-table(s), each representing a snap point:<ul>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>position</strong>: <a href="../types/#position">Local Position</a> of the snap point. The position is relative to the entity's center.</li>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>rotation</strong>: Local Rotation of the snap point. The rotation is relative to the entity's rotation.</li>
-<li><a href="../types/"><span class="tag boo"></span></a> <strong>rotation_snap</strong>: If the snap point is a "rotation" snap point.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a table representing a list of snap points.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This function may be called on <code>Global</code> in order to return a list of global snap points (i.e. snap points on the
+table).</p>
 </div>
-<p>Example:
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="n">snapPointList</span> <span class="o">=</span> <span class="n">Global</span><span class="p">.</span><span class="n">getSnapPoints</span><span class="p">()</span>
-    <span class="n">log</span><span class="p">(</span><span class="n">snapPointsList</span><span class="p">)</span>
-<span class="kr">end</span>
+<h5 id="getsnappoints-return-value">Return value<a class="headerlink" href="#getsnappoints-return-value" title="Permanent link">&para;</a></h5>
+<p>The returned table is a list (numerically indexed table) of sub-tables, where each sub-table represents a snap point and
+has the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>position</td>
+<td><a href="../types/"><span class="tag vec"></span></a></td>
+<td><a href="../types/#position">Local Position</a> of the snap point. The position is relative to the entity's center.</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td><a href="../types/"><span class="tag vec"></span></a></td>
+<td>Local Rotation of the snap point. The rotation is relative to the entity's rotation.</td>
+</tr>
+<tr>
+<td>rotation_snap</td>
+<td><a href="../types/"><span class="tag boo"></span></a></td>
+<td>If the snap point is a <a href="https://kb.tabletopsimulator.com/game-tools/snap-point-tool/#rotation-snap">rotation snap point</a>.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Log the list of global snap points:
+<div class="highlight"><pre><span></span><code><span class="n">log</span><span class="p">(</span><span class="n">Global</span><span class="p">.</span><span class="n">getSnapPoints</span><span class="p">())</span>
 </code></pre></div></p>
-<p>Returned table:
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="p">{</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span>
-        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
-        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span>
-        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
-        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">true</span>
-    <span class="p">},</span>
-<span class="p">}</span>
-</code></pre></div></p>
+</div>
 <hr />
 <h4 id="setdecals">setDecals(...)<a class="headerlink" href="#setdecals" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a> Sets which decals are on an object. This removes other decals already present, and can remove all decals as well.</p>
