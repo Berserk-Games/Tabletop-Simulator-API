@@ -204,14 +204,14 @@ Name | Type | Description | Notes
 
 ### Zones
 
-Name | Description | Notes
+Name | Type | Description
 -- | -- | --
-<a class="anchor" id="FogOfWar"></a>FogOfWar | A [Fog of War Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone) |
-<a class="anchor" id="FogOfWarTrigger"></a>FogOfWarTrigger | A [Hidden Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#hidden-zone) |
-<a class="anchor" id="HandTrigger"></a>HandTrigger | A [Hand Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#hand-zone) |
-<a class="anchor" id="LayoutZone"></a>LayoutZone | A [Layout Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#layout-zone) |
-<a class="anchor" id="RandomizeTrigger"></a>RandomizeTrigger | A [Randomize Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#randomize-zone) |
-<a class="anchor" id="ScriptingTrigger"></a>ScriptingTrigger | A [Scripting Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#scripting-zone). |
+<a class="anchor" id="FogOfWar"></a>FogOfWar | `Fog` | A [Fog of War Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone).
+<a class="anchor" id="FogOfWarTrigger"></a>FogOfWarTrigger | `FogOfWar` | A [Hidden Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#hidden-zone).
+<a class="anchor" id="HandTrigger"></a>HandTrigger | `Hand` | A [Hand Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#hand-zone).
+<a class="anchor" id="LayoutZone"></a>LayoutZone | `Layout` | A [Layout Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#layout-zone).
+<a class="anchor" id="RandomizeTrigger"></a>RandomizeTrigger | `Randomize` | A [Randomize Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#randomize-zone).
+<a class="anchor" id="ScriptingTrigger"></a>ScriptingTrigger | `Scripting` | A [Scripting Zone](https://kb.tabletopsimulator.com/game-tools/zone-tools/#scripting-zone).
 
 ## Spawnable Names
 
