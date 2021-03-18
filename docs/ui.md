@@ -42,7 +42,7 @@ end
 
 Variable | Description | Type
 -- | -- | :--
-<a class="anchor" id="loading"></a>loading | Indicates whether (the server) has finished loading all UI custom assets. | [<span class="tag boo"></span>](types.md)
+loading {: #loading } | Indicates whether (the server) has finished loading all UI custom assets. | [<span class="tag boo"></span>](types.md)
 
 ---
 
@@ -54,7 +54,7 @@ getAttribute([<span class="tag str"></span>](types.md) id, [<span class="tag str
 getAttributes([<span class="tag str"></span>](types.md) id) | Returns the attributes and their values of a UI element. | [<span class="ret tab"></span>](types.md) | [:i:](#getattributes)
 getCustomAssets() | Returns information on all custom assets uploaded to the UI ASSETS pane. | [<span class="ret tab"></span>](types.md) | [:i:](#getcustomassets)
 getValue([<span class="tag str"></span>](types.md) id) | Obtains the value between elements tags, like: `<Text>ValueToGet</Text>` | [<span class="ret str"></span>](types.md) | [:i:](#getvalue)
-<a class="anchor" id="getxml"></a>getXml() | Returns the run-time UI's XML in string format. | [<span class="ret str"></span>](types.md) |
+getXml() {: #getxml } | Returns the run-time UI's XML in string format. | [<span class="ret str"></span>](types.md) |
 getXmlTable() | Returns the run-time UI's XML formatted as a Lua table. | [<span class="ret tab"></span>](types.md) | [:i:](#getxmltable)
 hide([<span class="tag str"></span>](types.md) id) | Hides the given UI element. Unlike the "active" attribute, hide triggers animations. | [<span class="ret boo"></span>](types.md) | [:i:](#hide)
 setAttribute([<span class="tag str"></span>](types.md) id, [<span class="tag str"></span>](types.md) attribute, [<span class="tag var"></span>](types.md) value) | Sets the value of a specified attribute of a UI element. | [<span class="ret boo"></span>](types.md) | [:i:](#setattribute)

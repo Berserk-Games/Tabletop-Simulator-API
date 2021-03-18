@@ -28,51 +28,51 @@ property, but are unable to assign a new value to it.
 
 Variable | Description | Type
 -- | -- | :--
-<a class="anchor" id="alt_view_angle"></a>alt_view_angle | When non-zero, the Alt view will use the specified Euler angle to look at the object. | [<span class="tag vec"></span>](types.md)
-<a class="anchor" id="angular_drag"></a>angular_drag | Angular drag. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md)
-<a class="anchor" id="auto_raise"></a>auto_raise | If an object should be lifted above other objects to avoid collision when held by a player. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="bounciness"></a>bounciness | Bounciness, value of 0-1. [Unity physics material](https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](types.md)
-<a class="anchor" id="drag"></a>drag | Drag. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md)
-<a class="anchor" id="drag_selectable"></a>drag_selectable | <p>When `false`, the object will not be selected by regular (click and drag) selection boxes that are drawn around the object.</p><p>Players may proceed to override this behavior by holding the "Shift" modifier whilst drag selecting.</p> | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="dynamic_friction"></a>dynamic_friction | Dynamic friction, value of 0-1. [Unity physics material](https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](types.md)
-<a class="anchor" id="grid_projection"></a>grid_projection | If grid lines can appear on the Object if visible grids are turned on. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="guid"></a>guid | The 6 character unique Object identifier within Tabletop Simulator. It is assigned correctly once the `spawning` member variable becomes false. | [<span class="tag str"></span>](types.md)
-<a class="anchor" id="held_by_color"></a>held_by_color | The Color of the Player that is holding the object. | [<span class="tag str"></span>](types.md)
-<a class="anchor" id="held_flip_index"></a>held_flip_index | 0-23 value. Changes when a Player hits flip or alt + rotate. | [<span class="tag int"></span>](types.md)
-<a class="anchor" id="held_position_offset"></a>held_position_offset | Position offset from pointer. | [<span class="tag vec"></span>](types.md#vector)
-<a class="anchor" id="held_reduce_force"></a>held_reduce_force | When the Object collides with something while moving this is automatically enabled and reduces the movement force. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="held_rotation_offset"></a>held_rotation_offset | Rotation offset from pointer. | [<span class="tag vec"></span>](types.md#vector)
-<a class="anchor" id="held_spin_index"></a>held_spin_index | 0-23 value. Changes when a Player rotates the Object. | [<span class="tag int"></span>](types.md)
-<a class="anchor" id="hide_when_face_down"></a>hide_when_face_down | Hide the Object when face-down as if it were in a hand zone. The face is the "top" of the Object, the direction of its positive Y coordinate. Cards/decks default to `true`. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="ignore_fog_of_war"></a>ignore_fog_of_war | Makes the object not be hidden by [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone). | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="interactable"></a>interactable | If an object can be interacted with by Players. Other object will still be able to interact with it. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="is_face_down"></a>is_face_down | If an Object is roughly face-down (like with cards). The face is the "top" of the Object, the direction of its positive Y coordinate. Read only.  | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="loading_custom"></a>loading_custom | If the Object's custom elements (images/models/etc) are loading. Read only. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="locked"></a>locked | If the object is frozen in place (preventing physics interactions). | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="mass"></a>mass | Mass. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md)
-<a class="anchor" id="max_typed_number"></a>max_typed_number | <p>Determines the maximum number of digits which a user may type whilst hovering over an object.</p><p>As soon as a player types the maximum number of digits, the corresponding behavior (e.g. [onObjectNumberTyped](event.md#onobjectnumbertyped)/[onNumberTyped](event.md#onnumbertyped)) is triggered immediately, improving responsiveness.</p> | [<span class="tag int"></span>](types.md)
-<a class="anchor" id="measure_movement"></a>measure_movement | Measure Tool will automatically be used when moving the Object. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="memo"></a>memo | A string you can store info in for an object. | [<span class="tag str"></span>](types.md)
-<a class="anchor" id="name"></a>name | Internal resource name for this Object. Read only, and only useful for [spawnObjectData()](base.md#spawnobjectdata). Generally, you want [getName()](#getname). | [<span class="tag str"></span>](types.md)
-<a class="anchor" id="pick_up_position"></a>pick_up_position | The position the Object was picked up at. Read only. | [<span class="tag vec"></span>](types.md#vector)
-<a class="anchor" id="pick_up_rotation"></a>pick_up_rotation | The rotation the Object was picked up at. Read only. | [<span class="tag vec"></span>](types.md#vector)
-<a class="anchor" id="remainder"></a>remainder | <p>If this object is a container that cannot exist with less than two contained objects (e.g. a deck), [taking out](#takeObject) the second last contained object will result in the container being destroyed. In its place the last remaining object in the container will be spawned.</p><p>This variable provides a reference to the remaining object when it is being spawned. Otherwise, it's `nil`. Read only.</p> | [<span class="tag obj"></span>](types.md)
-<a class="anchor" id="resting"></a>resting | If an Object is at rest. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/RigidbodiesOverview.html). | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="script_code"></a>script_code | The Lua Script on the Object. | [<span class="tag str"></span>](types.md)
-<a class="anchor" id="script_state"></a>script_state | The saved data on the object. See [onSave()](event.md#onsave). | [<span class="tag str"></span>](types.md)
-<a class="anchor" id="spawning"></a>spawning | If the Object is finished spawning. Read only. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="static_friction"></a>static_friction | Static friction, value of 0-1. [Unity physics material](https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](types.md)
-<a class="anchor" id="sticky"></a>sticky | If other Objects on top of this one are also picked up when this Object is. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="tag"></a>tag | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [type](#type)_.</p>This object's type. Read only. | [<span class="tag str"></span>](types.md)
-<a class="anchor" id="tooltip"></a>tooltip | If the tooltip opens when a pointer hovers over the object. Tooltips display name and description. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="type"></a>type | This object's type. Read only. | [<span class="tag str"></span>](types.md)
-<a class="anchor" id="use_gravity"></a>use_gravity | If gravity affects this object. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="use_grid"></a>use_grid | If snapping to grid is enabled or not. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="use_hands"></a>use_hands | If this object can be held in a hand zone. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="use_rotation_value_flip"></a>use_rotation_value_flip | Switches the axis an Object rotates around when flipped. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="use_snap_points"></a>use_snap_points | If snap points are used or ignored. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="value"></a>value | The value of the object for summing up selected objects. Only works if the apropriate bits are set in `obj.value_flags` | [<span class="tag int"></span>](types.md)
-<a class="anchor" id="value_flags"></a>value_flags | A bit field, objects with overlapping `value_flag` bits are counted together when selected. | [<span class="tag int"></span>](types.md)
+alt_view_angle {: #alt_view_angle } | When non-zero, the Alt view will use the specified Euler angle to look at the object. | [<span class="tag vec"></span>](types.md)
+angular_drag {: #angular_drag } | Angular drag. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md)
+auto_raise {: #auto_raise } | If an object should be lifted above other objects to avoid collision when held by a player. | [<span class="tag boo"></span>](types.md)
+bounciness {: #bounciness } | Bounciness, value of 0-1. [Unity physics material](https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](types.md)
+drag {: #drag } | Drag. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md)
+drag_selectable {: #drag_selectable } | <p>When `false`, the object will not be selected by regular (click and drag) selection boxes that are drawn around the object.</p><p>Players may proceed to override this behavior by holding the "Shift" modifier whilst drag selecting.</p> | [<span class="tag boo"></span>](types.md)
+dynamic_friction {: #dynamic_friction } | Dynamic friction, value of 0-1. [Unity physics material](https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](types.md)
+grid_projection {: #grid_projection } | If grid lines can appear on the Object if visible grids are turned on. | [<span class="tag boo"></span>](types.md)
+guid {: #guid } | The 6 character unique Object identifier within Tabletop Simulator. It is assigned correctly once the `spawning` member variable becomes false. | [<span class="tag str"></span>](types.md)
+held_by_color {: #held_by_color } | The Color of the Player that is holding the object. | [<span class="tag str"></span>](types.md)
+held_flip_index {: #held_flip_index } | 0-23 value. Changes when a Player hits flip or alt + rotate. | [<span class="tag int"></span>](types.md)
+held_position_offset {: #held_position_offset } | Position offset from pointer. | [<span class="tag vec"></span>](types.md#vector)
+held_reduce_force {: #held_reduce_force } | When the Object collides with something while moving this is automatically enabled and reduces the movement force. | [<span class="tag boo"></span>](types.md)
+held_rotation_offset {: #held_rotation_offset } | Rotation offset from pointer. | [<span class="tag vec"></span>](types.md#vector)
+held_spin_index {: #held_spin_index } | 0-23 value. Changes when a Player rotates the Object. | [<span class="tag int"></span>](types.md)
+hide_when_face_down {: #hide_when_face_down } | Hide the Object when face-down as if it were in a hand zone. The face is the "top" of the Object, the direction of its positive Y coordinate. Cards/decks default to `true`. | [<span class="tag boo"></span>](types.md)
+ignore_fog_of_war {: #ignore_fog_of_war } | Makes the object not be hidden by [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone). | [<span class="tag boo"></span>](types.md)
+interactable {: #interactable } | If an object can be interacted with by Players. Other object will still be able to interact with it. | [<span class="tag boo"></span>](types.md)
+is_face_down {: #is_face_down } | If an Object is roughly face-down (like with cards). The face is the "top" of the Object, the direction of its positive Y coordinate. Read only.  | [<span class="tag boo"></span>](types.md)
+loading_custom {: #loading_custom } | If the Object's custom elements (images/models/etc) are loading. Read only. | [<span class="tag boo"></span>](types.md)
+locked {: #locked } | If the object is frozen in place (preventing physics interactions). | [<span class="tag boo"></span>](types.md)
+mass {: #mass } | Mass. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md)
+max_typed_number {: #max_typed_number } | <p>Determines the maximum number of digits which a user may type whilst hovering over an object.</p><p>As soon as a player types the maximum number of digits, the corresponding behavior (e.g. [onObjectNumberTyped](event.md#onobjectnumbertyped)/[onNumberTyped](event.md#onnumbertyped)) is triggered immediately, improving responsiveness.</p> | [<span class="tag int"></span>](types.md)
+measure_movement {: #measure_movement } | Measure Tool will automatically be used when moving the Object. | [<span class="tag boo"></span>](types.md)
+memo {: #memo } | A string you can store info in for an object. | [<span class="tag str"></span>](types.md)
+name {: #name } | Internal resource name for this Object. Read only, and only useful for [spawnObjectData()](base.md#spawnobjectdata). Generally, you want [getName()](#getname). | [<span class="tag str"></span>](types.md)
+pick_up_position {: #pick_up_position } | The position the Object was picked up at. Read only. | [<span class="tag vec"></span>](types.md#vector)
+pick_up_rotation {: #pick_up_rotation } | The rotation the Object was picked up at. Read only. | [<span class="tag vec"></span>](types.md#vector)
+remainder {: #remainder } | <p>If this object is a container that cannot exist with less than two contained objects (e.g. a deck), [taking out](#takeObject) the second last contained object will result in the container being destroyed. In its place the last remaining object in the container will be spawned.</p><p>This variable provides a reference to the remaining object when it is being spawned. Otherwise, it's `nil`. Read only.</p> | [<span class="tag obj"></span>](types.md)
+resting {: #resting } | If an Object is at rest. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/RigidbodiesOverview.html). | [<span class="tag boo"></span>](types.md)
+script_code {: #script_code } | The Lua Script on the Object. | [<span class="tag str"></span>](types.md)
+script_state {: #script_state } | The saved data on the object. See [onSave()](event.md#onsave). | [<span class="tag str"></span>](types.md)
+spawning {: #spawning } | If the Object is finished spawning. Read only. | [<span class="tag boo"></span>](types.md)
+static_friction {: #static_friction } | Static friction, value of 0-1. [Unity physics material](https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](types.md)
+sticky {: #sticky } | If other Objects on top of this one are also picked up when this Object is. | [<span class="tag boo"></span>](types.md)
+tag {: #tag } | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [type](#type)_.</p>This object's type. Read only. | [<span class="tag str"></span>](types.md)
+tooltip {: #tooltip } | If the tooltip opens when a pointer hovers over the object. Tooltips display name and description. | [<span class="tag boo"></span>](types.md)
+type {: #type } | This object's type. Read only. | [<span class="tag str"></span>](types.md)
+use_gravity {: #use_gravity } | If gravity affects this object. | [<span class="tag boo"></span>](types.md)
+use_grid {: #use_grid } | If snapping to grid is enabled or not. | [<span class="tag boo"></span>](types.md)
+use_hands {: #use_hands } | If this object can be held in a hand zone. | [<span class="tag boo"></span>](types.md)
+use_rotation_value_flip {: #use_rotation_value_flip } | Switches the axis an Object rotates around when flipped. | [<span class="tag boo"></span>](types.md)
+use_snap_points {: #use_snap_points } | If snap points are used or ignored. | [<span class="tag boo"></span>](types.md)
+value {: #value } | The value of the object for summing up selected objects. Only works if the apropriate bits are set in `obj.value_flags` | [<span class="tag int"></span>](types.md)
+value_flags {: #value_flags } | A bit field, objects with overlapping `value_flag` bits are counted together when selected. | [<span class="tag int"></span>](types.md)
 
 !!! bug
     The `value_flags` and `value` member variables do not persist when the object is reloaded (such as loading a save and entering/exiting containers).
@@ -91,13 +91,13 @@ unless the Object includes the behavior.
 
 Variable | Type | Available On
 -- | -- | --
-<a class="anchor" id="assetbundle"></a>AssetBundle | [AssetBundle](behavior/assetbundle.md) | Custom "AssetBundle" objects.
-<a class="anchor" id="book"></a>Book | [Book](behavior/book.md) | "Custom PDF" objects.
-<a class="anchor" id="browser"></a>Browser | [Browser](behavior/browser.md) | "Tablet" objects.
-<a class="anchor" id="clock"></a>Clock | [Clock](behavior/clock.md) | "Digital Clock" objects.
-<a class="anchor" id="counter"></a>Counter | [Counter](behavior/counter.md) | "Counter" objects.
-<a class="anchor" id="rpgfigurine"></a>RPGFigurine | [RPGFigurine](behavior/rpgfigurine.md) | "RPG Kit" animated figurine objects i.e. [type](#type) "rpgFigurine".
-<a class="anchor" id="texttool"></a>TextTool | [TextTool](behavior/texttool.md) | 3D Text objects e.g. text created with the in-game Text tool.
+AssetBundle {: #assetbundle } | [AssetBundle](behavior/assetbundle.md) | Custom "AssetBundle" objects.
+Book {: #book } | [Book](behavior/book.md) | "Custom PDF" objects.
+Browser {: #browser } | [Browser](behavior/browser.md) | "Tablet" objects.
+Clock {: #clock } | [Clock](behavior/clock.md) | "Digital Clock" objects.
+Counter {: #counter } | [Counter](behavior/counter.md) | "Counter" objects.
+RPGFigurine {: #rpgfigurine } | [RPGFigurine](behavior/rpgfigurine.md) | "RPG Kit" animated figurine objects i.e. [type](#type) "rpgFigurine".
+TextTool {: #texttool } | [TextTool](behavior/texttool.md) | 3D Text objects e.g. text created with the in-game Text tool.
 
 ---
 

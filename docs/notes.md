@@ -19,7 +19,7 @@ Functions that interact with the on-screen notes (lower right corner of screen).
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-<a class="anchor" id="getnotes"></a>getNotes() | Returns the contents of the on-screen notes section. | [<span class="ret str"></span>](types.md) |
+getNotes() {: #getnotes } | Returns the contents of the on-screen notes section. | [<span class="ret str"></span>](types.md) |
 setNotes([<span class="tag str"></span>](types.md) notes) | Replace the text in the notes window with the string. | [<span class="ret boo"></span>](types.md) | [:i:](#setnotes)
 
 ---

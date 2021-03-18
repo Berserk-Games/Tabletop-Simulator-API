@@ -9,21 +9,21 @@ General functions which work within any script.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-<a class="anchor" id="fnc_addcontextmenuitem"></a>addContextMenuItem([<span class="tag str"></span>](types.md) label, [<span class="tag fun"></span>](types.md) toRunFunc, [<span class="tag boo"></span>](types.md) keep_open, [<span class="tag boo"></span>](types.md) require_table) | Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table. | [<span class="ret boo"></span>](types.md) | [:i:](#addcontextmenuitem)
+addContextMenuItem([<span class="tag str"></span>](types.md) label, [<span class="tag fun"></span>](types.md) toRunFunc, [<span class="tag boo"></span>](types.md) keep_open, [<span class="tag boo"></span>](types.md) require_table) | Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table. | [<span class="ret boo"></span>](types.md) | [:i:](#addcontextmenuitem)
 clearContextMenu() | Clears all menu items added by function [addContextMenuItem](#fnc_addcontextmenuitem). | [<span class="ret boo"></span>](types.md) |
 copy([<span class="tag tab"></span>](types.md) object_list) | Copy a list of Objects to the clipboard. Works with [paste(...)](#paste). | [<span class="ret boo"></span>](types.md) | [:i:](#copy)
 destroyObject([<span class="tag obj"></span>](types.md) obj) | Destroy an Object. | [<span class="ret boo"></span>](types.md) | [:i:](#destroyobject)
-<a class="anchor" id="fliptable"></a>flipTable() | Flip the table. | [<span class="ret boo"></span>](types.md) |
-<a class="anchor" id="getallobjects"></a>getAllObjects() | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [getObjects()](#getobjects)_.</p>Returns a Table of all [Objects](object.md) in the game _except hand zones_. | [<span class="ret tab"></span>](types.md) |
+flipTable() {: #fliptable } | Flip the table. | [<span class="ret boo"></span>](types.md) |
+getAllObjects() {: #getallobjects } | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [getObjects()](#getobjects)_.</p>Returns a Table of all [Objects](object.md) in the game _except hand zones_. | [<span class="ret tab"></span>](types.md) |
 getObjectFromGUID([<span class="tag str"></span>](types.md) guid) | Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist. | [<span class="ret obj"></span>](types.md) | [:i:](#getobjectfromguid)
-<a class="anchor" id="getobjects"></a>getObjects() | Returns a Table of all [Objects](object.md) in the game. | [<span class="ret tab"></span>](types.md) |
+getObjects() {: #getobjects } | Returns a Table of all [Objects](object.md) in the game. | [<span class="ret tab"></span>](types.md) |
 getObjectsWithTag([<span class="tag str"></span>](types.md) tag) | Returns Table of all [Objects](object.md) which have the specified tag attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithtag)
 getObjectsWithAnyTags([<span class="tag tab"></span>](types.md) tags) | Returns Table of all [Objects](object.md) which have at least one of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithanytags)
 getObjectsWithAllTags([<span class="tag tab"></span>](types.md) tags) | Returns Table of all [Objects](object.md) which have all of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithalltags)
-<a class="anchor" id="getseatedplayers"></a>getSeatedPlayers() | Returns a Table of the [Player Colors](player-color.md) strings of seated players. | [<span class="ret tab"></span>](types.md) |
+getSeatedPlayers() {: #getseatedplayers } | Returns a Table of the [Player Colors](player-color.md) strings of seated players. | [<span class="ret tab"></span>](types.md) |
 group([<span class="tag tab"></span>](types.md) objects) | Groups objects together, like how the `G` key does for players. | [<span class="ret tab"></span>](types.md) | [:i:](#group)
 paste([<span class="tag tab"></span>](types.md) parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](types.md) | [:i:](#paste)
-<a class="anchor" id="setlookingforplayers"></a>setLookingForPlayers([<span class="tag boo"></span>](types.md) lfp) | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](types.md) |
+setLookingForPlayers([<span class="tag boo"></span>](types.md) lfp) {: #setlookingforplayers } | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](types.md) |
 spawnObject([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object. See [Built-in](built-in-object.md) and [Custom](custom-game-objects.md) Spawnable Object pages for further details. | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobject)
 spawnObjectData([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object using a data table. Works with [getData()](object.md#getdata). | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectdata)
 spawnObjectJSON([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object using a JSON string. Works with [getJSON()](object.md#getjson). | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectjson)
@@ -33,9 +33,9 @@ stringColorToRGB([<span class="tag str"></span>](types.md) player_color) | Conve
 ####Hotkey Functions
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-<a class="anchor" id="fnc_addhotkey"></a>addHotkey([<span class="tag str"></span>](types.md) label, [<span class="tag fun"></span>](types.md) toRunFunc, [<span class="tag boo"></span>](types.md) trigger_on_key_up) | Adds a bindable Hotkey to the game. User may assign a key to it in Options->Game Keys after the game was created. | [<span class="ret boo"></span>](types.md) | [:i:](#addhotkey)
-<a class="anchor" id="fnc_clearhotkeys"></a>clearHotkeys() | Clears all Hotkeys added by [addHotkey](#fnc_addhotkey) | [<span class="ret boo"></span>](types.md) |
-<a class="anchor" id="fnc_showhotkeyconfig"></a>showHotkeyConfig() | Shows the Hotkey configuration window under Options->Game Keys. | [<span class="ret boo"></span>](types.md) |
+addHotkey([<span class="tag str"></span>](types.md) label, [<span class="tag fun"></span>](types.md) toRunFunc, [<span class="tag boo"></span>](types.md) trigger_on_key_up)  | Adds a bindable Hotkey to the game. User may assign a key to it in Options->Game Keys after the game was created. | [<span class="ret boo"></span>](types.md) | [:i:](#addhotkey)
+clearHotkeys() {: #fnc_clearhotkeys } | Clears all Hotkeys added by [addHotkey](#fnc_addhotkey) | [<span class="ret boo"></span>](types.md) |
+showHotkeyConfig() {: #fnc_showhotkeyconfig } | Shows the Hotkey configuration window under Options->Game Keys. | [<span class="ret boo"></span>](types.md) |
 
 ###Message Functions
 Functions which handle sending and displaying data.
@@ -50,7 +50,7 @@ logStyle([<span class="tag str"></span>](types.md) tag, [<span class="tag col"><
 print([<span class="tag str"></span>](types.md) message) | Prints a string into chat that only the host is able to see. Used for debugging scripts. | [<span class="ret nil"></span>](types.md) | [:i:](#print)
 printToAll([<span class="tag str"></span>](types.md) message, [<span class="tag col"></span>](types.md#color) message_tint) | Print a message into the chat of all connected players. | [<span class="ret boo"></span>](types.md) | [:i:](#printtoall)
 printToColor([<span class="tag str"></span>](types.md) message, [<span class="tag str"></span>](types.md) player_color, [<span class="tag col"></span>](types.md#color) message_tint) | Print a message to a specific [Player Color](player-color.md). | [<span class="ret boo"></span>](types.md) | [:i:](#printtocolor)
-<a class="anchor" id="sendexternalmessage"></a>sendExternalMessage([<span class="tag tab"></span>](types.md) data) | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](types.md) |
+sendExternalMessage([<span class="tag tab"></span>](types.md) data) {: #sendexternalmessage } | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](types.md) |
 
 
 

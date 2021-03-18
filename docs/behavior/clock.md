@@ -11,7 +11,7 @@ Example Usage: `self.Clock.pauseStart()`
 
 Variable | Description | Type
 -- | -- | :--
-<a class="anchor" id="paused"></a>paused | If the clock timer is paused. | [<span class="tag boo"></span>](../types.md)
+paused {: #paused } | If the clock timer is paused. | [<span class="tag boo"></span>](../types.md)
 
 ---
 
@@ -21,11 +21,11 @@ Variable | Description | Type
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-<a class="anchor" id="getvalue"></a>getValue() | Current time in stopwatch or timer mode. Clock mode returns 0. This function acts the same as [Object's getValue()](../object.md#getvalue). | [<span class="ret int"></span>](../types.md)
-<a class="anchor" id="pausestart"></a>pauseStart() | Pauses/resumes a Clock in stopwatch or timer mode. | [<span class="ret boo"></span>](../types.md)
+getValue() {: #getvalue } | Current time in stopwatch or timer mode. Clock mode returns 0. This function acts the same as [Object's getValue()](../object.md#getvalue). | [<span class="ret int"></span>](../types.md)
+pauseStart() {: #pausestart } | Pauses/resumes a Clock in stopwatch or timer mode. | [<span class="ret boo"></span>](../types.md)
 setValue([<span class="tag int"></span>](../types.md) seconds) | Switches clock to timer and sets countdown time. This function acts the same as [Object's setValue()](../object.md#setvalue). | [<span class="ret boo"></span>](../types.md) | [:i:](#setvalue)
-<a class="anchor" id="showcurrenttime"></a>showCurrentTime() | Switches clock to display current time. It will clear any stopwatch or timer. | [<span class="ret boo"></span>](../types.md)
-<a class="anchor" id="startstopwatch"></a>startStopwatch() | Switches clock to stopwatch, setting time to 0. It will reset time if already in stopwatch mode. | [<span class="ret boo"></span>](../types.md)
+showCurrentTime() {: #showcurrenttime } | Switches clock to display current time. It will clear any stopwatch or timer. | [<span class="ret boo"></span>](../types.md)
+startStopwatch() {: #startstopwatch } | Switches clock to stopwatch, setting time to 0. It will reset time if already in stopwatch mode. | [<span class="ret boo"></span>](../types.md)
 
 ---
 

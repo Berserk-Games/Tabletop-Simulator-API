@@ -6,9 +6,9 @@ The static global `Hands` class allows you to control the behavior of Hand Zones
 
 Variable | Description | Type | &nbsp;
 -- | -- | -- | --
-<a class="anchor" id="enable"></a>enable | Whether hand zones are enabled i.e. hold objects. | [<span class="tag boo"></span>](types.md) |
-<a class="anchor" id="disable_unused"></a>disable_unused | Whether hands zones belonging to a color without a seated player should be disabled. | [<span class="tag boo"></span>](types.md) |
-<a class="anchor" id="hiding"></a>hiding | Determines which hand contents are hidden from which players. | [<span class="tag int"></span>](types.md) | [:i:](#hiding)
+enable {: #enable } | Whether hand zones are enabled i.e. hold objects. | [<span class="tag boo"></span>](types.md) |
+disable_unused {: #disable_unused } | Whether hands zones belonging to a color without a seated player should be disabled. | [<span class="tag boo"></span>](types.md) |
+hiding  | Determines which hand contents are hidden from which players. | [<span class="tag int"></span>](types.md) | [:i:](#hiding)
 
 ##Member Variable Details
 

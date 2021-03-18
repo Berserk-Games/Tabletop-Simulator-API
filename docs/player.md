@@ -7,16 +7,16 @@ Example Usage: `Player["White"].seated` or `Player["Green"].mute()`
 
 Variable | Description | Type
 -- | -- | :--
-<a class="anchor" id="admin"></a>admin | If the player is promoted or the host of the game. Read only. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="blindfolded"></a>blindfolded | If the player is blindfolded. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="color"></a>color | The player's [Player Color](player-color.md). Read only. | [<span class="tag str"></span>](types.md)
-<a class="anchor" id="host"></a>host | If the player is the host. Read only. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="lift_height"></a>lift_height | The lift height for the player. This is how far an object is raised when held in a player's hand. Value is ranged 0 to 1. | [<span class="tag flo"></span>](types.md)
-<a class="anchor" id="promoted"></a>promoted | If the current player is promoted. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="seated"></a>seated | If a player is currently seated at this color. Read only. | [<span class="tag boo"></span>](types.md)
-<a class="anchor" id="steam_id"></a>steam_id | The Steam ID of the player. This is unique to each player's Steam account. Read only. | [<span class="tag str"></span>](types.md)
-<a class="anchor" id="steam_name"></a>steam_name | The Steam name of the player. Read only. | [<span class="tag str"></span>](types.md)
-<a class="anchor" id="team"></a>team | The team of the player.<br>Options: `"None", "Clubs", "Diamonds", "Hearts", "Spades", "Jokers"`. | [<span class="tag str"></span>](types.md)
+admin {: #admin } | If the player is promoted or the host of the game. Read only. | [<span class="tag boo"></span>](types.md)
+blindfolded {: #blindfolded } | If the player is blindfolded. | [<span class="tag boo"></span>](types.md)
+color {: #color } | The player's [Player Color](player-color.md). Read only. | [<span class="tag str"></span>](types.md)
+host {: #host } | If the player is the host. Read only. | [<span class="tag boo"></span>](types.md)
+lift_height {: #lift_height } | The lift height for the player. This is how far an object is raised when held in a player's hand. Value is ranged 0 to 1. | [<span class="tag flo"></span>](types.md)
+promoted {: #promoted } | If the current player is promoted. | [<span class="tag boo"></span>](types.md)
+seated {: #seated } | If a player is currently seated at this color. Read only. | [<span class="tag boo"></span>](types.md)
+steam_id {: #steam_id } | The Steam ID of the player. This is unique to each player's Steam account. Read only. | [<span class="tag str"></span>](types.md)
+steam_name {: #steam_name } | The Steam name of the player. Read only. | [<span class="tag str"></span>](types.md)
+team {: #team } | The team of the player.<br>Options: `"None", "Clubs", "Diamonds", "Hearts", "Spades", "Jokers"`. | [<span class="tag str"></span>](types.md)
 
 ---
 
@@ -29,21 +29,21 @@ Function Name | Description | Return | &nbsp;
 attachCameraToObject([<span class="tag tab"></span>](types.md) parameters) | Makes a Player's camera follow an Object. | [<span class="ret boo"></span>](types.md) | [:i:](#attachcameratoobject)
 broadcast([<span class="tag str"></span>](types.md) message, [<span class="tag col"></span>](types.md) message_color) | Print message on Player's screen and their game chat log. | [<span class="ret boo"></span>](types.md) | [:i:](#broadcast)
 changeColor([<span class="tag str"></span>](types.md) player_color) | Changes player to this [Player Color](player-color.md). | [<span class="ret boo"></span>](types.md) | [:i:](#changecolor)
-<a class="anchor" id="clearselectedobjects"></a>clearSelectedObjects() | Clears a player's current selection. | [<span class="ret boo"></span>](types.md)
-<a class="anchor" id="gethandcount"></a>getHandCount() | Number of [hand zones](https://kb.tabletopsimulator.com/host-guides/player-hands/) owned by this color. | [<span class="ret int"></span>](types.md)
+clearSelectedObjects() {: #clearselectedobjects } | Clears a player's current selection. | [<span class="ret boo"></span>](types.md)
+getHandCount() {: #gethandcount } | Number of [hand zones](https://kb.tabletopsimulator.com/host-guides/player-hands/) owned by this color. | [<span class="ret int"></span>](types.md)
 getHandObjects([<span class="tag int"></span>](types.md) hand_index) | Objects that are in this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/). | [<span class="ret tab"></span>](types.md) | [:i:](#gethandobjects)
 getHandTransform([<span class="tag int"></span>](types.md) hand_index) | Returns a Table of data on this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/). | [<span class="ret tab"></span>](types.md) | [:i:](#gethandtransform)
-<a class="anchor" id="getholdingobjects"></a>getHoldingObjects() | Objects a Player is holding in their hand. | [<span class="ret tab"></span>](types.md)
-<a class="anchor" id="gethoverobject"></a>getHoverObject() | Object that the Player's pointer is hovering over. | [<span class="ret obj"></span>](types.md)
-<a class="anchor" id="getpointerposition"></a>getPointerPosition() | Player's pointer coordinates. | [<span class="ret vec"></span>](types.md#vector)
-<a class="anchor" id="getpointerrotation"></a>getPointerRotation() | Player's pointer rotation on Y axis. | [<span class="ret flo"></span>](types.md)
-<a class="anchor" id="getselectedobjects"></a>getSelectedObjects() | Objects that the Player has selected with an area selection. | [<span class="ret tab"></span>](types.md)
-<a class="anchor" id="kick"></a>kick() | Kicks Player out of the room. | [<span class="ret boo"></span>](types.md)
+getHoldingObjects() {: #getholdingobjects } | Objects a Player is holding in their hand. | [<span class="ret tab"></span>](types.md)
+getHoverObject() {: #gethoverobject } | Object that the Player's pointer is hovering over. | [<span class="ret obj"></span>](types.md)
+getPointerPosition() {: #getpointerposition } | Player's pointer coordinates. | [<span class="ret vec"></span>](types.md#vector)
+getPointerRotation() {: #getpointerrotation } | Player's pointer rotation on Y axis. | [<span class="ret flo"></span>](types.md)
+getSelectedObjects() {: #getselectedobjects } | Objects that the Player has selected with an area selection. | [<span class="ret tab"></span>](types.md)
+kick() {: #kick } | Kicks Player out of the room. | [<span class="ret boo"></span>](types.md)
 lookAt([<span class="tag tab"></span>](types.md) parameters) | Moves a Player's camera, forcing 3'rd person camera mode. | [<span class="ret boo"></span>](types.md) | [:i:](#lookat)
-<a class="anchor" id="mute"></a>mute() | Mutes or unmutes Player, preventing/allowing voice chat. | [<span class="ret boo"></span>](types.md)
-<a class="anchor" id="pingtable"></a>pingTable([<span class="tag vec"></span>](types.md#vector) position) | Emulates the player using the ping tool at the given position (tapping Tab). | [<span class="ret boo"></span>](types.md)
+mute() {: #mute } | Mutes or unmutes Player, preventing/allowing voice chat. | [<span class="ret boo"></span>](types.md)
+pingTable([<span class="tag vec"></span>](types.md#vector) position) {: #pingtable } | Emulates the player using the ping tool at the given position (tapping Tab). | [<span class="ret boo"></span>](types.md)
 print([<span class="tag str"></span>](types.md) message, [<span class="tag col"></span>](types.md#color) message_color) | Prints a message into the Player's game chat. | [<span class="ret boo"></span>](types.md) | [:i:](#print)
-<a class="anchor" id="promote"></a>promote() | Promotes/demotes a Player. Promoted players have access to most host privileges. | [<span class="ret boo"></span>](types.md) |
+promote() {: #promote } | Promotes/demotes a Player. Promoted players have access to most host privileges. | [<span class="ret boo"></span>](types.md) |
 setCameraMode([<span class="tag str"></span>](types.md) camera_mode) | Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown". | [<span class="ret boo"></span>](types.md) | [:i:](#setcameramode)
 setHandTransform([<span class="tag tab"></span>](types.md) parameters, [<span class="tag int"></span>](types.md) hand_index) | Sets transform elements of a hand zone. | [<span class="ret boo"></span>](types.md) | [:i:](#sethandtransform)
 
@@ -54,8 +54,8 @@ These functions return direct references to Players, not a Player Color. See det
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-<a class="anchor" id="getavailablecolors"></a>getAvailableColors() | Returns a table of strings of every valid seat color at the current table. Returned colors are in the default order. | [<span class="ret tab"></span>](types.md)
-<a class="anchor" id="getcolors"></a>getColors() | Returns a table of strings of every possible seat color. Returned colors are in the default order. | [<span class="ret tab"></span>](types.md)
+getAvailableColors() {: #getavailablecolors } | Returns a table of strings of every valid seat color at the current table. Returned colors are in the default order. | [<span class="ret tab"></span>](types.md)
+getColors() {: #getcolors } | Returns a table of strings of every possible seat color. Returned colors are in the default order. | [<span class="ret tab"></span>](types.md)
 getPlayers() | Returns Table of all Players in the instance. | [<span class="ret tab"></span>](types.md) | [:i:](#getplayers)
 getSpectators() | Returns Table of all Players in spectator (Grey). | [<span class="ret tab"></span>](types.md) | [:i:](#getspectators)
 

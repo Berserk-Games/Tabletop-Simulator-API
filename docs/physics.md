@@ -13,7 +13,7 @@ Read example: `print(Physics.play_area)` Write Example = `Physics.play_area = 0.
 
 Variable | Description | Type
 -- | -- | :--
-<a class="anchor" id="play_area"></a>play_area | The play area being used (ie. how far from middle you can get). Values from 0 - 1. Default is 0.5 | [<span class="tag flo"></span>](types.md) <a class="anchor" id="angular_drag"></a>
+play_area {: #play_area } | The play area being used (ie. how far from middle you can get). Values from 0 - 1. Default is 0.5 | [<span class="tag flo"></span>](types.md)
 
 
 ---
@@ -29,11 +29,11 @@ Variable | Description | Type
 
 ###Functions
 
-Function Name | Description | Return | &nbsp;
+Function Name {: #angular_drag } | Description | Return | &nbsp;
 -- | -- | -- | --
 cast([<span class="tag tab"></span>](types.md) parameters) | Returns Table containing information on hit Objects. | [<span class="ret tab"></span>](types.md) | [:i:](#cast)
-<a class="anchor" id="getgravity"></a>getGravity() | Returns directional Vector of the direction gravity is pulling. | [<span class="ret vec"></span>](types.md#vector) |
-<a class="anchor" id="setgravity"></a>setGravity([<span class="tag vec"></span>](types.md#vector) direction) | Sets the direction gravity gravity pulls. | [<span class="ret boo"></span>](types.md)
+getGravity() {: #getgravity } | Returns directional Vector of the direction gravity is pulling. | [<span class="ret vec"></span>](types.md#vector) |
+setGravity([<span class="tag vec"></span>](types.md#vector) direction) {: #setgravity } | Sets the direction gravity gravity pulls. | [<span class="ret boo"></span>](types.md)
 
 
 

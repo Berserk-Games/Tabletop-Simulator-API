@@ -7,9 +7,9 @@ These functions are called like this: `self.RPGFigurine.attack()`.
 
 Function Name | Description | Return
 -- | -- | --
-<a class="anchor" id="attack"></a>attack() | Plays a random attack animation. | [<span class="ret boo"></span>](../types.md)
-<a class="anchor" id="changemode"></a>changeMode() | Changes the figurine's current mode. What the mode represents is based on the figurine. | [<span class="ret boo"></span>](../types.md)
-<a class="anchor" id="die"></a>die() | Plays the death animation or causes it to return to life. | [<span class="ret boo"></span>](../types.md)
+attack() {: #attack } | Plays a random attack animation. | [<span class="ret boo"></span>](../types.md)
+changeMode() {: #changemode } | Changes the figurine's current mode. What the mode represents is based on the figurine. | [<span class="ret boo"></span>](../types.md)
+die() {: #die } | Plays the death animation or causes it to return to life. | [<span class="ret boo"></span>](../types.md)
 
 ###Event Functions
 These functions are called by the game whenever a figurine attacks or is attacked. See details for example usage.

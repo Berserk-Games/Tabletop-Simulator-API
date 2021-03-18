@@ -57,9 +57,9 @@ These can be used on either a regular in-game Object or an in-game Objects `Game
 
 Command Name | Description | Return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | --
-<a class="anchor" id="getcomponent"></a>getComponent([<span class="tag str"></span>](types.md) name) | Obtains a component reference from an Object, by name. | **Component**
-<a class="anchor" id="getcomponents"></a>getComponents([<span class="tag str"></span>](types.md) optional_name) | Returns all components on a game object. The name is an optional component name to narrow results with. | **Component** in [<span class="ret tab"></span>](types.md)
-<a class="anchor" id="name"></a>name | Returns the name of the given Object or GameObject. | [<span class="ret str"></span>](types.md)
+getComponent([<span class="tag str"></span>](types.md) name) {: #getcomponent } | Obtains a component reference from an Object, by name. | **Component**
+getComponents([<span class="tag str"></span>](types.md) optional_name) {: #getcomponents } | Returns all components on a game object. The name is an optional component name to narrow results with. | **Component** in [<span class="ret tab"></span>](types.md)
+name {: #name } | Returns the name of the given Object or GameObject. | [<span class="ret str"></span>](types.md)
 
 
 ###GameObject Children Commands
@@ -67,18 +67,18 @@ When you access an in-game Object normally with Lua, it is always the "parent" o
 
 Command Name | Description | Return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | --
-<a class="anchor" id="getcomponentinchildren"></a>getComponentInChildren([<span class="tag str"></span>](types.md) name) | Obtains a component reference from a child GameObject, by name. | **Component**
-<a class="anchor" id="getcomponentsinchildren"></a>getComponentsInChildren([<span class="tag str"></span>](types.md) optional_name) | Returns all components of all child GameObjects attached to this parent Object. The name is an optional component name to narrow results with. | **Component** in [<span class="ret tab"></span>](types.md)
-<a class="anchor" id="getchild"></a>getChild([<span class="tag str"></span>](types.md) name) | Obtains a reference to the GameObject of a child object. The name is the name of the GameObject. | **GameObject**
-<a class="anchor" id="getchildren"></a>getChildren() | Returns a list of all GameObjects attached under the parent GameObject. | **GameObject** in [<span class="ret tab"></span>](types.md)
+getComponentInChildren([<span class="tag str"></span>](types.md) name) {: #getcomponentinchildren } | Obtains a component reference from a child GameObject, by name. | **Component**
+getComponentsInChildren([<span class="tag str"></span>](types.md) optional_name) {: #getcomponentsinchildren } | Returns all components of all child GameObjects attached to this parent Object. The name is an optional component name to narrow results with. | **Component** in [<span class="ret tab"></span>](types.md)
+getChild([<span class="tag str"></span>](types.md) name) {: #getchild } | Obtains a reference to the GameObject of a child object. The name is the name of the GameObject. | **GameObject**
+getChildren() {: #getchildren } | Returns a list of all GameObjects attached under the parent GameObject. | **GameObject** in [<span class="ret tab"></span>](types.md)
 
 ###Component Commands
 These commands are used on the Components of objects to find or modify the values of their variables. The values will depend on which variable is being changed. They are usually System.Int32 (an Integer), System.Boolean (a Bool) or UnityEngine.Vector3 (a Vector). These are all used on Components.
 
 Command Name | Description | Return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | --
-<a class="anchor" id="game_object"></a>game_object | Returns the GameObject the component is on. | **GameObject**
-<a class="anchor" id="get"></a>get([<span class="tag str"></span>](types.md) varName) | Obtains the value of a given Variable on a Component. | [<span class="ret var"></span>](types.md)
-<a class="anchor" id="get"></a>getVars() | Obtains a table containing Variable names along with the type of value they take. | [<span class="ret tab"></span>](types.md)
-<a class="anchor" id="set"></a>set([<span class="tag str"></span>](types.md) varName, [<span class="tag var"></span>](types.md) value) | Sets a value to a Variable on the Component | [<span class="ret boo"></span>](types.md)
-<a class="anchor" id="name"></a>name | Returns the name of the given Object or GameObject. | [<span class="ret str"></span>](types.md)
+game_object {: #game_object } | Returns the GameObject the component is on. | **GameObject**
+get([<span class="tag str"></span>](types.md) varName) {: #get } | Obtains the value of a given Variable on a Component. | [<span class="ret var"></span>](types.md)
+getVars() {: #get } | Obtains a table containing Variable names along with the type of value they take. | [<span class="ret tab"></span>](types.md)
+set([<span class="tag str"></span>](types.md) varName, [<span class="tag var"></span>](types.md) value) {: #set } | Sets a value to a Variable on the Component | [<span class="ret boo"></span>](types.md)
+name {: #name } | Returns the name of the given Object or GameObject. | [<span class="ret str"></span>](types.md)

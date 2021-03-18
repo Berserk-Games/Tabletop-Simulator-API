@@ -6,7 +6,7 @@ Example Usage: `obj.Book.setPage(1, false)`
 
 Variable | Description | Type
 -- | -- | :--
-<a class="anchor" id="page_offset"></a>page_offset | The page numbers displayed in the Custom PDF UI are offset by this amount. | [<span class="tag int"></span>](../types.md)
+page_offset {: #page_offset } | The page numbers displayed in the Custom PDF UI are offset by this amount. | [<span class="tag int"></span>](../types.md)
 
 !!! info
     For example, if `page_offset` were set to 10, the first page in the UI would be 11, rather than 1. Negative numbers are accepted, and useful if a rule book contains a front cover, index etc. within the PDF file.
@@ -17,10 +17,10 @@ Variable | Description | Type
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --:
-<a class="anchor" id="getpage"></a>getPage([<span class="tag boo"></span>](../types.md) offsetPageNumbering) | Gets the current page of the PDF. | [<span class="ret int"></span>](../types.md) | [:i:](#getpage)
-<a class="anchor" id="setpage"></a>setPage([<span class="tag int"></span>](../types.md) page, [<span class="tag boo"></span>](../types.md) offsetPageNumbering) | Set current page. | [<span class="ret boo"></span>](../types.md)| [:i:](#setpage)
-<a class="anchor" id="sethighlight"></a>setHighlight([<span class="tag flo"></span>](../types.md) x1, [<span class="tag flo"></span>](../types.md) y1, [<span class="tag flo"></span>](../types.md) x2, [<span class="tag flo"></span>](../types.md) y2) | Set highlight box on current page. | [<span class="ret boo"></span>](../types.md) |  [:i:](#sethighlight)
-<a class="anchor" id="clearhighlight"></a>clearHighlight() | Clears the current highlight. | [<span class="ret boo"></span>](../types.md)
+getPage([<span class="tag boo"></span>](../types.md) offsetPageNumbering)  | Gets the current page of the PDF. | [<span class="ret int"></span>](../types.md) | [:i:](#getpage)
+setPage([<span class="tag int"></span>](../types.md) page, [<span class="tag boo"></span>](../types.md) offsetPageNumbering)  | Set current page. | [<span class="ret boo"></span>](../types.md)| [:i:](#setpage)
+setHighlight([<span class="tag flo"></span>](../types.md) x1, [<span class="tag flo"></span>](../types.md) y1, [<span class="tag flo"></span>](../types.md) x2, [<span class="tag flo"></span>](../types.md) y2)  | Set highlight box on current page. | [<span class="ret boo"></span>](../types.md) |  [:i:](#sethighlight)
+clearHighlight() {: #clearhighlight } | Clears the current highlight. | [<span class="ret boo"></span>](../types.md)
 
 ---
 
