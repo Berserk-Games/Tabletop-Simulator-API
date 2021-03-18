@@ -811,6 +811,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#graphics" class="md-nav__link">
+    Graphics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#piecepack" class="md-nav__link">
     Piecepack
   </a>
@@ -839,8 +846,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#scripting" class="md-nav__link">
-    Scripting
+  <a href="#zones" class="md-nav__link">
+    Zones
   </a>
   
 </li>
@@ -971,10 +978,49 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_28" type="checkbox" id="__nav_2_28" >
+      
+      <label class="md-nav__link" for="__nav_2_28">
+        Web Request
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web Request" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_28">
+          <span class="md-nav__icon md-icon"></span>
+          Web Request
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrequest-instance/" class="md-nav__link">
+        Instance
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../webrequest/" class="md-nav__link">
-        Web Request
+        Manager
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1188,6 +1234,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#graphics" class="md-nav__link">
+    Graphics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#piecepack" class="md-nav__link">
     Piecepack
   </a>
@@ -1216,8 +1269,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#scripting" class="md-nav__link">
-    Scripting
+  <a href="#zones" class="md-nav__link">
+    Zones
   </a>
   
 </li>
@@ -1733,6 +1786,23 @@
 </tr>
 </tbody>
 </table>
+<h3 id="graphics">Graphics<a class="headerlink" href="#graphics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="anchor" id="3DText"></a>3DText</td>
+<td>The text that the <a href="https://kb.tabletopsimulator.com/game-tools/text-tool/">Text Tool</a> spawns.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="piecepack">Piecepack<a class="headerlink" href="#piecepack" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -2157,35 +2227,45 @@
 </tr>
 </tbody>
 </table>
-<h3 id="scripting">Scripting<a class="headerlink" href="#scripting" title="Permanent link">&para;</a></h3>
+<h3 id="zones">Zones<a class="headerlink" href="#zones" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Name</th>
+<th>Type</th>
 <th>Description</th>
-<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a class="anchor" id="ScriptingTrigger"></a>ScriptingTrigger</td>
-<td>A Scripting Zone.</td>
-<td></td>
+<td><a class="anchor" id="FogOfWar"></a>FogOfWar</td>
+<td><code>Fog</code></td>
+<td>A <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War Zone</a>.</td>
 </tr>
 <tr>
 <td><a class="anchor" id="FogOfWarTrigger"></a>FogOfWarTrigger</td>
-<td>A <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#hidden-zone">Hidden Zone</a></td>
-<td></td>
+<td><code>FogOfWar</code></td>
+<td>A <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#hidden-zone">Hidden Zone</a>.</td>
 </tr>
 <tr>
-<td><a class="anchor" id="FogOfWar"></a>FogOfWar</td>
-<td>A <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone">Fog of War Zone</a></td>
-<td></td>
+<td><a class="anchor" id="HandTrigger"></a>HandTrigger</td>
+<td><code>Hand</code></td>
+<td>A <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#hand-zone">Hand Zone</a>.</td>
 </tr>
 <tr>
-<td><a class="anchor" id="3DText"></a>3DText</td>
-<td>The text that the <a href="https://kb.tabletopsimulator.com/game-tools/text-tool/">Text Tool</a> spawns.</td>
-<td></td>
+<td><a class="anchor" id="LayoutZone"></a>LayoutZone</td>
+<td><code>Layout</code></td>
+<td>A <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#layout-zone">Layout Zone</a>.</td>
+</tr>
+<tr>
+<td><a class="anchor" id="RandomizeTrigger"></a>RandomizeTrigger</td>
+<td><code>Randomize</code></td>
+<td>A <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#randomize-zone">Randomize Zone</a>.</td>
+</tr>
+<tr>
+<td><a class="anchor" id="ScriptingTrigger"></a>ScriptingTrigger</td>
+<td><code>Scripting</code></td>
+<td>A <a href="https://kb.tabletopsimulator.com/game-tools/zone-tools/#scripting-zone">Scripting Zone</a>.</td>
 </tr>
 </tbody>
 </table>

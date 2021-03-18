@@ -14,7 +14,7 @@
     
     
       
-        <title>Web Request - Tabletop Simulator API</title>
+        <title>Manager - Tabletop Simulator API</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#member-variables" class="md-skip">
+        <a href="#web-request-manager" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Web Request
+              Manager
             
           </span>
         </div>
@@ -819,23 +819,62 @@
     
   
   
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_28" type="checkbox" id="__nav_2_28" checked>
+      
+      <label class="md-nav__link" for="__nav_2_28">
+        Web Request
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web Request" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_28">
+          <span class="md-nav__icon md-icon"></span>
+          Web Request
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webrequest-instance/" class="md-nav__link">
+        Instance
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Web Request
+          Manager
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Web Request
+        Manager
       </a>
       
         
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -843,13 +882,6 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#member-variables" class="md-nav__link">
-    Member Variables
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#function-summary" class="md-nav__link">
@@ -867,8 +899,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#custom" class="md-nav__link">
+    custom(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    delete(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#get" class="md-nav__link">
     get(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head" class="md-nav__link">
+    head(...)
   </a>
   
 </li>
@@ -896,6 +949,12 @@
   
 </nav>
       
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1023,19 +1082,14 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#member-variables" class="md-nav__link">
-    Member Variables
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#function-summary" class="md-nav__link">
@@ -1053,8 +1107,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#custom" class="md-nav__link">
+    custom(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    delete(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#get" class="md-nav__link">
     get(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head" class="md-nav__link">
+    head(...)
   </a>
   
 </li>
@@ -1104,95 +1179,66 @@
   as the main headline.
 -->
 
-  <h1>
-    Web Request
-    
-  </h1>
-
-
 
 <!-- Markdown content -->
-<p>The static global WebRequest class allows you to interact with the web via get, post and put. This is a more advanced feature that allows you to store/retrieve data to/from an external database.</p>
-<blockquote>
-<p>Example Usage:<code class="highlight"><span class="n">WebRequest</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="err">“</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">google</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="err">”</span><span class="p">,</span> <span class="n">self</span><span class="p">,</span> <span class="err">“</span><span class="n">webRequestCallback</span><span class="err">”</span><span class="p">)</span></code></p>
-</blockquote>
-<h2 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link">&para;</a></h2>
-<p>Like <a href="../object/#member-variables">Object member variables</a>, WebRequests have their own member variables.</p>
-<p>A WebRequest is returned as part of a function, and these member variables are how your access its information.</p>
-<table>
-<thead>
-<tr>
-<th>Variable</th>
-<th>Description</th>
-<th align="left">Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a class="anchor" id="download_progress"></a>download_progress</td>
-<td>Download percentage, represented as a value from 0-1.</td>
-<td align="left"><a href="../types/"><span class="tag flo"></span></a></td>
-</tr>
-<tr>
-<td><a class="anchor" id="error"></a>error</td>
-<td>Error text.</td>
-<td align="left"><a href="../types/"><span class="tag str"></span></a></td>
-</tr>
-<tr>
-<td><a class="anchor" id="is_error"></a>is_error</td>
-<td>If there is an error with the WebRequest.</td>
-<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
-</tr>
-<tr>
-<td><a class="anchor" id="is_done"></a>is_done</td>
-<td>If the WebRequest has finished.</td>
-<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
-</tr>
-<tr>
-<td><a class="anchor" id="text"></a>text</td>
-<td>Returned data.</td>
-<td align="left"><a href="../types/"><span class="tag str"></span></a></td>
-</tr>
-<tr>
-<td><a class="anchor" id="upload_progress"></a>upload_progress</td>
-<td>Upload percentage, represented as a value from 0-1.</td>
-<td align="left"><a href="../types/"><span class="tag flo"></span></a></td>
-</tr>
-<tr>
-<td><a class="anchor" id="url"></a>url</td>
-<td>The targeted URL.</td>
-<td align="left"><a href="../types/"><span class="tag str"></span></a></td>
-</tr>
-</tbody>
-</table>
+<h1 id="web-request-manager">Web Request Manager<a class="headerlink" href="#web-request-manager" title="Permanent link">&para;</a></h1>
+<p><code>WebRequest</code> is a static global class which allows you to send HTTP web request, from the game host's computer only. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is an advanced feature that allows you to send and receive data to/from web services. You could, for example,
+provide a companion web server for your mod which has a persistent database.</p>
+</div>
 <h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link">&para;</a></h2>
-<p>All functions return a WebRequest.</p>
 <table>
 <thead>
 <tr>
 <th>Function Name</th>
+<th>Return</th>
 <th>Description</th>
 <th align="right">&nbsp;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>custom(<a href="../types/"><span class="tag str"></span></a> url, <a href="../types/"><span class="tag str"></span></a> method, <a href="../types/"><span class="tag boo"></span></a> download, <a href="../types/"><span class="tag str"></span></a> data, <a href="../types/"><span class="tag tab"></span></a> headers, <a href="../types/#function"><span class="tag fun"></span></a> callback_function)</td>
+<td><a href="../webrequest-instance/">Web Request Instance</a></td>
+<td>Performs a HTTP request using the specified method, data and headers.</td>
+<td align="right"><a href="#custom"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+</tr>
+<tr>
+<td id="delete_1" style="position: relative;">delete(<h6 data-toc-mock-searchable="" id="delete" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">delete(...)</h6><a href="../types/"><span class="tag str"></span></a> url, <a href="../types/#function"><span class="tag fun"></span></a> callback_function)</td>
+<td><a href="../webrequest-instance/">Web Request Instance</a></td>
+<td>Performs a HTTP DELETE request.</td>
+<td align="right"></td>
+</tr>
+<tr>
 <td>get(<a href="../types/"><span class="tag str"></span></a> url, <a href="../types/#function"><span class="tag fun"></span></a> callback_function)</td>
-<td>Get data from the current URL.</td>
+<td><a href="../webrequest-instance/">Web Request Instance</a></td>
+<td>Performs a HTTP GET request.</td>
 <td align="right"><a href="#get"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>post(<a href="../types/"><span class="tag str"></span></a> url,  <a href="../types/"><span class="tag tab"></span></a> form, <a href="../types/#function"><span class="tag fun"></span></a> callback_function)</td>
-<td>Post the form to the URL.</td>
+<td id="head_1" style="position: relative;">head(<h6 data-toc-mock-searchable="" id="head" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">head(...)</h6><a href="../types/"><span class="tag str"></span></a> url, <a href="../types/#function"><span class="tag fun"></span></a> callback_function)</td>
+<td><a href="../webrequest-instance/">Web Request Instance</a></td>
+<td>Performs a HTTP HEAD request.</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>post(<a href="../types/"><span class="tag str"></span></a> url,  <a href="../types/"><span class="tag var"></span></a> form, <a href="../types/#function"><span class="tag fun"></span></a> callback_function)</td>
+<td><a href="../webrequest-instance/">Web Request Instance</a></td>
+<td>Performs a HTTP POST request, sending the specified form.</td>
 <td align="right"><a href="#post"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
 <td>put(<a href="../types/"><span class="tag str"></span></a> url,  <a href="../types/"><span class="tag str"></span></a> data, <a href="../types/#function"><span class="tag fun"></span></a> callback_function)</td>
-<td>Post the data to the URL.</td>
+<td><a href="../webrequest-instance/">Web Request Instance</a></td>
+<td>Performs a HTTP PUT request, sending the specified data.</td>
 <td align="right"><a href="#put"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
@@ -1201,52 +1247,131 @@
 </table>
 <hr />
 <h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link">&para;</a></h2>
-<h3 id="get">get(...)<a class="headerlink" href="#get" title="Permanent link">&para;</a></h3>
-<p>Get data from the current URL.</p>
+<h3 id="custom">custom(...)<a class="headerlink" href="#custom" title="Permanent link">&para;</a></h3>
+<p>Performs a HTTP request using the specified method, data and headers. Returns a <a href="../webrequest-instance/">Web Request Instance</a>.</p>
 <div class="admonition info">
-<p class="admonition-title">get(url, callback_function)</p>
+<p class="admonition-title">custom(url, method, download, data, headers, callback_function)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>url</strong>: The url to pull data from.</li>
-<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>callback_function</strong>: The function that will be triggered<ul>
-<li><span class="critic comment">Optional, but you will get no data back from the get if it isn't used.</span></li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>url</strong>: The URL.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>method</strong>: The HTTP method.</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>download</strong>: Whether you want to handle the response body. Must be <code>true</code> if you intend to read the response <a href="../webrequest-instance/#text">text</a>.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>data</strong>: The request body.</li>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>headers</strong>: Table of request headers. The table's keys and values must both be <a href="../types/"><span class="tag str"></span></a>.</li>
+<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>callback_function</strong>: Called when the request completes (or fails). Passed the <a href="../webrequest-instance/">Web Request Instance</a>.<ul>
+<li><span class="critic comment">Optional, but you will be unable to handle the response (or errors) if unused.</span></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Web Request Called&quot;</span><span class="p">)</span>
-    <span class="n">WebRequest</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://www.google.com&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="n">webRequestCallback</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="kr">end</span><span class="p">)</span>
-<span class="kr">end</span>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>We're going to make an (intentionally invalid) <em>attempt</em> to use Github's APIs to create a Github issue.</p>
+<p>We'll include a JSON request body and some request headers. Once the request completes, we're going to inspect the
+response headers, decode the response, and finally print the reason why our request was denied by Github.
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">-- Github&#39;s APIs require an Authorization header</span>
+    <span class="n">Authorization</span> <span class="o">=</span> <span class="s2">&quot;token 5199831f4dd3b79e7c5b7e0ebe75d67aa66e79d4&quot;</span><span class="p">,</span>
+    <span class="c1">-- We&#39;re sending a JSON body in the request</span>
+    <span class="p">[</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+    <span class="c1">-- We expecting a JSON body in the response</span>
+    <span class="n">Accept</span> <span class="o">=</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+<span class="p">}</span>
 
-<span class="kr">function</span> <span class="nf">webRequestCallback</span><span class="p">(</span><span class="n">webReturn</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Web Request Returned&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">webReturn</span><span class="p">.</span><span class="n">is_done</span><span class="p">)</span>
-<span class="kr">end</span>
-</code></pre></div>
+<span class="c1">-- Some JSON data (that represents a new Github issue).</span>
+<span class="c1">-- See: https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#creating-an-issue</span>
+<span class="kd">local</span> <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;New logo&quot;</span><span class="p">,</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="s2">&quot;We should have one&quot;</span><span class="p">,</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;design&quot;</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">-- Encode the data as JSON, so we can send it in our request body.</span>
+<span class="kd">local</span> <span class="n">body</span> <span class="o">=</span> <span class="n">JSON</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1">-- Our request is targeting the Berserk Games API docs Github repository&#39;s issues endpoint.</span>
+<span class="kd">local</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.github.com/repos/Berserk-Games/Tabletop-Simulator-API/issues&quot;</span>
+
+<span class="c1">-- Perform the request</span>
+<span class="n">WebRequest</span><span class="p">.</span><span class="n">custom</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="c1">-- Check if the request failed to complete e.g. if your Internet connection dropped out.</span>
+    <span class="kr">if</span> <span class="n">request</span><span class="p">.</span><span class="n">is_error</span> <span class="kr">then</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Request failed: &quot;</span> <span class="o">..</span> <span class="n">request</span><span class="p">.</span><span class="n">error</span><span class="p">)</span>
+        <span class="kr">return</span>
+    <span class="kr">end</span>
+
+    <span class="c1">-- Check that Github responded with JSON</span>
+    <span class="kd">local</span> <span class="n">contentType</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">getResponseHeader</span><span class="p">(</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span>
+    <span class="kr">if</span> <span class="n">contentType</span> <span class="o">~=</span> <span class="s2">&quot;application/json&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">contentType</span><span class="p">:</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;^application/json;&quot;</span><span class="p">)</span> <span class="kr">then</span>
+        <span class="c1">-- We&#39;re expecting a JSON response only, if we get something else we&#39;ll print an error</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Uh oh! Github sent us something we didn&#39;t expect.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Content-Type: &quot;</span> <span class="o">..</span> <span class="n">contentType</span><span class="p">)</span>
+        <span class="kr">return</span>
+    <span class="kr">end</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Request denied with status code: &quot;</span> <span class="o">..</span> <span class="n">request</span><span class="p">.</span><span class="n">response_code</span><span class="p">)</span>
+
+    <span class="c1">-- Decode the JSON response body</span>
+    <span class="kd">local</span> <span class="n">responseData</span> <span class="o">=</span> <span class="n">JSON</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+
+    <span class="c1">-- When Github denies a request, they include a &quot;message&quot; field in the JSON body to explain. Let&#39;s print it.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reason: &quot;</span> <span class="o">..</span> <span class="n">responseData</span><span class="p">.</span><span class="n">message</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
+<hr />
+<h3 id="get">get(...)<a class="headerlink" href="#get" title="Permanent link">&para;</a></h3>
+<p>Performs a HTTP GET request. Returns a <a href="../webrequest-instance/">Web Request Instance</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">get(url, callback_function)</p>
+<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>url</strong>: The URL.</li>
+<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>callback_function</strong>: Called when the request completes (or fails). Passed the <a href="../webrequest-instance/">Web Request Instance</a>.<ul>
+<li><span class="critic comment">Technically optional, but it makes no sense to send a GET request and not handle the response (or errors).</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Broadcast the text returned from Github's "Zen API". If the request fails, log the error.
+<div class="highlight"><pre><span></span><code><span class="n">WebRequest</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://api.github.com/zen&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="kr">if</span> <span class="n">request</span><span class="p">.</span><span class="n">is_error</span> <span class="kr">then</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">error</span><span class="p">)</span>
+    <span class="kr">else</span>
+        <span class="n">broadcastToAll</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="kr">end</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
 <hr />
 <h3 id="post">post(...)<a class="headerlink" href="#post" title="Permanent link">&para;</a></h3>
-<p>Post the form to the URL.</p>
+<p>Performs a HTTP POST request, sending the specified data. Returns a <a href="../webrequest-instance/">Web Request Instance</a>.</p>
+<p>The form will be sent as the body of the request (<code>Content-Type: application/x-www-form-urlencoded</code>).</p>
 <div class="admonition info">
 <p class="admonition-title">post(url, form, callback_function)</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>url</strong>: The url to pull post to.</li>
-<li><a href="../types/"><span class="tag tab"></span></a> <strong>form</strong>: The form of data to post.    </li>
-<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>callback_function</strong>: The function that will be triggered<ul>
-<li><span class="critic comment">Optional, but you will get no data back from the get if it isn't used.</span></li>
+<li><a href="../types/"><span class="tag tab"></span></a>/<a href="../types/"><span class="tag str"></span></a> <strong>form</strong>: The form to post.</li>
+<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>callback_function</strong>: Called when the request completes (or fails). Passed the <a href="../webrequest-instance/">Web Request Instance</a>.<ul>
+<li><span class="critic comment">Optional, but you will be unable to handle the response (or errors) if unused.</span></li>
 </ul>
 </li>
 </ul>
 </div>
+<p>When <code>form</code> is provided as a <a href="../types/"><span class="tag tab"></span></a> the data will be URL encoded for you.
+The table keys and values must both be <a href="../types/"><span class="tag str"></span></a>.</p>
 <hr />
 <h3 id="put">put(...)<a class="headerlink" href="#put" title="Permanent link">&para;</a></h3>
-<p>Post the data to the URL.</p>
+<p>Performs a HTTP PUT request, sending the specified data. Returns a <a href="../webrequest-instance/">Web Request Instance</a>.</p>
+<p>The data will be UTF-8 encoded and sent as binary data in the body of the request (<code>Content-Type: application/octet-stream</code>).</p>
+<p>The application/octet-stream</p>
 <div class="admonition info">
 <p class="admonition-title">put(url, data, callback_function)</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>url</strong>: The url to pull post to.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>data</strong>: The data string to post.    </li>
-<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>callback_function</strong>: The function that will be triggered<ul>
-<li><span class="critic comment">Optional, but you will get no data back from the get if it isn't used.</span></li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>data</strong>: The data to post.</li>
+<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>callback_function</strong>: Called when the request completes (or fails). Passed the <a href="../webrequest-instance/">Web Request Instance</a>.<ul>
+<li><span class="critic comment">Optional, but you will be unable to handle the response (or errors) if unused.</span></li>
 </ul>
 </li>
 </ul>
