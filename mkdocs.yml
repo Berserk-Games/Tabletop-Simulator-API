@@ -106,7 +106,9 @@ nav:
     - UI: ui.md
     - Vector: vector.md
     - Wait: wait.md
-    - Web Request: webrequest.md
+    - Web Request:
+      - Instance: webrequest-instance.md
+      - Manager: webrequest.md
   - UI API:
     - Introduction: ui/introUI.md
     - Attributes: ui/attributes.md
