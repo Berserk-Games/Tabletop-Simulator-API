@@ -5,8 +5,6 @@ Example Usage: `Player["White"].seated` or `Player["Green"].mute()`
 
 ##Member Variables
 
-Like [Object member variables](object.md#member-variables), Player has its own member variables.
-
 Variable | Description | Type
 -- | -- | :--
 <a class="anchor" id="admin"></a>admin | If the player is promoted or the host of the game. Read only. | [<span class="tag boo"></span>](types.md)

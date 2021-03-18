@@ -9,8 +9,6 @@ Example Usage: `self.Clock.pauseStart()`
 
 ##Member Variables
 
-Like [Object member variables](../object.md#member-variables), Clocks have their own member variable.
-
 Variable | Description | Type
 -- | -- | :--
 <a class="anchor" id="paused"></a>paused | If the clock timer is paused. | [<span class="tag boo"></span>](../types.md)

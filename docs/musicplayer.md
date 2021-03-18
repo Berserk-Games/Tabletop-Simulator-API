@@ -2,8 +2,6 @@
 
 ##Member Variables
 
-Like [Object member variables](object.md#member-variables), MusicPlayer has its own member variables. They allow for direct access to the MusicPlayer's property information without a helping function. Some are read-only.
-
 Variable | Description | Type
 -- | -- | :--
 <a class="anchor" id="loaded"></a>loaded | If all players loaded the current audioclip. Read only. | [<span class="tag boo"></span>](types.md)

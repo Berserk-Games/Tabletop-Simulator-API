@@ -4,8 +4,6 @@ Example usage: `Grid.show_lines = true`.
 
 ##Member Variables
 
-Like [Object member variables](object.md#member-variables), Grid has its own member variables. They allow for direct access to the Grid's properties.
-
 Variable | Description | Type
 -- | -- | :--
 <a class="anchor" id="type"></a>type | The type of the grid. 1 = Rectangles, 2 = Horizontal hexes, 3 = Vertical hexes.  | [<span class="tag int"></span>](types.md)

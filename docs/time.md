@@ -7,7 +7,7 @@ to Unity's time information.
     Time.time
     ```
 
-###Member Variables
+##Member Variables
 
 Function Name | Description | Return
 -- | -- | --

@@ -4,8 +4,6 @@ Example Usage: `obj.Book.setPage(1, false)`
 
 ##Member Variables
 
-Like [Object member variables](../object.md#member-variables), Books have their own member variables.
-
 Variable | Description | Type
 -- | -- | :--
 <a class="anchor" id="page_offset"></a>page_offset | The page numbers displayed in the Custom PDF UI are offset by this amount. | [<span class="tag int"></span>](../types.md)

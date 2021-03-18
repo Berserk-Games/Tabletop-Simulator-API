@@ -4,8 +4,6 @@ Example Usage: `self.Browser.url = "https://yahoo.com/"`
 
 ##Member Variables
 
-Like [Object member variables](../object.md#member-variables), Tablets have their own member variables.
-
 Variable | Description | Type
 -- | -- | :--
 <a class="anchor" id="url"></a>url | URL which currently wants to display. | [<span class="tag str"></span>](../types.md)

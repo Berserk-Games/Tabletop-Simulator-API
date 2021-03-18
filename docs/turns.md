@@ -4,8 +4,6 @@ Example usage: `Turns.reverse_order = true`.
 
 ##Member Variables
 
-Like [Object member variables](object.md#member-variables), Turns has its own member variables.
-
 Variable | Description | Type
 -- | -- | :--
 <a class="anchor" id="enable"></a>enable | Enable/disable the turns system.  | [<span class="tag boo"></span>](types.md)

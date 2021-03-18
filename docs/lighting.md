@@ -4,8 +4,6 @@ For more information on lighting in Unity, [refer to the Unity documentation](ht
 
 ##Member Variables
 
-Like [Object member variables](object.md#member-variables), Lighting has its own member variables. They are all numbers, and have specific valid ranges.
-
 Variable | Description | Type
 -- | -- | :--
 <a class="anchor" id="ambient_type"></a>ambient_type | The source of ambient light. 1 = background, 2 = gradient. | [<span class="tag int"></span>](types.md)

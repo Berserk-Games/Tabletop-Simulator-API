@@ -4,8 +4,6 @@ The static global Info class allows you to interact with Hand Objects. This allo
 
 ##Member Variables
 
-Like [Object member variables](object.md#member-variables), Info has its own member variables. They allow for direct access to the Info's properties.
-
 Variable | Description | Type
 -- | -- | :--
 <a class="anchor" id="name"></a>name | Name of the current game. | [<span class="tag str"></span>](types.md)
