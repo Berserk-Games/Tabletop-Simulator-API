@@ -20,7 +20,7 @@ getObjects() {: #getobjects data-toc-label="getObjects()" data-toc-child-of="glo
 getObjectsWithTag([<span class="tag str"></span>](types.md) tag) | Returns Table of all [Objects](object.md) which have the specified tag attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithtag)
 getObjectsWithAnyTags([<span class="tag tab"></span>](types.md) tags) | Returns Table of all [Objects](object.md) which have at least one of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithanytags)
 getObjectsWithAllTags([<span class="tag tab"></span>](types.md) tags) | Returns Table of all [Objects](object.md) which have all of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithalltags)
-getSeatedPlayers() {: #getseatedplayers data-toc-label="getSeatedPlayers()" data-toc-child-of="global-function-details" } | Returns a Table of the [Player Colors](player-color.md) strings of seated players. | [<span class="ret tab"></span>](types.md) |
+getSeatedPlayers() {: #getseatedplayers data-toc-label="getSeatedPlayers()" data-toc-child-of="global-function-details" } | Returns a Table of the [Player Colors](player/colors.md) strings of seated players. | [<span class="ret tab"></span>](types.md) |
 group([<span class="tag tab"></span>](types.md) objects) | Groups objects together, like how the `G` key does for players. | [<span class="ret tab"></span>](types.md) | [:i:](#group)
 paste([<span class="tag tab"></span>](types.md) parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](types.md) | [:i:](#paste)
 setLookingForPlayers([<span class="tag boo"></span>](types.md) lfp) {: #setlookingforplayers data-toc-label="setLookingForPlayers(...)" data-toc-child-of="global-function-details" } | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](types.md) |
@@ -28,7 +28,7 @@ spawnObject([<span class="tag tab"></span>](types.md) parameters) | Spawns an Ob
 spawnObjectData([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object using a data table. Works with [getData()](object.md#getdata). | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectdata)
 spawnObjectJSON([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object using a JSON string. Works with [getJSON()](object.md#getjson). | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectjson)
 startLuaCoroutine([<span class="tag obj"></span>](types.md) function_owner, [<span class="tag str"></span>](types.md) function_name) | Start a coroutine. | [<span class="ret boo"></span>](types.md) | [:i:](#startluacoroutine)
-stringColorToRGB([<span class="tag str"></span>](types.md) player_color) | Converts a [Player Color](player-color.md) string into a Color Table for tinting. | [<span class="ret col"></span>](types.md#color) | [:i:](#stringcolortorgb)
+stringColorToRGB([<span class="tag str"></span>](types.md) player_color) | Converts a [Player Color](player/colors.md) string into a Color Table for tinting. | [<span class="ret col"></span>](types.md#color) | [:i:](#stringcolortorgb)
 
 ####Hotkey Functions
 Function Name | Description | Return | &nbsp;
@@ -49,7 +49,7 @@ logString([<span class="tag var"></span>](types.md) value, [<span class="tag str
 logStyle([<span class="tag str"></span>](types.md) tag, [<span class="tag col"></span>](types.md#color) tint, [<span class="tag str"></span>](types.md) prefix, [<span class="tag str"></span>](types.md) postfix) | Set style options for the specified tag type for the log. | [<span class="ret boo"></span>](types.md) | [:i:](#logstyle)
 print([<span class="tag str"></span>](types.md) message) | Prints a string into chat that only the host is able to see. Used for debugging scripts. | [<span class="ret nil"></span>](types.md) | [:i:](#print)
 printToAll([<span class="tag str"></span>](types.md) message, [<span class="tag col"></span>](types.md#color) message_tint) | Print a message into the chat of all connected players. | [<span class="ret boo"></span>](types.md) | [:i:](#printtoall)
-printToColor([<span class="tag str"></span>](types.md) message, [<span class="tag str"></span>](types.md) player_color, [<span class="tag col"></span>](types.md#color) message_tint) | Print a message to a specific [Player Color](player-color.md). | [<span class="ret boo"></span>](types.md) | [:i:](#printtocolor)
+printToColor([<span class="tag str"></span>](types.md) message, [<span class="tag str"></span>](types.md) player_color, [<span class="tag col"></span>](types.md#color) message_tint) | Print a message to a specific [Player Color](player/colors.md). | [<span class="ret boo"></span>](types.md) | [:i:](#printtocolor)
 sendExternalMessage([<span class="tag tab"></span>](types.md) data) {: #sendexternalmessage data-toc-label="sendExternalMessage(...)" data-toc-child-of="message-function-details" } | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](types.md) |
 
 
@@ -67,7 +67,7 @@ sendExternalMessage([<span class="tag tab"></span>](types.md) data) {: #sendexte
 !!!info "addContextMenuItem(label, toRunFunc, keep_open, require_table)"
 	* [<span class="tag str"></span>](types.md) **label**: Label for the menu item.
 	* [<span class="tag fun"></span>](types.md) **toRunFunc**: Execute if menu item is selected.
-        * [<span class="tag str"></span>](types.md) **player_color** [Player Color](player-color.md) who selected the menu item.
+        * [<span class="tag str"></span>](types.md) **player_color** [Player Color](player/colors.md) who selected the menu item.
         * [<span class="tag vec"></span>](types.md) **menu_position** Global position of the right-click context menu.
 	* [<span class="tag boo"></span>](types.md) **keep_open**: Keep context menu open after menu
      item was selected.
@@ -359,10 +359,10 @@ end
 
 ####stringColorToRGB(...)
 
-[<span class="ret col"></span>](types.md) Converts a [Player Color](player-color.md) string into a Color Table for tinting.
+[<span class="ret col"></span>](types.md) Converts a [Player Color](player/colors.md) string into a Color Table for tinting.
 
 !!!info "stringColorToRGB(player_color)"
-	* [<span class="tag str"></span>](types.md) **player_color** A String of a [Player Color](player-color.md).
+	* [<span class="tag str"></span>](types.md) **player_color** A String of a [Player Color](player/colors.md).
 
 ``` Lua
 printToAll("Blue message", stringColorToRGB("Blue"))
@@ -386,7 +386,7 @@ Players can bind key to hotkeys from the `Options` -> `Game Keys` UI after this 
 !!!info "addHotkey(label, callback, triggerOnKeyUp)"
 	* [<span class="tag str"></span>](types.md) **label**: A label displayed to users.
 	* [<span class="tag fun"></span>](types.md) **callback**(playerColor, hoveredObject, pointerPosition, isKeyUp): The function that will be executed whenever the hotkey is pressed, and _also_ when released if `triggerOnKeyUp` is `true`.
-        * [<span class="tag str"></span>](types.md) **playerColor**: [Player Color](player-color.md) of the player that pressed the hotkey.
+        * [<span class="tag str"></span>](types.md) **playerColor**: [Player Color](player/colors.md) of the player that pressed the hotkey.
         * [<span class="tag obj"></span>](types.md) **hoveredObject**: The object that the Player's pointer was hovering over at the moment the key was pressed/released. `nil` if no object was under the Player's pointer at the time.
         * [<span class="tag vec"></span>](types.md) **pointerPosition**: [Word Position](types.md#position) of the Player's pointer at the moment the key was pressed/released.
         * [<span class="tag boo"></span>](types.md) **isKeyUp**: Whether this callback is being triggered in response to a hotkey being released.
@@ -431,7 +431,7 @@ broadcastToAll(msg, rgb)
 
 !!!info "broadcastToColor(message, player_color, message_tint)"
 	* [<span class="tag str"></span>](types.md) **message**: Message to display on-screen.
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) to receive the message.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) to receive the message.
 	* [<span class="tag col"></span>](types.md#color) **message_tint**: RGB color tint for the text.
 
 ``` Lua
@@ -576,7 +576,7 @@ printToAll("Hello World!", {r=1,g=0,b=0})
 
 !!!info "printToColor(message, player_color, message_tint)"
 	* [<span class="tag str"></span>](types.md) **message**: Message to place into the player's in-game chat.
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player that will receive the message.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that will receive the message.
 	* [<span class="tag col"></span>](types.md#color) **message_tint**: RGB values for the text's color tint.
 
 ``` Lua

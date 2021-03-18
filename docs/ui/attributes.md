@@ -40,8 +40,8 @@ visibility | A pipe-separated list of visibility targets. An element is always t
 
     * The game host: `Host`
     * Any promoted player (including the host): `Admin`
-    * Every [player color](../player-color.md): `White`, `Brown`, `Red`, `Orange`, `Yellow`, `Green`, `Teal`, `Blue`, `Purple`, `Pink`, `Grey`, and `Black`
-    * Every [team](../player.md#team): `Clubs`, `Diamonds`, `Hearts`, `Spades`, `Jokers`, and `None`
+    * Every [player color](../player/colors.md): `White`, `Brown`, `Red`, `Orange`, `Yellow`, `Green`, `Teal`, `Blue`, `Purple`, `Pink`, `Grey`, and `Black`
+    * Every [team](../player/instance.md#team): `Clubs`, `Diamonds`, `Hearts`, `Spades`, `Jokers`, and `None`
 
     Not setting the visibility attribute (or setting it to an empty string) does not limit the visibility of the element.
 

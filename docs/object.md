@@ -190,7 +190,7 @@ getCustomObject() | Returns a Table with the Custom Object information of a Cust
 getData() {: data-toc-label="getData()" data-toc-child-of="get-function-details" } | Returns a table representation of the object, as in [getJSON()](#getjson), but before being serialized. Works with [spawnObjectData()](base.md#spawnobjectdata). | [<span class="ret tab"></span>](types.md) |
 getDescription() {: data-toc-label="getDescription()" data-toc-child-of="get-function-details" } | Description, also shows as part of Object's tooltip. | [<span class="ret str"></span>](types.md)
 getFogOfWarReveal() | Settings impacting [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone) being revealed. | [<span class="ret tab"></span>](types.md) | [:i:](#getfogofwarreveal)
-getGMNotes() {: data-toc-label="getGMNotes()" data-toc-child-of="get-function-details" } | Game Master Notes only visible for [Player Color](player-color.md) Black. | [<span class="ret str"></span>](types.md) |
+getGMNotes() {: data-toc-label="getGMNotes()" data-toc-child-of="get-function-details" } | Game Master Notes only visible for [Player Color](player/colors.md) Black. | [<span class="ret str"></span>](types.md) |
 getGUID() {: data-toc-label="getGUID()" data-toc-child-of="get-function-details" } | String of the Object's unique identifier. | [<span class="ret str"></span>](types.md) |
 getJSON() {: data-toc-label="getJSON()" data-toc-child-of="get-function-details" } | Returns a serialization of the JSON string which represents this item. Works with [spawnObjectJSON()](base.md#spawnobjectjson). | [<span class="ret str"></span>](types.md) |
 getJoints() | Returns information on any joints attached to this object. | [<span class="ret tab"></span>](types.md) | [:i:](#getjoints)
@@ -217,7 +217,7 @@ setColorTint([<span class="tag col"></span>](types.md#color) Color) {: data-toc-
 setCustomObject([<span class="tag tab"></span>](types.md) parameters) | Sets a custom Object's properties. | [<span class="ret boo"></span>](types.md) | [:i:](#setcustomobject)
 setDescription([<span class="tag str"></span>](types.md) description) {: data-toc-label="setDescription(...)" data-toc-child-of="set-function-details" } | Sets a description for an Object. Shows in tooltip after delay. | [<span class="ret boo"></span>](types.md)
 setFogOfWarReveal([<span class="tag tab"></span>](types.md) fog_settings) | Establish the settings and enable/disable an Object's revealing of [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone). | [<span class="ret boo"></span>](types.md) | [:i:](#setfogofwarreveal)
-setGMNotes([<span class="tag str"></span>](types.md) notes) {: data-toc-label="setGMNotes(...)" data-toc-child-of="set-function-details" } | Sets Game Master Notes only visible for [Player Color](player-color.md) Black. | [<span class="ret boo"></span>](types.md) |
+setGMNotes([<span class="tag str"></span>](types.md) notes) {: data-toc-label="setGMNotes(...)" data-toc-child-of="set-function-details" } | Sets Game Master Notes only visible for [Player Color](player/colors.md) Black. | [<span class="ret boo"></span>](types.md) |
 setLock([<span class="tag boo"></span>](types.md) lock) {: data-toc-label="setLock(...)" data-toc-child-of="set-function-details" } | Sets if an object is locked in place. | [<span class="ret boo"></span>](types.md) |
 setName([<span class="tag str"></span>](types.md) name) {: data-toc-label="setName(...)" data-toc-child-of="set-function-details" } | Sets a name for an Object. Shows in tooltip. | [<span class="ret boo"></span>](types.md)
 setRotationValue([<span class="tag var"></span>](types.md) rotation_value) | Sets the Object's rotation value i.e. physically rotates the object. | | [:i:](#setrotationvalue)
@@ -604,7 +604,7 @@ self.scale(2)
 	*The click function which is activated by clicking this button has its own parameters it is passed automatically.*
 
 	* [<span class="tag obj"></span>](types.md) **obj**: The Object the button is attached to.
-	* [<span class="tag str"></span>](types.md) **player_clicker_color**: [Player Color](player-color.md) of the player that pressed the button.
+	* [<span class="tag str"></span>](types.md) **player_clicker_color**: [Player Color](player/colors.md) of the player that pressed the button.
 	* [<span class="tag boo"></span>](types.md) **alt_click**: True if a button other than left-click was used to click the button.
 
 ``` Lua
@@ -703,7 +703,7 @@ end
 	*The click function which is activated by editing the text in this input has its own parameters it is passed automatically.*
 
 	* [<span class="tag obj"></span>](types.md) **obj**: The Object the input is attached to.
-	* [<span class="tag str"></span>](types.md) **player_clicker_color**: [Player Color](player-color.md) of the player that has selected/edited the input.
+	* [<span class="tag str"></span>](types.md) **player_clicker_color**: [Player Color](player/colors.md) of the player that has selected/edited the input.
 	* [<span class="tag str"></span>](types.md) **input_value**: Text currently in the input.
 	* [<span class="tag boo"></span>](types.md) **selected**: If the value box is still being edited or not.
 
@@ -1216,8 +1216,8 @@ The Object will be elevated (smooth moved upward), smoothly rotated to the rotat
 `3D Text` | [<span class="tag str"></span>](types.md) | Replaces the 3D Text's content.
 `Clock` | [<span class="tag int"></span>](types.md) | Sets the remaining "Stopwatch" time (in seconds) on the Clock.
 `Counter` (Digital Counter) | [<span class="tag int"></span>](types.md) | Sets the counter's value.
-`Fog` (Hidden Zone) | [<span class="tag str"></span>](types.md) | Changes the hidden zone owner to the specified [Player Color](player-color.md).
-`Hand` (Hand Zone) | [<span class="tag str"></span>](types.md) | Changes the hand owner to the specified [Player Color](player-color.md).
+`Fog` (Hidden Zone) | [<span class="tag str"></span>](types.md) | Changes the hidden zone owner to the specified [Player Color](player/colors.md).
+`Hand` (Hand Zone) | [<span class="tag str"></span>](types.md) | Changes the hand owner to the specified [Player Color](player/colors.md).
 `Tablet` | [<span class="tag str"></span>](types.md) | Loads the specified URL in the tablet's browser.
 
 ---
@@ -1231,7 +1231,7 @@ The Object will be elevated (smooth moved upward), smoothly rotated to the rotat
 !!!info "addContextMenuItem(label, toRunFunc, keep_open)"
 	* [<span class="tag str"></span>](types.md) **label**: Label for the menu item.
 	* [<span class="tag fun"></span>](types.md) **toRunFunc**: Execute if menu item is selected.
-        * [<span class="tag str"></span>](types.md) **player_color** [Player Color](player-color.md) who selected the menu item.
+        * [<span class="tag str"></span>](types.md) **player_color** [Player Color](player/colors.md) who selected the menu item.
 	* [<span class="tag boo"></span>](types.md) **keep_open**: Keep context menu open after menu
      item was selected.
         * {>>Optional, Default: keep_open = false. Close context menu after selection.<<}
@@ -1301,7 +1301,7 @@ newDecks[2].deal(1)
 
 !!!info "deal(number, player_color, index)"
 	* [<span class="tag int"></span>](types.md) **number**: How many to deal.
-	* [<span class="tag str"></span>](types.md) **player_color**: The [Player Color](player-color.md) to deal to.
+	* [<span class="tag str"></span>](types.md) **player_color**: The [Player Color](player/colors.md) to deal to.
 		* {>>Optional, defaults to an empty string. If not supplied, it will attempt to deal to all seated players.<<}
 	* [<span class="tag int"></span>](types.md) **index**: Index of hand zone to deal to.
 		* {>>Optional, defaults to the first created hand zone.<<}
@@ -1316,7 +1316,7 @@ newDecks[2].deal(1)
 !!!info "dealToColorWithOffset(offset, flip, player_color)"
 	* [<span class="tag vec"></span>](types.md#vector) **offset**: The x/y/z offset to deal to around the given hand zone.
 	* [<span class="tag boo"></span>](types.md) **flip**: If the card is flipped over when dealt.
-	* [<span class="tag str"></span>](types.md) **player_color**: Hand zone [Player Color](player-color.md) to offset dealing to.
+	* [<span class="tag str"></span>](types.md) **player_color**: Hand zone [Player Color](player/colors.md) to offset dealing to.
 
 ``` Lua
 -- Example of dealing 2 cards in front of the White player, face up.

@@ -14,7 +14,7 @@ Tag | Type | Description | Example
 [<span class="tag col"></span>](types.md) | color | See section [Color](#color) for more info. |
 [<span class="tag fun"></span>](types.md) | function | See section [Function](#function) for more info. |
 [<span class="tag obj"></span>](types.md) | object | An in-game physical Object. Sometimes Global. | `#!lua Global or self`
-[<span class="tag pla"></span>](types.md) | player | An in-game Player. See [Player](player.md) for more info. | `#!lua Player["White"]`
+[<span class="tag pla"></span>](types.md) | player | An in-game Player. See [Player](player/instance.md) for more info. | `#!lua Player["White"]`
 [<span class="tag var"></span>](types.md) | variable | A combination of other types. |
 
 See below for more info.
@@ -78,7 +78,7 @@ self.setColorTint({50/255, 83/255, 199/255})
 
 ####Strings
 
-You are also able to use a String in place of a color table. Using a [Player Color](player-color.md) will automatically fill in that value. It works with any of the 12 color names, as they are written on the [Player Color](player-color.md) page.
+You are also able to use a String in place of a color table. Using a [Player Color](player/colors.md) will automatically fill in that value. It works with any of the 12 color names, as they are written on the [Player Color](player/colors.md) page.
 
 Example: `printToAll("Test", "Green")`
 

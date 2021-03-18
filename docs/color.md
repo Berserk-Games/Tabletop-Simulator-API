@@ -22,7 +22,7 @@ Color([<span class="tag flo"></span>](types.md) r, [<span class="tag flo"></span
 Color([<span class="tag tab"></span>](types.md) t) | Return a color with r&#47;g&#47;b&#47;a <!-- (Not work in 12.3.5) or 1&#47;2&#47;3&#47;4 --> components from source table<!-- (r&#47;g&#47;b&#47;a first)-->. | [<span class="ret col"></span>](types.md) | [:i:](#colornew)
 Color.new(...) | Same as Color(...). | [<span class="ret col"></span>](types.md) | [:i:](#colornew)
 Color.fromString([<span class="tag str"></span>](types.md) colorStr) | Return a color from a color string ('Red', 'Green' etc), capitalization ignored. | [<span class="ret col"></span>](types.md) | [:i:](#colorfromstring)
-Color.Blue | Shorthand for Color.fromString('Blue'), works for all [Player](player-color.md) and [added colors](#coloradd), capitalization ignored. Also return the color name. | [<span class="ret col"></span>](types.md)[<span class="ret str"></span>](types.md) | [:i:](#colorblue)
+Color.Blue | Shorthand for Color.fromString('Blue'), works for all [Player](player/colors.md) and [added colors](#coloradd), capitalization ignored. Also return the color name. | [<span class="ret col"></span>](types.md)[<span class="ret str"></span>](types.md) | [:i:](#colorblue)
 
 <!--
 This function exist but in version 12.3.5 she is not working.
@@ -165,7 +165,7 @@ local teal = Color({ r = 0.129, g = 0.694, b = 0.607})
 [<span class="ret col"></span>](types.md) Return a color from a color string ('Red', 'Green' etc), capitalization ignored.
 
 !!!info "Color.fromString(colorStr)"
-    * [<span class="tag str"></span>](types.md) **colorStr**: Any [Player Color](player-color.md) or color added with [Color.Add](#coloradd).
+    * [<span class="tag str"></span>](types.md) **colorStr**: Any [Player Color](player/colors.md) or color added with [Color.Add](#coloradd).
 
 ``` Lua
 local col = Color.fromString("Blue")
@@ -177,7 +177,7 @@ print(col) --> Color: Blue { r = 0.118, g = 0.53, b = 1, a = 1 }
 [<span class="ret col" style="margin-right:5px;"></span>](types.md)
 [<span class="ret str"></span>](types.md) Return a color from a color string ('Red', 'Green' etc).
 
-Any [Player Color](player-color.md) or color added with [Color.Add](#coloradd).
+Any [Player Color](player/colors.md) or color added with [Color.Add](#coloradd).
 
 ``` Lua
 local color, name = Color.Blue

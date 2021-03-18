@@ -39,7 +39,7 @@ setNotes([<span class="tag str"></span>](types.md) notes) | Replace the text in 
 		* [<span class="tag str"></span>](types.md) **parameters.title**: Title for the new tab.
 		* [<span class="tag str"></span>](types.md) **parameters.body**: Text to place into the body of the new tab.
 			* {>>Optional, defaults to an empty string<<}
-		* [<span class="tag str"></span>](types.md) **parameters.color**: [Player Color](player.md) for the new tab's color.
+		* [<span class="tag str"></span>](types.md) **parameters.color**: [Player Color](player/instance.md) for the new tab's color.
 			* {>>Optional, defaults to "Grey"<<}
 
 ``` Lua
@@ -65,7 +65,7 @@ Notes.addNotebookTab(parameters)
 			* {>>Optional, defaults to the current title of the tab begin edited.<<}
 		* [<span class="tag str"></span>](types.md) **parameters.body**: Text for the body for the tab.
 			* {>>Optional, defaults to the current body of the tab begin edited.<<}
-		* [<span class="tag str"></span>](types.md) **parameters.color**: [Player Color](player-color.md) for who the tab belongs to.
+		* [<span class="tag str"></span>](types.md) **parameters.color**: [Player Color](player/colors.md) for who the tab belongs to.
 			* {>>Optional, defaults to the current color of the tab begin edited.<<}
 
 ``` Lua

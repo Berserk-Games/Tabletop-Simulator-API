@@ -37,8 +37,8 @@ onObjectSpawn([<span class="tag obj"></span>](types.md) spawn_object) | Called w
 onObjectTriggerEffect([<span class="tag obj"></span>](types.md) trigger_object, [<span class="tag int"></span>](types.md) index) | Called whenever the trigger effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjecttriggereffect)
 onPlayerChangeColor([<span class="tag str"></span>](types.md) player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [:i:](#onplayerchangecolor)
 onPlayerChangeTeam([<span class="tag str"></span>](types.md) player_color,&nbsp;[<span class="tag str"></span>](types.md) team) | Called when a player changes team. | [:i:](#onplayerchangeteam)
-onPlayerConnect([<span class="tag pla"></span>](types.md) person) | Called when a [Player](player.md) connects to a game. | [:i:](#onplayerconnect)
-onPlayerDisconnect([<span class="tag pla"></span>](types.md) person) | Called when a [Player](player.md) disconnects from a game. | [:i:](#onplayerdisconnect)
+onPlayerConnect([<span class="tag pla"></span>](types.md) person) | Called when a [Player](player/instance.md) connects to a game. | [:i:](#onplayerconnect)
+onPlayerDisconnect([<span class="tag pla"></span>](types.md) person) | Called when a [Player](player/instance.md) disconnects from a game. | [:i:](#onplayerdisconnect)
 onPlayerTurn([<span class="tag pla"></span>](types.md) person) | Called at the start of a player's turn when using the in-game turn system. | [:i:](#onplayerturn)
 onSave() | Called whenever your game is saved. | [:i:](#onsave)
 onScriptingButtonDown([<span class="tag int"></span>](types.md) index, [<span class="tag str"></span>](types.md) player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [:i:](#onscriptingbuttondown)
@@ -299,7 +299,7 @@ end
 Called whenever any object is dropped by a player.
 
 !!!info "onObjectDrop(player_color, dropped_object)"
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the Player who dropped the Object.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player who dropped the Object.
 	* [<span class="tag obj"></span>](types.md) **dropped_object**: The Object in game which was dropped.
 
 ``` Lua
@@ -350,7 +350,7 @@ Called whenever a player [flicks](https://kb.tabletopsimulator.com/game-tools/fl
 
 !!!info "onFlick(object, player_color, impulse)"
 * [<span class="tag obj"></span>](types.md) **object**: The object that was flicked.
-* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player who flicked an object.
+* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who flicked an object.
 * [<span class="tag vec"></span>](types.md) **impulse**: The impulse applied to the object.
 
 !!!example
@@ -368,7 +368,7 @@ Called whenever a player [flicks](https://kb.tabletopsimulator.com/game-tools/fl
 Called when a player moves their pointer (cursor) over an object.
 
 !!!info "onObjectHover(player_color, hovered_object)"
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player who moved the pointer over an object.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who moved the pointer over an object.
 	* [<span class="tag obj"></span>](types.md) **hovered_object**: Object on which the pointer was moved.
 
 !!!important
@@ -447,7 +447,7 @@ If you wish to prevent the default behavior (e.g. drawing a card) then you may r
 
 !!!info "onObjectNumberTyped(object, player_color, number)"
 	* [<span class="tag obj"></span>](types.md) **object**: The object the player was hovering over whilst typing a number.
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player that typed the number.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that typed the number.
 	* [<span class="tag int"></span>](types.md) **number**: The number typed.
 
 !!!example
@@ -496,7 +496,7 @@ Called when a player using peek to look under an Object.
 
 !!!info "onObjectPeek(object, player)"
 	* [<span class="tag obj"></span>](types.md) **object**: A reference to the Object which was peeked at.
-	* [<span class="tag str"></span>](types.md) **player**: Name of the [Player Color](player-color.md) that peeked.
+	* [<span class="tag str"></span>](types.md) **player**: Name of the [Player Color](player/colors.md) that peeked.
 
 
 
@@ -517,7 +517,7 @@ end
 Called whenever a Player picks up an Object.
 
 !!!info "onObjectPickUp(player_color, picked_up_object)"
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the Player who picked up the object.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player who picked up the object.
 	* [<span class="tag obj"></span>](types.md) **picked_up_object**: The Object in game which was picked up.
 
 ``` Lua
@@ -535,7 +535,7 @@ Called when an Object is randomized. Like when shuffling a deck or shaking dice.
 
 !!!info "onObjectRandomize(randomize_object, player_color)"
 	* [<span class="tag obj"></span>](types.md) **spawn_object**: The Object which triggered this function.
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player who triggered the function.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who triggered the function.
 
 
 
@@ -554,7 +554,7 @@ Called when a search is finished on any container.
 
 !!!info "onObjectSearchEnd(obj, player_color)"
     * [<span class="tag obj"></span>](types.md) **obj**: The Object which was searched.
-    * [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player who triggered the function.
+    * [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who triggered the function.
 
 ---
 
@@ -565,7 +565,7 @@ Called when a search is started on any container.
 
 !!!info "onObjectSearchStart(obj, player_color)"
     * [<span class="tag obj"></span>](types.md) **obj**: The Object which was searched.
-    * [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player who triggered the function.
+    * [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who triggered the function.
 
 ---
 
@@ -607,7 +607,7 @@ end
 Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect.
 
 !!!info "onPlayerChangeColor(player_color)"
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player who triggered the function.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who triggered the function.
 
 ``` Lua
 function onPlayerChangeColor(color)
@@ -622,7 +622,7 @@ end
 Called when a player changes team.
 
 !!!info "onPlayerChangeTeam(player_color, team)"
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player who triggered the function.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who triggered the function.
     * [<span class="tag str"></span>](types.md) **team**: Team to which the player has changed.  Options below.
         * "" (empty string, if changed to None)
         * Diamonds
@@ -642,20 +642,20 @@ end
 
 ###onPlayerConnect(...)
 
-Called when a [Player](player.md) connects to a game.
+Called when a [Player](player/instance.md) connects to a game.
 
 !!!info "onPlayerConnect(person)"
-	* [<span class="tag pla"></span>](types.md) **person**: [Player](player.md) reference to who connected.
+	* [<span class="tag pla"></span>](types.md) **person**: [Player](player/instance.md) reference to who connected.
 
 ---
 
 
 ###onPlayerDisconnect(...)
 
-Called when a [Player](player.md) disconnects from a game.
+Called when a [Player](player/instance.md) disconnects from a game.
 
 !!!info "onPlayerDisconnect(person)"
-	* [<span class="tag pla"></span>](types.md) **person**: [Player](player.md) reference to who disconnected.
+	* [<span class="tag pla"></span>](types.md) **person**: [Player](player/instance.md) reference to who disconnected.
 
 ---
 
@@ -664,7 +664,7 @@ Called when a [Player](player.md) disconnects from a game.
 Called at the start of a player's turn when using the in-game turn system.
 
 !!!info "onPlayerTurn(person)"
-	* [<span class="tag pla"></span>](types.md) **person**: [Player](player.md) who's turn is starting.
+	* [<span class="tag pla"></span>](types.md) **person**: [Player](player/instance.md) who's turn is starting.
 
 ``` Lua
 function onPlayerTurn(person)
@@ -705,7 +705,7 @@ Called when a scripting button (numpad by default) is pressed. The index range t
 
 !!!info "onScriptingButtonDown(index, player_color)"
 	* [<span class="tag int"></span>](types.md) **index**: Index number, representing which key was pressed.
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player who triggered the function.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who triggered the function.
 
 ``` Lua
 function onScriptingButtonDown(index, color)
@@ -721,7 +721,7 @@ Called when a scripting button (numpad by default) is released. The index range 
 
 !!!info "onScriptingButtonUp(index, player_color)"
 	* [<span class="tag int"></span>](types.md) **index**: Index number, representing which key was released.
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player who triggered the function.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who triggered the function.
 
 ``` Lua
 function onScriptingButtonUp(index, color)
@@ -882,7 +882,7 @@ end
 This function is called when this [Object](object.md) is dropped. Does not work in Global.
 
 !!!info "onDrop(player_color)"
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the Player.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player.
 
 ``` Lua
 function onDrop(color)
@@ -897,7 +897,7 @@ end
 Called when a player [flicks](https://kb.tabletopsimulator.com/game-tools/flick-tool/) this [Object](object.md).
 
 !!!info "onFlick(player_color, impulse)"
-* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player who flicked this object.
+* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who flicked this object.
 * [<span class="tag vec"></span>](types.md) **impulse**: The impulse applied to the object.
 
 !!!example
@@ -915,7 +915,7 @@ Called when a player [flicks](https://kb.tabletopsimulator.com/game-tools/flick-
 Called when a player moves their pointer (cursor) over this [Object](object.md).
 
 !!!info "onHover(player_color)"
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player who moved the pointer over an object.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who moved the pointer over an object.
 
 ``` Lua
 function onHover(player_color)
@@ -932,7 +932,7 @@ Called when a player types a number whilst hovering over this [Object](object.md
 If you wish to prevent the default behavior (e.g. drawing a card, if this object were a deck) then you may return `true` to indicate you've handled the event yourself.
 
 !!!info "onNumberTyped(player_color, number)"
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player that typed the number.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that typed the number.
 	* [<span class="tag int"></span>](types.md) **number**: The number typed.
 
 !!!example
@@ -976,7 +976,7 @@ Called when this [Object](object.md)'s Custom PDF page is changed.
 Called when a player using peek to look under an Object.
 
 !!!info "onPeek(player_color)"
-	* [<span class="tag str"></span>](types.md) **player_color**: Name of the [Player Color](player-color.md) that peeked.
+	* [<span class="tag str"></span>](types.md) **player_color**: Name of the [Player Color](player/colors.md) that peeked.
 
 
 ``` Lua
@@ -994,7 +994,7 @@ end
 Called when a player picks up an Object.
 
 !!!info "onPickUp(player_color)"
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the Player.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player.
 
 ``` Lua
 function onPickUp(color)
@@ -1011,7 +1011,7 @@ end
 Called when an Object is randomized. Like when shuffling a deck or shaking dice.
 
 !!!info "onRandomize(player_color)"
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the player who triggered the function.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who triggered the function.
 
 
 ``` Lua
@@ -1032,7 +1032,7 @@ end
 Called when a player first searches this Object.
 
 !!!info "onSearchEnd([<span class="tag str"></span>](types.md) player_color)"
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the Player.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player.
 
 ---
 
@@ -1042,6 +1042,6 @@ Called when a player first searches this Object.
 Called when a player finishes searching this Object.
 
 !!!info "onSearchStart([<span class="tag str"></span>](types.md) player_color)"
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player-color.md) of the Player.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player.
 
 ---
