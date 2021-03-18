@@ -1,6 +1,8 @@
-The static global WebRequest class allows you to interact with the web via get, post and put. This is a more advanced feature that allows you to store/retrieve data to/from an external database.
+`WebRequest` is a static global class which allows you to send HTTP web request, from the game host's computer only. 
 
-> Example Usage:`#!lua WebRequest.get(“https://www.google.com/”, self, “webRequestCallback”)`
+!!!note
+    This is an advanced feature that can facilitate more complex behavior. For example, your mod could have a companion
+    web server with a persistent database that your interact with via web requests.
 
 ##Member Variables
 

@@ -1194,7 +1194,10 @@ The Object will be elevated (smooth moved upward), smoothly rotated to the rotat
 	If the Object has [rotation values](#getrotationvalues), then this method will set the rotation value i.e. behave
 	the same as [setRotationValue(...)](#setrotationvalue).
 
-[Object Type](#type) | Value Type | Description
+!!!info "setValue(value)"
+	* [<span class="tag var"></span>](types.md) **value**: The value to set. Represents something different depending on the Object's [type](#type). Refer to the [value type table](#setvalue-types).
+
+[Object Type](#type) {: #setvalue-types } | Value Type | Description
 -- | -- | --
 `3D Text` | [<span class="tag str"></span>](types.md) | Replaces the 3D Text's content.
 `Clock` | [<span class="tag int"></span>](types.md) | Sets the remaining "Stopwatch" time (in seconds) on the Clock.
