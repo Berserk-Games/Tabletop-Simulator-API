@@ -9,7 +9,7 @@ These are functions which are triggered by an event taking place in-game. They w
 
 Function Name | Description | &nbsp;
 -- | -- | --
-filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) enter_object) | Called when an object attempts to enter any container. The object is prevented from entering unless `true` is returned. | [:i:](#filterobjectentercontainer)
+filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) enter_object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer(...)](#tryobjectentercontainer)_.</p> Called when an object attempts to enter any container. The object is prevented from entering unless `true` is returned. | [:i:](#tryobjectentercontainer)
 onChat([<span class="tag str"></span>](types.md) message, [<span class="tag pla"></span>](types.md) sender) | Called when a chat message is sent in game chat. | [:i:](#onchat)
 onExternalMessage([<span class="tag tab"></span>](types.md) data) | Called when an external script editor (like [Atom](atom.md)) sends a message back to the game. Used for custom editor functionality. | [:i:](#onexternalmessage)
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [:i:](#onfixedupdate)
@@ -44,14 +44,7 @@ onSave() | Called whenever your game is saved. | [:i:](#onsave)
 onScriptingButtonDown([<span class="tag int"></span>](types.md) index, [<span class="tag str"></span>](types.md) player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [:i:](#onscriptingbuttondown)
 onScriptingButtonUp([<span class="tag int"></span>](types.md) index, [<span class="tag str"></span>](types.md) player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [:i:](#onscriptingbuttonup)
 onUpdate() | Called **every frame**. | [:i:](#onupdate)
-
-
-
-
-
-
-
-
+tryObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) enter_object) | Called when an object attempts to enter any container. The object is prevented from entering unless `true` is returned. | [:i:](#tryObjectentercontainer)
 
 
 ###Default Events (Object Only)
@@ -59,7 +52,7 @@ These are functions which are triggered by an event taking place in-game. They o
 
 Function Name | Description | &nbsp;
 -- | -- | --
-filterObjectEnter([<span class="tag obj"></span>](types.md) obj) | Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned. | [:i:](#filterobjectenter)
+filterObjectEnter([<span class="tag obj"></span>](types.md) obj) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnter(...)](#tryobjectenter)_.</p> Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned. | [:i:](#tryObjectenter)
 onCollisionEnter([<span class="tag tab"></span>](types.md) collision_info) | Called when an Object starts colliding with the Object the function is on. | [:i:](#oncollisionenter)
 onCollisionExit([<span class="tag tab"></span>](types.md) collision_info) | Called when an Object stops colliding with the Object the function is on. | [:i:](#oncollisionexit)
 onCollisionStay([<span class="tag tab"></span>](types.md) collision_info) | Called **every frame** that an Object is colliding with the Object this function is on. | [:i:](#oncollisionstay)
@@ -74,22 +67,23 @@ onPickUp([<span class="tag str"></span>](types.md) player_color) | Called when a
 onRandomize([<span class="tag str"></span>](types.md) player_color) | Called when this Object is randomized. Like when shuffling a deck or shaking dice. | [:i:](#onrandomize)
 onSearchEnd([<span class="tag str"></span>](types.md) player_color) | Called when a player finishes searches this Object. | [:i:](#onsearchend)
 onSearchStart([<span class="tag str"></span>](types.md) player_color) | Called when a player starts searching this Object. | [:i:](#onsearchstart)
+tryObjectEnter([<span class="tag obj"></span>](types.md) obj) | Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned. | [:i:](#tryObjectenter)
 
 
 ---
 
 ##Function Details (Global & Object)
 
-###filterObjectEnterContainer(...)
+###tryObjectEnterContainer(...)
 
 Called when an object attempts to enter a container. The object is prevented from entering unless `true` is returned.
 
-!!!info "filterObjectEnter(container, enter_object)"
+!!!info "tryObjectEnter(container, enter_object)"
 	* [<span class="tag obj"></span>](types.md) **container**: The container the Object is trying to enter.
 	* [<span class="tag obj"></span>](types.md) **enter_object**: The Object entering the container.
 
 ``` Lua
-function filterObjectEnterContainer(container, enter_object)
+function tryObjectEnterContainer(container, enter_object)
 	print(enter_object.getName()) -- Print entering object's name
 	return true -- Allows object to enter.
 end
@@ -756,15 +750,15 @@ end
 ##Function Details (Object only)
 
 
-###filterObjectEnter(...)
+###tryObjectEnter(...)
 
 Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned.
 
-!!!info "filterObjectEnter(obj)"
+!!!info "tryObjectEnter(obj)"
 	* [<span class="tag obj"></span>](types.md) **obj**: The object that has tried to enter the object this script is attached to.
 
 ``` Lua
-function filterObjectEnter(obj)
+function tryObjectEnter(obj)
 	print(obj.getName()) -- Print entering object's name
 	return true -- Allows object to enter.
 end

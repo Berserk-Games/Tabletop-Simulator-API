@@ -1,7 +1,6 @@
 # Player Manager
 
-Player is a static global class which allows you to retrieve [Player instances](instance.md) and
-[Player colors](colors.md).
+`Player` is a global which allows you to retrieve [Player instances](instance.md) and [Player colors](colors.md).
 
 ## Function Summary
 
