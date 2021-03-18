@@ -5,7 +5,6 @@ These examples are complete scripts which can placed on a regular Red Block.
 
 !!!example
 	Disable shadow receiving for an object.
-	{: data-toc-label="Disable shadow receiving" }
     
 	```lua
 	function onLoad()
@@ -33,7 +32,6 @@ These examples are complete scripts which can placed on a regular Red Block.
 !!!example
 	Disable audio for an object. The object will no longer make sound e.g. when picked up from or dropped on the table.
 	Other objects may continue to make sound when colliding with this object.
-	{: data-toc-label="Disable object audio" data-toc-after="disable-a-collider" }
     
 	```lua
 	function onLoad()
