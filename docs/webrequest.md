@@ -45,7 +45,7 @@ Performs a HTTP request using the specified method, data and headers. Returns a 
         Authorization = "token 5199831f4dd3b79e7c5b7e0ebe75d67aa66e79d4",
         -- We're sending a JSON body in the request
         ["Content-Type"] = "application/json",
-        -- We expecting a JSON body in the response
+        -- We're expecting a JSON body in the response
         Accept = "application/json",
     }
     
