@@ -71,11 +71,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#disable-shadow-receiving" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -592,36 +587,9 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Examples
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         Examples
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#disable-shadow-receiving" class="md-nav__link">
-    Disable shadow receiving
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1078,35 +1046,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#disable-shadow-receiving" class="md-nav__link">
-    Disable shadow receiving
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -1141,7 +1080,7 @@
 <p>These examples are complete scripts which can placed on a regular Red Block.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p id="disable-shadow-receiving_1" style="position: relative;">Disable shadow receiving for an object.<h6 data-toc-mock-searchable="" id="disable-shadow-receiving" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">Disable shadow receiving</h6></p>
+<p>Disable shadow receiving for an object.</p>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="c1">-- Get the MeshRenderer of the block&#39;s GameObject</span>
     <span class="kd">local</span> <span class="n">meshRenderer</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getComponent</span><span class="p">(</span><span class="s2">&quot;MeshRenderer&quot;</span><span class="p">)</span>
@@ -1164,8 +1103,8 @@
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p id="disable-object-audio_1" style="position: relative;">Disable audio for an object. The object will no longer make sound e.g. when picked up from or dropped on the table.
-Other objects may continue to make sound when colliding with this object.<h6 data-toc-mock-searchable="" id="disable-object-audio" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">Disable object audio</h6></p>
+<p>Disable audio for an object. The object will no longer make sound e.g. when picked up from or dropped on the table.
+Other objects may continue to make sound when colliding with this object.</p>
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
     <span class="c1">-- Get the AudioSource Component of the block&#39;s GameObject</span>
     <span class="kd">local</span> <span class="n">blockComp</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getComponent</span><span class="p">(</span><span class="s2">&quot;AudioSource&quot;</span><span class="p">)</span>
