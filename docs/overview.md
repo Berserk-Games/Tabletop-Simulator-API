@@ -21,24 +21,6 @@ It is also possible to edit inside of other envionments which are not officially
 	This method does not, by default, include many features that Atom provides, like auto-completion of Tabletop Simulator functions/class members.
 
 
-## Lua Standard Libraries
-We include a subset of the Lua standard libraries into our interpreter to provide a safe sandbox for user scripts to run.
-
-Library | Description
---------- | ------------
-Basic | The basic methods. Includes assert, collectgarbage, error, print, select, type, tonumber, and tostring.
-Bit32 | The bit32 package.
-Coroutine | The coroutine package.
-Dynamic | The dynamic package (introduced by MoonSharp).
-ErrorHandling | The error handling methods: pcall and xpcall.
-GlobalConsts | The global constants: _G, _VERSION, and _MOONSHARP.
-Math | The math package.
-Metatables | The metatable methods : setmetatable, getmetatable, rawset, rawget, rawequal, and rawlen.
-OS_Time | The time methods of the os package: clock, difftime, date, and time.
-String | The string package.
-Table | The table package.
-TableIterators | The table iterators: next, ipairs, and pairs.
-
 ###For further information
 * [Official Lua Website](http://www.lua.org/home.html)
 * [MoonSharp](http://www.moonsharp.org/)

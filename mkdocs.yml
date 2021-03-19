@@ -34,6 +34,9 @@ markdown_extensions:
           - theme/icons
   - pymdownx.highlight
   - pymdownx.inlinehilite
+  - pymdownx.keys:
+      camel_case: true
+      strict: true
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
@@ -64,10 +67,10 @@ nav:
     - Introduction: index.md
     - Overview: overview.md
     - Atom: atom.md
-    - External Editor API: externaleditorapi.md
-    - Learning Lua: learninglua.md
+    - Lua in Tabletop Simulator: lua-in-tabletop-simulator.md
     - System Console: systemconsole.md
     - Virtual Reality: vr.md
+    - External Editor API: externaleditorapi.md
     - Patch Notes: https://www.tabletopsimulator.com/news/patch-notes
   - Scripting API:
     - Introduction: intro.md

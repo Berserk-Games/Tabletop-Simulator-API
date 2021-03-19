@@ -21,7 +21,7 @@ getObjectsWithTag([<span class="tag str"></span>](types.md) tag) | Returns Table
 getObjectsWithAnyTags([<span class="tag tab"></span>](types.md) tags) | Returns Table of all [Objects](object.md) which have at least one of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithanytags)
 getObjectsWithAllTags([<span class="tag tab"></span>](types.md) tags) | Returns Table of all [Objects](object.md) which have all of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithalltags)
 getSeatedPlayers() {: #getseatedplayers data-toc-label="getSeatedPlayers()" data-toc-child-of="global-function-details" } | Returns a Table of the [Player Colors](player/colors.md) strings of seated players. | [<span class="ret tab"></span>](types.md) |
-group([<span class="tag tab"></span>](types.md) objects) | Groups objects together, like how the `G` key does for players. | [<span class="ret tab"></span>](types.md) | [:i:](#group)
+group([<span class="tag tab"></span>](types.md) objects) | Groups objects together, like how the ++G++ key does for players. | [<span class="ret tab"></span>](types.md) | [:i:](#group)
 paste([<span class="tag tab"></span>](types.md) parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](types.md) | [:i:](#paste)
 setLookingForPlayers([<span class="tag boo"></span>](types.md) lfp) {: #setlookingforplayers data-toc-label="setLookingForPlayers(...)" data-toc-child-of="global-function-details" } | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](types.md) |
 spawnObject([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object. See [Built-in](built-in-object.md) and [Custom](custom-game-objects.md) Spawnable Object pages for further details. | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobject)
@@ -129,9 +129,9 @@ copy(object_list)
 
 ####group(...)
 
-[<span class="ret tab"></span>](types.md) Groups objects together, like how the `G` key does for players. It returns a table of object references to any decks/stacks formed.
+[<span class="ret tab"></span>](types.md) Groups objects together, like how the ++G++ key does for players. It returns a table of object references to any decks/stacks formed.
 
-Not all objects CAN be grouped. If the G key won't work on them, neither will this function.
+Not all objects CAN be grouped. If the ++G++ key won't work on them, neither will this function.
 
 
 !!!info "group(objects)"
@@ -393,8 +393,8 @@ Players can bind key to hotkeys from the `Options` -> `Game Keys` UI after this 
 	* [<span class="tag boo"></span>](types.md) **triggerOnKeyUp**: Whether the `callback` is _also_ executed when the hotkey is released. The `callback` is always triggered when the hotkey is pressed.
         * {>>Optional, defaults to false.<<}
 
-Hotkey bindings do not prevent the behavior of Settings key bindings i.e. if `R` (shuffle by default) is assigned as a
-hotkey, the hotkey callback and the default shuffle behavior will both be executed whenever `R` is pressed.
+Hotkey bindings do not prevent the behavior of Settings key bindings i.e. if ++R++ (shuffle by default) is assigned as a
+hotkey, the hotkey callback and the default shuffle behavior will both be executed whenever ++R++ is pressed.
 
 !!!example
 	```lua

@@ -196,7 +196,7 @@ onBeginDrag | Called once when the element starts being dragged. | string | `nil
 onEndDrag | Called once when the element stops being dragged and the mouse button is released. | string | `nil`
 onMouseDown | Called when the mouse is pressed while over the element. | string | The click button
 onMouseUp | Called when the mouse is released, if it had previously been pressed while over the element (no matter where the cursor currently is). | string | The click button
-onSubmit | Called when the Enter/Return key is pressed on an [Input Element](inputelements.md). | string | The value of the input element
+onSubmit | Called when the ++Enter++ key is pressed on an [Input Element](inputelements.md). | string | The value of the input element
 
 !!!note
     `onClick`, `onMouseDown` and `onMouseUp` all pass the click button. They hold digits, but their data type is **string**. The possible values are:

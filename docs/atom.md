@@ -20,6 +20,8 @@ Our official plugin introduces syntax highlighting, code autocompletion for the 
 
 Prefer another text editor? Take look at our [External Editor API](https://api.tabletopsimulator.com/externaleditorapi/) to make your own plugin.
 
+---
+
 ## Features
 
 This is only a summarized list of features Atom offers. Check out a more complete documentation on the plugin specifically in the [plugin wiki](https://github.com/Knils/atom-tabletopsimulator-lua/wiki).
@@ -34,19 +36,20 @@ The entire Tabletop Simulator Lua Scripting API (with the exception of the Playe
 
 ![Code Autocompletion](img/atom/autocomplete.png)
 
-### Tabletop Simulator Interactivity
+### Tabletop Simulator Integration
 The Atom plugin can directly connect to a running instance of Tabletop Simulator to get all of the existing Lua scripts on Objects and to call Save & Play. Both functions can be called directly from the Packages menu or the right click contextual menu. TTS must be running with the game loaded for these functions to work.
 
 Command | Action Taken
 --------|--------
-Get Lua Scripts | Downloads all existing scripts in a loaded Tabletop Simulator game with Atom. You will need to call Get Lua Scripts every time you change to a different game in TTS.
-Save & Play | Saves all Lua files in Atom, uploads them to a loaded Tabletop Simulator game, and reloads the current game (same as Save & Play in the in-game editor).
+Get Lua Scripts | <p>Downloads all existing scripts in a loaded Tabletop Simulator game with Atom. You will need to call Get Lua Scripts every time you change to a different game in TTS.</p><p>**Shortcut:** ++Ctrl+Shift+L++</p>
+Save & Play | <p>Saves all Lua files in Atom, uploads them to a loaded Tabletop Simulator game, and reloads the current game (same as Save & Play in the in-game editor).</p><p>**Shortcut:** ++Ctrl+Shift+S++</p>
 
 ![Logo](img/atom/sap1.png)
 ![Logo](img/atom/sap2.png)
 
-> Every time you start up Atom, the cached local `*.lua` files are deleted.
+Every time you start up Atom, the cached local `*.ttslua` files are deleted.
 
+---
 
 ## Installing Atom
 Download and install Atom [from the official website](https://atom.io/).
@@ -54,12 +57,35 @@ Download and install Atom [from the official website](https://atom.io/).
 ### Installing the Official Plugin
 1. Click on File -> Settings
 2. Select the Install tab in Settings
-3. Type in tabletopsimulator-lua into the search field and press the Enter key or click the Packages button
+3. Type in tabletopsimulator-lua into the search field and press the ++Enter++ key or click the Packages button
 4. Click the blue Install button for the tabletopsimulator-lua package
 
 ![Installing Atom](img/atom/install.png)
 
-## Setting Up Atom
+### Updating the Official Plugin
+
+The plugin will automatically check for updates when Atom is started. If a new update is found, it will update itself.
+
+You will have to manually restart Atom for the new version of the plugin to be loaded.
+
+---
+
+## Atom Console
+
+### Print, Log and Error Messages
+
+All [print(...)](base.md#print), [log(...)](base.md#log) and error messages are sent to Atom's console. This is
+particularly helpful as you're able to copy text from here. 
+
+#### Shortcut {: #atom-console-shortcut }
+
+**Windows/Linux:** ++Ctrl+Alt+I++
+
+**macOS:** ++Cmd+Opt+I++
+
+---
+
+## User Customization
 
 ### Tab Width
 By default, Tabletop Simulator scripts use a tab width of four spaces. You are not required to adhere to this spacing. By default, Atom has a tab width of two spaces. To optionally make Atom default to a tab width of four spaces:
@@ -81,16 +107,3 @@ To enable tabs showing up as pipe operators "|" as an indent guide:
 
 ![Tables as Pipe Operators](img/atom/pipes.PNG)
 
-##Updating Atom Plugin
-The plugin will automatically check for updates when Atom is started. If a new update is found, it will update itself. You will have to manually restart Atom for the new version of the plugin to be loaded. You can check Atom's console if it found an update (ctrl + alt + i).
-
-## Atom Tips
-
-These are just a few basic tips to help get the most out of Atom.
-
-* Print Messages
-	* All print() functions automatically send their messages to Atom's console (ctrl + shift + i).
-* Error Messages
-	* All Lua errors are automatically sent to Atom's console (ctrl + shift + i).
-* Quick Save + Play
-	* Hitting Ctrl + Shift + S will trigger Save & Play.
