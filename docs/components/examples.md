@@ -1,7 +1,7 @@
 !!!danger
 	Component APIs are an advanced feature. An **understanding of how Unity works is required** to utilize them.
 
-These examples are complete scripts which can placed on a regular Red Block.
+These examples are complete scripts which can be placed on a regular Red Block.
 
 !!!example
 	Disable shadow receiving for an object.
