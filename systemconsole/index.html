@@ -266,20 +266,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../externaleditorapi/" class="md-nav__link">
-        External Editor API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../learninglua/" class="md-nav__link">
-        Learning Lua
+      <a href="../lua-in-tabletop-simulator/" class="md-nav__link">
+        Lua in Tabletop Simulator
       </a>
     </li>
   
@@ -379,6 +367,18 @@
     <li class="md-nav__item">
       <a href="../vr/" class="md-nav__link">
         Virtual Reality
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../externaleditorapi/" class="md-nav__link">
+        External Editor API
       </a>
     </li>
   
@@ -1255,7 +1255,7 @@
 <!-- Markdown content -->
 <p>The system console gives you a direct way to interact with Tabletop Simulator's settings.  It can be used to automate repetitive actions, and customise your TTS experience.</p>
 <h2 id="controls">Controls<a class="headerlink" href="#controls" title="Permanent link">&para;</a></h2>
-<p>The console accepts basic text input.  Additionally, you may hit <code>up arrow</code> and <code>down arrow</code> to cycle back and forth through the command history, and <code>tab</code> to autocomplete your current command (if more than one command is possible from your current prefix then hit it a couple of times to list all matching commands).  Hitting the <code>`</code> key will activate the console.  Hitting it again will type the character; if you would rather it deactivated the console input as well as activating it, then you can make it do that by entering this command: <code>+console_hotkey_lock</code></p>
+<p>The console accepts basic text input.  Additionally, you may hit <kbd class="keys"><kbd class="key-arrow-up">Up</kbd></kbd> and ++down-arrow++ to cycle back and forth through the command history, and <kbd class="keys"><kbd class="key-tab">Tab</kbd></kbd> to autocomplete your current command (if more than one command is possible from your current prefix then hit it a couple of times to list all matching commands).  Hitting the <kbd class="keys"><kbd class="key-grave">`</kbd></kbd> key will activate the console.  Hitting it again will type the character; if you would rather it deactivated the console input as well as activating it, then you can make it do that by entering this command: <code>+console_hotkey_lock</code></p>
 <h2 id="commands-variables">Commands &amp; Variables<a class="headerlink" href="#commands-variables" title="Permanent link">&para;</a></h2>
 <p>You interact with the system console by typing commands into it.  When you hit enter the command will be perform its action, and then output its results to the console.</p>
 <p>There is a subset of the commands which have an additional property; these are called <code>variables</code>, and each one stores a value (in addition to behaving like regular commands).  Typically these are used for the settings which govern TTS behaviour.  For example, the <code>color</code> command is a variable; it holds the seat color you currently occupy.  Typing it without any parameters will make it output its current value, while typing it with a parameter will let you set it; you could type <code>color red</code> to switch to the red seat, for instance.  You may also create your own variables with the <code>store_number</code>, <code>store_toggle</code>, and <code>store_text</code> commands (or if you are familiar with programming, their aliases: <code>float</code>, <code>bool</code>, and <code>string</code>); these are especially useful when writing scripts.</p>

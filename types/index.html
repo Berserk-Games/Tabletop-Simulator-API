@@ -264,20 +264,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../externaleditorapi/" class="md-nav__link">
-        External Editor API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../learninglua/" class="md-nav__link">
-        Learning Lua
+      <a href="../lua-in-tabletop-simulator/" class="md-nav__link">
+        Lua in Tabletop Simulator
       </a>
     </li>
   
@@ -302,6 +290,18 @@
     <li class="md-nav__item">
       <a href="../vr/" class="md-nav__link">
         Virtual Reality
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../externaleditorapi/" class="md-nav__link">
+        External Editor API
       </a>
     </li>
   
@@ -537,33 +537,6 @@
   <a href="#example" class="md-nav__link">
     Example
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lambda-style-expressions" class="md-nav__link">
-    Lambda-Style Expressions
-  </a>
-  
-    <nav class="md-nav" aria-label="Lambda-Style Expressions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#important-tips" class="md-nav__link">
-    Important Tips
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lambda-style-example" class="md-nav__link">
-    Lambda-Style Example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1452,33 +1425,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#lambda-style-expressions" class="md-nav__link">
-    Lambda-Style Expressions
-  </a>
-  
-    <nav class="md-nav" aria-label="Lambda-Style Expressions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#important-tips" class="md-nav__link">
-    Important Tips
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lambda-style-example" class="md-nav__link">
-    Lambda-Style Example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1815,66 +1761,6 @@ Instead, make the print the result of a function running:
 <span class="c1">--Does not have any parameters passed to it</span>
 <span class="kr">function</span> <span class="nf">sayThree</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Three&quot;</span><span class="p">)</span> <span class="kr">end</span>
 </code></pre></div>
-<hr />
-<h4 id="lambda-style-expressions">Lambda-Style Expressions<a class="headerlink" href="#lambda-style-expressions" title="Permanent link">&para;</a></h4>
-<p>You are able to replace <code>function()</code> and <code>end</code> with <code>||</code>, allowing for much shorter functions.</p>
-<h5 id="important-tips">Important Tips<a class="headerlink" href="#important-tips" title="Permanent link">&para;</a></h5>
-<p>You create a <code>|</code>, on a standard keyboard, by holding shift and pressing the key above enter (backslash).</p>
-<p><code>||</code> only work for one line. So if you intend to use a multi-line function, lambda-style will not be an option.</p>
-<p>When using <code>||</code> for a conditional function with <code>Wait.condition(returnFunc, conditionalFunc)</code>, you do not need to include return.</p>
-<p>If a parameter is passed to the return function, like with <code>callback_function</code> from <code>spawnObject(...)</code>, you can put a variable between the <code>||</code> characters to represent it. See the next section for an example.</p>
-<h5 id="lambda-style-example">Lambda-Style Example<a class="headerlink" href="#lambda-style-example" title="Permanent link">&para;</a></h5>
-<p>Without Lambda-style:
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="c1">--Spawn a deck with a callback function that triggers once deck spawns</span>
-    <span class="c1">--Also, pass a reference to the spawned object</span>
-    <span class="n">spawnObject</span><span class="p">({</span>
-        <span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;Deck&quot;</span><span class="p">,</span>
-        <span class="n">callback_function</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="n">printCardCount</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="kr">end</span>
-    <span class="p">})</span>
-
-    <span class="c1">--Print after 1 second</span>
-    <span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One Second&quot;</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="c1">--Trigger a function after 2 seconds and send a parameter</span>
-    <span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="n">printString</span><span class="p">(</span><span class="s2">&quot;Two Seconds&quot;</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="kr">function</span> <span class="nf">printCardCount</span><span class="p">(</span><span class="n">deck</span><span class="p">)</span>
-    <span class="n">cardList</span> <span class="o">=</span> <span class="n">deck</span><span class="p">.</span><span class="n">getObjects</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="o">#</span><span class="n">cardList</span> <span class="o">..</span> <span class="s2">&quot; cards.&quot;</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="kr">function</span> <span class="nf">printString</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="kr">end</span>
-</code></pre></div></p>
-<p>With Lambda-style:
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="c1">--Spawn a deck with a callback function that triggers once deck spawns</span>
-    <span class="c1">--Also, pass a reference to the spawned object</span>
-    <span class="n">spawnObject</span><span class="p">({</span>
-        <span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;Deck&quot;</span><span class="p">,</span>
-        <span class="n">callback_function</span> <span class="o">=</span> <span class="o">|</span><span class="n">obj</span><span class="o">|</span> <span class="n">printCardCount</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-    <span class="p">})</span>
-
-    <span class="c1">--Print after 1 second</span>
-    <span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="o">||</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One Second&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="c1">--Trigger a function after 2 seconds and send a parameter</span>
-    <span class="n">Wait</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="o">||</span> <span class="n">printString</span><span class="p">(</span><span class="s2">&quot;Two Seconds&quot;</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="kr">function</span> <span class="nf">printCardCount</span><span class="p">(</span><span class="n">deck</span><span class="p">)</span>
-    <span class="n">cardList</span> <span class="o">=</span> <span class="n">deck</span><span class="p">.</span><span class="n">getObjects</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="o">#</span><span class="n">cardList</span> <span class="o">..</span> <span class="s2">&quot; cards.&quot;</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="kr">function</span> <span class="nf">printString</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="kr">end</span>
-</code></pre></div></p>
-<hr />
 
 <!-- Last update of source file -->
 

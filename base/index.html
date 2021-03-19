@@ -264,20 +264,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../externaleditorapi/" class="md-nav__link">
-        External Editor API
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../learninglua/" class="md-nav__link">
-        Learning Lua
+      <a href="../lua-in-tabletop-simulator/" class="md-nav__link">
+        Lua in Tabletop Simulator
       </a>
     </li>
   
@@ -302,6 +290,18 @@
     <li class="md-nav__item">
       <a href="../vr/" class="md-nav__link">
         Virtual Reality
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../externaleditorapi/" class="md-nav__link">
+        External Editor API
       </a>
     </li>
   
@@ -1836,7 +1836,7 @@
 </tr>
 <tr>
 <td>group(<a href="../types/"><span class="tag tab"></span></a> objects)</td>
-<td>Groups objects together, like how the <code>G</code> key does for players.</td>
+<td>Groups objects together, like how the <kbd class="keys"><kbd class="key-g">G</kbd></kbd> key does for players.</td>
 <td><a href="../types/"><span class="ret tab"></span></a></td>
 <td><a href="#group"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -2090,8 +2090,8 @@
 </div>
 <hr />
 <h4 id="group">group(...)<a class="headerlink" href="#group" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret tab"></span></a> Groups objects together, like how the <code>G</code> key does for players. It returns a table of object references to any decks/stacks formed.</p>
-<p>Not all objects CAN be grouped. If the G key won't work on them, neither will this function.</p>
+<p><a href="../types/"><span class="ret tab"></span></a> Groups objects together, like how the <kbd class="keys"><kbd class="key-g">G</kbd></kbd> key does for players. It returns a table of object references to any decks/stacks formed.</p>
+<p>Not all objects CAN be grouped. If the <kbd class="keys"><kbd class="key-g">G</kbd></kbd> key won't work on them, neither will this function.</p>
 <div class="admonition info">
 <p class="admonition-title">group(objects)</p>
 <ul>
@@ -2384,8 +2384,8 @@ are used, then player hotkey bindings will persist.</p>
 </li>
 </ul>
 </div>
-<p>Hotkey bindings do not prevent the behavior of Settings key bindings i.e. if <code>R</code> (shuffle by default) is assigned as a
-hotkey, the hotkey callback and the default shuffle behavior will both be executed whenever <code>R</code> is pressed.</p>
+<p>Hotkey bindings do not prevent the behavior of Settings key bindings i.e. if <kbd class="keys"><kbd class="key-r">R</kbd></kbd> (shuffle by default) is assigned as a
+hotkey, the hotkey callback and the default shuffle behavior will both be executed whenever <kbd class="keys"><kbd class="key-r">R</kbd></kbd> is pressed.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="n">addHotkey</span><span class="p">(</span><span class="s2">&quot;My Hotkey&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">playerColor</span><span class="p">,</span> <span class="n">object</span><span class="p">,</span> <span class="n">pointerPosition</span><span class="p">,</span> <span class="n">isKeyUp</span><span class="p">)</span>
