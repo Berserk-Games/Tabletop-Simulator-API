@@ -37,8 +37,8 @@ If you were to define a function using the name of an Object Event Handler in yo
 
 ## Event Handler Execution
 
-_Typically_, if there are multiple event handlers exist for the one event i.e. in an Object script and Global
-Script _and/or_ multiple Object scripts, then _all_ of these event handlers will be executed.
+_Typically_, if there are multiple event handlers for the one event i.e. in an Object script and Global Script _and/or_
+multiple Object scripts, then _all_ of these event handlers will be executed.
 
 !!!info
 	Some event handlers permit you to return a value in order to trigger an optional side effect. For example, returning
