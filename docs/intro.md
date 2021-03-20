@@ -1,37 +1,56 @@
-In this section, you will find details on all events/classes/functions specific to Tabletop Simulator's Lua scripting. For more general information on how the scripting language of Lua works and what it does on its own, you can review the [Official Lua Documentation](https://www.lua.org/docs.html).
+In this section, you will find details on all events/classes/functions specific to Tabletop Simulator's Lua scripting.
+For more general information on how the scripting language of Lua works and what it does on its own, you can review
+the [Official Lua Documentation](https://www.lua.org/docs.html).
 
-##Using TTS Documentation
+## Using the API Documentation
 
-###Left Column
+### Left Column
+
 This is the top-level list of classes and other information needed when scripting with Lua in Tabletop Simulator. Event, Base and Object are the three pages you will use the most, with the rest referring to niche information you can access as you go. It is a good idea to familiarize yourself with the contents of those three pages in order to have a good high-level understanding of what scripting is capable of doing.
 
-###Right Column
+### Right Column
+
 The Table of Contents will lay out the contents of the page you are on. It always starts with high-level summary information first and, if needed, detailed information towards the bottom. The :i: next to a summary element will take you directly down to the relevant detailed explanation below.
-
-
-##Growing TTS Documentation
-This documentation is written via Markdown language and some custom CSS. The relevant files you can modify, as well as some detailed editing instructions, are listed on GitHub. You can make a pull request in order to submit modifications/improvements that can be incorporated into this documentation.
-
-Just click the link in the pencil icon in the top-right of an article, or visit the GitHub page for more information by clicking GitHub Source in the far upper right.
 
 ---
 
+## Improving the Documentation
 
-##TTS Terms
+This documentation is predominantly written in [Markdown](https://www.markdownguide.org/getting-started/) and is
+[available on Github](https://github.com/Berserk-Games/Tabletop-Simulator-API).
 
-###Object
+If you encounter a mistake, and it's something you're able to fix yourself, then
+[pull requests](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) are
+welcome. However, if you've identified a problem, but don't know how to fix it, please let us know by opening an
+[issue](https://github.com/Berserk-Games/Tabletop-Simulator-API/issues).
+
+---
+
+## Tabletop Simulator Terminology
+
+### Object
+
 An in-game physical Object that currently exists in the scene. If an Object is placed inside of a bag/deck/etc, it stops existing and is no longer in the scene until it is pulled back out.
 
-###Player
+### Player
+
 A person in the game. Each Player is assigned a color, with spectators being "Grey". If you are attempting to identify a Player, you would use the color of the seat they are in to do so.
 
-###Global Script
-The Global script, which is a script that is not attached to any particular Object. It is always present during a game.
+### Global Script
 
-###Object Script
-A script that is attached to an in-game Object, and is saved as part of it. This is similar to any other property like its scale or tint. Some functions ask for an Object reference in order to attempt to run a function on it. In these cases, Global (exactly as written here) is also a valid Object reference.
+Each mod/save has a Global script, which is not attached to any particular Object.
 
-###GUID
+There is only one Global script, and it is always present.
+
+### Object Scripts
+
+Every in-game [Object](object.md) may also have a script attached to it.
+
+By default, newly created Objects do not have a script attached. However, you can choose to create/edit an Object's
+script from the Object's context menu (typically opened by right-clicking on the Object).
+
+### GUID
+
 In Tabletop Simulator, a GUID is a unique 6-character [string](types.md) which can be used to identify in-game [Objects](object.md). GUIDs are automatically assigned when objects exist within the scene.
 
 If an object is duplicated, it will sometimes have the same GUID for 1 frame before the engine assigns a new GUID to the newer Object. Objects in containers (bags/decks/etc) do not automatically get new GUIDs assigned to them in this way. Only once their contents are moved out into the scene.
@@ -41,7 +60,8 @@ If an object is duplicated, it will sometimes have the same GUID for 1 frame bef
 
 ---
 
-##Deprecated APIs {: #deprecated }
+## Deprecated APIs {: #deprecated }
+
 Through-out this documentation you may come across Lua APIs that are labelled as [<span class="tag deprecated"></span>](intro.md#deprecated). It is advised that you no longer use deprecated APIs. Typically, this is because newer/improved APIs have been introduced that better serve the same purpose.
 
 **Deprecated APIs will _not_ be removed or stop working.**
