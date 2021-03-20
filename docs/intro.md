@@ -38,7 +38,7 @@ A person in the game. Each Player is assigned a color, with spectators being "Gr
 
 ### Global Script
 
-Each mod/save has a Global script, which is not attached to any particular Object.
+Each game/save has a Global script, which is not attached to any particular Object.
 
 There is only one Global script, and it is always present.
 

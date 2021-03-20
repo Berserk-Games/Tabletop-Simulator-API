@@ -1,19 +1,65 @@
-﻿Events are functions which are activated by Tabletop Simulator when something takes place in-game. It is possible to use all of them within scripts on Objects, and most will also work in Global scripts.
+Games frequently need to execute code in response to some action, interaction, or change taking place in the game,
+collectively referred to as _events_.
 
-Many contain parameters which can be used to utilize additional information related to the event.
+## Event Handlers
 
-##Function Summary
+Event handlers are **functions you define**, that Tabletop Simulator calls.
 
-###Default Events (Global & Object)
-These are functions which are triggered by an event taking place in-game. They work when within the script of an Object or the Global script.
+There are many event handlers that you can define. Each one gives you an opportunity to handle occurrences of a
+particular event.
+
+When Tabletop Simulator calls your function, it will provide event-specific details as arguments to your event handler
+function.
+
+In order for Tabletop Simulator to discover an event handler, it must be defined as a global variable with a specific
+name. The name that you use depends on which event you wish to handle. Event-specific details are covered below.
+
+!!!note
+	Whilst event handler _names_ corresponds with just one type of event. Each event may have multiple corresponding
+	event handlers (i.e. event handler names) that Tabletop Simulator will look for and execute.
+
+There are two types of event handlers:
+
+* [Universal Event Handlers](#universal-event-handlers)
+* [Object Event Handlers](#object-event-handlers)
+
+### Universal Event Handlers
+
+Universal Event Handlers may be defined in the [Global script](intro.md#global-script) _and/or_
+[Object scripts](intro.md#object-scripts).
+
+### Object Event Handlers
+
+Object Event Handlers may only be defined in [Object scripts](intro.md#object-scripts).
+
+If you were to define a function using the name of an Object Event Handler in your
+[Global script](intro.md#global-script). It simply won't be called.
+
+## Event Handler Execution
+
+_Typically_, if there are multiple event handlers exist for the one event i.e. in an Object script and Global
+Script _and/or_ multiple Object scripts, then _all_ of these event handlers will be executed.
+
+!!!info
+	Some event handlers permit you to return a value in order to trigger an optional side effect. For example, returning
+	`false` from a "try" event handler will prevent whatever action is being _tried_. If you return a value that
+	triggers an optional side effect, then subsequent event handlers (for the same event occurrence) will _not_ be
+	executed.
+
+## Event Summary
+
+### Universal Event Handlers {: #universal-event-handlers-summary }
+
+As described above, you may declare these functions in the [Global script](intro.md#global-script) or in
+[Object scripts](intro.md#object-scripts).
 
 Function Name | Description | &nbsp;
 -- | -- | --
-filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) enter_object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer(...)](#tryobjectentercontainer)_.</p> Called when an object attempts to enter any container. The object is prevented from entering unless `true` is returned. | [:i:](#tryobjectentercontainer)
+filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) enter_object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer(...)](#tryobjectentercontainer)_.</p> Called when an object attempts to enter any container. | [:i:](#tryobjectentercontainer)
 onChat([<span class="tag str"></span>](types.md) message, [<span class="tag pla"></span>](types.md) sender) | Called when a chat message is sent in game chat. | [:i:](#onchat)
 onExternalMessage([<span class="tag tab"></span>](types.md) data) | Called when an external script editor (like [Atom](atom.md)) sends a message back to the game. Used for custom editor functionality. | [:i:](#onexternalmessage)
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [:i:](#onfixedupdate)
-onLoad([<span class="tag str"></span>](types.md) save_state) | Called when a game save is finished loading every Object. It is where most setup code will go. | [:i:](#onload)
+onLoad([<span class="tag str"></span>](types.md) script_state) | Called when a save has completely finished loading. | [:i:](#onload)
 onObjectCollisionEnter([<span class="tag obj"></span>](types.md) registered_object, [<span class="tag tab"></span>](types.md) collision_info) | Called when an Object starts colliding with a [collision registered](object.md#registercollisions) Object. | [:i:](#onobjectcollisionenter)
 onObjectCollisionExit([<span class="tag obj"></span>](types.md) registered_object, [<span class="tag tab"></span>](types.md) collision_info) | Called when an Object stops colliding with a [collision registered](object.md#registercollisions) Object. | [:i:](#onobjectcollisionexit)
 onObjectCollisionStay([<span class="tag obj"></span>](types.md) registered_object, [<span class="tag tab"></span>](types.md) collision_info) | Called **every frame** that an Object is colliding with a [collision registered](object.md#registercollisions) Object. | [:i:](#onobjectcollisionstay)
@@ -40,22 +86,26 @@ onPlayerChangeTeam([<span class="tag str"></span>](types.md) player_color,&nbsp;
 onPlayerConnect([<span class="tag pla"></span>](types.md) person) | Called when a [Player](player/instance.md) connects to a game. | [:i:](#onplayerconnect)
 onPlayerDisconnect([<span class="tag pla"></span>](types.md) person) | Called when a [Player](player/instance.md) disconnects from a game. | [:i:](#onplayerdisconnect)
 onPlayerTurn([<span class="tag pla"></span>](types.md) person) | Called at the start of a player's turn when using the in-game turn system. | [:i:](#onplayerturn)
-onSave() | Called whenever your game is saved. | [:i:](#onsave)
+onSave() | Called whenever a script needs to save its state. | [:i:](#onsave)
 onScriptingButtonDown([<span class="tag int"></span>](types.md) index, [<span class="tag str"></span>](types.md) player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [:i:](#onscriptingbuttondown)
 onScriptingButtonUp([<span class="tag int"></span>](types.md) index, [<span class="tag str"></span>](types.md) player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [:i:](#onscriptingbuttonup)
 onUpdate() | Called **every frame**. | [:i:](#onupdate)
-tryObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) enter_object) | Called when an object attempts to enter any container. The object is prevented from entering unless `true` is returned. | [:i:](#tryObjectentercontainer)
+tryObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) entering_object) | Called when an object attempts to enter any container. | [:i:](#tryobjectentercontainer)
 
+### Object Event Handlers {: #object-event-handlers-summary }
 
-###Default Events (Object Only)
-These are functions which are triggered by an event taking place in-game. They only work within scripts that are on Objects, never in Global.
+As described [above](#object-event-handlers), you may declare these functions in the
+[Object scripts](intro.md#object-scripts).
+
+!!!important
+	These **cannot** declare these event handlers in the [Global script](intro.md#global-script).
 
 Function Name | Description | &nbsp;
 -- | -- | --
-filterObjectEnter([<span class="tag obj"></span>](types.md) obj) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnter(...)](#tryobjectenter)_.</p> Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned. | [:i:](#tryObjectenter)
+filterObjectEnter([<span class="tag obj"></span>](types.md) obj) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnter(...)](#tryobjectenter)_.</p> Called when an object attempts to enter this object. Return `false` to prevent the object entering. | [:i:](#tryObjectenter)
 onCollisionEnter([<span class="tag tab"></span>](types.md) collision_info) | Called when an Object starts colliding with the Object the function is on. | [:i:](#oncollisionenter)
 onCollisionExit([<span class="tag tab"></span>](types.md) collision_info) | Called when an Object stops colliding with the Object the function is on. | [:i:](#oncollisionexit)
-onCollisionStay([<span class="tag tab"></span>](types.md) collision_info) | Called **every frame** that an Object is colliding with the Object this function is on. | [:i:](#oncollisionstay)
+onCollisionStay([<span class="tag tab"></span>](types.md) collision_info) | Called **every frame** that an Object is colliding with the Object This event handler is on. | [:i:](#oncollisionstay)
 onDestroy() | Called when an Object it is on is destroyed. | [:i:](#ondestroy)
 onDrop([<span class="tag str"></span>](types.md) player_color) | Called when a player releases an Object after picking it up. | [:i:](#ondrop)
 onFlick([<span class="tag str"></span>](types.md) player_color, [<span class="tag vec"></span>](types.md) impulse) | Called when a player flicks the object. | [:i:](#onflick)
@@ -67,30 +117,11 @@ onPickUp([<span class="tag str"></span>](types.md) player_color) | Called when a
 onRandomize([<span class="tag str"></span>](types.md) player_color) | Called when this Object is randomized. Like when shuffling a deck or shaking dice. | [:i:](#onrandomize)
 onSearchEnd([<span class="tag str"></span>](types.md) player_color) | Called when a player finishes searches this Object. | [:i:](#onsearchend)
 onSearchStart([<span class="tag str"></span>](types.md) player_color) | Called when a player starts searching this Object. | [:i:](#onsearchstart)
-tryObjectEnter([<span class="tag obj"></span>](types.md) obj) | Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned. | [:i:](#tryObjectenter)
-
-
----
-
-##Function Details (Global & Object)
-
-###tryObjectEnterContainer(...)
-
-Called when an object attempts to enter a container. The object is prevented from entering unless `true` is returned.
-
-!!!info "tryObjectEnter(container, enter_object)"
-	* [<span class="tag obj"></span>](types.md) **container**: The container the Object is trying to enter.
-	* [<span class="tag obj"></span>](types.md) **enter_object**: The Object entering the container.
-
-``` Lua
-function tryObjectEnterContainer(container, enter_object)
-	print(enter_object.getName()) -- Print entering object's name
-	return true -- Allows object to enter.
-end
-```
-
+tryObjectEnter([<span class="tag obj"></span>](types.md) entering_object) | Called when another object attempts to enter this Object (container). Return `false` to prevent the object entering. | [:i:](#tryObjectenter)
 
 ---
+
+## Universal Event Handler Details
 
 ###onChat(...)
 
@@ -142,39 +173,52 @@ end
 
 ###onLoad(...)
 
-This function is called when a game save is finished loading every Object. This is where most setup code will go. The fast-forward and rewind feature will also cause this function to activate. If this function is in an Object's script and that Object is spawned, like by removing it from a container, it too will trigger onLoad().
+**Global Script**
 
-!!!info "onLoad(save_state)"
-	* [<span class="tag str"></span>](types.md) **save_state**: The encoded string containing any save_state (saved) data.
-		* {>>If there is no data saved, this returns an empty String.<<}
+Called when a saved game (and all Objects it contains) have finished loading. This includes manually loaded games/saves,
+as well as when a user rewinds.
 
-``` Lua
-function onLoad()
-	print("Loading complete")
-end
-```
+**Object Script**
 
-???example "Example of onLoad and onSave being used to save/load data"
-    ``` Lua
-	-- Runs whenever game is saved/autosaved
-	function onSave()
-		local data_to_save = {someData=50}
-		saved_data = JSON.encode(data_to_save)
-		--saved_data = "" --Remove -- at start & save to clear save data
-		return saved_data
-	end
+This will be called when a saved game finishes loading _or_ when the script-owner Object has finished loading for some
+other reason e.g. if the script-owner Object was pulled out of a container mid-game.
 
-	-- Runs when game is loaded
-	function onLoad(saved_data)
-		-- Loads the tracking for if the game has started yet
-		if saved_data ~= "" then
-			local loaded_data = JSON.decode(saved_data)
-			someData = loaded_data.someData
-		else
-			someData = 50
+!!!info "onLoad(script_state)"
+	* [<span class="tag str"></span>](types.md) **script_state**: The previously saved script state i.e. value returned
+	from [onSave(...)](#onsave), or an empty string if there is no saved script state available.
+
+
+!!!example
+	Decodes a JSON representation of a game state, consisting of nested tables, strings, numbers and object GUIDs. Then
+	obtains an object reference from the saved GUID.
+	```lua
+    local some_object -- We'll store an object reference to use later.
+
+	function onLoad(script_state)
+		-- JSON decode our saved state
+		local state = JSON.decode(script_state)
+
+		-- In this example, we're assuming the existence of some specific saved state data.
+		local questions = state.questions -- access a nested table
+
+		for _, qa in ipairs(state.questions) do
+			print("Question: " .. qa.question)
+			print("Answer: " .. qa.answer)
 		end
+
+		some_object = getObjectFromGUID(state.guids.some_object)
+
+		-- Let's highlight some_object a random color.
+		-- Because why not.
+
+		local colors = {'Blue', 'Yellow', 'Green'}
+		some_object.highlightOn(colors[math.random(1, 3)])
+
+		return JSON.encode(state)
 	end
-    ```
+	```
+	Refer to [onSave(...)](#onsave) to see an example of how this same save state structure could be created. Subscribe
+	to the [example mod](https://steamcommunity.com/sharedfiles/filedetails/?id=2430471959) to see this in action.
 ---
 
 ###onObjectCollisionEnter(...)
@@ -671,24 +715,63 @@ end
 
 ###onSave()
 
-This is called whenever the game saves, either manually or by auto-save. This will work in both a Global script, and an Object script. It is used to allow information to persist through saving/loading, for example, to let your script remember its data previously after hitting the Undo or Redo button. By placing script information into a Lua table, then encoding that data into [JSON](#json), you are able to save information about the script's current state onto the script's parent, in the form of a string. You can also return a string value in this function to stash it.
+Return a [<span class="tag str"></span>](types.md).
 
-!!!important
-	When using `onSave()`, information is saved into the save file you are using. Using *Save & Apply* does NOT cause it to record data, only overwriting your save will update what information `onSave()` is trying to record.
+This event handler provides you with an opportunity to persist your script's state, such that when a save game is loaded
+(or the user rewinds) the data you've persisted will be made available to [onLoad(...)](#onload).
+
+A script's saved state is just a singular [<span class="tag str"></span>](types.md). The convention for storing complex
+state is to create a Lua table, [JSON.encode(...)](json.md#encode) it, and return the JSON encoded string from this
+function.
+
+**Global Script**
+
+This is called whenever the user manually saves game, when an auto-save is created _and_ when a rewind checkpoint is
+created, by default, that's every 10 seconds. Due to the frequency at which this event handler is called, it's important
+that your function be fast.
+
+**Object Script**
+
+In addition to saves and rewind checkpoints, this event handler will also be called on an Object that requires its state
+be saved mid-game e.g. when the script-owner Object enters a container.
+
+!!!tip
+	[JSON.encode(...)](json.md#encode) has limitations with regards to what data it can encode. It _cannot_ encode
+	references to Objects. If you wish to encode a reference to an object, encode the Object's [guid](object.md#guid)
+    and in [onLoad(...)](#onload) obtain a new Object reference via
+	[getObjectFromGUID(...)](base.md#getobjectfromguid).
 
 !!!warning
-	You can save almost any data in a table using this function, but Object references **DO NOT** persist. If you need to record an Object using `onSave()`, record its GUID instead.
+	Pressing "Save & Play" (in either the in-game Scripting Editor or Atom) does _not_ trigger the save event.
 
-``` Lua
-data_table = {answer=42}
+    In this context "Save" is referring to saving your script only. Save & Play will in fact reload your game,
+	_discarding any non-scripting changes_ made since the game was last (manually) loaded/saved.
 
-function onSave()
-	saved_data = JSON.encode(data_table)
-	return saved_data
-end
-```
-
-Check the [`onLoad()`](#onload) section for how to load that stored JSON information into your script.
+!!!example
+	Returns a JSON encoding of a game state consisting of nested tables, strings, numbers and object references
+	(encoded as GUIDs). In this example, `some_object` is a reference to an [Object](object.md).
+	```lua
+	function onSave()
+		local state = {
+			questions = { -- nested table
+				{
+					question = "What day comes after Saturday?", -- string
+					answer = "Sunday",
+				},
+				{
+					question = "Unknown",
+					answer = 42, -- number
+				}
+			},
+			guids = {
+				some_object = some_object.guid -- GUID (a string)
+			}
+		}
+		return JSON.encode(state)
+	end
+	```
+	Refer to [onLoad(...)](#onload) to see an example of this same save state structure being loaded. Subscribe to the
+	[example mod](https://steamcommunity.com/sharedfiles/filedetails/?id=2430471959) to see this in action.
 
 ---
 
@@ -741,31 +824,27 @@ end
 
 ---
 
----
+###tryObjectEnterContainer(...)
 
+Called when an object attempts to enter a container. Return `false` to prevent the object entering.
 
+!!!info "tryObjectEnterContainer(container, entering_object)"
+	* [<span class="tag obj"></span>](types.md) **container**: The container the Object is trying to enter.
+	* [<span class="tag obj"></span>](types.md) **entering_object**: The Object entering the container.
 
-
-
-##Function Details (Object only)
-
-
-###tryObjectEnter(...)
-
-Called when an object attempts to enter this object. The object is prevented from entering unless `true` is returned.
-
-!!!info "tryObjectEnter(obj)"
-	* [<span class="tag obj"></span>](types.md) **obj**: The object that has tried to enter the object this script is attached to.
-
-``` Lua
-function tryObjectEnter(obj)
-	print(obj.getName()) -- Print entering object's name
-	return true -- Allows object to enter.
-end
-```
+!!!example
+	```lua
+	function tryObjectEnterContainer(container, entering_object)
+		print(entering_object.getName()) -- Print entering object's name
+		return true -- Allows object to enter.
+	end
+	```
 
 
 ---
+
+
+## Object Event Handler Details
 
 ###onCollisionEnter(...)
 
@@ -873,7 +952,7 @@ end
 
 ###onDrop(...)
 
-This function is called when this [Object](object.md) is dropped. Does not work in Global.
+This event handler is called when this [Object](object.md) is dropped. Does not work in Global.
 
 !!!info "onDrop(player_color)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player.
@@ -1039,3 +1118,19 @@ Called when a player finishes searching this Object.
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player.
 
 ---
+
+###tryObjectEnter(...)
+
+Called when another object attempts to enter this Object (container). Return `false` to prevent the object entering.
+
+!!!info "tryObjectEnter(entering_object)"
+	* [<span class="tag obj"></span>](types.md) **entering_object**: The object that has tried to enter the object this script is attached to.
+
+!!!example
+	Print the name of the object entering this container.
+	```lua
+	function tryObjectEnter(entering_object)
+		print(entering_object.getName())
+		return true -- Allows the object to enter.
+	end
+	```
