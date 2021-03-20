@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-tts-documentation" class="md-skip">
+        <a href="#using-the-api-documentation" class="md-skip">
           Skip to content
         </a>
       
@@ -383,11 +383,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-tts-documentation" class="md-nav__link">
-    Using TTS Documentation
+  <a href="#using-the-api-documentation" class="md-nav__link">
+    Using the API Documentation
   </a>
   
-    <nav class="md-nav" aria-label="Using TTS Documentation">
+    <nav class="md-nav" aria-label="Using the API Documentation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -410,18 +410,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#growing-tts-documentation" class="md-nav__link">
-    Growing TTS Documentation
+  <a href="#improving-the-documentation" class="md-nav__link">
+    Improving the Documentation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tts-terms" class="md-nav__link">
-    TTS Terms
+  <a href="#tabletop-simulator-terminology" class="md-nav__link">
+    Tabletop Simulator Terminology
   </a>
   
-    <nav class="md-nav" aria-label="TTS Terms">
+    <nav class="md-nav" aria-label="Tabletop Simulator Terminology">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -446,8 +446,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#object-script" class="md-nav__link">
-    Object Script
+  <a href="#object-scripts" class="md-nav__link">
+    Object Scripts
   </a>
   
 </li>
@@ -1213,11 +1213,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-tts-documentation" class="md-nav__link">
-    Using TTS Documentation
+  <a href="#using-the-api-documentation" class="md-nav__link">
+    Using the API Documentation
   </a>
   
-    <nav class="md-nav" aria-label="Using TTS Documentation">
+    <nav class="md-nav" aria-label="Using the API Documentation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1240,18 +1240,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#growing-tts-documentation" class="md-nav__link">
-    Growing TTS Documentation
+  <a href="#improving-the-documentation" class="md-nav__link">
+    Improving the Documentation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tts-terms" class="md-nav__link">
-    TTS Terms
+  <a href="#tabletop-simulator-terminology" class="md-nav__link">
+    Tabletop Simulator Terminology
   </a>
   
-    <nav class="md-nav" aria-label="TTS Terms">
+    <nav class="md-nav" aria-label="Tabletop Simulator Terminology">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1276,8 +1276,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#object-script" class="md-nav__link">
-    Object Script
+  <a href="#object-scripts" class="md-nav__link">
+    Object Scripts
   </a>
   
 </li>
@@ -1335,27 +1335,37 @@
 
 
 <!-- Markdown content -->
-<p>In this section, you will find details on all events/classes/functions specific to Tabletop Simulator's Lua scripting. For more general information on how the scripting language of Lua works and what it does on its own, you can review the <a href="https://www.lua.org/docs.html">Official Lua Documentation</a>.</p>
-<h2 id="using-tts-documentation">Using TTS Documentation<a class="headerlink" href="#using-tts-documentation" title="Permanent link">&para;</a></h2>
+<p>In this section, you will find details on all events/classes/functions specific to Tabletop Simulator's Lua scripting.
+For more general information on how the scripting language of Lua works and what it does on its own, you can review
+the <a href="https://www.lua.org/docs.html">Official Lua Documentation</a>.</p>
+<h2 id="using-the-api-documentation">Using the API Documentation<a class="headerlink" href="#using-the-api-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="left-column">Left Column<a class="headerlink" href="#left-column" title="Permanent link">&para;</a></h3>
 <p>This is the top-level list of classes and other information needed when scripting with Lua in Tabletop Simulator. Event, Base and Object are the three pages you will use the most, with the rest referring to niche information you can access as you go. It is a good idea to familiarize yourself with the contents of those three pages in order to have a good high-level understanding of what scripting is capable of doing.</p>
 <h3 id="right-column">Right Column<a class="headerlink" href="#right-column" title="Permanent link">&para;</a></h3>
 <p>The Table of Contents will lay out the contents of the page you are on. It always starts with high-level summary information first and, if needed, detailed information towards the bottom. The <span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span> next to a summary element will take you directly down to the relevant detailed explanation below.</p>
-<h2 id="growing-tts-documentation">Growing TTS Documentation<a class="headerlink" href="#growing-tts-documentation" title="Permanent link">&para;</a></h2>
-<p>This documentation is written via Markdown language and some custom CSS. The relevant files you can modify, as well as some detailed editing instructions, are listed on GitHub. You can make a pull request in order to submit modifications/improvements that can be incorporated into this documentation.</p>
-<p>Just click the link in the pencil icon in the top-right of an article, or visit the GitHub page for more information by clicking GitHub Source in the far upper right.</p>
 <hr />
-<h2 id="tts-terms">TTS Terms<a class="headerlink" href="#tts-terms" title="Permanent link">&para;</a></h2>
+<h2 id="improving-the-documentation">Improving the Documentation<a class="headerlink" href="#improving-the-documentation" title="Permanent link">&para;</a></h2>
+<p>This documentation is predominantly written in <a href="https://www.markdownguide.org/getting-started/">Markdown</a> and is
+<a href="https://github.com/Berserk-Games/Tabletop-Simulator-API">available on Github</a>.</p>
+<p>If you encounter a mistake, and it's something you're able to fix yourself, then
+<a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests">pull requests</a> are
+welcome. However, if you've identified a problem, but don't know how to fix it, please let us know by opening an
+<a href="https://github.com/Berserk-Games/Tabletop-Simulator-API/issues">issue</a>.</p>
+<hr />
+<h2 id="tabletop-simulator-terminology">Tabletop Simulator Terminology<a class="headerlink" href="#tabletop-simulator-terminology" title="Permanent link">&para;</a></h2>
 <h3 id="object">Object<a class="headerlink" href="#object" title="Permanent link">&para;</a></h3>
 <p>An in-game physical Object that currently exists in the scene. If an Object is placed inside of a bag/deck/etc, it stops existing and is no longer in the scene until it is pulled back out.</p>
 <h3 id="player">Player<a class="headerlink" href="#player" title="Permanent link">&para;</a></h3>
 <p>A person in the game. Each Player is assigned a color, with spectators being "Grey". If you are attempting to identify a Player, you would use the color of the seat they are in to do so.</p>
 <h3 id="global-script">Global Script<a class="headerlink" href="#global-script" title="Permanent link">&para;</a></h3>
-<p>The Global script, which is a script that is not attached to any particular Object. It is always present during a game.</p>
-<h3 id="object-script">Object Script<a class="headerlink" href="#object-script" title="Permanent link">&para;</a></h3>
-<p>A script that is attached to an in-game Object, and is saved as part of it. This is similar to any other property like its scale or tint. Some functions ask for an Object reference in order to attempt to run a function on it. In these cases, Global (exactly as written here) is also a valid Object reference.</p>
+<p>Each mod/save has a Global script, which is not attached to any particular Object.</p>
+<p>There is only one Global script, and it is always present.</p>
+<h3 id="object-scripts">Object Scripts<a class="headerlink" href="#object-scripts" title="Permanent link">&para;</a></h3>
+<p>Every in-game <a href="../object/">Object</a> may also have a script attached to it.</p>
+<p>By default, newly created Objects do not have a script attached. However, you can choose to create/edit an Object's
+script from the Object's context menu (typically opened by right-clicking on the Object).</p>
 <h3 id="guid">GUID<a class="headerlink" href="#guid" title="Permanent link">&para;</a></h3>
 <p>In Tabletop Simulator, a GUID is a unique 6-character <a href="../types/">string</a> which can be used to identify in-game <a href="../object/">Objects</a>. GUIDs are automatically assigned when objects exist within the scene.</p>
 <p>If an object is duplicated, it will sometimes have the same GUID for 1 frame before the engine assigns a new GUID to the newer Object. Objects in containers (bags/decks/etc) do not automatically get new GUIDs assigned to them in this way. Only once their contents are moved out into the scene.</p>
