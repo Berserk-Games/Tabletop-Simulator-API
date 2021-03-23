@@ -171,18 +171,54 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    
+                    <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to configuration -->
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+
+<!-- Main navigation -->
+<nav
+  class="md-nav md-nav--primary"
+  aria-label="Navigation"
+  data-md-level="0"
+>
+
+  <!-- Site title -->
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Tabletop Simulator API" class="md-nav__button md-logo" aria-label="Tabletop Simulator API" data-md-component="logo">
+    <a
+      href=".."
+      title="Tabletop Simulator API"
+      class="md-nav__button md-logo"
+      aria-label="Tabletop Simulator API"
+      data-md-component="logo"
+    >
       
   <img src="../img/TSIcon.png" alt="logo">
 
     </a>
     Tabletop Simulator API
   </label>
+
+  <!-- Repository information -->
   
     <div class="md-nav__source">
       
@@ -197,6 +233,8 @@
 </a>
     </div>
   
+
+  <!-- Render item list -->
   <ul class="md-nav__list" data-md-scrollfix>
     
       
@@ -1492,6 +1530,10 @@
 
     
   </ul>
+
+  <!-- Link to Knowledge Base -->
+  <hr class="custom-line">
+  <a href="https://api.tabletopsimulator.com/" class="custom-link">Go To Knowledge Base &#8617</a>
 </nav>
                   </div>
                 </div>
