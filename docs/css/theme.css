@@ -99,17 +99,14 @@ disabled due to lack of need currently, but works*/
 
 .custom-line {
     border:0;
-    height:0;
     border-top:1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-
 }
 
 .custom-link {
     color:#f4641d;
     position:relative;
     left:0.625rem;
-    top:-0.25rem;
 }
 
 [data-toc-mock-searchable] {
