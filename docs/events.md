@@ -870,7 +870,7 @@ Called when an object attempts to enter a container. Return `false` to prevent t
 
 Called when a player attempts to randomize an Object. Return `false` to prevent the Object being randomized.
 
-!!!info "tryObjectRandomize(container, entering_object)"
+!!!info "tryObjectRandomize(object, player_color)"
 	* [<span class="tag obj"></span>](types.md) **object**: The Object the player is trying to randomize.
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that is attempting the randomization.
 
@@ -1192,7 +1192,7 @@ Called when another object attempts to enter the script-owner Object (container)
 
 Called when a player attempts to randomize the script-owner Object. Return `false` to prevent the Object being randomized.
 
-!!!info "tryRandomize(container, entering_object)"
+!!!info "tryRandomize(player_color)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that is attempting the randomization.
 
 !!!example
