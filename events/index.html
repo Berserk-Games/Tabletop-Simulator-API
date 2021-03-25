@@ -689,6 +689,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onobjectstatechange" class="md-nav__link">
+    onObjectStateChange(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onobjecttriggereffect" class="md-nav__link">
     onObjectTriggerEffect(...)
   </a>
@@ -879,6 +886,13 @@
           <li class="md-nav__item">
   <a href="#onsearchstart" class="md-nav__link">
     onSearchStart(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onstatechange" class="md-nav__link">
+    onStateChange(...)
   </a>
   
 </li>
@@ -1868,6 +1882,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onobjectstatechange" class="md-nav__link">
+    onObjectStateChange(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onobjecttriggereffect" class="md-nav__link">
     onObjectTriggerEffect(...)
   </a>
@@ -2058,6 +2079,13 @@
           <li class="md-nav__item">
   <a href="#onsearchstart" class="md-nav__link">
     onSearchStart(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onstatechange" class="md-nav__link">
+    onStateChange(...)
   </a>
   
 </li>
@@ -2348,6 +2376,13 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
+<td>onObjectStateChange(<a href="../types/"><span class="tag obj"></span></a> object, <a href="../types/"><span class="tag str"></span></a> old_state_guid)</td>
+<td>Called after an object changes state.</td>
+<td><a href="#onobjectstatechange"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+</tr>
+<tr>
 <td>onObjectTriggerEffect(<a href="../types/"><span class="tag obj"></span></a> trigger_object, <a href="../types/"><span class="tag int"></span></a> index)</td>
 <td>Called whenever the trigger effect of an <a href="../behavior/assetbundle/">AssetBundle</a> is activated.</td>
 <td><a href="#onobjecttriggereffect"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2556,6 +2591,13 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
+<td>onStateChange(<a href="../types/"><span class="tag str"></span></a> old_state_guid)</td>
+<td>Called when the script-owner Object spawned as a result of an Object state change.</td>
+<td><a href="#onstatechange"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+</tr>
+<tr>
 <td>tryObjectEnter(<a href="../types/"><span class="tag obj"></span></a> entering_object)</td>
 <td>Called when another object attempts to enter the script-owner Object (container).</td>
 <td><a href="#tryobjectenter"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2565,7 +2607,7 @@ executed.</p>
 <tr>
 <td>tryRandomize(<a href="../types/"><span class="tag str"></span></a> player_color)</td>
 <td>Called when a player attempts to randomize the script-owner Object.</td>
-<td><a href="#tryobjectrandomize"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<td><a href="#tryrandomize"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
@@ -3056,6 +3098,25 @@ end</p>
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
+<h3 id="onobjectstatechange">onObjectStateChange(...)<a class="headerlink" href="#onobjectstatechange" title="Permanent link">&para;</a></h3>
+<p>Called after an object changes state.</p>
+<div class="admonition info">
+<p class="admonition-title">onObjectStateChange(object, old_state_guid)</p>
+<ul>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: The new Object that spawned as a result of the state change.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>old_state_guid</strong>: The GUID of previous state/Object.</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Print the current and previous Object state GUIDs.
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectStateChange</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">old_state_guid</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;New state GUID: &quot;</span> <span class="o">..</span> <span class="n">object</span><span class="p">.</span><span class="n">guid</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Previous state GUID: &quot;</span> <span class="o">..</span> <span class="n">old_state_guid</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div></p>
+</div>
+<hr />
 <h3 id="onobjecttriggereffect">onObjectTriggerEffect(...)<a class="headerlink" href="#onobjecttriggereffect" title="Permanent link">&para;</a></h3>
 <p>Called whenever the trigger effect of an <a href="../behavior/assetbundle/">AssetBundle</a> is activated.</p>
 <div class="admonition info">
@@ -3525,6 +3586,24 @@ return <code>true</code> to indicate you've handled the event yourself.</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the Player.</li>
 </ul>
+</div>
+<hr />
+<h3 id="onstatechange">onStateChange(...)<a class="headerlink" href="#onstatechange" title="Permanent link">&para;</a></h3>
+<p>Called when the script-owner Object spawned as a result of an Object state change.</p>
+<div class="admonition info">
+<p class="admonition-title">onStateChange(old_state_guid)</p>
+<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>old_state_guid</strong>: The GUID of previous state/Object.</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Print the current and previous Object state GUIDs.
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onStateChange</span><span class="p">(</span><span class="n">old_state_guid</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;New state GUID: &quot;</span> <span class="o">..</span> <span class="n">self</span><span class="p">.</span><span class="n">guid</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Previous state GUID: &quot;</span> <span class="o">..</span> <span class="n">old_state_guid</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div></p>
 </div>
 <hr />
 <h3 id="tryobjectenter">tryObjectEnter(...)<a class="headerlink" href="#tryobjectenter" title="Permanent link">&para;</a></h3>
