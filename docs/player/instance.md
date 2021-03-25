@@ -43,6 +43,7 @@ print([<span class="tag str"></span>](../types.md) message, [<span class="tag co
 promote() {: #promote data-toc-label="promote()" data-toc-child-of="function-details" } | [<span class="ret boo"></span>](../types.md) | Promotes/demotes a Player. Promoted players have access to most host privileges. |
 setCameraMode([<span class="tag str"></span>](../types.md) camera_mode) | [<span class="ret boo"></span>](../types.md) | Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown". | [:i:](#setcameramode)
 setHandTransform([<span class="tag tab"></span>](../types.md) parameters, [<span class="tag int"></span>](../types.md) hand_index) | [<span class="ret boo"></span>](../types.md) | Sets transform elements of a hand zone. | [:i:](#sethandtransform)
+setUITheme([<span class="tag str"></span>](../types.md) theme) | [<span class="ret boo"></span>](../types.md) | Sets the UI theme for the player. | [:i:](#setuitheme)
 
 ---
 
@@ -207,3 +208,20 @@ params = {
 }
 Player["White"].setHandTransform(params, 2)
 ```
+
+### setUITheme(...)
+
+[<span class="ret boo"></span>](../types.md) Sets the UI theme for the player.
+
+!!!info "setUITheme(theme)"
+    * [<span class="tag str"></span>](../types.md) **theme**: A string representing a theme.
+
+!!!tip "Theme Format"
+    You can view the expected theme format by in-game going to Menu -> Configuration -> Interface -> Theme. Select a
+    theme then press "Import/Export".
+
+!!!example
+    Set the White player's default button background to pink.
+    ``` Lua
+    Player.white.setUITheme("button_normal #FFC0C0")
+    ```
