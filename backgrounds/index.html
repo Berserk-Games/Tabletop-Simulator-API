@@ -1213,7 +1213,7 @@
 
 
 <!-- Markdown content -->
-<p>The static global Backgrounds class provides the ability to interact with the background.</p>
+<p><code>Backgrounds</code> is a global which provides the ability to interact with the background.</p>
 <blockquote>
 <p>Example Usage:<code class="highlight"><span class="n">Backgrounds</span><span class="p">.</span><span class="n">getBackground</span><span class="p">()</span></code>.</p>
 </blockquote>
@@ -1230,25 +1230,25 @@
 <tbody>
 <tr>
 <td>getBackground()</td>
-<td>Returns the Background name.</td>
+<td>Returns the current background name.</td>
+<td><a href="../types/"><span class="ret str"></span></a></td>
+<td align="right">&nbsp;</td>
+</tr>
+<tr>
+<td>getCustomURL()</td>
+<td>Returns the image URL of the current custom background, or <code>nil</code> if the current background is not custom.</td>
 <td><a href="../types/"><span class="ret str"></span></a></td>
 <td align="right">&nbsp;</td>
 </tr>
 <tr>
 <td>setBackground(<a href="../types/"><span class="tag str"></span></a> name)</td>
-<td>Changes the Background.</td>
+<td>Replaces the current background with the background matching the specified <code>name</code>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td align="right">&nbsp;</td>
 </tr>
 <tr>
-<td>getCustomURL()</td>
-<td>Returns the url of the image for the Background.</td>
-<td><a href="../types/"><span class="ret str"></span></a></td>
-<td align="right">&nbsp;</td>
-</tr>
-<tr>
 <td>setCustomURL(<a href="../types/"><span class="tag str"></span></a> url)</td>
-<td>Changes the image for the Background</td>
+<td>Replaces the current background with a custom background loaded from the specified <code>url</code>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td align="right">&nbsp;</td>
 </tr>
