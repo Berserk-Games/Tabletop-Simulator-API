@@ -514,6 +514,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#onblindfold" class="md-nav__link">
+    onBlindfold(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onchat" class="md-nav__link">
     onChat(...)
   </a>
@@ -1686,6 +1693,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#onblindfold" class="md-nav__link">
+    onBlindfold(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onchat" class="md-nav__link">
     onChat(...)
   </a>
@@ -2159,6 +2173,13 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
+<td>onBlindfold(<a href="../types/"><span class="tag pla"></span></a> player, <a href="../types/"><span class="tag boo"></span></a> blindfolded)</td>
+<td>Called when a player puts on or takes off their blindfold.</td>
+<td><a href="#onblindfold"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+</tr>
+<tr>
 <td>onChat(<a href="../types/"><span class="tag str"></span></a> message, <a href="../types/"><span class="tag pla"></span></a> sender)</td>
 <td>Called when a user sends an in-game chat message.</td>
 <td><a href="#onchat"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2552,6 +2573,28 @@ executed.</p>
 </table>
 <hr />
 <h2 id="universal-event-handler-details">Universal Event Handler Details<a class="headerlink" href="#universal-event-handler-details" title="Permanent link">&para;</a></h2>
+<h3 id="onblindfold">onBlindfold(...)<a class="headerlink" href="#onblindfold" title="Permanent link">&para;</a></h3>
+<p>Called when a player puts on or takes off their blindfold.</p>
+<div class="admonition info">
+<p class="admonition-title">onBlindfold(player, blindfolded)</p>
+<ul>
+<li><a href="../types/"><span class="tag pla"></span></a> <strong>player</strong>: <a href="../player/instance/">Player</a> who put on or took off their blindfold.</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>blindfolded</strong>: Whether the player is now blindfolded.</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Print a message indicating which player put on or took off their blindfold.
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onBlindfold</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">blindfolded</span><span class="p">)</span>
+    <span class="kr">if</span> <span class="n">blindfolded</span> <span class="kr">then</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">color</span> <span class="o">..</span> <span class="s2">&quot; put their blindfold on.&quot;</span><span class="p">)</span>
+    <span class="kr">else</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">color</span> <span class="o">..</span> <span class="s2">&quot; took their blindfold off.&quot;</span><span class="p">)</span>
+    <span class="kr">end</span>
+<span class="kr">end</span>
+</code></pre></div></p>
+</div>
+<hr />
 <h3 id="onchat">onChat(...)<a class="headerlink" href="#onchat" title="Permanent link">&para;</a></h3>
 <p>Called when a user sends an in-game chat message. Return <code>false</code> to prevent the message appearing in the chat window.</p>
 <div class="admonition info">
