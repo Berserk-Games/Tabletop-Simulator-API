@@ -8,8 +8,8 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
 
 !!!info "Custom Parameters"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
-        * [<span class="tag str"></span>](types.md) **assetbundle**: The path/url for the AssetBundle.
-        * [<span class="tag str"></span>](types.md) **assetbundle_secondary**: The path/url for the secondary AssetBundle property.
+        * [<span class="tag str"></span>](types.md) **assetbundle**: The path/URL for the AssetBundle.
+        * [<span class="tag str"></span>](types.md) **assetbundle_secondary**: The path/URL for the secondary AssetBundle property.
             * {>>Optional, is not used by default.<<}
         * [<span class="tag int"></span>](types.md) **type**: An Int representing the Object's type.
             * {>>Optional, defaults to 0.<<}
@@ -34,7 +34,25 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
 
 !!!info "Custom Parameters"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
-        * [<span class="tag str"></span>](types.md) **image**: The path/url for the board.
+        * [<span class="tag str"></span>](types.md) **image**: The path/URL for the board.
+
+##Custom Card
+
+* CardCustom
+
+!!!info "Custom Parameters"
+    * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
+        * [<span class="tag int"></span>](types.md) **type**: The card shape.
+            * {>>Optional, defaults to 0.<<}
+                * **0**: Rectangle (Rounded)
+                * **1**: Rectangle
+                * **2**: Hex (Rounded)
+                * **3**: Hex
+                * **4**: Circle
+        * [<span class="tag str"></span>](types.md) **face**: The path/URL of the face image.
+        * [<span class="tag str"></span>](types.md) **back**: The path/URL of the back image.
+        * [<span class="tag boo"></span>](types.md) **sideways**: If the card is horizontal, instead of vertical.
+            * {>>Optional, defaults to false.<<}
 
 ##Custom Deck
 
@@ -42,8 +60,8 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
 
 !!!info "Custom Parameters"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
-        * [<span class="tag str"></span>](types.md) **face**: The path/url of the face cardsheet.
-        * [<span class="tag str"></span>](types.md) **back**: The path/url of the back cardsheet or card back.
+        * [<span class="tag str"></span>](types.md) **face**: The path/URL of the face cardsheet.
+        * [<span class="tag str"></span>](types.md) **back**: The path/URL of the back cardsheet or card back.
         * [<span class="tag boo"></span>](types.md) **unique_back**: If each card has a unique card back (via a cardsheet).
             * {>>Optional, defaults to false.<<}
         * [<span class="tag int"></span>](types.md) **width**: The number of columns on the cardsheet.
@@ -52,27 +70,9 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
             * {>>Optional, defaults to 7.<<}
         * [<span class="tag int"></span>](types.md) **number**: The number of cards on the cardsheet.
             * {>>Optional, defaults to 52.<<}
-        * [<span class="tag boo"></span>](types.md) **sideways**: If the cards are horizontal instead of vertical.
+        * [<span class="tag boo"></span>](types.md) **sideways**: Whether the cards are horizontal, instead of vertical.
             * {>>Optional, defaults to false.<<}
-        * [<span class="tag boo"></span>](types.md) **back_is_hidden**: If cards have a special face that shows up when hidden in a hand zone.
-            * {>>Optional, defaults to false.<<}
-
-##Custom Card
-
-* CardCustom
-
-!!!info "Custom Parameters"
-    * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
-        * [<span class="tag int"></span>](types.md) **type**: An Int representing the Card's shape.
-            * {>>Optional, defaults to 0.<<}
-                * **0**: Rectangle (Rounded)
-                * **1**: Rectangle
-                * **2**: Hex (Rounded)
-                * **3**: Hex
-                * **4**: Circle
-        * [<span class="tag str"></span>](types.md) **face**: The path/url of the face image.
-        * [<span class="tag str"></span>](types.md) **back**: The path/url of the back image.
-        * [<span class="tag boo"></span>](types.md) **sideways**: If the cards are horizontal instead of vertical.
+        * [<span class="tag boo"></span>](types.md) **back_is_hidden**: Whether the card back should be used as the hidden image (instead of the last slot of the `face` image).
             * {>>Optional, defaults to false.<<}
 
 ##Custom Dice
@@ -81,7 +81,7 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
 
 !!!info "Custom Parameters"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
-        * [<span class="tag str"></span>](types.md) **image**: The path/url for the [custom die](https://kb.tabletopsimulator.com/custom-content/custom-dice/).
+        * [<span class="tag str"></span>](types.md) **image**: The path/URL for the [custom die](https://kb.tabletopsimulator.com/custom-content/custom-dice/).
         * [<span class="tag int"></span>](types.md) **type**: The type of die, which determines its number of sides.
             * {>>Optional, defaults to 1.<<}
                 * **0**: 4-sided
@@ -97,8 +97,8 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
 
 !!!info "Custom Parameters"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
-        * [<span class="tag str"></span>](types.md) **image**: The path/url for the [custom figurine](https://kb.tabletopsimulator.com/custom-content/custom-figurine/).
-        * [<span class="tag str"></span>](types.md) **image_secondary**: The path/url for the custom figurine's back.
+        * [<span class="tag str"></span>](types.md) **image**: The path/URL for the [custom figurine](https://kb.tabletopsimulator.com/custom-content/custom-figurine/).
+        * [<span class="tag str"></span>](types.md) **image_secondary**: The path/URL for the custom figurine's back.
             * {>>Optional, defaults to "image".<<}
 
 ##Custom Model
@@ -107,13 +107,13 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
 
 !!!info "Custom Parameters"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
-        * [<span class="tag str"></span>](types.md) **mesh**: The path/url for the .obj mesh used on the [custom model](https://kb.tabletopsimulator.com/custom-content/custom-model/).
-        * [<span class="tag str"></span>](types.md) **diffuse**: The path/url for the diffuse image.
-        * [<span class="tag str"></span>](types.md) **normal**: The path/url for the normals image.
+        * [<span class="tag str"></span>](types.md) **mesh**: The path/URL for the .obj mesh used on the [custom model](https://kb.tabletopsimulator.com/custom-content/custom-model/).
+        * [<span class="tag str"></span>](types.md) **diffuse**: The path/URL for the diffuse image.
+        * [<span class="tag str"></span>](types.md) **normal**: The path/URL for the normals image.
             * {>>Optional, is not used by default.<<}
-        * [<span class="tag str"></span>](types.md) **collider**: The path/url for the collider mesh.
+        * [<span class="tag str"></span>](types.md) **collider**: The path/URL for the collider mesh.
             * {>>Optional, defaults to a generic box collider.<<}
-        * [<span class="tag boo"></span>](types.md) **convex**: If the object model is convex.
+        * [<span class="tag boo"></span>](types.md) **convex**: Whether the object model is convex.
             * {>>Optional, defaults to false.<<}
         * [<span class="tag int"></span>](types.md) **type**: An Int representing the Object's type.
             * {>>Optional, defaults to 0.<<}
@@ -139,7 +139,7 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
             * {>>Optional, defaults to 3.<<}
         * [<span class="tag flo"></span>](types.md) **freshnel_strength**: The freshnel strength.
             * {>>Optional, defaults to 0.1.<<}
-        * [<span class="tag boo"></span>](types.md) **cast_shadows**: If the Object casts shadows.
+        * [<span class="tag boo"></span>](types.md) **cast_shadows**: Whether the Object casts shadows.
             * {>>Optional, defaults to true.<<}
 
 ##Custom Tile
@@ -148,17 +148,17 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
 
 !!!info "Custom Parameters"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
-        * [<span class="tag str"></span>](types.md) **image**: The path/url for the [custom tile](https://kb.tabletopsimulator.com/custom-content/custom-tile/) image.
+        * [<span class="tag str"></span>](types.md) **image**: The path/URL for the [custom tile](https://kb.tabletopsimulator.com/custom-content/custom-tile/) image.
         * [<span class="tag int"></span>](types.md) **type**: Determines the shape of the tile.
             * {>>Optional, defaults to 0.<<}
                 * **0**: Square/Rectangle
                 * **1**: Hex
                 * **2**: Circle
-        * [<span class="tag str"></span>](types.md) **image_bottom**: The path/url for the bottom-side image.
+        * [<span class="tag str"></span>](types.md) **image_bottom**: The path/URL for the bottom-side image.
             * {>>Optional, uses the top image by default.<<}
         * [<span class="tag flo"></span>](types.md) **thickness**: How thick the tile is.
             * {>>Optional, defaults to 0.5.<<}
-        * [<span class="tag boo"></span>](types.md) **stackable**: If these tiles stack together into a pile.
+        * [<span class="tag boo"></span>](types.md) **stackable**: Whether these tiles stack together into a pile.
             * {>>Optional, defaults to false.<<}
 
 ##Custom Token
@@ -167,10 +167,10 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
 
 !!!info "Custom Parameters"
     * [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters which determine the properties of the Object.
-        * [<span class="tag str"></span>](types.md) **image**: The path/url for the [custom token](https://kb.tabletopsimulator.com/custom-content/custom-token/) image.
-        * [<span class="tag flo"></span>](types.md) **thickness**: How thick the tile is.
+        * [<span class="tag str"></span>](types.md) **image**: The path/URL for the [custom token](https://kb.tabletopsimulator.com/custom-content/custom-token/) image.
+        * [<span class="tag flo"></span>](types.md) **thickness**: How thick the token is.
             * {>>Optional, defaults to 0.2.<<}
-        * [<span class="tag flo"></span>](types.md) **mege_distance**: How accurate the edges are to the image.
+        * [<span class="tag flo"></span>](types.md) **merge_distance**: How accurately the token shape will trace image edge (in pixels).
             * {>>Optional, defaults to 15.<<}
-        * [<span class="tag boo"></span>](types.md) **stackable**: If these tiles stack together into a pile.
+        * [<span class="tag boo"></span>](types.md) **stackable**: Whether these tokens stack together into a pile.
             * {>>Optional, defaults to false.<<}
