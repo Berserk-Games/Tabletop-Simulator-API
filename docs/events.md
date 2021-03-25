@@ -56,15 +56,15 @@ As described above, you may declare these functions in the [Global script](intro
 Function Name | Description | &nbsp;
 -- | -- | --
 filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) enter_object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer(...)](#tryobjectentercontainer)_.</p> Called when an object attempts to enter any container. | [:i:](#tryobjectentercontainer)
-onChat([<span class="tag str"></span>](types.md) message, [<span class="tag pla"></span>](types.md) sender) | Called when a chat message is sent in game chat. | [:i:](#onchat)
+onChat([<span class="tag str"></span>](types.md) message, [<span class="tag pla"></span>](types.md) sender) | Called when a user sends an in-game chat message. | [:i:](#onchat)
 onExternalMessage([<span class="tag tab"></span>](types.md) data) | Called when an external script editor (like [Atom](atom.md)) sends a message back to the game. Used for custom editor functionality. | [:i:](#onexternalmessage)
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [:i:](#onfixedupdate)
 onLoad([<span class="tag str"></span>](types.md) script_state) | Called when a save has completely finished loading. | [:i:](#onload)
 onObjectCollisionEnter([<span class="tag obj"></span>](types.md) registered_object, [<span class="tag tab"></span>](types.md) collision_info) | Called when an Object starts colliding with a [collision registered](object.md#registercollisions) Object. | [:i:](#onobjectcollisionenter)
 onObjectCollisionExit([<span class="tag obj"></span>](types.md) registered_object, [<span class="tag tab"></span>](types.md) collision_info) | Called when an Object stops colliding with a [collision registered](object.md#registercollisions) Object. | [:i:](#onobjectcollisionexit)
 onObjectCollisionStay([<span class="tag obj"></span>](types.md) registered_object, [<span class="tag tab"></span>](types.md) collision_info) | Called **every frame** that an Object is colliding with a [collision registered](object.md#registercollisions) Object. | [:i:](#onobjectcollisionstay)
-onObjectDestroy([<span class="tag obj"></span>](types.md) dying_object) | Called whenever any object is destroyed. | [:i:](#onobjectdestroy)
-onObjectDrop([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) dropped_object) | Called whenever any object is dropped by a player. | [:i:](#onobjectdrop)
+onObjectDestroy([<span class="tag obj"></span>](types.md) object) | Called whenever any object is about to be destroyed. | [:i:](#onobjectdestroy)
+onObjectDrop([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) dropped_object) | Called when any object is dropped by a player. | [:i:](#onobjectdrop)
 onObjectEnterScriptingZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) enter_object) | Called when any object enters any scripting zone. | [:i:](#onobjectenterscriptingzone)
 onObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) enter_object) | Called when any object enters any container. Includes decks | [:i:](#onobjectentercontainer)
 onObjectFlick([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color, [<span class="tag vec"></span>](types.md) impulse) | Called when a player flicks an object. | [:i:](#onobjectflick)
@@ -74,7 +74,7 @@ onObjectLeaveContainer([<span class="tag obj"></span>](types.md) container, [<sp
 onObjectLoopingEffect([<span class="tag obj"></span>](types.md) loop_object, [<span class="tag int"></span>](types.md) index) | Called whenever the looping effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjectloopingeffect)
 onObjectNumberTyped([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color, [<span class="tag int"></span>](types.md) number) | Called when a player types a number whilst hovering over an object. | [:i:](#onobjectnumbertyped)
 onObjectPageChange([<span class="tag obj"></span>](types.md) object) | Called when a Custom PDF object changes page. | [:i:](#onobjectpagechange)
-onObjectPeek([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player) | Called when a player using peek to look under an Object. | [:i:](#onobjectpeek)
+onObjectPeek([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a player peeks at an Object. | [:i:](#onobjectpeek)
 onObjectPickUp([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) picked_up_object) | Called whenever a Player picks up an Object. | [:i:](#onobjectpickup)
 onObjectRandomize([<span class="tag obj"></span>](types.md) randomize_object, [<span class="tag str"></span>](types.md) player_color) | Called when an Object is randomized. Like when shuffling a deck or shaking dice. | [:i:](#onobjectrandomize)
 onObjectSearchEnd([<span class="tag obj"></span>](types.md) obj, [<span class="tag str"></span>](types.md) player_color) | Called when a search is finished on any container. | [:i:](#onobjectsearchend)
@@ -91,33 +91,37 @@ onScriptingButtonDown([<span class="tag int"></span>](types.md) index, [<span cl
 onScriptingButtonUp([<span class="tag int"></span>](types.md) index, [<span class="tag str"></span>](types.md) player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [:i:](#onscriptingbuttonup)
 onUpdate() | Called **every frame**. | [:i:](#onupdate)
 tryObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) entering_object) | Called when an object attempts to enter any container. | [:i:](#tryobjectentercontainer)
+tryObjectRandomize([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a player attempts to randomize an Object. | [:i:](#tryobjectrandomize)
 
 ### Object Event Handlers {: #object-event-handlers-summary }
 
-As described [above](#object-event-handlers), you may declare these functions in the
+As described [above](#object-event-handlers), you may declare these functions in
 [Object scripts](intro.md#object-scripts).
+
+These events pertain to the script-owner Object (accessible as `self` within the script).
 
 !!!important
 	These **cannot** declare these event handlers in the [Global script](intro.md#global-script).
 
 Function Name | Description | &nbsp;
 -- | -- | --
-filterObjectEnter([<span class="tag obj"></span>](types.md) obj) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnter(...)](#tryobjectenter)_.</p> Called when an object attempts to enter this object. Return `false` to prevent the object entering. | [:i:](#tryObjectenter)
-onCollisionEnter([<span class="tag tab"></span>](types.md) collision_info) | Called when an Object starts colliding with the Object the function is on. | [:i:](#oncollisionenter)
-onCollisionExit([<span class="tag tab"></span>](types.md) collision_info) | Called when an Object stops colliding with the Object the function is on. | [:i:](#oncollisionexit)
-onCollisionStay([<span class="tag tab"></span>](types.md) collision_info) | Called **every frame** that an Object is colliding with the Object This event handler is on. | [:i:](#oncollisionstay)
-onDestroy() | Called when an Object it is on is destroyed. | [:i:](#ondestroy)
-onDrop([<span class="tag str"></span>](types.md) player_color) | Called when a player releases an Object after picking it up. | [:i:](#ondrop)
-onFlick([<span class="tag str"></span>](types.md) player_color, [<span class="tag vec"></span>](types.md) impulse) | Called when a player flicks the object. | [:i:](#onflick)
-onHover([<span class="tag str"></span>](types.md) player_color) | Called when a player moves their pointer (cursor) over the object. | [:i:](#onhover)
-onNumberTyped([<span class="tag str"></span>](types.md) player_color, [<span class="tag int"></span>](types.md) number) | Called when a player types a number whilst hovering over the object. | [:i:](#onnumbertyped)
-onPageChange() | Called when a Custom PDF page is changed. | [:i:](#onpagechange)
-onPeek([<span class="tag str"></span>](types.md) player_color) | Called when a player using peek to look under this Object. | [:i:](#onpeek)
-onPickUp([<span class="tag str"></span>](types.md) player_color) | Called when a player picks up an Object. | [:i:](#onpickup)
-onRandomize([<span class="tag str"></span>](types.md) player_color) | Called when this Object is randomized. Like when shuffling a deck or shaking dice. | [:i:](#onrandomize)
-onSearchEnd([<span class="tag str"></span>](types.md) player_color) | Called when a player finishes searches this Object. | [:i:](#onsearchend)
-onSearchStart([<span class="tag str"></span>](types.md) player_color) | Called when a player starts searching this Object. | [:i:](#onsearchstart)
-tryObjectEnter([<span class="tag obj"></span>](types.md) entering_object) | Called when another object attempts to enter this Object (container). Return `false` to prevent the object entering. | [:i:](#tryObjectenter)
+filterObjectEnter([<span class="tag obj"></span>](types.md) obj) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnter(...)](#tryobjectenter)_.</p> Called when an object attempts to enter the script-owner Object (container). | [:i:](#tryobjectenter)
+onCollisionEnter([<span class="tag tab"></span>](types.md) collision_info) | Called when an Object starts colliding with the script-owner Object. | [:i:](#oncollisionenter)
+onCollisionExit([<span class="tag tab"></span>](types.md) collision_info) | Called when an Object stops colliding with the script-owner Object. | [:i:](#oncollisionexit)
+onCollisionStay([<span class="tag tab"></span>](types.md) collision_info) | Called **every frame** that an Object is colliding with the script-owner Object. | [:i:](#oncollisionstay)
+onDestroy() | Called when the script-owner Object is about to be destroyed. | [:i:](#ondestroy)
+onDrop([<span class="tag str"></span>](types.md) player_color) | Called when a player drops the script-owner Object. | [:i:](#ondrop)
+onFlick([<span class="tag str"></span>](types.md) player_color, [<span class="tag vec"></span>](types.md) impulse) | Called when a player flicks the script-owner Object | [:i:](#onflick)
+onHover([<span class="tag str"></span>](types.md) player_color) | Called when a player moves their pointer (cursor) over the script-owner Object. | [:i:](#onhover)
+onNumberTyped([<span class="tag str"></span>](types.md) player_color, [<span class="tag int"></span>](types.md) number) | Called when a player types a number whilst hovering over the script-owner Object. | [:i:](#onnumbertyped)
+onPageChange() | Called when the script-owner Custom PDF's page is changed. | [:i:](#onpagechange)
+onPeek([<span class="tag str"></span>](types.md) player_color) | Called when a player peeks at the script-owner Object. | [:i:](#onpeek)
+onPickUp([<span class="tag str"></span>](types.md) player_color) | Called when a player picks up the script-owner Object. | [:i:](#onpickup)
+onRandomize([<span class="tag str"></span>](types.md) player_color) | Called when the script-owner Object is randomized. Like when shuffling a deck or shaking dice. | [:i:](#onrandomize)
+onSearchEnd([<span class="tag str"></span>](types.md) player_color) | Called when a player finishes searches the script-owner Object. | [:i:](#onsearchend)
+onSearchStart([<span class="tag str"></span>](types.md) player_color) | Called when a player starts searching the script-owner Object. | [:i:](#onsearchstart)
+tryObjectEnter([<span class="tag obj"></span>](types.md) entering_object) | Called when another object attempts to enter the script-owner Object (container).| [:i:](#tryobjectenter)
+tryRandomize([<span class="tag str"></span>](types.md) player_color) | Called when a player attempts to randomize the script-owner Object. | [:i:](#tryobjectrandomize)
 
 ---
 
@@ -125,7 +129,7 @@ tryObjectEnter([<span class="tag obj"></span>](types.md) entering_object) | Call
 
 ###onChat(...)
 
-This function is called when a message is sent through the in-game chat. It does not trigger when global chat messages are sent. Using `#!lua return false` inside of this function prevents the chat message which triggered it to be suppressed.
+Called when a user sends an in-game chat message. Return `false` to prevent the message appearing in the chat window.
 
 !!!info "onChat(message, sender)"
 	* [<span class="tag str"></span>](types.md) **message**: Chat message which triggered the function.
@@ -143,7 +147,7 @@ end
 
 ###onExternalMessage(...)
 
-This function is called when an external script editor (like [Atom](atom.md)) sends a message back to the game. Used for custom editor functionality.
+Called when an external script editor (like [Atom](atom.md)) sends a message back to the game. Used for custom editor functionality.
 
 !!!info "onExternalMessage(data)"
 	* [<span class="tag tab"></span>](types.md) **data**: The data returned by the external editor into the game.
@@ -161,15 +165,22 @@ end
 
 Called **every physics tick** (90 times a second). This is a frame independent onUpdate().
 
-!!!warning
-	This is a very expensive function and can easily slow/crash your game if misused. Use with caution.
+!!!danger
+	Due to the frequency at which this function is called, any implementation must be very simple/fast, in order to avoid
+	slowing down your game.
 
-``` Lua
-function onFixedUpdate()
-	self.addTorque({0,100,0}, 1)
-end
-```
-
+!!!example
+	Print a message every 180 physics ticks.
+	``` Lua
+	local tick_count = 0
+	function onFixedUpdate()
+		tick_count = tick_count + 1
+		if tick_count >= 180 then
+			print("180 physics ticks passed.")
+			tick_count = 0
+		end
+	end
+	```
 
 ###onLoad(...)
 
@@ -223,7 +234,7 @@ other reason e.g. if the script-owner Object was pulled out of a container mid-g
 
 ###onObjectCollisionEnter(...)
 
-This function is called when an Object starts colliding with a [collision registered](object.md#registercollisions) Object.
+Called when an Object starts colliding with a [collision registered](object.md#registercollisions) Object.
 
 !!!info "onObjectCollisionEnter(registered_object, collision_info)"
 	* [<span class="tag obj"></span>](types.md) **registered_object**: The object registered to receive collision events.
@@ -254,7 +265,7 @@ end
 
 ###onObjectCollisionExit(...)
 
-This function is called when an Object stops colliding with a [collision registered](object.md#registercollisions) Object.
+Called when an Object stops colliding with a [collision registered](object.md#registercollisions) Object.
 
 !!!info "onObjectCollisionExit(registered_object, collision_info)"
 	* [<span class="tag obj"></span>](types.md) **registered_object**: The object registered to receive collision events.
@@ -285,10 +296,11 @@ end
 
 ###onObjectCollisionStay(...)
 
-This function is called **every frame** that an Object is colliding with a [collision registered](object.md#registercollisions) Object.
+Called **every frame** that an Object is colliding with a [collision registered](object.md#registercollisions) Object.
 
 !!!warning
-	This is a very expensive function and can easily slow/crash your game if misused. Use with caution.
+	Due to the frequency at which this function may be called, any implementation must be very simple/fast, in order to
+	avoid slowing down your game.
 
 !!!info "onObjectCollisionStay(registered_object, collision_info)"
 	* [<span class="tag obj"></span>](types.md) **registered_object**: The object registered to receive collision events.
@@ -318,15 +330,21 @@ end
 
 ###onObjectDestroy(...)
 
-Called whenever any object is destroyed. The dying Object has 1 frame left to live. This event fires immediately before the dying Object’s `onDestroy()` but their lifetime is the same final frame.
+Called whenever any Object is about to be destroyed.
 
-!!!info "onObjectDestroy(dying_object)"
-	* [<span class="tag obj"></span>](types.md) **dying_object**: The object that was destroyed.
+The Object reference is valid in this callback, but won't be valid next frame (as the Object will be destroyed by then).
 
-``` Lua
-function onObjectDestroy(destroyedObj)
-	print(destroyedObj.getName())
-end
+This event fires immediately before the Object’s [onDestroy()](#ondestroy).
+
+!!!info "onObjectDestroy(object)"
+	* [<span class="tag obj"></span>](types.md) **object**: The object that is about to be destroyed.
+
+!!!example
+	Print the name of the Object which is about to be destroyed.
+	``` Lua
+	function onObjectDestroy(object)
+		print(object.getName())
+	end
 ```
 
 ---
@@ -334,7 +352,7 @@ end
 
 ###onObjectDrop(...)
 
-Called whenever any object is dropped by a player.
+Called when any object is dropped by a player.
 
 !!!info "onObjectDrop(player_color, dropped_object)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player who dropped the Object.
@@ -530,22 +548,19 @@ Called when an object's Custom PDF page is changed.
 
 ###onObjectPeek(...)
 
-Called when a player using peek to look under an Object.
+Called when a player [peeks](https://kb.tabletopsimulator.com/player-guides/advanced-controls/#peek) at an Object.
 
 !!!info "onObjectPeek(object, player)"
-	* [<span class="tag obj"></span>](types.md) **object**: A reference to the Object which was peeked at.
-	* [<span class="tag str"></span>](types.md) **player**: Name of the [Player Color](player/colors.md) that peeked.
+	* [<span class="tag obj"></span>](types.md) **object**: The Object that was peeked at.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that peeked.
 
-
-
-``` Lua
-function onObjectPeek(object, color)
-	printToAll(color .. " peeked at an Object.", {1,0,0})
-end
-```
-
-
-
+!!!example
+	Print the color of the player that peeked at an object.
+	``` Lua
+	function onObjectPeek(object, player_color)
+		print(player_color .. " peeked at an Object.")
+	end
+	```
 
 ---
 
@@ -726,9 +741,9 @@ function.
 
 **Global Script**
 
-This is called whenever the user manually saves game, when an auto-save is created _and_ when a rewind checkpoint is
-created, by default, that's every 10 seconds. Due to the frequency at which this event handler is called, it's important
-that your function be fast.
+This event is called whenever the user manually saves game, when an auto-save is created _and_ when a rewind checkpoint
+is created, by default, that's every 10 seconds. Due to the frequency at which this event handler is called, it's
+important that your function be fast.
 
 **Object Script**
 
@@ -813,14 +828,22 @@ end
 
 Called **every frame**.
 
-!!!warning
-	This is a very expensive function and can easily slow/crash your game if misused. Use with caution.
+!!!danger
+	Due to the frequency at which this function is called, any implementation must be very simple/fast, in order to avoid
+	slowing down your game.
 
-``` Lua
-function onUpdate()
-	print("This will probably slow your game down.")
-end
-```
+!!!example
+	Print a message every 180 frames.
+	``` Lua
+	local frame_count = 0
+	function onFixedUpdate()
+	frame_count = frame_count + 1
+		if frame_count >= 180 then
+			print("180 frames passed.")
+			frame_count = 0
+		end
+	end
+	```
 
 ---
 
@@ -840,6 +863,23 @@ Called when an object attempts to enter a container. Return `false` to prevent t
 	end
 	```
 
+---
+
+###tryObjectRandomize(...)
+
+Called when a player attempts to randomize an Object. Return `false` to prevent the Object being randomized.
+
+!!!info "tryObjectRandomize(container, entering_object)"
+	* [<span class="tag obj"></span>](types.md) **object**: The Object the player is trying to randomize.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that is attempting the randomization.
+
+!!!example
+	Only allow the blue player to randomize objects.
+	```lua
+	function tryObjectRandomize(object, player_color)
+		return player_color == "Blue"
+	end
+	```
 
 ---
 
@@ -848,11 +888,11 @@ Called when an object attempts to enter a container. Return `false` to prevent t
 
 ###onCollisionEnter(...)
 
-This function is called when an Object starts colliding with the Object the function is on. Does not work in Global.
+Called when an Object starts colliding with the script-owner Object.
 
 !!!info "onCollisionEnter(collision_info)"
 	* [<span class="tag tab"></span>](types.md) **collision_info**: A table containing data about the collision.
-		* [<span class="tag obj"></span>](types.md) **collision_info.*collision_object***: Object coming into contact with `self`.
+		* [<span class="tag obj"></span>](types.md) **collision_info.*collision_object***: Object coming into contact with the script-owner Object.
 		* [<span class="tag tab"></span>](types.md) **collision_info.*contact_points***: Table/array full of contact points, where each 3D point is represented by a (number indexed) table, _not_ a [Vector](vector.md).
 		* [<span class="tag tab"></span>](types.md) **collision_info.*relative_velocity***: Table (number indexed) representation of a 3D vector (but _not_ a [Vector](vector.md)) indicating the direction and magnitude of the collision.
 ``` Lua
@@ -877,11 +917,11 @@ end
 
 ###onCollisionExit(...)
 
-This function is called when an Object stops colliding with the Object the function is on. Does not work in Global.
+Called when an Object stops colliding with the script-owner Object.
 
 !!!info "onCollisionExit(collision_info)"
 	* [<span class="tag tab"></span>](types.md) **collision_info**: A table containing data about the collision.
-		* [<span class="tag obj"></span>](types.md) **collision_info.*collision_object***: Object leaving contact with `self`.
+		* [<span class="tag obj"></span>](types.md) **collision_info.*collision_object***: Object leaving contact with the script-owner Object.
 		* [<span class="tag tab"></span>](types.md) **collision_info.*contact_points***: Table/array full of contact points, where each 3D point is represented by a (number indexed) table, _not_ a [Vector](vector.md).
 		* [<span class="tag tab"></span>](types.md) **collision_info.*relative_velocity***: Table (number indexed) representation of a 3D vector (but _not_ a [Vector](vector.md)) indicating the velocity of the object that has moved out of contact.
 
@@ -907,14 +947,15 @@ end
 
 ###onCollisionStay(...)
 
-This function is called **every frame** that an Object is colliding with the Object this function is on. Does not work in Global.
+Called **every frame** that an Object is colliding with the script-owner Object.
 
 !!!warning
-	This is a very expensive function and can easily slow/crash your game if misused. Use with caution.
+	Due to the frequency at which this function may be called, any implementation must be very simple/fast, in order to
+	avoid slowing down your game.
 
 !!!info "onCollisionStay(collision_info)"
 	* [<span class="tag tab"></span>](types.md) **collision_info**: A table containing data about the collision.
-		* [<span class="tag obj"></span>](types.md) **collision_info.*collision_object***: Object coming into contact with `self`.
+		* [<span class="tag obj"></span>](types.md) **collision_info.*collision_object***: Object coming into contact with the script-owner Object.
 		* [<span class="tag tab"></span>](types.md) **collision_info.*contact_points***: Table/array full of contact points, where each 3D point is represented by a (number indexed) table, _not_ a [Vector](vector.md).
 		* [<span class="tag tab"></span>](types.md) **collision_info.*relative_velocity***: Table (number indexed) representation of a 3D vector (but _not_ a [Vector](vector.md)) indicating the direction and magnitude of the collision.
 
@@ -940,19 +981,26 @@ end
 
 ###onDestroy()
 
-This function is called when an [Object](object.md) it is on is destroyed. When `onDestroy()` is called, the Object has one frame left to live but its recommended to avoid using it as a reference here. This event fires immediately after [onObjectDestroy()](#onobjectdestroy) but their lifetime is the same final frame. Does not work in Global.
+Called when the script-owner Object is about to be destroyed.
 
-``` Lua
-function onDestroy()
-	print("This object was destroyed!")
-end
-```
+The `self` (the script-owner Object) is valid in this callback, but won't be valid next frame (as the Object will be
+destroyed by then).
+
+This event fires immediately after [onObjectDestroy()](#onobjectdestroy).
+
+!!!example
+	Print a message when the script-owner Object is destroyed.
+	``` Lua
+	function onDestroy()
+		print("This object was destroyed!")
+	end
+	```
 
 ---
 
 ###onDrop(...)
 
-This event handler is called when this [Object](object.md) is dropped. Does not work in Global.
+Called when the script-owner Object is dropped.
 
 !!!info "onDrop(player_color)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player.
@@ -967,11 +1015,11 @@ end
 
 ###onFlick(...)
 
-Called when a player [flicks](https://kb.tabletopsimulator.com/game-tools/flick-tool/) this [Object](object.md).
+Called when a player [flicks](https://kb.tabletopsimulator.com/game-tools/flick-tool/) the script-owner Object.
 
 !!!info "onFlick(player_color, impulse)"
-* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who flicked this object.
-* [<span class="tag vec"></span>](types.md) **impulse**: The impulse applied to the object.
+* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who flicked the script-owner Object.
+* [<span class="tag vec"></span>](types.md) **impulse**: The impulse applied to the script-owner Object.
 
 !!!example
 	Print the player color and magnitude of the flick:
@@ -985,10 +1033,10 @@ Called when a player [flicks](https://kb.tabletopsimulator.com/game-tools/flick-
 
 ###onHover(...)
 
-Called when a player moves their pointer (cursor) over this [Object](object.md).
+Called when a player moves their pointer (cursor) over the script-owner Object.
 
 !!!info "onHover(player_color)"
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who moved the pointer over an object.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who moved the pointer over the script-owner Object.
 
 ``` Lua
 function onHover(player_color)
@@ -1000,9 +1048,10 @@ end
 
 ###onNumberTyped(...)
 
-Called when a player types a number whilst hovering over this [Object](object.md).
+Called when a player types a number whilst hovering over the script-owner Object.
 
-If you wish to prevent the default behavior (e.g. drawing a card, if this object were a deck) then you may return `true` to indicate you've handled the event yourself.
+If you wish to prevent the default behavior (e.g. drawing a card, if the script-owner Object is a deck) then you may
+return `true` to indicate you've handled the event yourself.
 
 !!!info "onNumberTyped(player_color, number)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that typed the number.
@@ -1017,7 +1066,7 @@ If you wish to prevent the default behavior (e.g. drawing a card, if this object
 	```
 
 !!!example
-	Prevent players drawing more than 2 cards at a time (from this object):
+	Prevent players drawing more than 2 cards at a time (from the script-owner Object):
 	``` Lua
 	function onNumberTyped(player_color, number)
 		if self.type == 'Deck' and number > 2 then
@@ -1031,10 +1080,10 @@ If you wish to prevent the default behavior (e.g. drawing a card, if this object
 
 ###onPageChange()
 
-Called when this [Object](object.md)'s Custom PDF page is changed.
+Called when the script-owner Custom PDF's page is changed.
 
 !!!example
-	Print this object's name and what page it changed to:
+	Print the script-owner Object's name and what page it changed to:
 	``` Lua
 	function onPageChange()
 		print(self.getName() .. " changed page to " .. self.Book.getPage())
@@ -1046,17 +1095,18 @@ Called when this [Object](object.md)'s Custom PDF page is changed.
 
 ###onPeek(...)
 
-Called when a player using peek to look under an Object.
+Called when a player [peeks](https://kb.tabletopsimulator.com/player-guides/advanced-controls/#peek) at the script-owner Object.
 
 !!!info "onPeek(player_color)"
-	* [<span class="tag str"></span>](types.md) **player_color**: Name of the [Player Color](player/colors.md) that peeked.
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that peeked.
 
-
-``` Lua
-function onPeek(color)
-	printToAll(color .. " peeked at an Object.", {1,0,0})
-end
-```
+!!!example
+	Print the color of the player that peeked at the script-owner Object.
+	``` Lua
+	function onPeek(player_color)
+		print(player_color .. " peeked.")
+	end
+	```
 
 
 ---
@@ -1064,7 +1114,7 @@ end
 
 ###onPickUp(...)
 
-Called when a player picks up an Object.
+Called when a player picks up the script-owner Object.
 
 !!!info "onPickUp(player_color)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player.
@@ -1081,7 +1131,7 @@ end
 
 ###onRandomize(...)
 
-Called when an Object is randomized. Like when shuffling a deck or shaking dice.
+Called when the script-owner Object is randomized. Like when shuffling a deck or shaking dice.
 
 !!!info "onRandomize(player_color)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who triggered the function.
@@ -1102,7 +1152,7 @@ end
 
 ###onSearchEnd(...)
 
-Called when a player first searches this Object.
+Called when a player first searches the script-owner Object.
 
 !!!info "onSearchEnd([<span class="tag str"></span>](types.md) player_color)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player.
@@ -1112,7 +1162,7 @@ Called when a player first searches this Object.
 
 ###onSearchStart(...)
 
-Called when a player finishes searching this Object.
+Called when a player finishes searching the script-owner Object.
 
 !!!info "onSearchStart([<span class="tag str"></span>](types.md) player_color)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player.
@@ -1121,16 +1171,35 @@ Called when a player finishes searching this Object.
 
 ###tryObjectEnter(...)
 
-Called when another object attempts to enter this Object (container). Return `false` to prevent the object entering.
+Called when another object attempts to enter the script-owner Object (container). Return `false` to prevent the object entering.
 
 !!!info "tryObjectEnter(entering_object)"
-	* [<span class="tag obj"></span>](types.md) **entering_object**: The object that has tried to enter the object this script is attached to.
+	* [<span class="tag obj"></span>](types.md) **entering_object**: The object that has tried to enter the script-owner Object.
 
 !!!example
-	Print the name of the object entering this container.
+	Print the name of the object entering the script-owner container.
 	```lua
 	function tryObjectEnter(entering_object)
 		print(entering_object.getName())
 		return true -- Allows the object to enter.
 	end
 	```
+
+---
+
+###tryRandomize(...)
+
+Called when a player attempts to randomize the script-owner Object. Return `false` to prevent the Object being randomized.
+
+!!!info "tryRandomize(container, entering_object)"
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that is attempting the randomization.
+
+!!!example
+	Only allow the blue player to randomize the script-owner Object.
+	```lua
+	function tryRandomize(player_color)
+		return player_color == "Blue"
+	end
+	```
+
+---
