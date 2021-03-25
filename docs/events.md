@@ -81,6 +81,7 @@ onObjectRandomize([<span class="tag obj"></span>](types.md) randomize_object, [<
 onObjectSearchEnd([<span class="tag obj"></span>](types.md) obj, [<span class="tag str"></span>](types.md) player_color) | Called when a search is finished on any container. | [:i:](#onobjectsearchend)
 onObjectSearchStart([<span class="tag obj"></span>](types.md) obj, [<span class="tag str"></span>](types.md) player_color) | Called when a search is started on any container. | [:i:](#onobjectsearchstart)
 onObjectSpawn([<span class="tag obj"></span>](types.md) spawn_object) | Called when any Object is spawned/created. | [:i:](#onobjectspawn)
+onObjectStateChange([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) old_state_guid) | Called after an object changes state. | [:i:](#onobjectstatechange)
 onObjectTriggerEffect([<span class="tag obj"></span>](types.md) trigger_object, [<span class="tag int"></span>](types.md) index) | Called whenever the trigger effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjecttriggereffect)
 onPlayerChangeColor([<span class="tag str"></span>](types.md) player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [:i:](#onplayerchangecolor)
 onPlayerChangeTeam([<span class="tag str"></span>](types.md) player_color,&nbsp;[<span class="tag str"></span>](types.md) team) | Called when a player changes team. | [:i:](#onplayerchangeteam)
@@ -121,8 +122,9 @@ onPickUp([<span class="tag str"></span>](types.md) player_color) | Called when a
 onRandomize([<span class="tag str"></span>](types.md) player_color) | Called when the script-owner Object is randomized. Like when shuffling a deck or shaking dice. | [:i:](#onrandomize)
 onSearchEnd([<span class="tag str"></span>](types.md) player_color) | Called when a player finishes searches the script-owner Object. | [:i:](#onsearchend)
 onSearchStart([<span class="tag str"></span>](types.md) player_color) | Called when a player starts searching the script-owner Object. | [:i:](#onsearchstart)
+onStateChange([<span class="tag str"></span>](types.md) old_state_guid) | Called when the script-owner Object spawned as a result of an Object state change. | [:i:](#onstatechange)
 tryObjectEnter([<span class="tag obj"></span>](types.md) entering_object) | Called when another object attempts to enter the script-owner Object (container).| [:i:](#tryobjectenter)
-tryRandomize([<span class="tag str"></span>](types.md) player_color) | Called when a player attempts to randomize the script-owner Object. | [:i:](#tryobjectrandomize)
+tryRandomize([<span class="tag str"></span>](types.md) player_color) | Called when a player attempts to randomize the script-owner Object. | [:i:](#tryrandomize)
 
 ---
 
@@ -662,6 +664,25 @@ end
 
 ---
 
+###onObjectStateChange(...)
+
+Called after an object changes state.
+
+!!!info "onObjectStateChange(object, old_state_guid)"
+	* [<span class="tag obj"></span>](types.md) **object**: The new Object that spawned as a result of the state change.
+	* [<span class="tag str"></span>](types.md) **old_state_guid**: The GUID of previous state/Object.
+
+!!!example
+	Print the current and previous Object state GUIDs.
+	``` Lua
+	function onObjectStateChange(object, old_state_guid)
+		print("New state GUID: " .. object.guid)
+		print("Previous state GUID: " .. old_state_guid)
+	end
+	```
+
+---
+
 
 ###onObjectTriggerEffect(...)
 
@@ -1190,6 +1211,24 @@ Called when a player finishes searching the script-owner Object.
 
 !!!info "onSearchStart([<span class="tag str"></span>](types.md) player_color)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player.
+
+---
+
+###onStateChange(...)
+
+Called when the script-owner Object spawned as a result of an Object state change.
+
+!!!info "onStateChange(old_state_guid)"
+	* [<span class="tag str"></span>](types.md) **old_state_guid**: The GUID of previous state/Object.
+
+!!!example
+	Print the current and previous Object state GUIDs.
+	``` Lua
+	function onStateChange(old_state_guid)
+		print("New state GUID: " .. self.guid)
+		print("Previous state GUID: " .. old_state_guid)
+	end
+	```
 
 ---
 
