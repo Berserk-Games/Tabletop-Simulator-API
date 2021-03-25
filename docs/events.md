@@ -83,9 +83,9 @@ onObjectSpawn([<span class="tag obj"></span>](types.md) spawn_object) | Called w
 onObjectTriggerEffect([<span class="tag obj"></span>](types.md) trigger_object, [<span class="tag int"></span>](types.md) index) | Called whenever the trigger effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjecttriggereffect)
 onPlayerChangeColor([<span class="tag str"></span>](types.md) player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [:i:](#onplayerchangecolor)
 onPlayerChangeTeam([<span class="tag str"></span>](types.md) player_color,&nbsp;[<span class="tag str"></span>](types.md) team) | Called when a player changes team. | [:i:](#onplayerchangeteam)
-onPlayerConnect([<span class="tag pla"></span>](types.md) person) | Called when a [Player](player/instance.md) connects to a game. | [:i:](#onplayerconnect)
-onPlayerDisconnect([<span class="tag pla"></span>](types.md) person) | Called when a [Player](player/instance.md) disconnects from a game. | [:i:](#onplayerdisconnect)
-onPlayerTurn([<span class="tag pla"></span>](types.md) person) | Called at the start of a player's turn when using the in-game turn system. | [:i:](#onplayerturn)
+onPlayerConnect([<span class="tag pla"></span>](types.md) player) | Called when a [Player](player/instance.md) connects to a game. | [:i:](#onplayerconnect)
+onPlayerDisconnect([<span class="tag pla"></span>](types.md) player) | Called when a [Player](player/instance.md) disconnects from a game. | [:i:](#onplayerdisconnect)
+onPlayerTurn([<span class="tag pla"></span>](types.md) player) | Called at the start of a player's turn when using the in-game turn system. | [:i:](#onplayerturn)
 onSave() | Called whenever a script needs to save its state. | [:i:](#onsave)
 onScriptingButtonDown([<span class="tag int"></span>](types.md) index, [<span class="tag str"></span>](types.md) player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [:i:](#onscriptingbuttondown)
 onScriptingButtonUp([<span class="tag int"></span>](types.md) index, [<span class="tag str"></span>](types.md) player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [:i:](#onscriptingbuttonup)
@@ -201,7 +201,7 @@ other reason e.g. if the script-owner Object was pulled out of a container mid-g
 
 !!!example
 	Decodes a JSON representation of a game state, consisting of nested tables, strings, numbers and object GUIDs. Then
-	obtains an object reference from the saved GUID.
+	obtains an Object from the saved GUID.
 	```lua
     local some_object -- We'll store an object reference to use later.
 
@@ -332,7 +332,8 @@ end
 
 Called whenever any Object is about to be destroyed.
 
-The Object reference is valid in this callback, but won't be valid next frame (as the Object will be destroyed by then).
+The Object reference (`object`) is valid in this callback, but won't be valid next frame (as the Object will be
+destroyed by then).
 
 This event fires immediately before the Object’s [onDestroy()](#ondestroy).
 
@@ -697,8 +698,8 @@ end
 
 Called when a [Player](player/instance.md) connects to a game.
 
-!!!info "onPlayerConnect(person)"
-	* [<span class="tag pla"></span>](types.md) **person**: [Player](player/instance.md) reference to who connected.
+!!!info "onPlayerConnect(player)"
+	* [<span class="tag pla"></span>](types.md) **player**: [Player](player/instance.md) that connected.
 
 ---
 
@@ -707,8 +708,8 @@ Called when a [Player](player/instance.md) connects to a game.
 
 Called when a [Player](player/instance.md) disconnects from a game.
 
-!!!info "onPlayerDisconnect(person)"
-	* [<span class="tag pla"></span>](types.md) **person**: [Player](player/instance.md) reference to who disconnected.
+!!!info "onPlayerDisconnect(player)"
+	* [<span class="tag pla"></span>](types.md) **player**: [Player](player/instance.md) that disconnected.
 
 ---
 
@@ -716,12 +717,12 @@ Called when a [Player](player/instance.md) disconnects from a game.
 ###onPlayerTurn(...)
 Called at the start of a player's turn when using the in-game turn system.
 
-!!!info "onPlayerTurn(person)"
-	* [<span class="tag pla"></span>](types.md) **person**: [Player](player/instance.md) who's turn is starting.
+!!!info "onPlayerTurn(player)"
+	* [<span class="tag pla"></span>](types.md) **player**: [Player](player/instance.md) who's turn is starting.
 
 ``` Lua
-function onPlayerTurn(person)
-	print(person.color .. "'s turn starts now.")
+function onPlayerTurn(player)
+	print(player.color .. "'s turn starts now.")
 end
 ```
 
@@ -764,7 +765,7 @@ be saved mid-game e.g. when the script-owner Object enters a container.
 
 !!!example
 	Returns a JSON encoding of a game state consisting of nested tables, strings, numbers and object references
-	(encoded as GUIDs). In this example, `some_object` is a reference to an [Object](object.md).
+	(encoded as GUIDs). In this example, `some_object` is an [Object](object.md).
 	```lua
 	function onSave()
 		local state = {
