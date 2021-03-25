@@ -204,7 +204,7 @@ getSelectingPlayers() {: data-toc-label="getSelectingPlayers()" data-toc-child-o
 getStateId() {: data-toc-label="getStateId()" data-toc-child-of="get-function-details" } | Current [state](https://kb.tabletopsimulator.com/host-guides/creating-states/) ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1. | [<span class="ret int"></span>](types.md) |
 getStates() | Returns a Table of information on the [states](https://kb.tabletopsimulator.com/host-guides/creating-states/) of an Object. | [<span class="ret tab"></span>](types.md) | [:i:](#getstates)
 getValue() | Returns the Object's value. This represents something different depending on the Object's [type](#type). | [<span class="ret var"></span>](types.md) | [:i:](#getvalue)
-isDestroyed() {: data-toc-label="isDestroyed()" data-toc-child-of="get-function-details" } | Returns true if an Object is (or will be) destroyed. | [<span class="ret boo"></span>](types.md) |
+isDestroyed() {: data-toc-label="isDestroyed()" data-toc-child-of="get-function-details" } | Returns true if the Object is (or will be) destroyed. | [<span class="ret boo"></span>](types.md) |
 
 
 
