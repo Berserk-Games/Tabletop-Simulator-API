@@ -899,15 +899,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-deck" class="md-nav__link">
-    Custom Deck
+  <a href="#custom-card" class="md-nav__link">
+    Custom Card
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-card" class="md-nav__link">
-    Custom Card
+  <a href="#custom-deck" class="md-nav__link">
+    Custom Deck
   </a>
   
 </li>
@@ -1245,15 +1245,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-deck" class="md-nav__link">
-    Custom Deck
+  <a href="#custom-card" class="md-nav__link">
+    Custom Card
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-card" class="md-nav__link">
-    Custom Card
+  <a href="#custom-deck" class="md-nav__link">
+    Custom Deck
   </a>
   
 </li>
@@ -1337,8 +1337,8 @@
 <p class="admonition-title">Custom Parameters</p>
 <ul>
 <li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>assetbundle</strong>: The path/url for the AssetBundle.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>assetbundle_secondary</strong>: The path/url for the secondary AssetBundle property.<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>assetbundle</strong>: The path/URL for the AssetBundle.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>assetbundle_secondary</strong>: The path/URL for the secondary AssetBundle property.<ul>
 <li><span class="critic comment">Optional, is not used by default.</span></li>
 </ul>
 </li>
@@ -1378,7 +1378,36 @@
 <p class="admonition-title">Custom Parameters</p>
 <ul>
 <li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>image</strong>: The path/url for the board.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>image</strong>: The path/URL for the board.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="custom-card">Custom Card<a class="headerlink" href="#custom-card" title="Permanent link">&para;</a></h2>
+<ul>
+<li>CardCustom</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Custom Parameters</p>
+<ul>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
+<li><a href="../types/"><span class="tag int"></span></a> <strong>type</strong>: The card shape.<ul>
+<li><span class="critic comment">Optional, defaults to 0.</span><ul>
+<li><strong>0</strong>: Rectangle (Rounded)</li>
+<li><strong>1</strong>: Rectangle</li>
+<li><strong>2</strong>: Hex (Rounded)</li>
+<li><strong>3</strong>: Hex</li>
+<li><strong>4</strong>: Circle</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>face</strong>: The path/URL of the face image.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>back</strong>: The path/URL of the back image.</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>sideways</strong>: If the card is horizontal, instead of vertical.<ul>
+<li><span class="critic comment">Optional, defaults to false.</span></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1391,8 +1420,8 @@
 <p class="admonition-title">Custom Parameters</p>
 <ul>
 <li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>face</strong>: The path/url of the face cardsheet.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>back</strong>: The path/url of the back cardsheet or card back.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>face</strong>: The path/URL of the face cardsheet.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>back</strong>: The path/URL of the back cardsheet or card back.</li>
 <li><a href="../types/"><span class="tag boo"></span></a> <strong>unique_back</strong>: If each card has a unique card back (via a cardsheet).<ul>
 <li><span class="critic comment">Optional, defaults to false.</span></li>
 </ul>
@@ -1409,40 +1438,11 @@
 <li><span class="critic comment">Optional, defaults to 52.</span></li>
 </ul>
 </li>
-<li><a href="../types/"><span class="tag boo"></span></a> <strong>sideways</strong>: If the cards are horizontal instead of vertical.<ul>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>sideways</strong>: Whether the cards are horizontal, instead of vertical.<ul>
 <li><span class="critic comment">Optional, defaults to false.</span></li>
 </ul>
 </li>
-<li><a href="../types/"><span class="tag boo"></span></a> <strong>back_is_hidden</strong>: If cards have a special face that shows up when hidden in a hand zone.<ul>
-<li><span class="critic comment">Optional, defaults to false.</span></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<h2 id="custom-card">Custom Card<a class="headerlink" href="#custom-card" title="Permanent link">&para;</a></h2>
-<ul>
-<li>CardCustom</li>
-</ul>
-<div class="admonition info">
-<p class="admonition-title">Custom Parameters</p>
-<ul>
-<li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
-<li><a href="../types/"><span class="tag int"></span></a> <strong>type</strong>: An Int representing the Card's shape.<ul>
-<li><span class="critic comment">Optional, defaults to 0.</span><ul>
-<li><strong>0</strong>: Rectangle (Rounded)</li>
-<li><strong>1</strong>: Rectangle</li>
-<li><strong>2</strong>: Hex (Rounded)</li>
-<li><strong>3</strong>: Hex</li>
-<li><strong>4</strong>: Circle</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>face</strong>: The path/url of the face image.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>back</strong>: The path/url of the back image.</li>
-<li><a href="../types/"><span class="tag boo"></span></a> <strong>sideways</strong>: If the cards are horizontal instead of vertical.<ul>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>back_is_hidden</strong>: Whether the card back should be used as the hidden image (instead of the last slot of the <code>face</code> image).<ul>
 <li><span class="critic comment">Optional, defaults to false.</span></li>
 </ul>
 </li>
@@ -1458,7 +1458,7 @@
 <p class="admonition-title">Custom Parameters</p>
 <ul>
 <li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>image</strong>: The path/url for the <a href="https://kb.tabletopsimulator.com/custom-content/custom-dice/">custom die</a>.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>image</strong>: The path/URL for the <a href="https://kb.tabletopsimulator.com/custom-content/custom-dice/">custom die</a>.</li>
 <li><a href="../types/"><span class="tag int"></span></a> <strong>type</strong>: The type of die, which determines its number of sides.<ul>
 <li><span class="critic comment">Optional, defaults to 1.</span><ul>
 <li><strong>0</strong>: 4-sided</li>
@@ -1483,8 +1483,8 @@
 <p class="admonition-title">Custom Parameters</p>
 <ul>
 <li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>image</strong>: The path/url for the <a href="https://kb.tabletopsimulator.com/custom-content/custom-figurine/">custom figurine</a>.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>image_secondary</strong>: The path/url for the custom figurine's back.<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>image</strong>: The path/URL for the <a href="https://kb.tabletopsimulator.com/custom-content/custom-figurine/">custom figurine</a>.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>image_secondary</strong>: The path/URL for the custom figurine's back.<ul>
 <li><span class="critic comment">Optional, defaults to &quot;image&quot;.</span></li>
 </ul>
 </li>
@@ -1500,17 +1500,17 @@
 <p class="admonition-title">Custom Parameters</p>
 <ul>
 <li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>mesh</strong>: The path/url for the .obj mesh used on the <a href="https://kb.tabletopsimulator.com/custom-content/custom-model/">custom model</a>.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>diffuse</strong>: The path/url for the diffuse image.</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>normal</strong>: The path/url for the normals image.<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>mesh</strong>: The path/URL for the .obj mesh used on the <a href="https://kb.tabletopsimulator.com/custom-content/custom-model/">custom model</a>.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>diffuse</strong>: The path/URL for the diffuse image.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>normal</strong>: The path/URL for the normals image.<ul>
 <li><span class="critic comment">Optional, is not used by default.</span></li>
 </ul>
 </li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>collider</strong>: The path/url for the collider mesh.<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>collider</strong>: The path/URL for the collider mesh.<ul>
 <li><span class="critic comment">Optional, defaults to a generic box collider.</span></li>
 </ul>
 </li>
-<li><a href="../types/"><span class="tag boo"></span></a> <strong>convex</strong>: If the object model is convex.<ul>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>convex</strong>: Whether the object model is convex.<ul>
 <li><span class="critic comment">Optional, defaults to false.</span></li>
 </ul>
 </li>
@@ -1554,7 +1554,7 @@
 <li><span class="critic comment">Optional, defaults to 0.1.</span></li>
 </ul>
 </li>
-<li><a href="../types/"><span class="tag boo"></span></a> <strong>cast_shadows</strong>: If the Object casts shadows.<ul>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>cast_shadows</strong>: Whether the Object casts shadows.<ul>
 <li><span class="critic comment">Optional, defaults to true.</span></li>
 </ul>
 </li>
@@ -1570,7 +1570,7 @@
 <p class="admonition-title">Custom Parameters</p>
 <ul>
 <li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>image</strong>: The path/url for the <a href="https://kb.tabletopsimulator.com/custom-content/custom-tile/">custom tile</a> image.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>image</strong>: The path/URL for the <a href="https://kb.tabletopsimulator.com/custom-content/custom-tile/">custom tile</a> image.</li>
 <li><a href="../types/"><span class="tag int"></span></a> <strong>type</strong>: Determines the shape of the tile.<ul>
 <li><span class="critic comment">Optional, defaults to 0.</span><ul>
 <li><strong>0</strong>: Square/Rectangle</li>
@@ -1580,7 +1580,7 @@
 </li>
 </ul>
 </li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>image_bottom</strong>: The path/url for the bottom-side image.<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>image_bottom</strong>: The path/URL for the bottom-side image.<ul>
 <li><span class="critic comment">Optional, uses the top image by default.</span></li>
 </ul>
 </li>
@@ -1588,7 +1588,7 @@
 <li><span class="critic comment">Optional, defaults to 0.5.</span></li>
 </ul>
 </li>
-<li><a href="../types/"><span class="tag boo"></span></a> <strong>stackable</strong>: If these tiles stack together into a pile.<ul>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>stackable</strong>: Whether these tiles stack together into a pile.<ul>
 <li><span class="critic comment">Optional, defaults to false.</span></li>
 </ul>
 </li>
@@ -1604,16 +1604,16 @@
 <p class="admonition-title">Custom Parameters</p>
 <ul>
 <li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters which determine the properties of the Object.<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>image</strong>: The path/url for the <a href="https://kb.tabletopsimulator.com/custom-content/custom-token/">custom token</a> image.</li>
-<li><a href="../types/"><span class="tag flo"></span></a> <strong>thickness</strong>: How thick the tile is.<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>image</strong>: The path/URL for the <a href="https://kb.tabletopsimulator.com/custom-content/custom-token/">custom token</a> image.</li>
+<li><a href="../types/"><span class="tag flo"></span></a> <strong>thickness</strong>: How thick the token is.<ul>
 <li><span class="critic comment">Optional, defaults to 0.2.</span></li>
 </ul>
 </li>
-<li><a href="../types/"><span class="tag flo"></span></a> <strong>mege_distance</strong>: How accurate the edges are to the image.<ul>
+<li><a href="../types/"><span class="tag flo"></span></a> <strong>merge_distance</strong>: How accurately the token shape will trace image edge (in pixels).<ul>
 <li><span class="critic comment">Optional, defaults to 15.</span></li>
 </ul>
 </li>
-<li><a href="../types/"><span class="tag boo"></span></a> <strong>stackable</strong>: If these tiles stack together into a pile.<ul>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>stackable</strong>: Whether these tokens stack together into a pile.<ul>
 <li><span class="critic comment">Optional, defaults to false.</span></li>
 </ul>
 </li>
