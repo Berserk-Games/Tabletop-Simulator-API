@@ -2348,21 +2348,21 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onPlayerConnect(<a href="../types/"><span class="tag pla"></span></a> person)</td>
+<td>onPlayerConnect(<a href="../types/"><span class="tag pla"></span></a> player)</td>
 <td>Called when a <a href="../player/instance/">Player</a> connects to a game.</td>
 <td><a href="#onplayerconnect"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onPlayerDisconnect(<a href="../types/"><span class="tag pla"></span></a> person)</td>
+<td>onPlayerDisconnect(<a href="../types/"><span class="tag pla"></span></a> player)</td>
 <td>Called when a <a href="../player/instance/">Player</a> disconnects from a game.</td>
 <td><a href="#onplayerdisconnect"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onPlayerTurn(<a href="../types/"><span class="tag pla"></span></a> person)</td>
+<td>onPlayerTurn(<a href="../types/"><span class="tag pla"></span></a> player)</td>
 <td>Called at the start of a player's turn when using the in-game turn system.</td>
 <td><a href="#onplayerturn"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -2617,7 +2617,7 @@ from <a href="#onsave">onSave(...)</a>, or an empty string if there is no saved 
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Decodes a JSON representation of a game state, consisting of nested tables, strings, numbers and object GUIDs. Then
-obtains an object reference from the saved GUID.
+obtains an Object from the saved GUID.
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">some_object</span> <span class="c1">-- We&#39;ll store an object reference to use later.</span>
 
 <span class="kr">function</span> <span class="nf">onLoad</span><span class="p">(</span><span class="n">script_state</span><span class="p">)</span>
@@ -2741,7 +2741,8 @@ avoid slowing down your game.</p>
 <hr />
 <h3 id="onobjectdestroy">onObjectDestroy(...)<a class="headerlink" href="#onobjectdestroy" title="Permanent link">&para;</a></h3>
 <p>Called whenever any Object is about to be destroyed.</p>
-<p>The Object reference is valid in this callback, but won't be valid next frame (as the Object will be destroyed by then).</p>
+<p>The Object reference (<code>object</code>) is valid in this callback, but won't be valid next frame (as the Object will be
+destroyed by then).</p>
 <p>This event fires immediately before the Object’s <a href="#ondestroy">onDestroy()</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">onObjectDestroy(object)</p>
@@ -3065,31 +3066,31 @@ end</p>
 <h3 id="onplayerconnect">onPlayerConnect(...)<a class="headerlink" href="#onplayerconnect" title="Permanent link">&para;</a></h3>
 <p>Called when a <a href="../player/instance/">Player</a> connects to a game.</p>
 <div class="admonition info">
-<p class="admonition-title">onPlayerConnect(person)</p>
+<p class="admonition-title">onPlayerConnect(player)</p>
 <ul>
-<li><a href="../types/"><span class="tag pla"></span></a> <strong>person</strong>: <a href="../player/instance/">Player</a> reference to who connected.</li>
+<li><a href="../types/"><span class="tag pla"></span></a> <strong>player</strong>: <a href="../player/instance/">Player</a> that connected.</li>
 </ul>
 </div>
 <hr />
 <h3 id="onplayerdisconnect">onPlayerDisconnect(...)<a class="headerlink" href="#onplayerdisconnect" title="Permanent link">&para;</a></h3>
 <p>Called when a <a href="../player/instance/">Player</a> disconnects from a game.</p>
 <div class="admonition info">
-<p class="admonition-title">onPlayerDisconnect(person)</p>
+<p class="admonition-title">onPlayerDisconnect(player)</p>
 <ul>
-<li><a href="../types/"><span class="tag pla"></span></a> <strong>person</strong>: <a href="../player/instance/">Player</a> reference to who disconnected.</li>
+<li><a href="../types/"><span class="tag pla"></span></a> <strong>player</strong>: <a href="../player/instance/">Player</a> that disconnected.</li>
 </ul>
 </div>
 <hr />
 <h3 id="onplayerturn">onPlayerTurn(...)<a class="headerlink" href="#onplayerturn" title="Permanent link">&para;</a></h3>
 <p>Called at the start of a player's turn when using the in-game turn system.</p>
 <div class="admonition info">
-<p class="admonition-title">onPlayerTurn(person)</p>
+<p class="admonition-title">onPlayerTurn(player)</p>
 <ul>
-<li><a href="../types/"><span class="tag pla"></span></a> <strong>person</strong>: <a href="../player/instance/">Player</a> who's turn is starting.</li>
+<li><a href="../types/"><span class="tag pla"></span></a> <strong>player</strong>: <a href="../player/instance/">Player</a> who's turn is starting.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onPlayerTurn</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">.</span><span class="n">color</span> <span class="o">..</span> <span class="s2">&quot;&#39;s turn starts now.&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onPlayerTurn</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">color</span> <span class="o">..</span> <span class="s2">&quot;&#39;s turn starts now.&quot;</span><span class="p">)</span>
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
@@ -3123,7 +3124,7 @@ and in <a href="#onload">onLoad(...)</a> obtain a new Object reference via
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Returns a JSON encoding of a game state consisting of nested tables, strings, numbers and object references
-(encoded as GUIDs). In this example, <code>some_object</code> is a reference to an <a href="../object/">Object</a>.
+(encoded as GUIDs). In this example, <code>some_object</code> is an <a href="../object/">Object</a>.
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onSave</span><span class="p">()</span>
     <span class="kd">local</span> <span class="n">state</span> <span class="o">=</span> <span class="p">{</span>
         <span class="n">questions</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">-- nested table</span>
@@ -3217,7 +3218,7 @@ slowing down your game.</p>
 <h3 id="tryobjectrandomize">tryObjectRandomize(...)<a class="headerlink" href="#tryobjectrandomize" title="Permanent link">&para;</a></h3>
 <p>Called when a player attempts to randomize an Object. Return <code>false</code> to prevent the Object being randomized.</p>
 <div class="admonition info">
-<p class="admonition-title">tryObjectRandomize(container, entering_object)</p>
+<p class="admonition-title">tryObjectRandomize(object, player_color)</p>
 <ul>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: The Object the player is trying to randomize.</li>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player that is attempting the randomization.</li>
@@ -3504,7 +3505,7 @@ return <code>true</code> to indicate you've handled the event yourself.</p>
 <h3 id="tryrandomize">tryRandomize(...)<a class="headerlink" href="#tryrandomize" title="Permanent link">&para;</a></h3>
 <p>Called when a player attempts to randomize the script-owner Object. Return <code>false</code> to prevent the Object being randomized.</p>
 <div class="admonition info">
-<p class="admonition-title">tryRandomize(container, entering_object)</p>
+<p class="admonition-title">tryRandomize(player_color)</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player that is attempting the randomization.</li>
 </ul>
