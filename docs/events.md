@@ -56,6 +56,7 @@ As described above, you may declare these functions in the [Global script](intro
 Function Name | Description | &nbsp;
 -- | -- | --
 filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) enter_object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer(...)](#tryobjectentercontainer)_.</p> Called when an object attempts to enter any container. | [:i:](#tryobjectentercontainer)
+onBlindfold([<span class="tag pla"></span>](types.md) player, [<span class="tag boo"></span>](types.md) blindfolded) | Called when a player puts on or takes off their blindfold. | [:i:](#onblindfold)
 onChat([<span class="tag str"></span>](types.md) message, [<span class="tag pla"></span>](types.md) sender) | Called when a user sends an in-game chat message. | [:i:](#onchat)
 onExternalMessage([<span class="tag tab"></span>](types.md) data) | Called when an external script editor (like [Atom](atom.md)) sends a message back to the game. Used for custom editor functionality. | [:i:](#onexternalmessage)
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [:i:](#onfixedupdate)
@@ -126,6 +127,28 @@ tryRandomize([<span class="tag str"></span>](types.md) player_color) | Called wh
 ---
 
 ## Universal Event Handler Details
+
+###onBlindfold(...)
+
+Called when a player puts on or takes off their blindfold.
+
+!!!info "onBlindfold(player, blindfolded)"
+	* [<span class="tag pla"></span>](types.md) **player**: [Player](player/instance.md) who put on or took off their blindfold.
+	* [<span class="tag boo"></span>](types.md) **blindfolded**: Whether the player is now blindfolded.
+
+!!!example
+	Print a message indicating which player put on or took off their blindfold.
+	``` Lua
+	function onBlindfold(player, blindfolded)
+		if blindfolded then
+			print(player.color .. " put their blindfold on.")
+		else
+			print(player.color .. " took their blindfold off.")
+		end
+	end
+	```
+
+---
 
 ###onChat(...)
 
