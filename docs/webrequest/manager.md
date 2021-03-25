@@ -123,7 +123,7 @@ Performs a HTTP POST request, sending the specified data. Returns a [Web Request
 The form will be sent as the body of the request (`Content-Type: application/x-www-form-urlencoded`).
 
 !!!info "post(url, form, callback_function)"
-    * [<span class="tag str"></span>](../types.md) **url**: The url to pull post to.
+    * [<span class="tag str"></span>](../types.md) **url**: The URL.
     * [<span class="tag tab"></span>](../types.md)/[<span class="tag str"></span>](../types.md) **form**: The form to post.
     * [<span class="tag fun"></span>](../types.md#function) **callback_function**: Called when the request completes (or fails). Passed the [Web Request Instance](instance.md).
         * {>>Optional, but you will be unable to handle the response (or errors) if unused.<<}
@@ -141,7 +141,7 @@ Performs a HTTP PUT request, sending the specified data. Returns a [Web Request 
 The data will be UTF-8 encoded and sent as binary data in the body of the request (`Content-Type: application/octet-stream`).
 
 !!!info "put(url, data, callback_function)"
-    * [<span class="tag str"></span>](../types.md) **url**: The url to pull post to.
-    * [<span class="tag str"></span>](../types.md) **data**: The data to post.
+    * [<span class="tag str"></span>](../types.md) **url**: The URL.
+    * [<span class="tag str"></span>](../types.md) **data**: The request body.
     * [<span class="tag fun"></span>](../types.md#function) **callback_function**: Called when the request completes (or fails). Passed the [Web Request Instance](instance.md).
         * {>>Optional, but you will be unable to handle the response (or errors) if unused.<<}
