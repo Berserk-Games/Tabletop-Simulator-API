@@ -1213,10 +1213,15 @@
 
 
 <!-- Markdown content -->
-<p>The static global Info class allows you to interact with Hand Objects. This allows you to manipulate the Info properties in the same way as the in-game interface.</p>
-<blockquote>
-<p>Example Usage:<code class="highlight"><span class="n">Info</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;My Game&quot;</span></code>.</p>
-</blockquote>
+<p><code>Info</code> global allows you to manipulate the information about your game/mod, in the same way as the in-game Options -&gt;
+Info menu.</p>
+<p>This information helps players find your game/mod within Tabletop Simulator's server list and via Steam Workshop's
+search/filter capabilities.</p>
+<div class="admonition example">
+<p class="admonition-title">Example Usage</p>
+<div class="highlight"><pre><span></span><code><span class="n">Info</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;My Game&quot;</span>
+</code></pre></div>
+</div>
 <h2 id="member-variables">Member Variables<a class="headerlink" href="#member-variables" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1228,34 +1233,34 @@
 </thead>
 <tbody>
 <tr>
-<td id="name">name</td>
-<td>Name of the current game.</td>
-<td align="left"><a href="../types/"><span class="tag str"></span></a></td>
-</tr>
-<tr>
-<td id="type">type</td>
-<td>The type of the game you are playing.</td>
-<td align="left"><a href="../types/"><span class="tag str"></span></a></td>
-</tr>
-<tr>
 <td id="complexity">complexity</td>
-<td>The complexity of the game you are playing.</td>
+<td>The complexity of the current game/mod.</td>
 <td align="left"><a href="../types/"><span class="tag str"></span></a></td>
 </tr>
 <tr>
-<td id="playing_time">playing_time</td>
-<td>The amount of time the current game takes.</td>
-<td align="left"><a href="../types/"><span class="tag tab"></span></a></td>
+<td id="name">name</td>
+<td>Name of the current game/mod.</td>
+<td align="left"><a href="../types/"><span class="tag str"></span></a></td>
 </tr>
 <tr>
 <td id="number_of_players">number_of_players</td>
-<td>The number of players the current game allows.</td>
+<td>The number of players the current game/mod allows.</td>
+<td align="left"><a href="../types/"><span class="tag tab"></span></a></td>
+</tr>
+<tr>
+<td id="playing_time">playing_time</td>
+<td>The amount of time the current game/mod takes.</td>
 <td align="left"><a href="../types/"><span class="tag tab"></span></a></td>
 </tr>
 <tr>
 <td id="tags">tags</td>
-<td>The tags are used to filter your games.</td>
+<td>The tags associated with the current game/mod.</td>
 <td align="left"><a href="../types/"><span class="tag tab"></span></a></td>
+</tr>
+<tr>
+<td id="type">type</td>
+<td>The category of the current mod.</td>
+<td align="left"><a href="../types/"><span class="tag str"></span></a></td>
 </tr>
 </tbody>
 </table>
