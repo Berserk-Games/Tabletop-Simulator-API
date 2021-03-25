@@ -5,11 +5,11 @@ The AssetBundle behavior is present on Objects that were created from a
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-getLoopingEffectIndex() {: #getloopingeffectindex data-toc-label="" data-toc-child-of="function-details" } | [<span class="ret int"></span>](../types.md) | Index of the currently looping effect. Indexs starts at 0. |
+getLoopingEffectIndex() {: #getloopingeffectindex data-toc-label="" data-toc-child-of="function-details" } | [<span class="ret int"></span>](../types.md) | Index of the currently looping effect. Indexes starts at 0. |
 getLoopingEffects() | [<span class="ret tab"></span>](../types.md) | Returns a Table with the keys "index" and "name" for each looping effect. | [:i:](#getloopingeffects)
 getTriggerEffects() | [<span class="ret tab"></span>](../types.md) | Returns a Table with the keys "index" and "name" for each trigger effect. | [:i:](#gettriggereffects)
-playLoopingEffect([<span class="tag int"></span>](../types.md) index) {: #playloopingeffect data-toc-label="playLoopingEffect(...)" data-toc-child-of="function-details" } | [<span class="ret nil"></span>](../types.md) | Starts playing a looping effect. Indexs starts at 0. |
-playTriggerEffect([<span class="tag int"></span>](../types.md) index) {: #playtriggereffect data-toc-label="playTriggerEffect(...)" data-toc-child-of="function-details" } | [<span class="ret nil"></span>](../types.md) | Starts playing a trigger effect. Indexs starts at 0. |
+playLoopingEffect([<span class="tag int"></span>](../types.md) index) {: #playloopingeffect data-toc-label="playLoopingEffect(...)" data-toc-child-of="function-details" } | [<span class="ret nil"></span>](../types.md) | Starts playing a looping effect. Indexes starts at 0. |
+playTriggerEffect([<span class="tag int"></span>](../types.md) index) {: #playtriggereffect data-toc-label="playTriggerEffect(...)" data-toc-child-of="function-details" } | [<span class="ret nil"></span>](../types.md) | Starts playing a trigger effect. Indexes starts at 0. |
 
 ---
 
