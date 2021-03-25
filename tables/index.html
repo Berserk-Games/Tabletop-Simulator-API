@@ -907,6 +907,74 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#table-names" class="md-nav__link">
+    Table Names
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-details" class="md-nav__link">
+    Function Details
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getcustomurl" class="md-nav__link">
+    getCustomURL()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettable" class="md-nav__link">
+    getTable()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettableobject" class="md-nav__link">
+    getTableObject()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcustomurl" class="md-nav__link">
+    setCustomURL(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settable" class="md-nav__link">
+    setTable(...)
+  </a>
+  
+    <nav class="md-nav" aria-label="setTable(...)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#human-readable-names" class="md-nav__link">
+    Human-Readable Names
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1179,6 +1247,74 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#table-names" class="md-nav__link">
+    Table Names
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-details" class="md-nav__link">
+    Function Details
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getcustomurl" class="md-nav__link">
+    getCustomURL()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettable" class="md-nav__link">
+    getTable()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettableobject" class="md-nav__link">
+    getTableObject()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcustomurl" class="md-nav__link">
+    setCustomURL(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settable" class="md-nav__link">
+    setTable(...)
+  </a>
+  
+    <nav class="md-nav" aria-label="setTable(...)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#human-readable-names" class="md-nav__link">
+    Human-Readable Names
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1213,10 +1349,7 @@
 
 
 <!-- Markdown content -->
-<p>The static global Tables class provides the ability to interact with the Table object.</p>
-<blockquote>
-<p>Example Usage:<code class="highlight"><span class="n">Tables</span><span class="p">.</span><span class="n">getTable</span><span class="p">()</span></code>.</p>
-</blockquote>
+<p><code>Tables</code> is a global which provides the ability to interact with the Table object.</p>
 <h2 id="function-summary">Function Summary<a class="headerlink" href="#function-summary" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1229,38 +1362,86 @@
 </thead>
 <tbody>
 <tr>
-<td>getTable()</td>
-<td>Returns a string representation of the Table object.</td>
+<td id="getcustomurl" style="position: relative;">getCustomURL()<h6 data-toc-mock-searchable="" id="getcustomurl" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">getCustomURL()</h6></td>
+<td>Returns the image URL of the current <a href="https://kb.tabletopsimulator.com/host-guides/tables/#custom-table">Custom Table</a>, or <code>nil</code> if the current table is not a Custom Table.</td>
 <td><a href="../types/"><span class="ret str"></span></a></td>
+<td align="right">&nbsp;</td>
+</tr>
+<tr>
+<td id="gettable" style="position: relative;">getTable()<h6 data-toc-mock-searchable="" id="gettable" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">getTable()</h6></td>
+<td>Returns the current Table's <a href="../object/#name">name</a> i.e. equivalent to <code>getTableObject().name</code>.</td>
+<td><a href="../types/"><span class="ret str"></span></a></td>
+<td align="right">&nbsp;</td>
+</tr>
+<tr>
+<td id="gettableobject" style="position: relative;">getTableObject()<h6 data-toc-mock-searchable="" id="gettableobject" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">getTableObject()</h6></td>
+<td>Returns the current Table object.</td>
+<td><a href="../types/"><span class="ret obj"></span></a></td>
+<td align="right">&nbsp;</td>
+</tr>
+<tr>
+<td id="setcustomurl" style="position: relative;">setCustomURL(<h6 data-toc-mock-searchable="" id="setcustomurl" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">setCustomURL(...)</h6><a href="../types/"><span class="tag str"></span></a> url)</td>
+<td>Sets the image URL for the current <a href="https://kb.tabletopsimulator.com/host-guides/tables/#custom-table">Custom Table</a>. Has no effect if the current Table is not a Custom Table.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
 <td align="right">&nbsp;</td>
 </tr>
 <tr>
 <td>setTable(<a href="../types/"><span class="tag str"></span></a> name)</td>
-<td>Changes the Table object.</td>
+<td>Replaces the current Table with the Table matching the specified <code>name</code>.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
-<td align="right">&nbsp;</td>
-</tr>
-<tr>
-<td>getCustomURL()</td>
-<td>Returns the url of the image for Custom Rectangle and Custom Square.</td>
-<td><a href="../types/"><span class="ret str"></span></a></td>
-<td align="right">&nbsp;</td>
-</tr>
-<tr>
-<td>setCustomURL(<a href="../types/"><span class="tag str"></span></a> url)</td>
-<td>Changes the image for Custom Rectangle and Custom Square</td>
-<td><a href="../types/"><span class="ret boo"></span></a></td>
-<td align="right">&nbsp;</td>
-</tr>
-<tr>
-<td>getTableObject()</td>
-<td>Returns a reference to the Table object.</td>
-<td><a href="../types/"><span class="ret obj"></span></a></td>
-<td align="right">&nbsp;</td>
+<td align="right"><a href="#settable"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 </tbody>
 </table>
-<hr />
+<h2 id="table-names">Table Names<a class="headerlink" href="#table-names" title="Permanent link">&para;</a></h2>
+<p><a href="#gettable">getTable()</a> will return one of the following table names. <a href="#settable">setTable(...)</a> will also accept these
+names in addition to <a href="#human-readable-names">human-readable names</a>.</p>
+<ul>
+<li>Table_Circular</li>
+<li>Table_Custom</li>
+<li>Table_Custom_Square</li>
+<li>Table_Glass</li>
+<li>Table_Hexagon</li>
+<li>Table_None</li>
+<li>Table_Octagon</li>
+<li>Table_Plastic</li>
+<li>Table_Poker</li>
+<li>Table_RPG</li>
+<li>Table_Square</li>
+</ul>
+<h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link">&para;</a></h2>
+<h3 id="settable">setTable(...)<a class="headerlink" href="#settable" title="Permanent link">&para;</a></h3>
+<p><a href="../types/"><span class="ret boo"></span></a> Replaces the current Table with the Table matching the specified <code>name</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">setTable(name)</p>
+<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>name</strong>: Table <a href="#table-names">name</a> or <a href="#human-readable-names">human-readable name</a>.</li>
+</ul>
+</div>
+<h4 id="human-readable-names">Human-Readable Names<a class="headerlink" href="#human-readable-names" title="Permanent link">&para;</a></h4>
+<p>In addition to the table names <a href="#table-names">listed above</a>, <code>setTable(...)</code> will also accept the following
+human-readable names:</p>
+<ul>
+<li>Custom Rectangle</li>
+<li>Custom Square</li>
+<li>Hexagon</li>
+<li>None</li>
+<li>Octagon</li>
+<li>Poker</li>
+<li>Rectangle</li>
+<li>Round</li>
+<li>Round Glass</li>
+<li>Round Plastic</li>
+<li>Square</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Replace the current Table with the Poker Table.
+<div class="highlight"><pre><span></span><code><span class="n">Tables</span><span class="p">.</span><span class="n">setTable</span><span class="p">(</span><span class="s2">&quot;Poker&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
 
 <!-- Last update of source file -->
 
