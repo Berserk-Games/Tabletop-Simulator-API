@@ -28,11 +28,18 @@ There are two types of event handlers:
 Universal Event Handlers may be defined in the [Global script](intro.md#global-script) _and/or_
 [Object scripts](intro.md#object-scripts).
 
+### Global Event Handlers
+
+Global Event Handlers may _only_ be defined in the [Global script](intro.md#global-script).
+
+If you define a function using the name of a Global Event Handler in an
+[Object script](intro.md#object-scripts). It simply won't be called.
+
 ### Object Event Handlers
 
-Object Event Handlers may only be defined in [Object scripts](intro.md#object-scripts).
+Object Event Handlers may _only_ be defined in [Object scripts](intro.md#object-scripts).
 
-If you were to define a function using the name of an Object Event Handler in your
+If you define a function using the name of an Object Event Handler in your
 [Global script](intro.md#global-script). It simply won't be called.
 
 ## Event Handler Execution
@@ -55,7 +62,6 @@ As described above, you may declare these functions in the [Global script](intro
 
 Function Name | Description | &nbsp;
 -- | -- | --
-filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) enter_object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer(...)](#tryobjectentercontainer)_.</p> Called when an object attempts to enter any container. | [:i:](#tryobjectentercontainer)
 onBlindfold([<span class="tag pla"></span>](types.md) player, [<span class="tag boo"></span>](types.md) blindfolded) | Called when a player puts on or takes off their blindfold. | [:i:](#onblindfold)
 onChat([<span class="tag str"></span>](types.md) message, [<span class="tag pla"></span>](types.md) sender) | Called when a user sends an in-game chat message. | [:i:](#onchat)
 onExternalMessage([<span class="tag tab"></span>](types.md) data) | Called when an external script editor (like [Atom](atom.md)) sends a message back to the game. Used for custom editor functionality. | [:i:](#onexternalmessage)
@@ -92,6 +98,14 @@ onSave() | Called whenever a script needs to save its state. | [:i:](#onsave)
 onScriptingButtonDown([<span class="tag int"></span>](types.md) index, [<span class="tag str"></span>](types.md) player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [:i:](#onscriptingbuttondown)
 onScriptingButtonUp([<span class="tag int"></span>](types.md) index, [<span class="tag str"></span>](types.md) player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [:i:](#onscriptingbuttonup)
 onUpdate() | Called **every frame**. | [:i:](#onupdate)
+
+### Global Event Handlers {: #global-event-handler-summary }
+
+As described above, you may declare these functions in the [Global script](intro.md#global-script).
+
+Function Name | Description | &nbsp;
+-- | -- | --
+filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) enter_object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer(...)](#tryobjectentercontainer)_.</p> Called when an object attempts to enter any container. | [:i:](#tryobjectentercontainer)
 tryObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) entering_object) | Called when an object attempts to enter any container. | [:i:](#tryobjectentercontainer)
 tryObjectRandomize([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a player attempts to randomize an Object. | [:i:](#tryobjectrandomize)
 
@@ -891,6 +905,9 @@ Called **every frame**.
 	```
 
 ---
+
+
+## Global Event Handler Details
 
 ###tryObjectEnterContainer(...)
 
