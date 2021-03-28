@@ -460,6 +460,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#global-event-handlers" class="md-nav__link">
+    Global Event Handlers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#object-event-handlers" class="md-nav__link">
     Object Event Handlers
   </a>
@@ -489,6 +496,13 @@
           <li class="md-nav__item">
   <a href="#universal-event-handlers-summary" class="md-nav__link">
     Universal Event Handlers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-event-handler-summary" class="md-nav__link">
+    Global Event Handlers
   </a>
   
 </li>
@@ -764,6 +778,19 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-event-handler-details" class="md-nav__link">
+    Global Event Handler Details
+  </a>
+  
+    <nav class="md-nav" aria-label="Global Event Handler Details">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#tryobjectentercontainer" class="md-nav__link">
@@ -1653,6 +1680,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#global-event-handlers" class="md-nav__link">
+    Global Event Handlers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#object-event-handlers" class="md-nav__link">
     Object Event Handlers
   </a>
@@ -1682,6 +1716,13 @@
           <li class="md-nav__item">
   <a href="#universal-event-handlers-summary" class="md-nav__link">
     Universal Event Handlers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-event-handler-summary" class="md-nav__link">
+    Global Event Handlers
   </a>
   
 </li>
@@ -1958,6 +1999,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-event-handler-details" class="md-nav__link">
+    Global Event Handler Details
+  </a>
+  
+    <nav class="md-nav" aria-label="Global Event Handler Details">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#tryobjectentercontainer" class="md-nav__link">
     tryObjectEnterContainer(...)
@@ -2166,9 +2220,13 @@ event handlers (i.e. event handler names) that Tabletop Simulator will look for 
 <h3 id="universal-event-handlers">Universal Event Handlers<a class="headerlink" href="#universal-event-handlers" title="Permanent link">&para;</a></h3>
 <p>Universal Event Handlers may be defined in the <a href="../intro/#global-script">Global script</a> <em>and/or</em>
 <a href="../intro/#object-scripts">Object scripts</a>.</p>
+<h3 id="global-event-handlers">Global Event Handlers<a class="headerlink" href="#global-event-handlers" title="Permanent link">&para;</a></h3>
+<p>Global Event Handlers may <em>only</em> be defined in the <a href="../intro/#global-script">Global script</a>.</p>
+<p>If you define a function using the name of a Global Event Handler in an
+<a href="../intro/#object-scripts">Object script</a>. It simply won't be called.</p>
 <h3 id="object-event-handlers">Object Event Handlers<a class="headerlink" href="#object-event-handlers" title="Permanent link">&para;</a></h3>
-<p>Object Event Handlers may only be defined in <a href="../intro/#object-scripts">Object scripts</a>.</p>
-<p>If you were to define a function using the name of an Object Event Handler in your
+<p>Object Event Handlers may <em>only</em> be defined in <a href="../intro/#object-scripts">Object scripts</a>.</p>
+<p>If you define a function using the name of an Object Event Handler in your
 <a href="../intro/#global-script">Global script</a>. It simply won't be called.</p>
 <h2 id="event-handler-execution">Event Handler Execution<a class="headerlink" href="#event-handler-execution" title="Permanent link">&para;</a></h2>
 <p><em>Typically</em>, if there are multiple event handlers for the one event i.e. in an Object script and Global Script <em>and/or</em>
@@ -2193,13 +2251,6 @@ executed.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>filterObjectEnterContainer(<a href="../types/"><span class="tag obj"></span></a> container, <a href="../types/"><span class="tag obj"></span></a> enter_object)</td>
-<td><p><a href="../intro/#deprecated"><span class="tag deprecated"></span></a> <em>Use <a href="#tryobjectentercontainer">tryObjectEnterContainer(...)</a></em>.</p> Called when an object attempts to enter any container.</td>
-<td><a href="#tryobjectentercontainer"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
-</tr>
 <tr>
 <td>onBlindfold(<a href="../types/"><span class="tag pla"></span></a> player, <a href="../types/"><span class="tag boo"></span></a> blindfolded)</td>
 <td>Called when a player puts on or takes off their blindfold.</td>
@@ -2449,6 +2500,26 @@ executed.</p>
 <td>onUpdate()</td>
 <td>Called <strong>every frame</strong>.</td>
 <td><a href="#onupdate"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="global-event-handler-summary">Global Event Handlers<a class="headerlink" href="#global-event-handler-summary" title="Permanent link">&para;</a></h3>
+<p>As described above, you may declare these functions in the <a href="../intro/#global-script">Global script</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Description</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filterObjectEnterContainer(<a href="../types/"><span class="tag obj"></span></a> container, <a href="../types/"><span class="tag obj"></span></a> enter_object)</td>
+<td><p><a href="../intro/#deprecated"><span class="tag deprecated"></span></a> <em>Use <a href="#tryobjectentercontainer">tryObjectEnterContainer(...)</a></em>.</p> Called when an object attempts to enter any container.</td>
+<td><a href="#tryobjectentercontainer"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
@@ -3301,6 +3372,7 @@ slowing down your game.</p>
 </code></pre></div></p>
 </div>
 <hr />
+<h2 id="global-event-handler-details">Global Event Handler Details<a class="headerlink" href="#global-event-handler-details" title="Permanent link">&para;</a></h2>
 <h3 id="tryobjectentercontainer">tryObjectEnterContainer(...)<a class="headerlink" href="#tryobjectentercontainer" title="Permanent link">&para;</a></h3>
 <p>Called when an object attempts to enter a container. Return <code>false</code> to prevent the object entering.</p>
 <div class="admonition info">
