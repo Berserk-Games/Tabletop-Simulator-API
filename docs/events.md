@@ -18,9 +18,10 @@ name. The name that you use depends on which event you wish to handle. Event-spe
 	Whilst event handler _names_ corresponds with just one type of event. Each event may have multiple corresponding
 	event handlers (i.e. event handler names) that Tabletop Simulator will look for and execute.
 
-There are two types of event handlers:
+There are three types of event handlers:
 
 * [Universal Event Handlers](#universal-event-handlers)
+* [Global Event Handlers](#global-event-handlers)
 * [Object Event Handlers](#object-event-handlers)
 
 ### Universal Event Handlers
