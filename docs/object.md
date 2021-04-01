@@ -1887,8 +1887,8 @@ All properties are optional. When a property is omitted, it will be given the co
 			rotation_snap = true
 		},
 		{
-			position = {5, 2, 5},
-			rotation = {0, 180, 0},
+			position = {-3, 2, 0},
+			rotation = {0, 45, 0},
 			rotation_snap = true,
 			tags = {"meeple"}
 		}
