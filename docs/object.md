@@ -1858,7 +1858,7 @@ end
 	attached to any other Object.
 
 !!!info "setSnapPoints(snap_points)"
-	* [<span class="tag tab"></span>](types.md) **snap_points**: A list (numerically indexed table) of [snap points](setsnappoints-snap-points).
+	* [<span class="tag tab"></span>](types.md) **snap_points**: A list (numerically indexed table) of [snap points](#setsnappoints-snap-points).
 
 ##### Snap Points {: #setsnappoints-snap-points data-toc-omit }
 
