@@ -138,7 +138,7 @@ translate([<span class="tag vec"></span>](types.md#vector) vector) {: data-toc-l
 
 
 ###Tag Functions
-These functions deal with the [Tags](https://kb.tabletopsimulator.com/game-tools/object-tags/) associated with the object. An individual tag is a [<span class="tag str"></span>](types.md) and is case-insensitive.
+These functions deal with the [tags](https://kb.tabletopsimulator.com/game-tools/object-tags/) associated with the object. An individual tag is a [<span class="tag str"></span>](types.md) and is case-insensitive.
 
 Function Name {: data-toc-label="Tag Function Details" data-toc-after="transform-function-details" data-toc-sort } | Description | Return | &nbsp;
 -- | -- | -- | --
@@ -309,7 +309,7 @@ getVar([<span class="tag str"></span>](types.md) var_name) {: data-toc-label="ge
 getVectorLines() {: data-toc-label="getVectorLines()" data-toc-child-of="global-function-details" } | Returns Table of data representing the current Vector Lines on this entity. See [setVectorLines](#setvectorlines) for table format.| [<span class="ret tab"></span>](types.md) |
 setDecals([<span class="tag tab"></span>](types.md) parameters) | Sets which decals are on an object. This removes other decals already present, and can remove all decals as well. | [<span class="ret boo"></span>](types.md) | [:i:](#setdecals)
 setLuaScript([<span class="tag str"></span>](types.md) script) {: data-toc-label="setLuaScript(...)" data-toc-child-of="global-function-details" } | Input a string as an entity's Lua script. Generally only used after spawning a new Object. | [<span class="ret boo"></span>](types.md) |
-setSnapPoints([<span class="tag tab"></span>](types.md) parameters) | Spawns snap points from a list of parameters. | [<span class="ret boo"></span>](types.md) | [:i:](#setsnappoints)
+setSnapPoints([<span class="tag tab"></span>](types.md) snap_points) | Replaces existing snap points with the specified list of snap points. | [<span class="ret boo"></span>](types.md) | [:i:](#setsnappoints)
 setTable([<span class="tag str"></span>](types.md) func_name, [<span class="tag tab"></span>](types.md) data) {: data-toc-label="setTable(...)" data-toc-child-of="global-function-details" } | Creates/updates a variable in another entity's script. Only used for tables. | [<span class="ret boo"></span>](types.md) |
 setVar([<span class="tag str"></span>](types.md) func_name, [<span class="tag var"></span>](types.md) data) {: data-toc-label="setVar(...)" data-toc-child-of="global-function-details" } | Creates/updates a variable in another entity's script. Cannot set a table. | [<span class="ret boo"></span>](types.md) |
 setVectorLines([<span class="tag tab"></span>](types.md) parameters) | Spawns Vector Lines from a list of parameters on this entity. | [<span class="ret boo"></span>](types.md) | [:i:](#setvectorlines)
@@ -971,7 +971,7 @@ lua_script_state | [<span class="tag str"></span>](types.md) | [Lua script saved
 memo | [<span class="tag str"></span>](types.md) | [Memo](#memo) on the contained object.
 name | [<span class="tag str"></span>](types.md) | <p>Name of the contained object.</p><p>Will correspond with [getName()](#getname), unless it's blank, in which case it'll be the [internal resource name](#name).</p>
 nickname | [<span class="tag str"></span>](types.md) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use `name`_.</p>[Name](#getname) of the item.
-tags | [<span class="tag tab"></span>](types.md) | A table of [<span class="tag str"></span>](types.md) representing the [tags](#gettags) on the contained object.
+tags | [<span class="tag tab"></span>](types.md) | A table of [<span class="tag str"></span>](types.md) representing the [tags](https://kb.tabletopsimulator.com/game-tools/object-tags/) on the contained object.
 
 !!!example
 	Find a contained object with the name "Super Card" (within the Bag/Deck `object`), and use its index to
@@ -1786,14 +1786,15 @@ print(decalTable[2].name)
 
 ##### Return value {: #getsnappoints-return-value data-toc-omit } 
 
-The returned table is a list (numerically indexed table) of sub-tables, where each sub-table represents a snap point and
+The returned value is a list (numerically indexed table) of sub-tables, where each sub-table represents a snap point and
 has the following properties:
 
 Name | Type | Description
 -- | -- | --
-position | [<span class="tag vec"></span>](types.md) | [Local Position](types.md#position) of the snap point. The position is relative to the entity's center.
-rotation | [<span class="tag vec"></span>](types.md) | Local Rotation of the snap point. The rotation is relative to the entity's rotation.
-rotation_snap | [<span class="tag boo"></span>](types.md) | If the snap point is a [rotation snap point](https://kb.tabletopsimulator.com/game-tools/snap-point-tool/#rotation-snap).
+position | [Vector](vector.md) | [Local Position](types.md#position) of the snap point. When attached to an object, position is relative to the object's center.
+rotation | [Vector](vector.md) | [Local Rotation](types.md#rotation) of the snap point. When attached to an object, rotation is relative to the object's rotation.
+rotation_snap | [<span class="tag boo"></span>](types.md) | Whether the snap point is a [rotation snap point](https://kb.tabletopsimulator.com/game-tools/snap-point-tool/#rotation-snap).
+tags | [<span class="tag tab"></span>](types.md) | Table of [<span class="tag str"></span>](types.md) representing the [tags](https://kb.tabletopsimulator.com/game-tools/object-tags/) associated with the snap point.
 
 !!!example
 	Log the list of global snap points:
@@ -1850,35 +1851,50 @@ end
 
 ####setSnapPoints(...)
 
-[<span class="ret boo"></span>](types.md) Spawns snap points from a list of parameters.
+[<span class="ret boo"></span>](types.md) Replaces existing snap points with the specified list of snap points.
 
-> This function can also be used on the game world (game table) itself using Global.
+!!!tip
+	This function can also be called on `Global` in order to create snap points directly within the scene, which are not
+	attached to any other Object.
 
-!!!info "setSnapPoints(parameters)"
-	* [<span class="tag tab"></span>](types.md) **parameters**: A table containing numerically indexed sub-tables.
-		* [<span class="tag tab"></span>](types.md) **sub-table**:
-			* [<span class="tag vec"></span>](types.md#vector) **position**: [Local Position](types.md#position) of the snap point. This is relative to the entity's position.
-				* {>>Optional, defaults to {0,0,0}.<<}
-			* [<span class="tag vec"></span>](types.md#vector) **rotation**: Local Rotation of the snap point. This is relative to the entity's rotation.
-				* {>>Optional, defaults to {0,0,0}.<<}
-			* [<span class="tag boo"></span>](types.md) **rotation_snap**: If the snap point is a "rotation" snap point.
-				* {>>Optional, defaults to false.<<}
+!!!info "setSnapPoints(snap_points)"
+	* [<span class="tag tab"></span>](types.md) **snap_points**: A list (numerically indexed table) of [snap points](setsnappoints-snap-points).
 
+##### Snap Points {: #setsnappoints-snap-points data-toc-omit }
 
-```Lua
-self.setSnapPoints({
-	{
-		position = {2,2,2},
-	    rotation = {0,90,0},
-	    rotation_snap = false
-	},
-	{
-		position = {5,2,5},
-	    rotation = {0,0,0},
-	    rotation_snap = true
-	},
-})
-```
+`snap_points` must be provided as a list (numerically indexed table) of sub-tables, where each sub-table represents a
+snap point and may have the following properties:
+
+Name | Type | Default | Description
+-- | -- | -- | --
+position | [<span class="tag vec"></span>](types.md) | <nobr>`{0, 0, 0}`</nobr> | [Local Position](types.md#position) of the snap point. When attached to an object, position is relative to the object's center.
+rotation | [<span class="tag vec"></span>](types.md) | <nobr>`{0, 0, 0}`</nobr>  | [Local Rotation](types.md#position) of the snap point. When attached to an object, rotation is relative to the object's rotation.
+rotation_snap | [<span class="tag boo"></span>](types.md) | `false` | Whether the snap point is a [rotation snap point](https://kb.tabletopsimulator.com/game-tools/snap-point-tool/#rotation-snap).
+tags | [<span class="tag tab"></span>](types.md) | `{}` | Table of [<span class="tag str"></span>](types.md) representing the [tags](https://kb.tabletopsimulator.com/game-tools/object-tags/) associated with the snap point.
+
+All properties are optional. When a property is omitted, it will be given the corresponding default value (above).
+
+!!!example
+	Give an object 3 snap points. A regular snap point, a rotation snap point, and a rotation snap point with a tag.
+	```lua
+	object.setSnapPoints({
+		{
+			position = {5, 2, 5}
+		},
+		{
+			position = {5, 2, 5},
+			rotation = {0, 180, 0},
+			rotation_snap = true
+		},
+		{
+			position = {5, 2, 5},
+			rotation = {0, 180, 0},
+			rotation_snap = true,
+			tags = {"meeple"}
+		}
+	})
+	```
+
 
 ---
 
