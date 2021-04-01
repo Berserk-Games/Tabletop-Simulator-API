@@ -4108,7 +4108,7 @@ unless the Object includes the behavior.</p>
 </tbody>
 </table>
 <h3 id="tag-functions">Tag Functions<a class="headerlink" href="#tag-functions" title="Permanent link">&para;</a></h3>
-<p>These functions deal with the <a href="https://kb.tabletopsimulator.com/game-tools/object-tags/">Tags</a> associated with the object. An individual tag is a <a href="../types/"><span class="tag str"></span></a> and is case-insensitive.</p>
+<p>These functions deal with the <a href="https://kb.tabletopsimulator.com/game-tools/object-tags/">tags</a> associated with the object. An individual tag is a <a href="../types/"><span class="tag str"></span></a> and is case-insensitive.</p>
 <table>
 <thead>
 <tr>
@@ -4912,8 +4912,8 @@ unless the Object includes the behavior.</p>
 <td></td>
 </tr>
 <tr>
-<td>setSnapPoints(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
-<td>Spawns snap points from a list of parameters.</td>
+<td>setSnapPoints(<a href="../types/"><span class="tag tab"></span></a> snap_points)</td>
+<td>Replaces existing snap points with the specified list of snap points.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#setsnappoints"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -5635,7 +5635,7 @@ unless the Object includes the behavior.</p>
 <tr>
 <td>tags</td>
 <td><a href="../types/"><span class="tag tab"></span></a></td>
-<td>A table of <a href="../types/"><span class="tag str"></span></a> representing the <a href="#gettags">tags</a> on the contained object.</td>
+<td>A table of <a href="../types/"><span class="tag str"></span></a> representing the <a href="https://kb.tabletopsimulator.com/game-tools/object-tags/">tags</a> on the contained object.</td>
 </tr>
 </tbody>
 </table>
@@ -6472,7 +6472,7 @@ the impulse.</p>
 table).</p>
 </div>
 <h5 id="getsnappoints-return-value">Return value<a class="headerlink" href="#getsnappoints-return-value" title="Permanent link">&para;</a></h5>
-<p>The returned table is a list (numerically indexed table) of sub-tables, where each sub-table represents a snap point and
+<p>The returned value is a list (numerically indexed table) of sub-tables, where each sub-table represents a snap point and
 has the following properties:</p>
 <table>
 <thead>
@@ -6485,18 +6485,23 @@ has the following properties:</p>
 <tbody>
 <tr>
 <td>position</td>
-<td><a href="../types/"><span class="tag vec"></span></a></td>
-<td><a href="../types/#position">Local Position</a> of the snap point. The position is relative to the entity's center.</td>
+<td><a href="../vector/">Vector</a></td>
+<td><a href="../types/#position">Local Position</a> of the snap point. When attached to an object, position is relative to the object's center.</td>
 </tr>
 <tr>
 <td>rotation</td>
-<td><a href="../types/"><span class="tag vec"></span></a></td>
-<td>Local Rotation of the snap point. The rotation is relative to the entity's rotation.</td>
+<td><a href="../vector/">Vector</a></td>
+<td><a href="../types/#rotation">Local Rotation</a> of the snap point. When attached to an object, rotation is relative to the object's rotation.</td>
 </tr>
 <tr>
 <td>rotation_snap</td>
 <td><a href="../types/"><span class="tag boo"></span></a></td>
-<td>If the snap point is a <a href="https://kb.tabletopsimulator.com/game-tools/snap-point-tool/#rotation-snap">rotation snap point</a>.</td>
+<td>Whether the snap point is a <a href="https://kb.tabletopsimulator.com/game-tools/snap-point-tool/#rotation-snap">rotation snap point</a>.</td>
+</tr>
+<tr>
+<td>tags</td>
+<td><a href="../types/"><span class="tag tab"></span></a></td>
+<td>Table of <a href="../types/"><span class="tag str"></span></a> representing the <a href="https://kb.tabletopsimulator.com/game-tools/object-tags/">tags</a> associated with the snap point.</td>
 </tr>
 </tbody>
 </table>
@@ -6556,46 +6561,79 @@ has the following properties:</p>
 </code></pre></div>
 <hr />
 <h4 id="setsnappoints">setSnapPoints(...)<a class="headerlink" href="#setsnappoints" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret boo"></span></a> Spawns snap points from a list of parameters.</p>
-<blockquote>
-<p>This function can also be used on the game world (game table) itself using Global.</p>
-</blockquote>
+<p><a href="../types/"><span class="ret boo"></span></a> Replaces existing snap points with the specified list of snap points.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This function can also be called on <code>Global</code> in order to create snap points directly within the scene, which are not
+attached to any other Object.</p>
+</div>
 <div class="admonition info">
-<p class="admonition-title">setSnapPoints(parameters)</p>
+<p class="admonition-title">setSnapPoints(snap_points)</p>
 <ul>
-<li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A table containing numerically indexed sub-tables.<ul>
-<li><a href="../types/"><span class="tag tab"></span></a> <strong>sub-table</strong>:<ul>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>position</strong>: <a href="../types/#position">Local Position</a> of the snap point. This is relative to the entity's position.<ul>
-<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
-</ul>
-</li>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>rotation</strong>: Local Rotation of the snap point. This is relative to the entity's rotation.<ul>
-<li><span class="critic comment">Optional, defaults to {0,0,0}.</span></li>
-</ul>
-</li>
-<li><a href="../types/"><span class="tag boo"></span></a> <strong>rotation_snap</strong>: If the snap point is a "rotation" snap point.<ul>
-<li><span class="critic comment">Optional, defaults to false.</span></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>snap_points</strong>: A list (numerically indexed table) of <a href="setsnappoints-snap-points">snap points</a>.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="n">self</span><span class="p">.</span><span class="n">setSnapPoints</span><span class="p">({</span>
+<h5 id="setsnappoints-snap-points">Snap Points<a class="headerlink" href="#setsnappoints-snap-points" title="Permanent link">&para;</a></h5>
+<p><code>snap_points</code> must be provided as a list (numerically indexed table) of sub-tables, where each sub-table represents a
+snap point and may have the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>position</td>
+<td><a href="../types/"><span class="tag vec"></span></a></td>
+<td><nobr><code>{0, 0, 0}</code></nobr></td>
+<td><a href="../types/#position">Local Position</a> of the snap point. When attached to an object, position is relative to the object's center.</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td><a href="../types/"><span class="tag vec"></span></a></td>
+<td><nobr><code>{0, 0, 0}</code></nobr></td>
+<td><a href="../types/#position">Local Rotation</a> of the snap point. When attached to an object, rotation is relative to the object's rotation.</td>
+</tr>
+<tr>
+<td>rotation_snap</td>
+<td><a href="../types/"><span class="tag boo"></span></a></td>
+<td><code>false</code></td>
+<td>Whether the snap point is a <a href="https://kb.tabletopsimulator.com/game-tools/snap-point-tool/#rotation-snap">rotation snap point</a>.</td>
+</tr>
+<tr>
+<td>tags</td>
+<td><a href="../types/"><span class="tag tab"></span></a></td>
+<td><code>{}</code></td>
+<td>Table of <a href="../types/"><span class="tag str"></span></a> representing the <a href="https://kb.tabletopsimulator.com/game-tools/object-tags/">tags</a> associated with the snap point.</td>
+</tr>
+</tbody>
+</table>
+<p>All properties are optional. When a property is omitted, it will be given the corresponding default value (above).</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Give an object 3 snap points. A regular snap point, a rotation snap point, and a rotation snap point with a tag.
+<div class="highlight"><pre><span></span><code><span class="n">object</span><span class="p">.</span><span class="n">setSnapPoints</span><span class="p">({</span>
     <span class="p">{</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span>
-        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
-        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
     <span class="p">},</span>
     <span class="p">{</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span>
-        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">},</span>
+        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
         <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">true</span>
     <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">},</span>
+        <span class="n">rotation</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+        <span class="n">rotation_snap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="n">tags</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;meeple&quot;</span><span class="p">}</span>
+    <span class="p">}</span>
 <span class="p">})</span>
-</code></pre></div>
+</code></pre></div></p>
+</div>
 <hr />
 <h4 id="setvectorlines">setVectorLines(...)<a class="headerlink" href="#setvectorlines" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a> Spawns Vector Lines from a list of parameters.</p>
