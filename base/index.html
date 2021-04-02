@@ -1900,7 +1900,7 @@
 </tr>
 <tr>
 <td>spawnObject(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
-<td>Spawns an Object. See <a href="../built-in-object/">Built-in</a> and <a href="../custom-game-objects/">Custom</a> Spawnable Object pages for further details.</td>
+<td>Spawns an object.</td>
 <td><a href="../types/"><span class="ret obj"></span></a></td>
 <td><a href="#spawnobject"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1908,7 +1908,7 @@
 </tr>
 <tr>
 <td>spawnObjectData(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
-<td>Spawns an Object using a data table. Works with <a href="../object/#getdata">getData()</a>.</td>
+<td>Spawns an object from a data table.</td>
 <td><a href="../types/"><span class="ret obj"></span></a></td>
 <td><a href="#spawnobjectdata"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1916,7 +1916,7 @@
 </tr>
 <tr>
 <td>spawnObjectJSON(<a href="../types/"><span class="tag tab"></span></a> parameters)</td>
-<td>Spawns an Object using a JSON string. Works with <a href="../object/#getjson">getJSON()</a>.</td>
+<td>Spawns an object from a JSON string.</td>
 <td><a href="../types/"><span class="ret obj"></span></a></td>
 <td><a href="#spawnobjectjson"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -2192,169 +2192,285 @@
 </div>
 <hr />
 <h4 id="spawnobject">spawnObject(...)<a class="headerlink" href="#spawnobject" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret obj"></span></a> Spawns an Object. See <a href="../built-in-object/">Built-in</a> and <a href="../custom-game-objects/">Custom</a> Spawnable Objects pages for details of specific spawnable objects.</p>
-<p>If you are spawning a <strong>custom Object</strong>, you should call <a href="../object/#setcustomobject">setCustomObject</a> immediately after spawnObject to set its custom properties.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. You can also add a delay after spawning using a <a href="../wait/">Wait</a> function.</p>
-</div>
+<p><a href="../types/"><span class="ret obj"></span></a> Spawns an object.</p>
+<p>Refer to the spawnable <a href="../built-in-object/">Built-in Object</a> and <a href="../custom-game-objects/">Custom Object</a> pages for
+details about the types of objects that can be spawned.</p>
+<p>If you are spawning a <a href="../custom-game-objects/">Custom Object</a>, you should immediately call
+<a href="../object/#setcustomobject">setCustomObject(...)</a> on the object returned from <code>spawnObject(...)</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">spawnObject(parameters)</p>
 <ul>
-<li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to determine how spawnObject will act.<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>parameters.type</strong>: <a href="../built-in-object/">Built-in</a> or <a href="../custom-game-objects/">Custom</a> Game Object name.</li>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to place Object.<ul>
-<li><span class="critic comment">Optional, defaults to {x=0, y=3, z=0}.</span></li>
-</ul>
-</li>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the Object.<ul>
-<li><span class="critic comment">Optional, defaults to {x=0, y=0, z=0}</span></li>
-</ul>
-</li>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the Object.<ul>
-<li><span class="critic comment">Optional, defaults to {x=1, y=1, z=1}</span></li>
-</ul>
-</li>
-<li><a href="../types/"><span class="tag boo"></span></a> <strong>parameters.sound</strong>: If the spawned Object noise is played.<ul>
-<li><span class="critic comment">Optional, defaults to true.</span></li>
-</ul>
-</li>
-<li><a href="../types/"><span class="tag boo"></span></a> <strong>parameters.snap_to_grid</strong>: If snap-to-grid is active on the Object.<ul>
-<li><span class="critic comment">Optional, defaults to false.</span></li>
-</ul>
-</li>
-<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>parameters.callback_function</strong>: The function to activate after the Object has finished spawning into the scene.<ul>
-<li><span class="critic comment">Optional, defaults to not being used.</span></li>
-<li><span class="critic comment">A reference to the object spawned is always passed to callback_function. See the example for how to access it.</span></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A table of <a href="#spawnobject-spawn-parameters">spawn parameters</a>.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="n">futureName</span> <span class="o">=</span> <span class="s2">&quot;Spawned By Script!&quot;</span>
-    <span class="n">spawnParams</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;rpg_BEAR&quot;</span><span class="p">,</span>
-        <span class="n">position</span>          <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">5</span><span class="p">},</span>
-        <span class="n">rotation</span>          <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">},</span>
-        <span class="n">scale</span>             <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">},</span>
-        <span class="n">sound</span>             <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="n">snap_to_grid</span>      <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="n">callback_function</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="n">spawn_callback</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;Bear&quot;</span><span class="p">,</span> <span class="s2">&quot;Green&quot;</span><span class="p">)</span> <span class="kr">end</span>
-    <span class="p">}</span>
-    <span class="n">spawnObject</span><span class="p">(</span><span class="n">spawnParams</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="kr">function</span> <span class="nf">spawn_callback</span><span class="p">(</span><span class="n">object_spawned</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
-    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setColorTint</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
-<span class="kr">end</span>
-</code></pre></div>
+<h5 id="spawnobject-spawn-parameters">Spawn Parameters<a class="headerlink" href="#spawnobject-spawn-parameters" title="Permanent link">&para;</a></h5>
+<p><code>parameters</code> must be provided as a table, which may have the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><a href="../types/"><span class="tag str"></span></a></td>
+<td><em>Mandatory</em></td>
+<td><a href="../built-in-object/">Built-in</a> or <a href="../custom-game-objects/">Custom Game Object</a> name.</td>
+</tr>
+<tr>
+<td>position</td>
+<td><a href="../types/"><span class="tag vec"></span></a></td>
+<td><nobr><code>{0, 0, 0}</code></nobr></td>
+<td>Position where the object will be spawned.</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td><a href="../types/"><span class="tag vec"></span></a></td>
+<td><nobr><code>{0, 0, 0}</code></nobr></td>
+<td>Rotation of the spawned object.</td>
+</tr>
+<tr>
+<td>scale</td>
+<td><a href="../types/"><span class="tag vec"></span></a></td>
+<td><nobr><code>{1, 1, 1}</code></nobr></td>
+<td>Scale of the spawned object.</td>
+</tr>
+<tr>
+<td>sound</td>
+<td><a href="../types/"><span class="tag boo"></span></a></td>
+<td><code>true</code></td>
+<td>Whether a sound will be played as the object spawns.</td>
+</tr>
+<tr>
+<td>snap_to_grid</td>
+<td><a href="../types/"><span class="tag boo"></span></a></td>
+<td><code>false</code></td>
+<td>Whether upon spawning, the object will snap to nearby grid lines (or snap points).</td>
+</tr>
+<tr>
+<td>callback_function</td>
+<td><a href="../types/"><span class="tag fun"></span></a></td>
+<td><code>nil</code></td>
+<td>Called when the object has finished spawning. The spawned object will be passed as the first and only parameter.</td>
+</tr>
+</tbody>
+</table>
+<p><code>type</code> is mandatory, all other properties are optional. When a property is omitted, it will be given the corresponding
+default value (above).</p>
+<p>Objects take a moment to be spawn. The purpose of <code>callback_function</code> is to allow you to execute additional code after
+the object has finished spawning.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Spawn (with sound disabled) a 2x scale "RPG Bear" object in the center of the table and initiate a
+<a href="../object/#setpositionsmooth">smooth move</a> on the object. Once the object has finished spawning, <a href="#log">log</a> the
+object's <a href="../object/#getbounds">bounds</a>.
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">object</span> <span class="o">=</span> <span class="n">spawnObject</span><span class="p">({</span>
+    <span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;rpg_BEAR&quot;</span><span class="p">,</span>
+    <span class="n">position</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">},</span>
+    <span class="n">sound</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="n">callback_function</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">spawned_object</span><span class="p">)</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">spawned_object</span><span class="p">.</span><span class="n">getBounds</span><span class="p">())</span>
+    <span class="kr">end</span>
+<span class="p">})</span>
+<span class="n">object</span><span class="p">.</span><span class="n">setPositionSmooth</span><span class="p">({</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">})</span>
+</code></pre></div></p>
+</div>
 <hr />
 <h4 id="spawnobjectdata">spawnObjectData(...)<a class="headerlink" href="#spawnobjectdata" title="Permanent link">&para;</a></h4>
-<p>Spawns an Object using a data table. Works with <a href="../object/#getdata">getData()</a>. It works just like spawnObject, but instead of a <code>type</code>, you supply a <code>data</code> table. The other parameters will overwrite those in the Data.</p>
+<p><a href="../types/"><span class="ret obj"></span></a> Spawns an object from a data table. </p>
+<p>This API gives you complete control over all persistent properties that an object has.</p>
 <div class="admonition info">
 <p class="admonition-title">spawnObjectData(parameters)</p>
 <ul>
-<li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to determine how spawnObjectData will act.<ul>
-<li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters.data</strong>: <a href="../object/#getdata">getData()</a> table.</li>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to place Object.<ul>
-<li><span class="critic comment">Optional, defaults to data table's value.</span></li>
-</ul>
-</li>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the Object.<ul>
-<li><span class="critic comment">Optional, defaults to data table's value.</span></li>
-</ul>
-</li>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the Object.<ul>
-<li><span class="critic comment">Optional, defaults to data table's value.</span></li>
-</ul>
-</li>
-<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>parameters.callback_function</strong>: The function to activate after the Object has finished spawning into the scene.<ul>
-<li><span class="critic comment">Optional, defaults to not being used.</span></li>
-<li><span class="critic comment">A reference to the object spawned is always passed to callback_function. See the example for how to access it.</span></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A table of <a href="#spawnobjectdata-spawn-parameters">spawn parameters</a>.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">futureName</span> <span class="o">=</span> <span class="s2">&quot;Spawned By Script!&quot;</span>
-<span class="n">spawnParams</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">data</span>              <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getData</span><span class="p">(),</span>
-    <span class="n">position</span>          <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">5</span><span class="p">},</span>
-    <span class="n">rotation</span>          <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">},</span>
-    <span class="n">scale</span>             <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">},</span>
-    <span class="n">callback_function</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="n">spawn_callback</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">futureName</span><span class="p">,</span> <span class="s2">&quot;Red&quot;</span><span class="p">)</span> <span class="kr">end</span>
-    <span class="c1">--alternative format:</span>
-    <span class="c1">--callback_function = |obj| spawn_callback(obj, futureName, &quot;Red&quot;)</span>
-<span class="p">}</span>
-<span class="n">spawnObjectData</span><span class="p">(</span><span class="n">spawnParams</span><span class="p">)</span>
-
-<span class="kr">function</span> <span class="nf">spawn_callback</span><span class="p">(</span><span class="n">object_spawned</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
-    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setColorTint</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
-<span class="kr">end</span>
-</code></pre></div>
+<h5 id="spawnobjectdata-spawn-parameters">Spawn Parameters<a class="headerlink" href="#spawnobjectdata-spawn-parameters" title="Permanent link">&para;</a></h5>
+<p><code>parameters</code> must be provided as a table, which may have the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td><a href="../types/"><span class="tag tab"></span></a></td>
+<td><em>Mandatory</em></td>
+<td><p>Table with properties describing the object that will be spawned.</p><p>Required content depends on the type of object being spawned.</p></td>
+</tr>
+<tr>
+<td>position</td>
+<td><a href="../types/"><span class="tag vec"></span></a></td>
+<td><code>nil</code></td>
+<td>Position where the object will be spawned. When specified, overrides the <code>Transform</code> position in <code>data</code>.</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td><a href="../types/"><span class="tag vec"></span></a></td>
+<td><code>nil</code></td>
+<td>Rotation of the spawned object. When specified, overrides the <code>Transform</code> rotation in <code>data</code>.</td>
+</tr>
+<tr>
+<td>scale</td>
+<td><a href="../types/"><span class="tag vec"></span></a></td>
+<td><code>nil</code></td>
+<td>Scale of the spawned object. When specified, overrides the <code>Transform</code> scale in <code>data</code>.</td>
+</tr>
+<tr>
+<td>callback_function</td>
+<td><a href="../types/"><span class="tag fun"></span></a></td>
+<td><code>nil</code></td>
+<td>Called when the object has finished spawning. The spawned object will be passed as the first and only parameter.</td>
+</tr>
+</tbody>
+</table>
+<p><code>data</code> is mandatory, all other properties are optional. When a property is omitted, it will be given the corresponding
+default value (above).</p>
+<p>Objects take a moment to be spawn. The purpose of <code>callback_function</code> is to allow you to execute additional code after
+the object has finished spawning.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You can modify an object's data prior to spawning, this is currently the only way to "Create States" via API (using the "States" key).</p>
+<p>You can derive your <code>data</code> table from another object by calling <a href="../object/#getdata">getData()</a> on it, and
+manipulating the resultant table as you see fit.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Spawn a 2x scale "RPG Bear" object with a blue base in the center of the table and initiate a
+<a href="../object/#setpositionsmooth">smooth move</a> on the object. Once the object has finished spawning, <a href="#log">log</a> the
+object's <a href="../object/#getbounds">bounds</a>.
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">object</span> <span class="o">=</span> <span class="n">spawnObjectData</span><span class="p">({</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;rpg_BEAR&quot;</span><span class="p">,</span>
+        <span class="n">Transform</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">posX</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">posY</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="n">posZ</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">rotX</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">rotY</span> <span class="o">=</span> <span class="mi">180</span><span class="p">,</span>
+            <span class="n">rotZ</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">scaleX</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">scaleY</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">scaleZ</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="p">},</span>
+        <span class="n">ColorDiffuse</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>
+            <span class="n">g</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="mf">0.8</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="n">callback_function</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">spawned_object</span><span class="p">)</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">spawned_object</span><span class="p">.</span><span class="n">getBounds</span><span class="p">())</span>
+    <span class="kr">end</span>
+<span class="p">})</span>
+<span class="n">object</span><span class="p">.</span><span class="n">setPositionSmooth</span><span class="p">({</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">})</span>
+</code></pre></div></p>
 </div>
 <hr />
 <h4 id="spawnobjectjson">spawnObjectJSON(...)<a class="headerlink" href="#spawnobjectjson" title="Permanent link">&para;</a></h4>
-<p>Spawns an Object using a JSON string. Works with <a href="../object/#getjson">getJSON()</a>. It works just like spawnObject, but instead of a <code>type</code>, you supply a <code>json</code> string. The other parameters will overwrite those in the JSON.</p>
+<p><a href="../types/"><span class="ret obj"></span></a> Spawns an object from a JSON string.</p>
+<p>This API gives you complete control over all persistent properties that an object has.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. You can also add a delay after spawning using a <a href="../wait/">Wait</a> function.</p>
+<p>Unless you've already got a JSON object string at your disposal then <a href="#spawnobjectdata">spawnObjectData(...)</a> is the
+preferred API as it's less resource intensive.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">spawnObjectJSON(parameters)</p>
 <ul>
-<li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A Table of parameters used to determine how spawnObjectJSON will act.<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>parameters.json</strong>: <a href="../object/#getjson">getJSON()</a> string.</li>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>parameters.position</strong>: Position to place Object.<ul>
-<li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
-</ul>
-</li>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>parameters.rotation</strong>: Rotation of the Object.<ul>
-<li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
-</ul>
-</li>
-<li><a href="../types/#vector"><span class="tag vec"></span></a> <strong>parameters.scale</strong>: Scale of the Object.<ul>
-<li><span class="critic comment">Optional, defaults to JSON's value.</span></li>
-</ul>
-</li>
-<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>parameters.callback_function</strong>: The function to activate after the Object has finished spawning into the scene.<ul>
-<li><span class="critic comment">Optional, defaults to not being used.</span></li>
-<li><span class="critic comment">A reference to the object spawned is always passed to callback_function. See the example for how to access it.</span></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>parameters</strong>: A table of <a href="#spawnobjectjson-spawn-parameters">spawn parameters</a>.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="n">futureName</span> <span class="o">=</span> <span class="s2">&quot;Spawned By Script!&quot;</span>
-    <span class="n">spawnParams</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">json</span>              <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">getJSON</span><span class="p">(),</span>
-        <span class="n">position</span>          <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">5</span><span class="p">},</span>
-        <span class="n">rotation</span>          <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">},</span>
-        <span class="n">scale</span>             <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">},</span>
-        <span class="n">sound</span>             <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="n">snap_to_grid</span>      <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="n">callback_function</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="n">spawn_callback</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">futureName</span><span class="p">,</span> <span class="s2">&quot;Red&quot;</span><span class="p">)</span> <span class="kr">end</span>
-        <span class="c1">--alternative format:</span>
-        <span class="c1">--callback_function = |obj| spawn_callback(obj, futureName, &quot;Red&quot;)</span>
-    <span class="p">}</span>
-    <span class="n">spawnObject</span><span class="p">(</span><span class="n">spawnParams</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="kr">function</span> <span class="nf">spawn_callback</span><span class="p">(</span><span class="n">object_spawned</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
-    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">object_spawned</span><span class="p">.</span><span class="n">setColorTint</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
-<span class="kr">end</span>
+<h5 id="spawnobjectjson-spawn-parameters">Spawn Parameters<a class="headerlink" href="#spawnobjectjson-spawn-parameters" title="Permanent link">&para;</a></h5>
+<p><code>parameters</code> must be provided as a table, which may have the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>json</td>
+<td><a href="../types/"><span class="tag str"></span></a></td>
+<td><em>Mandatory</em></td>
+<td><p>JSON string describing the object that will be spawned.</p><p>Required content depends on the type of object being spawned.</p></td>
+</tr>
+<tr>
+<td>position</td>
+<td><a href="../types/"><span class="tag vec"></span></a></td>
+<td><code>nil</code></td>
+<td>Position where the object will be spawned. When specified, overrides the <code>Transform</code> position in <code>json</code>.</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td><a href="../types/"><span class="tag vec"></span></a></td>
+<td><code>nil</code></td>
+<td>Rotation of the spawned object. When specified, overrides the <code>Transform</code> rotation in <code>json</code>.</td>
+</tr>
+<tr>
+<td>scale</td>
+<td><a href="../types/"><span class="tag vec"></span></a></td>
+<td><code>nil</code></td>
+<td>Scale of the spawned object. When specified, overrides the <code>Transform</code> scale in <code>json</code>.</td>
+</tr>
+<tr>
+<td>callback_function</td>
+<td><a href="../types/"><span class="tag fun"></span></a></td>
+<td><code>nil</code></td>
+<td>Called when the object has finished spawning. The spawned object will be passed as the first and only parameter.</td>
+</tr>
+</tbody>
+</table>
+<p><code>json</code> is mandatory, all other properties are optional. When a property is omitted, it will be given the corresponding
+default value (above).</p>
+<p>Objects take a moment to be spawn. The purpose of <code>callback_function</code> is to allow you to execute additional code after
+the object has finished spawning.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Spawn a 2x scale "RPG Bear" object with a blue base in the center of the table and initiate a
+<a href="../object/#setpositionsmooth">smooth move</a> on the object. Once the object has finished spawning, <a href="#log">log</a> the
+object's <a href="../object/#getbounds">bounds</a>.
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">object</span> <span class="o">=</span> <span class="n">spawnObjectJSON</span><span class="p">({</span>
+    <span class="n">json</span> <span class="o">=</span> <span class="s">[[{</span>
+<span class="s">        &quot;Name&quot;: &quot;rpg_BEAR&quot;,</span>
+<span class="s">        &quot;Transform&quot;: {</span>
+<span class="s">            &quot;posX&quot;: 0,</span>
+<span class="s">            &quot;posY&quot;: 3,</span>
+<span class="s">            &quot;posZ&quot;: 0,</span>
+<span class="s">            &quot;rotX&quot;: 0,</span>
+<span class="s">            &quot;rotY&quot;: 180,</span>
+<span class="s">            &quot;rotZ&quot;: 0,</span>
+<span class="s">            &quot;scaleX&quot;: 2,</span>
+<span class="s">            &quot;scaleY&quot;: 2,</span>
+<span class="s">            &quot;scaleZ&quot;: 2</span>
+<span class="s">        },</span>
+<span class="s">        &quot;ColorDiffuse&quot;: {</span>
+<span class="s">            &quot;r&quot;: 0.3,</span>
+<span class="s">            &quot;g&quot;: 0.5,</span>
+<span class="s">            &quot;b&quot;: 0.8</span>
+<span class="s">        }</span>
+<span class="s">    }]]</span><span class="p">,</span>
+    <span class="n">callback_function</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">spawned_object</span><span class="p">)</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">spawned_object</span><span class="p">.</span><span class="n">getBounds</span><span class="p">())</span>
+    <span class="kr">end</span>
+<span class="p">})</span>
+<span class="n">object</span><span class="p">.</span><span class="n">setPositionSmooth</span><span class="p">({</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">})</span>
 </code></pre></div>
+The <code>[[</code>...<code>]]</code> syntax above <a href="https://www.lua.org/pil/2.4.html">denotes a multi-line string</a>.</p>
+</div>
 <hr />
 <h4 id="startluacoroutine">startLuaCoroutine(...)<a class="headerlink" href="#startluacoroutine" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a> Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the next frame of the game using <code>coroutine.yield(0)</code>.</p>
