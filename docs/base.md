@@ -24,9 +24,9 @@ getSeatedPlayers() {: #getseatedplayers data-toc-label="getSeatedPlayers()" data
 group([<span class="tag tab"></span>](types.md) objects) | Groups objects together, like how the ++G++ key does for players. | [<span class="ret tab"></span>](types.md) | [:i:](#group)
 paste([<span class="tag tab"></span>](types.md) parameters) | Pastes Objects in-game that were copied to the in-game clipboard. Works with [copy(...)](#copy). | [<span class="ret tab"></span>](types.md) | [:i:](#paste)
 setLookingForPlayers([<span class="tag boo"></span>](types.md) lfp) {: #setlookingforplayers data-toc-label="setLookingForPlayers(...)" data-toc-child-of="global-function-details" } | Enables/disables looking for group. This is visible in the server browsers, indicating if you are recruiting for a game. | [<span class="ret boo"></span>](types.md) |
-spawnObject([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object. See [Built-in](built-in-object.md) and [Custom](custom-game-objects.md) Spawnable Object pages for further details. | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobject)
-spawnObjectData([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object using a data table. Works with [getData()](object.md#getdata). | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectdata)
-spawnObjectJSON([<span class="tag tab"></span>](types.md) parameters) | Spawns an Object using a JSON string. Works with [getJSON()](object.md#getjson). | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectjson)
+spawnObject([<span class="tag tab"></span>](types.md) parameters) | Spawns an object. | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobject)
+spawnObjectData([<span class="tag tab"></span>](types.md) parameters) | Spawns an object from a data table. | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectdata)
+spawnObjectJSON([<span class="tag tab"></span>](types.md) parameters) | Spawns an object from a JSON string. | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectjson)
 startLuaCoroutine([<span class="tag obj"></span>](types.md) function_owner, [<span class="tag str"></span>](types.md) function_name) | Start a coroutine. | [<span class="ret boo"></span>](types.md) | [:i:](#startluacoroutine)
 stringColorToRGB([<span class="tag str"></span>](types.md) player_color) | Converts a [Player Color](player/colors.md) string into a Color Table for tinting. | [<span class="ret col"></span>](types.md#color) | [:i:](#stringcolortorgb)
 
@@ -185,143 +185,188 @@ end
 
 ####spawnObject(...)
 
-[<span class="ret obj"></span>](types.md) Spawns an Object. See [Built-in](built-in-object.md) and [Custom](custom-game-objects.md) Spawnable Objects pages for details of specific spawnable objects.
+[<span class="ret obj"></span>](types.md) Spawns an object.
 
-If you are spawning a **custom Object**, you should call [setCustomObject](object.md#setcustomobject) immediately after spawnObject to set its custom properties.
+Refer to the spawnable [Built-in Object](built-in-object.md) and [Custom Object](custom-game-objects.md) pages for
+details about the types of objects that can be spawned.
 
-!!!tip
-	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. You can also add a delay after spawning using a [Wait](wait.md) function.
+If you are spawning a [Custom Object](custom-game-objects.md), you should immediately call
+[setCustomObject(...)](object.md#setcustomobject) on the object returned from `spawnObject(...)`.
 
 !!!info "spawnObject(parameters)"
-	* [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters used to determine how spawnObject will act.
-		* [<span class="tag str"></span>](types.md) **parameters.type**: [Built-in](built-in-object.md) or [Custom](custom-game-objects.md) Game Object name.
-		* [<span class="tag vec"></span>](types.md#vector) **parameters.position**: Position to place Object.
-			* {>>Optional, defaults to {x=0, y=3, z=0}.<<}
-		* [<span class="tag vec"></span>](types.md#vector) **parameters.rotation**: Rotation of the Object.
-			* {>>Optional, defaults to {x=0, y=0, z=0}<<}
-		* [<span class="tag vec"></span>](types.md#vector) **parameters.scale**: Scale of the Object.
-			* {>>Optional, defaults to {x=1, y=1, z=1}<<}
-		* [<span class="tag boo"></span>](types.md) **parameters.sound**: If the spawned Object noise is played.
-			* {>>Optional, defaults to true.<<}
-		* [<span class="tag boo"></span>](types.md) **parameters.snap_to_grid**: If snap-to-grid is active on the Object.
-			* {>>Optional, defaults to false.<<}
-		* [<span class="tag fun"></span>](types.md#function) **parameters.callback_function**: The function to activate after the Object has finished spawning into the scene.
-			* {>>Optional, defaults to not being used.<<}
-			* {>>A reference to the object spawned is always passed to callback_function. See the example for how to access it.<<}
+	* [<span class="tag tab"></span>](types.md) **parameters**: A table of [spawn parameters](#spawnobject-spawn-parameters).
 
+##### Spawn Parameters {: #spawnobject-spawn-parameters data-toc-omit }
 
-``` Lua
-function onLoad()
-	futureName = "Spawned By Script!"
-	spawnParams = {
+`parameters` must be provided as a table, which may have the following properties:
+
+Name | Type | Default | Description
+-- | -- | -- | --
+type | [<span class="tag str"></span>](types.md) | _Mandatory_ | [Built-in](built-in-object.md) or [Custom Game Object](custom-game-objects.md) name.
+position | [<span class="tag vec"></span>](types.md) | <nobr>`{0, 0, 0}`</nobr> | Position where the object will be spawned.
+rotation | [<span class="tag vec"></span>](types.md) | <nobr>`{0, 0, 0}`</nobr>  | Rotation of the spawned object.
+scale | [<span class="tag vec"></span>](types.md) | <nobr>`{1, 1, 1}`</nobr>  | Scale of the spawned object.
+sound | [<span class="tag boo"></span>](types.md) | `true`  | Whether a sound will be played as the object spawns.
+snap_to_grid | [<span class="tag boo"></span>](types.md) | `false` | Whether upon spawning, the object will snap to nearby grid lines (or snap points).
+callback_function | [<span class="tag fun"></span>](types.md) | `nil` | Called when the object has finished spawning. The spawned object will be passed as the first and only parameter.
+
+`type` is mandatory, all other properties are optional. When a property is omitted, it will be given the corresponding
+default value (above).
+
+Objects take a moment to be spawn. The purpose of `callback_function` is to allow you to execute additional code after
+the object has finished spawning.
+
+!!!example
+	Spawn (with sound disabled) a 2x scale "RPG Bear" object in the center of the table and initiate a
+	[smooth move](object.md#setpositionsmooth) on the object. Once the object has finished spawning, [log](#log) the
+	object's [bounds](object.md#getbounds).
+	```lua
+	local object = spawnObject({
 		type = "rpg_BEAR",
-		position          = {x=0, y=3, z=-5},
-		rotation          = {x=0, y=90, z=0},
-		scale             = {x=2, y=2, z=2},
-		sound             = false,
-		snap_to_grid      = true,
-		callback_function = function(obj) spawn_callback(obj, "Bear", "Green") end
-	}
-	spawnObject(spawnParams)
-end
-
-function spawn_callback(object_spawned, name, color)
-	object_spawned.setName(name)
-	object_spawned.setColorTint(color)
-end
-```
+		position = {0, 3, 0},
+		scale = {2, 2, 2},
+		sound = false,
+		callback_function = function(spawned_object)
+			log(spawned_object.getBounds())
+		end
+	})
+	object.setPositionSmooth({10, 5, 10})
+	```
 
 ---
 
 
 ####spawnObjectData(...)
 
-Spawns an Object using a data table. Works with [getData()](object.md#getdata). It works just like spawnObject, but instead of a `type`, you supply a `data` table. The other parameters will overwrite those in the Data.
+[<span class="ret obj"></span>](types.md) Spawns an object from a data table. 
+
+This API gives you complete control over all persistent properties that an object has.
 
 !!!info "spawnObjectData(parameters)"
-	* [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters used to determine how spawnObjectData will act.
-		* [<span class="tag tab"></span>](types.md) **parameters.data**: [getData()](object.md#getdata) table.
-		* [<span class="tag vec"></span>](types.md#vector) **parameters.position**: Position to place Object.
-			* {>>Optional, defaults to data table's value.<<}
-		* [<span class="tag vec"></span>](types.md#vector) **parameters.rotation**: Rotation of the Object.
-			* {>>Optional, defaults to data table's value.<<}
-		* [<span class="tag vec"></span>](types.md#vector) **parameters.scale**: Scale of the Object.
-			* {>>Optional, defaults to data table's value.<<}
-		* [<span class="tag fun"></span>](types.md#function) **parameters.callback_function**: The function to activate after the Object has finished spawning into the scene.
-			* {>>Optional, defaults to not being used.<<}
-			* {>>A reference to the object spawned is always passed to callback_function. See the example for how to access it.<<}
+	* [<span class="tag tab"></span>](types.md) **parameters**: A table of [spawn parameters](#spawnobjectdata-spawn-parameters).
 
-``` Lua
-local futureName = "Spawned By Script!"
-spawnParams = {
-    data              = self.getData(),
-    position          = {x=0, y=3, z=-5},
-    rotation          = {x=0, y=90, z=0},
-    scale             = {x=2, y=2, z=2},
-    callback_function = function(obj) spawn_callback(obj, futureName, "Red") end
-    --alternative format:
-    --callback_function = |obj| spawn_callback(obj, futureName, "Red")
-}
-spawnObjectData(spawnParams)
+##### Spawn Parameters {: #spawnobjectdata-spawn-parameters data-toc-omit }
 
-function spawn_callback(object_spawned, name, color)
-	object_spawned.setName(name)
-	object_spawned.setColorTint(color)
-end
-```
+`parameters` must be provided as a table, which may have the following properties:
+
+Name | Type | Default | Description
+-- | -- | -- | --
+data | [<span class="tag tab"></span>](types.md) | _Mandatory_ | <p>Table with properties describing the object that will be spawned.</p><p>Required content depends on the type of object being spawned.</p>
+position | [<span class="tag vec"></span>](types.md) | `nil` | Position where the object will be spawned. When specified, overrides the `Transform` position in `data`.
+rotation | [<span class="tag vec"></span>](types.md) | `nil`  | Rotation of the spawned object. When specified, overrides the `Transform` rotation in `data`.
+scale | [<span class="tag vec"></span>](types.md) | `nil`  | Scale of the spawned object. When specified, overrides the `Transform` scale in `data`.
+callback_function | [<span class="tag fun"></span>](types.md) | `nil` | Called when the object has finished spawning. The spawned object will be passed as the first and only parameter.
+
+`data` is mandatory, all other properties are optional. When a property is omitted, it will be given the corresponding
+default value (above).
+
+Objects take a moment to be spawn. The purpose of `callback_function` is to allow you to execute additional code after
+the object has finished spawning.
 
 !!!tip
-    You can modify an object's data prior to spawning, this is currently the only way to "Create States" via API (using the "States" key).
+	You can derive your `data` table from another object by calling [getData()](object.md#getdata) on it, and
+	manipulating the resultant table as you see fit.
+
+!!!example
+	Spawn a 2x scale "RPG Bear" object with a blue base in the center of the table and initiate a
+	[smooth move](object.md#setpositionsmooth) on the object. Once the object has finished spawning, [log](#log) the
+	object's [bounds](object.md#getbounds).
+	```lua
+	local object = spawnObjectData({
+		data = {
+			Name = "rpg_BEAR",
+			Transform = {
+				posX = 0,
+				posY = 3,
+				posZ = 0,
+				rotX = 0,
+				rotY = 180,
+				rotZ = 0,
+				scaleX = 2,
+				scaleY = 2,
+				scaleZ = 2
+			},
+			ColorDiffuse = {
+				r = 0.3,
+				g = 0.5,
+				b = 0.8
+			}
+		},
+		callback_function = function(spawned_object)
+			log(spawned_object.getBounds())
+		end
+	})
+	object.setPositionSmooth({10, 5, 10})
+	```
 
 ---
 
 
 ####spawnObjectJSON(...)
 
-Spawns an Object using a JSON string. Works with [getJSON()](object.md#getjson). It works just like spawnObject, but instead of a `type`, you supply a `json` string. The other parameters will overwrite those in the JSON.
+[<span class="ret obj"></span>](types.md) Spawns an object from a JSON string.
+
+This API gives you complete control over all persistent properties that an object has.
 
 !!!tip
-	Spawned Objects take a moment to be physically spawned into the game. The purpose of the callback functionality is to allow you to run additional actions after the Object has been initiated fully into the instance. You can also add a delay after spawning using a [Wait](wait.md) function.
+	Unless you've already got a JSON object string at your disposal then [spawnObjectData(...)](#spawnobjectdata) is the
+	preferred API as it's less resource intensive.
 
 !!!info "spawnObjectJSON(parameters)"
-	* [<span class="tag tab"></span>](types.md) **parameters**: A Table of parameters used to determine how spawnObjectJSON will act.
-		* [<span class="tag str"></span>](types.md) **parameters.json**: [getJSON()](object.md#getjson) string.
-		* [<span class="tag vec"></span>](types.md#vector) **parameters.position**: Position to place Object.
-			* {>>Optional, defaults to JSON's value.<<}
-		* [<span class="tag vec"></span>](types.md#vector) **parameters.rotation**: Rotation of the Object.
-			* {>>Optional, defaults to JSON's value.<<}
-		* [<span class="tag vec"></span>](types.md#vector) **parameters.scale**: Scale of the Object.
-			* {>>Optional, defaults to JSON's value.<<}
-		* [<span class="tag fun"></span>](types.md#function) **parameters.callback_function**: The function to activate after the Object has finished spawning into the scene.
-			* {>>Optional, defaults to not being used.<<}
-			* {>>A reference to the object spawned is always passed to callback_function. See the example for how to access it.<<}
+	* [<span class="tag tab"></span>](types.md) **parameters**: A table of [spawn parameters](#spawnobjectjson-spawn-parameters).
 
-``` Lua
-function onLoad()
-	futureName = "Spawned By Script!"
-	spawnParams = {
-		json              = self.getJSON(),
-		position          = {x=0, y=3, z=-5},
-		rotation          = {x=0, y=90, z=0},
-		scale             = {x=2, y=2, z=2},
-		sound             = false,
-		snap_to_grid      = true,
-		callback_function = function(obj) spawn_callback(obj, futureName, "Red") end
-		--alternative format:
-		--callback_function = |obj| spawn_callback(obj, futureName, "Red")
-	}
-	spawnObject(spawnParams)
-end
+##### Spawn Parameters {: #spawnobjectjson-spawn-parameters data-toc-omit }
 
-function spawn_callback(object_spawned, name, color)
-	object_spawned.setName(name)
-	object_spawned.setColorTint(color)
-end
-```
+`parameters` must be provided as a table, which may have the following properties:
+
+Name | Type | Default | Description
+-- | -- | -- | --
+json | [<span class="tag str"></span>](types.md) | _Mandatory_ | <p>JSON string describing the object that will be spawned.</p><p>Required content depends on the type of object being spawned.</p>
+position | [<span class="tag vec"></span>](types.md) | `nil` | Position where the object will be spawned. When specified, overrides the `Transform` position in `json`.
+rotation | [<span class="tag vec"></span>](types.md) | `nil`  | Rotation of the spawned object. When specified, overrides the `Transform` rotation in `json`.
+scale | [<span class="tag vec"></span>](types.md) | `nil`  | Scale of the spawned object. When specified, overrides the `Transform` scale in `json`.
+callback_function | [<span class="tag fun"></span>](types.md) | `nil` | Called when the object has finished spawning. The spawned object will be passed as the first and only parameter.
+
+`json` is mandatory, all other properties are optional. When a property is omitted, it will be given the corresponding
+default value (above).
+
+Objects take a moment to be spawn. The purpose of `callback_function` is to allow you to execute additional code after
+the object has finished spawning.
+
+!!!example
+	Spawn a 2x scale "RPG Bear" object with a blue base in the center of the table and initiate a
+	[smooth move](object.md#setpositionsmooth) on the object. Once the object has finished spawning, [log](#log) the
+	object's [bounds](object.md#getbounds).
+	```lua
+	local object = spawnObjectJSON({
+		json = [[{
+			"Name": "rpg_BEAR",
+			"Transform": {
+				"posX": 0,
+				"posY": 3,
+				"posZ": 0,
+				"rotX": 0,
+				"rotY": 180,
+				"rotZ": 0,
+				"scaleX": 2,
+				"scaleY": 2,
+				"scaleZ": 2
+			},
+			"ColorDiffuse": {
+				"r": 0.3,
+				"g": 0.5,
+				"b": 0.8
+			}
+		}]],
+		callback_function = function(spawned_object)
+			log(spawned_object.getBounds())
+		end
+	})
+	object.setPositionSmooth({10, 5, 10})
+	```
+	The `[[`...`]]` syntax above [denotes a multi-line string](https://www.lua.org/pil/2.4.html).
 
 ---
-
-
 
 
 ####startLuaCoroutine(...)
@@ -392,6 +437,8 @@ Players can bind key to hotkeys from the `Options` -> `Game Keys` UI after this 
         * [<span class="tag boo"></span>](types.md) **isKeyUp**: Whether this callback is being triggered in response to a hotkey being released.
 	* [<span class="tag boo"></span>](types.md) **triggerOnKeyUp**: Whether the `callback` is _also_ executed when the hotkey is released. The `callback` is always triggered when the hotkey is pressed.
         * {>>Optional, defaults to false.<<}
+
+
 
 Hotkey bindings do not prevent the behavior of Settings key bindings i.e. if ++R++ (shuffle by default) is assigned as a
 hotkey, the hotkey callback and the default shuffle behavior will both be executed whenever ++R++ is pressed.
