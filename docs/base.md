@@ -213,7 +213,7 @@ callback_function | [<span class="tag fun"></span>](types.md) | `nil` | Called w
 `type` is mandatory, all other properties are optional. When a property is omitted, it will be given the corresponding
 default value (above).
 
-Objects take a moment to be spawn. The purpose of `callback_function` is to allow you to execute additional code after
+Objects take a moment to spawn. The purpose of `callback_function` is to allow you to execute additional code after
 the object has finished spawning.
 
 !!!example
@@ -260,7 +260,7 @@ callback_function | [<span class="tag fun"></span>](types.md) | `nil` | Called w
 `data` is mandatory, all other properties are optional. When a property is omitted, it will be given the corresponding
 default value (above).
 
-Objects take a moment to be spawn. The purpose of `callback_function` is to allow you to execute additional code after
+Objects take a moment to spawn. The purpose of `callback_function` is to allow you to execute additional code after
 the object has finished spawning.
 
 !!!tip
@@ -330,7 +330,7 @@ callback_function | [<span class="tag fun"></span>](types.md) | `nil` | Called w
 `json` is mandatory, all other properties are optional. When a property is omitted, it will be given the corresponding
 default value (above).
 
-Objects take a moment to be spawn. The purpose of `callback_function` is to allow you to execute additional code after
+Objects take a moment to spawn. The purpose of `callback_function` is to allow you to execute additional code after
 the object has finished spawning.
 
 !!!example
