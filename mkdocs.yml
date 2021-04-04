@@ -103,8 +103,8 @@ nav:
     - Physics: physics.md
     - Player:
       - Colors: player/colors.md
-      - Manager: player/manager.md
       - Instance: player/instance.md
+      - Manager: player/manager.md
     - Spawnable Objects:
       - Built-in: built-in-object.md
       - Custom: custom-game-objects.md
