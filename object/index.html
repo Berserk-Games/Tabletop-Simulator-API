@@ -3831,20 +3831,16 @@ property, but are unable to assign a new value to it.</p>
 </tr>
 <tr>
 <td id="value">value</td>
-<td>The value of the object for summing up selected objects. Only works if the apropriate bits are set in <code>obj.value_flags</code></td>
+<td><p>A numeric value associated with the object, which when non-zero, will be displayed when hovering over the object.</p><p>In the case of stacks, the value shown in the UI will be multiplied by the stack size i.e. you can use <code>value</code> to create custom stackable chips.</p><p>When multiple objects are selected, values will be summed together with objects sharing overlapping <a href="#tag-functions">object tags</a>.</p></td>
 <td align="left"><a href="../types/"><span class="tag int"></span></a></td>
 </tr>
 <tr>
 <td id="value_flags">value_flags</td>
-<td>A bit field, objects with overlapping <code>value_flag</code> bits are counted together when selected.</td>
+<td><p><a href="../intro/#deprecated"><span class="tag deprecated"></span></a> <em>Use <a href="#tag-functions">object tags</a></em>.</p> A <a href="https://en.wikipedia.org/wiki/Bit_field">bit field</a>. When objects with overlapping <code>value_flags</code> are selected and hovered over, their <a href="#value">values</a> will be summed together.</td>
 <td align="left"><a href="../types/"><span class="tag int"></span></a></td>
 </tr>
 </tbody>
 </table>
-<div class="admonition bug">
-<p class="admonition-title">Bug</p>
-<p>The <code>value_flags</code> and <code>value</code> member variables do not persist when the object is reloaded (such as loading a save and entering/exiting containers).</p>
-</div>
 <h3 id="behavior-variables">Behavior Variables<a class="headerlink" href="#behavior-variables" title="Permanent link">&para;</a></h3>
 <p>Some objects provide additional behavior. This functionality is accessible as Object member variables, but will be <code>nil</code>
 unless the Object includes the behavior.</p>

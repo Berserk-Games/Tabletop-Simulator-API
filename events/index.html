@@ -2470,8 +2470,8 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onPlayerTurn(<a href="../types/"><span class="tag pla"></span></a> player)</td>
-<td>Called at the start of a player's turn when using the in-game turn system.</td>
+<td>onPlayerTurn(<a href="../types/"><span class="tag pla"></span></a> player, <a href="../types/"><span class="tag pla"></span></a> previous_player)</td>
+<td>Called at the start of a player's turn.</td>
 <td><a href="#onplayerturn"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
@@ -3258,17 +3258,26 @@ end</p>
 </div>
 <hr />
 <h3 id="onplayerturn">onPlayerTurn(...)<a class="headerlink" href="#onplayerturn" title="Permanent link">&para;</a></h3>
-<p>Called at the start of a player's turn when using the in-game turn system.</p>
+<p>Called at the start of a player's turn. <a href="../turns/">Turns</a> must be enabled.</p>
 <div class="admonition info">
-<p class="admonition-title">onPlayerTurn(player)</p>
+<p class="admonition-title">onPlayerTurn(player, previous_player)</p>
 <ul>
-<li><a href="../types/"><span class="tag pla"></span></a> <strong>player</strong>: <a href="../player/instance/">Player</a> who's turn is starting.</li>
+<li><a href="../types/"><span class="tag pla"></span></a> <strong>player</strong>: <a href="../player/instance/">Player</a> whose turn is starting.</li>
+<li><a href="../types/"><span class="tag pla"></span></a> <strong>previous_player</strong>: <a href="../player/instance/">Player</a> whose turn just finished, or <code>nil</code> if this is the first turn.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onPlayerTurn</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">color</span> <span class="o">..</span> <span class="s2">&quot;&#39;s turn starts now.&quot;</span><span class="p">)</span>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>When a new turn starts, print whose turn ended and whose turn it now is:
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onPlayerTurn</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">previous_player</span><span class="p">)</span>
+    <span class="kr">if</span> <span class="n">previous_player</span> <span class="o">==</span> <span class="kc">nil</span> <span class="kr">then</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">color</span> <span class="o">..</span> <span class="s2">&quot; is going first. It&#39;s now their turn.&quot;</span><span class="p">)</span>
+    <span class="kr">else</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">previous_player</span><span class="p">.</span><span class="n">color</span> <span class="o">..</span> <span class="s2">&quot;&#39;s turn is over. It&#39;s now &quot;</span> <span class="o">..</span> <span class="n">player</span><span class="p">.</span><span class="n">color</span> <span class="o">..</span> <span class="s2">&quot;&#39;s turn.&quot;</span><span class="p">)</span>
+    <span class="kr">end</span>
 <span class="kr">end</span>
-</code></pre></div>
+</code></pre></div></p>
+</div>
 <hr />
 <h3 id="onsave">onSave()<a class="headerlink" href="#onsave" title="Permanent link">&para;</a></h3>
 <p>Return a <a href="../types/"><span class="tag str"></span></a>.</p>

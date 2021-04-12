@@ -1407,10 +1407,6 @@
 <div class="highlight"><pre><span></span><code><span class="n">object</span><span class="p">.</span><span class="n">Book</span><span class="p">.</span><span class="n">setHighlight</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre></div></p>
 </div>
-<div class="admonition bug">
-<p class="admonition-title">Bug</p>
-<p>setHighlight() will do nothing if you try to draw a highlight twice in a row at the same coordinates, even if you call clearHighlight() or reload() on the object in between calls to setHighlight().</p>
-</div>
 <hr />
 <h4 id="setpage">setPage(...)<a class="headerlink" href="#setpage" title="Permanent link">&para;</a></h4>
 <p><a href="../../types/"><span class="ret boo"></span></a> Sets the current page of the PDF. Returns true if the page was succesfully set, false if the page number was invalid.</p>
