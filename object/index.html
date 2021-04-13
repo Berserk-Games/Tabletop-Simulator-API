@@ -1115,6 +1115,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getzones" class="md-nav__link">
+    getZones()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#isdestroyed" class="md-nav__link">
     isDestroyed()
   </a>
@@ -3002,6 +3009,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getzones" class="md-nav__link">
+    getZones()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#isdestroyed" class="md-nav__link">
     isDestroyed()
   </a>
@@ -4405,6 +4419,14 @@ unless the Object includes the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
+<td>getZones()</td>
+<td>Returns a list of zones that the object is currently occupying.</td>
+<td><a href="../types/"><span class="ret tab"></span></a></td>
+<td><a href="#getzones"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+</tr>
+<tr>
 <td id="isdestroyed_1" style="position: relative;">isDestroyed()<h6 data-toc-mock-searchable="" id="isdestroyed" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">isDestroyed()</h6></td>
 <td>Returns true if the Object is (or will be) destroyed.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
@@ -5654,8 +5676,7 @@ unless the Object includes the behavior.</p>
 <p>Zones return a (numerically indexed) table of game Objects occupying the zone.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>If the zone has <a href="#gettags">tags</a>, then only objects with compatible tags will be considered "occupying"
-the zone.</p>
+<p>If the zone has <a href="#tag-functions">tags</a>, then only objects with compatible tags will occupy the zone.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -5747,6 +5768,29 @@ the zone.</p>
 the same as <a href="#getrotationvalue">getRotationValue()</a>.</p>
 </div>
 <p>See <a href="#setvalue">setValue(...)</a> for more information.</p>
+<hr />
+<h4 id="getzones">getZones()<a class="headerlink" href="#getzones" title="Permanent link">&para;</a></h4>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a list of zones that the object is currently occupying.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If the object has <a href="./#tag-functions">tags</a>, then the object will only occupy zones with compatible tags.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Print a comma separated list of GUIDs belonging to zones an object is currently occupying.
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">guids</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="kr">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">zone</span> <span class="kr">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">object</span><span class="p">.</span><span class="n">getZones</span><span class="p">())</span> <span class="kr">do</span>
+    <span class="nb">table.insert</span><span class="p">(</span><span class="n">guids</span><span class="p">,</span> <span class="n">zone</span><span class="p">.</span><span class="n">guid</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="kr">if</span> <span class="o">#</span><span class="n">guids</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="kr">then</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object is contained within &quot;</span> <span class="o">..</span> <span class="nb">table.concat</span><span class="p">(</span><span class="n">guids</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="p">))</span>
+<span class="kr">else</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object is not contained within any zones&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div></p>
+</div>
 <h3 id="set-function-details">Set Function Details<a class="headerlink" href="#set-function-details" title="Permanent link">&para;</a></h3>
 <h4 id="setcustomobject">setCustomObject(...)<a class="headerlink" href="#setcustomobject" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a> Sets a custom Object's properties. It can be used after <a href="../base/#spawnobject">spawnObject</a> or on an already existing custom Object. If used on an already existing custom Object, you must use <a href="#reload">reload</a> on the object after setCustomObject for the changes to be displayed.</p>
