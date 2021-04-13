@@ -71,23 +71,25 @@ onLoad([<span class="tag str"></span>](types.md) script_state) | Called when a s
 onObjectCollisionEnter([<span class="tag obj"></span>](types.md) registered_object, [<span class="tag tab"></span>](types.md) collision_info) | Called when an Object starts colliding with a [collision registered](object.md#registercollisions) Object. | [:i:](#onobjectcollisionenter)
 onObjectCollisionExit([<span class="tag obj"></span>](types.md) registered_object, [<span class="tag tab"></span>](types.md) collision_info) | Called when an Object stops colliding with a [collision registered](object.md#registercollisions) Object. | [:i:](#onobjectcollisionexit)
 onObjectCollisionStay([<span class="tag obj"></span>](types.md) registered_object, [<span class="tag tab"></span>](types.md) collision_info) | Called **every frame** that an Object is colliding with a [collision registered](object.md#registercollisions) Object. | [:i:](#onobjectcollisionstay)
-onObjectDestroy([<span class="tag obj"></span>](types.md) object) | Called whenever any object is about to be destroyed. | [:i:](#onobjectdestroy)
-onObjectDrop([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) dropped_object) | Called when any object is dropped by a player. | [:i:](#onobjectdrop)
-onObjectEnterScriptingZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) enter_object) | Called when any object enters any scripting zone. | [:i:](#onobjectenterscriptingzone)
-onObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) enter_object) | Called when any object enters any container. Includes decks | [:i:](#onobjectentercontainer)
+onObjectDestroy([<span class="tag obj"></span>](types.md) object) | Called whenever an object is about to be destroyed. | [:i:](#onobjectdestroy)
+onObjectDrop([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) dropped_object) | Called when an object is dropped by a player. | [:i:](#onobjectdrop)
+onObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) | Called when an object enters a container. Includes decks | [:i:](#onobjectentercontainer)
+onObjectEnterScriptingZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) | Called when an object enters a _scripting_ zone. | [:i:](#onobjectenterscriptingzone)
+onObjectEnterZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) | Called when an object enters a zone. | [:i:](#onobjectenterzone)
 onObjectFlick([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color, [<span class="tag vec"></span>](types.md) impulse) | Called when a player flicks an object. | [:i:](#onobjectflick)
 onObjectHover([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) hovered_object) | Called when a player moves their pointer (cursor) over an object. | [:i:](#onobjecthover)
-onObjectLeaveScriptingZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) enter_object) | Called when any object leaves any scripting zone. | [:i:](#onobjectleavescriptingzone)
-onObjectLeaveContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) leave_object) | Called when any object leaves any container. | [:i:](#onobjectleavecontainer)
+onObjectLeaveContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) | Called when an object leaves a container. | [:i:](#onobjectleavecontainer)
+onObjectLeaveScriptingZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) | Called when an object leaves a _scripting_ zone. | [:i:](#onobjectleavescriptingzone)
+onObjectLeaveZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) | Called when an object leaves a zone. | [:i:](#onobjectleavezone)
 onObjectLoopingEffect([<span class="tag obj"></span>](types.md) loop_object, [<span class="tag int"></span>](types.md) index) | Called whenever the looping effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjectloopingeffect)
 onObjectNumberTyped([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color, [<span class="tag int"></span>](types.md) number) | Called when a player types a number whilst hovering over an object. | [:i:](#onobjectnumbertyped)
 onObjectPageChange([<span class="tag obj"></span>](types.md) object) | Called when a Custom PDF object changes page. | [:i:](#onobjectpagechange)
 onObjectPeek([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a player peeks at an Object. | [:i:](#onobjectpeek)
 onObjectPickUp([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) picked_up_object) | Called whenever a Player picks up an Object. | [:i:](#onobjectpickup)
 onObjectRandomize([<span class="tag obj"></span>](types.md) randomize_object, [<span class="tag str"></span>](types.md) player_color) | Called when an Object is randomized. Like when shuffling a deck or shaking dice. | [:i:](#onobjectrandomize)
-onObjectSearchEnd([<span class="tag obj"></span>](types.md) obj, [<span class="tag str"></span>](types.md) player_color) | Called when a search is finished on any container. | [:i:](#onobjectsearchend)
-onObjectSearchStart([<span class="tag obj"></span>](types.md) obj, [<span class="tag str"></span>](types.md) player_color) | Called when a search is started on any container. | [:i:](#onobjectsearchstart)
-onObjectSpawn([<span class="tag obj"></span>](types.md) spawn_object) | Called when any Object is spawned/created. | [:i:](#onobjectspawn)
+onObjectSearchEnd([<span class="tag obj"></span>](types.md) obj, [<span class="tag str"></span>](types.md) player_color) | Called when a search is finished on a container. | [:i:](#onobjectsearchend)
+onObjectSearchStart([<span class="tag obj"></span>](types.md) obj, [<span class="tag str"></span>](types.md) player_color) | Called when a search is started on a container. | [:i:](#onobjectsearchstart)
+onObjectSpawn([<span class="tag obj"></span>](types.md) spawn_object) | Called when an object is spawned/created. | [:i:](#onobjectspawn)
 onObjectStateChange([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) old_state_guid) | Called after an object changes state. | [:i:](#onobjectstatechange)
 onObjectTriggerEffect([<span class="tag obj"></span>](types.md) trigger_object, [<span class="tag int"></span>](types.md) index) | Called whenever the trigger effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjecttriggereffect)
 onPlayerChangeColor([<span class="tag str"></span>](types.md) player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [:i:](#onplayerchangecolor)
@@ -106,8 +108,8 @@ As described above, you may declare these functions in the [Global script](intro
 
 Function Name | Description | &nbsp;
 -- | -- | --
-filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) enter_object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer(...)](#tryobjectentercontainer)_.</p> Called when an object attempts to enter any container. | [:i:](#tryobjectentercontainer)
-tryObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) entering_object) | Called when an object attempts to enter any container. | [:i:](#tryobjectentercontainer)
+filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer(...)](#tryobjectentercontainer)_.</p> Called when an object attempts to enter a container. | [:i:](#tryobjectentercontainer)
+tryObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) entering_object) | Called when an object attempts to enter a container. | [:i:](#tryobjectentercontainer)
 tryObjectRandomize([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a player attempts to randomize an Object. | [:i:](#tryobjectrandomize)
 
 ### Object Event Handlers {: #object-event-handlers-summary }
@@ -370,7 +372,7 @@ end
 
 ###onObjectDestroy(...)
 
-Called whenever any Object is about to be destroyed.
+Called whenever an object is about to be destroyed.
 
 The Object reference (`object`) is valid in this callback, but won't be valid next frame (as the Object will be
 destroyed by then).
@@ -386,14 +388,14 @@ This event fires immediately before the Object’s [onDestroy()](#ondestroy).
 	function onObjectDestroy(object)
 		print(object.getName())
 	end
-```
+	```
 
 ---
 
 
 ###onObjectDrop(...)
 
-Called when any object is dropped by a player.
+Called when an object is dropped by a player.
 
 !!!info "onObjectDrop(player_color, dropped_object)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player who dropped the Object.
@@ -407,37 +409,63 @@ end
 
 ---
 
+###onObjectEnterContainer(...)
 
-###onObjectEnterScriptingZone(...)
+Called when an object enters a container.
 
-Called when any object enters any scripting zone.
+!!!info "onObjectEnterContainer(container, object)"
+	* [<span class="tag obj"></span>](types.md) **container**: Container that was entered.
+	* [<span class="tag obj"></span>](types.md) **object**: Object that entered the container.
 
-!!!info "onObjectEnterScriptingZone(zone, enter_object)"
-	* [<span class="tag obj"></span>](types.md) **zone**: The Object of the scripting zone.
-	* [<span class="tag obj"></span>](types.md) **enter_object**: The Object triggering the function.
-
-``` Lua
-function onObjectEnterScriptingZone(zone, obj)
-	print(obj.getGUID())
-end
-```
+!!!example
+	Each time an object enters a container, print the GUID of the object and the GUID of the container it entered.
+	```lua
+	function onObjectEnterContainer(container, object)
+		print("Object " .. object.guid .. " entered container " .. container.guid)
+	end
+	```
 
 ---
 
-###onObjectEnterContainer(...)
+###onObjectEnterScriptingZone(...)
 
-Called when any object enters any container. Includes Objects entering decks.
+Called when an object enters a scripting zone.
 
-!!!info "onObjectEnterContainer(container, enter_object)"
-	* [<span class="tag obj"></span>](types.md) **container**: Container the Object entered.
-	* [<span class="tag obj"></span>](types.md) **enter_object**: Object that entered the container.
+!!!important
+	Objects with [tags](object.md#tag-functions) will only enter scripting zones with compatible tags.
 
-``` Lua
-function onObjectEnterContainer(bag, obj)
-	print(bag)
-	print(obj)
-end
-```
+!!!info "onObjectEnterScriptingZone(zone, object)"
+	* [<span class="tag obj"></span>](types.md) **zone**: Scripting zone that was entered.
+	* [<span class="tag obj"></span>](types.md) **object**: Object that entered the scripting zone.
+
+!!!example
+	Each time an object enters a scripting zone, print the GUID of the object and the GUID of the scripting zone it entered.
+	```lua
+	function onObjectEnterScriptingZone(container, object)
+		print("Object " .. object.guid .. " entered scripting " .. container.guid)
+	end
+	```
+
+---
+
+###onObjectEnterZone(...)
+
+Called when an object enters a zone.
+
+!!!important
+	Objects with [tags](object.md#tag-functions) will only enter zones with compatible tags.
+
+!!!info "onObjectEnterZone(zone, object)"
+	* [<span class="tag obj"></span>](types.md) **zone**: Zone that was entered.
+	* [<span class="tag obj"></span>](types.md) **object**: Object that entered the zone.
+
+!!!example
+	Each time an object enters a scripting zone, print the GUID of the object and the GUID of the scripting zone it entered.
+	```lua
+	function onObjectEnterZone(container, object)
+		print("Object " .. object.guid .. " entered zone " .. container.guid)
+	end
+	```
 
 ---
 
@@ -484,41 +512,59 @@ end
 
 ---
 
+###onObjectLeaveContainer(...)
+
+Called when an object leaves a container.
+
+!!!info "onObjectLeaveContainer(container, object)"
+	* [<span class="tag obj"></span>](types.md) **container**: Container the object left.
+	* [<span class="tag obj"></span>](types.md) **object**: Object that left the container.
+
+!!!example
+	Each time an object leaves a container, print the GUID of the object and the GUID of the container it left.
+	```lua
+	function onObjectLeaveContainer(container, object)
+		print("Object " .. object.guid .. " left container " .. container.guid)
+	end
+	```
+
+---
 
 ###onObjectLeaveScriptingZone(...)
 
-Called when any object leaves any scripting zone.
+Called when an object leaves a scripting zone.
 
-!!!info "onObjectLeaveScriptingZone(zone, enter_object)"
-	* [<span class="tag obj"></span>](types.md) **zone**: The Object of the scripting zone.
-	* [<span class="tag obj"></span>](types.md) **enter_object**: The Object triggering the function.
+!!!info "onObjectLeaveScriptingZone(zone, object)"
+	* [<span class="tag obj"></span>](types.md) **zone**: Scripting zone that was left.
+	* [<span class="tag obj"></span>](types.md) **object**: Object that left.
 
-``` Lua
-function onObjectLeaveScriptingZone(zone, obj)
-	print(obj.getGUID())
-end
-```
-
----
-
-
-###onObjectLeaveContainer(...)
-
-Called when any object leaves any container.
-
-!!!info "onObjectLeaveContainer(container, leave_object)"
-	* [<span class="tag obj"></span>](types.md) **container**: Container the object left.
-	* [<span class="tag obj"></span>](types.md) **leave_object**: Object that left the container.
-
-``` Lua
-function onObjectLeaveContainer(bag, obj)
-	print(bag)
-	print(obj)
-end
-```
+!!!example
+	Each time an object leaves a scripting zone, print the GUID of the object and the GUID of the scripting zone it left.
+	```lua
+	function onObjectLeaveScriptingZone(zone, object)
+		print("Object " .. object.guid .. " left scripting zone " .. zone.guid)
+	end
+	```
 
 ---
 
+###onObjectLeaveZone(...)
+
+Called when an object leaves a zone.
+
+!!!info "onObjectLeaveZone(zone, object)"
+	* [<span class="tag obj"></span>](types.md) **zone**: Zone that was left.
+	* [<span class="tag obj"></span>](types.md) **object**: The object that left.
+
+!!!example
+	Each time an object leaves a zone, print the GUID of the object and the GUID of the zone it left.
+	```lua
+	function onObjectLeaveZone(zone, object)
+		print("Object " .. object.guid .. " left zone " .. zone.guid)
+	end
+	```
+
+---
 
 ###onObjectLoopingEffect(...)
 
@@ -644,7 +690,7 @@ end
 
 ###onObjectSearchEnd(...)
 
-Called when a search is finished on any container.
+Called when a search is finished on a container.
 
 !!!info "onObjectSearchEnd(obj, player_color)"
     * [<span class="tag obj"></span>](types.md) **obj**: The Object which was searched.
@@ -655,7 +701,7 @@ Called when a search is finished on any container.
 
 ###onObjectSearchStart(...)
 
-Called when a search is started on any container.
+Called when a search is started on a container.
 
 !!!info "onObjectSearchStart(obj, player_color)"
     * [<span class="tag obj"></span>](types.md) **obj**: The Object which was searched.
@@ -666,7 +712,7 @@ Called when a search is started on any container.
 
 ###onObjectSpawn(...)
 
-Called when any Object is spawned/created.
+Called when an object is spawned/created.
 
 !!!info "onObjectSpawn(spawn_object)"
 	* [<span class="tag obj"></span>](types.md) **spawn_object**: The Object which triggered this function.
@@ -820,7 +866,7 @@ be saved mid-game e.g. when the script-owner Object enters a container.
 
 !!!tip
 	[JSON.encode(...)](json.md#encode) has limitations with regards to what data it can encode. It _cannot_ encode
-	references to Objects. If you wish to encode a reference to an object, encode the Object's [guid](object.md#guid)
+	references to Objects. If you wish to encode a reference to an object, encode the Object's [GUID](object.md#guid)
     and in [onLoad(...)](#onload) obtain a new Object reference via
 	[getObjectFromGUID(...)](base.md#getobjectfromguid).
 
