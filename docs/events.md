@@ -504,14 +504,15 @@ Called when the object being hovered over by a player's pointer (cursor) changes
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who moved their pointer over an object.
 	* [<span class="tag obj"></span>](types.md) **object**: Object the player's pointer is hovering over, or `nil` when a player moves their pointer such that it is no longer hovering over an object.
 
-``` Lua
-function onObjectHover(player_color, object)
-    if( object ~= nil ) then
-        print(player_color)
-	    print(object)
-    end
-end
-```
+!!!example
+	Each time a player hovers over an object, print the player color and the GUID of the object being hovered over. If a player moves their cursor such that
+	they're no longer hovering over an object, print "Nothing" instead of the object GUID.
+	```lua
+	function onObjectHover(player_color, object)
+		local target = object and object.guid or "Nothing"
+		print(player_color .. " hovered over " .. target)
+	end
+	```
 
 ---
 
