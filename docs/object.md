@@ -202,6 +202,7 @@ getSelectingPlayers() {: data-toc-label="getSelectingPlayers()" data-toc-child-o
 getStateId() {: data-toc-label="getStateId()" data-toc-child-of="get-function-details" } | Current [state](https://kb.tabletopsimulator.com/host-guides/creating-states/) ID (index) an object is in. Returns -1 if there are no other states. State ids (indexes) start at 1. | [<span class="ret int"></span>](types.md) |
 getStates() | Returns a Table of information on the [states](https://kb.tabletopsimulator.com/host-guides/creating-states/) of an Object. | [<span class="ret tab"></span>](types.md) | [:i:](#getstates)
 getValue() | Returns the Object's value. This represents something different depending on the Object's [type](#type). | [<span class="ret var"></span>](types.md) | [:i:](#getvalue)
+getZones() | Returns a list of zones that the object is currently occupying. | [<span class="ret tab"></span>](types.md) | [:i:](#getzones)
 isDestroyed() {: data-toc-label="isDestroyed()" data-toc-child-of="get-function-details" } | Returns true if the Object is (or will be) destroyed. | [<span class="ret boo"></span>](types.md) |
 
 
@@ -991,8 +992,7 @@ tags | [<span class="tag tab"></span>](types.md) | A table of [<span class="tag 
 Zones return a (numerically indexed) table of game Objects occupying the zone.
 
 !!!important
-	If the zone has <a href="#gettags">tags</a>, then only objects with compatible tags will be considered "occupying"
-	the zone.
+	If the zone has [tags](#tag-functions), then only objects with compatible tags will occupy the zone.
 
 !!!example
 	[Highlight](#highlighton) red all cards occupying a zone (`object`).
@@ -1100,6 +1100,31 @@ You can manually assign rotation values to objects using the Rotation Value Gizm
 	the same as [getRotationValue()](#getrotationvalue).
 
 See [setValue(...)](#setvalue) for more information.
+
+---
+
+####getZones()
+
+[<span class="ret tab"></span>](types.md) Returns a list of zones that the object is currently occupying.
+
+!!!important
+	If the object has [tags](object.md#tag-functions), then the object will only occupy zones with compatible tags.
+
+!!!example
+	Print a comma separated list of GUIDs belonging to zones an object is currently occupying.
+	```lua
+	local guids = {}
+
+	for _, zone in ipairs(object.getZones()) do
+		table.insert(guids, zone.guid)
+	end
+
+	if #guids > 0 then
+		print("Object is contained within " .. table.concat(guids, ", "))
+	else
+		print("Object is not contained within any zones")
+	end
+	```
 
 
 ###Set Function Details {: data-toc-sort }
