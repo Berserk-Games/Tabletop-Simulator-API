@@ -72,26 +72,26 @@ onObjectCollisionEnter([<span class="tag obj"></span>](types.md) registered_obje
 onObjectCollisionExit([<span class="tag obj"></span>](types.md) registered_object, [<span class="tag tab"></span>](types.md) collision_info) | Called when an Object stops colliding with a [collision registered](object.md#registercollisions) Object. | [:i:](#onobjectcollisionexit)
 onObjectCollisionStay([<span class="tag obj"></span>](types.md) registered_object, [<span class="tag tab"></span>](types.md) collision_info) | Called **every frame** that an Object is colliding with a [collision registered](object.md#registercollisions) Object. | [:i:](#onobjectcollisionstay)
 onObjectDestroy([<span class="tag obj"></span>](types.md) object) | Called whenever an object is about to be destroyed. | [:i:](#onobjectdestroy)
-onObjectDrop([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) dropped_object) | Called when an object is dropped by a player. | [:i:](#onobjectdrop)
+onObjectDrop([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) object) | Called when an object is dropped by a player. | [:i:](#onobjectdrop)
 onObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) | Called when an object enters a container. Includes decks | [:i:](#onobjectentercontainer)
 onObjectEnterScriptingZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) | Called when an object enters a _scripting_ zone. | [:i:](#onobjectenterscriptingzone)
 onObjectEnterZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) | Called when an object enters a zone. | [:i:](#onobjectenterzone)
 onObjectFlick([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color, [<span class="tag vec"></span>](types.md) impulse) | Called when a player flicks an object. | [:i:](#onobjectflick)
-onObjectHover([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) hovered_object) | Called when a player moves their pointer (cursor) over an object. | [:i:](#onobjecthover)
+onObjectHover([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) object) | Called when the object being hovered over by a player's pointer (cursor) changes. | [:i:](#onobjecthover)
 onObjectLeaveContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) | Called when an object leaves a container. | [:i:](#onobjectleavecontainer)
 onObjectLeaveScriptingZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) | Called when an object leaves a _scripting_ zone. | [:i:](#onobjectleavescriptingzone)
 onObjectLeaveZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) | Called when an object leaves a zone. | [:i:](#onobjectleavezone)
-onObjectLoopingEffect([<span class="tag obj"></span>](types.md) loop_object, [<span class="tag int"></span>](types.md) index) | Called whenever the looping effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjectloopingeffect)
+onObjectLoopingEffect([<span class="tag obj"></span>](types.md) object, [<span class="tag int"></span>](types.md) index) | Called whenever the looping effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjectloopingeffect)
 onObjectNumberTyped([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color, [<span class="tag int"></span>](types.md) number) | Called when a player types a number whilst hovering over an object. | [:i:](#onobjectnumbertyped)
 onObjectPageChange([<span class="tag obj"></span>](types.md) object) | Called when a Custom PDF object changes page. | [:i:](#onobjectpagechange)
 onObjectPeek([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a player peeks at an Object. | [:i:](#onobjectpeek)
-onObjectPickUp([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) picked_up_object) | Called whenever a Player picks up an Object. | [:i:](#onobjectpickup)
-onObjectRandomize([<span class="tag obj"></span>](types.md) randomize_object, [<span class="tag str"></span>](types.md) player_color) | Called when an Object is randomized. Like when shuffling a deck or shaking dice. | [:i:](#onobjectrandomize)
-onObjectSearchEnd([<span class="tag obj"></span>](types.md) obj, [<span class="tag str"></span>](types.md) player_color) | Called when a search is finished on a container. | [:i:](#onobjectsearchend)
-onObjectSearchStart([<span class="tag obj"></span>](types.md) obj, [<span class="tag str"></span>](types.md) player_color) | Called when a search is started on a container. | [:i:](#onobjectsearchstart)
-onObjectSpawn([<span class="tag obj"></span>](types.md) spawn_object) | Called when an object is spawned/created. | [:i:](#onobjectspawn)
+onObjectPickUp([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) object) | Called whenever a Player picks up an Object. | [:i:](#onobjectpickup)
+onObjectRandomize([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when an Object is randomized. Like when shuffling a deck or shaking dice. | [:i:](#onobjectrandomize)
+onObjectSearchEnd([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a search is finished on a container. | [:i:](#onobjectsearchend)
+onObjectSearchStart([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a search is started on a container. | [:i:](#onobjectsearchstart)
+onObjectSpawn([<span class="tag obj"></span>](types.md) object) | Called when an object is spawned/created. | [:i:](#onobjectspawn)
 onObjectStateChange([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) old_state_guid) | Called after an object changes state. | [:i:](#onobjectstatechange)
-onObjectTriggerEffect([<span class="tag obj"></span>](types.md) trigger_object, [<span class="tag int"></span>](types.md) index) | Called whenever the trigger effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjecttriggereffect)
+onObjectTriggerEffect([<span class="tag obj"></span>](types.md) object, [<span class="tag int"></span>](types.md) index) | Called whenever the trigger effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjecttriggereffect)
 onPlayerChangeColor([<span class="tag str"></span>](types.md) player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [:i:](#onplayerchangecolor)
 onPlayerChangeTeam([<span class="tag str"></span>](types.md) player_color,&nbsp;[<span class="tag str"></span>](types.md) team) | Called when a player changes team. | [:i:](#onplayerchangeteam)
 onPlayerConnect([<span class="tag pla"></span>](types.md) player) | Called when a [Player](player/instance.md) connects to a game. | [:i:](#onplayerconnect)
@@ -109,7 +109,7 @@ As described above, you may declare these functions in the [Global script](intro
 Function Name | Description | &nbsp;
 -- | -- | --
 filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer(...)](#tryobjectentercontainer)_.</p> Called when an object attempts to enter a container. | [:i:](#tryobjectentercontainer)
-tryObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) entering_object) | Called when an object attempts to enter a container. | [:i:](#tryobjectentercontainer)
+tryObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) | Called when an object attempts to enter a container. | [:i:](#tryobjectentercontainer)
 tryObjectRandomize([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a player attempts to randomize an Object. | [:i:](#tryobjectrandomize)
 
 ### Object Event Handlers {: #object-event-handlers-summary }
@@ -124,7 +124,7 @@ These events pertain to the script-owner Object (accessible as `self` within the
 
 Function Name | Description | &nbsp;
 -- | -- | --
-filterObjectEnter([<span class="tag obj"></span>](types.md) obj) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnter(...)](#tryobjectenter)_.</p> Called when an object attempts to enter the script-owner Object (container). | [:i:](#tryobjectenter)
+filterObjectEnter([<span class="tag obj"></span>](types.md) object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnter(...)](#tryobjectenter)_.</p> Called when an object attempts to enter the script-owner Object (container). | [:i:](#tryobjectenter)
 onCollisionEnter([<span class="tag tab"></span>](types.md) collision_info) | Called when an Object starts colliding with the script-owner Object. | [:i:](#oncollisionenter)
 onCollisionExit([<span class="tag tab"></span>](types.md) collision_info) | Called when an Object stops colliding with the script-owner Object. | [:i:](#oncollisionexit)
 onCollisionStay([<span class="tag tab"></span>](types.md) collision_info) | Called **every frame** that an Object is colliding with the script-owner Object. | [:i:](#oncollisionstay)
@@ -140,7 +140,7 @@ onRandomize([<span class="tag str"></span>](types.md) player_color) | Called whe
 onSearchEnd([<span class="tag str"></span>](types.md) player_color) | Called when a player finishes searches the script-owner Object. | [:i:](#onsearchend)
 onSearchStart([<span class="tag str"></span>](types.md) player_color) | Called when a player starts searching the script-owner Object. | [:i:](#onsearchstart)
 onStateChange([<span class="tag str"></span>](types.md) old_state_guid) | Called when the script-owner Object spawned as a result of an Object state change. | [:i:](#onstatechange)
-tryObjectEnter([<span class="tag obj"></span>](types.md) entering_object) | Called when another object attempts to enter the script-owner Object (container).| [:i:](#tryobjectenter)
+tryObjectEnter([<span class="tag obj"></span>](types.md) object) | Called when another object attempts to enter the script-owner Object (container).| [:i:](#tryobjectenter)
 tryRandomize([<span class="tag str"></span>](types.md) player_color) | Called when a player attempts to randomize the script-owner Object. | [:i:](#tryrandomize)
 
 ---
@@ -397,13 +397,13 @@ This event fires immediately before the Object’s [onDestroy()](#ondestroy).
 
 Called when an object is dropped by a player.
 
-!!!info "onObjectDrop(player_color, dropped_object)"
+!!!info "onObjectDrop(player_color, object)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player who dropped the Object.
-	* [<span class="tag obj"></span>](types.md) **dropped_object**: The Object in game which was dropped.
+	* [<span class="tag obj"></span>](types.md) **object**: The Object in game which was dropped.
 
 ``` Lua
-function onObjectDrop(colorName, obj)
-	print(colorName .. " dropped " .. obj.getName())
+function onObjectDrop(colorName, object)
+	print(colorName .. " dropped " .. object.getName())
 end
 ```
 
@@ -490,22 +490,17 @@ Called whenever a player [flicks](https://kb.tabletopsimulator.com/game-tools/fl
 
 ###onObjectHover(...)
 
-Called when a player moves their pointer (cursor) over an object.
+Called when the object being hovered over by a player's pointer (cursor) changes.
 
-!!!info "onObjectHover(player_color, hovered_object)"
-	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who moved the pointer over an object.
-	* [<span class="tag obj"></span>](types.md) **hovered_object**: Object on which the pointer was moved.
-
-!!!important
-    [<span class="tag obj"></span>](types.md) **hovered_object** can be [<span class="tag nil"></span>](types.md) **nil** in some cases. For example if you move the pointer from the object to the table.
-
-
+!!!info "onObjectHover(player_color, object)"
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who moved their pointer over an object.
+	* [<span class="tag obj"></span>](types.md) **object**: Object the player's pointer is hovering over, or `nil` when a player moves their pointer such that it is no longer hovering over an object.
 
 ``` Lua
-function onObjectHover(player_color, hovered_object)
-    if( hovered_object ~= nil ) then
+function onObjectHover(player_color, object)
+    if( object ~= nil ) then
         print(player_color)
-	    print(hovered_object)
+	    print(object)
     end
 end
 ```
@@ -570,12 +565,12 @@ Called when an object leaves a zone.
 
 Called whenever the looping effect of an [AssetBundle](behavior/assetbundle.md) is activated.
 
-!!!info "onObjectLoopingEffect(loop_object, index)"
-	* [<span class="tag obj"></span>](types.md) **loop_object**: AssetBundle which had its loop activated.
+!!!info "onObjectLoopingEffect(object, index)"
+	* [<span class="tag obj"></span>](types.md) **object**: AssetBundle which had its loop activated.
 	* [<span class="tag int"></span>](types.md) **index**: Index number for the loop activated.
 
 ``` Lua
-function onObjectLoopingEffect(obj, index)
+function onObjectLoopingEffect(object, index)
 	print("Loop " .. index .. " activated.")
 end
 ```
@@ -656,13 +651,13 @@ Called when a player [peeks](https://kb.tabletopsimulator.com/player-guides/adva
 
 Called whenever a Player picks up an Object.
 
-!!!info "onObjectPickUp(player_color, picked_up_object)"
+!!!info "onObjectPickUp(player_color, object)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player who picked up the object.
-	* [<span class="tag obj"></span>](types.md) **picked_up_object**: The Object in game which was picked up.
+	* [<span class="tag obj"></span>](types.md) **object**: Object which was picked up.
 
 ``` Lua
-function onObjectPickUp(colorName, obj)
-	print(colorName .. " picked up " .. obj.getName())
+function onObjectPickUp(colorName, object)
+	print(colorName .. " picked up " .. object.getName())
 end
 ```
 
@@ -673,15 +668,15 @@ end
 
 Called when an Object is randomized. Like when shuffling a deck or shaking dice.
 
-!!!info "onObjectRandomize(randomize_object, player_color)"
-	* [<span class="tag obj"></span>](types.md) **spawn_object**: The Object which triggered this function.
+!!!info "onObjectRandomize(object, player_color)"
+	* [<span class="tag obj"></span>](types.md) **object**: The Object which triggered this function.
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who triggered the function.
 
 
 
 ``` Lua
-function onObjectRandomize(obj, color)
-	print(obj.getName() .. " was randomized by " .. color)
+function onObjectRandomize(object, color)
+	print(object.getName() .. " was randomized by " .. color)
 end
 ```
 
@@ -692,8 +687,8 @@ end
 
 Called when a search is finished on a container.
 
-!!!info "onObjectSearchEnd(obj, player_color)"
-    * [<span class="tag obj"></span>](types.md) **obj**: The Object which was searched.
+!!!info "onObjectSearchEnd(object, player_color)"
+    * [<span class="tag obj"></span>](types.md) **object**: The Object which was searched.
     * [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who triggered the function.
 
 ---
@@ -703,8 +698,8 @@ Called when a search is finished on a container.
 
 Called when a search is started on a container.
 
-!!!info "onObjectSearchStart(obj, player_color)"
-    * [<span class="tag obj"></span>](types.md) **obj**: The Object which was searched.
+!!!info "onObjectSearchStart(object, player_color)"
+    * [<span class="tag obj"></span>](types.md) **object**: The Object which was searched.
     * [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player who triggered the function.
 
 ---
@@ -714,12 +709,12 @@ Called when a search is started on a container.
 
 Called when an object is spawned/created.
 
-!!!info "onObjectSpawn(spawn_object)"
-	* [<span class="tag obj"></span>](types.md) **spawn_object**: The Object which triggered this function.
+!!!info "onObjectSpawn(object)"
+	* [<span class="tag obj"></span>](types.md) **object**: Object which was spawned.
 
 ``` Lua
-function onObjectSpawn(obj)
-	print(obj)
+function onObjectSpawn(object)
+	print(object)
 end
 ```
 
@@ -749,12 +744,12 @@ Called after an object changes state.
 
 Called whenever the trigger effect of an [AssetBundle](behavior/assetbundle.md) is activated.
 
-!!!info "onObjectTriggerEffect(loop_object, index)"
-	* [<span class="tag obj"></span>](types.md) **loop_object**: AssetBundle which had its trigger activated.
+!!!info "onObjectTriggerEffect(object, index)"
+	* [<span class="tag obj"></span>](types.md) **object**: AssetBundle object which had its trigger activated.
 	* [<span class="tag int"></span>](types.md) **index**: Index number for the trigger activated.
 
 ``` Lua
-function onObjectTriggerEffect(obj, index)
+function onObjectTriggerEffect(object, index)
 	print("Loop " .. index .. " activated.")
 end
 ```
@@ -968,14 +963,14 @@ Called **every frame**.
 
 Called when an object attempts to enter a container. Return `false` to prevent the object entering.
 
-!!!info "tryObjectEnterContainer(container, entering_object)"
+!!!info "tryObjectEnterContainer(container, object)"
 	* [<span class="tag obj"></span>](types.md) **container**: The container the Object is trying to enter.
-	* [<span class="tag obj"></span>](types.md) **entering_object**: The Object entering the container.
+	* [<span class="tag obj"></span>](types.md) **object**: The Object entering the container.
 
 !!!example
 	```lua
-	function tryObjectEnterContainer(container, entering_object)
-		print(entering_object.getName()) -- Print entering object's name
+	function tryObjectEnterContainer(container, object)
+		print(object.getName()) -- Print entering object's name
 		return true -- Allows object to enter.
 	end
 	```
@@ -1308,14 +1303,14 @@ Called when the script-owner Object spawned as a result of an Object state chang
 
 Called when another object attempts to enter the script-owner Object (container). Return `false` to prevent the object entering.
 
-!!!info "tryObjectEnter(entering_object)"
-	* [<span class="tag obj"></span>](types.md) **entering_object**: The object that has tried to enter the script-owner Object.
+!!!info "tryObjectEnter(object)"
+	* [<span class="tag obj"></span>](types.md) **object**: The object that has tried to enter the script-owner Object.
 
 !!!example
 	Print the name of the object entering the script-owner container.
 	```lua
-	function tryObjectEnter(entering_object)
-		print(entering_object.getName())
+	function tryObjectEnter(object)
+		print(object.getName())
 		return true -- Allows the object to enter.
 	end
 	```
