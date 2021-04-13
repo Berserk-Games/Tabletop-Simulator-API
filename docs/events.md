@@ -177,12 +177,18 @@ Called when a user sends an in-game chat message. Return `false` to prevent the 
 	* [<span class="tag str"></span>](types.md) **message**: Chat message which triggered the function.
 	* [<span class="tag pla"></span>](types.md) **sender**: Player which sent the chat message.
 
-``` Lua
-function onChat(message, player)
-	print(message)
-	print(player.color)
-end
-```
+!!!example
+	Prevent the blue player from sending messages to other player's. Instead print the message to the host. Permit chat from all other players.
+	```lua
+	function onChat(message, sender)
+		if sender.color == "Blue" then
+			print("Blue said: " .. message)
+			return false
+		end
+
+		return true
+	end
+	```
 
 ---
 
