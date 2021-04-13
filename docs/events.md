@@ -65,7 +65,7 @@ Function Name | Description | &nbsp;
 -- | -- | --
 onBlindfold([<span class="tag pla"></span>](types.md) player, [<span class="tag boo"></span>](types.md) blindfolded) | Called when a player puts on or takes off their blindfold. | [:i:](#onblindfold)
 onChat([<span class="tag str"></span>](types.md) message, [<span class="tag pla"></span>](types.md) sender) | Called when a user sends an in-game chat message. | [:i:](#onchat)
-onExternalMessage([<span class="tag tab"></span>](types.md) data) | Called when an external script editor (like [Atom](atom.md)) sends a message back to the game. Used for custom editor functionality. | [:i:](#onexternalmessage)
+onExternalMessage([<span class="tag tab"></span>](types.md) data) | Called when a [custom message](externaleditorapi.md#custom-message) is received from an external process via the External Editor API. | [:i:](#onexternalmessage)
 onFixedUpdate() | Called **every physics tick** (90 times a second). This is a frame independent onUpdate(). | [:i:](#onfixedupdate)
 onLoad([<span class="tag str"></span>](types.md) script_state) | Called when a save has completely finished loading. | [:i:](#onload)
 onObjectCollisionEnter([<span class="tag obj"></span>](types.md) registered_object, [<span class="tag tab"></span>](types.md) collision_info) | Called when an Object starts colliding with a [collision registered](object.md#registercollisions) Object. | [:i:](#onobjectcollisionenter)
@@ -189,16 +189,18 @@ end
 
 ###onExternalMessage(...)
 
-Called when an external script editor (like [Atom](atom.md)) sends a message back to the game. Used for custom editor functionality.
+Called when a [custom message](externaleditorapi.md#custom-message) is received from an external process via the External Editor API.
 
 !!!info "onExternalMessage(data)"
-	* [<span class="tag tab"></span>](types.md) **data**: The data returned by the external editor into the game.
+	* [<span class="tag tab"></span>](types.md) **data**: The data sent by the external process.
 
-``` Lua
-function onExternalMessage(data)
-	print("External message received")
-end
-```
+!!!example
+	Log the contents of received custom external messages.
+	```lua
+	function onExternalMessage(data)
+		log(data, "External Message")
+	end
+	```
 
 ---
 
