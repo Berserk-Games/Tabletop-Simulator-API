@@ -807,6 +807,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#filterobjectentercontainer" class="md-nav__link">
+    filterObjectEnterContainer(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tryobjectentercontainer" class="md-nav__link">
     tryObjectEnterContainer(...)
   </a>
@@ -2041,6 +2048,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#filterobjectentercontainer" class="md-nav__link">
+    filterObjectEnterContainer(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tryobjectentercontainer" class="md-nav__link">
     tryObjectEnterContainer(...)
   </a>
@@ -2296,7 +2310,7 @@ executed.</p>
 </tr>
 <tr>
 <td>onExternalMessage(<a href="../types/"><span class="tag tab"></span></a> data)</td>
-<td>Called when an external script editor (like <a href="../atom/">Atom</a>) sends a message back to the game. Used for custom editor functionality.</td>
+<td>Called when a <a href="../externaleditorapi/#custom-message">custom message</a> is received from an external process via the External Editor API.</td>
 <td><a href="#onexternalmessage"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
@@ -2344,7 +2358,7 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onObjectDrop(<a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag obj"></span></a> dropped_object)</td>
+<td>onObjectDrop(<a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag obj"></span></a> object)</td>
 <td>Called when an object is dropped by a player.</td>
 <td><a href="#onobjectdrop"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -2358,11 +2372,9 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onObjectEnterScriptingZone(<a href="../types/"><span class="tag obj"></span></a> zone, <a href="../types/"><span class="tag obj"></span></a> object)</td>
-<td>Called when an object enters a <em>scripting</em> zone.</td>
-<td><a href="#onobjectenterscriptingzone"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+<td id="onobjectenterscriptingzone" style="position: relative;">onObjectEnterScriptingZone(<h6 data-toc-mock-searchable="" id="onobjectenterscriptingzone" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">onObjectEnterScriptingZone(...)</h6><a href="../types/"><span class="tag obj"></span></a> zone, <a href="../types/"><span class="tag obj"></span></a> object)</td>
+<td><p><a href="../intro/#deprecated"><span class="tag deprecated"></span></a> <em>Use <a href="#onobjectenterzone">onObjectEnterZone(...)</a></em>.</p> Called when an object enters a <em>scripting</em> zone.</td>
+<td></td>
 </tr>
 <tr>
 <td>onObjectEnterZone(<a href="../types/"><span class="tag obj"></span></a> zone, <a href="../types/"><span class="tag obj"></span></a> object)</td>
@@ -2379,8 +2391,8 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onObjectHover(<a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag obj"></span></a> hovered_object)</td>
-<td>Called when a player moves their pointer (cursor) over an object.</td>
+<td>onObjectHover(<a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag obj"></span></a> object)</td>
+<td>Called when the object being hovered over by a player's pointer (cursor) changes.</td>
 <td><a href="#onobjecthover"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
@@ -2393,11 +2405,9 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onObjectLeaveScriptingZone(<a href="../types/"><span class="tag obj"></span></a> zone, <a href="../types/"><span class="tag obj"></span></a> object)</td>
-<td>Called when an object leaves a <em>scripting</em> zone.</td>
-<td><a href="#onobjectleavescriptingzone"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+<td id="onobjectleavescriptingzone" style="position: relative;">onObjectLeaveScriptingZone(<h6 data-toc-mock-searchable="" id="onobjectleavescriptingzone" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">onObjectLeaveScriptingZone(...)</h6><a href="../types/"><span class="tag obj"></span></a> zone, <a href="../types/"><span class="tag obj"></span></a> object)</td>
+<td><p><a href="../intro/#deprecated"><span class="tag deprecated"></span></a> <em>Use <a href="#onobjectleavezone">onObjectLeaveZone(...)</a></em>.</p> Called when an object leaves a <em>scripting</em> zone.</td>
+<td></td>
 </tr>
 <tr>
 <td>onObjectLeaveZone(<a href="../types/"><span class="tag obj"></span></a> zone, <a href="../types/"><span class="tag obj"></span></a> object)</td>
@@ -2407,7 +2417,7 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onObjectLoopingEffect(<a href="../types/"><span class="tag obj"></span></a> loop_object, <a href="../types/"><span class="tag int"></span></a> index)</td>
+<td>onObjectLoopingEffect(<a href="../types/"><span class="tag obj"></span></a> object, <a href="../types/"><span class="tag int"></span></a> index)</td>
 <td>Called whenever the looping effect of an <a href="../behavior/assetbundle/">AssetBundle</a> is activated.</td>
 <td><a href="#onobjectloopingeffect"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -2435,35 +2445,35 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onObjectPickUp(<a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag obj"></span></a> picked_up_object)</td>
+<td>onObjectPickUp(<a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag obj"></span></a> object)</td>
 <td>Called whenever a Player picks up an Object.</td>
 <td><a href="#onobjectpickup"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onObjectRandomize(<a href="../types/"><span class="tag obj"></span></a> randomize_object, <a href="../types/"><span class="tag str"></span></a> player_color)</td>
+<td>onObjectRandomize(<a href="../types/"><span class="tag obj"></span></a> object, <a href="../types/"><span class="tag str"></span></a> player_color)</td>
 <td>Called when an Object is randomized. Like when shuffling a deck or shaking dice.</td>
 <td><a href="#onobjectrandomize"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onObjectSearchEnd(<a href="../types/"><span class="tag obj"></span></a> obj, <a href="../types/"><span class="tag str"></span></a> player_color)</td>
+<td>onObjectSearchEnd(<a href="../types/"><span class="tag obj"></span></a> object, <a href="../types/"><span class="tag str"></span></a> player_color)</td>
 <td>Called when a search is finished on a container.</td>
 <td><a href="#onobjectsearchend"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onObjectSearchStart(<a href="../types/"><span class="tag obj"></span></a> obj, <a href="../types/"><span class="tag str"></span></a> player_color)</td>
+<td>onObjectSearchStart(<a href="../types/"><span class="tag obj"></span></a> object, <a href="../types/"><span class="tag str"></span></a> player_color)</td>
 <td>Called when a search is started on a container.</td>
 <td><a href="#onobjectsearchstart"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onObjectSpawn(<a href="../types/"><span class="tag obj"></span></a> spawn_object)</td>
+<td>onObjectSpawn(<a href="../types/"><span class="tag obj"></span></a> object)</td>
 <td>Called when an object is spawned/created.</td>
 <td><a href="#onobjectspawn"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -2477,7 +2487,7 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onObjectTriggerEffect(<a href="../types/"><span class="tag obj"></span></a> trigger_object, <a href="../types/"><span class="tag int"></span></a> index)</td>
+<td>onObjectTriggerEffect(<a href="../types/"><span class="tag obj"></span></a> object, <a href="../types/"><span class="tag int"></span></a> index)</td>
 <td>Called whenever the trigger effect of an <a href="../behavior/assetbundle/">AssetBundle</a> is activated.</td>
 <td><a href="#onobjecttriggereffect"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -2560,14 +2570,12 @@ executed.</p>
 </thead>
 <tbody>
 <tr>
-<td>filterObjectEnterContainer(<a href="../types/"><span class="tag obj"></span></a> container, <a href="../types/"><span class="tag obj"></span></a> object)</td>
+<td id="filterobjectentercontainer" style="position: relative;">filterObjectEnterContainer(<h6 data-toc-mock-searchable="" id="filterobjectentercontainer" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">filterObjectEnterContainer(...)</h6><a href="../types/"><span class="tag obj"></span></a> container, <a href="../types/"><span class="tag obj"></span></a> object)</td>
 <td><p><a href="../intro/#deprecated"><span class="tag deprecated"></span></a> <em>Use <a href="#tryobjectentercontainer">tryObjectEnterContainer(...)</a></em>.</p> Called when an object attempts to enter a container.</td>
-<td><a href="#tryobjectentercontainer"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+<td></td>
 </tr>
 <tr>
-<td>tryObjectEnterContainer(<a href="../types/"><span class="tag obj"></span></a> container, <a href="../types/"><span class="tag obj"></span></a> entering_object)</td>
+<td>tryObjectEnterContainer(<a href="../types/"><span class="tag obj"></span></a> container, <a href="../types/"><span class="tag obj"></span></a> object)</td>
 <td>Called when an object attempts to enter a container.</td>
 <td><a href="#tryobjectentercontainer"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -2600,7 +2608,7 @@ executed.</p>
 </thead>
 <tbody>
 <tr>
-<td>filterObjectEnter(<a href="../types/"><span class="tag obj"></span></a> obj)</td>
+<td>filterObjectEnter(<a href="../types/"><span class="tag obj"></span></a> object)</td>
 <td><p><a href="../intro/#deprecated"><span class="tag deprecated"></span></a> <em>Use <a href="#tryobjectenter">tryObjectEnter(...)</a></em>.</p> Called when an object attempts to enter the script-owner Object (container).</td>
 <td><a href="#tryobjectenter"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -2712,7 +2720,7 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>tryObjectEnter(<a href="../types/"><span class="tag obj"></span></a> entering_object)</td>
+<td>tryObjectEnter(<a href="../types/"><span class="tag obj"></span></a> object)</td>
 <td>Called when another object attempts to enter the script-owner Object (container).</td>
 <td><a href="#tryobjectenter"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -2760,24 +2768,36 @@ executed.</p>
 <li><a href="../types/"><span class="tag pla"></span></a> <strong>sender</strong>: Player which sent the chat message.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onChat</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">player</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">color</span><span class="p">)</span>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Prevent the blue player from sending messages to other player's. Instead print the message to the host. Permit chat from all other players.
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onChat</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span>
+    <span class="kr">if</span> <span class="n">sender</span><span class="p">.</span><span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;Blue&quot;</span> <span class="kr">then</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Blue said: &quot;</span> <span class="o">..</span> <span class="n">message</span><span class="p">)</span>
+        <span class="kr">return</span> <span class="kc">false</span>
+    <span class="kr">end</span>
+
+    <span class="kr">return</span> <span class="kc">true</span>
 <span class="kr">end</span>
-</code></pre></div>
+</code></pre></div></p>
+</div>
 <hr />
 <h3 id="onexternalmessage">onExternalMessage(...)<a class="headerlink" href="#onexternalmessage" title="Permanent link">&para;</a></h3>
-<p>Called when an external script editor (like <a href="../atom/">Atom</a>) sends a message back to the game. Used for custom editor functionality.</p>
+<p>Called when a <a href="../externaleditorapi/#custom-message">custom message</a> is received from an external process via the External Editor API.</p>
 <div class="admonition info">
 <p class="admonition-title">onExternalMessage(data)</p>
 <ul>
-<li><a href="../types/"><span class="tag tab"></span></a> <strong>data</strong>: The data returned by the external editor into the game.</li>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>data</strong>: The data sent by the external process.</li>
 </ul>
 </div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Log the contents of received custom external messages.
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onExternalMessage</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;External message received&quot;</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;External Message&quot;</span><span class="p">)</span>
 <span class="kr">end</span>
-</code></pre></div>
+</code></pre></div></p>
+</div>
 <hr />
 <h3 id="onfixedupdate">onFixedUpdate()<a class="headerlink" href="#onfixedupdate" title="Permanent link">&para;</a></h3>
 <p>Called <strong>every physics tick</strong> (90 times a second). This is a frame independent onUpdate().</p>
@@ -2961,14 +2981,14 @@ destroyed by then).</p>
 <h3 id="onobjectdrop">onObjectDrop(...)<a class="headerlink" href="#onobjectdrop" title="Permanent link">&para;</a></h3>
 <p>Called when an object is dropped by a player.</p>
 <div class="admonition info">
-<p class="admonition-title">onObjectDrop(player_color, dropped_object)</p>
+<p class="admonition-title">onObjectDrop(player_color, object)</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the Player who dropped the Object.</li>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>dropped_object</strong>: The Object in game which was dropped.</li>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: The Object in game which was dropped.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectDrop</span><span class="p">(</span><span class="n">colorName</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">colorName</span> <span class="o">..</span> <span class="s2">&quot; dropped &quot;</span> <span class="o">..</span> <span class="n">obj</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectDrop</span><span class="p">(</span><span class="n">colorName</span><span class="p">,</span> <span class="n">object</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">colorName</span> <span class="o">..</span> <span class="s2">&quot; dropped &quot;</span> <span class="o">..</span> <span class="n">object</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span>
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
@@ -2990,28 +3010,6 @@ destroyed by then).</p>
 </code></pre></div></p>
 </div>
 <hr />
-<h3 id="onobjectenterscriptingzone">onObjectEnterScriptingZone(...)<a class="headerlink" href="#onobjectenterscriptingzone" title="Permanent link">&para;</a></h3>
-<p>Called when an object enters a scripting zone.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Objects with <a href="../object/#tag-functions">tags</a> will only enter scripting zones with compatible tags.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">onObjectEnterScriptingZone(zone, object)</p>
-<ul>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>zone</strong>: Scripting zone that was entered.</li>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: Object that entered the scripting zone.</li>
-</ul>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Each time an object enters a scripting zone, print the GUID of the object and the GUID of the scripting zone it entered.
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectEnterScriptingZone</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">object</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object &quot;</span> <span class="o">..</span> <span class="n">object</span><span class="p">.</span><span class="n">guid</span> <span class="o">..</span> <span class="s2">&quot; entered scripting &quot;</span> <span class="o">..</span> <span class="n">container</span><span class="p">.</span><span class="n">guid</span><span class="p">)</span>
-<span class="kr">end</span>
-</code></pre></div></p>
-</div>
-<hr />
 <h3 id="onobjectenterzone">onObjectEnterZone(...)<a class="headerlink" href="#onobjectenterzone" title="Permanent link">&para;</a></h3>
 <p>Called when an object enters a zone.</p>
 <div class="admonition important">
@@ -3028,8 +3026,8 @@ destroyed by then).</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Each time an object enters a scripting zone, print the GUID of the object and the GUID of the scripting zone it entered.
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectEnterZone</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">object</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object &quot;</span> <span class="o">..</span> <span class="n">object</span><span class="p">.</span><span class="n">guid</span> <span class="o">..</span> <span class="s2">&quot; entered zone &quot;</span> <span class="o">..</span> <span class="n">container</span><span class="p">.</span><span class="n">guid</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectEnterZone</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">object</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object &quot;</span> <span class="o">..</span> <span class="n">object</span><span class="p">.</span><span class="n">guid</span> <span class="o">..</span> <span class="s2">&quot; entered zone &quot;</span> <span class="o">..</span> <span class="n">zone</span><span class="p">.</span><span class="n">guid</span><span class="p">)</span>
 <span class="kr">end</span>
 </code></pre></div></p>
 </div>
@@ -3054,25 +3052,24 @@ destroyed by then).</p>
 </div>
 <hr />
 <h3 id="onobjecthover">onObjectHover(...)<a class="headerlink" href="#onobjecthover" title="Permanent link">&para;</a></h3>
-<p>Called when a player moves their pointer (cursor) over an object.</p>
+<p>Called when the object being hovered over by a player's pointer (cursor) changes.</p>
 <div class="admonition info">
-<p class="admonition-title">onObjectHover(player_color, hovered_object)</p>
+<p class="admonition-title">onObjectHover(player_color, object)</p>
 <ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who moved the pointer over an object.</li>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>hovered_object</strong>: Object on which the pointer was moved.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who moved their pointer over an object.</li>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: Object the player's pointer is hovering over, or <code>nil</code> when a player moves their pointer such that it is no longer hovering over an object.</li>
 </ul>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p><a href="../types/"><span class="tag obj"></span></a> <strong>hovered_object</strong> can be <a href="../types/"><span class="tag nil"></span></a> <strong>nil</strong> in some cases. For example if you move the pointer from the object to the table.</p>
-</div>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectHover</span><span class="p">(</span><span class="n">player_color</span><span class="p">,</span> <span class="n">hovered_object</span><span class="p">)</span>
-    <span class="kr">if</span><span class="p">(</span> <span class="n">hovered_object</span> <span class="o">~=</span> <span class="kc">nil</span> <span class="p">)</span> <span class="kr">then</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">player_color</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">hovered_object</span><span class="p">)</span>
-    <span class="kr">end</span>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Each time a player hovers over an object, print the player color and the GUID of the object being hovered over. If a player moves their cursor such that
+they're no longer hovering over an object, print "Nothing" instead of the object GUID.
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectHover</span><span class="p">(</span><span class="n">player_color</span><span class="p">,</span> <span class="n">object</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">target</span> <span class="o">=</span> <span class="n">object</span> <span class="ow">and</span> <span class="n">object</span><span class="p">.</span><span class="n">guid</span> <span class="ow">or</span> <span class="s2">&quot;Nothing&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">player_color</span> <span class="o">..</span> <span class="s2">&quot; hovered over &quot;</span> <span class="o">..</span> <span class="n">target</span><span class="p">)</span>
 <span class="kr">end</span>
-</code></pre></div>
+</code></pre></div></p>
+</div>
 <hr />
 <h3 id="onobjectleavecontainer">onObjectLeaveContainer(...)<a class="headerlink" href="#onobjectleavecontainer" title="Permanent link">&para;</a></h3>
 <p>Called when an object leaves a container.</p>
@@ -3088,24 +3085,6 @@ destroyed by then).</p>
 <p>Each time an object leaves a container, print the GUID of the object and the GUID of the container it left.
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectLeaveContainer</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">object</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object &quot;</span> <span class="o">..</span> <span class="n">object</span><span class="p">.</span><span class="n">guid</span> <span class="o">..</span> <span class="s2">&quot; left container &quot;</span> <span class="o">..</span> <span class="n">container</span><span class="p">.</span><span class="n">guid</span><span class="p">)</span>
-<span class="kr">end</span>
-</code></pre></div></p>
-</div>
-<hr />
-<h3 id="onobjectleavescriptingzone">onObjectLeaveScriptingZone(...)<a class="headerlink" href="#onobjectleavescriptingzone" title="Permanent link">&para;</a></h3>
-<p>Called when an object leaves a scripting zone.</p>
-<div class="admonition info">
-<p class="admonition-title">onObjectLeaveScriptingZone(zone, object)</p>
-<ul>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>zone</strong>: Scripting zone that was left.</li>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: Object that left.</li>
-</ul>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Each time an object leaves a scripting zone, print the GUID of the object and the GUID of the scripting zone it left.
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectLeaveScriptingZone</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">object</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object &quot;</span> <span class="o">..</span> <span class="n">object</span><span class="p">.</span><span class="n">guid</span> <span class="o">..</span> <span class="s2">&quot; left scripting zone &quot;</span> <span class="o">..</span> <span class="n">zone</span><span class="p">.</span><span class="n">guid</span><span class="p">)</span>
 <span class="kr">end</span>
 </code></pre></div></p>
 </div>
@@ -3131,13 +3110,13 @@ destroyed by then).</p>
 <h3 id="onobjectloopingeffect">onObjectLoopingEffect(...)<a class="headerlink" href="#onobjectloopingeffect" title="Permanent link">&para;</a></h3>
 <p>Called whenever the looping effect of an <a href="../behavior/assetbundle/">AssetBundle</a> is activated.</p>
 <div class="admonition info">
-<p class="admonition-title">onObjectLoopingEffect(loop_object, index)</p>
+<p class="admonition-title">onObjectLoopingEffect(object, index)</p>
 <ul>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>loop_object</strong>: AssetBundle which had its loop activated.</li>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: AssetBundle which had its loop activated.</li>
 <li><a href="../types/"><span class="tag int"></span></a> <strong>index</strong>: Index number for the loop activated.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectLoopingEffect</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectLoopingEffect</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop &quot;</span> <span class="o">..</span> <span class="n">index</span> <span class="o">..</span> <span class="s2">&quot; activated.&quot;</span><span class="p">)</span>
 <span class="kr">end</span>
 </code></pre></div>
@@ -3211,37 +3190,37 @@ destroyed by then).</p>
 <h3 id="onobjectpickup">onObjectPickUp(...)<a class="headerlink" href="#onobjectpickup" title="Permanent link">&para;</a></h3>
 <p>Called whenever a Player picks up an Object.</p>
 <div class="admonition info">
-<p class="admonition-title">onObjectPickUp(player_color, picked_up_object)</p>
+<p class="admonition-title">onObjectPickUp(player_color, object)</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the Player who picked up the object.</li>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>picked_up_object</strong>: The Object in game which was picked up.</li>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: Object which was picked up.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectPickUp</span><span class="p">(</span><span class="n">colorName</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">colorName</span> <span class="o">..</span> <span class="s2">&quot; picked up &quot;</span> <span class="o">..</span> <span class="n">obj</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectPickUp</span><span class="p">(</span><span class="n">colorName</span><span class="p">,</span> <span class="n">object</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">colorName</span> <span class="o">..</span> <span class="s2">&quot; picked up &quot;</span> <span class="o">..</span> <span class="n">object</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span>
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
 <h3 id="onobjectrandomize">onObjectRandomize(...)<a class="headerlink" href="#onobjectrandomize" title="Permanent link">&para;</a></h3>
 <p>Called when an Object is randomized. Like when shuffling a deck or shaking dice.</p>
 <div class="admonition info">
-<p class="admonition-title">onObjectRandomize(randomize_object, player_color)</p>
+<p class="admonition-title">onObjectRandomize(object, player_color)</p>
 <ul>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>spawn_object</strong>: The Object which triggered this function.</li>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: The Object which triggered this function.</li>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who triggered the function.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectRandomize</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">..</span> <span class="s2">&quot; was randomized by &quot;</span> <span class="o">..</span> <span class="n">color</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectRandomize</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">object</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">..</span> <span class="s2">&quot; was randomized by &quot;</span> <span class="o">..</span> <span class="n">color</span><span class="p">)</span>
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
 <h3 id="onobjectsearchend">onObjectSearchEnd(...)<a class="headerlink" href="#onobjectsearchend" title="Permanent link">&para;</a></h3>
 <p>Called when a search is finished on a container.</p>
 <div class="admonition info">
-<p class="admonition-title">onObjectSearchEnd(obj, player_color)</p>
+<p class="admonition-title">onObjectSearchEnd(object, player_color)</p>
 <ul>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>obj</strong>: The Object which was searched.</li>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: The Object which was searched.</li>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who triggered the function.</li>
 </ul>
 </div>
@@ -3249,9 +3228,9 @@ destroyed by then).</p>
 <h3 id="onobjectsearchstart">onObjectSearchStart(...)<a class="headerlink" href="#onobjectsearchstart" title="Permanent link">&para;</a></h3>
 <p>Called when a search is started on a container.</p>
 <div class="admonition info">
-<p class="admonition-title">onObjectSearchStart(obj, player_color)</p>
+<p class="admonition-title">onObjectSearchStart(object, player_color)</p>
 <ul>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>obj</strong>: The Object which was searched.</li>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: The Object which was searched.</li>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player who triggered the function.</li>
 </ul>
 </div>
@@ -3259,13 +3238,13 @@ destroyed by then).</p>
 <h3 id="onobjectspawn">onObjectSpawn(...)<a class="headerlink" href="#onobjectspawn" title="Permanent link">&para;</a></h3>
 <p>Called when an object is spawned/created.</p>
 <div class="admonition info">
-<p class="admonition-title">onObjectSpawn(spawn_object)</p>
+<p class="admonition-title">onObjectSpawn(object)</p>
 <ul>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>spawn_object</strong>: The Object which triggered this function.</li>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: Object which was spawned.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectSpawn</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectSpawn</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
@@ -3291,13 +3270,13 @@ destroyed by then).</p>
 <h3 id="onobjecttriggereffect">onObjectTriggerEffect(...)<a class="headerlink" href="#onobjecttriggereffect" title="Permanent link">&para;</a></h3>
 <p>Called whenever the trigger effect of an <a href="../behavior/assetbundle/">AssetBundle</a> is activated.</p>
 <div class="admonition info">
-<p class="admonition-title">onObjectTriggerEffect(loop_object, index)</p>
+<p class="admonition-title">onObjectTriggerEffect(object, index)</p>
 <ul>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>loop_object</strong>: AssetBundle which had its trigger activated.</li>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: AssetBundle object which had its trigger activated.</li>
 <li><a href="../types/"><span class="tag int"></span></a> <strong>index</strong>: Index number for the trigger activated.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectTriggerEffect</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectTriggerEffect</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop &quot;</span> <span class="o">..</span> <span class="n">index</span> <span class="o">..</span> <span class="s2">&quot; activated.&quot;</span><span class="p">)</span>
 <span class="kr">end</span>
 </code></pre></div>
@@ -3485,16 +3464,16 @@ slowing down your game.</p>
 <h3 id="tryobjectentercontainer">tryObjectEnterContainer(...)<a class="headerlink" href="#tryobjectentercontainer" title="Permanent link">&para;</a></h3>
 <p>Called when an object attempts to enter a container. Return <code>false</code> to prevent the object entering.</p>
 <div class="admonition info">
-<p class="admonition-title">tryObjectEnterContainer(container, entering_object)</p>
+<p class="admonition-title">tryObjectEnterContainer(container, object)</p>
 <ul>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>container</strong>: The container the Object is trying to enter.</li>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>entering_object</strong>: The Object entering the container.</li>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: The Object entering the container.</li>
 </ul>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">tryObjectEnterContainer</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">entering_object</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">entering_object</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span> <span class="c1">-- Print entering object&#39;s name</span>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">tryObjectEnterContainer</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">object</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">object</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span> <span class="c1">-- Print entering object&#39;s name</span>
     <span class="kr">return</span> <span class="kc">true</span> <span class="c1">-- Allows object to enter.</span>
 <span class="kr">end</span>
 </code></pre></div>
@@ -3790,16 +3769,16 @@ return <code>true</code> to indicate you've handled the event yourself.</p>
 <h3 id="tryobjectenter">tryObjectEnter(...)<a class="headerlink" href="#tryobjectenter" title="Permanent link">&para;</a></h3>
 <p>Called when another object attempts to enter the script-owner Object (container). Return <code>false</code> to prevent the object entering.</p>
 <div class="admonition info">
-<p class="admonition-title">tryObjectEnter(entering_object)</p>
+<p class="admonition-title">tryObjectEnter(object)</p>
 <ul>
-<li><a href="../types/"><span class="tag obj"></span></a> <strong>entering_object</strong>: The object that has tried to enter the script-owner Object.</li>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: The object that has tried to enter the script-owner Object.</li>
 </ul>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Print the name of the object entering the script-owner container.
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">tryObjectEnter</span><span class="p">(</span><span class="n">entering_object</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">entering_object</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">tryObjectEnter</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">object</span><span class="p">.</span><span class="n">getName</span><span class="p">())</span>
     <span class="kr">return</span> <span class="kc">true</span> <span class="c1">-- Allows the object to enter.</span>
 <span class="kr">end</span>
 </code></pre></div></p>
