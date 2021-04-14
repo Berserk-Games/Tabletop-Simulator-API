@@ -74,12 +74,12 @@ onObjectCollisionStay([<span class="tag obj"></span>](types.md) registered_objec
 onObjectDestroy([<span class="tag obj"></span>](types.md) object) | Called whenever an object is about to be destroyed. | [:i:](#onobjectdestroy)
 onObjectDrop([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) object) | Called when an object is dropped by a player. | [:i:](#onobjectdrop)
 onObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) | Called when an object enters a container. Includes decks | [:i:](#onobjectentercontainer)
-onObjectEnterScriptingZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) | Called when an object enters a _scripting_ zone. | [:i:](#onobjectenterscriptingzone)
+onObjectEnterScriptingZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) {: #onobjectenterscriptingzone data-toc-label="onObjectEnterScriptingZone(...)" data-toc-child-of="universal-event-handler-details" } | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [onObjectEnterZone(...)](#onobjectenterzone)_.</p> Called when an object enters a _scripting_ zone. |
 onObjectEnterZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) | Called when an object enters a zone. | [:i:](#onobjectenterzone)
 onObjectFlick([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color, [<span class="tag vec"></span>](types.md) impulse) | Called when a player flicks an object. | [:i:](#onobjectflick)
 onObjectHover([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) object) | Called when the object being hovered over by a player's pointer (cursor) changes. | [:i:](#onobjecthover)
 onObjectLeaveContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) | Called when an object leaves a container. | [:i:](#onobjectleavecontainer)
-onObjectLeaveScriptingZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) | Called when an object leaves a _scripting_ zone. | [:i:](#onobjectleavescriptingzone)
+onObjectLeaveScriptingZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) {: #onobjectleavescriptingzone data-toc-label="onObjectLeaveScriptingZone(...)" data-toc-child-of="universal-event-handler-details" } | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [onObjectLeaveZone(...)](#onobjectleavezone)_.</p> Called when an object leaves a _scripting_ zone. |
 onObjectLeaveZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) | Called when an object leaves a zone. | [:i:](#onobjectleavezone)
 onObjectLoopingEffect([<span class="tag obj"></span>](types.md) object, [<span class="tag int"></span>](types.md) index) | Called whenever the looping effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjectloopingeffect)
 onObjectNumberTyped([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color, [<span class="tag int"></span>](types.md) number) | Called when a player types a number whilst hovering over an object. | [:i:](#onobjectnumbertyped)
@@ -108,7 +108,7 @@ As described above, you may declare these functions in the [Global script](intro
 
 Function Name | Description | &nbsp;
 -- | -- | --
-filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer(...)](#tryobjectentercontainer)_.</p> Called when an object attempts to enter a container. | [:i:](#tryobjectentercontainer)
+filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) {: #filterobjectentercontainer data-toc-label="filterObjectEnterContainer(...)" data-toc-child-of="global-event-handler-details" } | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer(...)](#tryobjectentercontainer)_.</p> Called when an object attempts to enter a container. |
 tryObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) | Called when an object attempts to enter a container. | [:i:](#tryobjectentercontainer)
 tryObjectRandomize([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a player attempts to randomize an Object. | [:i:](#tryobjectrandomize)
 
@@ -145,7 +145,7 @@ tryRandomize([<span class="tag str"></span>](types.md) player_color) | Called wh
 
 ---
 
-## Universal Event Handler Details
+## Universal Event Handler Details {: data-toc-sort }
 
 ###onBlindfold(...)
 
@@ -435,27 +435,6 @@ Called when an object enters a container.
 
 ---
 
-###onObjectEnterScriptingZone(...)
-
-Called when an object enters a scripting zone.
-
-!!!important
-	Objects with [tags](object.md#tag-functions) will only enter scripting zones with compatible tags.
-
-!!!info "onObjectEnterScriptingZone(zone, object)"
-	* [<span class="tag obj"></span>](types.md) **zone**: Scripting zone that was entered.
-	* [<span class="tag obj"></span>](types.md) **object**: Object that entered the scripting zone.
-
-!!!example
-	Each time an object enters a scripting zone, print the GUID of the object and the GUID of the scripting zone it entered.
-	```lua
-	function onObjectEnterScriptingZone(zone, object)
-		print("Object " .. object.guid .. " entered scripting " .. zone.guid)
-	end
-	```
-
----
-
 ###onObjectEnterZone(...)
 
 Called when an object enters a zone.
@@ -529,24 +508,6 @@ Called when an object leaves a container.
 	```lua
 	function onObjectLeaveContainer(container, object)
 		print("Object " .. object.guid .. " left container " .. container.guid)
-	end
-	```
-
----
-
-###onObjectLeaveScriptingZone(...)
-
-Called when an object leaves a scripting zone.
-
-!!!info "onObjectLeaveScriptingZone(zone, object)"
-	* [<span class="tag obj"></span>](types.md) **zone**: Scripting zone that was left.
-	* [<span class="tag obj"></span>](types.md) **object**: Object that left.
-
-!!!example
-	Each time an object leaves a scripting zone, print the GUID of the object and the GUID of the scripting zone it left.
-	```lua
-	function onObjectLeaveScriptingZone(zone, object)
-		print("Object " .. object.guid .. " left scripting zone " .. zone.guid)
 	end
 	```
 
@@ -966,7 +927,7 @@ Called **every frame**.
 ---
 
 
-## Global Event Handler Details
+## Global Event Handler Details {: data-toc-sort }
 
 ###tryObjectEnterContainer(...)
 
