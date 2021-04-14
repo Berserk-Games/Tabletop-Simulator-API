@@ -3,7 +3,7 @@ deprecated: true
 ---
 
 !!!danger "Deprecated"
-    Use [Wait.frames(...)](wait.md#frames) instead.
+    Use [Wait.frames(...)](wait.md#time) instead.
 
 `Timer` is a static global class which provides methods for executing other functions after a delay and/or repeatedly. Each Timer is tracked by a unique "identifier" string.
 
