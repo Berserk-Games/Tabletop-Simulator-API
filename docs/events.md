@@ -449,8 +449,8 @@ Called when an object enters a scripting zone.
 !!!example
 	Each time an object enters a scripting zone, print the GUID of the object and the GUID of the scripting zone it entered.
 	```lua
-	function onObjectEnterScriptingZone(container, object)
-		print("Object " .. object.guid .. " entered scripting " .. container.guid)
+	function onObjectEnterScriptingZone(zone, object)
+		print("Object " .. object.guid .. " entered scripting " .. zone.guid)
 	end
 	```
 
@@ -470,8 +470,8 @@ Called when an object enters a zone.
 !!!example
 	Each time an object enters a scripting zone, print the GUID of the object and the GUID of the scripting zone it entered.
 	```lua
-	function onObjectEnterZone(container, object)
-		print("Object " .. object.guid .. " entered zone " .. container.guid)
+	function onObjectEnterZone(zone, object)
+		print("Object " .. object.guid .. " entered zone " .. zone.guid)
 	end
 	```
 
