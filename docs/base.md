@@ -238,7 +238,7 @@ the object has finished spawning.
 
 ####spawnObjectData(...)
 
-[<span class="ret obj"></span>](types.md) Spawns an object from a data table. 
+[<span class="ret obj"></span>](types.md) Spawns an object from an object data table representation.
 
 This API gives you complete control over all persistent properties that an object has.
 
@@ -309,7 +309,7 @@ the object has finished spawning.
 This API gives you complete control over all persistent properties that an object has.
 
 !!!tip
-	Unless you've already got a JSON object string at your disposal then [spawnObjectData(...)](#spawnobjectdata) is the
+	Unless you've already got an object's JSON representation at your disposal then [spawnObjectData(...)](#spawnobjectdata) is the
 	preferred API as it's less resource intensive.
 
 !!!info "spawnObjectJSON(parameters)"
