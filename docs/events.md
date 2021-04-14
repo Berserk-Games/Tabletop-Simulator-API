@@ -87,6 +87,7 @@ onObjectPageChange([<span class="tag obj"></span>](types.md) object) | Called wh
 onObjectPeek([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a player peeks at an Object. | [:i:](#onobjectpeek)
 onObjectPickUp([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) object) | Called whenever a Player picks up an Object. | [:i:](#onobjectpickup)
 onObjectRandomize([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when an Object is randomized. Like when shuffling a deck or shaking dice. | [:i:](#onobjectrandomize)
+onObjectRotate([<span class="tag obj"></span>](types.md) object, [<span class="tag flo"></span>](types.md) spin, [<span class="tag flo"></span>](types.md) flip, [<span class="tag str"></span>](types.md) player_color,  [<span class="tag flo"></span>](types.md) old_spin, [<span class="tag flo"></span>](types.md) old_flip) | Called when a player rotates an object. | [:i:](#onobjectrotate)
 onObjectSearchEnd([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a search is finished on a container. | [:i:](#onobjectsearchend)
 onObjectSearchStart([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a search is started on a container. | [:i:](#onobjectsearchstart)
 onObjectSpawn([<span class="tag obj"></span>](types.md) object) | Called when an object is spawned/created. | [:i:](#onobjectspawn)
@@ -111,6 +112,7 @@ Function Name | Description | &nbsp;
 filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) {: #filterobjectentercontainer data-toc-label="filterObjectEnterContainer(...)" data-toc-child-of="global-event-handler-details" } | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer(...)](#tryobjectentercontainer)_.</p> Called when an object attempts to enter a container. |
 tryObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) | Called when an object attempts to enter a container. | [:i:](#tryobjectentercontainer)
 tryObjectRandomize([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a player attempts to randomize an Object. | [:i:](#tryobjectrandomize)
+tryObjectRotate([<span class="tag obj"></span>](types.md) object, [<span class="tag flo"></span>](types.md) spin, [<span class="tag flo"></span>](types.md) flip, [<span class="tag str"></span>](types.md) player_color,  [<span class="tag flo"></span>](types.md) old_spin, [<span class="tag flo"></span>](types.md) old_flip) | Called when a player attempts to rotate an object. | [:i:](#tryobjectrotate)
 
 ### Object Event Handlers {: #object-event-handlers-summary }
 
@@ -137,11 +139,13 @@ onPageChange() | Called when the script-owner Custom PDF's page is changed. | [:
 onPeek([<span class="tag str"></span>](types.md) player_color) | Called when a player peeks at the script-owner Object. | [:i:](#onpeek)
 onPickUp([<span class="tag str"></span>](types.md) player_color) | Called when a player picks up the script-owner Object. | [:i:](#onpickup)
 onRandomize([<span class="tag str"></span>](types.md) player_color) | Called when the script-owner Object is randomized. Like when shuffling a deck or shaking dice. | [:i:](#onrandomize)
+onRotate([<span class="tag flo"></span>](types.md) spin, [<span class="tag flo"></span>](types.md) flip, [<span class="tag str"></span>](types.md) player_color,  [<span class="tag flo"></span>](types.md) old_spin, [<span class="tag flo"></span>](types.md) old_flip) | Called when a player rotates the script-owner Object. | [:i:](#onrotate)
 onSearchEnd([<span class="tag str"></span>](types.md) player_color) | Called when a player finishes searches the script-owner Object. | [:i:](#onsearchend)
 onSearchStart([<span class="tag str"></span>](types.md) player_color) | Called when a player starts searching the script-owner Object. | [:i:](#onsearchstart)
 onStateChange([<span class="tag str"></span>](types.md) old_state_guid) | Called when the script-owner Object spawned as a result of an Object state change. | [:i:](#onstatechange)
 tryObjectEnter([<span class="tag obj"></span>](types.md) object) | Called when another object attempts to enter the script-owner Object (container).| [:i:](#tryobjectenter)
 tryRandomize([<span class="tag str"></span>](types.md) player_color) | Called when a player attempts to randomize the script-owner Object. | [:i:](#tryrandomize)
+tryRotate([<span class="tag flo"></span>](types.md) spin, [<span class="tag flo"></span>](types.md) flip, [<span class="tag str"></span>](types.md) player_color,  [<span class="tag flo"></span>](types.md) old_spin, [<span class="tag flo"></span>](types.md) old_flip) | Called when a player attempts to rotate the script-owner Object. | [:i:](#tryrotate)
 
 ---
 
@@ -652,6 +656,38 @@ end
 
 ---
 
+###onObjectRotate(...)
+
+Called when a player rotates an object.
+
+!!!warning
+	Only called in response to explicit player rotation actions. Will _not_ be called when physics/collisions cause an
+	object to rotate.
+
+!!!info "onObjectRotate(object, spin, flip, player_color, old_spin, old_flip)"
+	* [<span class="tag obj"></span>](types.md) **object**: The object the player is trying to rotate.
+	* [<span class="tag flo"></span>](types.md) **spin**: The object's target spin (around Y-axis) rotation in degrees within the interval \[0, 360).
+	* [<span class="tag flo"></span>](types.md) **flip**: The object's target flip rotation in degrees within the interval \[0, 360).
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that performed the rotation.
+	* [<span class="tag flo"></span>](types.md) **old_spin**: The object's previous spin (around Y-axis) rotation in degrees within the interval \[0, 360).
+	* [<span class="tag flo"></span>](types.md) **old_flip**: The object's previous flip rotation in degrees within the interval \[0, 360).
+
+!!!example
+	When an object is rotated, print which player was responsible and what rotation was performed.
+	```lua
+	function onObjectRotate(object, spin, flip, player_color, old_spin, old_flip)
+		if spin ~= old_spin then
+			print(player_color .. " spun " .. tostring(object) .. " from " .. old_spin .. " degrees to " .. spin .. " degrees")
+		end
+
+		if flip ~= old_flip then
+			print(player_color .. " flipped " .. tostring(object) .. " from " .. old_flip .. " degrees to " .. flip .. " degrees")
+		end
+	end
+	```
+
+---
+
 
 ###onObjectSearchEnd(...)
 
@@ -965,6 +1001,28 @@ Called when a player attempts to randomize an Object. Return `false` to prevent 
 
 ---
 
+###tryObjectRotate(...)
+
+Called when a player attempts to rotate an object. Return `false` to prevent the object being rotated.
+
+!!!info "tryObjectRotate(object, spin, flip, player_color, old_spin, old_flip)"
+	* [<span class="tag obj"></span>](types.md) **object**: The object the player is trying to rotate.
+	* [<span class="tag flo"></span>](types.md) **spin**: The object's target spin (around Y-axis) rotation in degrees within the interval \[0, 360).
+	* [<span class="tag flo"></span>](types.md) **flip**: The object's target flip rotation in degrees within the interval \[0, 360).
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that is attempting the rotation.
+	* [<span class="tag flo"></span>](types.md) **old_spin**: The object's current spin (around Y-axis) rotation in degrees within the interval \[0, 360).
+	* [<span class="tag flo"></span>](types.md) **old_flip**: The object's current flip rotation in degrees within the interval \[0, 360).
+
+!!!example
+	Only allow the blue player to rotate objects.
+	```lua
+	function tryObjectRotate(object, spin, flip, player_color, old_spin, old_flip)
+		return player_color == "Blue"
+	end
+	```
+
+---
+
 
 ## Object Event Handler Details
 
@@ -1209,8 +1267,6 @@ end
 
 ---
 
-
-
 ###onRandomize(...)
 
 Called when the script-owner Object is randomized. Like when shuffling a deck or shaking dice.
@@ -1227,10 +1283,36 @@ end
 
 ---
 
+###onRotate(...)
 
+Called when a player rotates script-owner Object.
 
+!!!warning
+	Only called in response to explicit player rotation actions. Will _not_ be called when physics/collisions cause the
+	script-owner Object to rotate.
 
+!!!info "onRotate(spin, flip, player_color, old_spin, old_flip)"
+	* [<span class="tag flo"></span>](types.md) **spin**: The script-owner Object's target spin (around Y-axis) rotation in degrees within the interval \[0, 360).
+	* [<span class="tag flo"></span>](types.md) **flip**: The script-owner Object's target flip rotation in degrees within the interval \[0, 360).
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that performed the rotation.
+	* [<span class="tag flo"></span>](types.md) **old_spin**: The script-owner Object's previous spin (around Y-axis) rotation in degrees within the interval \[0, 360).
+	* [<span class="tag flo"></span>](types.md) **old_flip**: The script-owner Object's previous flip rotation in degrees within the interval \[0, 360).
 
+!!!example
+	When the script-owner Object is rotated, print which player was responsible and what rotation was performed.
+	```lua
+	function onRotate(spin, flip, player_color, old_spin, old_flip)
+		if spin ~= old_spin then
+			print(player_color .. " spun " .. tostring(self) .. " from " .. old_spin .. " degrees to " .. spin .. " degrees")
+		end
+
+		if flip ~= old_flip then
+			print(player_color .. " flipped " .. tostring(self) .. " from " .. old_flip .. " degrees to " .. flip .. " degrees")
+		end
+	end
+	```
+
+---
 
 ###onSearchEnd(...)
 
@@ -1240,7 +1322,6 @@ Called when a player first searches the script-owner Object.
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the Player.
 
 ---
-
 
 ###onSearchStart(...)
 
@@ -1289,7 +1370,7 @@ Called when another object attempts to enter the script-owner Object (container)
 
 ###tryRandomize(...)
 
-Called when a player attempts to randomize the script-owner Object. Return `false` to prevent the Object being randomized.
+Called when a player attempts to randomize the script-owner Object. Return `false` to prevent the randomization taking place.
 
 !!!info "tryRandomize(player_color)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that is attempting the randomization.
@@ -1298,6 +1379,27 @@ Called when a player attempts to randomize the script-owner Object. Return `fals
 	Only allow the blue player to randomize the script-owner Object.
 	```lua
 	function tryRandomize(player_color)
+		return player_color == "Blue"
+	end
+	```
+
+---
+
+###tryRotate(...)
+
+Called when a player attempts to rotate the script-owner Object. Return `false` to prevent the rotation taking place.
+
+!!!info "tryRotate(spin, flip, player_color, old_spin, old_flip)"
+	* [<span class="tag flo"></span>](types.md) **spin**: The script-owner Object's target spin (around Y-axis) rotation in degrees within the interval \[0, 360).
+	* [<span class="tag flo"></span>](types.md) **flip**: The script-owner Object's target flip rotation in degrees within the interval \[0, 360).
+	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that is attempting the rotation.
+	* [<span class="tag flo"></span>](types.md) **old_spin**: The script-owner Object's current spin (around Y-axis) rotation in degrees within the interval \[0, 360).
+	* [<span class="tag flo"></span>](types.md) **old_flip**: The script-owner Object's current flip rotation in degrees within the interval \[0, 360).
+
+!!!example
+	Only allow the blue player to rotate the script-owner Object.
+	```lua
+	function tryRotate(spin, flip, player_color, old_spin, old_flip)
 		return player_color == "Blue"
 	end
 	```
