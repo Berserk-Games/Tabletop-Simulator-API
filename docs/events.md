@@ -111,6 +111,7 @@ As described above, you may declare these functions in the [Global script](intro
 Function Name | Description | &nbsp;
 -- | -- | --
 filterObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) {: #filterobjectentercontainer data-toc-label="filterObjectEnterContainer(...)" data-toc-child-of="global-event-handler-details" } | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [tryObjectEnterContainer(...)](#tryobjectentercontainer)_.</p> Called when an object attempts to enter a container. |
+onZoneGroupSort([<span class="tag obj"></span>](types.md) zone, [<span class="tag tab"></span>](types.md) group, [<span class="tag boo"></span>](types.md) reversed) | Called when sorting is required for a group of objects being laid out by a layout zone. | [:i:](#onzonegroupsort)
 tryObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) | Called when an object attempts to enter a container. | [:i:](#tryobjectentercontainer)
 tryObjectRandomize([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a player attempts to randomize an Object. | [:i:](#tryobjectrandomize)
 tryObjectRotate([<span class="tag obj"></span>](types.md) object, [<span class="tag flo"></span>](types.md) spin, [<span class="tag flo"></span>](types.md) flip, [<span class="tag str"></span>](types.md) player_color,  [<span class="tag flo"></span>](types.md) old_spin, [<span class="tag flo"></span>](types.md) old_flip) | Called when a player attempts to rotate an object. | [:i:](#tryobjectrotate)
@@ -134,6 +135,7 @@ onCollisionStay([<span class="tag tab"></span>](types.md) collision_info) | Call
 onDestroy() | Called when the script-owner Object is about to be destroyed. | [:i:](#ondestroy)
 onDrop([<span class="tag str"></span>](types.md) player_color) | Called when a player drops the script-owner Object. | [:i:](#ondrop)
 onFlick([<span class="tag str"></span>](types.md) player_color, [<span class="tag vec"></span>](types.md) impulse) | Called when a player flicks the script-owner Object | [:i:](#onflick)
+onGroupSort([<span class="tag tab"></span>](types.md) group, [<span class="tag boo"></span>](types.md) reversed) | Called when sorting is required for a group of objects being laid out by the script-owner layout zone. | [:i:](#ongroupsort)
 onHover([<span class="tag str"></span>](types.md) player_color) | Called when a player moves their pointer (cursor) over the script-owner Object. | [:i:](#onhover)
 onNumberTyped([<span class="tag str"></span>](types.md) player_color, [<span class="tag int"></span>](types.md) number) | Called when a player types a number whilst hovering over the script-owner Object. | [:i:](#onnumbertyped)
 onPageChange() | Called when the script-owner Custom PDF's page is changed. | [:i:](#onpagechange)
@@ -985,9 +987,34 @@ Called **every frame**.
 
 ## Global Event Handler Details {: data-toc-sort }
 
+###onZoneGroupSort(...)
+
+[<span class="ret tab"></span>](types.md) Called when sorting is required for a group of objects being laid out by a
+layout zone.
+
+Return a table of objects (those provided in `group`) to override the layout zone's ordering algorithm. Return `nil` to
+use the layout zone's default order.
+
+!!!info "onZoneGroupSort(zone, group, reversed)"
+	* [<span class="tag obj"></span>](types.md) **zone**: Layout zone which is laying out the group of objects.
+	* [<span class="tag tab"></span>](types.md) **group**: List of objects that are being grouped together in the layout zone.
+	* [<span class="tag boo"></span>](types.md) **reversed**: Whether the layout zone has been configured to sort in reverse.
+
+!!!example
+	Sort objects by [value](object.md#value). Please note that, by default, objects do not have a value. You'd have to
+	assign your objects values first.
+	```lua
+	function onZoneGroupSort(zone, group, reversed)
+		table.sort(group, function(a, b)
+			return a.value < b.value
+		end)
+		return group
+	end
+	```
+
 ###tryObjectEnterContainer(...)
 
-Called when an object attempts to enter a container. Return `false` to prevent the object entering.
+[<span class="ret boo"></span>](types.md) Called when an object attempts to enter a container. Return `false` to prevent the object entering.
 
 !!!info "tryObjectEnterContainer(container, object)"
 	* [<span class="tag obj"></span>](types.md) **container**: The container the Object is trying to enter.
@@ -1005,7 +1032,7 @@ Called when an object attempts to enter a container. Return `false` to prevent t
 
 ###tryObjectRandomize(...)
 
-Called when a player attempts to randomize an Object. Return `false` to prevent the Object being randomized.
+[<span class="ret boo"></span>](types.md) Called when a player attempts to randomize an Object. Return `false` to prevent the Object being randomized.
 
 !!!info "tryObjectRandomize(object, player_color)"
 	* [<span class="tag obj"></span>](types.md) **object**: The Object the player is trying to randomize.
@@ -1023,7 +1050,7 @@ Called when a player attempts to randomize an Object. Return `false` to prevent 
 
 ###tryObjectRotate(...)
 
-Called when a player attempts to rotate an object. Return `false` to prevent the object being rotated.
+[<span class="ret boo"></span>](types.md) Called when a player attempts to rotate an object. Return `false` to prevent the object being rotated.
 
 !!!info "tryObjectRotate(object, spin, flip, player_color, old_spin, old_flip)"
 	* [<span class="tag obj"></span>](types.md) **object**: The object the player is trying to rotate.
@@ -1186,6 +1213,32 @@ Called when a player [flicks](https://kb.tabletopsimulator.com/game-tools/flick-
 	``` Lua
 	function onFlick(player_color, impulse)
 		print(player_color .. " flicked with impulse " .. impulse:magnitude())
+	end
+	```
+
+---
+
+###onGroupSort(...)
+
+[<span class="ret tab"></span>](types.md) Called when sorting is required for a group of objects being laid out by the
+script-owner layout zone.
+
+Return a table of objects (those provided in `group`) to override the layout zone's ordering algorithm. Return `nil` to
+use the layout zone's default order.
+
+!!!info "onGroupSort(group, reversed)"
+	* [<span class="tag tab"></span>](types.md) **group**: List of objects that are being grouped together in the layout zone.
+	* [<span class="tag boo"></span>](types.md) **reversed**: Whether the layout zone has been configured to sort in reverse.
+
+!!!example
+	Sort objects by [value](object.md#value). Please note that, by default, objects do not have a value. You'd have to
+	assign your objects values first.
+	```lua
+	function onGroupSort(group, reversed)
+		table.sort(group, function(a, b)
+			return a.value < b.value
+		end)
+		return group
 	end
 	```
 

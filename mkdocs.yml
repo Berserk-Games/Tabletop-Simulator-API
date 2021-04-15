@@ -84,6 +84,7 @@ nav:
       - Browser: behavior/browser.md
       - Clock: behavior/clock.md
       - Counter: behavior/counter.md
+      - LayoutZone: behavior/layoutzone.md
       - RPGFigurine: behavior/rpgfigurine.md
       - TextTool: behavior/texttool.md
     - Object Components:
