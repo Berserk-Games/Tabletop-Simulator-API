@@ -738,6 +738,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onplayeraction" class="md-nav__link">
+    onPlayerAction(...)
+  </a>
+  
+    <nav class="md-nav" aria-label="onPlayerAction(...)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onplayeraction-actions" class="md-nav__link">
+    Actions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onplayerchangecolor" class="md-nav__link">
     onPlayerChangeColor(...)
   </a>
@@ -2040,6 +2060,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onplayeraction" class="md-nav__link">
+    onPlayerAction(...)
+  </a>
+  
+    <nav class="md-nav" aria-label="onPlayerAction(...)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onplayeraction-actions" class="md-nav__link">
+    Actions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onplayerchangecolor" class="md-nav__link">
     onPlayerChangeColor(...)
   </a>
@@ -2611,6 +2651,13 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
+<td>onPlayerAction(<a href="../types/"><span class="tag pla"></span></a> player, <a href="#onplayeraction-actions">Action</a> action, <a href="../types/"><span class="tag tab"></span></a> targets)</td>
+<td>Called when a player attempts to perform an action.</td>
+<td><a href="#onplayeraction"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+</tr>
+<tr>
 <td>onPlayerChangeColor(<a href="../types/"><span class="tag str"></span></a> player_color)</td>
 <td>Called when a player changes color or selects it for the first time. It also returns <code>"Grey"</code> if they disconnect.</td>
 <td><a href="#onplayerchangecolor"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2618,7 +2665,7 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onPlayerChangeTeam(<a href="../types/"><span class="tag str"></span></a> player_color,&nbsp;<a href="../types/"><span class="tag str"></span></a> team)</td>
+<td>onPlayerChangeTeam(<a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag str"></span></a> team)</td>
 <td>Called when a player changes team.</td>
 <td><a href="#onplayerchangeteam"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -2919,7 +2966,8 @@ executed.</p>
 </div>
 <hr />
 <h3 id="onchat">onChat(...)<a class="headerlink" href="#onchat" title="Permanent link">&para;</a></h3>
-<p>Called when a user sends an in-game chat message. Return <code>false</code> to prevent the message appearing in the chat window.</p>
+<p>Called when a user sends an in-game chat message.</p>
+<p>Return <code>false</code> to prevent the message appearing in the chat window.</p>
 <div class="admonition info">
 <p class="admonition-title">onChat(message, sender)</p>
 <ul>
@@ -3473,6 +3521,126 @@ object to rotate.</p>
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
+<h3 id="onplayeraction">onPlayerAction(...)<a class="headerlink" href="#onplayeraction" title="Permanent link">&para;</a></h3>
+<p><a href="../types/"><span class="ret boo"></span></a> Called when a player attempts to perform an action.</p>
+<p>Return <code>false</code> to prevent the action's default behavior.</p>
+<div class="admonition info">
+<p class="admonition-title">onPlayerAction(player, action, targets)</p>
+<ul>
+<li><a href="../types/"><span class="tag pla"></span></a> <strong>player</strong>: <a href="../player/instance/">Player</a> that is attempting the action.</li>
+<li><a href="#onplayeraction-actions">Action</a> <strong>action</strong>: Action that is being attempted.</li>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>targets</strong>: List of objects which are the target of the action being attempted.</li>
+</ul>
+</div>
+<h4 id="onplayeraction-actions">Actions<a class="headerlink" href="#onplayeraction-actions" title="Permanent link">&para;</a></h4>
+<p>The <code>action</code> parameter will be provided as an <a href="../types/"><span class="tag int"></span></a> equal to a <code>Player.Action.*</code>
+property e.g. <code>Player.Action.FlipOver</code>.</p>
+<p>Please refer to the examples <a href="#onplayeraction-flip-example">below</a>, for a demonstration of how you can check which
+action is being attempted.</p>
+<table>
+<thead>
+<tr>
+<th><a href="../player/manager/#actions">Player.Action</a></th>
+<th>Player is attempting to...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Copy</td>
+<td>Copy (or commence cloning) the targets.</td>
+</tr>
+<tr>
+<td>Cut</td>
+<td>Cut (copy and delete) the targets.</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>Delete the targets.</td>
+</tr>
+<tr>
+<td>FlipIncrementalLeft</td>
+<td>Incrementally rotate the targets counter-clockwise around their flip axes, typically the scene's Z-axis.</td>
+</tr>
+<tr>
+<td>FlipIncrementalRight</td>
+<td>Incrementally rotate the targets clockwise around their flip axes, typically the scene's Z-axis.</td>
+</tr>
+<tr>
+<td>FlipOver</td>
+<td>Rotate the targets 180 degrees around their flip axes, typically the scene's Z-axis i.e. toggle the targets between face up and face down.</td>
+</tr>
+<tr>
+<td>Group</td>
+<td>Group the targets.</td>
+</tr>
+<tr>
+<td>Paste</td>
+<td>Paste (spawn) the targets.</td>
+</tr>
+<tr>
+<td>PickUp</td>
+<td>Pick up the targets.</td>
+</tr>
+<tr>
+<td>Randomize</td>
+<td>Randomize the targets.</td>
+</tr>
+<tr>
+<td>RotateIncrementalLeft</td>
+<td>Rotate the targets incrementally, typically counter-clockwise around the scene's Y-axis. Instead of being rotated exclusively around the Y-axis, dice will be rotated to the previous rotation value.</td>
+</tr>
+<tr>
+<td>RotateIncrementalRight</td>
+<td>Rotate the targets incrementally, typically clockwise around the scene's Y-axis. Instead of being rotated exclusively around the Y-axis, dice will be rotated to the next rotation value.</td>
+</tr>
+<tr>
+<td>RotateOver</td>
+<td>Rotate the targets 180 degrees around the scene's Y-axis.</td>
+</tr>
+<tr>
+<td>Select</td>
+<td>Add the targets to the player's selection.</td>
+</tr>
+<tr>
+<td>Under</td>
+<td>Move the targets underneath objects below them on table.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><p id="onplayeraction-flip-example">Prevent more than 2 objects being flipped over at a time.</p>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onPlayerAction</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
+    <span class="kr">if</span> <span class="n">action</span> <span class="o">==</span> <span class="n">Player</span><span class="p">.</span><span class="n">Action</span><span class="p">.</span><span class="n">FlipOver</span>
+        <span class="ow">or</span> <span class="n">action</span> <span class="o">==</span> <span class="n">Player</span><span class="p">.</span><span class="n">Action</span><span class="p">.</span><span class="n">FlipIncrementalLeft</span>
+        <span class="ow">or</span> <span class="n">action</span> <span class="o">==</span> <span class="n">Player</span><span class="p">.</span><span class="n">Action</span><span class="p">.</span><span class="n">FlipIncrementalRight</span>
+    <span class="kr">then</span>
+        <span class="kr">return</span> <span class="o">#</span><span class="n">targets</span> <span class="o">&lt;=</span> <span class="mi">2</span>
+    <span class="kr">end</span>
+
+    <span class="kr">return</span> <span class="kc">true</span>
+<span class="kr">end</span>
+</code></pre></div></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Only allow the black player (Game Master) to delete cards and decks.
+<div class="highlight"><pre><span></span><code>    <span class="kr">function</span> <span class="nf">onPlayerAction</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
+        <span class="kr">if</span> <span class="n">action</span> <span class="o">==</span> <span class="n">Player</span><span class="p">.</span><span class="n">Action</span><span class="p">.</span><span class="n">Delete</span> <span class="ow">and</span> <span class="n">player</span><span class="p">.</span><span class="n">color</span> <span class="o">~=</span> <span class="s2">&quot;Black&quot;</span> <span class="kr">then</span>
+            <span class="kr">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">target</span> <span class="kr">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">targets</span><span class="p">)</span> <span class="kr">do</span>
+                <span class="kr">if</span> <span class="n">target</span><span class="p">.</span><span class="n">type</span> <span class="o">~=</span> <span class="s2">&quot;Card&quot;</span> <span class="ow">and</span> <span class="n">target</span><span class="p">.</span><span class="n">type</span> <span class="o">~=</span> <span class="s2">&quot;Deck&quot;</span> <span class="kr">then</span>
+                    <span class="n">target</span><span class="p">.</span><span class="n">destroy</span><span class="p">()</span>
+                <span class="kr">end</span>
+            <span class="kr">end</span>
+
+            <span class="kr">return</span> <span class="kc">false</span>
+        <span class="kr">end</span>
+
+        <span class="kr">return</span> <span class="kc">true</span>
+    <span class="kr">end</span>
+</code></pre></div></p>
+</div>
+<hr />
 <h3 id="onplayerchangecolor">onPlayerChangeColor(...)<a class="headerlink" href="#onplayerchangecolor" title="Permanent link">&para;</a></h3>
 <p>Called when a player changes color or selects it for the first time. It also returns <code>"Grey"</code> if they disconnect.</p>
 <div class="admonition info">
@@ -3697,7 +3865,8 @@ assign your objects values first.
 </code></pre></div></p>
 </div>
 <h3 id="tryobjectentercontainer">tryObjectEnterContainer(...)<a class="headerlink" href="#tryobjectentercontainer" title="Permanent link">&para;</a></h3>
-<p><a href="../types/"><span class="ret boo"></span></a> Called when an object attempts to enter a container. Return <code>false</code> to prevent the object entering.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Called when an object attempts to enter a container.</p>
+<p>Return <code>false</code> to prevent the object entering.</p>
 <div class="admonition info">
 <p class="admonition-title">tryObjectEnterContainer(container, object)</p>
 <ul>
@@ -3715,7 +3884,8 @@ assign your objects values first.
 </div>
 <hr />
 <h3 id="tryobjectrandomize">tryObjectRandomize(...)<a class="headerlink" href="#tryobjectrandomize" title="Permanent link">&para;</a></h3>
-<p><a href="../types/"><span class="ret boo"></span></a> Called when a player attempts to randomize an Object. Return <code>false</code> to prevent the Object being randomized.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Called when a player attempts to randomize an Object.</p>
+<p>Return <code>false</code> to prevent the Object being randomized.</p>
 <div class="admonition info">
 <p class="admonition-title">tryObjectRandomize(object, player_color)</p>
 <ul>
@@ -3733,7 +3903,8 @@ assign your objects values first.
 </div>
 <hr />
 <h3 id="tryobjectrotate">tryObjectRotate(...)<a class="headerlink" href="#tryobjectrotate" title="Permanent link">&para;</a></h3>
-<p><a href="../types/"><span class="ret boo"></span></a> Called when a player attempts to rotate an object. Return <code>false</code> to prevent the object being rotated.</p>
+<p><a href="../types/"><span class="ret boo"></span></a> Called when a player attempts to rotate an object.</p>
+<p>Return <code>false</code> to prevent the object being rotated.</p>
 <div class="admonition info">
 <p class="admonition-title">tryObjectRotate(object, spin, flip, player_color, old_spin, old_flip)</p>
 <ul>
@@ -4081,7 +4252,8 @@ script-owner Object to rotate.</p>
 </div>
 <hr />
 <h3 id="tryobjectenter">tryObjectEnter(...)<a class="headerlink" href="#tryobjectenter" title="Permanent link">&para;</a></h3>
-<p>Called when another object attempts to enter the script-owner Object (container). Return <code>false</code> to prevent the object entering.</p>
+<p>Called when another object attempts to enter the script-owner Object (container).</p>
+<p>Return <code>false</code> to prevent the object entering.</p>
 <div class="admonition info">
 <p class="admonition-title">tryObjectEnter(object)</p>
 <ul>
@@ -4099,7 +4271,8 @@ script-owner Object to rotate.</p>
 </div>
 <hr />
 <h3 id="tryrandomize">tryRandomize(...)<a class="headerlink" href="#tryrandomize" title="Permanent link">&para;</a></h3>
-<p>Called when a player attempts to randomize the script-owner Object. Return <code>false</code> to prevent the randomization taking place.</p>
+<p>Called when a player attempts to randomize the script-owner Object.</p>
+<p>Return <code>false</code> to prevent the randomization taking place.</p>
 <div class="admonition info">
 <p class="admonition-title">tryRandomize(player_color)</p>
 <ul>
@@ -4116,7 +4289,8 @@ script-owner Object to rotate.</p>
 </div>
 <hr />
 <h3 id="tryrotate">tryRotate(...)<a class="headerlink" href="#tryrotate" title="Permanent link">&para;</a></h3>
-<p>Called when a player attempts to rotate the script-owner Object. Return <code>false</code> to prevent the rotation taking place.</p>
+<p>Called when a player attempts to rotate the script-owner Object.</p>
+<p>Return <code>false</code> to prevent the rotation taking place.</p>
 <div class="admonition info">
 <p class="admonition-title">tryRotate(spin, flip, player_color, old_spin, old_flip)</p>
 <ul>
