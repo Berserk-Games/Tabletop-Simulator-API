@@ -457,7 +457,7 @@ Called when an object enters a zone.
 	* [<span class="tag obj"></span>](types.md) **object**: Object that entered the zone.
 
 !!!example
-	Each time an object enters a scripting zone, print the GUID of the object and the GUID of the scripting zone it entered.
+	Each time an object enters a zone, print the GUID of the object and the GUID of the scripting zone it entered.
 	```lua
 	function onObjectEnterZone(zone, object)
 		print("Object " .. object.guid .. " entered zone " .. zone.guid)
