@@ -3232,7 +3232,7 @@ destroyed by then).</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Each time an object enters a scripting zone, print the GUID of the object and the GUID of the scripting zone it entered.
+<p>Each time an object enters a zone, print the GUID of the object and the GUID of the scripting zone it entered.
 <div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onObjectEnterZone</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">object</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object &quot;</span> <span class="o">..</span> <span class="n">object</span><span class="p">.</span><span class="n">guid</span> <span class="o">..</span> <span class="s2">&quot; entered zone &quot;</span> <span class="o">..</span> <span class="n">zone</span><span class="p">.</span><span class="n">guid</span><span class="p">)</span>
 <span class="kr">end</span>
