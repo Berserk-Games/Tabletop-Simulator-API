@@ -93,8 +93,9 @@ onObjectSearchStart([<span class="tag obj"></span>](types.md) object, [<span cla
 onObjectSpawn([<span class="tag obj"></span>](types.md) object) | Called when an object is spawned/created. | [:i:](#onobjectspawn)
 onObjectStateChange([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) old_state_guid) | Called after an object changes state. | [:i:](#onobjectstatechange)
 onObjectTriggerEffect([<span class="tag obj"></span>](types.md) object, [<span class="tag int"></span>](types.md) index) | Called whenever the trigger effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjecttriggereffect)
+onPlayerAction([<span class="tag pla"></span>](types.md) player, [Action](#onplayeraction-actions) action, [<span class="tag tab"></span>](types.md) targets) | Called when a player attempts to perform an action. | [:i:](#onplayeraction)
 onPlayerChangeColor([<span class="tag str"></span>](types.md) player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [:i:](#onplayerchangecolor)
-onPlayerChangeTeam([<span class="tag str"></span>](types.md) player_color,&nbsp;[<span class="tag str"></span>](types.md) team) | Called when a player changes team. | [:i:](#onplayerchangeteam)
+onPlayerChangeTeam([<span class="tag str"></span>](types.md) player_color, [<span class="tag str"></span>](types.md) team) | Called when a player changes team. | [:i:](#onplayerchangeteam)
 onPlayerConnect([<span class="tag pla"></span>](types.md) player) | Called when a [Player](player/instance.md) connects to a game. | [:i:](#onplayerconnect)
 onPlayerDisconnect([<span class="tag pla"></span>](types.md) player) | Called when a [Player](player/instance.md) disconnects from a game. | [:i:](#onplayerdisconnect)
 onPlayerPing([<span class="tag pla"></span>](types.md) player, [<span class="tag vec"></span>](types.md) position) | Called when a player [pings](https://kb.tabletopsimulator.com/game-tools/line-tool/#ping) a location. | [:i:](#onplayerping)
@@ -178,7 +179,9 @@ Called when a player puts on or takes off their blindfold.
 
 ###onChat(...)
 
-Called when a user sends an in-game chat message. Return `false` to prevent the message appearing in the chat window.
+Called when a user sends an in-game chat message.
+
+Return `false` to prevent the message appearing in the chat window.
 
 !!!info "onChat(message, sender)"
 	* [<span class="tag str"></span>](types.md) **message**: Chat message which triggered the function.
@@ -765,6 +768,78 @@ end
 
 ---
 
+###onPlayerAction(...)
+
+[<span class="ret boo"></span>](types.md) Called when a player attempts to perform an action.
+
+Return `false` to prevent the action's default behavior.
+
+!!!info "onPlayerAction(player, action, targets)"
+	* [<span class="tag pla"></span>](types.md) **player**: [Player](player/instance.md) that is attempting the action.
+	* [Action](#onplayeraction-actions) **action**: Action that is being attempted.
+	* [<span class="tag tab"></span>](types.md) **targets**: List of objects which are the target of the action being attempted.
+
+#### Actions {: #onplayeraction-actions }
+
+The `action` parameter will be provided as an [<span class="tag int"></span>](types.md) equal to a `Player.Action.*`
+property e.g. `Player.Action.FlipOver`.
+
+Please refer to the examples [below](#onplayeraction-flip-example), for a demonstration of how you can check which
+action is being attempted.
+
+[Player.Action](player/manager.md#actions) | Player is attempting to...
+--- | ---
+Copy | Copy (or commence cloning) the targets.
+Cut | Cut (copy and delete) the targets.
+Delete | Delete the targets.
+FlipIncrementalLeft | Incrementally rotate the targets counter-clockwise around their flip axes, typically the scene's Z-axis.
+FlipIncrementalRight | Incrementally rotate the targets clockwise around their flip axes, typically the scene's Z-axis.
+FlipOver | Rotate the targets 180 degrees around their flip axes, typically the scene's Z-axis i.e. toggle the targets between face up and face down.
+Group | Group the targets.
+Paste | Paste (spawn) the targets.
+PickUp | Pick up the targets.
+Randomize | Randomize the targets.
+RotateIncrementalLeft | Rotate the targets incrementally, typically counter-clockwise around the scene's Y-axis. Instead of being rotated exclusively around the Y-axis, dice will be rotated to the previous rotation value.
+RotateIncrementalRight | Rotate the targets incrementally, typically clockwise around the scene's Y-axis. Instead of being rotated exclusively around the Y-axis, dice will be rotated to the next rotation value.
+RotateOver | Rotate the targets 180 degrees around the scene's Y-axis.
+Select | Add the targets to the player's selection.
+Under | Move the targets underneath objects below them on table.
+
+!!!example
+	<p id="onplayeraction-flip-example">Prevent more than 2 objects being flipped over at a time.</p>
+	```lua
+	function onPlayerAction(player, action, targets)
+		if action == Player.Action.FlipOver
+			or action == Player.Action.FlipIncrementalLeft
+			or action == Player.Action.FlipIncrementalRight
+		then
+			return #targets <= 2
+		end
+
+		return true
+	end
+	```
+
+!!!example
+	Only allow the black player (Game Master) to delete cards and decks.
+	```lua
+		function onPlayerAction(player, action, targets)
+			if action == Player.Action.Delete and player.color ~= "Black" then
+				for _, target in ipairs(targets) do
+					if target.type ~= "Card" and target.type ~= "Deck" then
+						target.destroy()
+					end
+				end
+
+				return false
+			end
+
+			return true
+		end
+	```
+
+---
+
 ###onPlayerChangeColor(...)
 
 Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect.
@@ -1014,7 +1089,9 @@ use the layout zone's default order.
 
 ###tryObjectEnterContainer(...)
 
-[<span class="ret boo"></span>](types.md) Called when an object attempts to enter a container. Return `false` to prevent the object entering.
+[<span class="ret boo"></span>](types.md) Called when an object attempts to enter a container.
+
+Return `false` to prevent the object entering.
 
 !!!info "tryObjectEnterContainer(container, object)"
 	* [<span class="tag obj"></span>](types.md) **container**: The container the Object is trying to enter.
@@ -1032,7 +1109,9 @@ use the layout zone's default order.
 
 ###tryObjectRandomize(...)
 
-[<span class="ret boo"></span>](types.md) Called when a player attempts to randomize an Object. Return `false` to prevent the Object being randomized.
+[<span class="ret boo"></span>](types.md) Called when a player attempts to randomize an Object.
+
+Return `false` to prevent the Object being randomized.
 
 !!!info "tryObjectRandomize(object, player_color)"
 	* [<span class="tag obj"></span>](types.md) **object**: The Object the player is trying to randomize.
@@ -1050,7 +1129,9 @@ use the layout zone's default order.
 
 ###tryObjectRotate(...)
 
-[<span class="ret boo"></span>](types.md) Called when a player attempts to rotate an object. Return `false` to prevent the object being rotated.
+[<span class="ret boo"></span>](types.md) Called when a player attempts to rotate an object.
+
+Return `false` to prevent the object being rotated.
 
 !!!info "tryObjectRotate(object, spin, flip, player_color, old_spin, old_flip)"
 	* [<span class="tag obj"></span>](types.md) **object**: The object the player is trying to rotate.
@@ -1425,7 +1506,9 @@ Called when the script-owner Object spawned as a result of an Object state chang
 
 ###tryObjectEnter(...)
 
-Called when another object attempts to enter the script-owner Object (container). Return `false` to prevent the object entering.
+Called when another object attempts to enter the script-owner Object (container).
+
+Return `false` to prevent the object entering.
 
 !!!info "tryObjectEnter(object)"
 	* [<span class="tag obj"></span>](types.md) **object**: The object that has tried to enter the script-owner Object.
@@ -1443,7 +1526,9 @@ Called when another object attempts to enter the script-owner Object (container)
 
 ###tryRandomize(...)
 
-Called when a player attempts to randomize the script-owner Object. Return `false` to prevent the randomization taking place.
+Called when a player attempts to randomize the script-owner Object.
+
+Return `false` to prevent the randomization taking place.
 
 !!!info "tryRandomize(player_color)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that is attempting the randomization.
@@ -1460,7 +1545,9 @@ Called when a player attempts to randomize the script-owner Object. Return `fals
 
 ###tryRotate(...)
 
-Called when a player attempts to rotate the script-owner Object. Return `false` to prevent the rotation taking place.
+Called when a player attempts to rotate the script-owner Object.
+
+Return `false` to prevent the rotation taking place.
 
 !!!info "tryRotate(spin, flip, player_color, old_spin, old_flip)"
 	* [<span class="tag flo"></span>](types.md) **spin**: The script-owner Object's target spin (around Y-axis) rotation in degrees within the interval \[0, 360).

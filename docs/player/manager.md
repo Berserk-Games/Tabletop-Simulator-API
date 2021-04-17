@@ -13,6 +13,22 @@ getSpectators() | [<span class="ret tab"></span>](../types.md) | Returns a table
 
 ---
 
+## Actions
+
+The [onPlayerAction](../events.md#onplayeraction) event allows you to handle player actions. A list of player actions
+is available as `Player.Action`.
+
+!!!example
+    Log all available player actions:
+    ```lua
+    log(Player.Action)
+    ```
+
+For more details about these actions, please refer to the documentation for
+[onPlayerAction](../events.md#onplayeraction).
+
+---
+
 ## Function Details {: data-toc-sort }
 
 ### getPlayers()
