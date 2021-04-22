@@ -94,6 +94,7 @@ Book {: #book } | [Book](behavior/book.md) | "Custom PDF" objects.
 Browser {: #browser } | [Browser](behavior/browser.md) | "Tablet" objects.
 Clock {: #clock } | [Clock](behavior/clock.md) | "Digital Clock" objects.
 Counter {: #counter } | [Counter](behavior/counter.md) | "Counter" objects.
+LayoutZone {: #layoutzone } | [LayoutZone](behavior/layoutzone.md) | Layout zones.
 RPGFigurine {: #rpgfigurine } | [RPGFigurine](behavior/rpgfigurine.md) | "RPG Kit" animated figurine objects i.e. [type](#type) "rpgFigurine".
 TextTool {: #texttool } | [TextTool](behavior/texttool.md) | 3D Text objects e.g. text created with the in-game Text tool.
 
