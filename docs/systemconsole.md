@@ -281,3 +281,7 @@ Commands are named with their topic first, so commands which affect the same par
 * `tool_` commands let you check and set the currently used tool (grab, draw, etc).
 * `ui_` commands deal with the game's User Interface.
 * `vr_` commands perform all VR related tasks.
+
+## All Console Commands
+
+* [(All Console Commands)](https://github.com/Berserk-Games/Tabletop-Simulator-Console-Commands/blob/main/Commands.md#console-commands)
