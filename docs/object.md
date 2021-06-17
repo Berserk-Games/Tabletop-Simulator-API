@@ -1,4 +1,4 @@
-The Object class represents any entity within tabletop simulator. Once you have a reference to an object in you're script you can call functions on it directly. Example: `obj.getPosition(...)`. You can get a reference to an object multiple ways;
+The Object class represents any entity within tabletop simulator. Once you have a reference to an object in your script you can call functions on it directly. Example: `obj.getPosition(...)`. You can get a reference to an object multiple ways;
 
 * Using the `self` property if your script is on an Object and referring to that Object.
 * Using [`getObjectFromGUID(...)`](base.md#getobjectfromguid) with the object's GUID (found by right clicking it with the pointer).
