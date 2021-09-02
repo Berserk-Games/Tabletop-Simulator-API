@@ -10,7 +10,7 @@ General functions which work within any script.
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 addContextMenuItem([<span class="tag str"></span>](types.md) label, [<span class="tag fun"></span>](types.md) toRunFunc, [<span class="tag boo"></span>](types.md) keep_open, [<span class="tag boo"></span>](types.md) require_table) | Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table. | [<span class="ret boo"></span>](types.md) | [:i:](#addcontextmenuitem)
-clearContextMenu() {: data-toc-label="clearContextMenu()" data-toc-child-of="global-function-details" } | Clears all menu items added by function [addContextMenuItem](#addcontextmenuitem). | [<span class="ret boo"></span>](types.md) |
+clearContextMenu() {: data-toc-label="clearContextMenu()" data-toc-child-of="global-function-details" } | Clears all menu items added by function [addContextMenuItem(...)](#addcontextmenuitem). | [<span class="ret boo"></span>](types.md) |
 copy([<span class="tag tab"></span>](types.md) object_list) | Copy a list of Objects to the clipboard. Works with [paste(...)](#paste). | [<span class="ret boo"></span>](types.md) | [:i:](#copy)
 destroyObject([<span class="tag obj"></span>](types.md) obj) | Destroy an Object. | [<span class="ret boo"></span>](types.md) | [:i:](#destroyobject)
 flipTable() {: #fliptable data-toc-label="flipTable()" data-toc-child-of="global-function-details" } | Flip the table. | [<span class="ret boo"></span>](types.md) |
