@@ -54,16 +54,16 @@ getAttribute([<span class="tag str"></span>](types.md) id, [<span class="tag str
 getAttributes([<span class="tag str"></span>](types.md) id) | Returns the attributes and their values of a UI element. | [<span class="ret tab"></span>](types.md) | [:i:](#getattributes)
 getCustomAssets() | Returns information on all custom assets uploaded to the UI ASSETS pane. | [<span class="ret tab"></span>](types.md) | [:i:](#getcustomassets)
 getValue([<span class="tag str"></span>](types.md) id) | Obtains the value between elements tags, like: `<Text>ValueToGet</Text>` | [<span class="ret str"></span>](types.md) | [:i:](#getvalue)
-getXml() {: #getxml data-toc-label="getXml()" data-toc-child-of="function-details" } | Returns the run-time UI's XML in string format. | [<span class="ret str"></span>](types.md) |
-getXmlTable() | Returns the run-time UI's XML formatted as a Lua table. | [<span class="ret tab"></span>](types.md) | [:i:](#getxmltable)
+getXml() {: #getxml data-toc-label="getXml()" data-toc-child-of="function-details" } | Returns the contents of the current UI formatted as XML. | [<span class="ret str"></span>](types.md) |
+getXmlTable() | Returns the contents of the current UI formatted as a table. | [<span class="ret tab"></span>](types.md) | [:i:](#getxmltable)
 hide([<span class="tag str"></span>](types.md) id) | Hides the given UI element. Unlike the "active" attribute, hide triggers animations. | [<span class="ret boo"></span>](types.md) | [:i:](#hide)
 setAttribute([<span class="tag str"></span>](types.md) id, [<span class="tag str"></span>](types.md) attribute, [<span class="tag var"></span>](types.md) value) | Sets the value of a specified attribute of a UI element. | [<span class="ret boo"></span>](types.md) | [:i:](#setattribute)
 setAttributes([<span class="tag str"></span>](types.md) id, [<span class="tag tab"></span>](types.md) data) | Updates the value of the supplied attributes of a UI element. | [<span class="ret boo"></span>](types.md) | [:i:](#setattributes)
 setClass([<span class="tag str"></span>](types.md) id, [<span class="tag str"></span>](types.md) names) | Replaces all classes on a UI element. | [<span class="ret boo"></span>](types.md) | [:i:](#setclass)
-setCustomAssets([<span class="tag tab"></span>](types.md) assets) | Sets the UI ASSETS (like custom images) for global or an Object. | [<span class="ret boo"></span>](types.md) | [:i:](#setcustomassets)
+setCustomAssets([<span class="tag tab"></span>](types.md) assets) | Sets/replaces the custom assets which your UI may make use of. | [<span class="ret boo"></span>](types.md) | [:i:](#setcustomassets)
 setValue([<span class="tag str"></span>](types.md) id, [<span class="tag str"></span>](types.md) value) | Updates the value between elements tags, like: `<Text>ValueChanged</Text>` | [<span class="ret boo"></span>](types.md) | [:i:](#setvalue)
-setXml([<span class="tag str"></span>](types.md) xml) | Replaces the run-time UI with the XML string. | [<span class="ret boo"></span>](types.md) | [:i:](#setxml)
-setXmlTable([<span class="tag tab"></span>](types.md) data) | Replaces the run-time UI with an XML string which is generated from a table of data. | [<span class="ret boo"></span>](types.md) | [:i:](#setxmltable)
+setXml([<span class="tag str"></span>](types.md) xml, [<span class="tag tab"></span>](types.md) assets) | Sets/replaces the UI with the contents of the provided XML. | [<span class="ret boo"></span>](types.md) | [:i:](#setxml)
+setXmlTable([<span class="tag tab"></span>](types.md) data, [<span class="tag tab"></span>](types.md) assets) | Sets/replaces the UI with the contents of the provided UI table. | [<span class="ret boo"></span>](types.md) | [:i:](#setxmltable)
 show([<span class="tag str"></span>](types.md) id) | Displays the given UI element. Unlike the "active" attribute, show triggers animations. | [<span class="ret boo"></span>](types.md) | [:i:](#show)
 
 
@@ -149,7 +149,7 @@ print(string)
 
 ###getXmlTable()
 
-[<span class="ret tab"></span>](types.md) Obtain the run-time UI formatted as a Lua table of data.
+[<span class="ret tab"></span>](types.md) Returns the contents of the current UI formatted as a table.
 
 Example Returned Table:
 ```lua
@@ -277,30 +277,39 @@ self.UI.setAttributes("exampleText", attributeTable)
 
 ###setCustomAssets(...)
 
-[<span class="ret boo"></span>](types.md) Sets the UI ASSETS (like custom images) for Global or an Object. Passing nothing as a parameter results in the clearing of the UI Assets.
+[<span class="ret boo"></span>](types.md) Sets/replaces the custom assets which your UI may make use of. Providing an empty table will remove all existing UI Assets.
 
-!!!warning "This function will overwrite any currently existing assets in Custom UI Assets, not add to them."
+!!!warning
+    This function will overwrite/replace any currently existing assets in Custom UI Assets, not add to them.
 
-!!!info "setCustomAssets(table)"
-    * [<span class="tag tab"></span>](types.md) **table**: An unnamed table that contains sub-tables. Each sub-table represents one asset.
-        * [<span class="tag str"></span>](types.md) **name**: The name of the image element
-        * [<span class="tag str"></span>](types.md) **url**: The URL/file location of the asset's source.
+!!!info "setCustomAssets(assets)"
+    * [<span class="tag tab"></span>](types.md) **assets**: A table/array containing sub-tables which each represent a [custom asset](#setcustomassets-custom-assets).
 
-``` Lua
-function onLoad()
-    local assets = {
+##### Custom Assets {: #setcustomassets-custom-assets data-toc-omit }
+
+Custom assets are represented as a table with the following properties:
+
+Name | Type | Default | Description
+-- | -- | -- | --
+name | [<span class="tag str"></span>](types.md) | _Mandatory_ | The name you'll use to refer to this asset in your XML UI.
+url | [<span class="tag str"></span>](types.md) | _Mandatory_ | The URL this asset will be loaded from.
+
+Currently, only images are supported as custom assets.
+
+!!!example
+    Add two images which can be used within your XML UI.
+    ```lua
+    UI.setCustomAssets({
         {
-            name = "Image 1",
-            url  = "http://placehold.it/120x120&text=image1"
+            name = "Image1",
+            url = "http://placehold.it/120x120&text=image1"
         },
         {
-            name = "Image 2",
-            url  = "http://placehold.it/120x120&text=image2"
+            name = "Image2",
+            url = "http://placehold.it/120x120&text=image2"
         },
-    }
-    UI.setCustomAssets(assets)
-end
-```
+    })
+    ```
 
 ---
 
@@ -325,27 +334,32 @@ UI.setValue("testElement", "New Text To Display")
 
 ###setXml(...)
 
-[<span class="ret boo"></span>](types.md) Replaces the run-time UI with the XML string.
+[<span class="ret boo"></span>](types.md) Sets/replaces the UI with the contents of the provided XML.
 
-!!!info "setXml(xml)"
-    * [<span class="tag str"></span>](types.md) **xml**: A single string with the contents of the XML to use
-
-
-``` Lua
-self.UI.setXml("<Text>Test</Text>")
-```
+!!!info "setXml(xml, assets)"
+    * [<span class="tag str"></span>](types.md) **xml**: A string containing XML representing the desired UI.
+    * [<span class="tag tab"></span>](types.md) **assets**: A table/array containing sub-tables which each represent a [custom asset](#setcustomassets-custom-assets).
+        * {>>Optional. When omitted existing custom assets will not be modified. <<}
 
 !!!warning
-    setXml takes 1 frame to update the runtime UI. This means any change or get of xml/attributes during this frame will not be recognized correctly.
+    UI changes do not take effect immediately. Any attempt to query the contents of the XML will return stale results
+    until [loading](#loading) returns to `false`.
+
+
+!!!example
+    Display a single text label with the contents "Test".
+    ```lua
+    UI.setXml("<Text>Test</Text>")
+    ```
 
 ---
 
 
 ###setXmlTable(...)
 
-[<span class="ret boo"></span>](types.md) Replaces the run-time UI with an XML string which is generated from a table of data.
+[<span class="ret boo"></span>](types.md) Sets/replaces the UI with the contents of the provided UI table.
 
-!!!info "setXmlTable(data)"
+!!!info "setXmlTable(data, assets)"
     * [<span class="tag tab"></span>](types.md) **data**: A table containing sub-tables. One sub-table for each element being created.
         * [<span class="tag str"></span>](types.md) **tag**: The element type.
         * [<span class="tag tab"></span>](types.md) **attributes**: A table containing attribute names for keys. Available attribute types depend on tag's element type.
@@ -355,9 +369,16 @@ self.UI.setXml("<Text>Test</Text>")
             * {>>Optional, defaults to an empty string.<<}
         * [<span class="tag tab"></span>](types.md) **children**: A table containing more sub-tables, formatted as above. This does mean the sub-tables can contain their own children as well, containing sub-sub tables, etc.
             * {>>Optional, defaults to not being used.<<}
+    * [<span class="tag tab"></span>](types.md) **assets**: A table/array containing sub-tables which each represent a [custom asset](#setcustomassets-custom-assets).
+        * {>>Optional. When omitted existing custom assets will not be modified. <<}
 
-```lua
-function onLoad()
+!!!warning
+    UI changes do not take effect immediately. Any attempt to query the contents of the XML will return stale results
+    until [loading](#loading) returns to `false`.
+
+!!!example
+    Display two text labels within a horizontal layout.
+    ```lua
     UI.setXmlTable({
         {
             tag="HorizontalLayout",
@@ -386,11 +407,7 @@ function onLoad()
             }
         }
     })
-end
-```
-
-!!!warning
-    setXmlTable takes 1 frame to update the runtime UI. This means any change or get of xml/attributes during this frame will not be recognized correctly.
+    ```
 
 ---
 
