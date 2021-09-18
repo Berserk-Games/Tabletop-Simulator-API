@@ -1587,7 +1587,7 @@ Example of calling a function targeted at an Object UI:
 </tr>
 <tr>
 <td>getCustomAssets()</td>
-<td>Returns information on all custom assets uploaded to the UI ASSETS pane.</td>
+<td>Returns a table/array of <a href="#setcustomassets-custom-assets">custom assets</a>.</td>
 <td><a href="../types/"><span class="ret tab"></span></a></td>
 <td><a href="#getcustomassets"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1724,22 +1724,13 @@ Example of calling a function targeted at an Object UI:
 </div>
 <hr />
 <h3 id="getcustomassets">getCustomAssets()<a class="headerlink" href="#getcustomassets" title="Permanent link">&para;</a></h3>
-<p><a href="../types/"><span class="ret tab"></span></a> Returns information on all custom assets uploaded to the UI ASSETS pane.</p>
-<div class="admonition info">
-<p class="admonition-title">Return table</p>
-<ul>
-<li><a href="../types/"><span class="tag tab"></span></a> <strong>table</strong>: An unnamed table that contains sub-tables. Each sub-table represents one asset.<ul>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>name</strong>: The name of the image element</li>
-<li><a href="../types/"><span class="tag str"></span></a> <strong>url</strong>: The URL/file location of the asset's source.</li>
-</ul>
-</li>
-</ul>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a table/array of <a href="#setcustomassets-custom-assets">custom assets</a>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Log the UI's current custom assets.
+<div class="highlight"><pre><span></span><code><span class="n">log</span><span class="p">(</span><span class="n">UI</span><span class="p">.</span><span class="n">getCustomAssets</span><span class="p">())</span>
+</code></pre></div></p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onLoad</span><span class="p">()</span>
-    <span class="kd">local</span> <span class="n">assets</span> <span class="o">=</span> <span class="n">UI</span><span class="p">.</span><span class="n">getCustomAssets</span><span class="p">()</span>
-    <span class="n">log</span><span class="p">(</span><span class="n">assets</span><span class="p">)</span>
-<span class="kr">end</span>
-</code></pre></div>
 <hr />
 <h3 id="getvalue">getValue(...)<a class="headerlink" href="#getvalue" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret str"></span></a> Obtains the value between elements tags, like: <code>&lt;Text&gt;ValueObtained&lt;/Text&gt;</code></p>
