@@ -52,7 +52,7 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 getAttribute([<span class="tag str"></span>](types.md) id, [<span class="tag str"></span>](types.md) attribute) | Obtains the value of a specified attribute of a UI element. | [<span class="ret var"></span>](types.md) | [:i:](#getattribute)
 getAttributes([<span class="tag str"></span>](types.md) id) | Returns the attributes and their values of a UI element. | [<span class="ret tab"></span>](types.md) | [:i:](#getattributes)
-getCustomAssets() | Returns information on all custom assets uploaded to the UI ASSETS pane. | [<span class="ret tab"></span>](types.md) | [:i:](#getcustomassets)
+getCustomAssets() | Returns a table/array of [custom assets](#setcustomassets-custom-assets). | [<span class="ret tab"></span>](types.md) | [:i:](#getcustomassets)
 getValue([<span class="tag str"></span>](types.md) id) | Obtains the value between elements tags, like: `<Text>ValueToGet</Text>` | [<span class="ret str"></span>](types.md) | [:i:](#getvalue)
 getXml() {: #getxml data-toc-label="getXml()" data-toc-child-of="function-details" } | Returns the contents of the current UI formatted as XML. | [<span class="ret str"></span>](types.md) |
 getXmlTable() | Returns the contents of the current UI formatted as a table. | [<span class="ret tab"></span>](types.md) | [:i:](#getxmltable)
@@ -107,22 +107,13 @@ self.UI.getAttribute("testElement", "fontSize")
 
 ###getCustomAssets()
 
-[<span class="ret tab"></span>](types.md) Returns information on all custom assets uploaded to the UI ASSETS pane.
+[<span class="ret tab"></span>](types.md) Returns a table/array of [custom assets](#setcustomassets-custom-assets).
 
-!!!info "Return table"
-    * [<span class="tag tab"></span>](types.md) **table**: An unnamed table that contains sub-tables. Each sub-table represents one asset.
-        * [<span class="tag str"></span>](types.md) **name**: The name of the image element
-        * [<span class="tag str"></span>](types.md) **url**: The URL/file location of the asset's source.
-
-``` Lua
-function onLoad()
-    local assets = UI.getCustomAssets()
-    log(assets)
-end
-```
-
-
-
+!!!example
+    Log the UI's current custom assets.
+    ```lua
+    log(UI.getCustomAssets())
+    ```
 
 ---
 
