@@ -289,7 +289,9 @@ other reason e.g. if the script-owner Object was pulled out of a container mid-g
 	end
 	```
 	Refer to [onSave(...)](#onsave) to see an example of how this same save state structure could be created. Subscribe
-	to the [example mod](https://steamcommunity.com/sharedfiles/filedetails/?id=2430471959) to see this in action.
+	to the [onSave/onLoad example mod](https://steamcommunity.com/sharedfiles/filedetails/?id=2430471959) for a more
+	functionally complete example.
+
 ---
 
 ###onObjectCollisionEnter(...)
@@ -998,7 +1000,8 @@ be saved mid-game e.g. when the script-owner Object enters a container.
 	end
 	```
 	Refer to [onLoad(...)](#onload) to see an example of this same save state structure being loaded. Subscribe to the
-	[example mod](https://steamcommunity.com/sharedfiles/filedetails/?id=2430471959) to see this in action.
+	[onSave/onLoad example mod](https://steamcommunity.com/sharedfiles/filedetails/?id=2430471959) for a more
+	functionally complete example.
 
 ---
 
