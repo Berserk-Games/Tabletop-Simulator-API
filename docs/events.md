@@ -470,7 +470,7 @@ Called when an object enters a zone.
 
 ###onObjectFlick(...)
 
-Called whenever a player [flicks](https://kb.tabletopsimulator.com/game-tools/flick-tool/) flicks an object.
+Called whenever a player [flicks](https://kb.tabletopsimulator.com/game-tools/flick-tool/) an object.
 
 !!!info "onObjectFlick(object, player_color, impulse)"
 * [<span class="tag obj"></span>](types.md) **object**: The object that was flicked.
