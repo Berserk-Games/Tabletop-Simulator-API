@@ -33,7 +33,7 @@ Function Name {: #angular_drag } | Description | Return | &nbsp;
 -- | -- | -- | --
 cast([<span class="tag tab"></span>](types.md) parameters) | Returns Table containing information on hit Objects. | [<span class="ret tab"></span>](types.md) | [:i:](#cast)
 getGravity() {: #getgravity data-toc-label="getGravity()" data-toc-child-of="function-details" } | Returns directional Vector of the direction gravity is pulling. | [<span class="ret vec"></span>](types.md#vector) |
-setGravity([<span class="tag vec"></span>](types.md#vector) direction) {: #setgravity data-toc-label="setGravity(...)" data-toc-child-of="function-details" } | Sets the direction gravity gravity pulls. | [<span class="ret boo"></span>](types.md)
+setGravity([<span class="tag vec"></span>](types.md#vector) direction) {: #setgravity data-toc-label="setGravity(...)" data-toc-child-of="function-details" } | Sets the direction gravity pulls. | [<span class="ret boo"></span>](types.md)
 
 
 
