@@ -34,9 +34,9 @@ function onLoad()
     local vec1 = Vector.new(0.5, 1, 1.5)
     local vec2 = Vector(1, -1, 0) -- same as Vector.new(1, -1, 0)
 
-    print(Vector.between(vec1, vec2)) --> Vector: {0.5, -2. -1.5}
-    print(Vector.max(vec1, vec2)) --> Vector: {1, 1. 1.5}
-    print(Vector.min(vec1, vec2)) --> Vector: {0.5, -1. -0}
+    print(Vector.between(vec1, vec2)) --> Vector: {0.5, -2, -1.5}
+    print(Vector.max(vec1, vec2)) --> Vector: {1, 1, 1.5}
+    print(Vector.min(vec1, vec2)) --> Vector: {0.5, -1, -0}
 end
 ```
 
