@@ -361,7 +361,7 @@ To understand vector projection, imagine that `otherVec` is resting on a line po
 
 ``` Lua
 vec = Vector(2, 1, 4)
-vec:project(Vector(1, - 2, 1))
+vec:project(Vector(1, -2, 1))
 print(vec) --> Vector: { 0.67, -1.3, 0.67 }
 ```
 
@@ -376,7 +376,7 @@ A Vector stores the position of the given `vec` in 3d space. A second Vector is 
 
 ``` Lua
 vec = Vector(2, 1, 4)
-vec:projectOnPlane(Vector(1, - 2, 1))
+vec:projectOnPlane(Vector(1, -2, 1))
 print(vec) --> Vector: { 1.33, 2.33, 3.33 }
 ```
 
@@ -568,8 +568,8 @@ print(Vector.equals(vec1, vec2, 0.01)) --> true
 vec = Vector(1, 2, 3)
 str = vec:string('Prefix')
 print(str) --> Prefix: { 1, 2, 3 }
-print(vec:string('Prefix')) --> Prefix: { 1, 2, 3 }0
-print(Vector.string(vec, 'Prefix')) --> Prefix: { 1, 2, 3 }0
+print(vec:string('Prefix')) --> Prefix: { 1, 2, 3 }
+print(Vector.string(vec, 'Prefix')) --> Prefix: { 1, 2, 3 }
 ```
 
 !!!warning
@@ -625,7 +625,7 @@ The value returned equals (b - a) * t. When t = 0 returns a. When t = 1 returns 
     * [<span class="tag flo"></span>](types.md) **t**: Fraction.
 
 ``` Lua
-p1 = Vector(1, 2, - 4)
+p1 = Vector(1, 2, -4)
 p2 = Vector(1, 2, 4)
 print(p1:lerp(p2, 0.25)) --> Vector: { 1, 2, -2 }
 print(Vector.lerp(p1, p2, 0.25)) --> Vector: { 1, 2, -2 }
@@ -685,7 +685,7 @@ function onLoad()
     local target =   Vector(-10, 5, 0) -- obj destination
     local movementType = 'linear' -- try with 'spherical' or 'asymptotic' to see how other methods work
 
-    -- We want out movement stretched over time, a Wait will do it periodically
+    -- We want the movement stretched over time, a Wait will do it periodically
     local waitID
     waitID = Wait.time(
         function()
