@@ -188,7 +188,7 @@ Return `false` to prevent the message appearing in the chat window.
 	* [<span class="tag pla"></span>](types.md) **sender**: Player which sent the chat message.
 
 !!!example
-	Prevent the blue player from sending messages to other player's. Instead print the message to the host. Permit chat from all other players.
+	Prevent the blue player from sending messages to other players. Instead print the message to the host. Permit chat from all other players.
 	```lua
 	function onChat(message, sender)
 		if sender.color == "Blue" then
