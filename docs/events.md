@@ -96,6 +96,7 @@ onObjectTriggerEffect([<span class="tag obj"></span>](types.md) object, [<span c
 onPlayerAction([<span class="tag pla"></span>](types.md) player, [Action](#onplayeraction-actions) action, [<span class="tag tab"></span>](types.md) targets) | Called when a player attempts to perform an action. | [:i:](#onplayeraction)
 onPlayerChangeColor([<span class="tag str"></span>](types.md) player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [:i:](#onplayerchangecolor)
 onPlayerChangeTeam([<span class="tag str"></span>](types.md) player_color, [<span class="tag str"></span>](types.md) team) | Called when a player changes team. | [:i:](#onplayerchangeteam)
+onPlayerChatTyping([<span class="tag str"></span>](types.md) player, [<span class="tag boo"></span>](types.md) typing) | Called when a player starts or stops typing. | [:i:](#onplayerchangeteam)
 onPlayerConnect([<span class="tag pla"></span>](types.md) player) | Called when a [Player](player/instance.md) connects to a game. | [:i:](#onplayerconnect)
 onPlayerDisconnect([<span class="tag pla"></span>](types.md) player) | Called when a [Player](player/instance.md) disconnects from a game. | [:i:](#onplayerdisconnect)
 onPlayerPing([<span class="tag pla"></span>](types.md) player, [<span class="tag vec"></span>](types.md) position) | Called when a player [pings](https://kb.tabletopsimulator.com/game-tools/line-tool/#ping) a location. | [:i:](#onplayerping)
