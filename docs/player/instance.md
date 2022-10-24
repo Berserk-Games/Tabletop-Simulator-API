@@ -27,6 +27,7 @@ attachCameraToObject([<span class="tag tab"></span>](../types.md) parameters) | 
 broadcast([<span class="tag str"></span>](../types.md) message, [<span class="tag col"></span>](../types.md) message_color) | [<span class="ret boo"></span>](../types.md) | Print message on Player's screen and their game chat log. | [:i:](#broadcast)
 changeColor([<span class="tag str"></span>](../types.md) player_color) | [<span class="ret boo"></span>](../types.md) | Changes player to this [Player Color](colors.md). | [:i:](#changecolor)
 clearSelectedObjects() {: #clearselectedobjects data-toc-label="clearSelectedObjects()" data-toc-child-of="function-details" } | [<span class="ret boo"></span>](../types.md) | Clears a player's current selection. |
+copy([<span class="tag tab"></span>](../types.md) objects) | [<span class="ret boo"></span>](../types.md) | Makes the Player take the Copy action with the specified Objects. | [:i:](#copy)
 getHandCount() {: #gethandcount data-toc-label="getHandCount()" data-toc-child-of="function-details" } | [<span class="ret int"></span>](../types.md) | Number of [hand zones](https://kb.tabletopsimulator.com/host-guides/player-hands/) owned by this color. |
 getHandObjects([<span class="tag int"></span>](../types.md) hand_index) | [<span class="ret tab"></span>](../types.md) | Objects that are in this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/). | [:i:](#gethandobjects)
 getHandTransform([<span class="tag int"></span>](../types.md) hand_index)| [<span class="ret tab"></span>](../types.md) | Returns a Table of data on this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/). | [:i:](#gethandtransform)
@@ -38,12 +39,19 @@ getSelectedObjects() {: #getselectedobjects data-toc-label="getSelectedObjects()
 kick() {: #kick data-toc-label="kick()" data-toc-child-of="function-details" } | [<span class="ret boo"></span>](../types.md) | Kicks Player out of the room. |
 lookAt([<span class="tag tab"></span>](../types.md) parameters) | [<span class="ret boo"></span>](../types.md) | Moves a Player's camera, forcing 3'rd person camera mode. | [:i:](#lookat)
 mute() {: #mute data-toc-label="mute()" data-toc-child-of="function-details" } | [<span class="ret boo"></span>](../types.md) | Mutes or unmutes Player, preventing/allowing voice chat. |
+paste([<span class="tag vec"></span>](../types.md) position) | [<span class="ret boo"></span>](../types.md) | Makes the Player take the Paste action at the specified position | [:i:](#paste)
 pingTable([<span class="tag vec"></span>](../types.md#vector) position) {: #pingtable data-toc-label="pingTable(...)" data-toc-child-of="function-details" } | [<span class="ret boo"></span>](../types.md) | Emulates the player using the ping tool at the given position (tapping Tab). |
 print([<span class="tag str"></span>](../types.md) message, [<span class="tag col"></span>](../types.md#color) message_color) | [<span class="ret boo"></span>](../types.md) | Prints a message into the Player's game chat. | [:i:](#print)
 promote() {: #promote data-toc-label="promote()" data-toc-child-of="function-details" } | [<span class="ret boo"></span>](../types.md) | Promotes/demotes a Player. Promoted players have access to most host privileges. |
 setCameraMode([<span class="tag str"></span>](../types.md) camera_mode) | [<span class="ret boo"></span>](../types.md) | Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown". | [:i:](#setcameramode)
 setHandTransform([<span class="tag tab"></span>](../types.md) parameters, [<span class="tag int"></span>](../types.md) hand_index) | [<span class="ret boo"></span>](../types.md) | Sets transform elements of a hand zone. | [:i:](#sethandtransform)
 setUITheme([<span class="tag str"></span>](../types.md) theme) | [<span class="ret boo"></span>](../types.md) | Sets the UI theme for the player. | [:i:](#setuitheme)
+showInfoDialog([<span class="tag str"></span>](../types.md) info) | [<span class="ret boo"></span>](../types.md) | Displays `info` string to player in the message box dialog. | [:i:](#showinfodialog)
+showConfirmDialog([<span class="tag str"></span>](../types.md) info, [<span class="tag fun"></span>](../types.md) callback) | [<span class="ret boo"></span>](../types.md) | Displays `info` string to player in the message box dialog, and executes `callback` if they click `OK`. | [:i:](#showconfirmdialog)
+showInputDialog([<span class="tag str"></span>](../types.md) description, [<span class="tag str"></span>](../types.md) default_text, [<span class="tag fun"></span>](../types.md) callback) | [<span class="ret boo"></span>](../types.md) | Shows the text input dialog to the player, and executes `callback` if they click `OK`. | [:i:](#showinputdialog)
+showMemoDialog([<span class="tag str"></span>](../types.md) description, [<span class="tag str"></span>](../types.md) default_text, [<span class="tag fun"></span>](../types.md) callback) | [<span class="ret boo"></span>](../types.md) | Shows the memo input dialog (large text input) to the player, and executes `callback` if they click `OK`. | [:i:](#showmemodialog)
+showOptionsDialog([<span class="tag str"></span>](../types.md) description, [<span class="tag tab"></span>](../types.md) options, [<span class="tag int"></span>](../types.md) default_value, [<span class="tag fun"></span>](../types.md) callback) | [<span class="ret boo"></span>](../types.md) | Shows the dropdown options dialog to the player, and executes `callback` if they click `OK`. | [:i:](#showoptionsdialog)
+showColorDialog([<span class="tag col"></span>](../types.md) default_color, [<span class="tag fun"></span>](../types.md) callback) | [<span class="ret boo"></span>](../types.md) | Shows the color picker dialog to the player with optional `default_color`, and executes `callback` if they click `OK`. | [:i:](#showcolordialog)
 
 ---
 
@@ -87,6 +95,20 @@ self.attachCameraToObject({object=self})
 
 ``` Lua
 Player["White"].changeColor("Red")
+```
+
+---
+
+
+### copy(...)
+
+[<span class="ret boo"></span>](../types.md) Makes the Player take the Copy action with the specified Objects.
+
+!!!info "copy(objects)"
+    * [<span class="tag tab"></span>](../types.md) **objects**: A Table of Objects.
+
+``` Lua
+Player.Green.copy({the_dice, the_deck})
 ```
 
 ---
@@ -151,6 +173,20 @@ Player["White"].lookAt({
     yaw      = 180,
     distance = 20,
 })
+```
+
+---
+
+
+### paste(...)
+
+[<span class="ret boo"></span>](../types.md) Makes the Player take the Paste action at the specified position.
+
+!!!info "paste(position)"
+    * [<span class="tag vec"></span>](../types.md) **position**: The position to paste at.
+
+``` Lua
+Player.Green.paste({0, 1, 0})
 ```
 
 ---
@@ -224,4 +260,107 @@ Player["White"].setHandTransform(params, 2)
     Set the White player's default button background to pink.
     ``` Lua
     Player.white.setUITheme("button_normal #FFC0C0")
+    ```
+
+### showInfoDialog(...)
+
+[<span class="ret boo"></span>](../types.md) Shows the info dialog to the player.
+
+!!!info "showInfoDialog(info)"
+    * [<span class="tag str"></span>](../types.md) **info**: Information to display.
+
+!!!example
+    ``` Lua
+    Player.white.showInfoDialog("Only active players may floop!")
+    ```
+
+### showConfirmDialog(...)
+
+[<span class="ret boo"></span>](../types.md) Shows the confirm dialog to the player and executes the callback if they click OK.
+
+!!!info "showConfirmDialog(info, callback)"
+    * [<span class="tag str"></span>](../types.md) **info**: Information to display.
+    * [<span class="tag fun"></span>](../types.md) **callback**: Callback to execute if they click OK.  Will be called as `callback(player_color)`
+
+!!!example
+    ``` Lua
+    chosen_player.showConfirmDialog("Really roll the dice?",
+        function (player_color)
+            dice.roll()
+            log(player_color .. " rolled the dice.")
+        end
+    )
+    ```
+
+
+### showInputDialog(...)
+
+[<span class="ret boo"></span>](../types.md) Shows the text input dialog to the player and executes the callback if they click OK.
+
+!!!info "showInputDialog(description, default_text, callback)"
+    * [<span class="tag str"></span>](../types.md) **description**: Optional description of what the player should input.
+    * [<span class="tag str"></span>](../types.md) **default_text**: Optional default value.
+    * [<span class="tag fun"></span>](../types.md) **callback**: Callback to execute if they click OK.  Will be called as `callback(text, player_color)`
+
+!!!example
+    ``` Lua
+    chosen_player.showInputDialog("Set Name",
+        function (text, player_color)
+            chosen_object.setName(text)
+        end
+    )
+    ```
+
+### showMemoDialog(...)
+
+[<span class="ret boo"></span>](../types.md) Shows the memo input dialog (large text input) to the player and executes the callback if they click OK.
+
+!!!info "showMemoDialog(description, default_text, callback)"
+    * [<span class="tag str"></span>](../types.md) **description**: Optional description of what the player should input.
+    * [<span class="tag str"></span>](../types.md) **default_text**: Optional default value.
+    * [<span class="tag fun"></span>](../types.md) **callback**: Callback to execute if they click OK.  Will be called as `callback(text, player_color)`
+
+!!!example
+    ``` Lua
+    chosen_player.showMemoDialog("Set Description",
+        function (text, player_color)
+            chosen_object.setDescription(text)
+        end
+    )
+    ```
+
+### showOptionsDialog(...)
+
+[<span class="ret boo"></span>](../types.md) Shows the options dropdown dialog to the player and executes the callback if they click OK.
+
+!!!info "showOptionsDialog(description, options, default_value, callback)"
+    * [<span class="tag str"></span>](../types.md) **description**: Description of what the player is choosing.
+    * [<span class="tag tab"></span>](../types.md) **options**: Table of string options.
+    * [<span class="tag int"></span>](../types.md) **default_value**: Optional default value, an integer index into the options table.  Note you may alternatively use the option string itself.
+    * [<span class="tag fun"></span>](../types.md) **callback**: Callback to execute if they click OK.  Will be called as `callback(selected_text, selected_index, player_color)`
+
+!!!example
+    ``` Lua
+    chosen_player.showOptionsDialog("Choose Value", {"1", "2", "3", "4", "5", "6"}, dice.getValue(),
+        function (text, index, player_color)
+            dice.setValue(index)
+        end
+    )
+    ```
+
+### showColorDialog(...)
+
+[<span class="ret boo"></span>](../types.md) Shows the color picker dialog to the player and executes the callback if they click OK.
+
+!!!info "showColorDialog(default_color, callback)"
+    * [<span class="tag colt"></span>](../types.md) **default_color**: Optional default color.
+    * [<span class="tag fun"></span>](../types.md) **callback**: Callback to execute if they click Apply.  Will be called as `callback(color, player_color)`
+
+!!!example
+    ``` Lua
+    chosen_player.showColorDialog(dice.getColorTint(),
+        function (color, player_color)
+            dice.setColorTint(color)
+        end
+    )
     ```

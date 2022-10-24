@@ -83,14 +83,16 @@ nav:
       - Book: behavior/book.md
       - Browser: behavior/browser.md
       - Clock: behavior/clock.md
+      - Container: behavior/container.md
       - Counter: behavior/counter.md
       - LayoutZone: behavior/layoutzone.md
       - RPGFigurine: behavior/rpgfigurine.md
       - TextTool: behavior/texttool.md
     - Object Components:
       - Introduction: components/introduction.md
-      - Component: components/component.md
       - GameObject: components/gameobject.md
+      - Component: components/component.md
+      - Material: components/material.md
       - Examples: components/examples.md
     - Backgrounds: backgrounds.md
     - Color: color.md

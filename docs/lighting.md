@@ -17,6 +17,9 @@ Variable | Type | Description
 ambient_intensity {: #ambient_intensity } | [<span class="tag flo"></span>](types.md) | The strength of the ambient light. Range = 0 to 4.
 ambient_type {: #ambient_type } | [<span class="tag int"></span>](types.md) | The source of ambient light. 1 = background, 2 = gradient.
 light_intensity {: #light_intensity } | [<span class="tag flo"></span>](types.md) | The strength of the directional light shining down in the scene. Range = 0 to 4.
+lut_contribution {: #lut_contribution } | [<span class="tag flo"></span>](types.md) | How much the LUT contributes to the light.
+lut_index {: #lut_index } | [<span class="tag int"></span>](types.md) | The LUT index of the light.
+lut_url {: #lut_url } | [<span class="tag str"></span>](types.md) | The URL of the LUT.
 reflection_intensity {: #reflection_intensity } | [<span class="tag flo"></span>](types.md) | The strength of the reflections from the background. Range = 0 to 1.
 
 ##Function Summary

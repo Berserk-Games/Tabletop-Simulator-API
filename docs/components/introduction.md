@@ -29,3 +29,7 @@ Transform, Mesh etc. These Components describe the GameObject's behavior and vis
 
 Each Component has **Vars**. These are variables which you can modify to change how that Component affects the
 GameObject it composes.
+
+## Materials
+
+GameObjects with Renderer components typically also have attached [Materials](material.md), which govern the appearance of the object.

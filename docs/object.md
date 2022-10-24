@@ -4,9 +4,9 @@ The Object class represents any entity within tabletop simulator. Once you have 
 * Using [`getObjectFromGUID(...)`](base.md#getobjectfromguid) with the object's GUID (found by right clicking it with the pointer).
 * Getting it as a return from another function, like with [`spawnObject(...)`](base.md#spawnobject).
 
-##Member Variables
+## Member Variables
 
-###Common Variables
+### Common Variables
 These are variables that are common to all objects. Some variables are read-only, which means you can query the
 property, but are unable to assign a new value to it.
 
@@ -35,6 +35,7 @@ bounciness {: #bounciness } | Bounciness, value of 0-1. [Unity physics material]
 drag {: #drag } | Drag. [Unity rigidbody property](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html). | [<span class="tag flo"></span>](types.md)
 drag_selectable {: #drag_selectable } | <p>When `false`, the object will not be selected by regular (click and drag) selection boxes that are drawn around the object.</p><p>Players may proceed to override this behavior by holding the "Shift" modifier whilst drag selecting.</p> | [<span class="tag boo"></span>](types.md)
 dynamic_friction {: #dynamic_friction } | Dynamic friction, value of 0-1. [Unity physics material](https://docs.unity3d.com/2019.1/Documentation/Manual/class-PhysicMaterial.html). | [<span class="tag flo"></span>](types.md)
+gizmo_selectable {: #gizmo_selectable } | <p>When `false`, the object cannot be selected with the Gizmo tool.</p> | [<span class="tag boo"></span>](types.md)
 grid_projection {: #grid_projection } | If grid lines can appear on the Object if visible grids are turned on. | [<span class="tag boo"></span>](types.md)
 guid {: #guid } | The 6 character unique Object identifier within Tabletop Simulator. It is assigned correctly once the `spawning` member variable becomes false. | [<span class="tag str"></span>](types.md)
 held_by_color {: #held_by_color } | The Color of the Player that is holding the object. | [<span class="tag str"></span>](types.md)
@@ -75,7 +76,7 @@ value {: #value } | <p>A numeric value associated with the object, which when no
 value_flags {: #value_flags } | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [object tags](#tag-functions)_.</p> A [bit field](https://en.wikipedia.org/wiki/Bit_field). When objects with overlapping `value_flags` are selected and hovered over, their [values](#value) will be summed together. | [<span class="tag int"></span>](types.md)
 
 
-###Behavior Variables
+### Behavior Variables
 
 Some objects provide additional behavior. This functionality is accessible as Object member variables, but will be `nil`
 unless the Object includes the behavior.
@@ -100,9 +101,9 @@ TextTool {: #texttool } | [TextTool](behavior/texttool.md) | 3D Text objects e.g
 
 ---
 
-##Function Summary
+## Function Summary
 
-###Transform Functions
+### Transform Functions
 These functions handle the physical attributes of an Object: Position, Rotation, Scale, Bounds, Velocity. In other words, moving objects around as well as getting information on how they are moving.
 
 Function Name | Description | Return | &nbsp;
@@ -111,7 +112,7 @@ addForce([<span class="tag vec"></span>](types.md#vector) vector, [<span class="
 addTorque([<span class="tag vec"></span>](types.md#vector) vector, [<span class="tag int"></span>](types.md) force_type) | Adds torque to an object in a rotational Vector. | [<span class="ret boo"></span>](types.md) | [:i:](#addtorque)
 getAngularVelocity() {: data-toc-child-of="transform-function-details" } | Returns a Vector of the current angular velocity. | [<span class="ret vec"></span>](types.md#vector)
 getBounds() | Returns a Vector describing the size of an object in Global terms. | [<span class="ret vec"></span>](types.md#vector) | [:i:](#getbounds)
-getBoundsNormalized() | Returns a Vector describing the size of an object in Global terms, as if it was rotated to {0,0,0}. | [<span class="ret vec"></span>](types.md#vector) | [:i:](#getboundsnormalized)
+getBoundsNormalized() | Returns a Vector describing the size of the merged colliders on an object in Global terms, as if it was rotated to {0,0,0}. | [<span class="ret vec"></span>](types.md#vector) | [:i:](#getboundsnormalized)
 getPosition() {: data-toc-child-of="transform-function-details" } | Returns a Vector of the current [World Position](types.md#position). | [<span class="ret vec"></span>](types.md#vector)
 getPositionSmooth() {: data-toc-child-of="transform-function-details" } | Returns a Vector of the current smooth move target if the object is smooth moving, otherwise returns `nil`. | [<span class="ret vec"></span>](types.md#vector)
 getRotation() {: data-toc-child-of="transform-function-details" } | Returns a Vector of the current rotation. | [<span class="ret vec"></span>](types.md#vector)
@@ -121,6 +122,7 @@ getTransformForward() | Returns a Vector of the forward direction of this object
 getTransformRight() | Returns a Vector of the right direction of this object. | [<span class="ret vec"></span>](types.md#vector) | [:i:](#gettransformright)
 getTransformUp() | Returns a Vector of the up direction of this object. | [<span class="ret vec"></span>](types.md#vector) | [:i:](#gettransformup)
 getVelocity() {: data-toc-child-of="transform-function-details" } | Returns a Vector of the current velocity. | [<span class="ret vec"></span>](types.md#vector) |
+getVisualBoundsNormalized() | Returns a Vector describing the size of the merged renderers on an object in Global terms, as if it was rotated to {0,0,0}. | [<span class="ret vec"></span>](types.md#vector) | [:i:](#getvisualboundsnormalized)
 isSmoothMoving() {: data-toc-child-of="transform-function-details" } | Indicates if an object is traveling as part of a Smooth move. Smooth moving is performed by setPositionSmooth and setRotationSmooth. | [<span class="ret boo"></span>](types.md) |
 positionToLocal([<span class="tag vec"></span>](types.md#vector) vector) | Returns a Vector after converting a world Vector (World Position) to a local Vector ([Local Position](types.md#position)). | [<span class="ret vec"></span>](types.md#vector) | [:i:](#positiontolocal)
 positionToWorld([<span class="tag vec"></span>](types.md#vector) vector) | Returns a Vector after converting a local Vector (Local Position) to a world Vector ([World Position](types.md#position)). | [<span class="ret vec"></span>](types.md#vector) | [:i:](#positiontoworld)
@@ -136,7 +138,7 @@ setVelocity([<span class="tag vec"></span>](types.md#vector) vector) {: data-toc
 translate([<span class="tag vec"></span>](types.md#vector) vector) {: data-toc-label="translate(...)" data-toc-child-of="transform-function-details" } | Smoothly moves Object by the given Vector offset. | [<span class="ret boo"></span>](types.md) |
 
 
-###Tag Functions
+### Tag Functions
 These functions deal with the [tags](https://kb.tabletopsimulator.com/game-tools/object-tags/) associated with the object. An individual tag is a [<span class="tag str"></span>](types.md) and is case-insensitive.
 
 Function Name {: data-toc-label="Tag Function Details" data-toc-after="transform-function-details" data-toc-sort } | Description | Return | &nbsp;
@@ -155,10 +157,10 @@ allow_interaction = not system.hasAnyTag() or system.hasMatchingTag(object)
 ```
 
 
-###UI Functions
+### UI Functions
 A new UI system was added to Tabletop Simulator which allows for more flexibility in the creation of UI elements on Objects. The old system (Classic UI) and new system (Custom UI) both work, and each has its own strengths.
 
-####Classic UI
+#### Classic UI
 These functions allow for the creation/editing/removal of functional buttons and text inputs which themselves trigger code within your scripts. These buttons/inputs are attached to the object they are created on.
 
 Function Name | Description | Return | &nbsp;
@@ -174,11 +176,11 @@ getInputs() | Returns a Table of all inputs on this Object. | [<span class="ret 
 removeButton([<span class="tag int"></span>](types.md) index) | Removes a specific button. | [<span class="ret boo"></span>](types.md) | [:i:](#removebutton)
 removeInput([<span class="tag int"></span>](types.md) index) | Removes a specific button. | [<span class="ret boo"></span>](types.md) | [:i:](#removeinput)
 
-####Custom UI
+#### Custom UI
 Custom UI gives you a wide variety of element types, not just buttons and inputs, to place onto an Object. It is an extension of the UI class, and details on its use can be found [on the UI page](ui.md).
 
 
-###Get Functions
+### Get Functions
 These functions obtain information from an object.
 
 Function Name | Description | Return | &nbsp;
@@ -191,8 +193,8 @@ getDescription() {: data-toc-label="getDescription()" data-toc-child-of="get-fun
 getFogOfWarReveal() | Settings impacting [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone) being revealed. | [<span class="ret tab"></span>](types.md) | [:i:](#getfogofwarreveal)
 getGMNotes() {: data-toc-label="getGMNotes()" data-toc-child-of="get-function-details" } | Game Master Notes only visible for [Player Color](player/colors.md) Black. | [<span class="ret str"></span>](types.md) |
 getGUID() {: data-toc-label="getGUID()" data-toc-child-of="get-function-details" } | String of the Object's unique identifier. | [<span class="ret str"></span>](types.md) |
-getJSON([<span class="tag boo"></span>](types.md) indented) {: data-toc-label="getJSON(...)" data-toc-child-of="get-function-details" } | <p>Returns a JSON string representation of the object. Works with [spawnObjectJSON(...)](base.md#spawnobjectjson).</p><p>`indented` is optional and defaults to `true`.</p> | [<span class="ret str"></span>](types.md) |
 getJoints() | Returns information on any joints attached to this object. | [<span class="ret tab"></span>](types.md) | [:i:](#getjoints)
+getJSON([<span class="tag boo"></span>](types.md) indented) {: data-toc-label="getJSON(...)" data-toc-child-of="get-function-details" } | <p>Returns a JSON string representation of the object. Works with [spawnObjectJSON(...)](base.md#spawnobjectjson).</p><p>`indented` is optional and defaults to `true`.</p> | [<span class="ret str"></span>](types.md) |
 getLock() {: data-toc-label="getLock()" data-toc-child-of="get-function-details" } | If the Object is locked. | [<span class="ret boo"></span>](types.md) |
 getName() {: data-toc-label="getName()" data-toc-child-of="get-function-details" } | Name, also shows as part of Object's tooltip. | [<span class="ret str"></span>](types.md) |
 getObjects() | Returns data describing the objects contained within in the zone/bag/deck. | [<span class="ret var"></span>](types.md) | [:i:](#getobjects)
@@ -208,7 +210,7 @@ isDestroyed() {: data-toc-label="isDestroyed()" data-toc-child-of="get-function-
 
 
 
-###Set Functions
+### Set Functions
 These functions apply action to an object. They take some property in order to work.
 
 Function Name | Description | Return | &nbsp;
@@ -226,13 +228,13 @@ setState([<span class="tag int"></span>](types.md) state_id) {: data-toc-label="
 setValue([<span class="tag var"></span>](types.md) value) | Sets the Object's value. This represents something different depending on the Object's [type](#type). | [<span class="ret boo"></span>](types.md) | [:i:](#setvalue)
 
 
-###Action Function
+### Action Function
 These functions perform general actions on objects.
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 addAttachment([<span class="tag obj"></span>](types.md) Object) {: data-toc-label="addAttachment(...)" data-toc-child-of="action-function-details" } | The Object supplied as param is destroyed and becomes a dummy Object child. | [<span class="ret boo"></span>](types.md)
-addContextMenuItem([<span class="tag str"></span>](types.md) label, [<span class="tag fun"></span>](types.md) toRunFunc, [<span class="tag boo"></span>](types.md) keep_open) | Adds a menu item to the objects right-click context menu. | [<span class="ret boo"></span>](types.md) | [:i:](#addcontextmenuitem)
+addContextMenuItem([<span class="tag str"></span>](types.md) label, [<span class="tag fun"></span>](types.md) callback, [<span class="tag boo"></span>](types.md) keep_open) | Adds a menu item to the objects right-click context menu. | [<span class="ret boo"></span>](types.md) | [:i:](#addcontextmenuitem)
 addToPlayerSelection([<span class="tag str"></span>](types.md) player_color) {: data-toc-label="addToPlayerSelection(...)" data-toc-child-of="action-function-details" } | Adds object to player's selection. | [<span class="ret boo"></span>](types.md)
 clearContextMenu() {: data-toc-label="clearContextMenu()" data-toc-child-of="action-function-details" } | Clears all menu items added by function [addContextMenuItem(...)](#addcontextmenuitem). | [<span class="ret boo"></span>](types.md) |
 clone([<span class="tag tab"></span>](types.md) parameters) | Copy/Paste this Object, returning a reference to the new Object. | [<span class="ret obj"></span>](types.md) | [:i:](#clone)
@@ -263,7 +265,7 @@ spread([<span class="tag flo"></span>](types.md) distance) | Uses the spread act
 takeObject([<span class="tag tab"></span>](types.md) parameters) | Takes an object out of a container (bag/deck/chip stack), returning a reference to the object that was taken out. | [<span class="ret obj"></span>](types.md) | [:i:](#takeobject)
 unregisterCollisions() | Unregisters this object for Global collision events. | [<span class="ret boo"></span>](types.md) | [:i:](#unregistercollisions)
 
-###Component Functions
+### Component Functions
 
 Component APIs are an advanced feature. An **understanding of how Unity works is required** to utilize them. See the
 [Introduction to Components](components/introduction.md) for more information.
@@ -278,7 +280,7 @@ getComponents([<span class="tag str"></span>](types.md) name) {: #getcomponents 
 getComponentsInChildren([<span class="tag str"></span>](types.md) name) {: #getcomponentsinchildren data-toc-label="getComponentsInChildren(...)" data-toc-child-of="component-function-details" } | [<span class="ret tab"></span>](types.md) | Returns a list of Components found by searching the Object and its [children](#getchildren) recursively (depth first). `name` is optional, when specified only Components with specified `name` will be included.
 
 
-###Hide Functions
+### Hide Functions
 These functions can hide Objects, similar to how hand zones or hidden zones do.
 
 Function Name | Description | Return | &nbsp;
@@ -289,7 +291,7 @@ attachHider([<span class="tag str"></span>](types.md) id, [<span class="tag boo"
 attachInvisibleHider([<span class="tag str"></span>](types.md) id, [<span class="tag boo"></span>](types.md) hidden, [<span class="tag tab"></span>](types.md) players) | A more advanced version of `setInvisibleTo(...)`. | [<span class="ret boo"></span>](types.md) | [:i:](#attachinvisiblehider)
 
 
-###Global Function
+### Global Function
 The functions can be used on Objects, but can also be used on the game world using `Global`.
 
 !!!important "Examples of Using Global and Object"
@@ -318,11 +320,11 @@ setVectorLines([<span class="tag tab"></span>](types.md) parameters) | Spawns Ve
 ---
 
 
-##Function Details
+## Function Details
 
-###Transform Function Details {: data-toc-sort }
+### Transform Function Details {: data-toc-sort }
 
-####addForce(...)
+#### addForce(...)
 
 [<span class="ret boo"></span>](types.md) Adds force to an object in a directional Vector.
 
@@ -338,7 +340,7 @@ setVectorLines([<span class="tag tab"></span>](types.md) parameters) | Spawns Ve
 ---
 
 
-####addTorque(...)
+#### addTorque(...)
 
 [<span class="ret boo"></span>](types.md) Adds torque to an object in a rotational Vector.
 
@@ -355,7 +357,7 @@ setVectorLines([<span class="tag tab"></span>](types.md) parameters) | Spawns Ve
 
 
 
-####getBounds()
+#### getBounds()
 
 [<span class="ret vec"></span>](types.md) Returns a Table of Vector information describing the size of an object in Global terms. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
 
@@ -376,9 +378,9 @@ setVectorLines([<span class="tag tab"></span>](types.md) parameters) | Spawns Ve
 ---
 
 
-####getBoundsNormalized()
+#### getBoundsNormalized()
 
-[<span class="ret vec"></span>](types.md) Returns a Table of Vector information describing the size of an object in Global terms, as if it was rotated to {0,0,0}. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
+[<span class="ret vec"></span>](types.md) Returns a Table of Vector information describing the size of the merged colliders on an object in Global terms, as if it was rotated to {0,0,0}. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
 
 !!!info "Return Table"
 	* [<span class="tag tab"></span>](types.md) **center**: The Vector of the center of the bounding box.
@@ -397,14 +399,14 @@ setVectorLines([<span class="tag tab"></span>](types.md) parameters) | Spawns Ve
 ---
 
 
-####getScale()
+#### getScale()
 
 [<span class="ret vec"></span>](types.md) Returns a Vector of the current scale. Scale is not an absolute measurement, it is a multiple of the Object's default model size. So {x=2, y=2, z=2} would be a model twice its default size, not 2 units large.
 
 ---
 
 
-####getTransformForward()
+#### getTransformForward()
 
 [<span class="ret vec"></span>](types.md) Returns a Vector of the forward direction of this Object. The direction is relative to how the object is facing.
 
@@ -426,7 +428,7 @@ end
 ---
 
 
-####getTransformRight()
+#### getTransformRight()
 
 [<span class="ret vec"></span>](types.md) Returns a Vector of the forward direction of this object. The direction is relative to how the object is facing.
 
@@ -448,7 +450,7 @@ end
 ---
 
 
-####getTransformUp()
+#### getTransformUp()
 
 [<span class="ret vec"></span>](types.md) Returns a Vector of the up direction of this Object. The direction is relative to how the object is facing.
 
@@ -469,8 +471,27 @@ end
 
 ---
 
+#### getVisualBoundsNormalized()
 
-####positionToLocal(...)
+[<span class="ret vec"></span>](types.md) Returns a Table of Vector information describing the size of the merged renderers on an object in Global terms, as if it was rotated to {0,0,0}. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html) are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.
+
+!!!info "Return Table"
+	* [<span class="tag tab"></span>](types.md) **center**: The Vector of the center of the bounding box.
+	* [<span class="tag tab"></span>](types.md) **size**: The Vector of the size of the bounding box.
+	* [<span class="tag tab"></span>](types.md) **offset**: The Vector of the offset of the center of the bounding box from the middle of the Object model.
+
+``` Lua
+-- Example returned Table
+{
+	center = {x=0, y=3, z=0, 0, 3, 0},
+	size = {x=5, y=5, z=5}, 5, 5, 5},
+	offset = {x=0, y=-1, z=0, 0, -1, 0}
+}
+```
+
+---
+
+#### positionToLocal(...)
 
 [<span class="ret vec"></span>](types.md) Returns a Vector after converting a world vector to a local Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
 
@@ -483,7 +504,7 @@ end
 ---
 
 
-####positionToWorld(...)
+#### positionToWorld(...)
 
 [<span class="ret vec"></span>](types.md) Returns a Vector after converting a local Vector to a world Vector. A world Vector is a positional Vector using the world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given object.
 
@@ -496,7 +517,7 @@ end
 ---
 
 
-####rotate(...)
+#### rotate(...)
 
 [<span class="ret boo"></span>](types.md) Rotates Object smoothly in the direction of the given Vector. This does not set the Object to face a specific rotation, it rotates the Object around by the number of degrees given for x/y/z.
 
@@ -511,7 +532,7 @@ self.rotate({x=0, y=90, z=0})
 ---
 
 
-####scale(...)
+#### scale(...)
 
 [<span class="ret boo"></span>](types.md) Scales Object by a multiple. This does not set the Object to a specific scale, it scales the Object by the given multiple.
 
@@ -531,7 +552,7 @@ self.scale(2)
 ---
 
 
-####setPositionSmooth(...)
+#### setPositionSmooth(...)
 
 [<span class="ret boo"></span>](types.md) Moves the Object smoothly to the given Vector.
 
@@ -543,7 +564,7 @@ self.scale(2)
 ---
 
 
-####setRotationSmooth(...)
+#### setRotationSmooth(...)
 
 [<span class="ret boo"></span>](types.md) Rotates the Object smoothly to the given Vector.
 
@@ -555,9 +576,9 @@ self.scale(2)
 ---
 
 
-###UI Function Details {: data-toc-sort }
+### UI Function Details {: data-toc-sort }
 
-####createButton(...)
+#### createButton(...)
 
 [<span class="ret boo"></span>](types.md) Creates a scripted button attached to the Object. Scripted buttons are buttons that can be clicked while in-game that trigger a function in a script.
 
@@ -638,7 +659,7 @@ end
 ---
 
 
-####createInput(...)
+#### createInput(...)
 
 [<span class="ret boo"></span>](types.md) Creates a scripted input attached to the Object. Scripted inputs are boxes you can click inside of in-game to input/edit text. Every letter typed triggers the function. The bool that is returned as part of the input_function allows you to determine when a player has finished editing the input.
 
@@ -733,7 +754,7 @@ end
 ---
 
 
-####editButton(...)
+#### editButton(...)
 
 [<span class="ret boo"></span>](types.md) Modify an existing button. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited button's element to remain. Indexes start at 0. The first button on any given Object has an index of 0, the next button on it has an index of 1, etc. Each Object has its own indexes.
 
@@ -762,7 +783,7 @@ self.editButton({index=0, label="New Label"})
 ---
 
 
-####editInput(...)
+#### editInput(...)
 
 [<span class="ret boo"></span>](types.md) Modify an existing input. The only parameter that is required is the index. The rest are optional, and not using them will cause the edited input's element to remain. Indexes start at 0. The first input on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.
 
@@ -809,7 +830,7 @@ self.editInput({index=0, value="New Value"})
 ---
 
 
-####getButtons()
+#### getButtons()
 
 [<span class="ret tab"></span>](types.md) Returns a Table of all buttons on this Object. The Table contains parameters tables with the same keys as seen in the [createButton](#createbutton) section, except each Table of parameters also contains an __index__ entry. This is used to identify each button, used by [editButton](#editbutton) and [removeButton](#removebutton).
 
@@ -818,7 +839,7 @@ Indexes start at 0.
 ---
 
 
-####getInputs()
+#### getInputs()
 
 [<span class="ret tab"></span>](types.md) Returns a Table of all inputs on this Object. The Table contains parameters tables with the same keys as seen in the [createInput](#createinput) section, except each Table of parameters also contains an __index__ entry. This is used to identify each input, used by [editInput](#editinput) and [removeInput](#removeinput).
 
@@ -827,7 +848,7 @@ Indexes start at 0.
 ---
 
 
-####removeButton(...)
+#### removeButton(...)
 
 [<span class="ret boo"></span>](types.md) Removes a specific button. Indexes start at 0. The first button on any given Object has an index of 0, the next button on it has an index of 1, etc. Each Object has its own indexes.
 
@@ -839,7 +860,7 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 ---
 
 
-####removeInput(...)
+#### removeInput(...)
 
 [<span class="ret boo"></span>](types.md) Removes a specific input. Indexes start at 0. The first input on any given Object has an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.
 
@@ -851,9 +872,9 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 ---
 
 
-###Get Function Details {: data-toc-sort }
+### Get Function Details {: data-toc-sort }
 
-####getCustomObject()
+#### getCustomObject()
 
 [<span class="ret tab"></span>](types.md) Returns a Table with the Custom Object information of a Custom Object. See the [Custom Game Objects](custom-game-objects.md) page for the kind of information returned.
 
@@ -873,7 +894,7 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 ---
 
 
-####getFogOfWarReveal()
+#### getFogOfWarReveal()
 
 [<span class="ret tab"></span>](types.md) Settings impacting [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone) being revealed. In the example returned table, these are the default values of any object.
 
@@ -893,7 +914,7 @@ Removing an index instantly causes all other higher indexes to shift down 1.
 ---
 
 
-####getJoints()
+#### getJoints()
 [<span class="ret tab"></span>](types.md) Returns information on any joints attached to this object. This information included the GUID of the other objects attached via the joints.
 
 This function returns a table of sub-tables, each sub-table representing one joint.
@@ -950,13 +971,13 @@ end
 
 
 
-####getObjects()
+#### getObjects(...)
 
 [<span class="ret var"></span>](types.md) Returns data describing the objects contained within in the zone/bag/deck.
 
 The format of the data returned depends on the kind of object.
 
-#####Containers (Bags/Decks) {: #getobjects-containers }
+##### Containers (Bags/Decks) {: #getobjects-containers }
 
 Containers return a (numerically indexed) table consisting of sub-tables that each have the following properties:
 
@@ -988,18 +1009,22 @@ tags | [<span class="tag tab"></span>](types.md) | A table of [<span class="tag 
 	end
 	```
 
-#####Zones {: #getobjects-zones }
+##### Zones {: #getobjects-zones }
 
 Zones return a (numerically indexed) table of game Objects occupying the zone.
 
+
+!!!info "getObjects(ignore_tags=false)"
+	* [<span class="tag boo"></span>](types.md) **ignore_tags**: If `true` then all objects in the zone will be returned, regardless of tags.
+
 !!!important
-	If the zone has [tags](#tag-functions), then only objects with compatible tags will occupy the zone.
+	If the zone has [tags](#tag-functions), then only objects with compatible tags will occupy the zone (unless `ignore_tags` is true).
 
 !!!example
-	[Highlight](#highlighton) red all cards occupying a zone (`object`).
+	[Highlight](#highlighton) red all cards occupying a zone (`object`), regardless of tag.
 	```lua
 	-- Iterate through object occupying the zone
-	for _, occupyingObject in ipairs(object.getObjects()) do
+	for _, occupyingObject in ipairs(object.getObjects(true)) do
 		if occupyingObject.type == "Card" then
 			occupyingObject.highlightOn('Red')
 		end
@@ -1008,7 +1033,7 @@ Zones return a (numerically indexed) table of game Objects occupying the zone.
 
 ---
 
-####getRotationValue()
+#### getRotationValue()
 
 [<span class="ret var"></span>](types.md) Returns the current rotationValue. Rotation values are used to give value to different rotations (like dice) and are set using scripting or the Gizmo tool. The value returned is for the rotation that is closest to being pointed "up".
 
@@ -1023,7 +1048,7 @@ print(value)
 ---
 
 
-####getRotationValues()
+#### getRotationValues()
 
 [<span class="ret tab"></span>](types.md) Returns a Table of rotation values. Rotation values are used to give value to different rotations (like dice) based on which side is pointed "up". It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.
 
@@ -1049,7 +1074,7 @@ You can manually assign rotation values to objects using the Rotation Value Gizm
 
 
 
-####getStates()
+#### getStates()
 
 [<span class="ret tab"></span>](types.md) Returns a Table of information on the [states](https://kb.tabletopsimulator.com/host-guides/creating-states/) of an Object. Stated Objects have ids (indexes) starting with 1.
 
@@ -1092,7 +1117,7 @@ You can manually assign rotation values to objects using the Rotation Value Gizm
 ---
 
 
-####getValue()
+#### getValue()
 
 [<span class="ret var"></span>](types.md)  Returns the Object's value. This represents something different depending on the Object's [type](#type).
 
@@ -1104,7 +1129,7 @@ See [setValue(...)](#setvalue) for more information.
 
 ---
 
-####getZones()
+#### getZones()
 
 [<span class="ret tab"></span>](types.md) Returns a list of zones that the object is currently occupying.
 
@@ -1128,10 +1153,10 @@ See [setValue(...)](#setvalue) for more information.
 	```
 
 
-###Set Function Details {: data-toc-sort }
+### Set Function Details {: data-toc-sort }
 
 
-####setCustomObject(...)
+#### setCustomObject(...)
 
 [<span class="ret boo"></span>](types.md) Sets a custom Object's properties. It can be used after [spawnObject](base.md#spawnobject) or on an already existing custom Object. If used on an already existing custom Object, you must use [reload](#reload) on the object after setCustomObject for the changes to be displayed.
 
@@ -1153,7 +1178,7 @@ obj.setCustomObject(params)
 
 
 
-####setFogOfWarReveal(...)
+#### setFogOfWarReveal(...)
 
 [<span class="ret boo"></span>](types.md) Establish the settings and enable/disable an Object's revealing of [Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone).
 
@@ -1180,7 +1205,7 @@ self.setFogOfWarReveal(params)
 
 ---
 
-####setRotationValue(...)
+#### setRotationValue(...)
 
 Sets the Object's rotation value i.e. physically rotates the object.
 
@@ -1197,7 +1222,7 @@ The Object will be elevated (smooth moved upward), smoothly rotated to the rotat
 
 ---
 
-####setRotationValues(...)
+#### setRotationValues(...)
 
 [<span class="ret boo"></span>](types.md) Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). It works by checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and then displaying the value associated with that rotation.
 
@@ -1224,7 +1249,7 @@ The Object will be elevated (smooth moved upward), smoothly rotated to the rotat
 
 ---
 
-####setValue(...)
+#### setValue(...)
 
 [<span class="ret boo"></span>](types.md) Sets the Object's value. This represents something different depending on the Object's [type](#type).
 
@@ -1246,16 +1271,18 @@ The Object will be elevated (smooth moved upward), smoothly rotated to the rotat
 
 ---
 
-###Action Function Details {: data-toc-sort }
+### Action Function Details {: data-toc-sort }
 
-####addContextMenuItem(...)
+#### addContextMenuItem(...)
 
 [<span class="ret boo"></span>](types.md) Adds a menu item to the objects right-click context menu.
 
-!!!info "addContextMenuItem(label, toRunFunc, keep_open)"
+!!!info "addContextMenuItem(label, callback, keep_open)"
 	* [<span class="tag str"></span>](types.md) **label**: Label for the menu item.
-	* [<span class="tag fun"></span>](types.md) **toRunFunc**: Execute if menu item is selected.
+	* [<span class="tag fun"></span>](types.md) **callback**: Execute if menu item is selected.  Called as `callback(player_color, object_position, object)`
         * [<span class="tag str"></span>](types.md) **player_color** [Player Color](player/colors.md) who selected the menu item.
+		* [<span class="tag vec"></span>](types.md) **object_position** Position of object.
+		* [<span class="tag str"></span>](types.md) **object** Object in question.
 	* [<span class="tag boo"></span>](types.md) **keep_open**: Keep context menu open after menu
      item was selected.
         * {>>Optional, Default: keep_open = false. Close context menu after selection.<<}
@@ -1265,14 +1292,14 @@ function onLoad()
     self.addContextMenuItem("doStuff", itemAction)
 end
 
-function itemAction(player_color)
-    print(player_color)
+function itemAction(player_color, position, object)
+    log({player_color, position, object})
 end
 ```
 
 ---
 
-####clone(...)
+#### clone(...)
 
 [<span class="ret obj"></span>](types.md) Copy/Paste this Object.
 
@@ -1287,7 +1314,7 @@ end
 
 
 
-####cut(...)
+#### cut(...)
 
 [<span class="ret tab"></span>](types.md) Cuts (splits) a deck down to a given card. In other words, it counts down from the top of the deck and makes a new deck of that size and puts the remaining cards in the other pile.
 
@@ -1319,7 +1346,7 @@ newDecks[2].deal(1)
 
 
 
-####deal(...)
+#### deal(...)
 
 [<span class="ret boo"></span>](types.md) Deals Objects to hand zones. Will deal from decks/bags/stacks as well as individual items. If dealing an individual item to a hand zone, it is a good idea to make sure that its [Member Variable](#member-variables) for `use_hands` is `true`.
 
@@ -1333,7 +1360,7 @@ newDecks[2].deal(1)
 ---
 
 
-####dealToColorWithOffset(...)
+#### dealToColorWithOffset(...)
 
 [<span class="ret obj"></span>](types.md) Deals from a deck to a position relative to the hand zone.
 
@@ -1351,7 +1378,7 @@ self.dealToColorWithOffset({ 2,0,5}, true, "White")
 ---
 
 
-####jointTo(...)
+#### jointTo(...)
 
 [<span class="ret boo"></span>](types.md) Joints objects together, in the same way the Joint tool does.
 
@@ -1404,7 +1431,7 @@ self.jointTo(obj, {
 ---
 
 
-####putObject(...)
+#### putObject(...)
 
 [<span class="ret obj"></span>](types.md) Places an object into a container (chip stacks/bags/decks). If neither Object is a container, but they are able to be combined (like with 2 cards), then they form a deck/stack.
 
@@ -1426,7 +1453,7 @@ self.putObject(obj)
 ---
 
 
-####registerCollisions(...)
+#### registerCollisions(...)
 
 [<span class="ret boo"></span>](types.md) Registers this object for Global collision events, such as [onObjectCollisionEnter](events.md#onobjectcollisionenter). Always returns `true`.
 
@@ -1437,7 +1464,7 @@ self.putObject(obj)
 ---
 
 
-####reload()
+#### reload()
 
 [<span class="ret obj"></span>](types.md) Returns Object reference of itself after it respawns itself. This function causes the Object to be deleted and respawned instantly to refresh it, so its old Object reference will no longer be valid.
 
@@ -1448,7 +1475,7 @@ Most often this is used after using [setCustomObject(...)](#setcustomobject) to 
 
 
 
-####split(...)
+#### split(...)
 
 [<span class="ret tab"></span>](types.md) Splits a deck, as evenly as possible, into a number of piles.
 
@@ -1484,7 +1511,7 @@ newDecks[4].deal(1)
 
 
 ---
-####spread(...)
+#### spread(...)
 
 [<span class="ret tab"></span>](types.md) Spreads the cards of a deck out on the table.
 
@@ -1507,7 +1534,7 @@ newDecks[4].deal(1)
 
 ---
 
-####takeObject(...)
+#### takeObject(...)
 
 [<span class="ret obj"></span>](types.md) Takes an object out of a container (bag/deck/chip stack), returning a reference to the object that was taken.
 
@@ -1575,7 +1602,7 @@ Certain interactions (e.g. physics) will not be able to take place until the obj
 ---
 
 
-####unregisterCollisions(...)
+#### unregisterCollisions(...)
 
 [<span class="ret boo"></span>](types.md) Unregisters this object for Global collision events. Returns `true` if the object was previously registered, `false` otherwise.
 
@@ -1584,9 +1611,9 @@ Certain interactions (e.g. physics) will not be able to take place until the obj
 ---
 
 
-###Hide Function Details {: data-toc-sort }
+### Hide Function Details {: data-toc-sort }
 
-####setHiddenFrom(...)
+#### setHiddenFrom(...)
 
 [<span class="ret boo"></span>](types.md) Hides the Object from the specified players, as if it were in a hand zone.
 
@@ -1609,7 +1636,7 @@ end
 
 
 
-####setInvisibleTo(...)
+#### setInvisibleTo(...)
 
 [<span class="ret boo"></span>](types.md) Hides the Object from the specified players, as if it were in a hidden zone.
 
@@ -1631,7 +1658,7 @@ end
 ---
 
 
-####attachHider(...)
+#### attachHider(...)
 
 [<span class="ret boo"></span>](types.md) A more advanced version of `setHiddenFrom(...)`, this function is also used to hide objects as if they were in a hand zone. It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.
 
@@ -1660,7 +1687,7 @@ end
 ---
 
 
-####attachInvisibleHider(...)
+#### attachInvisibleHider(...)
 
 [<span class="ret boo"></span>](types.md) A more advanced version of `setInvisibleTo(...)`, this function is also used to hide objects as if they were in a hidden zone. It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.
 
@@ -1689,9 +1716,9 @@ end
 ---
 
 
-###Global Function Details {: data-toc-sort }
+### Global Function Details {: data-toc-sort }
 
-####addDecal(...)
+#### addDecal(...)
 
 [<span class="ret boo"></span>](types.md) Add a Decal onto an object or the game world.
 
@@ -1724,7 +1751,7 @@ end
 ---
 
 
-####call(...)
+#### call(...)
 
 [<span class="ret var"></span>](types.md) Used to call a Lua function on another entity.
 
@@ -1756,7 +1783,7 @@ end
 
 ---
 
-####getDecals()
+#### getDecals()
 
 [<span class="ret tab"></span>](types.md) Returns a table of sub-tables, each sub-table representing one decal.
 
@@ -1800,7 +1827,7 @@ print(decalTable[2].name)
 ---
 
 
-####getSnapPoints()
+#### getSnapPoints()
 
 [<span class="ret tab"></span>](types.md) Returns a table representing a list of snap points.
 
@@ -1808,7 +1835,7 @@ print(decalTable[2].name)
 	This function may be called on `Global` in order to return a list of global snap points (i.e. snap points on the
 	table).
 
-##### Return value {: #getsnappoints-return-value data-toc-omit } 
+##### Return value {: #getsnappoints-return-value data-toc-omit }
 
 The returned value is a list (numerically indexed table) of sub-tables, where each sub-table represents a snap point and
 has the following properties:
@@ -1828,7 +1855,7 @@ tags | [<span class="tag tab"></span>](types.md) | Table of [<span class="tag st
 
 ---
 
-####setDecals(...)
+#### setDecals(...)
 
 [<span class="ret boo"></span>](types.md) Sets which decals are on an object. This removes other decals already present, and can remove all decals as well.
 
@@ -1873,7 +1900,7 @@ end
 ---
 
 
-####setSnapPoints(...)
+#### setSnapPoints(...)
 
 [<span class="ret boo"></span>](types.md) Replaces existing snap points with the specified list of snap points.
 
@@ -1924,7 +1951,7 @@ All properties are optional. When a property is omitted, it will be given the co
 
 
 
-####setVectorLines(...)
+#### setVectorLines(...)
 
 [<span class="ret boo"></span>](types.md) Spawns Vector Lines from a list of parameters.
 

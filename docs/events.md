@@ -96,10 +96,10 @@ onObjectTriggerEffect([<span class="tag obj"></span>](types.md) object, [<span c
 onPlayerAction([<span class="tag pla"></span>](types.md) player, [Action](#onplayeraction-actions) action, [<span class="tag tab"></span>](types.md) targets) | Called when a player attempts to perform an action. | [:i:](#onplayeraction)
 onPlayerChangeColor([<span class="tag str"></span>](types.md) player_color) | Called when a player changes color or selects it for the first time. It also returns `"Grey"` if they disconnect. | [:i:](#onplayerchangecolor)
 onPlayerChangeTeam([<span class="tag str"></span>](types.md) player_color, [<span class="tag str"></span>](types.md) team) | Called when a player changes team. | [:i:](#onplayerchangeteam)
-onPlayerChatTyping([<span class="tag str"></span>](types.md) player, [<span class="tag boo"></span>](types.md) typing) | Called when a player starts or stops typing. | [:i:](#onplayerchangeteam)
+onPlayerChatTyping([<span class="tag pla"></span>](types.md) player, [<span class="tag boo"></span>](types.md) typing) | Called when a player starts or stops typing. | [:i:](#onplayerchattyping)
 onPlayerConnect([<span class="tag pla"></span>](types.md) player) | Called when a [Player](player/instance.md) connects to a game. | [:i:](#onplayerconnect)
 onPlayerDisconnect([<span class="tag pla"></span>](types.md) player) | Called when a [Player](player/instance.md) disconnects from a game. | [:i:](#onplayerdisconnect)
-onPlayerPing([<span class="tag pla"></span>](types.md) player, [<span class="tag vec"></span>](types.md) position) | Called when a player [pings](https://kb.tabletopsimulator.com/game-tools/line-tool/#ping) a location. | [:i:](#onplayerping)
+onPlayerPing([<span class="tag pla"></span>](types.md) player, [<span class="tag vec"></span>](types.md) position, [<span class="tag obj"></span>](types.md) object) | Called when a player [pings](https://kb.tabletopsimulator.com/game-tools/line-tool/#ping) a location. | [:i:](#onplayerping)
 onPlayerTurn([<span class="tag pla"></span>](types.md) player, [<span class="tag pla"></span>](types.md) previous_player) | Called at the start of a player's turn. | [:i:](#onplayerturn)
 onSave() | Called whenever a script needs to save its state. | [:i:](#onsave)
 onScriptingButtonDown([<span class="tag int"></span>](types.md) index, [<span class="tag str"></span>](types.md) player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [:i:](#onscriptingbuttondown)
@@ -881,6 +881,25 @@ end
 
 ---
 
+---
+
+###onPlayerChatTyping(...)
+
+Called when a player changes team.
+
+!!!info "onPlayerChatTyping(player, typing)"
+	* [<span class="tag pla"></span>](types.md) **player**: The player who started or stopped typing.
+    * [<span class="tag boo"></span>](types.md) **typing**: True if they just started typing, False if they just stopped.
+
+``` Lua
+function onPlayerChatTyping(player, typing)
+	print(player)
+    print(typing)
+end
+```
+
+---
+
 ###onPlayerConnect(...)
 
 Called when a [Player](player/instance.md) connects to a game.
@@ -908,12 +927,17 @@ Called when a player [pings](https://kb.tabletopsimulator.com/game-tools/line-to
 !!!info "onPlayerPing(player, position)"
 	* [<span class="tag pla"></span>](types.md) **player**: [Player](player/instance.md) who performed the ping.
 	* [<span class="tag vec"></span>](types.md) **position**: The location that was pinged.
+	* [<span class="tag obj"></span>](types.md) **object**: If the player pinged on top of an object, that object.
 
 !!!example
 	When a player pings a location, print a message with the player's color and the coordinates pinged.
 	```lua
-	function onPlayerPing(player, position)
-		print(player.color .. " pinged " .. position:string())
+	function onPlayerPing(player, position, object)
+		if object then
+			print(player.color .. " pinged " .. object.getName() .. " at " .. position:string())
+		else
+			print(player.color .. " pinged " .. position:string())
+		end
 	end
 	```
 
