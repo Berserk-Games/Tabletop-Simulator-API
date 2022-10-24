@@ -772,6 +772,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onplayerchattyping" class="md-nav__link">
+    onPlayerChatTyping(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onplayerconnect" class="md-nav__link">
     onPlayerConnect(...)
   </a>
@@ -1139,6 +1146,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../behavior/container/" class="md-nav__link">
+        Container
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../behavior/counter/" class="md-nav__link">
         Counter
       </a>
@@ -1226,6 +1245,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../components/gameobject/" class="md-nav__link">
+        GameObject
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../components/component/" class="md-nav__link">
         Component
       </a>
@@ -1238,8 +1269,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../components/gameobject/" class="md-nav__link">
-        GameObject
+      <a href="../components/material/" class="md-nav__link">
+        Material
       </a>
     </li>
   
@@ -2094,6 +2125,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onplayerchattyping" class="md-nav__link">
+    onPlayerChatTyping(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onplayerconnect" class="md-nav__link">
     onPlayerConnect(...)
   </a>
@@ -2672,9 +2710,9 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onPlayerChatTyping(<a href="../types/"><span class="tag str"></span></a> player, <a href="../types/"><span class="tag boo"></span></a> typing)</td>
+<td>onPlayerChatTyping(<a href="../types/"><span class="tag pla"></span></a> player, <a href="../types/"><span class="tag boo"></span></a> typing)</td>
 <td>Called when a player starts or stops typing.</td>
-<td><a href="#onplayerchangeteam"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<td><a href="#onplayerchattyping"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
@@ -2693,7 +2731,7 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onPlayerPing(<a href="../types/"><span class="tag pla"></span></a> player, <a href="../types/"><span class="tag vec"></span></a> position)</td>
+<td>onPlayerPing(<a href="../types/"><span class="tag pla"></span></a> player, <a href="../types/"><span class="tag vec"></span></a> position, <a href="../types/"><span class="tag obj"></span></a> object)</td>
 <td>Called when a player <a href="https://kb.tabletopsimulator.com/game-tools/line-tool/#ping">pings</a> a location.</td>
 <td><a href="#onplayerping"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -3685,6 +3723,22 @@ action is being attempted.</p>
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
+<hr />
+<h3 id="onplayerchattyping">onPlayerChatTyping(...)<a class="headerlink" href="#onplayerchattyping" title="Permanent link">&para;</a></h3>
+<p>Called when a player changes team.</p>
+<div class="admonition info">
+<p class="admonition-title">onPlayerChatTyping(player, typing)</p>
+<ul>
+<li><a href="../types/"><span class="tag pla"></span></a> <strong>player</strong>: The player who started or stopped typing.</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>typing</strong>: True if they just started typing, False if they just stopped.</li>
+</ul>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onPlayerChatTyping</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">typing</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">typing</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div>
+<hr />
 <h3 id="onplayerconnect">onPlayerConnect(...)<a class="headerlink" href="#onplayerconnect" title="Permanent link">&para;</a></h3>
 <p>Called when a <a href="../player/instance/">Player</a> connects to a game.</p>
 <div class="admonition info">
@@ -3710,13 +3764,18 @@ action is being attempted.</p>
 <ul>
 <li><a href="../types/"><span class="tag pla"></span></a> <strong>player</strong>: <a href="../player/instance/">Player</a> who performed the ping.</li>
 <li><a href="../types/"><span class="tag vec"></span></a> <strong>position</strong>: The location that was pinged.</li>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: If the player pinged on top of an object, that object.</li>
 </ul>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>When a player pings a location, print a message with the player's color and the coordinates pinged.
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onPlayerPing</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">color</span> <span class="o">..</span> <span class="s2">&quot; pinged &quot;</span> <span class="o">..</span> <span class="n">position</span><span class="p">:</span><span class="n">string</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">onPlayerPing</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">object</span><span class="p">)</span>
+    <span class="kr">if</span> <span class="n">object</span> <span class="kr">then</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">color</span> <span class="o">..</span> <span class="s2">&quot; pinged &quot;</span> <span class="o">..</span> <span class="n">object</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">..</span> <span class="s2">&quot; at &quot;</span> <span class="o">..</span> <span class="n">position</span><span class="p">:</span><span class="n">string</span><span class="p">())</span>
+    <span class="kr">else</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">color</span> <span class="o">..</span> <span class="s2">&quot; pinged &quot;</span> <span class="o">..</span> <span class="n">position</span><span class="p">:</span><span class="n">string</span><span class="p">())</span>
+    <span class="kr">end</span>
 <span class="kr">end</span>
 </code></pre></div></p>
 </div>

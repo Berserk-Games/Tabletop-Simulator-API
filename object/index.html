@@ -706,6 +706,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getvisualboundsnormalized" class="md-nav__link">
+    getVisualBoundsNormalized()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#issmoothmoving" class="md-nav__link">
     isSmoothMoving()
   </a>
@@ -1040,10 +1047,10 @@
         
           <li class="md-nav__item">
   <a href="#getobjects" class="md-nav__link">
-    getObjects()
+    getObjects(...)
   </a>
   
-    <nav class="md-nav" aria-label="getObjects()">
+    <nav class="md-nav" aria-label="getObjects(...)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1747,6 +1754,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../behavior/container/" class="md-nav__link">
+        Container
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../behavior/counter/" class="md-nav__link">
         Counter
       </a>
@@ -1834,6 +1853,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../components/gameobject/" class="md-nav__link">
+        GameObject
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../components/component/" class="md-nav__link">
         Component
       </a>
@@ -1846,8 +1877,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../components/gameobject/" class="md-nav__link">
-        GameObject
+      <a href="../components/material/" class="md-nav__link">
+        Material
       </a>
     </li>
   
@@ -2612,6 +2643,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getvisualboundsnormalized" class="md-nav__link">
+    getVisualBoundsNormalized()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#issmoothmoving" class="md-nav__link">
     isSmoothMoving()
   </a>
@@ -2946,10 +2984,10 @@
         
           <li class="md-nav__item">
   <a href="#getobjects" class="md-nav__link">
-    getObjects()
+    getObjects(...)
   </a>
   
-    <nav class="md-nav" aria-label="getObjects()">
+    <nav class="md-nav" aria-label="getObjects(...)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3676,6 +3714,11 @@ property, but are unable to assign a new value to it.</p>
 <td align="left"><a href="../types/"><span class="tag flo"></span></a></td>
 </tr>
 <tr>
+<td id="gizmo_selectable">gizmo_selectable</td>
+<td><p>When <code>false</code>, the object cannot be selected with the Gizmo tool.</p></td>
+<td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
+</tr>
+<tr>
 <td id="grid_projection">grid_projection</td>
 <td>If grid lines can appear on the Object if visible grids are turned on.</td>
 <td align="left"><a href="../types/"><span class="tag boo"></span></a></td>
@@ -3974,7 +4017,7 @@ unless the Object includes the behavior.</p>
 </tr>
 <tr>
 <td>getBoundsNormalized()</td>
-<td>Returns a Vector describing the size of an object in Global terms, as if it was rotated to {0,0,0}.</td>
+<td>Returns a Vector describing the size of the merged colliders on an object in Global terms, as if it was rotated to {0,0,0}.</td>
 <td><a href="../types/#vector"><span class="ret vec"></span></a></td>
 <td><a href="#getboundsnormalized"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -4041,6 +4084,14 @@ unless the Object includes the behavior.</p>
 <td>Returns a Vector of the current velocity.</td>
 <td><a href="../types/#vector"><span class="ret vec"></span></a></td>
 <td></td>
+</tr>
+<tr>
+<td>getVisualBoundsNormalized()</td>
+<td>Returns a Vector describing the size of the merged renderers on an object in Global terms, as if it was rotated to {0,0,0}.</td>
+<td><a href="../types/#vector"><span class="ret vec"></span></a></td>
+<td><a href="#getvisualboundsnormalized"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
 <td id="issmoothmoving_1" style="position: relative;">isSmoothMoving()<h6 data-toc-mock-searchable="" id="issmoothmoving" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">isSmoothMoving()</h6></td>
@@ -4352,18 +4403,18 @@ unless the Object includes the behavior.</p>
 <td></td>
 </tr>
 <tr>
-<td id="getjson_1" style="position: relative;">getJSON(<h6 data-toc-mock-searchable="" id="getjson" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">getJSON(...)</h6><a href="../types/"><span class="tag boo"></span></a> indented)</td>
-<td><p>Returns a JSON string representation of the object. Works with <a href="../base/#spawnobjectjson">spawnObjectJSON(...)</a>.</p><p><code>indented</code> is optional and defaults to <code>true</code>.</p></td>
-<td><a href="../types/"><span class="ret str"></span></a></td>
-<td></td>
-</tr>
-<tr>
 <td>getJoints()</td>
 <td>Returns information on any joints attached to this object.</td>
 <td><a href="../types/"><span class="ret tab"></span></a></td>
 <td><a href="#getjoints"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+</tr>
+<tr>
+<td id="getjson_1" style="position: relative;">getJSON(<h6 data-toc-mock-searchable="" id="getjson" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">getJSON(...)</h6><a href="../types/"><span class="tag boo"></span></a> indented)</td>
+<td><p>Returns a JSON string representation of the object. Works with <a href="../base/#spawnobjectjson">spawnObjectJSON(...)</a>.</p><p><code>indented</code> is optional and defaults to <code>true</code>.</p></td>
+<td><a href="../types/"><span class="ret str"></span></a></td>
+<td></td>
 </tr>
 <tr>
 <td id="getlock_1" style="position: relative;">getLock()<h6 data-toc-mock-searchable="" id="getlock" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">getLock()</h6></td>
@@ -4560,7 +4611,7 @@ unless the Object includes the behavior.</p>
 <td></td>
 </tr>
 <tr>
-<td>addContextMenuItem(<a href="../types/"><span class="tag str"></span></a> label, <a href="../types/"><span class="tag fun"></span></a> toRunFunc, <a href="../types/"><span class="tag boo"></span></a> keep_open)</td>
+<td>addContextMenuItem(<a href="../types/"><span class="tag str"></span></a> label, <a href="../types/"><span class="tag fun"></span></a> callback, <a href="../types/"><span class="tag boo"></span></a> keep_open)</td>
 <td>Adds a menu item to the objects right-click context menu.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#addcontextmenuitem"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -5032,7 +5083,7 @@ unless the Object includes the behavior.</p>
 </code></pre></div>
 <hr />
 <h4 id="getboundsnormalized">getBoundsNormalized()<a class="headerlink" href="#getboundsnormalized" title="Permanent link">&para;</a></h4>
-<p><a href="../types/"><span class="ret vec"></span></a> Returns a Table of Vector information describing the size of an object in Global terms, as if it was rotated to {0,0,0}. <a href="https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html">Bounds</a> are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.</p>
+<p><a href="../types/"><span class="ret vec"></span></a> Returns a Table of Vector information describing the size of the merged colliders on an object in Global terms, as if it was rotated to {0,0,0}. <a href="https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html">Bounds</a> are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.</p>
 <div class="admonition info">
 <p class="admonition-title">Return Table</p>
 <ul>
@@ -5098,6 +5149,24 @@ unless the Object includes the behavior.</p>
     <span class="p">}</span>
     <span class="n">self</span><span class="p">.</span><span class="n">setPositionSmooth</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
 <span class="kr">end</span>
+</code></pre></div>
+<hr />
+<h4 id="getvisualboundsnormalized">getVisualBoundsNormalized()<a class="headerlink" href="#getvisualboundsnormalized" title="Permanent link">&para;</a></h4>
+<p><a href="../types/"><span class="ret vec"></span></a> Returns a Table of Vector information describing the size of the merged renderers on an object in Global terms, as if it was rotated to {0,0,0}. <a href="https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html">Bounds</a> are part of Unity, and represent an imaginary square box that can be drawn around an object. Unlike scale, it can help indicate the size of an object in in-game units, not just relative model size.</p>
+<div class="admonition info">
+<p class="admonition-title">Return Table</p>
+<ul>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>center</strong>: The Vector of the center of the bounding box.</li>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>size</strong>: The Vector of the size of the bounding box.</li>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>offset</strong>: The Vector of the offset of the center of the bounding box from the middle of the Object model.</li>
+</ul>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Example returned Table</span>
+<span class="p">{</span>
+    <span class="n">center</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">5</span><span class="p">},</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">},</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <hr />
 <h4 id="positiontolocal">positionToLocal(...)<a class="headerlink" href="#positiontolocal" title="Permanent link">&para;</a></h4>
@@ -5608,7 +5677,7 @@ unless the Object includes the behavior.</p>
 <span class="kr">end</span>
 </code></pre></div></p>
 <hr />
-<h4 id="getobjects">getObjects()<a class="headerlink" href="#getobjects" title="Permanent link">&para;</a></h4>
+<h4 id="getobjects">getObjects(...)<a class="headerlink" href="#getobjects" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret var"></span></a> Returns data describing the objects contained within in the zone/bag/deck.</p>
 <p>The format of the data returned depends on the kind of object.</p>
 <h5 id="getobjects-containers">Containers (Bags/Decks)<a class="headerlink" href="#getobjects-containers" title="Permanent link">&para;</a></h5>
@@ -5691,15 +5760,21 @@ unless the Object includes the behavior.</p>
 </div>
 <h5 id="getobjects-zones">Zones<a class="headerlink" href="#getobjects-zones" title="Permanent link">&para;</a></h5>
 <p>Zones return a (numerically indexed) table of game Objects occupying the zone.</p>
+<div class="admonition info">
+<p class="admonition-title">getObjects(ignore_tags=false)</p>
+<ul>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>ignore_tags</strong>: If <code>true</code> then all objects in the zone will be returned, regardless of tags.</li>
+</ul>
+</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>If the zone has <a href="#tag-functions">tags</a>, then only objects with compatible tags will occupy the zone.</p>
+<p>If the zone has <a href="#tag-functions">tags</a>, then only objects with compatible tags will occupy the zone (unless <code>ignore_tags</code> is true).</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p><a href="#highlighton">Highlight</a> red all cards occupying a zone (<code>object</code>).
+<p><a href="#highlighton">Highlight</a> red all cards occupying a zone (<code>object</code>), regardless of tag.
 <div class="highlight"><pre><span></span><code><span class="c1">-- Iterate through object occupying the zone</span>
-<span class="kr">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">occupyingObject</span> <span class="kr">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">object</span><span class="p">.</span><span class="n">getObjects</span><span class="p">())</span> <span class="kr">do</span>
+<span class="kr">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">occupyingObject</span> <span class="kr">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">object</span><span class="p">.</span><span class="n">getObjects</span><span class="p">(</span><span class="kc">true</span><span class="p">))</span> <span class="kr">do</span>
     <span class="kr">if</span> <span class="n">occupyingObject</span><span class="p">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&quot;Card&quot;</span> <span class="kr">then</span>
         <span class="n">occupyingObject</span><span class="p">.</span><span class="n">highlightOn</span><span class="p">(</span><span class="s1">&#39;Red&#39;</span><span class="p">)</span>
     <span class="kr">end</span>
@@ -5964,11 +6039,13 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 <h4 id="addcontextmenuitem">addContextMenuItem(...)<a class="headerlink" href="#addcontextmenuitem" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret boo"></span></a> Adds a menu item to the objects right-click context menu.</p>
 <div class="admonition info">
-<p class="admonition-title">addContextMenuItem(label, toRunFunc, keep_open)</p>
+<p class="admonition-title">addContextMenuItem(label, callback, keep_open)</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>label</strong>: Label for the menu item.</li>
-<li><a href="../types/"><span class="tag fun"></span></a> <strong>toRunFunc</strong>: Execute if menu item is selected.<ul>
+<li><a href="../types/"><span class="tag fun"></span></a> <strong>callback</strong>: Execute if menu item is selected.  Called as <code>callback(player_color, object_position, object)</code><ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong> <a href="../player/colors/">Player Color</a> who selected the menu item.</li>
+<li><a href="../types/"><span class="tag vec"></span></a> <strong>object_position</strong> Position of object.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>object</strong> Object in question.</li>
 </ul>
 </li>
 <li><a href="../types/"><span class="tag boo"></span></a> <strong>keep_open</strong>: Keep context menu open after menu
@@ -5982,8 +6059,8 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
     <span class="n">self</span><span class="p">.</span><span class="n">addContextMenuItem</span><span class="p">(</span><span class="s2">&quot;doStuff&quot;</span><span class="p">,</span> <span class="n">itemAction</span><span class="p">)</span>
 <span class="kr">end</span>
 
-<span class="kr">function</span> <span class="nf">itemAction</span><span class="p">(</span><span class="n">player_color</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">player_color</span><span class="p">)</span>
+<span class="kr">function</span> <span class="nf">itemAction</span><span class="p">(</span><span class="n">player_color</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">object</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">({</span><span class="n">player_color</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">object</span><span class="p">})</span>
 <span class="kr">end</span>
 </code></pre></div>
 <hr />
