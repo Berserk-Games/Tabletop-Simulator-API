@@ -885,7 +885,7 @@ end
 
 ###onPlayerChatTyping(...)
 
-Called when a player changes team.
+Called when a player starts or stops typing.
 
 !!!info "onPlayerChatTyping(player, typing)"
 	* [<span class="tag pla"></span>](types.md) **player**: The player who started or stopped typing.
