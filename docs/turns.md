@@ -13,7 +13,7 @@ reverse_order {: #reverse_order } | Enable/disable reversing turn rotation direc
 skip_empty_hands {: #skip_empty_hands } | Enable/disable skipping empty hands. | [<span class="tag boo"></span>](types.md)
 disable_interactations {: #disable_interactations } | Enable/disable the blocking of players ability to interact with Objects when it is not their turn. | [<span class="tag boo"></span>](types.md)
 pass_turns {: #pass_turns } | Enable/disable a player's ability to pass their turn to another. | [<span class="tag boo"></span>](types.md)
-turn_color {: #turn_color } | The color of the Player who's turn it is. | [<span class="tag str"></span>](types.md)
+turn_color {: #turn_color } | The color of the Player whose turn it is. | [<span class="tag str"></span>](types.md)
 
 
 ##Function Summary {: data-toc-sort }

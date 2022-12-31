@@ -12,7 +12,7 @@ Every object in Tabletop Simulator is a [GameObject](gameobject.md). When a game
 initialized and _some_ of these top-level GameObjects are then exposed via Tabletop Simulator's Lua scripting APIs
 as regular [Objects](../object.md), each with their own scripting contexts.
 
-Some Lua-exposed Objects are made-up of hierarchy of children GameObjects. The Component APIs allow to access and
+Some Lua-exposed Objects are made-up of a hierarchy of children GameObjects. The Component APIs allow you to access and
 interact with these children GameObjects (which you'd otherwise be unable to control).
 
 ## Components
