@@ -179,6 +179,7 @@ tooltipBackgroundColor | Color of the tooltip's background. | [<span class="tag 
 tooltipBorderImage | Image used for the tooltip's border. See [Image Attributes](#image-attributes). | string |
 tooltipBackgroundImage | Image used for the tooltip's background. See [Image Attributes](#image-attributes). | string |
 tooltipTextColor | Color of the text within this tooltip. | [<span class="tag xmlco"></span>](#attribute-types) | `#FFFFFF`
+tooltipFontSize | Font size of the text within this tooltip. | [<span class="tag xmlco"></span>](#attribute-types) | `14`
 tooltipPosition | Position of this tooltip in relation to the element. | <ul><li>Above</li><li>Below</li><li>Left</li><li>Right</li></ul> | `Right`
 tooltipOffset | Distance in pixels that this tooltip will appear from the element. | float | `8`
 
