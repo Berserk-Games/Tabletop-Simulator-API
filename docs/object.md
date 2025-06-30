@@ -1759,12 +1759,12 @@ end
 
 > This function can also be used directly on the game world using Global.
 
-!!!info "call(func_name, func_params)"
+!!!info "call(func_name, func_param)"
 	* [<span class="tag str"></span>](types.md) **func_name**: Function name you want to activate.
-	* [<span class="tag tab"></span>](types.md) **func_params**: A Table containing any data you want to pass to that function.
+	* [<span class="tag var"></span>](types.md) **func_param**: A single parameter you want to pass to that function (can be a table).
 		* {>>Optional, will not be sent by default.<<}
 
-``` Lua
+```lua
 -- Call, used from an entity's script
 params = {
 	msg   = "Hello world!",
@@ -1773,13 +1773,16 @@ params = {
 -- Success would be set to true by the return value in the function
 success = Global.call("testFunc", params)
 ```
-``` Lua
+```lua
 -- Function in Global
 function testFunc(params)
 	broadcastToAll(params.msg, params.color)
 	return true
 end
 ```
+
+!!!tip
+	Since `.call()` can only pass a single parameter, it's often necessary to bundle multiple variables into a single table to pass all of them at once.
 
 ---
 
