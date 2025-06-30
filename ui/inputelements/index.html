@@ -1854,7 +1854,7 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 </code></pre></div>
 <hr />
 <h3 id="togglegroup">ToggleGroup<a class="headerlink" href="#togglegroup" title="Permanent link">&para;</a></h3>
-<p>Allows a group of toggles to act as a radio button, where only 1 of them can be "checked" at once. Works with Toggle or ToggleButton</p>
+<p>Allows a group of toggles to act as a radio button, where only 1 of them can be "checked" at once (works with Toggle or ToggleButton).</p>
 <table>
 <thead>
 <tr>
@@ -2011,7 +2011,7 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 </code></pre></div></p>
 <hr />
 <h3 id="dropdown">Dropdown<a class="headerlink" href="#dropdown" title="Permanent link">&para;</a></h3>
-<p>A dropdown menu. Is able to send the contents of the selection made in it.</p>
+<p>A dropdown menu. Is able to send the contents (or the index of the item in the list) of the selection made in it.</p>
 <table>
 <thead>
 <tr>
@@ -2054,7 +2054,7 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 </tr>
 <tr>
 <td>checkColor</td>
-<td></td>
+<td>Color of the checkmark next to the selected item.</td>
 <td><a href="../attributes/#attribute-types"><span class="tag xmlco"></span></a></td>
 <td><code>#000000</code></td>
 </tr>
@@ -2089,6 +2089,12 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 <td></td>
 </tr>
 <tr>
+<td>dropdownHeight</td>
+<td>Height of the dropdown list.</td>
+<td>float</td>
+<td></td>
+</tr>
+<tr>
 <td>scrollbarColors</td>
 <td></td>
 <td><a href="../attributes/#attribute-types"><span class="tag xmlcb"></span></a></td>
@@ -2102,23 +2108,51 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 </tr>
 <tr>
 <td>itemHeight</td>
-<td></td>
+<td>Height of the items in the dropdown list.</td>
 <td>float</td>
 <td></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It's likely that you will need to adjust the <code>scrollSensitivity</code> for large dropdown menus.</p>
+</div>
 <p>Example:
-<div class="highlight"><pre><span></span><code> &lt;Dropdown id=&quot;Selection&quot; onValueChanged=&quot;optionSelected&quot;&gt;
-    &lt;Option selected=&quot;true&quot;&gt;Option 1&lt;/Option&gt;
-    &lt;Option&gt;Option 2&lt;/Option&gt;
-    &lt;Option&gt;Option 3&lt;/Option&gt;
-    &lt;Option&gt;Option 4&lt;/Option&gt;
-&lt;/Dropdown&gt;
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">&lt;Dropdown</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;Selection&quot;</span><span class="w"> </span><span class="na">onValueChanged=</span><span class="s">&quot;optionSelected&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Option</span><span class="w"> </span><span class="na">selected=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Option<span class="w"> </span>1<span class="nt">&lt;/Option&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Option&gt;</span>Option<span class="w"> </span>2<span class="nt">&lt;/Option&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Option&gt;</span>Option<span class="w"> </span>3<span class="nt">&lt;/Option&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Option&gt;</span>Option<span class="w"> </span>4<span class="nt">&lt;/Option&gt;</span>
+<span class="nt">&lt;/Dropdown&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code> function optionSelected(player, option, id)
-    print(player.steam_name .. &quot; selected: &quot; .. option)
- end
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">optionSelected</span><span class="p">(</span><span class="nv">player</span><span class="p">,</span><span class="w"> </span><span class="nv">selectedValue</span><span class="p">,</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nv">player</span><span class="p">.</span><span class="py">steam_name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; selected: &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">selectedValue</span><span class="p">)</span>
+<span class="w"> </span><span class="kr">end</span>
+</code></pre></div></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Append <code>(selectedIndex)</code> to the function name to pass the index (0-indexed) of the selected option as second parameter. Note that this is passed as string, so you might want to turn it into a number for indexing a list.</p>
+<p>To make sure that the dropdown selection is consistent across clients and edits with scripting, set the <code>value</code> attribute to the index. (see example 2).</p>
+</div>
+<p>Example 2:
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">&lt;Dropdown</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;Selection&quot;</span><span class="w"> </span><span class="na">onValueChanged=</span><span class="s">&quot;optionSelected(selectedIndex)&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Option</span><span class="w"> </span><span class="na">selected=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Option<span class="w"> </span>1<span class="nt">&lt;/Option&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Option&gt;</span>Option<span class="w"> </span>2<span class="nt">&lt;/Option&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Option&gt;</span>Option<span class="w"> </span>3<span class="nt">&lt;/Option&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Option&gt;</span>Option<span class="w"> </span>4<span class="nt">&lt;/Option&gt;</span>
+<span class="nt">&lt;/Dropdown&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">optionSelected</span><span class="p">(</span><span class="nv">player</span><span class="p">,</span><span class="w"> </span><span class="nv">selectedIndex</span><span class="p">,</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">-- convert string to number</span>
+<span class="w">    </span><span class="nv">selectedIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">tonumber</span><span class="p">(</span><span class="nv">selectedIndex</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">-- set dropdown value to item index</span>
+<span class="w">    </span><span class="nv">UI</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="nv">id</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">selectedIndex</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">-- example print</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nv">player</span><span class="p">.</span><span class="py">steam_name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; selected option with index: &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">selectedIndex</span><span class="p">)</span>
+<span class="w"> </span><span class="kr">end</span>
 </code></pre></div></p>
 <hr />
 
