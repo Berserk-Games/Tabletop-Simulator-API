@@ -12,11 +12,11 @@ Alternatively, you can make modifications to individual pages then submit them f
 
 The API website is built using [MkDocs](https://www.mkdocs.org/) and several related extensions.
 
-Pull requests are welcome, however in order to preview your changes, you must follow the instructions below:
+Pull requests are welcome; however, in order to preview your changes, you must follow the instructions below:
 
 ### Prerequisites
 
-You will need to ensure Python `3.6` is installed on your system.
+You will need to ensure Python `3.12` is installed on your system.
 
 If your system doesn't have it installed, you can either [download directly](https://www.python.org/downloads/release/python-366/) or install from a Python version manager such as [pyenv](https://github.com/pyenv/pyenv).
 
@@ -24,7 +24,7 @@ We utilise Pipenv and a `Pipfile` to ensure builds are consistent. If you don't 
 
 ### Installing Dependencies
 
-Once've you installed the prerequisites, you must initialize your environment. From command line, this is done with:
+Once you've installed the prerequisites, you must initialize your environment. From command line, this is done with:
 
 ```
 pipenv install
