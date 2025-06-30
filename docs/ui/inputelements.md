@@ -62,10 +62,10 @@ readOnly |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | f
 textColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#323232`
 characterLimit |  | int | `0` (no limit)
 
-Example:
-```xml
-<InputField>Default Text</InputField>
-```
+!!!example
+    ```xml
+    <InputField>Default Text</InputField>
+    ```
 
 ---
 
@@ -92,15 +92,15 @@ highlightedSprite |  | string |
 pressedSprite |  | string |
 disabledSprite |  | string |
 
-Example:
-```xml
-<!-- Standard Button -->
-<Button>Button Text</Button>
-<!-- Button with Icon -->
-<Button icon="SomeName" />
-<!-- Button with Icon and Text -->
-<Button icon="SomeName">Button With Icon</Button>
-```
+!!!example
+    ```xml
+    <!-- Standard Button -->
+    <Button>Button Text</Button>
+    <!-- Button with Icon -->
+    <Button icon="SomeName" />
+    <!-- Button with Icon and Text -->
+    <Button icon="SomeName">Button With Icon</Button>
+    ```
 
 !!!tip
     onClick passes nil for the value by default. However, you can assign a string that will be passed in onClick.
@@ -128,12 +128,12 @@ isOn | If the toggle is "on" or not. Is the value sent to onValueChanged's funct
 toggleWidth | Sets the width in pixels of the internal check box | float | 20
 toggleHeight | Sets the width in pixels of the internal check box | float | 20
 
-Example:
-```xml
-<Toggle>Toggle Text</Toggle>
-<!-- Toggle which is selected by default -->
-<Toggle isOn="true">Toggle Text</Toggle>
-```
+!!!example
+    ```xml
+    <Toggle>Toggle Text</Toggle>
+    <!-- Toggle which is selected by default -->
+    <Toggle isOn="true">Toggle Text</Toggle>
+    ```
 
 ---
 
@@ -158,9 +158,10 @@ iconColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) 
 iconAlignment |  | <ul><li>Left</li><li>Right</li></ul> | `Left`
 padding |  | float float float float | `0 0 0 0`
 
-```xml
-<ToggleButton>Toggle Button Text</Toggle>
-```
+!!!example
+    ```xml
+    <ToggleButton>Toggle Button Text</Toggle>
+    ```
 
 ---
 
@@ -177,23 +178,24 @@ toggleBackgroundColor |  | [<span class="tag xmlco"></span>](attributes.md#attri
 toggleSelectedImage | Sets the default image to use for selected (checked) nested Toggle elements. | string |
 toggleSelectedColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#FFFFFF`
 
-```xml
-<ToggleGroup>
-    <VerticalLayout>
-        <Toggle>Toggle A</Toggle>
-        <Toggle>Toggle B</Toggle>
-        <Toggle>Toggle C</Toggle>
-    </VerticalLayout>
-</ToggleGroup>
+!!!example
+    ```xml
+    <ToggleGroup>
+        <VerticalLayout>
+            <Toggle>Toggle A</Toggle>
+            <Toggle>Toggle B</Toggle>
+            <Toggle>Toggle C</Toggle>
+        </VerticalLayout>
+    </ToggleGroup>
 
-<ToggleGroup>
-    <HorizontalLayout>
-        <ToggleButton>ToggleButton A</ToggleButton>
-        <ToggleButton>ToggleButton B</ToggleButton>
-        <ToggleButton>ToggleButton C</ToggleButton>
-    </HorizontalLayout>
-</ToggleGroup>
-```
+    <ToggleGroup>
+        <HorizontalLayout>
+            <ToggleButton>ToggleButton A</ToggleButton>
+            <ToggleButton>ToggleButton B</ToggleButton>
+            <ToggleButton>ToggleButton C</ToggleButton>
+        </HorizontalLayout>
+    </ToggleGroup>
+    ```
 
 ---
 
@@ -218,10 +220,10 @@ fillImage |  | string |
 handleColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | *(none)*
 handleImage |  | string |
 
-Example:
-```xml
-<Slider minValue="0" maxValue="1" value="0.5" />
-```
+!!!example
+    ```xml
+    <Slider minValue="0" maxValue="1" value="0.5" />
+    ```
 
 
 ---
@@ -252,46 +254,46 @@ itemHeight | Height of the items in the dropdown list. | float |
 !!!tip
     It's likely that you will need to adjust the `scrollSensitivity` for large dropdown menus.
 
-Example:
-```xml
- <Dropdown id="Selection" onValueChanged="optionSelected">
-    <Option selected="true">Option 1</Option>
-    <Option>Option 2</Option>
-    <Option>Option 3</Option>
-    <Option>Option 4</Option>
-</Dropdown>
-```
-```lua
- function optionSelected(player, selectedValue, id)
-    print(player.steam_name .. " selected: " .. selectedValue)
- end
-```
+!!!example
+    ```xml
+    <Dropdown id="Selection" onValueChanged="optionSelected">
+        <Option selected="true">Option 1</Option>
+        <Option>Option 2</Option>
+        <Option>Option 3</Option>
+        <Option>Option 4</Option>
+    </Dropdown>
+    ```
+    ```lua
+    function optionSelected(player, selectedValue, id)
+        print(player.steam_name .. " selected: " .. selectedValue)
+    end
+    ```
 
 !!!tip
     Append `(selectedIndex)` to the function name to pass the index (0-indexed) of the selected option as second parameter. Note that this is passed as string, so you might want to turn it into a number for indexing a list.
 
-    To make sure that the dropdown selection is consistent across clients and edits with scripting, set the `value` attribute to the index. (see example 2).
+    To make sure that the dropdown selection is consistent across clients and edits with scripting, set the `value` attribute to the index (see the following example).
 
-Example 2:
-```xml
- <Dropdown id="Selection" onValueChanged="optionSelected(selectedIndex)">
-    <Option selected="true">Option 1</Option>
-    <Option>Option 2</Option>
-    <Option>Option 3</Option>
-    <Option>Option 4</Option>
-</Dropdown>
-```
-```lua
- function optionSelected(player, selectedIndex, id)
-    -- convert string to number
-    selectedIndex = tonumber(selectedIndex)
+!!!example
+    ```xml
+    <Dropdown id="Selection" onValueChanged="optionSelected(selectedIndex)">
+        <Option selected="true">Option 1</Option>
+        <Option>Option 2</Option>
+        <Option>Option 3</Option>
+        <Option>Option 4</Option>
+    </Dropdown>
+    ```
+    ```lua
+    function optionSelected(player, selectedIndex, id)
+        -- convert string to number
+        selectedIndex = tonumber(selectedIndex)
 
-    -- set dropdown value to item index
-    UI.setAttribute(id, "value", selectedIndex)
+        -- set dropdown value to item index
+        UI.setAttribute(id, "value", selectedIndex)
 
-    -- example print
-    print(player.steam_name .. " selected option with index: " .. selectedIndex)
- end
-```
+        -- example print
+        print(player.steam_name .. " selected option with index: " .. selectedIndex)
+    end
+    ```
 
 ---

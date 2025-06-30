@@ -78,6 +78,9 @@ color | Color to tint the image, or a flat color to display if no image is given
 type | Defines how the image is drawn. | <ul><li>Simple</li><li>Sliced</li><li>Filled</li><li>Tiled</li></ul> | *(varies)*
 raycastTarget | If the element blocks clicks. | [<span class="tag boo"></span>](#attribute-types) | `true`
 
+!!!tip
+    It's also possible to use an image URL directly (as string) in the image field. Note that this will **NOT** cache the image.
+
 ### Appearance Attributes
 
 Attribute&nbsp;Name | Description | Type&nbsp;/&nbsp;Options | Default&nbsp;Value
