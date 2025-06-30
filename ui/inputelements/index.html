@@ -1572,9 +1572,22 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 </tr>
 </tbody>
 </table>
-<p>Example:
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;InputField&gt;</span>Default<span class="w"> </span>Text<span class="nt">&lt;/InputField&gt;</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The text typed into an XML input field can't be obtained outside of the automatically passed arguments to <code>onValueChanged</code> / <code>onEndEdit</code>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><div class="highlight"><pre><span></span><code><span class="nt">&lt;InputField</span><span class="w"> </span><span class="na">onEndEdit=</span><span class="s">&quot;onEndEdit&quot;</span><span class="w"> </span><span class="nt">&gt;</span>Default<span class="w"> </span>Text<span class="nt">&lt;/InputField&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span><span class="w"> </span><span class="nf">onEndEdit</span><span class="p">(</span><span class="nv">player</span><span class="p">,</span><span class="w"> </span><span class="nv">value</span><span class="p">,</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nv">player</span><span class="p">.</span><span class="py">steam_name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; entered: &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">value</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">-- store the value in a global variable for later access</span>
+<span class="w">    </span><span class="nv">enteredValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">value</span>
+<span class="kr">end</span>
 </code></pre></div></p>
+</div>
 <hr />
 <h3 id="button">Button<a class="headerlink" href="#button" title="Permanent link">&para;</a></h3>
 <p>A button. Is able to send a trigger event.</p>
@@ -1680,14 +1693,16 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 </tr>
 </tbody>
 </table>
-<p>Example:
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Standard Button --&gt;</span>
 <span class="nt">&lt;Button&gt;</span>Button<span class="w"> </span>Text<span class="nt">&lt;/Button&gt;</span>
 <span class="cm">&lt;!-- Button with Icon --&gt;</span>
 <span class="nt">&lt;Button</span><span class="w"> </span><span class="na">icon=</span><span class="s">&quot;SomeName&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 <span class="cm">&lt;!-- Button with Icon and Text --&gt;</span>
 <span class="nt">&lt;Button</span><span class="w"> </span><span class="na">icon=</span><span class="s">&quot;SomeName&quot;</span><span class="nt">&gt;</span>Button<span class="w"> </span>With<span class="w"> </span>Icon<span class="nt">&lt;/Button&gt;</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>onClick passes nil for the value by default. However, you can assign a string that will be passed in onClick.</p>
@@ -1752,11 +1767,13 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 </tr>
 </tbody>
 </table>
-<p>Example:
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;Toggle&gt;</span>Toggle<span class="w"> </span>Text<span class="nt">&lt;/Toggle&gt;</span>
 <span class="cm">&lt;!-- Toggle which is selected by default --&gt;</span>
 <span class="nt">&lt;Toggle</span><span class="w"> </span><span class="na">isOn=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Toggle<span class="w"> </span>Text<span class="nt">&lt;/Toggle&gt;</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
 <hr />
 <h3 id="togglebutton">ToggleButton<a class="headerlink" href="#togglebutton" title="Permanent link">&para;</a></h3>
 <p>A toggle, but styled as a button.</p>
@@ -1850,8 +1867,11 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 </tr>
 </tbody>
 </table>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;ToggleButton&gt;</span>Toggle<span class="w"> </span>Button<span class="w"> </span>Text<span class="nt">&lt;/Toggle&gt;</span>
 </code></pre></div>
+</div>
 <hr />
 <h3 id="togglegroup">ToggleGroup<a class="headerlink" href="#togglegroup" title="Permanent link">&para;</a></h3>
 <p>Allows a group of toggles to act as a radio button, where only 1 of them can be "checked" at once (works with Toggle or ToggleButton).</p>
@@ -1897,6 +1917,8 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 </tr>
 </tbody>
 </table>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;ToggleGroup&gt;</span>
 <span class="w">    </span><span class="nt">&lt;VerticalLayout&gt;</span>
 <span class="w">        </span><span class="nt">&lt;Toggle&gt;</span>Toggle<span class="w"> </span>A<span class="nt">&lt;/Toggle&gt;</span>
@@ -1913,6 +1935,7 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 <span class="w">    </span><span class="nt">&lt;/HorizontalLayout&gt;</span>
 <span class="nt">&lt;/ToggleGroup&gt;</span>
 </code></pre></div>
+</div>
 <hr />
 <h3 id="slider">Slider<a class="headerlink" href="#slider" title="Permanent link">&para;</a></h3>
 <p>A value slider. Is able to send Value.</p>
@@ -2006,9 +2029,11 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 </tr>
 </tbody>
 </table>
-<p>Example:
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;Slider</span><span class="w"> </span><span class="na">minValue=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">maxValue=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
 <hr />
 <h3 id="dropdown">Dropdown<a class="headerlink" href="#dropdown" title="Permanent link">&para;</a></h3>
 <p>A dropdown menu. Is able to send the contents (or the index of the item in the list) of the selection made in it.</p>
@@ -2118,32 +2143,35 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 <p class="admonition-title">Tip</p>
 <p>It's likely that you will need to adjust the <code>scrollSensitivity</code> for large dropdown menus.</p>
 </div>
-<p>Example:
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">&lt;Dropdown</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;Selection&quot;</span><span class="w"> </span><span class="na">onValueChanged=</span><span class="s">&quot;optionSelected&quot;</span><span class="nt">&gt;</span>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><div class="highlight"><pre><span></span><code><span class="nt">&lt;Dropdown</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;Selection&quot;</span><span class="w"> </span><span class="na">onValueChanged=</span><span class="s">&quot;optionSelected&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Option</span><span class="w"> </span><span class="na">selected=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Option<span class="w"> </span>1<span class="nt">&lt;/Option&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Option&gt;</span>Option<span class="w"> </span>2<span class="nt">&lt;/Option&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Option&gt;</span>Option<span class="w"> </span>3<span class="nt">&lt;/Option&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Option&gt;</span>Option<span class="w"> </span>4<span class="nt">&lt;/Option&gt;</span>
 <span class="nt">&lt;/Dropdown&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">optionSelected</span><span class="p">(</span><span class="nv">player</span><span class="p">,</span><span class="w"> </span><span class="nv">selectedValue</span><span class="p">,</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span><span class="w"> </span><span class="nf">optionSelected</span><span class="p">(</span><span class="nv">player</span><span class="p">,</span><span class="w"> </span><span class="nv">selectedValue</span><span class="p">,</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span>
 <span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nv">player</span><span class="p">.</span><span class="py">steam_name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; selected: &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">selectedValue</span><span class="p">)</span>
-<span class="w"> </span><span class="kr">end</span>
+<span class="kr">end</span>
 </code></pre></div></p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Append <code>(selectedIndex)</code> to the function name to pass the index (0-indexed) of the selected option as second parameter. Note that this is passed as string, so you might want to turn it into a number for indexing a list.</p>
-<p>To make sure that the dropdown selection is consistent across clients and edits with scripting, set the <code>value</code> attribute to the index. (see example 2).</p>
+<p>To make sure that the dropdown selection is consistent across clients and edits with scripting, set the <code>value</code> attribute to the index (see the following example).</p>
 </div>
-<p>Example 2:
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">&lt;Dropdown</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;Selection&quot;</span><span class="w"> </span><span class="na">onValueChanged=</span><span class="s">&quot;optionSelected(selectedIndex)&quot;</span><span class="nt">&gt;</span>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><div class="highlight"><pre><span></span><code><span class="nt">&lt;Dropdown</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;Selection&quot;</span><span class="w"> </span><span class="na">onValueChanged=</span><span class="s">&quot;optionSelected(selectedIndex)&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Option</span><span class="w"> </span><span class="na">selected=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Option<span class="w"> </span>1<span class="nt">&lt;/Option&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Option&gt;</span>Option<span class="w"> </span>2<span class="nt">&lt;/Option&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Option&gt;</span>Option<span class="w"> </span>3<span class="nt">&lt;/Option&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Option&gt;</span>Option<span class="w"> </span>4<span class="nt">&lt;/Option&gt;</span>
 <span class="nt">&lt;/Dropdown&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">optionSelected</span><span class="p">(</span><span class="nv">player</span><span class="p">,</span><span class="w"> </span><span class="nv">selectedIndex</span><span class="p">,</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span><span class="w"> </span><span class="nf">optionSelected</span><span class="p">(</span><span class="nv">player</span><span class="p">,</span><span class="w"> </span><span class="nv">selectedIndex</span><span class="p">,</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span>
 <span class="w">    </span><span class="c1">-- convert string to number</span>
 <span class="w">    </span><span class="nv">selectedIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">tonumber</span><span class="p">(</span><span class="nv">selectedIndex</span><span class="p">)</span>
 
@@ -2152,8 +2180,9 @@ And if this was in an Object's UI, it would direct the function activation to Gl
 
 <span class="w">    </span><span class="c1">-- example print</span>
 <span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nv">player</span><span class="p">.</span><span class="py">steam_name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; selected option with index: &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">selectedIndex</span><span class="p">)</span>
-<span class="w"> </span><span class="kr">end</span>
+<span class="kr">end</span>
 </code></pre></div></p>
+</div>
 <hr />
 
 <!-- Last update of source file -->

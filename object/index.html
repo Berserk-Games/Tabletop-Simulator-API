@@ -6536,10 +6536,10 @@ the impulse.</p>
 <p>This function can also be used directly on the game world using Global.</p>
 </blockquote>
 <div class="admonition info">
-<p class="admonition-title">call(func_name, func_params)</p>
+<p class="admonition-title">call(func_name, func_param)</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>func_name</strong>: Function name you want to activate.</li>
-<li><a href="../types/"><span class="tag tab"></span></a> <strong>func_params</strong>: A Table containing any data you want to pass to that function.<ul>
+<li><a href="../types/"><span class="tag var"></span></a> <strong>func_param</strong>: A single parameter you want to pass to that function (can be a table).<ul>
 <li><span class="critic comment">Optional, will not be sent by default.</span></li>
 </ul>
 </li>
@@ -6559,6 +6559,10 @@ the impulse.</p>
 <span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kc">true</span>
 <span class="kr">end</span>
 </code></pre></div></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Since <code>.call()</code> can only pass a single parameter, it's often necessary to bundle multiple variables into a single table to pass all of them at once.</p>
+</div>
 <hr />
 <h4 id="getdecals">getDecals()<a class="headerlink" href="#getdecals" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a> Returns a table of sub-tables, each sub-table representing one decal.</p>
