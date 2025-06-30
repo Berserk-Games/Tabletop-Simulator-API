@@ -62,9 +62,20 @@ readOnly |  | [<span class="tag boo"></span>](attributes.md#attribute-types) | f
 textColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#323232`
 characterLimit |  | int | `0` (no limit)
 
+!!!note
+    The text typed into an XML input field can't be obtained outside of the automatically passed arguments to `onValueChanged` / `onEndEdit`.
+
 !!!example
     ```xml
-    <InputField>Default Text</InputField>
+    <InputField onEndEdit="onEndEdit" >Default Text</InputField>
+    ```
+    ```lua
+    function onEndEdit(player, value, id)
+        print(player.steam_name .. " entered: " .. value)
+
+        -- store the value in a global variable for later access
+        enteredValue = value
+    end
     ```
 
 ---
