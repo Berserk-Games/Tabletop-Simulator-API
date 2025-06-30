@@ -247,7 +247,7 @@ Called **every physics tick** (90 times a second). This is a frame independent o
 
 **Global Script**
 
-Called when a saved game (and all Objects it contains) have finished loading. This includes manually loaded games/saves,
+Called when a saved game (and all Objects it contains) has finished loading. This includes manually loaded games/saves,
 as well as when a user rewinds.
 
 **Object Script**
@@ -285,8 +285,6 @@ other reason e.g. if the script-owner Object was pulled out of a container mid-g
 
 		local colors = {'Blue', 'Yellow', 'Green'}
 		some_object.highlightOn(colors[math.random(1, 3)])
-
-		return JSON.encode(state)
 	end
 	```
 	Refer to [onSave(...)](#onsave) to see an example of how this same save state structure could be created. Subscribe

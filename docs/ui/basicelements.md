@@ -31,18 +31,18 @@ resizeTextMaxSize | Maximum font size | float | `40`
 horizontalOverflow | | <ul><li>Wrap</li><li>Overflow</li></ul> | `Overflow`
 verticalOverflow | | <ul><li>Truncate</li><li>Overflow</li></ul> | `Truncate`
 
-Example:
-```xml
-<!-- Standard Text element -->
-<Text>Some Text</Text>
+!!!example
+    ```xml
+    <!-- Standard Text element -->
+    <Text>Some Text</Text>
 
-<!-- Rich Text -->
-<Text>
-    This text is <b>Bold</b>, <i>Italic</i>, 
-    and <textcolor color="#00FF00">Green</textcolor>.    
-    This text is <textsize size="18">Larger</textsize>.
-</Text>
-```
+    <!-- Rich Text -->
+    <Text>
+        This text is <b>Bold</b>, <i>Italic</i>, 
+        and <textcolor color="#00FF00">Green</textcolor>.    
+        This text is <textsize size="18">Larger</textsize>.
+    </Text>
+    ```
 
 ---
 
