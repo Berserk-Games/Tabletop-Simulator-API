@@ -374,6 +374,32 @@ the object has finished spawning.
 	object.setPositionSmooth({10, 5, 10})
 	```
 
+!!!example "Advanced example"
+	Spawn a copy of a card by name that is inside a deck.
+	```lua
+	function spawnCardFromDeckByName(deck, nickname, spawnPosition)
+		-- Obtain the data of the deck
+		local deckData = deck.getData()
+
+		-- Loop through the deck data to find the requested card
+		for i, cardData in ipairs(deckData.ContainedObjects) do
+	
+			-- Check if the nickname matches
+			if cardData["Nickname"] == nickname then
+
+				-- Perform the card spawning with the data of the matching card
+				spawnObjectData({
+					data = cardData,
+					position = spawnPosition
+				})
+
+				-- Stop the function here since we found a matching card
+				return
+			end
+		end
+	end
+	```
+
 ---
 
 
