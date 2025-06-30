@@ -16,7 +16,7 @@ destroyObject([<span class="tag obj"></span>](types.md) obj) | Destroy an Object
 flipTable() {: #fliptable data-toc-label="flipTable()" data-toc-child-of="global-function-details" } | Flip the table. | [<span class="ret boo"></span>](types.md) |
 getAllObjects() {: #getallobjects data-toc-label="getAllObjects()" data-toc-child-of="global-function-details" } | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [getObjects()](#getobjects)_.</p>Returns a Table of all [Objects](object.md) in the game _except hand zones_. | [<span class="ret tab"></span>](types.md) |
 getObjectFromGUID([<span class="tag str"></span>](types.md) guid) | Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist. | [<span class="ret obj"></span>](types.md) | [:i:](#getobjectfromguid)
-getObjects() {: #getobjects data-toc-label="getObjects()" data-toc-child-of="global-function-details" } | Returns a Table of all [Objects](object.md) in the game. | [<span class="ret tab"></span>](types.md) |
+getObjects() | Returns a Table of all [Objects](object.md) in the game. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjects)
 getObjectsWithTag([<span class="tag str"></span>](types.md) tag) | Returns Table of all [Objects](object.md) which have the specified tag attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithtag)
 getObjectsWithAnyTags([<span class="tag tab"></span>](types.md) tags) | Returns Table of all [Objects](object.md) which have at least one of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithanytags)
 getObjectsWithAllTags([<span class="tag tab"></span>](types.md) tags) | Returns Table of all [Objects](object.md) which have all of the specified tags attached. | [<span class="ret tab"></span>](types.md) | [:i:](#getobjectswithalltags)
@@ -114,7 +114,6 @@ copy(object_list)
 
 ---
 
-
 ####getObjectFromGUID(...)
 
 [<span class="ret obj"></span>](types.md) Returns Object by its GUID. Will return `nil` if this GUID doesn't currently exist.
@@ -124,6 +123,84 @@ copy(object_list)
 		* {>>GUID can be obtained by right clicking an object and going to Scripting.<<}
 		* {>>In a script, it can be obtained from any Object by using .getGUID().<<}
 
+---
+
+####getObjects()
+
+[<span class="ret tab"></span>](types.md) Returns a table of all Objects.
+ 
+!!!example
+	This can be used to identify objects in any way, for example the name:
+	```lua
+	-- Gets all Objects with the name "Apple"
+	function getApples()
+		local allApples = {}
+		for i, object in ipairs(getObjects()) do
+			if object.getName() == "Apple" then
+				table.insert(allApples, object)
+			end
+		return allApples
+	end
+	```
+
+---
+
+####getObjectsWithTag(...)
+
+[<span class="ret tab"></span>](types.md) Returns a table of all Objects which have the specified tag attached.
+ 
+!!!info "getObjectsWithTag(tag)"
+	* [<span class="tag str"></span>](types.md) **tag**: The tag to search for on Objects.
+		* {>>Tags can be added to objects via right-click -> Tags.<<}
+
+!!!example
+	```lua
+	-- Gets all Objects with the tag "RedCube"
+	function onLoad()
+		local allRedCubes = getObjectsWithTag("RedCube")
+		log(allRedCubes)
+	end
+	```
+
+---
+
+####getObjectsWithAnyTags(...)
+
+[<span class="ret tab"></span>](types.md) Returns a table of all Objects which have at least one of the specified tags attached.
+ 
+!!!info "getObjectsWithAnyTags(tags)"
+	* [<span class="tag tab"></span>](types.md) **tags**: A table of tags to search for. An Object must have at least one of these tags to be returned.
+		* {>>Tags can be added to objects via right-click -> Tags.<<}
+
+!!!example
+	```lua
+	-- Gets all Objects that have either the "Player1" or "Player2" tag
+	function onLoad()
+		local tags = { "Player1", "Player2" }
+		local matchingObjects = getObjectsWithAnyTags(tags)
+		log(matchingObjects)
+	end
+	```
+
+---
+
+####getObjectsWithAllTags(...)
+
+[<span class="ret tab"></span>](types.md) Returns a table of all Objects which have all of of the specified tags attached.
+ 
+!!!info "getObjectsWithAllTags(tags)"
+	* [<span class="tag tab"></span>](types.md) **tags**: A table of tags to search for. An Object must have every tag in this table to be returned.
+		* {>>Tags can be added to objects via right-click -> Tags.<<}
+
+!!!example
+	```lua
+	-- Gets all Objects that have either the "Player1" or "Player2" tag
+	function onLoad()
+		local tagList = { "Player1", "Player2" }
+		local matchingObjects = getObjectsWithAnyTags(tagList)
+		log(matchingObjects)
+	end
+	```
 
 ---
 
@@ -133,7 +210,6 @@ copy(object_list)
 
 Not all objects CAN be grouped. If the ++G++ key won't work on them, neither will this function.
 
-
 !!!info "group(objects)"
 	* [<span class="tag tab"></span>](types.md) **objects**: A list of objects to be grouped together.
 
@@ -142,27 +218,26 @@ Not all objects CAN be grouped. If the ++G++ key won't work on them, neither wil
 		* [<span class="tag obj"></span>](types.md) Object(s)
 			* {>>Different types of object are grouped independently i.e. cards will form into a deck, each type of checker will form their own stack.<<}
 
-``` Lua
--- Example
-function onLoad()
-    local objects = {
-        -- IMPORTANT: To get the example to work, you need to replace ###### by a real GUID of the object.
-        getObjectFromGUID("######"), -- card
-        getObjectFromGUID("######"), -- card
-        getObjectFromGUID("######"), -- checker
-        getObjectFromGUID("######"), -- checker
-    }
-    local objGroupedList = group(objects)
-    log(objGroupedList)
-end
-
-```
-``` Lua
--- Possible Output for objGroupedList
-{
-    1: <Deck>
-    2: <CheckerStack>
-}
+!!!example
+	``` Lua
+	function onLoad()
+		local objects = {
+				-- IMPORTANT: To get the example to work, you need to replace ###### with a real GUID of the object.
+				getObjectFromGUID("######"), -- card
+				getObjectFromGUID("######"), -- card
+				getObjectFromGUID("######"), -- checker
+				getObjectFromGUID("######"), -- checker
+		}
+		local objGroupedList = group(objects)
+		log(objGroupedList)
+	end
+	```
+	``` Lua
+	-- Possible Output for objGroupedList
+	{
+		1: <Deck>
+		2: <CheckerStack>
+	}
 ```
 
 
