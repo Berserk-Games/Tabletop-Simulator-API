@@ -16,7 +16,7 @@ Pull requests are welcome; however, in order to preview your changes, you must f
 
 ### Prerequisites
 
-You will need to ensure Python `3.12` is installed on your system.
+You will need to ensure Python `3.13` is installed on your system.
 
 If your system doesn't have it installed, you can either [download directly](https://www.python.org/downloads/release/python-366/) or install from a Python version manager such as [pyenv](https://github.com/pyenv/pyenv).
 
