@@ -169,6 +169,7 @@ rpg_TROLL {: #rpg_TROLL } | `rpgFigurine` | An animated figurine of a large gree
 rpg_VAMPIRE {: #rpg_VAMPIRE } | `rpgFigurine` | An animated figurine of a large wingless bat. |
 rpg_WARRIOR {: #rpg_WARRIOR } | `rpgFigurine` | An animated figurine of a stout, bearded, axe-wielding warrior in scale mail. |
 rpg_WEREWOLF {: #rpg_WEREWOLF } | `rpgFigurine` | An animated figurine of a mythical werewolf. |
+rpg_WOLF {: #rpg_WOLF } | `rpgFigurine` | An animated figurine of a mythical wolf. |
 rpg_WYVERN {: #rpg_WYVERN } | `rpgFigurine` | An animated figurine of a mythical wyvern. |
 
 ### Tileset Pieces
@@ -246,10 +247,10 @@ Chimera {: #Chimera } | [`rpg_CHIMERA`](#rpg_CHIMERA) | *(none)*
 Chinese Checkers Board {: #Chinese-Checkers-Board } | [`Chinese_Checkers_Board`](#Chinese_Checkers_Board) | Snaps to table level immediately upon spawn.
 Corner {: #Corner } | [`Tileset_Corner`](#Tileset_Corner) | *(none)*
 Crowns Dice {: #Crowns-Dice } | [`Die_Piecepack`](#Die_Piecepack) | `MaterialIndex` of `1`.
-Custom Board {: #Custom-Board } | [`Custom_Board`](#Custom_Board) | Snaps to table level immediately upon spawn.
-Custom Deck {: #Custom-Deck } | [`DeckCustom`](#DeckCustom) | *(none)*
-Custom Figurine {: #Custom-Figurine } | [`Figurine_Custom`](#Figurine_Custom) | *(none)*
-Custom Model {: #Custom-Model } | [`Custom_Model`](#Custom_Model) | *(none)*
+Custom Board {: #Custom-Board } | [`Custom_Board`](custom-game-objects.md#custom-board) | Snaps to table level immediately upon spawn.
+Custom Deck {: #Custom-Deck } | [`DeckCustom`](custom-game-objects.md#custom-deck) | *(none)*
+Custom Figurine {: #Custom-Figurine } | [`Figurine_Custom`](custom-game-objects.md#custom-figurine) | *(none)*
+Custom Model {: #Custom-Model } | [`Custom_Model`](custom-game-objects.md#custom-model) | *(none)*
 Cyclops {: #Cyclops } | [`rpg_CYCLOP`](#rpg_CYCLOP) | *(none)*
 D10 {: #D10 } | [`Die_10`](#Die_10) | `MaterialIndex` of `0`.
 D10 Chrome {: #D10-Chrome } | [`Die_10`](#Die_10) | `MaterialIndex` of `1`, `AltSound` of `true`.
