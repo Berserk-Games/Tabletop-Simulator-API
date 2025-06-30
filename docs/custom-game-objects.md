@@ -154,6 +154,7 @@ You can also use setCustomObject along with [reload()](object.md#reload) to modi
                 * **0**: Square/Rectangle
                 * **1**: Hex
                 * **2**: Circle
+                * **3**: Square/Rectangle (Rounded)
         * [<span class="tag str"></span>](types.md) **image_bottom**: The path/URL for the bottom-side image.
             * {>>Optional, uses the top image by default.<<}
         * [<span class="tag flo"></span>](types.md) **thickness**: How thick the tile is.
