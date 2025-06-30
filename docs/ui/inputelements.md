@@ -167,7 +167,7 @@ padding |  | float float float float | `0 0 0 0`
 
 ###ToggleGroup
 
-Allows a group of toggles to act as a radio button, where only 1 of them can be "checked" at once. Works with Toggle or ToggleButton
+Allows a group of toggles to act as a radio button, where only 1 of them can be "checked" at once (works with Toggle or ToggleButton).
 
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
@@ -229,7 +229,7 @@ Example:
 
 ###Dropdown
 
-A dropdown menu. Is able to send the contents of the selection made in it.
+A dropdown menu. Is able to send the contents (or the index of the item in the list) of the selection made in it.
 
 Attribute Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type&nbsp;/&nbsp;Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 -- | -- | -- | --
@@ -238,18 +238,22 @@ interactable |  | [<span class="tag boo"></span>](attributes.md#attribute-types)
 textColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
 itemBackgroundColors |  | [<span class="tag xmlcb"></span>](attributes.md#attribute-types) | #FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)
 itemTextColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
-checkColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
+checkColor | Color of the checkmark next to the selected item. | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
 checkImage |  | string |
 arrowColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
 arrowImage |  | string |
 dropdownBackgroundColor |  | [<span class="tag xmlco"></span>](attributes.md#attribute-types) | `#000000`
 dropdownBackgroundImage |  | string |
+dropdownHeight | Height of the dropdown list. | float |
 scrollbarColors |  | [<span class="tag xmlcb"></span>](attributes.md#attribute-types) |
 scrollbarImage |  | string |
-itemHeight |  | float |
+itemHeight | Height of the items in the dropdown list. | float |
+
+!!!tip
+    It's likely that you will need to adjust the `scrollSensitivity` for large dropdown menus.
 
 Example:
-```
+```xml
  <Dropdown id="Selection" onValueChanged="optionSelected">
     <Option selected="true">Option 1</Option>
     <Option>Option 2</Option>
@@ -257,9 +261,36 @@ Example:
     <Option>Option 4</Option>
 </Dropdown>
 ```
+```lua
+ function optionSelected(player, selectedValue, id)
+    print(player.steam_name .. " selected: " .. selectedValue)
+ end
 ```
- function optionSelected(player, option, id)
-    print(player.steam_name .. " selected: " .. option)
+
+!!!tip
+    Append `(selectedIndex)` to the function name to pass the index (0-indexed) of the selected option as second parameter. Note that this is passed as string, so you might want to turn it into a number for indexing a list.
+
+    It's recommended to combat XML desyncing by enforcing the correct value for dropdown menus (see example 2).
+
+Example 2:
+```xml
+ <Dropdown id="Selection" onValueChanged="optionSelected(selectedIndex)">
+    <Option selected="true">Option 1</Option>
+    <Option>Option 2</Option>
+    <Option>Option 3</Option>
+    <Option>Option 4</Option>
+</Dropdown>
+```
+```lua
+ function optionSelected(player, selectedIndex, id)
+    -- convert string to number
+    selectedIndex = tonumber(selectedIndex)
+
+    -- safety measure to avoid UI desyncs
+    UI.setAttribute(id, "value", selectedIndex)
+
+    -- example print
+    print(player.steam_name .. " selected option with index: " .. selectedIndex)
  end
 ```
 
