@@ -270,7 +270,7 @@ Example:
 !!!tip
     Append `(selectedIndex)` to the function name to pass the index (0-indexed) of the selected option as second parameter. Note that this is passed as string, so you might want to turn it into a number for indexing a list.
 
-    It's recommended to combat XML desyncing by enforcing the correct value for dropdown menus (see example 2).
+    To make sure that the dropdown selection is consistent across clients and edits with scripting, set the `value` attribute to the index. (see example 2).
 
 Example 2:
 ```xml
@@ -286,7 +286,7 @@ Example 2:
     -- convert string to number
     selectedIndex = tonumber(selectedIndex)
 
-    -- safety measure to avoid UI desyncs
+    -- set dropdown value to item index
     UI.setAttribute(id, "value", selectedIndex)
 
     -- example print
