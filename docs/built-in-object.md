@@ -196,7 +196,7 @@ Bowl {: #Bowl } | `Generic` | A wooden bowl that objects can be dropped in. | Th
 Calculator {: #Calculator } | `Calculator` | An interactive calculator. | Faces visually backwards.
 Counter {: #Counter } | `Counter` | An interactive digital counter. |
 Digital_Clock {: #Digital_Clock } | `Clock` | An interactive digital clock. |
-Infinite_Bag {: #Infinite_Bag } | A pouch that any number of copies of a single object can be taken from and dropped back into. | An object must be put into the bag to become the source object.
+Infinite_Bag {: #Infinite_Bag } | `Infinite` | A pouch that any number of copies of a single object can be taken from and dropped back into. | An object must be put into the bag to become the source object.
 Notecard {: #Notecard } | `Notecard` | An editable notecard. |
 Quarter {: #Quarter } | `Coin` | An american quarter minted in 1942. | Spawns tails-up, facing to the right.
 reversi_chip {: #reversi_chip } | `Generic` | A dual-colored Reversi chip. | Spawns white-side up.
