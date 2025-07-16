@@ -139,6 +139,7 @@ copy(object_list)
 			if object.getName() == "Apple" then
 				table.insert(allApples, object)
 			end
+		end
 		return allApples
 	end
 	```
