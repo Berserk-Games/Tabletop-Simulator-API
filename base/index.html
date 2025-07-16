@@ -2582,7 +2582,7 @@ are used, then player hotkey bindings will persist.</p>
 <li><a href="../types/"><span class="tag fun"></span></a> <strong>callback</strong>(playerColor, hoveredObject, pointerPosition, isKeyUp): The function that will be executed whenever the hotkey is pressed, and <em>also</em> when released if <code>triggerOnKeyUp</code> is <code>true</code>.<ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>playerColor</strong>: <a href="../player/colors/">Player Color</a> of the player that pressed the hotkey.</li>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>hoveredObject</strong>: The object that the Player's pointer was hovering over at the moment the key was pressed/released. <code>nil</code> if no object was under the Player's pointer at the time.</li>
-<li><a href="../types/"><span class="tag vec"></span></a> <strong>pointerPosition</strong>: <a href="../types/#position">Word Position</a> of the Player's pointer at the moment the key was pressed/released.</li>
+<li><a href="../types/"><span class="tag vec"></span></a> <strong>pointerPosition</strong>: <a href="../types/#position">World Position</a> of the Player's pointer at the moment the key was pressed/released.</li>
 <li><a href="../types/"><span class="tag boo"></span></a> <strong>isKeyUp</strong>: Whether this callback is being triggered in response to a hotkey being released.</li>
 </ul>
 </li>
