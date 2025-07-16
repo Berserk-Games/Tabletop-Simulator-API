@@ -433,7 +433,7 @@ Players can bind key to hotkeys from the `Options` -> `Game Keys` UI after this 
 	* [<span class="tag fun"></span>](types.md) **callback**(playerColor, hoveredObject, pointerPosition, isKeyUp): The function that will be executed whenever the hotkey is pressed, and _also_ when released if `triggerOnKeyUp` is `true`.
         * [<span class="tag str"></span>](types.md) **playerColor**: [Player Color](player/colors.md) of the player that pressed the hotkey.
         * [<span class="tag obj"></span>](types.md) **hoveredObject**: The object that the Player's pointer was hovering over at the moment the key was pressed/released. `nil` if no object was under the Player's pointer at the time.
-        * [<span class="tag vec"></span>](types.md) **pointerPosition**: [Word Position](types.md#position) of the Player's pointer at the moment the key was pressed/released.
+        * [<span class="tag vec"></span>](types.md) **pointerPosition**: [World Position](types.md#position) of the Player's pointer at the moment the key was pressed/released.
         * [<span class="tag boo"></span>](types.md) **isKeyUp**: Whether this callback is being triggered in response to a hotkey being released.
 	* [<span class="tag boo"></span>](types.md) **triggerOnKeyUp**: Whether the `callback` is _also_ executed when the hotkey is released. The `callback` is always triggered when the hotkey is pressed.
         * {>>Optional, defaults to false.<<}
