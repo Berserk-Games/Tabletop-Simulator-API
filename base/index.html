@@ -569,6 +569,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getobjectswithalltags" class="md-nav__link">
+    getObjectsWithAllTags(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getobjectswithanytags" class="md-nav__link">
+    getObjectsWithAnyTags(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getobjectswithtag" class="md-nav__link">
+    getObjectsWithTag(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getseatedplayers" class="md-nav__link">
     getSeatedPlayers()
   </a>
@@ -1609,6 +1630,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getobjectswithalltags" class="md-nav__link">
+    getObjectsWithAllTags(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getobjectswithanytags" class="md-nav__link">
+    getObjectsWithAnyTags(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getobjectswithtag" class="md-nav__link">
+    getObjectsWithTag(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getseatedplayers" class="md-nav__link">
     getSeatedPlayers()
   </a>
@@ -1891,10 +1933,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td id="getobjects" style="position: relative;">getObjects()<h6 data-toc-mock-searchable="" id="getobjects" style="position: absolute; top: 0; display: block; height: 0; overflow: hidden">getObjects()</h6></td>
+<td>getObjects()</td>
 <td>Returns a Table of all <a href="../object/">Objects</a> in the game.</td>
 <td><a href="../types/"><span class="ret tab"></span></a></td>
-<td></td>
+<td><a href="#getobjects"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
 <td>getObjectsWithTag(<a href="../types/"><span class="tag str"></span></a> tag)</td>
@@ -2181,6 +2225,89 @@
 </ul>
 </div>
 <hr />
+<h4 id="getobjects">getObjects()<a class="headerlink" href="#getobjects" title="Permanent link">&para;</a></h4>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a table of all Objects.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>This can be used to identify objects in any way, for example the name:
+<div class="highlight"><pre><span></span><code><span class="c1">-- Gets all Objects with the name &quot;Apple&quot;</span>
+<span class="kr">function</span><span class="w"> </span><span class="nf">getApples</span><span class="p">()</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">allApples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="p">,</span><span class="w"> </span><span class="nv">object</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nf">getObjects</span><span class="p">())</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nv">object</span><span class="p">.</span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;Apple&quot;</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">            </span><span class="nb">table.insert</span><span class="p">(</span><span class="nv">allApples</span><span class="p">,</span><span class="w"> </span><span class="nv">object</span><span class="p">)</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">allApples</span>
+<span class="kr">end</span>
+</code></pre></div></p>
+</div>
+<hr />
+<h4 id="getobjectswithtag">getObjectsWithTag(...)<a class="headerlink" href="#getobjectswithtag" title="Permanent link">&para;</a></h4>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a table of all Objects which have the specified tag attached.</p>
+<div class="admonition info">
+<p class="admonition-title">getObjectsWithTag(tag)</p>
+<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>tag</strong>: The tag to search for on Objects.<ul>
+<li><span class="critic comment">Tags can be added to objects via right-click -&gt; Tags.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Gets all Objects with the tag &quot;RedCube&quot;</span>
+<span class="kr">function</span><span class="w"> </span><span class="nf">onLoad</span><span class="p">()</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">allRedCubes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">getObjectsWithTag</span><span class="p">(</span><span class="s2">&quot;RedCube&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">log</span><span class="p">(</span><span class="nv">allRedCubes</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div>
+</div>
+<hr />
+<h4 id="getobjectswithanytags">getObjectsWithAnyTags(...)<a class="headerlink" href="#getobjectswithanytags" title="Permanent link">&para;</a></h4>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a table of all Objects which have at least one of the specified tags attached.</p>
+<div class="admonition info">
+<p class="admonition-title">getObjectsWithAnyTags(tags)</p>
+<ul>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>tags</strong>: A table of tags to search for. An Object must have at least one of these tags to be returned.<ul>
+<li><span class="critic comment">Tags can be added to objects via right-click -&gt; Tags.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Gets all Objects that have either the &quot;Player1&quot; or &quot;Player2&quot; tag</span>
+<span class="kr">function</span><span class="w"> </span><span class="nf">onLoad</span><span class="p">()</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Player1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Player2&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">matchingObjects</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">getObjectsWithAnyTags</span><span class="p">(</span><span class="nv">tags</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">log</span><span class="p">(</span><span class="nv">matchingObjects</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div>
+</div>
+<hr />
+<h4 id="getobjectswithalltags">getObjectsWithAllTags(...)<a class="headerlink" href="#getobjectswithalltags" title="Permanent link">&para;</a></h4>
+<p><a href="../types/"><span class="ret tab"></span></a> Returns a table of all Objects which have all of of the specified tags attached.</p>
+<div class="admonition info">
+<p class="admonition-title">getObjectsWithAllTags(tags)</p>
+<ul>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>tags</strong>: A table of tags to search for. An Object must have every tag in this table to be returned.<ul>
+<li><span class="critic comment">Tags can be added to objects via right-click -&gt; Tags.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Gets all Objects that have either the &quot;Player1&quot; or &quot;Player2&quot; tag</span>
+<span class="kr">function</span><span class="w"> </span><span class="nf">onLoad</span><span class="p">()</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">tagList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Player1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Player2&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">matchingObjects</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">getObjectsWithAnyTags</span><span class="p">(</span><span class="nv">tagList</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">log</span><span class="p">(</span><span class="nv">matchingObjects</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div>
+</div>
+<hr />
 <h4 id="group">group(...)<a class="headerlink" href="#group" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a> Groups objects together, like how the <kbd class="keys"><kbd class="key-g">G</kbd></kbd> key does for players. It returns a table of object references to any decks/stacks formed.</p>
 <p>Not all objects CAN be grouped. If the <kbd class="keys"><kbd class="key-g">G</kbd></kbd> key won't work on them, neither will this function.</p>
@@ -2202,25 +2329,28 @@
 </li>
 </ul>
 </div>
-<p><div class="highlight"><pre><span></span><code><span class="c1">-- Example</span>
-<span class="kr">function</span><span class="w"> </span><span class="nf">onLoad</span><span class="p">()</span>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><div class="highlight"><pre><span></span><code><span class="kr">function</span><span class="w"> </span><span class="nf">onLoad</span><span class="p">()</span>
 <span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">objects</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">-- IMPORTANT: To get the example to work, you need to replace ###### by a real GUID of the object.</span>
-<span class="w">        </span><span class="nf">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;######&quot;</span><span class="p">),</span><span class="w"> </span><span class="c1">-- card</span>
-<span class="w">        </span><span class="nf">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;######&quot;</span><span class="p">),</span><span class="w"> </span><span class="c1">-- card</span>
-<span class="w">        </span><span class="nf">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;######&quot;</span><span class="p">),</span><span class="w"> </span><span class="c1">-- checker</span>
-<span class="w">        </span><span class="nf">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;######&quot;</span><span class="p">),</span><span class="w"> </span><span class="c1">-- checker</span>
+<span class="w">            </span><span class="c1">-- IMPORTANT: To get the example to work, you need to replace ###### with a real GUID of the object.</span>
+<span class="w">            </span><span class="nf">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;######&quot;</span><span class="p">),</span><span class="w"> </span><span class="c1">-- card</span>
+<span class="w">            </span><span class="nf">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;######&quot;</span><span class="p">),</span><span class="w"> </span><span class="c1">-- card</span>
+<span class="w">            </span><span class="nf">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;######&quot;</span><span class="p">),</span><span class="w"> </span><span class="c1">-- checker</span>
+<span class="w">            </span><span class="nf">getObjectFromGUID</span><span class="p">(</span><span class="s2">&quot;######&quot;</span><span class="p">),</span><span class="w"> </span><span class="c1">-- checker</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">objGroupedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">group</span><span class="p">(</span><span class="nv">objects</span><span class="p">)</span>
 <span class="w">    </span><span class="nf">log</span><span class="p">(</span><span class="nv">objGroupedList</span><span class="p">)</span>
 <span class="kr">end</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">-- Possible Output for objGroupedList</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">Deck</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">CheckerStack</span><span class="o">&gt;</span>
-<span class="p">}</span>
-</code></pre></div></p>
+``` Lua
+-- Possible Output for objGroupedList
+{
+    1: <Deck>
+    2: <CheckerStack>
+}</p>
+</div>
+<p>```</p>
 <hr />
 <h4 id="paste">paste(...)<a class="headerlink" href="#paste" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret tab"></span></a> Pastes Objects in-game that were copied to the in-game clipboard. Works with <a href="#copy">copy(...)</a>.</p>
@@ -2423,6 +2553,32 @@ object's <a href="../object/#getbounds">bounds</a>.
 <span class="w">    </span><span class="kr">end</span>
 <span class="p">})</span>
 <span class="nv">object</span><span class="p">.</span><span class="nf">setPositionSmooth</span><span class="p">({</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">})</span>
+</code></pre></div></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Advanced example</p>
+<p>Spawn a copy of a card by name that is inside a deck.
+<div class="highlight"><pre><span></span><code><span class="kr">function</span><span class="w"> </span><span class="nf">spawnCardFromDeckByName</span><span class="p">(</span><span class="nv">deck</span><span class="p">,</span><span class="w"> </span><span class="nv">nickname</span><span class="p">,</span><span class="w"> </span><span class="nv">spawnPosition</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">-- Obtain the data of the deck</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">deckData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">deck</span><span class="p">.</span><span class="nf">getData</span><span class="p">()</span>
+
+<span class="w">    </span><span class="c1">-- Loop through the deck data to find the requested card</span>
+<span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="p">,</span><span class="w"> </span><span class="nv">cardData</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">deckData</span><span class="p">.</span><span class="py">ContainedObjects</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+
+<span class="w">        </span><span class="c1">-- Check if the nickname matches</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nv">cardData</span><span class="p">[</span><span class="s2">&quot;Nickname&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">nickname</span><span class="w"> </span><span class="kr">then</span>
+
+<span class="w">            </span><span class="c1">-- Perform the card spawning with the data of the matching card</span>
+<span class="w">            </span><span class="nf">spawnObjectData</span><span class="p">({</span>
+<span class="w">                </span><span class="nv">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">cardData</span><span class="p">,</span>
+<span class="w">                </span><span class="nv">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">spawnPosition</span>
+<span class="w">            </span><span class="p">})</span>
+
+<span class="w">            </span><span class="c1">-- Stop the function here since we found a matching card</span>
+<span class="w">            </span><span class="kr">return</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="kr">end</span>
 </code></pre></div></p>
 </div>
 <hr />
