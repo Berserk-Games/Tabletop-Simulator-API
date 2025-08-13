@@ -97,13 +97,13 @@ By default, Tabletop Simulator scripts use a tab width of four spaces. You are n
 
 ![Setup](img/atom/setup.PNG)
 
-### Tables as Pipe Operators
-To enable tabs showing up as pipe operators "|" as an indent guide:
+### Tabs as Pipe Operators
+To enable tabs to show up as pipe operators "|" as an indent guide:
 
 1. Click on File -> Settings
 2. Select the Editor tab in Settings
 3. Scroll down to Show Indent Guide
 4. Check Show Indent Guide
 
-![Tables as Pipe Operators](img/atom/pipes.PNG)
+![Tabs as Pipe Operators](img/atom/pipes.PNG)
 
