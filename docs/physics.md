@@ -52,8 +52,8 @@ setGravity([<span class="tag vec"></span>](types.md#vector) direction) {: #setgr
 Type | Description
 --- | ---
 Ray | A line.
-Box | A cube, rectangle, plane.
 Sphere | A round ball. You cannot make ovals.
+Box | A cube, rectangle, plane.
 
 It draws the imaginary cast, then moves the rap/box/sphere along that path instantly. The debug Bool in the parameters allows you to see this shape, to aid in setup, but the visual is not instant (due to that making it pointless, if you can't see it).
 
