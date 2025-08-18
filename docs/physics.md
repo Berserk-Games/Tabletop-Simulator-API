@@ -55,7 +55,7 @@ Ray | A line.
 Sphere | A round ball. You cannot make ovals.
 Box | A cube, rectangle, plane.
 
-It draws the imaginary cast, then moves the rap/box/sphere along that path instantly. The debug Bool in the parameters allows you to see this shape, to aid in setup, but the visual is not instant (due to that making it pointless, if you can't see it).
+It draws the imaginary cast, then moves the ray/box/sphere along that path instantly. The debug Bool in the parameters allows you to see this shape, to aid in setup, but the visual is not instant (due to that making it pointless, if you can't see it).
 
 !!!Warning
     Physics casts are somewhat expensive. When running 30+ at once it will cause your game to stutter and/or crash. Do not overuse.
