@@ -65,7 +65,7 @@ It draws the imaginary cast, then moves the rap/box/sphere along that path insta
         * [<span class="tag vec"></span>](types.md#vector) **parameters.origin**: Position of the starting point.
             * {>>Optional, defaults to {x=0, y=0, z=0}.<<}
         * [<span class="tag vec"></span>](types.md#vector) **parameters.direction**: A direction for the cast to move in.
-            * {>>Optional, but cast is motionless without a direction.<<}
+            * {>>Optional, but cast is motionless without a direction and will not hit anything.<<}
         * [<span class="tag int"></span>](types.md) **parameters.type**: The type of cast. {>>1 = Ray, 2 = Sphere, 3= Box<<}
             * {>>Optional, defaults to 1.<<}
         * [<span class="tag vec"></span>](types.md#vector) **parameters.size**: Size of the cast shape. Sphere/Box only.
