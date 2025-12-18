@@ -1351,6 +1351,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#movetohandstash" class="md-nav__link">
+    moveToHandStash(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#putobject" class="md-nav__link">
     putObject(...)
   </a>
@@ -3288,6 +3295,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#movetohandstash" class="md-nav__link">
+    moveToHandStash(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#putobject" class="md-nav__link">
     putObject(...)
   </a>
@@ -4647,7 +4661,7 @@ unless the Object includes the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>deal(<a href="../types/"><span class="tag int"></span></a> number, <a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag int"></span></a> index)</td>
+<td>deal(<a href="../types/"><span class="tag int"></span></a> number, <a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag int"></span></a> index, <a href="../types/"><span class="tag boo"></span></a> deal_from_bottom)</td>
 <td>Deals Objects. Will deal from decks/bags/stacks/individual items.</td>
 <td><a href="../types/"><span class="ret boo"></span></a></td>
 <td><a href="#deal"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -4713,7 +4727,15 @@ unless the Object includes the behavior.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>putObject(<a href="../types/"><span class="tag obj"></span></a> put_object)</td>
+<td>moveToHandStash()</td>
+<td>Moves a card in hand into the player's hand stash.</td>
+<td><a href="../types/"><span class="ret boo"></span></a></td>
+<td><a href="#movetohandstash"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+</tr>
+<tr>
+<td>putObject(<a href="../types/"><span class="tag obj"></span></a> put_object, <a href="../types/"><span class="tag int"></span></a> index)</td>
 <td>Places an object into a container (chip stacks/bags/decks).</td>
 <td><a href="../types/"><span class="ret obj"></span></a></td>
 <td><a href="#putobject"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -6133,6 +6155,10 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 <li><span class="critic comment">Optional, defaults to the first created hand zone.</span></li>
 </ul>
 </li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>deal_from_bottom</strong>: Deal the card from the bottom of the deck instead of the top.<ul>
+<li><span class="critic comment">Optional, defaults to the top card of the deck.</span></li>
+</ul>
+</li>
 </ul>
 </div>
 <hr />
@@ -6196,12 +6222,24 @@ the same as <a href="#setrotationvalue">setRotationValue(...)</a>.</p>
 <span class="p">})</span>
 </code></pre></div></p>
 <hr />
+<h4 id="movetohandstash">moveToHandStash(...)<a class="headerlink" href="#movetohandstash" title="Permanent link">&para;</a></h4>
+<p><a href="../types/"><span class="ret boo"></span></a> Can be called on card objects held in the player's hand; will move the card into the player's hand stash.  The stash is a temporary holding area for cards, useful when implementing drafting mechanics.  The stash is not generally interactable by players (though they can dislodge it by using the gizmo tool).</p>
+<div class="admonition info">
+<p class="admonition-title">Retrieving cards from the hand stash</p>
+<p>You should always use <a href="../player/instance/#drawhandstash">Player.drawHandStash()</a> to retreive cards from the hand stash.</p>
+</div>
+<p>See <a href="../wait/#collect">Wait.collect</a> for an example of using the hand stash.</p>
+<hr />
 <h4 id="putobject">putObject(...)<a class="headerlink" href="#putobject" title="Permanent link">&para;</a></h4>
 <p><a href="../types/"><span class="ret obj"></span></a> Places an object into a container (chip stacks/bags/decks). If neither Object is a container, but they are able to be combined (like with 2 cards), then they form a deck/stack.</p>
 <div class="admonition info">
-<p class="admonition-title">putObject(put_object)</p>
+<p class="admonition-title">putObject(put_object, index)</p>
 <ul>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>put_object</strong>: An Object to place into the container.</li>
+<li><a href="../types/"><span class="tag int"></span></a> <strong>index</strong>: Target index inside the container.<ul>
+<li><span class="critic comment">Optional</span></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="admonition info">

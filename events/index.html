@@ -793,6 +793,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onplayerhandchoice" class="md-nav__link">
+    onPlayerHandChoice(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onplayerping" class="md-nav__link">
     onPlayerPing(...)
   </a>
@@ -878,6 +885,13 @@
           <li class="md-nav__item">
   <a href="#tryobjectrotate" class="md-nav__link">
     tryObjectRotate(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tryobjectstatechange" class="md-nav__link">
+    tryObjectStateChange(...)
   </a>
   
 </li>
@@ -1031,6 +1045,13 @@
           <li class="md-nav__item">
   <a href="#tryrotate" class="md-nav__link">
     tryRotate(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trystatechange" class="md-nav__link">
+    tryStateChange(...)
   </a>
   
 </li>
@@ -2146,6 +2167,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onplayerhandchoice" class="md-nav__link">
+    onPlayerHandChoice(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onplayerping" class="md-nav__link">
     onPlayerPing(...)
   </a>
@@ -2231,6 +2259,13 @@
           <li class="md-nav__item">
   <a href="#tryobjectrotate" class="md-nav__link">
     tryObjectRotate(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tryobjectstatechange" class="md-nav__link">
+    tryObjectStateChange(...)
   </a>
   
 </li>
@@ -2384,6 +2419,13 @@
           <li class="md-nav__item">
   <a href="#tryrotate" class="md-nav__link">
     tryRotate(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trystatechange" class="md-nav__link">
+    tryStateChange(...)
   </a>
   
 </li>
@@ -2612,7 +2654,7 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onObjectNumberTyped(<a href="../types/"><span class="tag obj"></span></a> object, <a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag int"></span></a> number)</td>
+<td>onObjectNumberTyped(<a href="../types/"><span class="tag obj"></span></a> object, <a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag int"></span></a> number, <a href="../types/"><span class="tag boo"></span></a> alt)</td>
 <td>Called when a player types a number whilst hovering over an object.</td>
 <td><a href="#onobjectnumbertyped"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -2731,6 +2773,13 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
+<td>onPlayerHandChoice(<a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag str"></span></a> label, <a href="../types/"><span class="tag tab"></span></a> objects, <a href="../types/"><span class="tag boo"></span></a> was_confirmed)</td>
+<td>Called when a <a href="../player/instance/">Player</a> makes a choice during a hand select mode.</td>
+<td><a href="#onplayerhandchoice"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+</tr>
+<tr>
 <td>onPlayerPing(<a href="../types/"><span class="tag pla"></span></a> player, <a href="../types/"><span class="tag vec"></span></a> position, <a href="../types/"><span class="tag obj"></span></a> object)</td>
 <td>Called when a player <a href="https://kb.tabletopsimulator.com/game-tools/line-tool/#ping">pings</a> a location.</td>
 <td><a href="#onplayerping"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
@@ -2818,6 +2867,13 @@ executed.</p>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
+<tr>
+<td>tryObjectStateChange(<a href="../types/"><span class="tag obj"></span></a> object, <a href="../types/"><span class="tag int"></span></a> new_state_index, <a href="../types/"><span class="tag str"></span></a> player_color)</td>
+<td>Called when an object is about to change state.</td>
+<td><a href="#tryobjectstatechange"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+</tr>
 </tbody>
 </table>
 <h3 id="object-event-handlers-summary">Object Event Handlers<a class="headerlink" href="#object-event-handlers-summary" title="Permanent link">&para;</a></h3>
@@ -2901,7 +2957,7 @@ executed.</p>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
 <tr>
-<td>onNumberTyped(<a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag int"></span></a> number)</td>
+<td>onNumberTyped(<a href="../types/"><span class="tag str"></span></a> player_color, <a href="../types/"><span class="tag int"></span></a> number, <a href="../types/"><span class="tag boo"></span></a> alt)</td>
 <td>Called when a player types a number whilst hovering over the script-owner Object.</td>
 <td><a href="#onnumbertyped"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -2981,6 +3037,13 @@ executed.</p>
 <td>tryRotate(<a href="../types/"><span class="tag flo"></span></a> spin, <a href="../types/"><span class="tag flo"></span></a> flip, <a href="../types/"><span class="tag str"></span></a> player_color,  <a href="../types/"><span class="tag flo"></span></a> old_spin, <a href="../types/"><span class="tag flo"></span></a> old_flip)</td>
 <td>Called when a player attempts to rotate the script-owner Object.</td>
 <td><a href="#tryrotate"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+</tr>
+<tr>
+<td>tryStateChange(<a href="../types/"><span class="tag int"></span></a> new_state_index, <a href="../types/"><span class="tag str"></span></a> player_color)</td>
+<td>Called when the object is about to change state.</td>
+<td><a href="#trystatechange"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
 </tr>
@@ -3376,11 +3439,12 @@ they're no longer hovering over an object, print "Nothing" instead of the object
 <p>Called when a player types a number whilst hovering over an object.</p>
 <p>If you wish to prevent the default behavior (e.g. drawing a card) then you may return <code>true</code> to indicate you've handled the event yourself.</p>
 <div class="admonition info">
-<p class="admonition-title">onObjectNumberTyped(object, player_color, number)</p>
+<p class="admonition-title">onObjectNumberTyped(object, player_color, number, alt)</p>
 <ul>
 <li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: The object the player was hovering over whilst typing a number.</li>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player that typed the number.</li>
 <li><a href="../types/"><span class="tag int"></span></a> <strong>number</strong>: The number typed.</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>alt</strong>: Whether the Alt key is held down.</li>
 </ul>
 </div>
 <div class="admonition example">
@@ -3755,6 +3819,19 @@ action is being attempted.</p>
 </ul>
 </div>
 <hr />
+<h3 id="onplayerhandchoice">onPlayerHandChoice(...)<a class="headerlink" href="#onplayerhandchoice" title="Permanent link">&para;</a></h3>
+<p>Called when a <a href="../player/instance/">Player</a> makes a choice in hand selection mode.</p>
+<div class="admonition info">
+<p class="admonition-title">onPlayerHandChoice(player)</p>
+<ul>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: The player color of the player who made the choice.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>label</strong>: The label of the hand select mode in question.</li>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>objects</strong>: The list of objects (cards) selected by the player.</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>was_confirmed</strong>: True if the player confirmed the selection, false if they cancelled (Cancel option only appears if you use <a href="../base/#chooseinhandorcancel">chooseInHandOrCancel</a>).</li>
+</ul>
+</div>
+<p>See <a href="../wait/#collect">Wait.collect</a> for an example.</p>
+<hr />
 <h3 id="onplayerping">onPlayerPing(...)<a class="headerlink" href="#onplayerping" title="Permanent link">&para;</a></h3>
 <p>Called when a player <a href="https://kb.tabletopsimulator.com/game-tools/line-tool/#ping">pings</a> a location.</p>
 <div class="admonition info">
@@ -3991,6 +4068,25 @@ assign your objects values first.
 </code></pre></div></p>
 </div>
 <hr />
+<h3 id="tryobjectstatechange">tryObjectStateChange(...)<a class="headerlink" href="#tryobjectstatechange" title="Permanent link">&para;</a></h3>
+<p>Called before an object changes state.  Return false to prevent the state change.</p>
+<div class="admonition info">
+<p class="admonition-title">tryObjectStateChange(object, new_state_index, player_color)</p>
+<ul>
+<li><a href="../types/"><span class="tag obj"></span></a> <strong>object</strong>: The object in question.</li>
+<li><a href="../types/"><span class="tag int"></span></a> <strong>new_state_index</strong>: The state index the object is trying to change to.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player that is attempting the change.</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Prevent White from changing object states.
+<div class="highlight"><pre><span></span><code><span class="kr">function</span><span class="w"> </span><span class="nf">tryObjectStateChange</span><span class="p">(</span><span class="nv">object</span><span class="p">,</span><span class="w"> </span><span class="nv">new_state_index</span><span class="p">,</span><span class="w"> </span><span class="nv">player_color</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">player_color</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="s2">&quot;White&quot;</span>
+<span class="kr">end</span>
+</code></pre></div></p>
+</div>
+<hr />
 <h2 id="object-event-handler-details">Object Event Handler Details<a class="headerlink" href="#object-event-handler-details" title="Permanent link">&para;</a></h2>
 <h3 id="oncollisionenter">onCollisionEnter(...)<a class="headerlink" href="#oncollisionenter" title="Permanent link">&para;</a></h3>
 <p>Called when an Object starts colliding with the script-owner Object.</p>
@@ -4173,6 +4269,7 @@ return <code>true</code> to indicate you've handled the event yourself.</p>
 <ul>
 <li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player that typed the number.</li>
 <li><a href="../types/"><span class="tag int"></span></a> <strong>number</strong>: The number typed.</li>
+<li><a href="../types/"><span class="tag boo"></span></a> <strong>alt</strong>: Whether the Alt key us held down.</li>
 </ul>
 </div>
 <div class="admonition example">
@@ -4372,6 +4469,24 @@ script-owner Object to rotate.</p>
 <p>Only allow the blue player to rotate the script-owner Object.
 <div class="highlight"><pre><span></span><code><span class="kr">function</span><span class="w"> </span><span class="nf">tryRotate</span><span class="p">(</span><span class="nv">spin</span><span class="p">,</span><span class="w"> </span><span class="nv">flip</span><span class="p">,</span><span class="w"> </span><span class="nv">player_color</span><span class="p">,</span><span class="w"> </span><span class="nv">old_spin</span><span class="p">,</span><span class="w"> </span><span class="nv">old_flip</span><span class="p">)</span>
 <span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">player_color</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;Blue&quot;</span>
+<span class="kr">end</span>
+</code></pre></div></p>
+</div>
+<hr />
+<h3 id="trystatechange">tryStateChange(...)<a class="headerlink" href="#trystatechange" title="Permanent link">&para;</a></h3>
+<p>Called before an object changes state.  Return false to prevent the state change.</p>
+<div class="admonition info">
+<p class="admonition-title">tryStateChange(new_state_index, player_color)</p>
+<ul>
+<li><a href="../types/"><span class="tag int"></span></a> <strong>new_state_index</strong>: The state index the object is trying to change to.</li>
+<li><a href="../types/"><span class="tag str"></span></a> <strong>player_color</strong>: <a href="../player/colors/">Player Color</a> of the player that is attempting the change.</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Prevent White from changing object states.
+<div class="highlight"><pre><span></span><code><span class="kr">function</span><span class="w"> </span><span class="nf">tryStateChange</span><span class="p">(</span><span class="nv">new_state_index</span><span class="p">,</span><span class="w"> </span><span class="nv">player_color</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">player_color</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="s2">&quot;White&quot;</span>
 <span class="kr">end</span>
 </code></pre></div></p>
 </div>

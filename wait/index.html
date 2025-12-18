@@ -1024,6 +1024,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#collect" class="md-nav__link">
+    collect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#condition" class="md-nav__link">
     condition(...)
   </a>
@@ -1272,6 +1279,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#collect" class="md-nav__link">
+    collect(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#condition" class="md-nav__link">
     condition(...)
   </a>
@@ -1363,6 +1377,14 @@ next line of code after a <code>Wait</code> function call will always be execute
 </thead>
 <tbody>
 <tr>
+<td>collect(<a href="../types/"><span class="tag tab"></span></a> expected_ids, <a href="../types/#function"><span class="tag fun"></span></a> on_finished, <a href="../types/#function"><span class="tag fun"></span></a> on_add, <a href="../types/#function"><span class="tag fun"></span></a> on_error)</td>
+<td>Tracks progress of a given task for multiple entities (typically players).</td>
+<td><a href="../types/"><span class="ret tab"></span></a></td>
+<td><a href="#collect"><span class="twemoji"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-information-outline" width="24" height="24" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/></svg></span></a></td>
+</tr>
+<tr>
 <td>condition(<a href="../types/#function"><span class="tag fun"></span></a> toRunFunc, <a href="../types/#function"><span class="tag fun"></span></a> conditionFunc, <a href="../types/"><span class="tag flo"></span></a> timeout, <a href="../types/#function"><span class="tag fun"></span></a> timeoutFunc)</td>
 <td>Schedules a function to be executed after the specified condition has been met.</td>
 <td><a href="../types/"><span class="ret int"></span></a></td>
@@ -1406,6 +1428,99 @@ next line of code after a <code>Wait</code> function call will always be execute
 </table>
 <hr />
 <h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link">&para;</a></h2>
+<h3 id="collect">collect(...)<a class="headerlink" href="#collect" title="Permanent link">&para;</a></h3>
+<p><a href="../types/"><span class="ret tab"></span></a> Creates a <code>collect_table</code> that can be used to track the progress across a specific task for multiple entities (typically players).</p>
+<div class="admonition info">
+<p class="admonition-title">collect(expected_ids, on_finished, on_add, on_error)</p>
+<ul>
+<li><a href="../types/"><span class="tag tab"></span></a> <strong>expected_ids</strong>: A list of IDs which the <code>collect_table</code> will wait for.  These can be anything as long as each is unique and can be used as a table key; player colors would be the typical use if you want to do a thing for each player.</li>
+<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>on_finished</strong>: The function that will be executed once every ID has been added.</li>
+<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>on_add</strong>: A function that will be executed whenever you call <code>collect_table:add</code> for an ID.<ul>
+<li><span class="critic comment">Optional</span></li>
+</ul>
+</li>
+<li><a href="../types/#function"><span class="tag fun"></span></a> <strong>on_error</strong>: A function that will be executed whenever an error occurs (trying to add an unexpected ID, or the same ID more than once).<ul>
+<li><span class="critic comment">Optional</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Call this to get your <code>collect_table</code>.  You may then call <code>collect_table:add(id, ...)</code> for each expected ID.  When you call it these will happen:</p>
+<ul>
+<li><code>collect_table.results[id]</code> is set to whatever <code>...</code> you passed in.</li>
+<li>If you provided an <code>on_add</code>, it is called as <code>on_add(id, ...)</code>.</li>
+</ul>
+<p>If you provided an <code>on_error</code> function it will be called if either of these siutations occurs:</p>
+<ul>
+<li>If you call <code>collect_table:add</code> <strong>more than once</strong> for the same id, it will be called with <code>on_error(Wait.COLLECT_DUPLICATE, id, ...)</code>.</li>
+<li>If you call <code>collect_table:add</code> with an ID that <strong>you did not list in your expected ids</strong>, it will be called with <code>on_error(Wait.COLLECT_UNKNOWN, id, ...)</code>.</li>
+</ul>
+<p>Once <code>collect_table:add</code> has been called for every expected ID, <code>on_finished</code> will be called with <code>on_finished(collect_table.results)</code>.</p>
+<p>You may call <code>collect_table:reset()</code> to reset the collect_table, allowing you to reuse it.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Use <code>Wait.collect</code> and <code>chooseInHand</code> to draft cards.
+<div class="highlight"><pre><span></span><code><span class="kr">function</span><span class="w"> </span><span class="nf">startDraft</span><span class="p">()</span>
+<span class="w">    </span><span class="c1">-- Each player picks 1 to 3 cards in their hand, which will immediately be moved to their</span>
+<span class="w">    </span><span class="c1">-- stash.</span>
+<span class="w">    </span><span class="c1">-- Once all players have picked, the cards they didn&#39;t choose are given to the next</span>
+<span class="w">    </span><span class="c1">-- player, the cards they picked are returned to their hand.</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">players</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">chooseInHand</span><span class="p">(</span><span class="s2">&quot;my_draft&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;{en}Pick up to 3 cards!&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nv">draft_collect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Wait</span><span class="p">.</span><span class="nf">collect</span><span class="p">(</span><span class="nv">players</span><span class="p">,</span>
+<span class="w">        </span><span class="kr">function</span><span class="p">(</span><span class="nv">results</span><span class="p">)</span><span class="w">  </span><span class="c1">-- on_finished</span>
+<span class="w">            </span><span class="kd">local</span><span class="w"> </span><span class="nv">send_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">            </span><span class="kd">local</span><span class="w"> </span><span class="nv">chosen_cards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">            </span><span class="kr">for</span><span class="w"> </span><span class="nv">player</span><span class="p">,</span><span class="w"> </span><span class="nv">chosen</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">pairs</span><span class="p">(</span><span class="nv">results</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">                </span><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="p">,</span><span class="w"> </span><span class="nv">card</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">chosen</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">                    </span><span class="nv">chosen_cards</span><span class="p">[</span><span class="nv">card</span><span class="p">.</span><span class="py">guid</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">                </span><span class="kr">end</span>
+<span class="w">            </span><span class="kr">end</span>
+<span class="w">            </span><span class="kr">for</span><span class="w"> </span><span class="nv">player</span><span class="p">,</span><span class="w"> </span><span class="nv">chosen</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">pairs</span><span class="p">(</span><span class="nv">results</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">                </span><span class="kd">local</span><span class="w"> </span><span class="nv">send_to_player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">next_player</span><span class="p">(</span><span class="nv">players</span><span class="p">,</span><span class="w"> </span><span class="nv">player</span><span class="p">)</span>
+<span class="w">                </span><span class="kd">local</span><span class="w"> </span><span class="nv">cards_in_hand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Player</span><span class="p">[</span><span class="nv">player</span><span class="p">].</span><span class="nf">getHandObjects</span><span class="p">()</span>
+<span class="w">                </span><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="p">,</span><span class="w"> </span><span class="nv">card</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">cards_in_hand</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">                    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">chosen_cards</span><span class="p">[</span><span class="nv">card</span><span class="p">.</span><span class="py">guid</span><span class="p">]</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">                        </span><span class="nf">getObjectFromGUID</span><span class="p">(</span><span class="nv">card</span><span class="p">.</span><span class="py">guid</span><span class="p">).</span><span class="nf">sendToHand</span><span class="p">(</span><span class="nv">send_to_player</span><span class="p">)</span>
+<span class="w">                    </span><span class="kr">end</span>
+<span class="w">                </span><span class="kr">end</span>
+<span class="w">                </span><span class="nv">Player</span><span class="p">[</span><span class="nv">player</span><span class="p">].</span><span class="nf">drawHandStash</span><span class="p">()</span>
+<span class="w">            </span><span class="kr">end</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">        </span><span class="p">,</span>
+<span class="w">        </span><span class="kr">function</span><span class="p">(...)</span><span class="w">  </span><span class="c1">-- on_add</span>
+<span class="w">            </span><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="p">,</span><span class="w"> </span><span class="nv">card</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(...)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">                </span><span class="nv">card</span><span class="p">.</span><span class="nf">moveToHandStash</span><span class="p">()</span>
+<span class="w">            </span><span class="kr">end</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">        </span><span class="p">,</span>
+<span class="w">        </span><span class="kr">function</span><span class="p">(</span><span class="nv">player_color</span><span class="p">,</span><span class="w"> </span><span class="nb">error</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w">  </span><span class="c1">-- on_error</span>
+<span class="w">            </span><span class="nf">log</span><span class="p">({</span><span class="s2">&quot;ERR&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">error</span><span class="p">,</span><span class="w"> </span><span class="nv">player_color</span><span class="p">,</span><span class="w"> </span><span class="p">...})</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="kr">end</span>
+
+
+<span class="kr">function</span><span class="w"> </span><span class="nf">onPlayerHandChoice</span><span class="p">(</span><span class="nv">player_color</span><span class="p">,</span><span class="w"> </span><span class="nv">label</span><span class="p">,</span><span class="w"> </span><span class="nv">objects</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;my_draft&quot;</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="nv">draft_collect</span><span class="p">:</span><span class="nf">add</span><span class="p">(</span><span class="nv">player_color</span><span class="p">,</span><span class="w"> </span><span class="nv">objects</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="kr">end</span>
+
+
+<span class="kr">function</span><span class="w"> </span><span class="nf">next_player</span><span class="p">(</span><span class="nv">players</span><span class="p">,</span><span class="w"> </span><span class="nv">current_player</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">return_next_player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="p">,</span><span class="w"> </span><span class="nv">player</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">players</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nv">return_next_player</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">            </span><span class="kr">return</span><span class="w"> </span><span class="nv">player</span>
+<span class="w">        </span><span class="kr">elseif</span><span class="w"> </span><span class="nv">player</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">current_player</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">            </span><span class="nv">return_next_player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">players</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="kr">end</span>
+</code></pre></div></p>
+</div>
+<hr />
 <h3 id="condition">condition(...)<a class="headerlink" href="#condition" title="Permanent link">&para;</a></h3>
 <p><a href="../types/"><span class="ret int"></span></a> Schedules a function to be executed after the specified condition has been met.</p>
 <p>The return value is a unique ID that may be used to <a href="#stop">stop</a> the scheduled function before it runs.</p>
