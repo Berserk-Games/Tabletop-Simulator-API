@@ -239,7 +239,7 @@ addToPlayerSelection([<span class="tag str"></span>](types.md) player_color) {: 
 clearContextMenu() {: data-toc-label="clearContextMenu()" data-toc-child-of="action-function-details" } | Clears all menu items added by function [addContextMenuItem(...)](#addcontextmenuitem). | [<span class="ret boo"></span>](types.md) |
 clone([<span class="tag tab"></span>](types.md) parameters) | Copy/Paste this Object, returning a reference to the new Object. | [<span class="ret obj"></span>](types.md) | [:i:](#clone)
 cut([<span class="tag int"></span>](types.md) count) | Cuts (splits) a deck at the given card count. | [<span class="ret tab"></span>](types.md) | [:i:](#cut)
-deal([<span class="tag int"></span>](types.md) number, [<span class="tag str"></span>](types.md) player_color, [<span class="tag int"></span>](types.md) index) | Deals Objects. Will deal from decks/bags/stacks/individual items. | [<span class="ret boo"></span>](types.md) | [:i:](#deal)
+deal([<span class="tag int"></span>](types.md) number, [<span class="tag str"></span>](types.md) player_color, [<span class="tag int"></span>](types.md) index, [<span class="tag boo"></span>](types.md) deal_from_bottom) | Deals Objects. Will deal from decks/bags/stacks/individual items. | [<span class="ret boo"></span>](types.md) | [:i:](#deal)
 dealToColorWithOffset([<span class="tag vec"></span>](types.md#vector) offset, [<span class="tag boo"></span>](types.md) flip, [<span class="tag str"></span>](types.md) player_color) | Deals from a deck to a position relative to the hand zone. | [<span class="ret obj"></span>](types.md) | [:i:](#dealtocolorwithoffset)
 destroyAttachment([<span class="tag int"></span>](types.md) index) {: data-toc-label="destroyAttachment(...)" data-toc-child-of="action-function-details" } | Destroys an attachment with the given index. | [<span class="ret boo"></span>](types.md)
 destroyAttachments() {: data-toc-label="destroyAttachments()" data-toc-child-of="action-function-details" } | Destroys all attachments. | [<span class="ret boo"></span>](types.md)
@@ -249,7 +249,8 @@ flip() {: data-toc-label="flip()" data-toc-child-of="action-function-details" } 
 highlightOff([<span class="tag col"></span>](types.md#color) color) {: data-toc-label="highlightOff(...)" data-toc-child-of="action-function-details" } | Removes a highlight from around an Object. | [<span class="ret boo"></span>](types.md) |
 highlightOn([<span class="tag col"></span>](types.md#color) color, [<span class="tag flo"></span>](types.md) duration) {: data-toc-label="highlightOn(...)" data-toc-child-of="action-function-details" } | Creates a highlight around an Object. `duration` is optional and specified in seconds, when omitted the Object remains highlighted. | [<span class="ret boo"></span>](types.md) |
 jointTo([<span class="tag obj"></span>](types.md) object, [<span class="tag tab"></span>](types.md) parameters) | Joints objects together, in the same way the Joint tool does. | [<span class="ret boo"></span>](types.md) | [:i:](#jointto)
-putObject([<span class="tag obj"></span>](types.md) put_object) | Places an object into a container (chip stacks/bags/decks). | [<span class="ret obj"></span>](types.md) | [:i:](#putobject)
+moveToHandStash() | Moves a card in hand into the player's hand stash. | [<span class="ret boo"></span>](types.md) | [:i:](#movetohandstash)
+putObject([<span class="tag obj"></span>](types.md) put_object, [<span class="tag int"></span>](types.md) index) | Places an object into a container (chip stacks/bags/decks). | [<span class="ret obj"></span>](types.md) | [:i:](#putobject)
 randomize([<span class="tag str"></span>](types.md) color) {: data-toc-label="randomize(...)" data-toc-child-of="action-function-details" } | Shuffles deck/bag, rolls dice/coin, lifts other objects into the air. Same as pressing ++R++ by default. If the optional parameter `color` is used, this function will trigger `onObjectRandomized()`, passing that player color. | [<span class="ret boo"></span>](types.md) |
 registerCollisions([<span class="tag boo"></span>](types.md) stay) | Registers this object for Global collision events. | [<span class="ret boo"></span>](types.md) | [:i:](#registercollisions)
 reload() | Returns Object reference of itself after it respawns itself. | [<span class="ret obj"></span>](types.md) | [:i:](#reload)
@@ -1356,6 +1357,8 @@ newDecks[2].deal(1)
 		* {>>Optional, defaults to an empty string. If not supplied, it will attempt to deal to all seated players.<<}
 	* [<span class="tag int"></span>](types.md) **index**: Index of hand zone to deal to.
 		* {>>Optional, defaults to the first created hand zone.<<}
+	* [<span class="tag boo"></span>](types.md) **deal_from_bottom**: Deal the card from the bottom of the deck instead of the top.
+		* {>>Optional, defaults to the top card of the deck.<<}
 
 ---
 
@@ -1431,12 +1434,27 @@ self.jointTo(obj, {
 ---
 
 
+#### moveToHandStash(...)
+
+[<span class="ret boo"></span>](types.md) Can be called on card objects held in the player's hand; will move the card into the player's hand stash.  The stash is a temporary holding area for cards, useful when implementing drafting mechanics.  The stash is not generally interactable by players (though they can dislodge it by using the gizmo tool).
+
+!!! info "Retrieving cards from the hand stash"
+    You should always use [Player.drawHandStash()](player/instance.md#drawhandstash) to retreive cards from the hand stash.
+
+See [Wait.collect](wait.md#collect) for an example of using the hand stash.
+
+---
+
+
+
 #### putObject(...)
 
 [<span class="ret obj"></span>](types.md) Places an object into a container (chip stacks/bags/decks). If neither Object is a container, but they are able to be combined (like with 2 cards), then they form a deck/stack.
 
-!!! info "putObject(put_object)"
+!!! info "putObject(put_object, index)"
 	  * [<span class="tag obj"></span>](types.md) **put_object**: An Object to place into the container.
+	  * [<span class="tag int"></span>](types.md) **index**: Target index inside the container.
+		* {>>Optional<<}
 
 !!! info "Returned Object"
     The container is returned as the Object reference. Either this is the container/deck/stack the other Object was placed into, or the deck/stack that was formed by the putObject action.

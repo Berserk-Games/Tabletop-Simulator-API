@@ -11,6 +11,10 @@ Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
 addContextMenuItem([<span class="tag str"></span>](types.md) label, [<span class="tag fun"></span>](types.md) toRunFunc, [<span class="tag boo"></span>](types.md) keep_open, [<span class="tag boo"></span>](types.md) require_table) | Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table. | [<span class="ret boo"></span>](types.md) | [:i:](#addcontextmenuitem)
 clearContextMenu() {: data-toc-label="clearContextMenu()" data-toc-child-of="global-function-details" } | Clears all menu items added by function [addContextMenuItem(...)](#addcontextmenuitem). | [<span class="ret boo"></span>](types.md) |
+chooseInHand([<span class="tag str"></span>](types.md) label, [<span class="tag int"></span>](types.md) min_selected_count, [<span class="tag int"></span>](types.md) min_selected_count, [<span class="tag str"></span>](types.md) prompt, [<span class="tag tab"></span>](types.md) player_colors) | Start hand select mode. | [<span class="ret tab"></span>](types.md) | [:i:](#chooseinhand)
+chooseInHandOrCancel([<span class="tag str"></span>](types.md) label, [<span class="tag int"></span>](types.md) min_selected_count, [<span class="tag int"></span>](types.md) min_selected_count, [<span class="tag str"></span>](types.md) prompt, [<span class="tag tab"></span>](types.md) player_colors) | Start hand select mode with additional Cancel button. | [<span class="ret tab"></span>](types.md) | [:i:](#chooseinhandorcancel)
+clearChooseInHand([<span class="tag tab"></span>](types.md) player_colors) | Clear hand select mode. | [<span class="ret tab"></span>](types.md) | [:i:](#clearchooseinhand)
+currentChooseInHand([<span class="tag str"></span>](types.md) player_color) | Get label of current hand select mode for given player. | [<span class="ret str"></span>](types.md) | [:i:](#currentchooseinhand)
 copy([<span class="tag tab"></span>](types.md) object_list) | Copy a list of Objects to the clipboard. Works with [paste(...)](#paste). | [<span class="ret boo"></span>](types.md) | [:i:](#copy)
 destroyObject([<span class="tag obj"></span>](types.md) obj) | Destroy an Object. | [<span class="ret boo"></span>](types.md) | [:i:](#destroyobject)
 flipTable() {: #fliptable data-toc-label="flipTable()" data-toc-child-of="global-function-details" } | Flip the table. | [<span class="ret boo"></span>](types.md) |
@@ -29,6 +33,14 @@ spawnObjectData([<span class="tag tab"></span>](types.md) parameters) | Spawns a
 spawnObjectJSON([<span class="tag tab"></span>](types.md) parameters) | Spawns an object from a JSON string. | [<span class="ret obj"></span>](types.md) | [:i:](#spawnobjectjson)
 startLuaCoroutine([<span class="tag obj"></span>](types.md) function_owner, [<span class="tag str"></span>](types.md) function_name) | Start a coroutine. | [<span class="ret boo"></span>](types.md) | [:i:](#startluacoroutine)
 stringColorToRGB([<span class="tag str"></span>](types.md) player_color) | Converts a [Player Color](player/colors.md) string into a Color Table for tinting. | [<span class="ret col"></span>](types.md#color) | [:i:](#stringcolortorgb)
+
+####Rewind State Functions
+Rewind states are stored periodically. If a store happens **in the middle of a complex scripted change**, you can end up with bad intermediate states. These helpers let you control when rewinds are saved.
+
+Function Name | Description | Return | &nbsp;
+-- | -- | -- | --
+storeRewindState([<span class="tag fun"></span>](types.md) and_then, [<span class="tag boo"></span>](types.md) block_further_stores) | Stores a rewind state. | [<span class="ret boo"></span>](types.md) | [:i:](#storerewindstate)
+allowRewindStore() | Clears the block on storing rewind states. | [<span class="ret boo"></span>](types.md) | [:i:](#allowrewindstore)
 
 ####Hotkey Functions
 Function Name | Description | Return | &nbsp;
@@ -51,7 +63,6 @@ print([<span class="tag str"></span>](types.md) message) | Prints a string into 
 printToAll([<span class="tag str"></span>](types.md) message, [<span class="tag col"></span>](types.md#color) message_tint) | Print a message into the chat of all connected players. | [<span class="ret boo"></span>](types.md) | [:i:](#printtoall)
 printToColor([<span class="tag str"></span>](types.md) message, [<span class="tag str"></span>](types.md) player_color, [<span class="tag col"></span>](types.md#color) message_tint) | Print a message to a specific [Player Color](player/colors.md). | [<span class="ret boo"></span>](types.md) | [:i:](#printtocolor)
 sendExternalMessage([<span class="tag tab"></span>](types.md) data) {: #sendexternalmessage data-toc-label="sendExternalMessage(...)" data-toc-child-of="message-function-details" } | Send a table to your external script editor, most likely Atom. This is for custom editor functionality. | [<span class="ret boo"></span>](types.md) |
-
 
 
 ---
@@ -128,7 +139,7 @@ copy(object_list)
 ####getObjects()
 
 [<span class="ret tab"></span>](types.md) Returns a table of all Objects.
- 
+
 !!!example
 	This can be used to identify objects in any way, for example the name:
 	```lua
@@ -149,7 +160,7 @@ copy(object_list)
 ####getObjectsWithTag(...)
 
 [<span class="ret tab"></span>](types.md) Returns a table of all Objects which have the specified tag attached.
- 
+
 !!!info "getObjectsWithTag(tag)"
 	* [<span class="tag str"></span>](types.md) **tag**: The tag to search for on Objects.
 		* {>>Tags can be added to objects via right-click -> Tags.<<}
@@ -168,7 +179,7 @@ copy(object_list)
 ####getObjectsWithAnyTags(...)
 
 [<span class="ret tab"></span>](types.md) Returns a table of all Objects which have at least one of the specified tags attached.
- 
+
 !!!info "getObjectsWithAnyTags(tags)"
 	* [<span class="tag tab"></span>](types.md) **tags**: A table of tags to search for. An Object must have at least one of these tags to be returned.
 		* {>>Tags can be added to objects via right-click -> Tags.<<}
@@ -188,7 +199,7 @@ copy(object_list)
 ####getObjectsWithAllTags(...)
 
 [<span class="ret tab"></span>](types.md) Returns a table of all Objects which have all of of the specified tags attached.
- 
+
 !!!info "getObjectsWithAllTags(tags)"
 	* [<span class="tag tab"></span>](types.md) **tags**: A table of tags to search for. An Object must have every tag in this table to be returned.
 		* {>>Tags can be added to objects via right-click -> Tags.<<}
@@ -384,7 +395,7 @@ the object has finished spawning.
 
 		-- Loop through the deck data to find the requested card
 		for i, cardData in ipairs(deckData.ContainedObjects) do
-	
+
 			-- Check if the nickname matches
 			if cardData["Nickname"] == nickname then
 
@@ -514,6 +525,43 @@ end
 ``` Lua
 printToAll("Blue message", stringColorToRGB("Blue"))
 ```
+
+---
+
+### Rewind State Function Details {: data-toc-sort }
+
+####storeRewindState(...)
+
+[<span class="ret boo"></span>](types.md) Attempts to store a rewind state.
+
+If the game has changed since the last rewind state was store, a new rewind state is stored.  The `and_then` function is then called with `and_then(success, new_state_was_stored)`.  `success` is true if a new state was successfully stored, or if no store was necessary.  `new_state_was_stored` is true if a new state was stored.
+
+!!!info "storeRewindState(and_then, block_further_stores)"
+	* [<span class="tag fun"></span>](types.md) **and_then**(success, new_state_was_stored): The function that will be executed after the attempt to store a rewind state.
+	* [<span class="tag boo"></span>](types.md) **block_further_stores**: If true then rewind states will not be automatically stored again until either **60s** has passed, or you call `allowRewindStore()`.
+
+!!!example
+	```lua
+	storeRewindState(
+		function(success, did_store)
+			if ~success then
+				log("Failed to store a rewind state.", "storeRewindState", "error")
+				return
+			end
+
+			clearCurrentLevel()
+			spawnNextLevel()
+			allowRewindStore()
+		end, true) -- block_further_stores
+	)
+	```
+
+---
+
+####allowRewindStore()
+
+[<span class="ret boo"></span>](types.md) Clears the block on automatically storing rewind states.  You should always call this after you call `storeRewindState`, once you have completed whatever sweeping changes you are making.
+
 
 ---
 
@@ -731,5 +779,60 @@ printToAll("Hello World!", {r=1,g=0,b=0})
 ``` Lua
 printToColor("Hello Red.", "Red", {r=1,g=0,b=0})
 ```
+
+---
+
+
+###Hand Select Mode Function Details {: data-toc-sort }
+
+####chooseInHand(...)
+
+[<span class="ret tab"></span>](types.md) Begins the hand selection mode (or enqueues it if one is already in effect).  Returns a list of the affected player colors.
+
+!!!info "chooseInHand(label, min_selection_count, max_selection_count, prompt, players)"
+	* [<span class="tag str"></span>](types.md) **label**: Label associated with this mode.  This is how you will tell which hand select is active in the callback.
+	* [<span class="tag int"></span>](types.md) **min_selection_count**: The minimum number of cards the player must select.
+	* [<span class="tag int"></span>](types.md) **max_selection_count**: The maximum number of cards the player can select.
+	* [<span class="tag str"></span>](types.md) **prompt**: The prompt displayed to the player during this mode.
+	* [<span class="tag tab"></span>](types.md) **player_colors**: Optional list of player colors to activate the mode for.  If omitted the currently seated players will be selected.
+		* {>>Optional<<}
+
+See [Wait.collect](wait.md#collect) for an example.
+
+---
+
+####chooseInHandOrCancel(...)
+
+[<span class="ret tab"></span>](types.md) Begins the hand selection mode (or enqueues it if one is already in effect), and also displays a Cancel button.  Returns a list of the affected player colors.
+
+!!!info "chooseInHandOrCancel(label, min_selection_count, max_selection_count, prompt, players)"
+	* [<span class="tag str"></span>](types.md) **label**: Label associated with this mode.  This is how you will tell which hand select is active in the callback.
+	* [<span class="tag int"></span>](types.md) **min_selection_count**: The minimum number of cards the player must select.
+	* [<span class="tag int"></span>](types.md) **max_selection_count**: The maximum number of cards the player can select.
+	* [<span class="tag str"></span>](types.md) **prompt**: The prompt displayed to the player during this mode.
+	* [<span class="tag tab"></span>](types.md) **player_colors**: Optional list of player colors to activate the mode for.  If omitted the currently seated players will be selected.
+		* {>>Optional<<}
+
+See [Wait.collect](wait.md#collect) for an example.
+
+---
+
+
+####clearChooseInHand(...)
+
+[<span class="ret tab"></span>](types.md) Clears the current hand selection mode for the specified players.  Returns a list of the affected players.
+
+!!!info "clearChooseInHand(players)"
+	* [<span class="tag tab"></span>](types.md) **player_colors**: List of player colors to clear the mode for.
+
+---
+
+
+####currentChooseInHand(...)
+
+[<span class="ret str"></span>](types.md) Returns the current hand selection label for the given player.
+
+!!!info "currentChooseInHand(player_color)"
+	* [<span class="tag str"></span>](types.md) **player_color**: Player color to query.
 
 ---

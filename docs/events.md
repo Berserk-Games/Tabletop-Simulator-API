@@ -82,7 +82,7 @@ onObjectLeaveContainer([<span class="tag obj"></span>](types.md) container, [<sp
 onObjectLeaveScriptingZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) {: #onobjectleavescriptingzone data-toc-label="onObjectLeaveScriptingZone(...)" data-toc-child-of="universal-event-handler-details" } | <p>[<span class="tag deprecated"></span>](intro.md#deprecated) _Use [onObjectLeaveZone(...)](#onobjectleavezone)_.</p> Called when an object leaves a _scripting_ zone. |
 onObjectLeaveZone([<span class="tag obj"></span>](types.md) zone, [<span class="tag obj"></span>](types.md) object) | Called when an object leaves a zone. | [:i:](#onobjectleavezone)
 onObjectLoopingEffect([<span class="tag obj"></span>](types.md) object, [<span class="tag int"></span>](types.md) index) | Called whenever the looping effect of an [AssetBundle](behavior/assetbundle.md) is activated. | [:i:](#onobjectloopingeffect)
-onObjectNumberTyped([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color, [<span class="tag int"></span>](types.md) number) | Called when a player types a number whilst hovering over an object. | [:i:](#onobjectnumbertyped)
+onObjectNumberTyped([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color, [<span class="tag int"></span>](types.md) number, [<span class="tag boo"></span>](types.md) alt) | Called when a player types a number whilst hovering over an object. | [:i:](#onobjectnumbertyped)
 onObjectPageChange([<span class="tag obj"></span>](types.md) object) | Called when a Custom PDF object changes page. | [:i:](#onobjectpagechange)
 onObjectPeek([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a player peeks at an Object. | [:i:](#onobjectpeek)
 onObjectPickUp([<span class="tag str"></span>](types.md) player_color, [<span class="tag obj"></span>](types.md) object) | Called whenever a Player picks up an Object. | [:i:](#onobjectpickup)
@@ -99,6 +99,7 @@ onPlayerChangeTeam([<span class="tag str"></span>](types.md) player_color, [<spa
 onPlayerChatTyping([<span class="tag pla"></span>](types.md) player, [<span class="tag boo"></span>](types.md) typing) | Called when a player starts or stops typing. | [:i:](#onplayerchattyping)
 onPlayerConnect([<span class="tag pla"></span>](types.md) player) | Called when a [Player](player/instance.md) connects to a game. | [:i:](#onplayerconnect)
 onPlayerDisconnect([<span class="tag pla"></span>](types.md) player) | Called when a [Player](player/instance.md) disconnects from a game. | [:i:](#onplayerdisconnect)
+onPlayerHandChoice([<span class="tag str"></span>](types.md) player_color, [<span class="tag str"></span>](types.md) label, [<span class="tag tab"></span>](types.md) objects, [<span class="tag boo"></span>](types.md) was_confirmed) | Called when a [Player](player/instance.md) makes a choice during a hand select mode. | [:i:](#onplayerhandchoice)
 onPlayerPing([<span class="tag pla"></span>](types.md) player, [<span class="tag vec"></span>](types.md) position, [<span class="tag obj"></span>](types.md) object) | Called when a player [pings](https://kb.tabletopsimulator.com/game-tools/line-tool/#ping) a location. | [:i:](#onplayerping)
 onPlayerTurn([<span class="tag pla"></span>](types.md) player, [<span class="tag pla"></span>](types.md) previous_player) | Called at the start of a player's turn. | [:i:](#onplayerturn)
 onSave() | Called whenever a script needs to save its state. | [:i:](#onsave)
@@ -117,6 +118,7 @@ onZoneGroupSort([<span class="tag obj"></span>](types.md) zone, [<span class="ta
 tryObjectEnterContainer([<span class="tag obj"></span>](types.md) container, [<span class="tag obj"></span>](types.md) object) | Called when an object attempts to enter a container. | [:i:](#tryobjectentercontainer)
 tryObjectRandomize([<span class="tag obj"></span>](types.md) object, [<span class="tag str"></span>](types.md) player_color) | Called when a player attempts to randomize an Object. | [:i:](#tryobjectrandomize)
 tryObjectRotate([<span class="tag obj"></span>](types.md) object, [<span class="tag flo"></span>](types.md) spin, [<span class="tag flo"></span>](types.md) flip, [<span class="tag str"></span>](types.md) player_color,  [<span class="tag flo"></span>](types.md) old_spin, [<span class="tag flo"></span>](types.md) old_flip) | Called when a player attempts to rotate an object. | [:i:](#tryobjectrotate)
+tryObjectStateChange([<span class="tag obj"></span>](types.md) object, [<span class="tag int"></span>](types.md) new_state_index, [<span class="tag str"></span>](types.md) player_color) | Called when an object is about to change state. | [:i:](#tryobjectstatechange)
 
 ### Object Event Handlers {: #object-event-handlers-summary }
 
@@ -139,7 +141,7 @@ onDrop([<span class="tag str"></span>](types.md) player_color) | Called when a p
 onFlick([<span class="tag str"></span>](types.md) player_color, [<span class="tag vec"></span>](types.md) impulse) | Called when a player flicks the script-owner Object | [:i:](#onflick)
 onGroupSort([<span class="tag tab"></span>](types.md) group, [<span class="tag boo"></span>](types.md) reversed) | Called when sorting is required for a group of objects being laid out by the script-owner layout zone. | [:i:](#ongroupsort)
 onHover([<span class="tag str"></span>](types.md) player_color) | Called when a player moves their pointer (cursor) over the script-owner Object. | [:i:](#onhover)
-onNumberTyped([<span class="tag str"></span>](types.md) player_color, [<span class="tag int"></span>](types.md) number) | Called when a player types a number whilst hovering over the script-owner Object. | [:i:](#onnumbertyped)
+onNumberTyped([<span class="tag str"></span>](types.md) player_color, [<span class="tag int"></span>](types.md) number, [<span class="tag boo"></span>](types.md) alt) | Called when a player types a number whilst hovering over the script-owner Object. | [:i:](#onnumbertyped)
 onPageChange() | Called when the script-owner Custom PDF's page is changed. | [:i:](#onpagechange)
 onPeek([<span class="tag str"></span>](types.md) player_color) | Called when a player peeks at the script-owner Object. | [:i:](#onpeek)
 onPickUp([<span class="tag str"></span>](types.md) player_color) | Called when a player picks up the script-owner Object. | [:i:](#onpickup)
@@ -151,6 +153,7 @@ onStateChange([<span class="tag str"></span>](types.md) old_state_guid) | Called
 tryObjectEnter([<span class="tag obj"></span>](types.md) object) | Called when another object attempts to enter the script-owner Object (container).| [:i:](#tryobjectenter)
 tryRandomize([<span class="tag str"></span>](types.md) player_color) | Called when a player attempts to randomize the script-owner Object. | [:i:](#tryrandomize)
 tryRotate([<span class="tag flo"></span>](types.md) spin, [<span class="tag flo"></span>](types.md) flip, [<span class="tag str"></span>](types.md) player_color,  [<span class="tag flo"></span>](types.md) old_spin, [<span class="tag flo"></span>](types.md) old_flip) | Called when a player attempts to rotate the script-owner Object. | [:i:](#tryrotate)
+tryStateChange([<span class="tag int"></span>](types.md) new_state_index, [<span class="tag str"></span>](types.md) player_color) | Called when the object is about to change state. | [:i:](#trystatechange)
 
 ---
 
@@ -564,10 +567,11 @@ Called when a player types a number whilst hovering over an object.
 
 If you wish to prevent the default behavior (e.g. drawing a card) then you may return `true` to indicate you've handled the event yourself.
 
-!!!info "onObjectNumberTyped(object, player_color, number)"
+!!!info "onObjectNumberTyped(object, player_color, number, alt)"
 	* [<span class="tag obj"></span>](types.md) **object**: The object the player was hovering over whilst typing a number.
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that typed the number.
 	* [<span class="tag int"></span>](types.md) **number**: The number typed.
+	* [<span class="tag boo"></span>](types.md) **alt**: Whether the Alt key is held down.
 
 !!!example
 	Print the player color, the number they entered and the type of object being hovered over:
@@ -917,6 +921,20 @@ Called when a [Player](player/instance.md) disconnects from a game.
 
 ---
 
+###onPlayerHandChoice(...)
+
+Called when a [Player](player/instance.md) makes a choice in hand selection mode.
+
+!!!info "onPlayerHandChoice(player)"
+	* [<span class="tag str"></span>](types.md) **player_color**: The player color of the player who made the choice.
+	* [<span class="tag str"></span>](types.md) **label**: The label of the hand select mode in question.
+	* [<span class="tag tab"></span>](types.md) **objects**: The list of objects (cards) selected by the player.
+	* [<span class="tag boo"></span>](types.md) **was_confirmed**: True if the player confirmed the selection, false if they cancelled (Cancel option only appears if you use [chooseInHandOrCancel](base.md#chooseinhandorcancel)).
+
+See [Wait.collect](wait.md#collect) for an example.
+
+---
+
 
 ###onPlayerPing(...)
 
@@ -1177,6 +1195,25 @@ Return `false` to prevent the object being rotated.
 
 ---
 
+###tryObjectStateChange(...)
+
+Called before an object changes state.  Return false to prevent the state change.
+
+!!!info "tryObjectStateChange(object, new_state_index, player_color)"
+	* [<span class="tag obj"></span>](types.md) **object**: The object in question.
+	* [<span class="tag int"></span>](types.md) **new_state_index**: The state index the object is trying to change to.
+    * [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that is attempting the change.
+!!!example
+	Prevent White from changing object states.
+	``` Lua
+	function tryObjectStateChange(object, new_state_index, player_color)
+		return player_color ~= "White"
+	end
+	```
+
+---
+
+
 
 ## Object Event Handler Details
 
@@ -1376,6 +1413,7 @@ return `true` to indicate you've handled the event yourself.
 !!!info "onNumberTyped(player_color, number)"
 	* [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that typed the number.
 	* [<span class="tag int"></span>](types.md) **number**: The number typed.
+	* [<span class="tag boo"></span>](types.md) **alt**: Whether the Alt key us held down.
 
 !!!example
 	Print the player color and the number they typed:
@@ -1587,6 +1625,23 @@ Return `false` to prevent the rotation taking place.
 	```lua
 	function tryRotate(spin, flip, player_color, old_spin, old_flip)
 		return player_color == "Blue"
+	end
+	```
+
+---
+
+###tryStateChange(...)
+
+Called before an object changes state.  Return false to prevent the state change.
+
+!!!info "tryStateChange(new_state_index, player_color)"
+	* [<span class="tag int"></span>](types.md) **new_state_index**: The state index the object is trying to change to.
+    * [<span class="tag str"></span>](types.md) **player_color**: [Player Color](player/colors.md) of the player that is attempting the change.
+!!!example
+	Prevent White from changing object states.
+	``` Lua
+	function tryStateChange(new_state_index, player_color)
+		return player_color ~= "White"
 	end
 	```
 

@@ -28,6 +28,7 @@ broadcast([<span class="tag str"></span>](../types.md) message, [<span class="ta
 changeColor([<span class="tag str"></span>](../types.md) player_color) | [<span class="ret boo"></span>](../types.md) | Changes player to this [Player Color](colors.md). | [:i:](#changecolor)
 clearSelectedObjects() {: #clearselectedobjects data-toc-label="clearSelectedObjects()" data-toc-child-of="function-details" } | [<span class="ret boo"></span>](../types.md) | Clears a player's current selection. |
 copy([<span class="tag tab"></span>](../types.md) objects) | [<span class="ret boo"></span>](../types.md) | Makes the Player take the Copy action with the specified Objects. | [:i:](#copy)
+drawHandStash() | [<span class="ret boo"></span>](../types.md) | Draws all the cards in the players hand stash into their hand. | [:i:](#drawhandstash)
 getHandCount() {: #gethandcount data-toc-label="getHandCount()" data-toc-child-of="function-details" } | [<span class="ret int"></span>](../types.md) | Number of [hand zones](https://kb.tabletopsimulator.com/host-guides/player-hands/) owned by this color. |
 getHandObjects([<span class="tag int"></span>](../types.md) hand_index) | [<span class="ret tab"></span>](../types.md) | Objects that are in this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/). | [:i:](#gethandobjects)
 getHandTransform([<span class="tag int"></span>](../types.md) hand_index)| [<span class="ret tab"></span>](../types.md) | Returns a Table of data on this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/). | [:i:](#gethandtransform)
@@ -44,6 +45,7 @@ pingTable([<span class="tag vec"></span>](../types.md#vector) position) {: #ping
 print([<span class="tag str"></span>](../types.md) message, [<span class="tag col"></span>](../types.md#color) message_color) | [<span class="ret boo"></span>](../types.md) | Prints a message into the Player's game chat. | [:i:](#print)
 promote() {: #promote data-toc-label="promote()" data-toc-child-of="function-details" } | [<span class="ret boo"></span>](../types.md) | Promotes/demotes a Player. Promoted players have access to most host privileges. |
 setCameraMode([<span class="tag str"></span>](../types.md) camera_mode) | [<span class="ret boo"></span>](../types.md) | Sets the player's camera mode. Camera modes available: "ThirdPerson", "FirstPerson", "TopDown". | [:i:](#setcameramode)
+setHandStashLocation([<span class="tag vec"></span>](../types.md#vector) position, [<span class="tag int"></span>](../types.md) rotation) | [<span class="ret boo"></span>](../types.md) | Sets the location of the hand stash within the players primary hand. | [:i:](#sethandstashlocation)
 setHandTransform([<span class="tag tab"></span>](../types.md) parameters, [<span class="tag int"></span>](../types.md) hand_index) | [<span class="ret boo"></span>](../types.md) | Sets transform elements of a hand zone. | [:i:](#sethandtransform)
 setUITheme([<span class="tag str"></span>](../types.md) theme) | [<span class="ret boo"></span>](../types.md) | Sets the UI theme for the player. | [:i:](#setuitheme)
 showInfoDialog([<span class="tag str"></span>](../types.md) info) | [<span class="ret boo"></span>](../types.md) | Displays `info` string to player in the message box dialog. | [:i:](#showinfodialog)
@@ -110,6 +112,15 @@ Player["White"].changeColor("Red")
 ``` Lua
 Player.Green.copy({the_dice, the_deck})
 ```
+
+---
+
+
+### drawHandStash(...)
+
+[<span class="ret boo"></span>](../types.md) Draws all cards in the player's hand stash into their hand.
+
+See [Wait.collect](../wait.md#collect) for an example of using the hand stash.
 
 ---
 
@@ -214,6 +225,16 @@ Player.Green.paste({0, 1, 0})
 ``` Lua
 Player["White"].setCameraMode("FirstPerson")
 ```
+
+---
+
+### setHandStashLocation(...)
+
+[<span class="ret boo"></span>](../types.md) Sets the location of the player's hand stash inside their primary hand zone.
+
+!!!info "setHandStashLocation(position, rotation)"
+    * [<span class="tag vec"></span>](../types.md#vector) **position**: The position of the stash inside the hand zone.  Each ordinal is in the range (**-1.0**..**+1.0**).
+    * [<span class="tag int"></span>](../types.md) **rotation_index**: The rotation index of the hand stash.
 
 ---
 

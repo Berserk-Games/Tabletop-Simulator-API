@@ -8,6 +8,7 @@ The `Wait` class is a static global class which allows you to schedule code (fun
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
+collect([<span class="tag tab"></span>](types.md) expected_ids, [<span class="tag fun"></span>](types.md#function) on_finished, [<span class="tag fun"></span>](types.md#function) on_add, [<span class="tag fun"></span>](types.md#function) on_error) | Tracks progress of a given task for multiple entities (typically players). | [<span class="ret tab"></span>](types.md) | [:i:](#collect)
 condition([<span class="tag fun"></span>](types.md#function) toRunFunc, [<span class="tag fun"></span>](types.md#function) conditionFunc, [<span class="tag flo"></span>](types.md) timeout, [<span class="tag fun"></span>](types.md#function) timeoutFunc) | Schedules a function to be executed after the specified condition has been met. | [<span class="ret int"></span>](types.md) | [:i:](#condition)
 frames([<span class="tag fun"></span>](types.md#function) toRunFunc, [<span class="tag int"></span>](types.md) numberFrames) | Schedules a function to be executed after the specified number of frames have elapsed. | [<span class="ret int"></span>](types.md) | [:i:](#frames)
 stop([<span class="tag int"></span>](types.md) id) | Cancels a Wait-scheduled function. | [<span class="ret boo"></span>](types.md) | [:i:](#stop)
@@ -17,6 +18,99 @@ time([<span class="tag fun"></span>](types.md#function) toRunFunc, [<span class=
 ---
 
 ##Function Details
+
+###collect(...)
+
+[<span class="ret tab"></span>](types.md) Creates a `collect_table` that can be used to track the progress across a specific task for multiple entities (typically players).
+
+!!!info "collect(expected_ids, on_finished, on_add, on_error)"
+    * [<span class="tag tab"></span>](types.md) **expected_ids**: A list of IDs which the `collect_table` will wait for.  These can be anything as long as each is unique and can be used as a table key; player colors would be the typical use if you want to do a thing for each player.
+    * [<span class="tag fun"></span>](types.md#function) **on_finished**: The function that will be executed once every ID has been added.
+    * [<span class="tag fun"></span>](types.md#function) **on_add**: A function that will be executed whenever you call `collect_table:add` for an ID.
+        * {>>Optional<<}
+    * [<span class="tag fun"></span>](types.md#function) **on_error**: A function that will be executed whenever an error occurs (trying to add an unexpected ID, or the same ID more than once).
+        * {>>Optional<<}
+
+Call this to get your `collect_table`.  You may then call `collect_table:add(id, ...)` for each expected ID.  When you call it these will happen:
+
+* `collect_table.results[id]` is set to whatever `...` you passed in.
+* If you provided an `on_add`, it is called as `on_add(id, ...)`.
+
+If you provided an `on_error` function it will be called if either of these siutations occurs:
+
+* If you call `collect_table:add` **more than once** for the same id, it will be called with `on_error(Wait.COLLECT_DUPLICATE, id, ...)`.
+* If you call `collect_table:add` with an ID that **you did not list in your expected ids**, it will be called with `on_error(Wait.COLLECT_UNKNOWN, id, ...)`.
+
+Once `collect_table:add` has been called for every expected ID, `on_finished` will be called with `on_finished(collect_table.results)`.
+
+You may call `collect_table:reset()` to reset the collect_table, allowing you to reuse it.
+
+!!!example
+    Use `Wait.collect` and `chooseInHand` to draft cards.
+    ``` Lua
+    function startDraft()
+        -- Each player picks 1 to 3 cards in their hand, which will immediately be moved to their
+        -- stash.
+        -- Once all players have picked, the cards they didn't choose are given to the next
+        -- player, the cards they picked are returned to their hand.
+        local players = chooseInHand("my_draft", 1, 3, "{en}Pick up to 3 cards!")
+        draft_collect = Wait.collect(players,
+            function(results)  -- on_finished
+                local send_to = {}
+                local chosen_cards = {}
+                for player, chosen in pairs(results) do
+                    for i, card in ipairs(chosen) do
+                        chosen_cards[card.guid] = true
+                    end
+                end
+                for player, chosen in pairs(results) do
+                    local send_to_player = next_player(players, player)
+                    local cards_in_hand = Player[player].getHandObjects()
+                    for i, card in ipairs(cards_in_hand) do
+                        if not chosen_cards[card.guid] then
+                            getObjectFromGUID(card.guid).sendToHand(send_to_player)
+                        end
+                    end
+                    Player[player].drawHandStash()
+                end
+            end
+            ,
+            function(...)  -- on_add
+                for i, card in ipairs(...) do
+                    card.moveToHandStash()
+                end
+            end
+            ,
+            function(player_color, error, ...)  -- on_error
+                log({"ERR", error, player_color, ...})
+            end
+        )
+    end
+
+
+    function onPlayerHandChoice(player_color, label, objects)
+        if label == "my_draft" then
+            draft_collect:add(player_color, objects)
+        end
+    end
+
+
+    function next_player(players, current_player)
+        local return_next_player = false
+        for i, player in ipairs(players) do
+            if return_next_player then
+                return player
+            elseif player == current_player then
+                return_next_player = true
+            end
+        end
+        return players[1]
+    end
+    ```
+
+---
+
+
 
 ###condition(...)
 

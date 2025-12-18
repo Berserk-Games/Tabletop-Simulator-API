@@ -24,7 +24,7 @@ Function Name | Description | Return
 -- | -- | --:
 getNextTurnColor() {: #getnextturncolor data-toc-label="getNextTurnColor()" data-toc-child-of="functions" } | Returns the Player Color string of the next player in the turn order. | [<span class="ret str"></span>](types.md)
 getPreviousTurnColor() {: #getpreviousturncolor data-toc-label="getPreviousTurnColor()" data-toc-child-of="functions" } | Returns the Player Color string of the previous player in the turn order. | [<span class="ret str"></span>](types.md)
-
+getTurnOrder() {: #getturnorder data-toc-label="getTurnOrder()" data-toc-child-of="functions" } | Returns the current turn order. | [<span class="ret tab"></span>](types.md)
 
 
 ---
