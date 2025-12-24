@@ -3,7 +3,7 @@ The system console gives you a direct way to interact with Tabletop Simulator's 
 
 ## Controls
 
-The console accepts basic text input.  Additionally, you may hit ++arrow-up++ and ++down-arrow++ to cycle back and forth through the command history, and ++tab++ to autocomplete your current command (if more than one command is possible from your current prefix then hit it a couple of times to list all matching commands).  Hitting the ++grave++ key will activate the console.  Hitting it again will type the character; if you would rather it deactivated the console input as well as activating it, then you can make it do that by entering this command: `+console_hotkey_lock`
+The console accepts basic text input.  Additionally, you may hit ++arrow-up++ and ++arrow-down++ to cycle back and forth through the command history, and ++tab++ to autocomplete your current command (if more than one command is possible from your current prefix then hit it a couple of times to list all matching commands).  Hitting the ++grave++ key will activate the console.  Hitting it again will type the character; if you would rather it deactivated the console input as well as activating it, then you can make it do that by entering this command: `+console_hotkey_lock`
 
 
 ## Commands & Variables
