@@ -2,6 +2,12 @@ This page describes how our [Official Atom Plugin](atom.md) API works so that yo
 
 Communication between the editor and TTS occurs via two localhost TCP connections: one where TTS listens for messages and one where the editor listens for messages. All communication messages are JSON.
 
+##Implementations
+
+Non-official implementations for other text editors
+
+- [Emacs](https://github.com/dangersalad/emacs-tts-editor)
+
 ##Atom as the Server
 
 The following are messages the editor plugin listens for and handles.
