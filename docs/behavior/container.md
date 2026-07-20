@@ -6,7 +6,7 @@ The Container behavior is present on Container objects such as Bags, Stacks and 
 
 Function Name | Return | Description | &nbsp;
 -- | -- | -- | --:
-search([<span class="tag pla"></span>](../types.md) player_color, [<span class="tag int"></span>](../types.md) max_card) | Activate search window for player, optionally limited to top N cards | [<span class="ret boo"></span>](../types.md) | [:i:](#search)
+search([<span class="tag str"></span>](../types.md) player_color, [<span class="tag int"></span>](../types.md) max_card) | Activate search window for player, optionally limited to top N cards | [<span class="ret boo"></span>](../types.md) | [:i:](#search)
 
 ---
 
